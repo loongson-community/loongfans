@@ -5,13 +5,11 @@ returnLink: /
 ---
 
 <ChildHeader>
-<template #pageTitle>子页面主标题</template>
-<template #pageSubTitle>这里是副标题</template>
+<template #pageTitle>产品规格数据库</template>
+<template #pageSubTitle>规格参数、特色配置及已知问题一览</template>
 </ChildHeader>
 
 <div class="body_content">
-
-# 产品规格数据库
 
 龙芯的处理器和板卡型号众多，但一般以处理器 + 主板（板 U）捆绑的模式销售。本页面用于记录和呈现所有已知的龙芯板 U 组合，以及笔记本、服务器整机信息。
 

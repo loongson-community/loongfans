@@ -5,13 +5,11 @@ returnLink: /
 ---
 
 <ChildHeader>
-    <template #pageTitle>子页面主标题</template>
-    <template #pageSubTitle>这里是副标题</template>
+    <template #pageTitle>玩机及踩坑指南</template>
+    <template #pageSubTitle>大家都说，龙芯有点创——</template>
 </ChildHeader>
 
 <div class="body_content">
-
-# 玩机及踩坑指南
 
 大家都说，龙芯有点创—— 这绝非空穴来风！本指南将带您买好、玩好、用好龙芯。
 
