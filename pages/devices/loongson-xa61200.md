@@ -1,12 +1,13 @@
 ---
 layout: page
+# 返回首页
+returnLink: /pages/devices
 ---
 
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-</script>
-
-<ChildHeader />
+<ChildHeader>
+<template #pageTitle>子页面主标题</template>
+<template #pageSubTitle>这里是副标题</template>
+</ChildHeader>
 
 <div class="body_content">
 
@@ -33,3 +34,10 @@ import ChildHeader from '/components/ChildHeader.vue'
 ## 产品图片
 
 </div>
+
+<ChildFooter />
+
+<script setup>
+import ChildHeader from '/components/ChildHeader.vue'
+import ChildFooter from '/components/ChildFooter.vue'
+</script>

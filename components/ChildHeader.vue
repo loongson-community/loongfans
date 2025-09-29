@@ -3,8 +3,8 @@
     <div class="header_redline"></div>
     <div class="page_body">
       <div class="main_title">
-        <h1>初识龙芯</h1>
-        <h4>东方神秘处理器的前世今生</h4>
+        <h1><slot name="pageTitle"></slot></h1>
+        <h4><slot name="pageSubTitle"></slot></h4>
       </div>
       <div class="brand_mark">
         <img src="/images/brand_mark.png" />
@@ -13,7 +13,7 @@
   </div>
 
   <div class="back_row">
-    <a href="/" class="btn_back">
+    <a v-if="frontmatter.returnLink" :href="frontmatter.returnLink" class="btn_back">
       <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" height="30"><path d="M206.336 512l264.832 264.832 60.330667-60.330667L326.997333 512l204.501334-204.501333-60.330667-60.330667L206.336 512z m241.066667 0l264.832 264.832 60.330666-60.330667L568.064 512l204.501333-204.501333-60.330666-60.330667L447.402667 512z" fill="#FF0000"></path></svg>
       <span class="name">返回主页</span>
     </a>
@@ -23,6 +23,8 @@
 </template>
 
 <script setup>
+import { useData } from 'vitepress'
+const { frontmatter } = useData()
   import BackToTop from './BackToTop.vue';
 </script>
 
@@ -31,12 +33,15 @@
 @import 'vitepress/dist/client/theme-default/styles/base.css';
 @import 'vitepress/dist/client/theme-default/styles/vars.css';
 
+body {
+  background: none;
+}
 .header_box {
   display: block;
   clear: both;
   width: 100%;
   min-width: 1200px;
-  height: 500px;
+  height: 400px;
   overflow: hidden;
   background: url("/images/bg_body.png") no-repeat top center;
   background-size: cover;
@@ -63,7 +68,7 @@
   height: calc(100% - 25px);
   overflow: hidden;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 50px;
   box-sizing: border-box;
 }
 
@@ -81,12 +86,12 @@
   clear: both;
   width: 100%;
   clear: both;
-  height: 80px;
-  line-height: 80px;
+  height: 60px;
+  line-height: 60px;
   overflow: hidden;
   border-left: 15px solid red;
   padding-left: 10px;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: bolder;
 }
 
@@ -95,7 +100,7 @@
   clear: both;
   width: 100%;
   clear: both;
-  line-height: 60px;
+  line-height: 40px;
   overflow: hidden;
   padding-left: 20px;
   font-size: 32px;
@@ -165,14 +170,14 @@ a.btn_back:hover {
 @media (max-width: 1200px) {
   .header_box {
     min-width: 100%;
-    height: 400px;
+    height: 350px;
   }
 
   .page_body {
     width: 100%;
     max-width: 100%;
     padding: 0px 20px;
-    padding-top: 100px;
+    padding-top: 50px;
   }
 
   .main_title h1 {
