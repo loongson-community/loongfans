@@ -6,7 +6,6 @@ layout: page
 import ChildHeader from '/components/ChildHeader.vue'
 </script>
 
-
 <ChildHeader />
 
 <div class="body_content">
