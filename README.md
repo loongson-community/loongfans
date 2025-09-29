@@ -15,6 +15,17 @@ npm install vitepress
 vitepress dev
 ````
 
+### 模板套用页
+```
+/pages/tpl.md
+# 上面的此页面为模板参考页，平时在使用的时候，复制一份，然后直接将复制后的页面内容修改成自己想要的页面即可。
+```
+
+### 页面上的返回按钮设置
+```
+
+```
+
 ### 构建代码（官方参考文档）
 https://vitepress.dev/zh/guide/deploy
 - 本地构建：  
