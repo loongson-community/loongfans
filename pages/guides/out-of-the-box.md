@@ -1,0 +1,70 @@
+---
+layout: page
+returnLink: /pages/guides
+---
+
+<ChildHeader>
+    <template #pageTitle>在亮机前</template>
+    <template #pageSubTitle>从购买入坑，如何获得良好体验？</template>
+</ChildHeader>
+
+<div class="body_content">
+
+# 开箱上手：还得买些啥？
+
+龙芯设备一般以“板 U 套装”形式销售（即主板和处理器一同销售），除购买整机外，您还需要根据板卡规格和自身需要购买一些配件。
+
+:::info
+有关各类板卡及整机的规格信息，以及已知问题，请见[硬件规格数据库](/pages/devices)。
+:::
+
+以台式机主板为例，购买和组装龙芯电脑，有如下几点经验及注意事项：
+
+- 龙芯主板一般搭配 CPU 和散热器一同出售，一般来说无须另外购买散热器
+- 桌面级别龙芯处理器的能耗一般在 150W 以下，选购电源时主要需要考虑的是显卡等外设的需要
+- 基于龙架构的龙芯主板均提供 NVMe 接口，推荐使用 NVMe 硬盘确保良好使用体验
+- 龙芯处理器，尤其是如 3C6000/S 等高端型号对内存性能的要求较高，推荐根据主板插槽数购买相应数量、规格齐备的内存条
+- 由于龙芯板载/桥片显卡（如 7A2000 桥片上集成的 LoongGPU LG110）性能仍然较弱，我们推荐购买独立显卡以确保良好的桌面使用体验
+    - 目前来说，AMD 显卡的支持情况最佳，亦可考虑选购 Intel 独显，NVIDIA 显卡不受支持
+    - 风华、景嘉微、摩尔线程等国产厂商推出的显卡一般不推出持续维护的 ABI 2.0 系统驱动，不推荐社区用户选购
+
+## 内存如何选购？
+
+内存兼容性一直是龙芯平台的一个难题，如选用不兼容或未经验证的内存条，可能会导致系统运行不稳定。
+
+::: info
+- 有关龙芯平台兼容的内存条列表，请见 [Loong 1-2-3 整理的内存兼容列表](https://loong123.cn/list-hardwares.html)
+- 一般来说，搭载海力士颗粒的内存条兼容性不赖
+- 如平台支持，我们推荐选购带有 Registered ECC 功能的内存条
+:::
+
+## 显卡如何选购？
+
+如上文所述，龙芯一般搭配 AMD 显卡为最佳。考虑到龙芯现行产品已至少可以胜任桌面多媒体及生产力性能需求，我们推荐购买性能及多媒体编解码功能较为完善的显卡以便充分发挥平台机能；如下是我们推荐购买的，符合上述标准的显卡：
+
+- 高端：AMD Radeon RX 7600 或更高型号
+- 中端：AMD Radeon RX 550、Radeon Pro WX 3100 或更高型号
+
+如果您的预算暂时有限，可考虑如下“亮机卡”，但请注意，这些显卡可能无法输出 4K @ 60Hz 视频信号，亦无法加速解码 H.265 及 AV1 等编码格式较新的视频文件：
+
+- 低端：AMD Radeon R7 240 等入门级显卡（不推荐）
+
+## 操作系统支持
+
+得益于诸多关注与支持龙架构的开发者和社区的努力，现行的龙芯平台受许多 Linux 发行版支持，如下是我们对社区发行版的分类推荐：
+
+- 入门：安同 OS、deepin 23
+- 进阶：Arch Linux for Loong64、Debian、Gentoo、NixOS、Slackwareloong
+- 专用：Alpine、OpenWrt、Proxmox VE
+- 特色：Linux from Scratch、勇豹
+
+另外还有统信 UOS、银河麒麟、中科方德、openEuler 及开放鸿蒙等商用系统可供选用。
+
+</div>
+
+<ChildFooter />
+
+<script setup>
+import ChildHeader from '/components/ChildHeader.vue'
+import ChildFooter from '/components/ChildFooter.vue'
+</script>
