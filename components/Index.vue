@@ -9,35 +9,24 @@
       <div class="nav_list">
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">导航分类</div>
+            <div class="title">初来乍到</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a @click.prevent="forceRefresh('/special/tpl')" href="#">初识龙芯</a>
-            <a href="#" target="_blank">社区资讯</a>
+            <a href="/pages/intro">初识龙芯</a>
           </div>
         </div>
 
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">导航分类</div>
+            <div class="title">支持材料</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="#" target="_blank">玩机及踩坑指南</a>
-            <a href="#" target="_blank">常用软件指南</a>
-            <a href="/contribution/">兼容性数据库</a>
-          </div>
-        </div>
-
-        <div class="link_group">
-          <div class="link_type_title">
-            <div class="title">支持中心</div>
-            <div class="red_line"></div>
-          </div>
-          <div class="link_type_box">
-            <a href="#" target="_blank">主板固件及说明书</a>
-            <a href="#" target="_blank">板U规格数据库</a>
+            <a href="/pages/guides">玩机及踩坑指南</a>
+            <a href="/pages/support">主板固件及说明书</a>
+            <a href="/pages/devices">产品规格数据库</a>
+            <a href="https://loong123.cn/" target="_blank">软硬件兼容性数据库</a>
           </div>
         </div>
       </div>
@@ -45,38 +34,28 @@
       <div class="nav_list">
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">导航分类</div>
+            <div class="title">社区资源</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="#" target="_blank">龙架构双周会</a>
-            <a href="#" target="_blank">开发板漂流计划</a>
-            <a href="#" target="_blank">GitHub主页</a>
-            <a href="#" target="_blank">悬赏与实习机会</a>
-            <a href="#" target="_blank">社区项目一览</a>
+            <a href="/pages/biweekly">龙架构双周会</a>
+            <a href="/pages/jobs" target="_blank">悬赏与实习机会</a>
+            <a href="https://github.com/loongson-community/1024" target="_blank">开发板漂流计划</a>
+            <a href="https://github.com/loongson-community" target="_blank">GitHub 主页</a>
+            <a href="https://www.loongbbs.cn/" target="_blank">爱好者社区论坛</a>
+            <a href="https://areweloongyet.com/" target="_blank">咱龙了吗？</a>
           </div>
         </div>
 
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">导航分类</div>
+            <div class="title">龙芯官方</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="https://www.loongbbs.cn" target="_blank">爱好者社区论坛</a>
-            <a href="#" target="_blank">咱龙了吗？</a>
-          </div>
-        </div>
-
-        <div class="link_group">
-          <div class="link_type_title">
-            <div class="title">导航分类</div>
-            <div class="red_line"></div>
-          </div>
-          <div class="link_type_box">
-            <a href="https://www.loongeco.cn" target="_blank">龙芯生态平台</a>
-            <a href="https://app.loongapps.cn" target="_blank">龙芯应用合作社</a>
-            <a href="https://www.loongson.cn" target="_blank">龙芯中科官网</a>
+            <a href="https://www.loongeco.cn/" target="_blank">龙芯生态平台</a>
+            <a href="https://app.loongapps.cn/" target="_blank">龙芯应用合作社</a>
+            <a href="https://www.loongson.cn/" target="_blank">龙芯中科官网</a>
           </div>
         </div>
       </div>
