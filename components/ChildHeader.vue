@@ -56,7 +56,7 @@ body {
   width: 100%;
   height: 25px;
   overflow: hidden;
-  background-color: red;
+  background-color: #e60013;
 }
 
 .page_body {
@@ -156,14 +156,14 @@ a.btn_back {
   border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
-  color: red;
+  color: #e60013;
   text-decoration: none;
 }
 
 
 a.btn_back:hover {
   background-color: #eee;
-  color: red;
+  color: #e60013;
 }
 
 /*响应式处理-开始*/

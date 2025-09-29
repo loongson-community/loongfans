@@ -138,7 +138,7 @@ body {
   width: 100%;
   height: 25px;
   overflow: hidden;
-  background-color: red;
+  background-color: #e60013;
 }
 
 .home_body {
@@ -202,7 +202,7 @@ body {
   overflow: hidden;
   font-size: 24px;
   font-weight: bold;
-  color: red;
+  color: #e60013;
 }
 
 .link_type_title .red_line {
@@ -211,7 +211,7 @@ body {
   width: 100%;
   height: 10px;
   overflow: hidden;
-  background-color: red;
+  background-color: #e60013;
 }
 
 .link_group {
@@ -262,7 +262,7 @@ body {
 
 .link_type_box a:hover {
   font-weight: bold;
-  color: red;
+  color: #e60013;
 }
 .link_type_box a:hover .icon_link {
   background-image: url("/icons/icon_link_red.webp");
@@ -310,7 +310,7 @@ body {
 }
 
 .footer_info a:hover {
-  color: red;
+  color: #e60013;
 }
 
 /*响应式处理-开始*/

@@ -58,7 +58,7 @@ const copyrightYear = ref(year);
 }
 
 .child_footer_info a:hover {
-  color: red;
+  color: #e60013;
 }
 /*响应式处理-开始*/
 @media (max-width: 1200px) {
