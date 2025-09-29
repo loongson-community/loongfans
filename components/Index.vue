@@ -9,12 +9,15 @@
       <div class="nav_list">
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">初来乍到</div>
+            <div class="title">新手资源</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
             <a href="/pages/intro">
               <span class="name">初识龙芯</span>
+            </a>
+            <a href="/pages/guides">
+              <span class="name">玩机及踩坑指南</span>
             </a>
           </div>
         </div>
@@ -25,9 +28,6 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="/pages/guides">
-              <span class="name">玩机及踩坑指南</span>
-            </a>
             <a href="/pages/support">
               <span class="name">主板固件及说明书</span>
             </a>
@@ -80,16 +80,16 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
+            <a href="https://www.loongson.cn/" target="_blank">
+              <span class="name">龙芯中科官网</span>
+              <span class="icon_link"></span>
+            </a>
             <a href="https://www.loongeco.cn/" target="_blank">
               <span class="name">龙芯生态平台</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://app.loongapps.cn/" target="_blank">
               <span class="name">龙芯应用合作社</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://www.loongson.cn/" target="_blank">
-              <span class="name">龙芯中科官网</span>
               <span class="icon_link"></span>
             </a>
           </div>
