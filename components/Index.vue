@@ -198,7 +198,7 @@ body {
   display: block;
   clear: both;
   width: 100%;
-  height: 35px;
+  height: 30px;
   overflow: hidden;
   font-size: 24px;
   font-weight: bold;
@@ -209,7 +209,7 @@ body {
   display: block;
   clear: both;
   width: 100%;
-  height: 10px;
+  height: 5px;
   overflow: hidden;
   background-color: #e60013;
 }
