@@ -1,15 +1,15 @@
 <template>
     <div class="child_footer_info">
     <div class="child_footer_link">
-      <a href="#" target="_blank">站点源码</a>
+      <a href="https://github.com/loongson-community/loongfans" target="_blank">站点源码</a>
       <span>|</span>
-      <a href="#" target="_blank">报告问题</a>
+      <a href="https://github.com/loongson-community/loongfans/issues/new" target="_blank">报告问题</a>
       <span>|</span>
-      <a href="#" target="_blank">关于龙芯爱好者社区</a>
+      <a href="/pages/about">关于龙芯爱好者社区</a>
     </div>
 
     <div class="copyright_info">
-      <span>版权所有 &copy; 2023-{{ copyrightYear }} 龙芯爱好者社区</span>
+      <span>版权所有 &copy; 2024-{{ copyrightYear }} 龙芯爱好者社区</span>
       <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-10</a>
     </div>
   </div>
