@@ -3,7 +3,7 @@
     <div v-show="showButton"
     @click="scrollToTop" class="set_to_top"
     :style="{ opacity: showButton ? 1 : 0 }">
-    <img src="/images/icon_top.jpg" />
+    <img src="/images/icon_top.webp" />
   </div>
 </template>
 

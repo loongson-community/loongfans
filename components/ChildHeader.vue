@@ -7,7 +7,7 @@
         <h4><slot name="pageSubTitle"></slot></h4>
       </div>
       <div class="brand_mark">
-        <img src="/images/brand_mark.png" />
+        <img src="/images/brand_mark.webp" />
       </div>
     </div>
   </div>
@@ -43,7 +43,7 @@ body {
   min-width: 1200px;
   height: 400px;
   overflow: hidden;
-  background: url("/images/bg_body.png") no-repeat top center;
+  background: url("/images/bg_body.webp") no-repeat top center;
   background-size: cover;
   background-color: #FFF;
   border-bottom: 5px solid red;

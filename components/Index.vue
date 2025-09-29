@@ -2,7 +2,7 @@
   <div class="header_redline"></div>
   <div class="home_body">
     <div class="main_logo">
-      <img src="/images/logo.png" />
+      <img src="/images/logo.webp" />
     </div>
 
     <div class="site_nav_box">
@@ -126,7 +126,7 @@ const forceRefresh = (url) => {
 
 <style>
 body {
-  background: url("/images/bg_body.png") no-repeat top center;
+  background: url("/images/bg_body.webp") no-repeat top center;
   background-size: cover;
 }
 </style>
@@ -255,7 +255,7 @@ body {
   width: 24px;
   height: 24px;
   overflow: hidden;
-  background: url("/icons/icon_link_black.png") no-repeat center center;
+  background: url("/icons/icon_link_black.webp") no-repeat center center;
   background-size: 100%;
   margin-left: 5px;
 }
@@ -265,7 +265,7 @@ body {
   color: red;
 }
 .link_type_box a:hover .icon_link {
-  background-image: url("/icons/icon_link_red.png");
+  background-image: url("/icons/icon_link_red.webp");
 }
 
 /*站点导航清单-结束*/
