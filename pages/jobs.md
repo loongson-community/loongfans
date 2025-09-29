@@ -13,9 +13,11 @@ returnLink: /
 
 ## 社区悬赏项目
 
-::: warning
-本页面正在施工，敬请期待
-:::
+### OrangePi Nova U-Boot 支持
+
+针对 OrangePi Nova 的 U-Boot 引导器支持有待实现，现悬赏社区开发者推动实现。
+
+奖品：龙芯笔记本一台
 
 </div>
 
