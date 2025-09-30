@@ -42,7 +42,7 @@ onUnmounted(() => {
   position: fixed;
   z-index: 999;
   right: 20px;
-  bottom: 20px;
+  bottom: 95px;
   cursor: pointer;
   transition: opacity 1s ease;
 }
