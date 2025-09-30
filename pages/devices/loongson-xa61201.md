@@ -15,7 +15,7 @@ returnLink: /pages/devices
 该主板相对于 [XA61200](/pages/devices/loongson-xa61200) 主要的差异有：
 
 - 支持 ECC 内存
-- 其中一个 PCIe 3.0 x8 接口改为 PCIe 3.0 x16 接口（x8 信号），并移动到第三槽位，将 PCIe 3.0 x4 接口移动到第二槽位
+- 第三槽位的 PCIe 3.0 x8 接口改为 PCIe 3.0 x16 接口（x8 信号）
 
 ## 主要规格
 
