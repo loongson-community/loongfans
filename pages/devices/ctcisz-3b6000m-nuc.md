@@ -37,8 +37,7 @@ returnLink: /pages/devices
 
 ## 产品图片
 
-[![](/public/images/devices/ctcisz-3b6000m-nuc.thumbnail.webp)](/public/images/devices/ctcisz-3b6000m-nuc.webp)
-来源：Xi Ruoyao
+（待更新）
 
 </div>
 

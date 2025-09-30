@@ -52,8 +52,7 @@ returnLink: /pages/devices
 
 ## 产品图片
 
-![](/public/images/devices/ctcisz-foreverpi.webp)
-来源：中科云
+（待更新）
 
 </div>
 
