@@ -14,7 +14,7 @@
 
   <div class="back_row">
     <a :href="frontmatter.returnLink" class="btn_back">
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" height="30"><path d="M206.336 512l264.832 264.832 60.330667-60.330667L326.997333 512l204.501334-204.501333-60.330667-60.330667L206.336 512z m241.066667 0l264.832 264.832 60.330666-60.330667L568.064 512l204.501333-204.501333-60.330666-60.330667L447.402667 512z" fill="#FF0000"></path></svg>
+      <div class="icon_back"></div>
       <span class="name">返回上级</span>
     </a>
   </div>
@@ -41,7 +41,7 @@ body {
   clear: both;
   width: 100%;
   min-width: 1200px;
-  height: 400px;
+  height: auto;
   overflow: hidden;
   background: url("/images/bg_body.webp") no-repeat top center;
   background-size: cover;
@@ -65,7 +65,7 @@ body {
   align-items: center;
   width: auto;
   max-width: 1200px;
-  height: calc(100% - 25px);
+  height: auto;
   overflow: hidden;
   margin: 0 auto;
   padding-top: 50px;
@@ -102,7 +102,7 @@ body {
   clear: both;
   line-height: 40px;
   overflow: hidden;
-  padding-left: 20px;
+  padding-left: 25px;
   font-size: 32px;
   font-weight: bold;
 }
@@ -111,25 +111,16 @@ body {
   flex-shrink: 0;
   display: block;
   float: right;
-  width: auto;
-  height: 100%;
+  width: 450px;
+  height: auto;
   overflow: hidden;
 }
 
 .brand_mark img {
   display: block;
   clear: both;
-  width: auto;
-  height: 100%;
-}
-
-.body_content {
-  display: block;
-  clear: both;
-  width: auto;
-  max-width: 1200px;
+  width: 100%;
   height: auto;
-  overflow: hidden;
 }
 
 .back_row {
@@ -148,10 +139,12 @@ a.btn_back {
   float: left;
   justify-content: center;
   align-items: center;
+  gap: 3px;
   width: auto;
   height: 35px;
   line-height: 35px;
   overflow: hidden;
+  background-color: #eee;
   padding: 0px 10px;
   border-radius: 5px;
   font-size: 20px;
@@ -159,25 +152,36 @@ a.btn_back {
   color: #e60013;
   text-decoration: none;
 }
+a.btn_back .icon_back {
+  flex-shrink: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  background: url('/icons/icon_back_red.webp') no-repeat center center;
+  background-size: cover;
+}
 
 
 a.btn_back:hover {
-  background-color: #eee;
-  color: #e60013;
+  background-color: #e60013;
+  color: #ffffff;
+}
+a.btn_back:hover .icon_back {
+  background-image: url('/icons/icon_back_white.webp');
 }
 
 /*响应式处理-开始*/
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .header_box {
     min-width: 100%;
-    height: 350px;
   }
 
   .page_body {
     width: 100%;
     max-width: 100%;
     padding: 0px 20px;
-    padding-top: 50px;
+    padding-top: 40px;
   }
 
   .main_title h1 {
@@ -191,20 +195,12 @@ a.btn_back:hover {
     line-height: 40px;
     font-size: 20px;
   }
-  .back_row, .body_content {
-    padding: 10px;
+  .back_row {
+    padding: 20px 30px;
   }
 }
 
 @media (max-width: 1000px) {
-  .header_box {
-    height: 300px;
-  }
-
-  .page_body {
-    padding-top: 50px;
-  }
-
   .main_title h1 {
     height: 40px;
     line-height: 40px;
@@ -217,11 +213,8 @@ a.btn_back:hover {
     font-size: 18px;
     border-left-width: 10px;
   }
-
-  .body_content {
-    width: 100%;
-    max-width: 100%;
-    padding: 0px 10px
+  .back_row {
+    padding: 20px 30px;
   }
 }
 
@@ -248,11 +241,6 @@ a.btn_back:hover {
     height: 30px;
     line-height: 30px;
     font-size: 16px;
-  }
-
-  .brand_mark {
-    height: 200px;
-    margin-top: 20px;
   }
 }
 

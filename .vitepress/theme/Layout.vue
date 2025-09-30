@@ -22,11 +22,11 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
     .body_content {
         width: 100%;
         max-width: 100%;
-        padding: 0px 10px;
+        padding: 0px 30px;
     }
 }
 </style>

@@ -109,7 +109,7 @@
 
     <div class="copyright_info">
       <span>版权所有 &copy; 2024-{{ copyrightYear }} 龙芯爱好者社区</span>
-      <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-10</a>
+      <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-12</a>
     </div>
   </div>
 </template>
@@ -142,7 +142,10 @@ body {
 }
 
 .home_body {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
   width: auto;
   max-width: 1200px;
   height: 100%;
@@ -152,9 +155,9 @@ body {
 }
 
 .main_logo {
+  flex-shrink: 0;
   display: block;
-  float: left;
-  width: 40%;
+  width: 400px;
   height: auto;
   overflow: hidden;
 }
@@ -170,9 +173,8 @@ body {
 .site_nav_box {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
-  float: right;
-  width: 50%;
+  gap: 40px;
+  width: 100%;
   height: auto;
   overflow: hidden;
 }
@@ -239,6 +241,7 @@ body {
 
 .link_type_box a {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   clear: both;
   width: 100%;
@@ -254,7 +257,6 @@ body {
 }
 
 .link_type_box a .name {
-  flex: 1;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
@@ -285,6 +287,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   clear: both;
   width: auto;
   max-width: 1200px;
@@ -326,8 +329,8 @@ body {
 
 /*响应式处理-开始*/
 @media (max-width: 1200px) {
-  .page_body {
-    padding: 0px 10px;
+  .home_body {
+    padding: 0px 20px;
     padding-top: 50px;
   }
 
@@ -337,17 +340,33 @@ body {
     padding: 0px 10px;
   }
 }
+@media (max-width: 1000px) {
+  .home_body {
+    padding: 0px 20px;
+    padding-top: 40px;
+  }
+  .main_logo {
+    width: 300px;
+  }
+  .link_type_box a {
+    font-size: 18px;
+  }
+  .link_type_box a .icon_link {
+    width: 20px;
+    height: 20px;
+  }
+}
 
 @media (max-width: 750px) {
-  .page_body {
+  .home_body {
     display: flex;
     flex-direction: column;
-    padding: 0px 10px;
+    padding: 0px 20px;
+    padding-top: 30px;
   }
 
   .main_logo {
     width: 100%;
-    padding: 20px;
   }
 
   .main_logo img {
@@ -372,16 +391,20 @@ body {
     height: auto;
     min-height: 30px;
     line-height: 20px;
-    font-size: 16px;
+    font-size: 14px;
     white-space: normal;
     word-wrap: break-word;
     padding: 5px 0;
   }
 
   .link_type_box a .name {
-    flex: 1;
     word-wrap: break-word;
     overflow-wrap: break-word;
+  }
+
+  .link_type_box a .icon_link {
+    width: 16px;
+    height: 16px;
   }
 
   .footer_info {

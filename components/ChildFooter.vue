@@ -10,13 +10,14 @@
 
     <div class="copyright_info">
       <span>版权所有 &copy; 2024-{{ copyrightYear }} 龙芯爱好者社区</span>
-      <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-10</a>
+      <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-12</a>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
+
 let year = new Date().getFullYear();
 const copyrightYear = ref(year);
 </script>
@@ -26,14 +27,16 @@ const copyrightYear = ref(year);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   clear: both;
   width: auto;
   max-width: 1200px;
-  height: 40px;
-  line-height: 40px;
+  height: auto;
+  line-height: 30px;
   overflow: hidden;
   margin: 0px auto;
   margin-top: 60px;
+  padding-bottom: 10px;
 }
 
 .child_footer_link,
@@ -44,8 +47,7 @@ const copyrightYear = ref(year);
   align-items: center;
   gap: 10px;
   width: auto;
-  height: 40px;
-  line-height: 40px;
+  line-height: 30px;
   overflow: hidden;
   font-size: 16px;
   color: #000000;
@@ -65,21 +67,28 @@ const copyrightYear = ref(year);
   .child_footer_info {
     width: 100%;
     max-width: 100%;
-    padding: 0px 10px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 @media (max-width: 750px) {
   .child_footer_info {
     flex-direction: column;
     justify-content: center;
-    height: auto;
-    position: static;
-    padding-top: 50px;
+    line-height: 30px;
     font-size: 14px;
     gap: 0;
+    padding: 10px;
   }
 
   .child_footer_info a {
+    font-size: 14px;
+  }
+  .copyright_info {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    line-height: 30px;
     font-size: 14px;
   }
 }
