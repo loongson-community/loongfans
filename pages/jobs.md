@@ -6,7 +6,7 @@ returnLink: /
 
 <ChildHeader>
 <template #pageTitle>悬赏与实习机会</template>
-<template #pageSubTitle>用爱发电，也许发财</template>
+<template #pageSubTitle>用爱发电，也许发财 ( ͡° ͜ʖ ͡°)</template>
 </ChildHeader>
 
 <div class="body_content">
