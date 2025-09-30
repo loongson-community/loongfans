@@ -11,7 +11,7 @@ returnLink: /
 
 <div class="body_content">
 
-## 社区悬赏项目
+# 社区悬赏项目
 
 ### OrangePi Nova U-Boot 支持
 
