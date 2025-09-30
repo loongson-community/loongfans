@@ -52,7 +52,7 @@
             <a href="/pages/biweekly">
               <span class="name">龙架构双周会</span>
             </a>
-            <a href="/pages/jobs" target="_blank">
+            <a href="/pages/jobs">
               <span class="name">悬赏与实习机会</span>
             </a>
             <a href="https://github.com/loongson-community/1024" target="_blank">
