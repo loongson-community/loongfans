@@ -233,7 +233,7 @@ body {
   clear: both;
   width: 100%;
   height: auto;
-  overflow: hidden;
+  overflow: visible;
   padding: 20px 0px;
 }
 
@@ -242,13 +242,24 @@ body {
   align-items: center;
   clear: both;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
-  overflow: hidden;
+  min-height: 40px;
+  height: auto;
+  line-height: 1.2;
+  overflow: visible;
   font-size: 22px;
   color: #000000;
   text-decoration: none;
+  padding: 5px 0;
+  word-wrap: break-word;
 }
+
+.link_type_box a .name {
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
 .link_type_box a .icon_link {
   flex-shrink: 0;
   display: block;
@@ -358,9 +369,19 @@ body {
   }
 
   .link_type_box a {
-    height: 30px;
-    line-height: 30px;
+    height: auto;
+    min-height: 30px;
+    line-height: 20px;
     font-size: 16px;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 5px 0;
+  }
+
+  .link_type_box a .name {
+    flex: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .footer_info {
