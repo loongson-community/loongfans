@@ -27,7 +27,7 @@ returnLink: /pages/devices
 | 接口（存储）| 1 × NVMe (PCIe 3.0 x4)、4 × SATA 3.0、1 × SFF-8654-4i 接口 |
 | 接口（网络） | 2 × GbE |
 | 接口（视频） | 1 × VGA |
-| 接口（其他） | 1 × BMC 模组接口†‡、1 × m.2 Key E 接口 (PCIe + USB)、1 × mPCIe (PCIe + USB)、1 组 3.5mm（输入、输出）接口、1 × RS-232 串口 (DB-9) |
+| 接口（其他） | 1 × BMC 模组接口†‡、1 x BMC 网络接口、1 × m.2 Key E 接口 (PCIe + USB)、1 × mPCIe (PCIe + USB)、1 组 3.5mm（输入、输出）接口、1 × RS-232 串口 (DB-9) |
 
 - †：支持基于 AST2500 或龙芯 2K0500 的 BMC 模组。
 - ‡：该主板亦有一款“国产化部件”版本，该版本主板无 BMC 接口。
@@ -43,7 +43,7 @@ returnLink: /pages/devices
 ## 产品图片
 
 [![](/public/images/devices/loongson-ac612a0-v1.1.thumbnail.webp)](/public/images/devices/loongson-ac612a0-v1.1.webp)
-来源：《XA61201 主板产品使用手册 V1.0》
+来源：《龙芯 3C6000 单路服务器主板产品规格书 V1.0》
 
 </div>
 
