@@ -1,14 +1,9 @@
 ---
 layout: page
 returnLink: /pages/guides
+pageTitle: 常见问题集
+pageSubTitle: 各类笔记本平台已知问题
 ---
-
-<ChildHeader>
-    <template #pageTitle>常见问题集</template>
-    <template #pageSubTitle>各类笔记本平台已知问题</template>
-</ChildHeader>
-
-<div class="body_content">
 
 # ABI 2.0 系统下触摸板无法使用
 
@@ -37,11 +32,3 @@ Linux 内核方面，需要为 7A2000 GPIO 驱动[增加中断支持](https://gi
 
 使用搭载上游内核的 ABI 2.0（“新世界”）Linux 发行版无法启用处理器调频功能，这是因为上游内核尚未实现市售设备使用的 SMCv1 接口功能导致的。目前社区开发者[梓瑶](https://github.com/ziyao233)已提交[初版补丁](https://lore.kernel.org/loongarch/20250623123321.5622-1-ziyao@disroot.org/)，但在测试过程中仍发现有不稳定现象。
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 联想开天 N60d-G1d
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>联想开天 N60d-G1d</template>
-</ChildHeader>
-
-<div class="body_content">
 
 联想开天 N60d-G1d 是一款基于 3A6000 处理器的 14 寸笔记本电脑，其重量约 1.5kg，搭载 1920x1200 (WUXGA) 屏幕，接口较为丰富，续航约 3-4 小时。
 
@@ -57,11 +53,3 @@ returnLink: /pages/devices
 [![](/public/images/devices/kaitian-n60d-g1d.thumbnail.webp)](/public/images/devices/kaitian-n60d-g1d.webp)
 来源：白铭骢
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

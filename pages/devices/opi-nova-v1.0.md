@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: OrangePi Nova v1.0
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>OrangePi Nova v1.0</template>
-</ChildHeader>
-
-<div class="body_content">
 
 OrangePi Nova v1.0 是由迅龙软件（香橙派）推出的，基于 2K3000-i 平台设计的 Nano-ITX (120×120mm) 小型主板。
 
@@ -37,11 +33,3 @@ OrangePi Nova v1.0 是由迅龙软件（香橙派）推出的，基于 2K3000-i 
 [![](/public/images/devices/opi-nova-v1.0.thumbnail.webp)](/public/images/devices/opi-nova-v1.0.webp)
 来源：白铭骢、Xi Ruoyao
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

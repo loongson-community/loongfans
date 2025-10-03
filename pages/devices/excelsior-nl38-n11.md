@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 卓怡恒通 NL38-N11
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>卓怡恒通 NL38-N11</template>
-</ChildHeader>
-
-<div class="body_content">
 
 卓怡恒通 NL38-N11 是一款基于 3A6000 处理器的 14 寸笔记本电脑，其重量约 1.4kg，搭载 2240×1400 (2.2K) 或 1920x1200 (WUXGA) 屏幕，接口较为丰富，续航约 3-4 小时。
 
@@ -62,11 +58,3 @@ Linux 内核方面，需要为 7A2000 GPIO 驱动[增加中断支持](https://gi
 ![](/public/images/devices/excelsior-nl38-n11.webp)
 来源：[卓怡恒通官网](https://eaecis.com/cp_95/962.html)
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

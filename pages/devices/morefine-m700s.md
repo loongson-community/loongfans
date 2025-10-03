@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 摩方 M700S 小主机
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>摩方 M700S</template>
-</ChildHeader>
-
-<div class="body_content">
 
 摩方 M700S 是一款类似 Intel NUC 规格的小型台式机，搭载 3A6000-HV 处理器，并提供双 HDMI 输出。
 
@@ -38,11 +34,3 @@ returnLink: /pages/devices
 [![](/public/images/devices/morefine-m700s.thumbnail.webp)](/public/images/devices/morefine-m700s.webp)
 来源：[摩方官网](http://www.imorefine.com/h-pd-53.html)
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

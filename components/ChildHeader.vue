@@ -1,10 +1,11 @@
 <template>
   <div class="header_box">
-    <div class="header_redline"></div>
     <div class="page_body">
       <div class="main_title">
-        <h1><slot name="pageTitle"></slot></h1>
-        <h4><slot name="pageSubTitle"></slot></h4>
+        <!-- <h1><slot name="pageTitle"></slot></h1>
+        <h4><slot name="pageSubTitle"></slot></h4> -->
+        <h1>{{ $frontmatter.pageTitle }}</h1>
+        <h4>{{ $frontmatter.pageSubTitle }}</h4>
       </div>
       <div class="brand_mark">
         <img src="/images/brand_mark.webp" />
@@ -18,7 +19,6 @@
       <span class="name">返回上级</span>
     </a>
   </div>
-
   <BackToTop />
 </template>
 
@@ -48,15 +48,6 @@ body {
   background-color: #FFF;
   border-bottom: 5px solid red;
   box-sizing: border-box;
-}
-
-.header_redline {
-  display: block;
-  clear: both;
-  width: 100%;
-  height: 25px;
-  overflow: hidden;
-  background-color: #e60013;
 }
 
 .page_body {
