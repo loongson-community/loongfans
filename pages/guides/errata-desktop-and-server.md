@@ -1,14 +1,9 @@
 ---
 layout: page
 returnLink: /pages/guides
+pageTitle: 常见问题集
+pageSubTitle: 各类桌面平台已知问题
 ---
-
-<ChildHeader>
-    <template #pageTitle>常见问题集</template>
-    <template #pageSubTitle>各类桌面平台已知问题</template>
-</ChildHeader>
-
-<div class="body_content">
 
 # 7A 桥片稳定性问题
 
@@ -24,11 +19,3 @@ returnLink: /pages/guides
 
 根据龙芯中科工程师的调查，这是龙芯 7A2000 桥片的[一个硬件缺陷导致的](https://github.com/torvalds/linux/commit/bcb60d438547355b8f9ad48645909139b64d3482)。该问题已在 Linux 内核 6.15-rc1 或更高版本被规避，使用 6.6 内核的商用 ABI 2.0 发行版及使用 4.19 内核的 ABI 1.0 系统均包含此问题的规避。
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

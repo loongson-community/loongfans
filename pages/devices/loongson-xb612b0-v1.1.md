@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 龙芯 XB612B0_V1.1
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>龙芯 XB612B0_V1.1</template>
-</ChildHeader>
-
-<div class="body_content">
 
 龙芯 XB612B0_V1.1 是由龙芯中科推出的，基于 3B6000 平台设计的 mATX (244×244mm) 台式机主板。
 
@@ -38,11 +34,4 @@ returnLink: /pages/devices
 [![](/public/images/devices/loongson-xb612b0-v1.1.thumbnail.webp)](/public/images/devices/loongson-xb612b0-v1.1.webp)
 来源：Xi Ruoyao
 
-</div>
 
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

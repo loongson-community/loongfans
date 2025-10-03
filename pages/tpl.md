@@ -2,14 +2,10 @@
 layout: page
 # 返回首页，想返回哪张页面，就在下面填写相对链接
 returnLink: /
+pageTitle:  # 大标题
+pageSubTitle: # 小标题
 ---
 
-<ChildHeader>
-<template #pageTitle>子页面主标题</template>
-<template #pageSubTitle>这里是副标题</template>
-</ChildHeader>
-
-<div class="body_content">
 
 # 这里是标题
 
@@ -48,11 +44,3 @@ This is a dangerous warning.
 This is a details block.
 :::
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

@@ -2,14 +2,10 @@
 layout: page
 # 返回首页
 returnLink: /
+pageTitle: 走向新世界！
+pageSubTitle: 欢迎来到 x86 和 ARM 远山之外的龙芯世界
 ---
 
-<ChildHeader>
-<template #pageTitle>走向新世界！</template>
-<template #pageSubTitle>欢迎来到 x86 和 ARM 远山之外的龙芯世界</template>
-</ChildHeader>
-
-<div class="body_content">
 
 龙芯是我国自主芯片产业的一颗明星——自 2001 年诞生于中科院计算所起，龙芯经过多次迭代，逐渐在性能方面追赶上了国际先进水平；2021 年，龙芯更是推出了自主研发的龙架构 (LoongArch) 指令集体系架构，立志建成自 x86 和 ARM 后的第三大指令集软硬件生态。如今，龙芯已走入公开市场，各类龙芯台式机、笔记本、服务器和开发板也越来越容易买到，成为了不少社区爱好者和开发者们手中的玩物——甚至有一些朋友们已经开始使用龙芯作为生产力工具。
 
@@ -109,11 +105,4 @@ returnLink: /
 - [Loong 1-2-3 站点“龙芯芯片参数”数据库](https://loong123.cn/chips/)
 - [龙芯中科官方网站“芯片产品”板块](https://www.loongson.cn/product/channel)
 
-</div>
 
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

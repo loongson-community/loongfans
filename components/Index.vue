@@ -1,5 +1,4 @@
 <template>
-  <div class="header_redline"></div>
   <div class="home_body">
     <div class="main_logo">
       <img src="/images/logo.webp" />
@@ -97,21 +96,6 @@
       </div>
     </div>
   </div>
-
-  <div class="footer_info">
-    <div class="footer_link">
-      <a href="https://github.com/loongson-community/loongfans" target="_blank">站点源码</a>
-      <span>|</span>
-      <a href="https://github.com/loongson-community/loongfans/issues/new" target="_blank">报告问题</a>
-      <span>|</span>
-      <a href="/pages/about">关于龙芯爱好者社区</a>
-    </div>
-
-    <div class="copyright_info">
-      <span>版权所有 &copy; 2024-{{ copyrightYear }} 龙芯爱好者社区</span>
-      <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-12</a>
-    </div>
-  </div>
 </template>
 
 <script setup>
@@ -126,21 +110,12 @@ const forceRefresh = (url) => {
 
 <style>
 body {
-  background: url("/images/bg_body.webp") no-repeat top center;
+  /* background: url("/images/bg_body.webp") no-repeat top center; */
   background-size: cover;
 }
 </style>
 
 <style scoped>
-.header_redline {
-  display: block;
-  clear: both;
-  width: 100%;
-  height: 25px;
-  overflow: hidden;
-  background-color: #e60013;
-}
-
 .home_body {
   display: flex;
   justify-content: space-between;
@@ -282,50 +257,6 @@ body {
 }
 
 /*站点导航清单-结束*/
-
-.footer_info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  clear: both;
-  width: auto;
-  max-width: 1200px;
-  height: 50px;
-  line-height: 50px;
-  overflow: hidden;
-  margin: 0px auto;
-  position: fixed;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.footer_link,
-.copyright_info {
-  flex-shrink: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  width: auto;
-  height: 40px;
-  line-height: 40px;
-  overflow: hidden;
-  font-size: 16px;
-  color: #000000;
-}
-
-.footer_info a {
-  font-size: 16px;
-  color: #000000;
-  text-decoration: none;
-}
-
-.footer_info a:hover {
-  color: #e60013;
-}
 
 /*响应式处理-开始*/
 @media (max-width: 1200px) {

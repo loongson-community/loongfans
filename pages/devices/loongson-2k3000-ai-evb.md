@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 龙芯 2K3000 AI 评估板
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>龙芯 2K3000 AI 评估板</template>
-</ChildHeader>
-
-<div class="body_content">
 
 龙芯 2K3000 AI 评估板是由龙芯中科推出的，基于 2K3000-i 平台设计的开发板。
 
@@ -37,11 +33,3 @@ returnLink: /pages/devices
 ![](/public/images/devices/loongson-2k3000-ai-evb.webp)
 来源：龙芯中科
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

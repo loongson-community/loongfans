@@ -2,14 +2,10 @@
 layout: page
 # 返回首页
 returnLink: /
+pageTitle: 悬赏与实习机会
+pageSubTitle: 用爱发电，也许发财 ( ͡° ͜ʖ ͡°)
 ---
 
-<ChildHeader>
-<template #pageTitle>悬赏与实习机会</template>
-<template #pageSubTitle>用爱发电，也许发财 ( ͡° ͜ʖ ͡°)</template>
-</ChildHeader>
-
-<div class="body_content">
 
 # 社区悬赏项目
 
@@ -19,11 +15,3 @@ returnLink: /
 
 奖品：龙芯笔记本一台
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>
