@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 中科云 2K0300 久久派
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>中科云 2K0300 久久派</template>
-</ChildHeader>
-
-<div class="body_content">
 
 中科云 2K0300 久久派是由中科云推出的，基于 2K0300 平台设计的开发板。
 
@@ -54,11 +50,4 @@ returnLink: /pages/devices
 
 （待更新）
 
-</div>
 
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

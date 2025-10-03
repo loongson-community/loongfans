@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 华硕 XC-LS3A6M
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>华硕 XC-LS3A6M</template>
-</ChildHeader>
-
-<div class="body_content">
 
 华硕 XC-LS3A6M 是由华硕推出的，基于 3A6000-HV 平台设计的 DTX (203×244mm) 台式机主板。
 
@@ -61,11 +57,4 @@ returnLink: /pages/devices
 ![](/public/images/devices/asus-xc-ls3a6m.webp)
 来源：[AliExpress 网店](https://aliexpress.com/item/1005006592333955.html)
 
-</div>
 
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

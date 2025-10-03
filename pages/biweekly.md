@@ -2,14 +2,10 @@
 layout: page
 # 返回首页
 returnLink: /
+pageTitle: 龙架构双周会
+pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 ---
 
-<ChildHeader>
-<template #pageTitle>龙架构双周会</template>
-<template #pageSubTitle>属于龙芯社区开发者和爱好者的线上 + 线下聚会</template>
-</ChildHeader>
-
-<div class="body_content">
 
 龙架构双周会是由龙芯爱好者组织的社区会议，会议议程包括针对上游及各 Linux 发行版及其他系统项目的开发进展报告、社区事务报告，以及贡献者讨论及问答环节。
 
@@ -25,11 +21,3 @@ returnLink: /
 双周会幻灯片将在**会前停止收集**，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。
 :::
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

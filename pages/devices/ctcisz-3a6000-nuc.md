@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 中科云 3A6000 小主机
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>中科云 3A6000 小主机</template>
-</ChildHeader>
-
-<div class="body_content">
 
 中科云 3A6000 小主机是一款类似 Intel NUC 规格的小型台式机，搭载 3A6000-HV 处理器，并提供双 HDMI 输出及双千兆 (GbE) 以太网口。
 
@@ -38,11 +34,5 @@ returnLink: /pages/devices
 [![](/public/images/devices/ctcisz-3a6000-nuc.thumbnail.webp)](/public/images/devices/ctcisz-3a6000-nuc.webp)
 来源：中科云
 
-</div>
 
-<ChildFooter />
 
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

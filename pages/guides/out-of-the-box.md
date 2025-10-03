@@ -1,14 +1,9 @@
 ---
 layout: page
 returnLink: /pages/guides
+pageTitle: 在亮机前
+pageSubTitle: 从购买入坑，如何获得良好体验？
 ---
-
-<ChildHeader>
-    <template #pageTitle>在亮机前</template>
-    <template #pageSubTitle>从购买入坑，如何获得良好体验？</template>
-</ChildHeader>
-
-<div class="body_content">
 
 # 开箱上手：还得买些啥？
 
@@ -60,11 +55,3 @@ returnLink: /pages/guides
 
 另外还有统信 UOS、银河麒麟、中科方德、openEuler 及开放鸿蒙等商用系统可供选用。
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

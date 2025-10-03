@@ -1,14 +1,9 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 正点原子 2K0300 开发板
 ---
-
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>正点原子 2K0300 开发板</template>
-</ChildHeader>
-
-<div class="body_content">
 
 正点原子 2K0300 开发板是一款基于 2K0300 平台设计的开发板。
 
@@ -36,11 +31,3 @@ returnLink: /pages/devices
 ![](/public/images/devices/alientek-2k0300-evb-2.webp)
 来源：正点原子
 
-</div>
-
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>

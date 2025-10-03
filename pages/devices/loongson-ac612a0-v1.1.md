@@ -1,14 +1,10 @@
 ---
 layout: page
 returnLink: /pages/devices
+pageTitle: 产品规格数据库
+pageSubTitle: 龙芯 AC612A0_V1.1
 ---
 
-<ChildHeader>
-<template #pageTitle>产品规格数据库</template>
-<template #pageSubTitle>龙芯 AC612A0_V1.1</template>
-</ChildHeader>
-
-<div class="body_content">
 
 龙芯 AC612A0_V1.1 是由龙芯中科推出的，基于 3C6000/S 平台设计的 ATX (244×305mm) 台式机/服务器主板。
 
@@ -45,11 +41,4 @@ returnLink: /pages/devices
 [![](/public/images/devices/loongson-ac612a0-v1.1.thumbnail.webp)](/public/images/devices/loongson-ac612a0-v1.1.webp)
 来源：《龙芯 3C6000 单路服务器主板产品规格书 V1.0》
 
-</div>
 
-<ChildFooter />
-
-<script setup>
-import ChildHeader from '/components/ChildHeader.vue'
-import ChildFooter from '/components/ChildFooter.vue'
-</script>
