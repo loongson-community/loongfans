@@ -14,18 +14,20 @@
   </div>
 
   <div class="back_row">
-    <a :href="frontmatter.returnLink" class="btn_back">
-      <div class="icon_back"></div>
-      <span class="name">返回上级</span>
-    </a>
+    <Button :href="frontmatter.returnLink" text="返回上级" class="btn_back">
+      <IconArrorCircleLeftOutline />
+    </Button>
   </div>
   <BackToTop />
 </template>
 
 <script setup>
 import { useData } from 'vitepress'
+import IconArrorCircleLeftOutline from '~icons/material-symbols/arrow-circle-left-outline'
+import BackToTop from './BackToTop.vue';
+import Button from './Button.vue';
+
 const { frontmatter } = useData()
-  import BackToTop from './BackToTop.vue';
 </script>
 
 <style>
@@ -125,41 +127,9 @@ body {
   margin: 0px auto;
 }
 
-a.btn_back {
-  display: flex;
-  float: left;
-  justify-content: center;
-  align-items: center;
-  gap: 3px;
-  width: auto;
-  height: 35px;
-  line-height: 35px;
-  overflow: hidden;
-  background-color: #eee;
-  padding: 0px 10px;
-  border-radius: 5px;
+.btn_back {
   font-size: 20px;
-  font-weight: bold;
-  color: #e60013;
-  text-decoration: none;
-}
-a.btn_back .icon_back {
-  flex-shrink: 0;
-  display: block;
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-  background: url('/icons/icon_back_red.webp') no-repeat center center;
-  background-size: cover;
-}
-
-
-a.btn_back:hover {
-  background-color: #e60013;
-  color: #ffffff;
-}
-a.btn_back:hover .icon_back {
-  background-image: url('/icons/icon_back_white.webp');
+  font-weight: bold !important;
 }
 
 /*响应式处理-开始*/
