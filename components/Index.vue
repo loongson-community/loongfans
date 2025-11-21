@@ -12,12 +12,8 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="/pages/intro">
-              <span class="name">初识龙芯</span>
-            </a>
-            <a href="/pages/guides">
-              <span class="name">玩机及踩坑指南</span>
-            </a>
+            <Link name="初识龙芯" href="/pages/intro" />
+            <Link name="玩机及踩坑指南" href="/pages/guides" />
           </div>
         </div>
 
@@ -27,16 +23,9 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="/pages/support">
-              <span class="name">主板固件及说明书</span>
-            </a>
-            <a href="/pages/devices">
-              <span class="name">产品规格数据库</span>
-            </a>
-            <a href="https://loong123.cn/" target="_blank">
-              <span class="name">软硬件兼容性数据库</span>
-              <span class="icon_link"></span>
-            </a>
+            <Link name="主板固件及说明书" href="/pages/support" />
+            <Link name="产品规格数据库" href="/pages/devices" />
+            <Link name="软硬件兼容性数据库" href="https://loong123.cn/" />
           </div>
         </div>
       </div>
@@ -48,28 +37,12 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="/pages/biweekly">
-              <span class="name">龙架构双周会</span>
-            </a>
-            <a href="/pages/jobs">
-              <span class="name">悬赏与实习机会</span>
-            </a>
-            <a href="https://github.com/loongson-community/1024" target="_blank">
-              <span class="name">开发板漂流计划</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://github.com/loongson-community" target="_blank">
-              <span class="name">GitHub 主页</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://www.loongbbs.cn/" target="_blank">
-              <span class="name">爱好者社区论坛</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://areweloongyet.com/" target="_blank">
-              <span class="name">咱龙了吗？</span>
-              <span class="icon_link"></span>
-            </a>
+            <Link name="龙架构双周会" href="/pages/biweekly" />
+            <Link name="悬赏与实习机会" href="/pages/jobs" />
+            <Link name="开发板漂流计划" href="https://github.com/loongson-community/1024" />
+            <Link name="GitHub 主页" href="https://github.com/loongson-community/1024" />
+            <Link name="爱好者社区论坛" href="https://www.loongbbs.cn/" />
+            <Link name="咱龙了吗？" href="https://areweloongyet.com/" />
           </div>
         </div>
 
@@ -79,18 +52,9 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="https://www.loongson.cn/" target="_blank">
-              <span class="name">龙芯中科官网</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://www.loongeco.cn/" target="_blank">
-              <span class="name">龙芯生态平台</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://app.loongapps.cn/" target="_blank">
-              <span class="name">龙芯应用合作社</span>
-              <span class="icon_link"></span>
-            </a>
+            <Link name="龙芯中科官网" href="https://www.loongson.cn/" />
+            <Link name="龙芯生态平台" href="https://www.loongeco.cn/" />
+            <Link name="龙芯应用合作社" href="https://app.loongapps.cn/" />
           </div>
         </div>
       </div>
@@ -100,6 +64,8 @@
 
 <script setup>
 import { ref } from "vue";
+import Link from "./index/Link.vue";
+
 let year = new Date().getFullYear();
 const copyrightYear = ref(year);
 //链接跳转时强制刷新页面
@@ -237,25 +203,10 @@ body {
   white-space: normal;
 }
 
-.link_type_box a .icon_link {
-  flex-shrink: 0;
-  display: block;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  background: url("/icons/icon_link_black.webp") no-repeat center center;
-  background-size: 100%;
-  margin-left: 5px;
-}
-
 .link_type_box a:hover {
   font-weight: bold;
   color: #e60013;
 }
-.link_type_box a:hover .icon_link {
-  background-image: url("/icons/icon_link_red.webp");
-}
-
 /*站点导航清单-结束*/
 
 /*响应式处理-开始*/
@@ -281,10 +232,6 @@ body {
   }
   .link_type_box a {
     font-size: 18px;
-  }
-  .link_type_box a .icon_link {
-    width: 20px;
-    height: 20px;
   }
 }
 
@@ -331,11 +278,6 @@ body {
   .link_type_box a .name {
     word-wrap: break-word;
     overflow-wrap: break-word;
-  }
-
-  .link_type_box a .icon_link {
-    width: 16px;
-    height: 16px;
   }
 
   .footer_info {
