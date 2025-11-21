@@ -1,16 +1,13 @@
 <template>
   <!-- 必须包裹容器 -->
   <div class="vp-doc">
-    <div class="header_redline"></div>
-    <!-- 如果是首页就不渲染子页面头部 -->
-    <ChildHeader v-if="$frontmatter.layout !== 'home'" />
-    <div class="body_content">
-      <Content />
+    <div class="main">
+      <div class="header_redline"></div>
+      <!-- 如果是首页就不渲染子页面头部 -->
+      <ChildHeader v-if="$frontmatter.layout !== 'home'" />
+      <Content class="body_content" />
     </div>
-    <!-- 如果是首页则底部始终置底 -->
-    <ChildFooter
-      :class="{'footer_always_in_bottom': $frontmatter.layout === 'home' ? true : false}"
-    />
+    <ChildFooter class="footer" />
   </div>
 </template>
 
@@ -20,11 +17,28 @@ import ChildFooter from "/components/ChildFooter.vue";
 </script>
 
 <style type="text/css">
+/* #region sticky footer */
 html,
-body {
+body,
+#app,
+.vp-doc {
   height: 100%;
   margin: 0;
 }
+
+.vp-doc {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+/* #endregion */
 
 .body_content {
   display: block;
@@ -34,14 +48,6 @@ body {
   height: auto;
   overflow: hidden;
   margin: 0 auto;
-}
-
-.footer_always_in_bottom {
-  position: fixed;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 
 @media (max-width: 1280px) {
