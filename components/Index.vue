@@ -28,6 +28,35 @@
             <Link name="软硬件兼容性数据库" href="https://loong123.cn/" />
           </div>
         </div>
+
+        <div class="link_group">
+          <div class="link_type_title">
+            <div class="title">标题</div>
+            <div class="red_line"></div>
+          </div>
+          <div class="link_type_box">
+            <Link
+              name="GitHub 主页"
+              href="https://github.com/loongson-community"
+              icon="simple-icons:github"
+            />
+            <Link
+              name="Bilibili"
+              href="https://space.bilibili.com/70360929"
+              icon="simple-icons:bilibili"
+            />
+            <Link
+              name="微信群"
+              href="https://u.wechat.com/gPYFQQIJPEUImshdRvw1Prs?s=2"
+              icon="simple-icons:wechat"
+            />
+            <Link
+              name="QQ 群"
+              href="https://qm.qq.com/q/3oZByh8aOA"
+              icon="simple-icons:qq"
+            />
+          </div>
+        </div>
       </div>
 
       <div class="nav_list">
@@ -39,8 +68,10 @@
           <div class="link_type_box">
             <Link name="龙架构双周会" href="/pages/biweekly" />
             <Link name="悬赏与实习机会" href="/pages/jobs" />
-            <Link name="开发板漂流计划" href="https://github.com/loongson-community/1024" />
-            <Link name="GitHub 主页" href="https://github.com/loongson-community/1024" />
+            <Link
+              name="开发板漂流计划"
+              href="https://github.com/loongson-community/1024"
+            />
             <Link name="爱好者社区论坛" href="https://www.loongbbs.cn/" />
             <Link name="咱龙了吗？" href="https://areweloongyet.com/" />
           </div>
