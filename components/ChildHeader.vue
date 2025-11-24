@@ -14,7 +14,7 @@
   </div>
 
   <div class="back_row">
-    <Button :href="frontmatter.returnLink" text="返回上级" class="btn_back">
+    <Button :href="frontmatter.returnLink" :text="backText" class="btn_back">
       <IconArrowCircleLeftOutline />
     </Button>
   </div>
@@ -22,12 +22,17 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useData } from 'vitepress'
 import IconArrowCircleLeftOutline from '~icons/material-symbols/arrow-circle-left-outline'
 import BackToTop from './BackToTop.vue';
 import Button from './Button.vue';
 
-const { frontmatter } = useData()
+const { frontmatter, lang } = useData()
+
+const backText = computed(() => {
+  return lang.value === 'en' ? 'Go Back' : '返回上级'
+})
 </script>
 
 <style>
@@ -66,7 +71,7 @@ body {
 }
 
 .main_title {
-  flex-shrink: 0;
+  flex: 1;
   display: block;
   float: left;
   width: auto;
