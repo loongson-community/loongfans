@@ -3,8 +3,21 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "龙芯爱好者社区",
-  description: "龙芯爱好者社区导航站",
+  locales: {
+    root: {
+      label: '简体中文',
+      lang: 'zh-Hans',
+      title: "龙芯爱好者社区",
+      description: "龙芯爱好者社区导航站"
+    },
+    en: {
+      label: 'English',
+      lang: 'en',
+      link: '/en/',
+      title: "Loongson Hobbyists' Community",
+      description: "Loongson hobbyists' community portal"
+    }
+  },
   ignoreDeadLinks: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -16,6 +29,5 @@ export default defineConfig({
     //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     // ]
   },
-   // 完全禁用主题切换
   appearance: false
 })

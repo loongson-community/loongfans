@@ -8,33 +8,33 @@
       <div class="nav_list">
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">新手资源</div>
+            <div class="title">{{ i18n.beginnerResources }}</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="/pages/intro">
-              <span class="name">初识龙芯</span>
+            <a :href="`${basePath}/pages/intro`">
+              <span class="name">{{ i18n.introToLoongson }}</span>
             </a>
-            <a href="/pages/guides">
-              <span class="name">玩机及踩坑指南</span>
+            <a :href="`${basePath}/pages/guides`">
+              <span class="name">{{ i18n.usageGuides }}</span>
             </a>
           </div>
         </div>
 
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">支持材料</div>
+            <div class="title">{{ i18n.supportMaterials }}</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="/pages/support">
-              <span class="name">主板固件及说明书</span>
+            <a :href="`${basePath}/pages/support`">
+              <span class="name">{{ i18n.firmwareAndManuals }}</span>
             </a>
-            <a href="/pages/devices">
-              <span class="name">产品规格数据库</span>
+            <a :href="`${basePath}/pages/devices`">
+              <span class="name">{{ i18n.productSpecs }}</span>
             </a>
             <a href="https://loong123.cn/" target="_blank">
-              <span class="name">软硬件兼容性数据库</span>
+              <span class="name">{{ i18n.compatibilityDb }}</span>
               <span class="icon_link"></span>
             </a>
           </div>
@@ -44,30 +44,30 @@
       <div class="nav_list">
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">社区资源</div>
+            <div class="title">{{ i18n.communityResources }}</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="/pages/biweekly">
-              <span class="name">龙架构双周会</span>
+            <a :href="`${basePath}/pages/biweekly`">
+              <span class="name">{{ i18n.biweeklyMeeting }}</span>
             </a>
-            <a href="/pages/jobs">
-              <span class="name">悬赏与实习机会</span>
+            <a :href="`${basePath}/pages/jobs`">
+              <span class="name">{{ i18n.jobsAndBounties }}</span>
             </a>
             <a href="https://github.com/loongson-community/1024" target="_blank">
-              <span class="name">开发板漂流计划</span>
+              <span class="name">{{ i18n.devBoardProgram }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://github.com/loongson-community" target="_blank">
-              <span class="name">GitHub 主页</span>
+              <span class="name">{{ i18n.githubPage }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://www.loongbbs.cn/" target="_blank">
-              <span class="name">爱好者社区论坛</span>
+              <span class="name">{{ i18n.communityForum }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://areweloongyet.com/" target="_blank">
-              <span class="name">咱龙了吗？</span>
+              <span class="name">{{ i18n.areWeLoongYet }}</span>
               <span class="icon_link"></span>
             </a>
           </div>
@@ -75,20 +75,20 @@
 
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">龙芯官方</div>
+            <div class="title">{{ i18n.loongsonOfficial }}</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
             <a href="https://www.loongson.cn/" target="_blank">
-              <span class="name">龙芯中科官网</span>
+              <span class="name">{{ i18n.loongsonTech }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://www.loongeco.cn/" target="_blank">
-              <span class="name">龙芯生态平台</span>
+              <span class="name">{{ i18n.loongsonEco }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://app.loongapps.cn/" target="_blank">
-              <span class="name">龙芯应用合作社</span>
+              <span class="name">{{ i18n.loongApps }}</span>
               <span class="icon_link"></span>
             </a>
           </div>
@@ -99,9 +99,65 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useData } from 'vitepress';
+
+const { lang } = useData();
+const isEnglish = computed(() => lang.value === 'en');
+
 let year = new Date().getFullYear();
 const copyrightYear = ref(year);
+
+// i18n text
+const i18n = computed(() => {
+  if (isEnglish.value) {
+    return {
+      beginnerResources: 'Beginner Resources',
+      introToLoongson: 'Introduction to Loongson',
+      usageGuides: 'Usage & Troubleshooting Guides',
+      supportMaterials: 'Support Materials',
+      firmwareAndManuals: 'Firmware & Manuals',
+      productSpecs: 'Product Specifications',
+      compatibilityDb: 'Hardware Compatibility Database',
+      communityResources: 'Community Resources',
+      biweeklyMeeting: 'LoongArch Biweekly',
+      jobsAndBounties: 'Jobs & Bounties',
+      devBoardProgram: 'Dev Board Lending Program',
+      githubPage: 'GitHub Page',
+      communityForum: 'Community Forum',
+      areWeLoongYet: 'Are We Loong Yet?',
+      loongsonOfficial: 'Loongson Official',
+      loongsonTech: 'Loongson Technology',
+      loongsonEco: 'Loongson Ecosystem Platform',
+      loongApps: 'Loongson App Cooperative'
+    };
+  } else {
+    return {
+      beginnerResources: '新手资源',
+      introToLoongson: '初识龙芯',
+      usageGuides: '玩机及踩坑指南',
+      supportMaterials: '支持材料',
+      firmwareAndManuals: '主板固件及说明书',
+      productSpecs: '产品规格数据库',
+      compatibilityDb: '软硬件兼容性数据库',
+      communityResources: '社区资源',
+      biweeklyMeeting: '龙架构双周会',
+      jobsAndBounties: '悬赏与实习机会',
+      devBoardProgram: '开发板漂流计划',
+      githubPage: 'GitHub 主页',
+      communityForum: '爱好者社区论坛',
+      areWeLoongYet: '咱龙了吗？',
+      loongsonOfficial: '龙芯官方',
+      loongsonTech: '龙芯中科官网',
+      loongsonEco: '龙芯生态平台',
+      loongApps: '龙芯应用合作社'
+    };
+  }
+});
+
+// Computed base path for links
+const basePath = computed(() => isEnglish.value ? '/en' : '');
+
 //链接跳转时强制刷新页面
 const forceRefresh = (url) => {
   window.location.assign(url);
