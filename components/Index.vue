@@ -31,7 +31,7 @@
 
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">标题</div>
+            <div class="title">联系我们</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
