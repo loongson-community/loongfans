@@ -81,7 +81,7 @@ pageSubTitle: 欢迎来到 x86 和 ARM 远山之外的龙芯世界
 
 ## 龙芯可以装什么操作系统？
 
-龙芯支持的操作系统包括多种面向桌面及服务器的通用 Linux 发行版（商用及社区）、专用 Linux 发行版（如 openWrt）、开放鸿蒙及专用操作系统（如基于 VxWorks 开发的 LoongWorks、RTOS 等）。
+龙芯支持的操作系统包括多种面向桌面及服务器的通用 Linux 发行版（商用及社区）、专用 Linux 发行版（如 OpenWrt）、开放鸿蒙及专用操作系统（如基于 VxWorks 开发的 LoongWorks、RTOS 等）。
 
 关于目前支持龙架构的操作系统、Linux 发行版及常用软件栈，详请见[《咱龙了吗？》首页](https://areweloongyet.com/)。
 
