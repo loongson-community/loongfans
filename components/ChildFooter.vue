@@ -1,25 +1,53 @@
 <template>
     <div class="child_footer_info">
     <div class="child_footer_link">
-      <a href="https://github.com/loongson-community/loongfans" target="_blank">站点源码</a>
+      <a href="https://github.com/loongson-community/loongfans" target="_blank">{{ i18n.siteSource }}</a>
       <span>|</span>
-      <a href="https://github.com/loongson-community/loongfans/issues/new" target="_blank">报告问题</a>
+      <a href="https://github.com/loongson-community/loongfans/issues/new" target="_blank">{{ i18n.reportIssue }}</a>
       <span>|</span>
-      <a href="/pages/about">关于龙芯爱好者社区</a>
+      <a :href="`${basePath}/pages/about`">{{ i18n.aboutCommunity }}</a>
     </div>
 
     <div class="copyright_info">
-      <span>版权所有 &copy; 2024-{{ copyrightYear }} 龙芯爱好者社区</span>
+      <span>{{ i18n.copyright }} &copy; 2024-{{ copyrightYear }} {{ i18n.communityName }}</span>
       <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-12</a>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import { useData } from 'vitepress';
+
+const { lang } = useData();
+const isEnglish = computed(() => lang.value === 'en');
 
 let year = new Date().getFullYear();
 const copyrightYear = ref(year);
+
+// i18n text
+const i18n = computed(() => {
+  if (isEnglish.value) {
+    return {
+      siteSource: 'Site Source',
+      reportIssue: 'Report Issue',
+      aboutCommunity: "About Loongson Hobbyists' Community",
+      copyright: 'Copyright',
+      communityName: "Loongson Hobbyists' Community"
+    };
+  } else {
+    return {
+      siteSource: '站点源码',
+      reportIssue: '报告问题',
+      aboutCommunity: '关于龙芯爱好者社区',
+      copyright: '版权所有',
+      communityName: '龙芯爱好者社区'
+    };
+  }
+});
+
+// Computed base path for links
+const basePath = computed(() => isEnglish.value ? '/en' : '');
 </script>
 
 <style scoped>

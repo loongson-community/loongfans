@@ -16,16 +16,22 @@
   <div class="back_row">
     <a :href="frontmatter.returnLink" class="btn_back">
       <div class="icon_back"></div>
-      <span class="name">返回上级</span>
+      <span class="name">{{ backText }}</span>
     </a>
   </div>
   <BackToTop />
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useData } from 'vitepress'
-const { frontmatter } = useData()
-  import BackToTop from './BackToTop.vue';
+import BackToTop from './BackToTop.vue'
+
+const { frontmatter, lang } = useData()
+
+const backText = computed(() => {
+  return lang.value === 'en' ? 'Go Back' : '返回上级'
+})
 </script>
 
 <style>
@@ -64,7 +70,7 @@ body {
 }
 
 .main_title {
-  flex-shrink: 0;
+  flex: 1;
   display: block;
   float: left;
   width: auto;
