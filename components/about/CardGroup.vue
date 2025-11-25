@@ -17,15 +17,15 @@
     <Card
       name="微信群"
       description="常聊天！"
-      href="https://u.wechat.com/gPYFQQIJPEUImshdRvw1Prs?s=2"
       icon="simple-icons:wechat"
+      qr-link="/images/about/qr-wechat-group.png"
       color="#07C160"
     />
     <Card
       name="QQ 群"
       description="常联系！"
-      href="https://qm.qq.com/q/3oZByh8aOA"
       icon="simple-icons:qq"
+      qr-link="/images/about/qr-qq-group.png"
       color="#1EBAFC"
     />
   </div>
@@ -40,6 +40,10 @@ import Card from "./Card.vue";
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  align-items: start;
+  
+  /* 临时加点空隙给卡片显示二维码，否则 hover 完要手动滚动一下 */
+  margin-block: 32px;
 }
 
 .card-group > * {
