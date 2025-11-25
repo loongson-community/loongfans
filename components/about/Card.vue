@@ -45,4 +45,8 @@ a {
   font-size: small;
   color: #8d8d8d;
 }
+
+a:hover {
+  color: #e60013;
+}
 </style>
