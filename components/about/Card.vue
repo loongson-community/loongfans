@@ -1,5 +1,5 @@
 <template>
-  <a :href="href">
+  <a :href="href" target="_blank">
     <div>
       <div class="name">{{ name }}</div>
       <div class="description">{{ description }}</div>
