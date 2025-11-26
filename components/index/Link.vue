@@ -28,6 +28,34 @@ const target = props.href?.startsWith("http") ? "_blank" : undefined;
 </script>
 
 <style scoped>
+.link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  clear: both;
+  width: 100%;
+  min-height: 40px;
+  height: auto;
+  line-height: 1.2;
+  overflow: visible;
+  font-size: 22px;
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 0;
+  word-wrap: break-word;
+}
+
+.link .name {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.link:hover {
+  font-weight: bold;
+  color: #e60013;
+}
+
 .icon {
   margin-right: 4px;
 }
@@ -59,5 +87,28 @@ const target = props.href?.startsWith("http") ? "_blank" : undefined;
 
 .link:hover .qrcode {
   display: block;
+}
+
+@media (max-width: 1000px) {
+  .link {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 750px) {
+  .link {
+    height: auto;
+    min-height: 30px;
+    line-height: 20px;
+    font-size: 14px;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 5px 0;
+  }
+
+  .link .name {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }
 </style>

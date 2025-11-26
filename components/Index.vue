@@ -207,34 +207,6 @@ body {
   overflow: visible;
   padding: 20px 0px;
 }
-
-.link_type_box a {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  clear: both;
-  width: 100%;
-  min-height: 40px;
-  height: auto;
-  line-height: 1.2;
-  overflow: visible;
-  font-size: 22px;
-  color: #000000;
-  text-decoration: none;
-  padding: 5px 0;
-  word-wrap: break-word;
-}
-
-.link_type_box a .name {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-}
-
-.link_type_box a:hover {
-  font-weight: bold;
-  color: #e60013;
-}
 /*站点导航清单-结束*/
 
 /*响应式处理-开始*/
@@ -257,9 +229,6 @@ body {
   }
   .main_logo {
     width: 300px;
-  }
-  .link_type_box a {
-    font-size: 18px;
   }
 }
 
@@ -291,21 +260,6 @@ body {
 
   .link_type_box {
     padding: 10px 0px;
-  }
-
-  .link_type_box a {
-    height: auto;
-    min-height: 30px;
-    line-height: 20px;
-    font-size: 14px;
-    white-space: normal;
-    word-wrap: break-word;
-    padding: 5px 0;
-  }
-
-  .link_type_box a .name {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
   }
 
   .footer_info {
