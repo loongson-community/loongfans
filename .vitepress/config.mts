@@ -15,7 +15,7 @@ export default defineConfig({
       lang: 'en',
       link: '/en/',
       title: "Loongson Hobbyists' Community",
-      description: "Loongson hobbyists' community portal"
+      description: "Loongson Hobbyists' Community Portal"
     }
   },
   ignoreDeadLinks: true,
