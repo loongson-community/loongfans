@@ -47,13 +47,13 @@
             />
             <Link
               name="微信群"
-              href="https://u.wechat.com/gPYFQQIJPEUImshdRvw1Prs?s=2"
               icon="simple-icons:wechat"
+              qr-link="/images/about/qr-wechat-group.png"
             />
             <Link
               name="QQ 群"
-              href="https://qm.qq.com/q/3oZByh8aOA"
               icon="simple-icons:qq"
+              qr-link="/images/about/qr-qq-group.png"
             />
           </div>
         </div>
@@ -121,7 +121,6 @@ body {
   width: auto;
   max-width: 1200px;
   height: 100%;
-  overflow: hidden;
   padding-top: 50px;
   margin: 0 auto;
 }
@@ -148,14 +147,12 @@ body {
   gap: 40px;
   width: 100%;
   height: auto;
-  overflow: hidden;
 }
 
 .nav_list {
   display: block;
   width: 100%;
   height: auto;
-  overflow: hidden;
 }
 
 .link_type_title {
