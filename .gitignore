@@ -23,3 +23,4 @@ node_modules/
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 pnpm-lock.yaml
+pnpm-workspace.yaml
