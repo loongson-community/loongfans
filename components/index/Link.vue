@@ -1,5 +1,10 @@
 <template>
-  <a :href="href" :target="target" class="link">
+  <component
+    :is="href ? 'a' : 'div'"
+    :href="href"
+    :target="target"
+    class="link"
+  >
     <Icon v-if="icon" :icon="icon" class="icon" />
     <span class="name">{{ name }}</span>
     <Icon
@@ -11,7 +16,7 @@
       <Icon v-if="qrLink" icon="material-symbols:qr-code-2" />
       <img v-if="qrLink" :src="qrLink" class="qrcode" alt="QR Code" />
     </div>
-  </a>
+  </component>
 </template>
 
 <script setup>
