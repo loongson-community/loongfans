@@ -29,8 +29,8 @@ const copyrightYear = ref(year);
 const i18n = computed(() => {
   if (isEnglish.value) {
     return {
-      siteSource: 'Site Source',
-      reportIssue: 'Report Issue',
+      siteSource: 'Site Sources',
+      reportIssue: 'Report Content Issue',
       aboutCommunity: "About Loongson Hobbyists' Community",
       copyright: 'Copyright',
       communityName: "Loongson Hobbyists' Community"
