@@ -1,5 +1,11 @@
 <template>
-  <component :is="href ? 'a' : 'div'" :href="href" :target="href ? '_blank' : undefined" class="card">
+  <component
+    :is="href ? 'a' : 'div'"
+    :href="href"
+    :target="href ? '_blank' : undefined"
+    class="card"
+    :class="qrLink ? 'expand' : undefined"
+  >
     <div>
       <div class="name">
         <span>{{ name }}</span>
@@ -30,17 +36,24 @@ defineProps({
 
 <style scoped>
 .card {
+  --height: 82px;
+  --expand-height: 132px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 16px;
   color: unset;
+  background-color: white;
   text-decoration: unset;
   border: 1px solid;
   border-radius: 12px;
   min-width: 260px;
   max-width: 400px;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  min-height: var(--height);
+  margin-top: 0;
+  transition: color 0.3s ease, margin-top 0.3s ease, height 0.3s ease;
 }
 
 .icon {
@@ -82,5 +95,16 @@ defineProps({
   max-height: 140px;
   opacity: 1;
   margin-top: 12px;
+}
+
+@media (min-width: 40rem) {
+  .card {
+    height: var(--height);
+  }
+
+  .card.expand:hover {
+    margin-top: calc(-1 * var(--expand-height));
+    height: calc(var(--height) + var(--expand-height));
+  }
 }
 </style>

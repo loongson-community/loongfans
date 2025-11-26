@@ -41,9 +41,7 @@ import Card from "./Card.vue";
   grid-template-columns: 1fr;
   gap: 16px;
   align-items: start;
-  
-  /* 临时加点空隙给卡片显示二维码，否则 hover 完要手动滚动一下 */
-  margin-block: 32px;
+  margin-block: 16px;
 }
 
 .card-group > * {
