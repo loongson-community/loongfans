@@ -137,24 +137,24 @@ const copyrightYear = ref(year);
 const i18n = computed(() => {
   if (isEnglish.value) {
     return {
-      beginnerResources: 'Beginner Resources',
-      introToLoongson: 'Introduction to Loongson',
-      usageGuides: 'Usage & Troubleshooting Guides',
+      beginnerResources: 'Loongson 101',
+      introToLoongson: 'Loongson: An Introduction',
+      usageGuides: 'FAQ & Troubleshooting',
       supportMaterials: 'Support Materials',
-      firmwareAndManuals: 'Firmware & Manuals',
+      firmwareAndManuals: 'Firmware and Manuals',
       productSpecs: 'Product Specifications',
       compatibilityDb: 'Hardware Compatibility Database',
       communityResources: 'Community Resources',
       biweeklyMeeting: 'LoongArch Biweekly',
-      jobsAndBounties: 'Jobs & Bounties',
-      devBoardProgram: 'Dev Board Lending Program',
+      jobsAndBounties: 'Intership and Bounties',
+      devBoardProgram: 'Roaming Loongson Program',
       githubPage: 'GitHub Page',
-      communityForum: 'Community Forum',
+      communityForum: 'Community BBS',
       areWeLoongYet: 'Are We Loong Yet?',
-      loongsonOfficial: 'Loongson Official',
+      loongsonOfficial: 'Official Sites',
       loongsonTech: 'Loongson Technology',
-      loongsonEco: 'Loongson Ecosystem Platform',
-      loongApps: 'Loongson App Cooperative'
+      loongsonEco: 'LoongEco',
+      loongApps: 'LoongApps'
     };
   } else {
     return {

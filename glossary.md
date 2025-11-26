@@ -60,6 +60,7 @@
 - 固件: firmware
 - 多路: multi-socket
 - 嵌入式: embedded
+- 主要规格: key specifications
 
 ## Device Manufacturers & Specific Boards
 
@@ -68,7 +69,7 @@
 - 卓怡恒通: Excelsior
 - 摩方: Morefine
 - 中科云: CTCISZ
-- 正点原子: Alientek
+- 正点原子: ALIENTEK
 - 龙芯俱乐部: Loongson Club
 - 瑞萨: Renesas
 - 瑞莎: Radxa
@@ -78,6 +79,7 @@
 - 2K0300 蜂鸟派: Hummingbird board
 - 2K0300 先锋派: Pioneer board
 - 久久派: ForeverPi
+- 中科云 3A6000 小主机: CTCISZ 3A6000 NUC
 
 ## Software & Technical Terms
 
