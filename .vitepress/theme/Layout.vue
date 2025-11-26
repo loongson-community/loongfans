@@ -46,7 +46,6 @@ body,
   width: auto;
   max-width: 1200px;
   height: auto;
-  overflow: hidden;
   margin: 0 auto;
 }
 
