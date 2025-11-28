@@ -8,33 +8,33 @@
       <div class="nav_list">
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">{{ i18n.beginnerResources }}</div>
+            <div class="title">{{ t('beginnerResources') }}</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
             <a :href="`${basePath}/pages/intro`">
-              <span class="name">{{ i18n.introToLoongson }}</span>
+              <span class="name">{{ t('introToLoongson') }}</span>
             </a>
             <a :href="`${basePath}/pages/guides`">
-              <span class="name">{{ i18n.usageGuides }}</span>
+              <span class="name">{{ t('usageGuides') }}</span>
             </a>
           </div>
         </div>
 
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">{{ i18n.supportMaterials }}</div>
+            <div class="title">{{ t('supportMaterials') }}</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
             <a :href="`${basePath}/pages/support`">
-              <span class="name">{{ i18n.firmwareAndManuals }}</span>
+              <span class="name">{{ t('firmwareAndManuals') }}</span>
             </a>
             <a :href="`${basePath}/pages/devices`">
-              <span class="name">{{ i18n.productSpecs }}</span>
+              <span class="name">{{ t('productSpecs') }}</span>
             </a>
             <a href="https://loong123.cn/" target="_blank">
-              <span class="name">{{ i18n.compatibilityDb }}</span>
+              <span class="name">{{ t('compatibilityDb') }}</span>
               <span class="icon_link"></span>
             </a>
           </div>
@@ -64,30 +64,30 @@
       <div class="nav_list">
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">{{ i18n.communityResources }}</div>
+            <div class="title">{{ t('communityResources') }}</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
             <a :href="`${basePath}/pages/biweekly`">
-              <span class="name">{{ i18n.biweeklyMeeting }}</span>
+              <span class="name">{{ t('biweeklyMeeting') }}</span>
             </a>
             <a :href="`${basePath}/pages/jobs`">
-              <span class="name">{{ i18n.jobsAndBounties }}</span>
+              <span class="name">{{ t('jobsAndBounties') }}</span>
             </a>
             <a href="https://github.com/loongson-community/1024" target="_blank">
-              <span class="name">{{ i18n.devBoardProgram }}</span>
+              <span class="name">{{ t('devBoardProgram') }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://github.com/loongson-community" target="_blank">
-              <span class="name">{{ i18n.githubPage }}</span>
+              <span class="name">{{ t('githubPage') }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://www.loongbbs.cn/" target="_blank">
-              <span class="name">{{ i18n.communityForum }}</span>
+              <span class="name">{{ t('communityForum') }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://areweloongyet.com/" target="_blank">
-              <span class="name">{{ i18n.areWeLoongYet }}</span>
+              <span class="name">{{ t('areWeLoongYet') }}</span>
               <span class="icon_link"></span>
             </a>
           </div>
@@ -95,20 +95,20 @@
 
         <div class="link_group">
           <div class="link_type_title">
-            <div class="title">{{ i18n.loongsonOfficial }}</div>
+            <div class="title">{{ t('loongsonOfficial') }}</div>
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
             <a href="https://www.loongson.cn/" target="_blank">
-              <span class="name">{{ i18n.loongsonTech }}</span>
+              <span class="name">{{ t('loongsonTech') }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://www.loongeco.cn/" target="_blank">
-              <span class="name">{{ i18n.loongsonEco }}</span>
+              <span class="name">{{ t('loongsonEco') }}</span>
               <span class="icon_link"></span>
             </a>
             <a href="https://app.loongapps.cn/" target="_blank">
-              <span class="name">{{ i18n.loongApps }}</span>
+              <span class="name">{{ t('loongApps') }}</span>
               <span class="icon_link"></span>
             </a>
           </div>
@@ -119,74 +119,19 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { useData } from 'vitepress';
 import IconGithub from "~icons/simple-icons/github";
 import IconBilibili from "~icons/simple-icons/bilibili";
 import IconWechat from "~icons/simple-icons/wechat";
 import IconQq from "~icons/simple-icons/qq";
 import Link from "./index/Link.vue";
+import { useI18n } from 'vue-i18n';
+import { getLocalePrefix } from '../.vitepress/utils/language';
 
-const { lang } = useData();
-const isEnglish = computed(() => lang.value === 'en');
-
-let year = new Date().getFullYear();
-const copyrightYear = ref(year);
-
-// i18n text
-const i18n = computed(() => {
-  if (isEnglish.value) {
-    return {
-      beginnerResources: 'Loongson 101',
-      introToLoongson: 'Loongson: An Introduction',
-      usageGuides: 'FAQ & Troubleshooting',
-      supportMaterials: 'Support Materials',
-      firmwareAndManuals: 'Firmware and Manuals',
-      productSpecs: 'Product Specifications',
-      compatibilityDb: 'Hardware Compatibility Database',
-      communityResources: 'Community Resources',
-      biweeklyMeeting: 'LoongArch Biweekly',
-      jobsAndBounties: 'Intership and Bounties',
-      devBoardProgram: 'Roaming Loongson Program',
-      githubPage: 'GitHub Page',
-      communityForum: 'Community BBS',
-      areWeLoongYet: 'Are We Loong Yet?',
-      loongsonOfficial: 'Official Sites',
-      loongsonTech: 'Loongson Technology',
-      loongsonEco: 'LoongEco',
-      loongApps: 'LoongApps'
-    };
-  } else {
-    return {
-      beginnerResources: '新手资源',
-      introToLoongson: '初识龙芯',
-      usageGuides: '玩机及踩坑指南',
-      supportMaterials: '支持材料',
-      firmwareAndManuals: '主板固件及说明书',
-      productSpecs: '产品规格数据库',
-      compatibilityDb: '软硬件兼容性数据库',
-      communityResources: '社区资源',
-      biweeklyMeeting: '龙架构双周会',
-      jobsAndBounties: '悬赏与实习机会',
-      devBoardProgram: '开发板漂流计划',
-      githubPage: 'GitHub 主页',
-      communityForum: '爱好者社区论坛',
-      areWeLoongYet: '咱龙了吗？',
-      loongsonOfficial: '龙芯官方',
-      loongsonTech: '龙芯中科官网',
-      loongsonEco: '龙芯生态平台',
-      loongApps: '龙芯应用合作社'
-    };
-  }
-});
-
-// Computed base path for links
-const basePath = computed(() => isEnglish.value ? '/en' : '');
-
-//链接跳转时强制刷新页面
-const forceRefresh = (url) => {
-  window.location.assign(url);
-};
+const { t } = useI18n();
+const { localeIndex } = useData();
+const basePath = computed(() => getLocalePrefix(localeIndex.value));
 </script>
 
 <style>
@@ -253,11 +198,12 @@ body {
   display: block;
   clear: both;
   width: 100%;
-  height: 30px;
   overflow: hidden;
   font-size: 24px;
   font-weight: bold;
   color: #e60013;
+  margin-bottom: 4px;
+  line-height: normal;
 }
 
 .link_type_title .red_line {
@@ -290,6 +236,34 @@ body {
   height: auto;
   overflow: visible;
   padding: 20px 0px;
+}
+
+.link_type_box a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  clear: both;
+  width: 100%;
+  min-height: 40px;
+  height: auto;
+  line-height: normal;
+  overflow: visible;
+  font-size: 22px;
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 0;
+  word-wrap: break-word;
+}
+
+.link_type_box a .name {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.link_type_box a:hover {
+  font-weight: bold;
+  color: #e60013;
 }
 /*站点导航清单-结束*/
 

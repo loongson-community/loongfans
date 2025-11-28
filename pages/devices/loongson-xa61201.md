@@ -25,7 +25,7 @@ pageSubTitle: 龙芯 XA61201
 | 接口（存储）| 1 × NVMe (PCIe 3.0 x4)、4 × SATA 3.0 |
 | 接口（网络） | 1 × GbE |
 | 接口（视频） | 1 × HDMI、1 × VGA |
-| 接口（其他） | 1 × m.2 Key E 接口 (PCIe + USB)、1 × mPCIe (PCIe + USB)、1 组 3.5mm（输入、输出、Line-In）接口、1 × RS-232 串口 (DB-9) |
+| 接口（其他） | 1 × M.2 Key E 接口 (PCIe + USB)、1 × mPCIe (PCIe + USB)、1 组 3.5mm（输入、输出、Line-In）接口、1 × RS-232 串口 (DB-9) |
 
 †：目前该主板的 ECC 支持范围尚不明确，且不清楚是否支持 Registered ECC 内存，DMI 信息 亦无暴露 72 位宽内存。
 

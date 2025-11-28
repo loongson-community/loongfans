@@ -19,7 +19,7 @@ pageSubTitle: 龙芯 2K3000 AI 评估板
 | 接口（存储）| 1 × NVMe (PCIe 3.0 x4)、1 × microSD 卡槽、1 × SATA 3.0 |
 | 接口（网络） | 2 × GbE |
 | 接口（视频） | 1 × HDMI、1 × eDP |
-| 接口（其他） | 1 × m.2 Key E 接口 (PCIe + USB)、1 × 3.5mm 耳机耳麦口、1 × SIM 卡槽（支持 4G LTE）、2 × CAN-FD、2 × 串口 (RS-232)、2 × RS-485、1 × UART TTL |
+| 接口（其他） | 1 × M.2 Key E 接口 (PCIe + USB)、1 × 3.5mm 耳机耳麦口、1 × SIM 卡槽（支持 4G LTE）、2 × CAN-FD、2 × 串口 (RS-232)、2 × RS-485、1 × UART TTL |
 
 †：其中一个 USB-C 接口仅可用于为板卡供电，无数据功能。
 

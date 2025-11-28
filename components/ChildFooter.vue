@@ -1,15 +1,15 @@
 <template>
     <div class="child_footer_info">
     <div class="child_footer_link">
-      <a href="https://github.com/loongson-community/loongfans" target="_blank">{{ i18n.siteSource }}</a>
+      <a href="https://github.com/loongson-community/loongfans" target="_blank">{{ t('siteSource') }}</a>
       <span>|</span>
-      <a href="https://github.com/loongson-community/loongfans/issues/new" target="_blank">{{ i18n.reportIssue }}</a>
+      <a href="https://github.com/loongson-community/loongfans/issues/new" target="_blank">{{ t('reportIssue') }}</a>
       <span>|</span>
-      <a :href="`${basePath}/pages/about`">{{ i18n.aboutCommunity }}</a>
+      <a :href="`${basePath}/pages/about`">{{ t('aboutCommunity') }}</a>
     </div>
 
     <div class="copyright_info">
-      <span>{{ i18n.copyright }} &copy; 2024-{{ copyrightYear }} {{ i18n.communityName }}</span>
+      <span>{{ t('copyright') }} &copy; 2024-{{ copyrightYear }}</span><span>{{ t('communityName') }}</span>
       <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-12</a>
     </div>
   </div>
@@ -18,36 +18,15 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useData } from 'vitepress';
+import { useI18n } from 'vue-i18n';
+import { getLocalePrefix } from '../.vitepress/utils/language';
 
-const { lang } = useData();
-const isEnglish = computed(() => lang.value === 'en');
+const { t } = useI18n();
+const { localeIndex } = useData();
+const basePath = computed(() => getLocalePrefix(localeIndex.value));
 
 let year = new Date().getFullYear();
 const copyrightYear = ref(year);
-
-// i18n text
-const i18n = computed(() => {
-  if (isEnglish.value) {
-    return {
-      siteSource: 'Site Sources',
-      reportIssue: 'Report Content Issue',
-      aboutCommunity: "About Loongson Hobbyists' Community",
-      copyright: 'Copyright',
-      communityName: "Loongson Hobbyists' Community"
-    };
-  } else {
-    return {
-      siteSource: '站点源码',
-      reportIssue: '报告问题',
-      aboutCommunity: '关于龙芯爱好者社区',
-      copyright: '版权所有',
-      communityName: '龙芯爱好者社区'
-    };
-  }
-});
-
-// Computed base path for links
-const basePath = computed(() => isEnglish.value ? '/en' : '');
 </script>
 
 <style scoped>
@@ -57,7 +36,7 @@ const basePath = computed(() => isEnglish.value ? '/en' : '');
   align-items: center;
   gap: 20px;
   clear: both;
-  width: auto;
+  width: 100%;
   max-width: 1200px;
   height: auto;
   line-height: 30px;
@@ -81,6 +60,10 @@ const basePath = computed(() => isEnglish.value ? '/en' : '');
   color: #000000;
 }
 
+.copyright_info {
+  text-align: center;
+}
+
 .child_footer_info a {
   font-size: 16px;
   color: #000000;
@@ -99,7 +82,7 @@ const basePath = computed(() => isEnglish.value ? '/en' : '');
     padding-right: 30px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 850px) {
   .child_footer_info {
     flex-direction: column;
     justify-content: center;

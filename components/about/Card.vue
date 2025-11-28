@@ -73,6 +73,7 @@ defineProps({
 .description {
   font-size: small;
   color: #8d8d8d;
+  line-height: normal;
 }
 
 .qr-container {

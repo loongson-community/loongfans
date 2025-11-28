@@ -1,13 +1,12 @@
 ---
 layout: page
-# Return to home
 returnLink: /en/
 pageTitle: Product Specification Database
 pageSubTitle: Overview of specifications, features, and known issues
 ---
 
 
-Loongson has many processor and board models, but they are generally sold bundled as processor + motherboard (motherboard and CPU bundle). This page documents and presents all known Loongson motherboard and CPU bundles, as well as laptop and pre-built server system information.
+Loongson offers many processor and board models, typically sold as motherboard and CPU bundles. This page documents all known Loongson bundles, as well as laptops and pre-built systems.
 
 ::: info
 For processor specifications, details, and parameter comparisons, please see:
@@ -64,5 +63,5 @@ For processor specifications, details, and parameter comparisons, please see:
 
 - [Loongson 2K0300 Hummingbird board](/en/pages/devices/loongson-2k0300-hummingbird-evb)
 - [Loongson 2K0300 Pioneer board](/en/pages/devices/loongson-2k0300-pioneer-evb)
-- [Alientek 2K0300 development board](/en/pages/devices/alientek-2k0300-evb)
+- [ALIENTEK 2K0300 development board](/en/pages/devices/alientek-2k0300-evb)
 - [CTCISZ ForeverPi](/en/pages/devices/ctcisz-foreverpi)
