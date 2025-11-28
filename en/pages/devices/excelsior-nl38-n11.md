@@ -5,7 +5,7 @@ pageTitle: Product Specification Database
 pageSubTitle: Excelsior NL38-N11
 ---
 
-The Excelsior NL38-N11 is a 14-inch laptop based on Loongson 3A6000. Weighing approximately 1.4kg, the NL38-N11 comes equipped with a 2240×1400 (2.2K) or 1920x1200 (WUXGA) display, relatively rich interfaces, and a battery life of about 3-4 hours.
+The Excelsior NL38-N11 is a 14-inch laptop based on Loongson 3A6000. Weighing approximately 1.4kg, the NL38-N11 comes equipped with a 2240×1400 (2.2K) or 1920x1200 (WUXGA) display, a variety of ports, and a battery life of about 3-4 hours.
 
 Other manufacturers have also launched derivative models based on this chassis.
 
@@ -31,9 +31,9 @@ Other manufacturers have also launched derivative models based on this chassis.
 
 ### Touchpad Not Working on ABI2.0 Systems
 
-The touchpad on this laptop uses is connected via an HID-over-I2C interface and requires a GPIO pin to provide interrupt signals.
+The touchpad on this laptop is connected via an HID-over-I2C interface and requires a GPIO pin to provide interrupt signals.
 
-On the Linux Kernel side, [interrupt support needs to be added](https://git.kernel.org/torvalds/c/44fe79020b91) to the 7A2000 GPIO driver (mainlined since Linux Kernel 6.15; most commercial distributions using the 6.6 kernel also includes this support). At the same time, since the upstream kernel does not support the deprecated `gsi_idx_map` property, an additional workaround in the form of this [kernel patch](https://github.com/AOSC-Tracking/linux/commit/e29193f3f1a3) from AOSC OS is also required.
+On the Linux Kernel side, [interrupt support needs to be added](https://git.kernel.org/torvalds/c/44fe79020b91) to the 7A2000 GPIO driver (mainlined since Linux Kernel 6.15; most commercial distributions using the 6.6 kernel also include this support). At the same time, since the upstream kernel does not support the deprecated `gsi_idx_map` property, an additional workaround in the form of this [kernel patch](https://github.com/AOSC-Tracking/linux/commit/e29193f3f1a3) from AOSC OS is also required.
 
 ### Backlight Adjustment Not Working on ABI2.0 Systems with LoongGPU Driver
 

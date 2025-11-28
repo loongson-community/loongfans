@@ -1,19 +1,18 @@
 ---
 layout: page
-# Return to home
 returnLink: /en/
-pageTitle: User Guide and Troubleshooting
+pageTitle: FAQ & Troubleshooting
 pageSubTitle: Everyone says, Loongson is a bit quirky...
 ---
 
-Everyone says, Loongson is a bit quirky. This is not without reason! This guide will help you buy, play with, and use Loongson well.
+Loongson is quirky, as many say, and not without reason! This guide helps you make the most of your Loongson experience.
 
-## From Purchase to Use
+## Getting Started
 
-- [Before Powering On: From Purchase to Getting Started, How to Get a Good Experience?](/en/pages/guides/out-of-the-box)
+- [Before Powering On: Tips for a smooth start with your new Loongson](/en/pages/guides/out-of-the-box)
 
-## FAQ Collections
+## FAQ
 
-- [FAQ Collection: Desktop and Server Platforms](/en/pages/guides/errata-desktop-and-server)
-- [FAQ Collection: Laptop Platform](/en/pages/guides/errata-laptop)
-- [FAQ Collection: Development Boards](/en/pages/guides/errata-evb)
+- [FAQ: Desktop and Server](/en/pages/guides/errata-desktop-and-server)
+- [FAQ: Laptop](/en/pages/guides/errata-laptop)
+- [FAQ: Development Boards](/en/pages/guides/errata-evb)

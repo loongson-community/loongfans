@@ -12,8 +12,29 @@
 </template>
 
 <script setup>
+import { watchEffect, onMounted } from 'vue'
+import { useData } from 'vitepress'
+import { useI18n } from 'vue-i18n'
 import ChildHeader from "/components/ChildHeader.vue";
 import ChildFooter from "/components/ChildFooter.vue";
+import { handleFirstVisitRedirect, setStoredLanguage } from '../utils/language'
+
+const { lang } = useData()
+const { locale } = useI18n()
+
+// 首次访问时自动检测并重定向
+onMounted(() => {
+  handleFirstVisitRedirect()
+})
+
+// 同步 VitePress 语言和 vue-i18n locale
+watchEffect(() => {
+  locale.value = lang.value
+  // 监听语言切换，更新 localStorage
+  if (lang.value) {
+    setStoredLanguage(lang.value)
+  }
+})
 </script>
 
 <style type="text/css">
@@ -43,10 +64,11 @@ body,
 .body_content {
   display: block;
   clear: both;
-  width: auto;
+  width: 100%;
   max-width: 1200px;
   height: auto;
   margin: 0 auto;
+  flex: 1;
 }
 
 @media (max-width: 1280px) {

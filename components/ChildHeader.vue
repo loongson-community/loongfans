@@ -14,7 +14,7 @@
   </div>
 
   <div class="back_row">
-    <Button :href="frontmatter.returnLink" :text="backText" class="btn_back">
+    <Button :href="frontmatter.returnLink" :text="t('goBack')" class="btn_back">
       <IconArrowCircleLeftOutline />
     </Button>
   </div>
@@ -22,17 +22,15 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { useI18n } from 'vue-i18n'
 import IconArrowCircleLeftOutline from '~icons/material-symbols/arrow-circle-left-outline'
 import BackToTop from './BackToTop.vue';
 import Button from './Button.vue';
+import BackToTop from './BackToTop.vue'
 
-const { frontmatter, lang } = useData()
-
-const backText = computed(() => {
-  return lang.value === 'en' ? 'Go Back' : '返回上级'
-})
+const { frontmatter } = useData()
+const { t } = useI18n()
 </script>
 
 <style>
@@ -43,6 +41,7 @@ const backText = computed(() => {
 body {
   background: none;
 }
+
 .header_box {
   display: block;
   clear: both;
@@ -77,6 +76,7 @@ body {
   width: auto;
   height: auto;
   overflow: hidden;
+  text-wrap: balance;
 }
 
 .main_title h1 {
@@ -84,13 +84,12 @@ body {
   clear: both;
   width: 100%;
   clear: both;
-  height: 60px;
-  line-height: 60px;
   overflow: hidden;
   border-left: 15px solid red;
   padding-left: 10px;
   font-size: 60px;
   font-weight: bolder;
+  line-height: normal;
 }
 
 .main_title h4 {
@@ -98,11 +97,11 @@ body {
   clear: both;
   width: 100%;
   clear: both;
-  line-height: 40px;
   overflow: hidden;
   padding-left: 25px;
   font-size: 32px;
   font-weight: bold;
+  line-height: normal;
 }
 
 .brand_mark {
@@ -124,7 +123,7 @@ body {
 .back_row {
   display: block;
   clear: both;
-  width: auto;
+  width: 100%;
   max-width: 1200px;
   height: auto;
   overflow: hidden;
@@ -151,16 +150,13 @@ body {
   }
 
   .main_title h1 {
-    height: 60px;
-    line-height: 60px;
     font-size: 60px;
   }
 
   .main_title h4 {
-    height: 40px;
-    line-height: 40px;
     font-size: 20px;
   }
+
   .back_row {
     padding: 20px 30px;
   }
@@ -168,17 +164,14 @@ body {
 
 @media (max-width: 1000px) {
   .main_title h1 {
-    height: 40px;
-    line-height: 40px;
     font-size: 40px;
   }
 
   .main_title h4 {
-    height: 30px;
-    line-height: 30px;
     font-size: 18px;
     border-left-width: 10px;
   }
+
   .back_row {
     padding: 20px 30px;
   }
@@ -197,15 +190,11 @@ body {
   }
 
   .main_title h1 {
-    height: 36px;
-    line-height: 36px;
     font-size: 36px;
     border-left-width: 10px;
   }
 
   .main_title h4 {
-    height: 30px;
-    line-height: 30px;
     font-size: 16px;
   }
 }

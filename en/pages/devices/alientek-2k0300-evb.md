@@ -29,4 +29,4 @@ None noted.
 
 ![](/public/images/devices/alientek-2k0300-evb-1.webp)
 ![](/public/images/devices/alientek-2k0300-evb-2.webp)
-Source: Alientek
+Source: ALIENTEK
