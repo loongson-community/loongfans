@@ -23,7 +23,7 @@ pageSubTitle: 华硕 XC-LS3A6M
 | 接口（存储）| 1 × NVMe (PCIe 3.0 x4)、4 × SATA 3.0 |
 | 接口（网络） | 2 × GbE |
 | 接口（视频） | 1 × HDMI、1 × VGA |
-| 接口（其他） | 1 × m.2 Key E 接口 (PCIe + USB)、1 × mPCIe (PCIe + USB)、1 组 3.5mm（输入、输出、Line-In）接口 |
+| 接口（其他） | 1 × M.2 Key E 接口 (PCIe + USB)、1 × mPCIe (PCIe + USB)、1 组 3.5mm（输入、输出、Line-In）接口 |
 
 ## 已知问题
 

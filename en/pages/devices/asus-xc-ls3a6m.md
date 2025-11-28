@@ -22,25 +22,25 @@ This motherboard was designed and sold by ASUS and is one of the first third-par
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
 | Interfaces (Network) | 2 × GbE |
 | Interfaces (Video) | 1 × HDMI, 1 × VGA |
-| Interfaces (Other) | 1 × m.2 Key E interface (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 set of 3.5mm (input, output, Line-In) interfaces |
+| Interfaces (Other) | 1 × M.2 Key E interface (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 set of 3.5mm (input, output, Line-In) interfaces |
 
 ## Known Issues
 
 ### 7A Bridge Chip Instability
 
-This motherboard uses a 7A2000 bridge chip to provide PCIe interfaces, but due to known (yet not officially confirmed) reasons with this bridge chip, when using certain peripherals (especially graphics cards based on AMD GCN 1.0 - 4.0), you may experience driver crashes, graphical interface/application crashes, or even freezes. Currently, some Linux distributions include temporary patches to workaround this issue, which can greatly alleviate the problem, but distributions maintainers are still receiving reports on said issues.
+The 7A2000 bridge chip provides PCIe interfaces on this motherboard, but has known (though not officially confirmed) issues that can cause driver instability, screen or application crashes, and even system freezes when using certain peripherals, especially AMD GCN 1.0 to 4.0 series graphics cards. Some distributions provide temporary patches to mitigate these issues, though some users still report problems.
 
-If you encounter the aforementioned issue, community members recommend enhancing case or bridge chip cooling as a further remedy.
+If you experience similar issues, the community recommends improving the case or bridge chip cooling.
 
 ### USB Device Loss
 
-According to user feedback, USB keyboard and mouse may randomly on this motherboard after they boot an operating system. When this happens, they needed to repeatedly plug and unplug their peripherals for them to function again.
+Users have reported that USB keyboards and mice randomly stop working after boot and require repeated plugging and unplugging.
 
-Following investigation by engineers at Loongson Technology, this is caused by [a hardware defect in the Loongson 7A2000 bridge chip](https://github.com/torvalds/linux/commit/bcb60d438547355b8f9ad48645909139b64d3482). This issue has since been worked around in Linux kernel 6.15-rc1 or higher versions with a quirk. Commercial ABI 2.0 distributions using Linux Kernel 6.6, as well as ABI 1.0 systems using Linux Kernel 4.19 include workarounds for this issue.
+Loongson Technology engineers have traced this to [a hardware defect in the Loongson 7A2000 bridge chip](https://github.com/torvalds/linux/commit/bcb60d438547355b8f9ad48645909139b64d3482). This issue has been worked around in Linux Kernel 6.15-rc1 and later. Commercial ABI2.0 distributions using the 6.6 kernel and ABI1.0 systems using the 4.19 kernel also include this workaround.
 
 ### Lack of Firmware Update
 
-According to user feedback, this motherboard's sees few firmware updates and there are multiple known firmware bugs:
+According to user feedback, this motherboard sees few firmware updates and there are multiple known firmware bugs:
 
 - Early firmware lacked the option to turn off x86 UEFI GOP emulation for GPUs, causing newer AMD graphics cards (RX 5000 and above) and Intel discrete graphics cards to be unusable.
 - Some firmware versions do not output a display signal from discrete graphics cards, while the onboard HDMI output (7A2000) only displays a cursor.

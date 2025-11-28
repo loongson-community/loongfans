@@ -19,7 +19,7 @@ pageSubTitle: 中科云 3A6000 小主机
 | 接口（存储）| 1 × NVMe (PCIe 3.0 x4)、1 × SATA 3.0 |
 | 接口（网络） | 2 × GbE |
 | 接口（视频） | 2 × HDMI |
-| 接口（其他） | 1 × m.2 Key E 接口 (PCIe + USB)、1 × 3.5mm 耳机耳麦口 |
+| 接口（其他） | 1 × M.2 Key E 接口 (PCIe + USB)、1 × 3.5mm 耳机耳麦口 |
 
 ## 已知问题
 

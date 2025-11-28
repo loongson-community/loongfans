@@ -1,29 +1,29 @@
 <template>
   <div class="card-group">
     <Card
-      name="GitHub 主页"
-      description="社区科技驱动的行星发电机"
+      :name="t('aboutGithubName')"
+      :description="t('aboutGithubDescription')"
       href="https://github.com/loongson-community/1024"
       icon="simple-icons:github"
       color="#181717"
     />
     <Card
-      name="BiliBili"
-      description="关注最好的龙芯爱好者社区谢谢喵"
+      :name="t('aboutBilibiliName')"
+      :description="t('aboutBilibiliDescription')"
       href="https://space.bilibili.com/70360929"
       icon="simple-icons:bilibili"
       color="#66ccff"
     />
     <Card
-      name="微信群"
-      description="常聊天！"
+      :name="t('aboutWechatName')"
+      :description="t('aboutWechatDescription')"
       href="https://u.wechat.com/gPYFQQIJPEUImshdRvw1Prs?s=2"
       icon="simple-icons:wechat"
       color="#07C160"
     />
     <Card
-      name="QQ 群"
-      description="常联系！"
+      :name="t('aboutQQName')"
+      :description="t('aboutQQDescription')"
       href="https://qm.qq.com/q/3oZByh8aOA"
       icon="simple-icons:qq"
       color="#1EBAFC"
@@ -33,6 +33,9 @@
 
 <script setup>
 import Card from "./Card.vue";
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 </script>
 
 <style scoped>

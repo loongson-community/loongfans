@@ -1,19 +1,18 @@
 ---
 layout: page
-# Return to home
 returnLink: /en/
 pageTitle: March Towards the New World!
 pageSubTitle: Welcome to the Loongson world beyond the distant mountains of x86 and ARM
 ---
 
 
-Loongson is a star in China's independently developed chip industry. Since its birth at the Institute of Computing Technology, Chinese Academy of Sciences in 2001, Loongson has undergone multiple iterations, gradually catching up with international advanced levels in performance; in 2021, Loongson launched the independently developed LoongArch instruction set architecture, aiming to build the third largest instruction set software and hardware ecosystem after x86 and ARM. Today, Loongson has entered the open market, and various Loongson desktops, laptops, servers, and development boards are becoming easier to buy, becoming toys in the hands of many community hobbyists and developers. Some friends have even started using Loongson as a productivity tool.
+Loongson is a star in China's independently developed chip industry. Since its inception at the Institute of Computing Technology, Chinese Academy of Sciences in 2001, Loongson has undergone multiple iterations, gradually closing the performance gap with industry leaders. In 2021, Loongson launched the independently developed LoongArch instruction set architecture, aiming to build the third largest instruction set ecosystem after x86 and ARM. Today, Loongson has entered the open market, and various Loongson desktops, laptops, servers, and development boards are becoming easier to buy, making them a favorite among hobbyists and developers. Some have even started using Loongson as a productivity tool.
 
-In this era where Loongson products are gradually enriching and the user group is growing, how does one get started with Loongson, play with Loongson, and use Loongson well?
+As Loongson products grow in variety and the user base expands, how can you get started, have fun, and make the most of Loongson?
 
 ## What Loongson Products Are There?
 
-Loongson's products range from MCU to desktop, then to workstations and multi-socket servers. The current product lines consist of three lines and more than ten products.
+Loongson's products range from MCUs to desktops, workstations, and multi-socket servers. There are three product lines with over ten products in total.
 
 ### Product Line Overview
 
@@ -41,7 +40,7 @@ Loongson 3B6000M is the sister model of 2K3000, with a higher clock speed than t
 
 ### Product Feature Table
 
-Among current products, the processor and platform features are arranged quite complexly. The table below describes the main feature differences of current products (performance from high to low):
+The following table summarizes key feature differences across current products (from highest to lowest performance):
 
 | Processor Model | Cores | Threads | Clock Speed  | Memory Channels | PCIe Standard | PCIe Lanes |
 |-----------------|-------|---------|--------------|-----------------|---------------|------------|
@@ -73,7 +72,7 @@ The following are current common board models. For board specifications, please 
 - Loongson 3A6000: XA61200, XA61201, XA612A0
 - Loongson 3B6000M: CTCISZ 3B6000M mini PC
 - Loongson 2K3000: OrangePi Nova, 2K3000 AI development board
-- Loongson 2K0300: 2K0300 Hummingbird board, Alientek 2K0300 development board, CTCISZ ForeverPi
+- Loongson 2K0300: 2K0300 Hummingbird board, ALIENTEK 2K0300 development board, CTCISZ ForeverPi
 
 ## What Operating Systems Can Loongson Run?
 
@@ -92,9 +91,9 @@ In addition to current products, common chip platforms based on LoongArch also i
 
 ## Further Reading
 
-Congratulations, reading this far, I believe you already have some understanding of Loongson, this new world. The following is a series of further reading materials from this site and third-party sites, ranging from user guides to troubleshooting guides, from processor specifications to ABI, firmware implementation details, and the "new and old world problem" that many friends may have heard of. Community hobbyists have prepared many excellent reading materials for your reference:
+Congratulations on making it this far! You should now have a solid foundation for exploring the Loongson ecosystem. Below are further reading materials from this site and third-party sources, covering topics from user guides and troubleshooting to processor specifications, ABI details, firmware internals, and the "New World vs Old World" issue you may have heard about. Community hobbyists have put together these excellent resources for your reference:
 
-- [User Guide and Troubleshooting](/en/pages/guides)
+- [FAQ & Troubleshooting](/en/pages/guides)
 - [Loongson Motherboard and CPU Database](/en/pages/devices)
 - [*AREWELOONGYET?*: LoongArch Ecosystem Construction Information Site](https://areweloongyet.com/)
 - [Loong 1-2-3: Compatibility Data Website for LoongArch](https://loong123.cn/)

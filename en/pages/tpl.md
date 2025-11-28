@@ -1,6 +1,5 @@
 ---
 layout: page
-# Return to home, fill the relative link below for where you want to return
 returnLink: /en/
 pageTitle:  # Main title
 pageSubTitle: # Subtitle

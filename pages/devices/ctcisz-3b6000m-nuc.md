@@ -19,7 +19,7 @@ pageSubTitle: 中科云 3B6000M 小主机
 | 接口（存储）| 1 × NVMe (PCIe 3.0 x4) |
 | 接口（网络） | 2 × GbE |
 | 接口（视频） | 1 × DisplayPort、1 × HDMI |
-| 接口（其他） | 1 × m.2 Key E 接口 (PCIe + USB)、1 × 3.5mm 耳机耳麦口 |
+| 接口（其他） | 1 × M.2 Key E 接口 (PCIe + USB)、1 × 3.5mm 耳机耳麦口 |
 
 †：其中一个 USB-C 接口仅可用于为板卡供电，无数据功能。
 

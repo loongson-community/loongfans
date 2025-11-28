@@ -1,6 +1,5 @@
 ---
 layout: page
-# Return to home
 returnLink: /en/
 pageTitle: Bounties and Internship Opportunities
 pageSubTitle: Powered by love, maybe fortune ( ͡° ͜ʖ ͡°)

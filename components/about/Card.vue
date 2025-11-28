@@ -44,6 +44,7 @@ a {
 .description {
   font-size: small;
   color: #8d8d8d;
+  line-height: normal;
 }
 
 a:hover {

@@ -16,22 +16,19 @@
   <div class="back_row">
     <a :href="frontmatter.returnLink" class="btn_back">
       <div class="icon_back"></div>
-      <span class="name">{{ backText }}</span>
+      <span class="name">{{ t('goBack') }}</span>
     </a>
   </div>
   <BackToTop />
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { useI18n } from 'vue-i18n'
 import BackToTop from './BackToTop.vue'
 
-const { frontmatter, lang } = useData()
-
-const backText = computed(() => {
-  return lang.value === 'en' ? 'Go Back' : '返回上级'
-})
+const { frontmatter } = useData()
+const { t } = useI18n()
 </script>
 
 <style>
@@ -42,6 +39,7 @@ const backText = computed(() => {
 body {
   background: none;
 }
+
 .header_box {
   display: block;
   clear: both;
@@ -76,6 +74,7 @@ body {
   width: auto;
   height: auto;
   overflow: hidden;
+  text-wrap: balance;
 }
 
 .main_title h1 {
@@ -83,13 +82,12 @@ body {
   clear: both;
   width: 100%;
   clear: both;
-  height: 60px;
-  line-height: 60px;
   overflow: hidden;
   border-left: 15px solid red;
   padding-left: 10px;
   font-size: 60px;
   font-weight: bolder;
+  line-height: normal;
 }
 
 .main_title h4 {
@@ -97,11 +95,11 @@ body {
   clear: both;
   width: 100%;
   clear: both;
-  line-height: 40px;
   overflow: hidden;
   padding-left: 25px;
   font-size: 32px;
   font-weight: bold;
+  line-height: normal;
 }
 
 .brand_mark {
@@ -123,7 +121,7 @@ body {
 .back_row {
   display: block;
   clear: both;
-  width: auto;
+  width: 100%;
   max-width: 1200px;
   height: auto;
   overflow: hidden;
@@ -149,6 +147,7 @@ a.btn_back {
   color: #e60013;
   text-decoration: none;
 }
+
 a.btn_back .icon_back {
   flex-shrink: 0;
   display: block;
@@ -164,6 +163,7 @@ a.btn_back:hover {
   background-color: #e60013;
   color: #ffffff;
 }
+
 a.btn_back:hover .icon_back {
   background-image: url('/icons/icon_back_white.webp');
 }
@@ -182,16 +182,13 @@ a.btn_back:hover .icon_back {
   }
 
   .main_title h1 {
-    height: 60px;
-    line-height: 60px;
     font-size: 60px;
   }
 
   .main_title h4 {
-    height: 40px;
-    line-height: 40px;
     font-size: 20px;
   }
+
   .back_row {
     padding: 20px 30px;
   }
@@ -199,17 +196,14 @@ a.btn_back:hover .icon_back {
 
 @media (max-width: 1000px) {
   .main_title h1 {
-    height: 40px;
-    line-height: 40px;
     font-size: 40px;
   }
 
   .main_title h4 {
-    height: 30px;
-    line-height: 30px;
     font-size: 18px;
     border-left-width: 10px;
   }
+
   .back_row {
     padding: 20px 30px;
   }
@@ -228,15 +222,11 @@ a.btn_back:hover .icon_back {
   }
 
   .main_title h1 {
-    height: 36px;
-    line-height: 36px;
     font-size: 36px;
     border-left-width: 10px;
   }
 
   .main_title h4 {
-    height: 30px;
-    line-height: 30px;
     font-size: 16px;
   }
 }

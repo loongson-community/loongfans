@@ -10,7 +10,7 @@ The CTCISZ 2K0300 ForeverPi is a development board based on Loongson 2K0300.
 ## Key Specifications
 
 ::: info
-ForeverPi ships in "TF Card" and "Wi-Fi" variants - as both the Wi-Fi module amd microSD (TF) card slot uses the SDIO bus, only one may be equipped at a time. The Wi-Fi version comes additionally with 4GB of eMMC storage and an LCD interface, and the onboard NOR Flash capacity is larger (8Mbit on the "Wi-Fi" variant and "256Mbit" on the "TF Card" variant).
+ForeverPi is available in two variants: "TF Card" and "Wi-Fi". Since both the Wi-Fi module and the microSD (TF) card slot use the SDIO bus, only one can be equipped at a time. The Wi-Fi version additionally features 4GB onboard eMMC storage and an LCD interface, while the onboard NOR Flash capacity differs between variants (8Mbit on Wi-Fi, 256Mbit on TF Card).
 :::
 
 ### Wi-Fi Version
