@@ -10,7 +10,6 @@
   "devDependencies": {
     "@iconify-json/material-symbols": "^1.2.47",
     "@iconify-json/simple-icons": "^1.2.59",
-    "@iconify/vue": "^5.0.0",
     "unplugin-icons": "^22.5.0"
   }
 }
