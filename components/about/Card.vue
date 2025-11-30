@@ -9,12 +9,14 @@
     <div>
       <div class="name">
         <span>{{ name }}</span>
-        <Icon v-if="href" icon="material-symbols:open-in-new" />
-        <Icon v-if="qrLink" icon="material-symbols:qr-code-2" />
+        <IconOpenInNew v-if="href" />
+        <IconQrCode2 v-if="qrLink" />
       </div>
       <div class="description">{{ description }}</div>
     </div>
-    <Icon :icon="icon" class="icon" height="24px" />
+    <div class="icon">
+      <slot />
+    </div>
     <div v-if="qrLink" class="qr-container">
       <img :src="qrLink" :alt="`${name}`" class="qr" />
     </div>
@@ -22,7 +24,8 @@
 </template>
 
 <script setup>
-import { Icon } from "@iconify/vue";
+import IconOpenInNew from "~icons/material-symbols/open-in-new";
+import IconQrCode2 from "~icons/material-symbols/qr-code-2";
 
 defineProps({
   name: String,
@@ -58,6 +61,7 @@ defineProps({
 
 .icon {
   color: v-bind(color);
+  font-size: 24px;
 }
 
 .name {

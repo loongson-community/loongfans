@@ -5,27 +5,25 @@
     :target="target"
     class="link"
   >
-    <Icon v-if="icon" :icon="icon" class="icon" />
+    <div v-if="$slots.default" class="icon">
+      <slot />
+    </div>
     <span class="name">{{ name }}</span>
-    <Icon
-      v-if="href && target"
-      icon="material-symbols:open-in-new"
-      class="extra-icon"
-    />
+    <IconOpenInNew v-if="href && target" class="extra-icon" />
     <div class="extra-icon qr-wrapper">
-      <Icon v-if="qrLink" icon="material-symbols:qr-code-2" />
+      <IconQrCode2 v-if="qrLink" />
       <img v-if="qrLink" :src="qrLink" class="qrcode" alt="QR Code" />
     </div>
   </component>
 </template>
 
 <script setup>
-import { Icon } from "@iconify/vue";
+import IconOpenInNew from "~icons/material-symbols/open-in-new";
+import IconQrCode2 from "~icons/material-symbols/qr-code-2";
 
 const props = defineProps({
   href: { type: String, required: true },
   name: { type: String, required: true },
-  icon: String,
   qrLink: String,
 });
 
