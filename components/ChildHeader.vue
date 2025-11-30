@@ -15,7 +15,7 @@
 
   <div class="back_row">
     <Button :href="frontmatter.returnLink" text="返回上级" class="btn_back">
-      <IconArrorCircleLeftOutline />
+      <IconArrowCircleLeftOutline />
     </Button>
   </div>
   <BackToTop />
@@ -23,7 +23,7 @@
 
 <script setup>
 import { useData } from 'vitepress'
-import IconArrorCircleLeftOutline from '~icons/material-symbols/arrow-circle-left-outline'
+import IconArrowCircleLeftOutline from '~icons/material-symbols/arrow-circle-left-outline'
 import BackToTop from './BackToTop.vue';
 import Button from './Button.vue';
 

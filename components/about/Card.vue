@@ -32,7 +32,6 @@ defineProps({
   description: String,
   href: String,
   qrLink: String,
-  icon: String,
   color: String,
 });
 </script>
