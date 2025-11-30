@@ -38,23 +38,18 @@
             <Link
               name="GitHub 主页"
               href="https://github.com/loongson-community"
-              icon="simple-icons:github"
-            />
-            <Link
-              name="Bilibili"
-              href="https://space.bilibili.com/70360929"
-              icon="simple-icons:bilibili"
-            />
-            <Link
-              name="微信群"
-              icon="simple-icons:wechat"
-              qr-link="/images/about/qr-wechat-group.png"
-            />
-            <Link
-              name="QQ 群"
-              icon="simple-icons:qq"
-              qr-link="/images/about/qr-qq-group.png"
-            />
+            >
+              <IconGithub />
+            </Link>
+            <Link name="Bilibili" href="https://space.bilibili.com/70360929">
+              <IconBilibili />
+            </Link>
+            <Link name="微信群" qr-link="/images/about/qr-wechat-group.png">
+              <IconWechat />
+            </Link>
+            <Link name="QQ 群" qr-link="/images/about/qr-qq-group.png">
+              <IconQq />
+            </Link>
           </div>
         </div>
       </div>
@@ -95,6 +90,10 @@
 
 <script setup>
 import { ref } from "vue";
+import IconGithub from "~icons/simple-icons/github";
+import IconBilibili from "~icons/simple-icons/bilibili";
+import IconWechat from "~icons/simple-icons/wechat";
+import IconQq from "~icons/simple-icons/qq";
 import Link from "./index/Link.vue";
 
 let year = new Date().getFullYear();

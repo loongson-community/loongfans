@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitepress'
-
+import { defineConfig } from "vitepress";
+import Icons from "unplugin-icons/vite";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -11,11 +11,13 @@ export default defineConfig({
     // nav: [
     //   { text: '首页', link: '/' }
     // ],
-
     // socialLinks: [
     //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     // ]
   },
-   // 完全禁用主题切换
-  appearance: false
-})
+  // 完全禁用主题切换
+  appearance: false,
+  vite: {
+    plugins: [Icons({ scale: 1 })],
+  },
+});
