@@ -1,14 +1,14 @@
-
 <template>
-    <div v-show="showButton"
+  <div v-show="showButton"
     @click="scrollToTop" class="set_to_top"
     :style="{ opacity: showButton ? 1 : 0 }">
-    <img src="/images/icon_top.webp" />
+    <IconVerticalAlignTop class="icon"/>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import IconVerticalAlignTop from '~icons/material-symbols/vertical-align-top'
 
 const showButton = ref(false)
 
@@ -46,13 +46,14 @@ onUnmounted(() => {
   cursor: pointer;
   transition: opacity 1s ease;
 }
-.set_to_top img {
-  display: block;
-  clear: both;
-  width: 100%;
-  height: auto;
+
+.icon {
+  color: white;
+  background-color: #e60013;
+  font-size: 50px;
 }
-.set_to_top:hover img {
+
+.icon:hover {
   opacity: 0.8;
 }
 </style>
