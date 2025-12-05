@@ -5,9 +5,12 @@ pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 2K0300 先锋派
 ---
 
+::: info
 龙芯 2K0300 先锋派是由龙芯中科推出的，基于 2K0300 平台设计的开发板。
+:::
 
-## 主要规格
+<Device>
+<template #spec>
 
 | 类别 | 规格 |
 |------|------|
@@ -23,11 +26,18 @@ pageSubTitle: 龙芯 2K0300 先锋派
 
 †：USB-C 接口用于供电及串口。
 
-## 已知问题
+</template>
+
+<template #known-issues>
 
 暂无记录。
 
-## 产品图片
+</template>
+
+<template #image>
 
 ![](/public/images/devices/loongson-2k0300-pioneer-evb.webp)
 来源：龙芯中科
+
+</template>
+</Device>

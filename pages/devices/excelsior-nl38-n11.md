@@ -5,11 +5,14 @@ pageTitle: 产品规格数据库
 pageSubTitle: 卓怡恒通 NL38-N11
 ---
 
+::: info
 卓怡恒通 NL38-N11 是一款基于 3A6000 处理器的 14 寸笔记本电脑，其重量约 1.4kg，搭载 2240×1400 (2.2K) 或 1920x1200 (WUXGA) 屏幕，接口较为丰富，续航约 3-4 小时。
 
 亦有其他厂商推出了基于此款模具的派生型号。
+:::
 
-## 主要规格
+<Device>
+<template #spec>
 
 | 类别 | 规格 |
 |------|------|
@@ -27,7 +30,9 @@ pageSubTitle: 卓怡恒通 NL38-N11
 
 †：其中一个 USB-C 接口可用于充电。
 
-## 已知问题
+</template>
+
+<template #known-issues>
 
 <!--@include: @/parts/known-issues/touchpad-err-in-abi2.md -->
 
@@ -37,7 +42,12 @@ pageSubTitle: 卓怡恒通 NL38-N11
 
 <!--@include: @/parts/known-issues/laptop-high-power-consumption.md -->
 
-## 产品图片
+</template>
+
+<template #image>
 
 ![](/public/images/devices/excelsior-nl38-n11.webp)
 来源：[卓怡恒通官网](https://eaecis.com/cp_95/962.html)
+
+</template>
+</Device>
