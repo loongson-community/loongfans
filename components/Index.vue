@@ -115,7 +115,7 @@ body {
   align-items: flex-start;
   gap: 50px;
   width: auto;
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   height: 100%;
   padding-top: 50px;
   margin: 0 auto;
@@ -235,7 +235,7 @@ body {
 /*站点导航清单-结束*/
 
 /*响应式处理-开始*/
-@media (max-width: 1200px) {
+@media (max-width: var(--content-max-width)) {
   .home_body {
     padding: 0px 20px;
     padding-top: 50px;

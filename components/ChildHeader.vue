@@ -45,7 +45,7 @@ body {
   display: block;
   clear: both;
   width: 100%;
-  min-width: 1200px;
+  min-width: var(--content-max-width);
   height: auto;
   overflow: hidden;
   background: url("/images/bg_body.webp") no-repeat top center;
@@ -60,7 +60,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: auto;
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   height: auto;
   overflow: hidden;
   margin: 0 auto;
@@ -122,8 +122,8 @@ body {
 .back_row {
   display: block;
   clear: both;
-  width: 100%;
-  max-width: 1200px;
+  width: auto;
+  max-width: var(--content-max-width);
   height: auto;
   overflow: hidden;
   padding: 20px 0px;
