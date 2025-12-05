@@ -5,6 +5,8 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
+    "@primeuix/themes": "^2.0.2",
+    "primevue": "^4.5.1",
     "vitepress": "^1.6.3"
   },
   "devDependencies": {
