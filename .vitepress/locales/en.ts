@@ -33,7 +33,7 @@ export default {
   aboutGithubName: 'GitHub Page',
   aboutGithubDescription: 'The planetary generator powered by community tech',
   aboutBilibiliName: 'BiliBili',
-  aboutBilibiliDescription: 'Follow the best Loongson hobbyists community',
+  aboutBilibiliDescription: 'Follow the best Loongson hobbyists\' community',
   aboutWechatName: 'WeChat Group',
   aboutWechatDescription: 'Chat with us!',
   aboutQQName: 'QQ Group',

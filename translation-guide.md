@@ -14,18 +14,15 @@
   - ❌ The motherboard was designed and released by ASUS, and it is one of the first third-party motherboards for the Loongson 3A6000
   - ✅ This motherboard was designed and sold by ASUS and is one of the first third-party Loongson 3A6000 motherboards
   - 调整语序，把主语放前面
-
 - 「中科云 3A6000 小主机是一款类似 Intel NUC 规格的小型台式机，搭载 3A6000-HV 处理器」
   - ❌ The CTCISZ 3A6000 mini PC is a small desktop computer similar to the Intel NUC specification, equipped with a 3A6000-HV processor
   - ✅ The CTCISZ 3A6000 NUC is an Intel NUC-style mini PC powered by Loongson 3A6000-HV
   - 「类似 Intel NUC 规格」用 "NUC-style" 更简洁
   - 「搭载」用 "powered by" 比 "equipped with" 更地道
-
 - 「其特色包括超频支持、双网口和额外的 USB 3.0 板载接口」
   - ❌ Its features include overclocking support, dual network ports, and additional USB 3.0 onboard interfaces
   - ✅ The motherboard is known for its overclocking support, dual network ports, and additional onboard USB 3.0 ports
   - 「其特色包括」不要逐字翻译成 "Its features include"
-
 - 「基于 X 平台设计的开发板」
   - ❌ xxx-based development board
   - ✅ development board ... based on the xxx platform
@@ -39,9 +36,26 @@
 - 「该补丁将在 X 版本合入上游内核」：mainlined as part of Linux Kernel X
 - 「X 功能不可用」：X not working
 
+### 简洁优先
+
+避免冗余的解释性文字：
+
+- 保持段落紧凑，不要把一个概念拆成多个段落
+- 使用 "typically" 优于 "generally"
+- 不要使用 "i.e." 或括号来解释已经清楚的术语
+  - ❌ motherboard and CPU bundles (i.e., motherboard and processor sold together)
+  - ✅ motherboard and CPU bundles
+- 不要在技术术语周围使用不必要的引号
+  - ❌ 8Mbit on the "Wi-Fi" version and "256Mbit" on the "TF Card" version
+  - ✅ 8Mbit on Wi-Fi, 256Mbit on TF Card
+- 使用简洁的表达：
+  - ❌ "ForeverPi ships in 'TF Card' and 'Wi-Fi' versions"
+  - ✅ "ForeverPi is available in two variants: 'TF Card' and 'Wi-Fi'"
+
 ### 格式规范
 
 - 优先使用 `and` 而非 `&`
+- 使用 Oxford comma 规则：列举多个项目时，前面的项目用逗号分隔，最后一个项目前使用逗号加 `and`
 - 不要在译文中使用 - （dash），而是使用合适的衔接语
 - 缩写根据其正式名称决定是否加空格：USB 3.0 加空格，但 ABI2.0 和 ABI1.0 不加空格
 - 像 AMD GCN 1.0 - 4.0 这样表示版本或代号范围的，译文应该使用 to 取代 -
@@ -132,10 +146,12 @@
 - 紫光（RAM 厂商）: UniIC
 - 长鑫（RAM 厂商）: CXMT
 - 力积（RAM 厂商）: Zentel
-- 2K0300 蜂鸟派: Hummingbird board
-- 2K0300 先锋派: Pioneer board
+- 2K0300 蜂鸟派: 2K0300 "Hummingbird"
+- 2K0300 先锋派: 2K0300 "Pioneer"
 - 久久派: ForeverPi
 - 中科云 3A6000 小主机: CTCISZ 3A6000 NUC
+- 中科云 3B6000M 小主机: CTCISZ 3B6000M NUC
+- 2K3000 AI 开发板: 2K3000 AI development board
 
 ## 软件与技术术语
 
@@ -143,9 +159,9 @@
 - 发行版: distribution
 - 内核: kernel
 - 内存兼容性: memory compatibility
-- 龙芯爱好者社区: Loongson Hobbyists Community
+- 龙芯爱好者社区: Loongson Hobbyists' Community
   - NOTE: 爱好者 -> hobbyists
-- 双周会 / 龙架构双周会: the LoongArch biweekly
+- 双周会 / 龙架构双周会: LoongArch Biweekly
 - lib龙啊龙: libLoL (LoongArch on LoongArch)
 - larch: typically part of LoongArch ELF relocation type constant names, e.g., R_LARCH_B26 is read as "R Larch B twenty-six"
 - 龙 64: loong64
