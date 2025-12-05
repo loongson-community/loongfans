@@ -2,14 +2,13 @@
 layout: page
 returnLink: /en/
 pageTitle: Bounties and Internship Opportunities
-pageSubTitle: Powered by love, maybe fortune ( ͡° ͜ʖ ͡°)
+pageSubTitle: Love Driven, or Maybe Material Driven? ( ͡° ͜ʖ ͡°)
 ---
 
+# Community Bounty
 
-# Community Bounty Projects
+### U-Boot Support for OrangePi Nova
 
-### OrangePi Nova U-Boot Support
+U-Boot bootloader support for OrangePi Nova is yet to be implemented. We are offering a bounty for community developers to push this implementation forward.
 
-U-Boot bootloader support for OrangePi Nova is yet to be implemented. We are now offering a bounty for community developers to push this implementation forward.
-
-Reward: One Loongson laptop
+Reward: Loongson laptop.

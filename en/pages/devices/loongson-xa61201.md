@@ -5,13 +5,12 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson XA61201
 ---
 
+The Loongson XA61201 is a DTX (203×244mm) desktop motherboard based on Loongson 3A6000-HV.
 
-The Loongson XA61201 is a DTX (203×244mm) desktop motherboard from Loongson Technology based on the 3A6000-HV platform.
-
-Key differences from the [XA61200](/en/pages/devices/loongson-xa61200):
+Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 motherboard:
 
 - Supports ECC memory
-- The third slot is upgraded from PCIe 3.0 x8 to x16 but retaining x8 bandwidth
+- Has its PCIe 3.0 x8 slot in the third slot space changed to a PCIe 3.0 x16 interface (x8 lanes)
 
 ## Key Specifications
 
@@ -26,20 +25,16 @@ Key differences from the [XA61200](/en/pages/devices/loongson-xa61200):
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
 | Interfaces (Network) | 1 × GbE |
 | Interfaces (Video) | 1 × HDMI, 1 × VGA |
-| Interfaces (Other) | 1 × M.2 Key E interface (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 set of 3.5mm (input, output, Line-In) interfaces, 1 × RS-232 serial port (DB-9) |
+| Interfaces (Other) | 1 × m.2 Key E interface (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 set of 3.5mm (input, output, Line-In) interfaces, 1 × RS-232 serial port (DB-9) |
 
-†: The extent of ECC support remains unclear, including whether Registered ECC memory is supported. DMI information does not expose 72-bit memory width.
+†: The state of ECC memory support of this motherboard is currently unclear. It is also not clear whether it supports Registered ECC memory. DMI information also does not declare 72-bit wide memory interface.
 
 ## Known Issues
 
-### 7A Bridge Chip Stability Issues
-
-The 7A2000 bridge chip provides PCIe interfaces on this motherboard, but has known (though not officially confirmed) issues that can cause driver instability, screen or application crashes, and even system freezes when using certain peripherals, especially AMD GCN 1.0 to 4.0 series graphics cards. Some distributions provide temporary patches to mitigate these issues, though some users still report problems.
-
-If you experience similar issues, the community recommends improving the case or bridge chip cooling.
+<!--@include: @/parts/known-issues/7a-errata.md -->
 
 ## Product Images
 
 [![](/public/images/devices/loongson-xa61201.thumbnail.webp)](/public/images/devices/loongson-xa61201.webp)
-Source: "XA61201 Motherboard Product User Manual V1.0"
+Source: "XA61201 主板产品使用手册 V1.0"
 

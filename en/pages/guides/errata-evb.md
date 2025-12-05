@@ -1,8 +1,8 @@
 ---
 layout: page
 returnLink: /en/pages/guides
-pageTitle: FAQ Collection
-pageSubTitle: Known issues on various development boards
+pageTitle: Common Issues
+pageSubTitle: Common Issues Found on Various Development Boards
 ---
 
 None noted.

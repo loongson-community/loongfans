@@ -5,8 +5,7 @@ pageTitle: Product Specification Database
 pageSubTitle: Overview of specifications, features, and known issues
 ---
 
-
-Loongson offers many processor and board models, typically sold as motherboard and CPU bundles. This page documents all known Loongson bundles, as well as laptops and pre-built systems.
+Loongson has many processor and board models, but they are generally sold bundled as processor + motherboard (motherboard and CPU bundle). This page documents and presents all known Loongson motherboard and CPU bundles, as well as laptop and pre-built server system information.
 
 ::: info
 For processor specifications, details, and parameter comparisons, please see:
