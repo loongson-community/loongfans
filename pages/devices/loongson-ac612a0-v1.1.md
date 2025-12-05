@@ -5,11 +5,14 @@ pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 AC612A0_V1.1
 ---
 
+::: info
 龙芯 AC612A0_V1.1 是由龙芯中科推出的，基于 3C6000/S 平台设计的 ATX (244×305mm) 台式机/服务器主板。
 
 该主板是龙芯 3C6000/S 平台的入门级板卡，接口较为完整，并支持带外管理 (BMC) 模组，可供远程操作和管理。
+:::
 
-## 主要规格
+<Device>
+<template #spec>
 
 | 类别 | 规格 |
 |------|------|
@@ -27,11 +30,18 @@ pageSubTitle: 龙芯 AC612A0_V1.1
 - †：支持基于 AST2500 或龙芯 2K0500 的 BMC 模组。
 - ‡：该主板亦有一款“国产化部件”版本，该版本主板无 BMC 接口。
 
-## 已知问题
+</template>
+
+<template #known-issues>
 
 <!--@include: @/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
-## 产品图片
+</template>
+
+<template #image>
 
 [![](/public/images/devices/loongson-ac612a0-v1.1.thumbnail.webp)](/public/images/devices/loongson-ac612a0-v1.1.webp)
 来源：《龙芯 3C6000 单路服务器主板产品规格书 V1.0》
+
+</template>
+</Device>

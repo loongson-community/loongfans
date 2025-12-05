@@ -5,11 +5,14 @@ pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 XA612A0
 ---
 
+::: info
 龙芯 XA612A0 是由龙芯中科推出的，基于 3A6000-HV 平台设计的 ATX (244×305mm) 台式机主板。
 
 该主板是龙芯发售的第一款 3A6000 主板，一般认为属于评估开发板 (Evaluation Board)。
+:::
 
-## 主要规格
+<Device>
+<template #spec>
 
 | 类别 | 规格 |
 |------|------|
@@ -26,11 +29,18 @@ pageSubTitle: 龙芯 XA612A0
 
 †：目前该主板的 ECC 支持范围尚不明确，且不清楚是否支持 Registered ECC 内存，DMI 信息 亦无暴露 72 位宽内存。
 
-## 已知问题
+</template>
+
+<template #known-issues>
 
 <!--@include: @/parts/known-issues/7a-errata.md -->
 
-## 产品图片
+</template>
+
+<template #image>
 
 [![](/public/images/devices/loongson-xa612a0.thumbnail.webp)](/public/images/devices/loongson-xa612a0.webp)
 来源：《XA612A0 主板使用手册 V1.0》
+
+</template>
+</Device>

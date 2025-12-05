@@ -5,12 +5,14 @@ pageTitle: 产品规格数据库
 pageSubTitle: 华硕 XC-LS3A6M
 ---
 
-
+::: info
 华硕 XC-LS3A6M 是由华硕推出的，基于 3A6000-HV 平台设计的 DTX (203×244mm) 台式机主板。
 
 该主板由华硕设计发售，是龙芯 3A6000 首发的第三方主板之一，其特色包括超频支持、双网口和额外的 USB 3.0 板载接口。
+:::
 
-## 主要规格
+<Device>
+<template #spec>
 
 | 类别 | 规格 |
 |------|------|
@@ -25,7 +27,9 @@ pageSubTitle: 华硕 XC-LS3A6M
 | 接口（视频） | 1 × HDMI、1 × VGA |
 | 接口（其他） | 1 × M.2 Key E 接口 (PCIe + USB)、1 × mPCIe (PCIe + USB)、1 组 3.5mm（输入、输出、Line-In）接口 |
 
-## 已知问题
+</template>
+
+<template #known-issues>
 
 <!--@include: @/parts/known-issues/7a-errata.md -->
 
@@ -44,7 +48,12 @@ pageSubTitle: 华硕 XC-LS3A6M
 如果您已购入此款主板并遇到了相关问题，请联系您的经销商。如果您获取到了相关固件更新，欢迎您[联系本站](https://git.whlug.cn/loongweb/loong123/issues/new)上传相关材料。
 :::
 
-## 产品图片
+</template>
+
+<template #image>
 
 ![](/public/images/devices/asus-xc-ls3a6m.webp)
 来源：[AliExpress 网店](https://aliexpress.com/item/1005006592333955.html)
+
+</template>
+</Device>

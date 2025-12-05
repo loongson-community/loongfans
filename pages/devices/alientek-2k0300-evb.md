@@ -5,9 +5,12 @@ pageTitle: 产品规格数据库
 pageSubTitle: 正点原子 2K0300 开发板
 ---
 
+::: info
 正点原子 2K0300 开发板是一款基于 2K0300 平台设计的开发板。
+:::
 
-## 主要规格
+<Device>
+<template #spec>
 
 | 类别 | 规格 |
 |------|------|
@@ -21,12 +24,19 @@ pageSubTitle: 正点原子 2K0300 开发板
 | 接口（视频） | 1 × LCD 输出 |
 | 接口（其他） | 1 × 3.5mm 耳机耳麦口、1 × 扬声器、1 × mPCIe 接口（可用于 4G LTE）、1 × SIM 卡槽、1 × 麦克风、1 × ADC、1 × RS-232 串口 (DB-9)、2 × CAN-FD、2 × RS-485、14-pin 用户扩展 I/O |
 
-## 已知问题
+</template>
+
+<template #known-issues>
 
 暂无记录。
 
-## 产品图片
+</template>
+
+<template #image>
 
 ![](/public/images/devices/alientek-2k0300-evb-1.webp)
 ![](/public/images/devices/alientek-2k0300-evb-2.webp)
 来源：正点原子
+
+</template>
+</Device>
