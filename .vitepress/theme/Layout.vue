@@ -60,8 +60,8 @@ body,
 .body_content {
   display: block;
   clear: both;
-  width: 100%;
-  max-width: 1200px;
+  width: auto;
+  max-width: var(--content-max-width);
   height: auto;
   margin: 0 auto;
   flex: 1;

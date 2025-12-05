@@ -65,7 +65,7 @@ function handleLanguageChange(language) {
   gap: 20px;
   clear: both;
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   height: auto;
   line-height: 30px;
   overflow: hidden;
@@ -130,7 +130,7 @@ function handleLanguageChange(language) {
 }
 
 /*响应式处理-开始*/
-@media (max-width: 1200px) {
+@media (max-width: var(--content-max-width)) {
   .child_footer_info {
     width: 100%;
     max-width: 100%;

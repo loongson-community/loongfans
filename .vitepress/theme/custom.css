@@ -1,5 +1,10 @@
-.vp-doc div[class*='language-'], .vp-block {
-  margin: 16px 0px
+:root {
+  --content-max-width: 1024px;
+}
+
+.vp-doc div[class*="language-"],
+.vp-block {
+  margin: 16px 0px;
 }
 
 .header_redline {
