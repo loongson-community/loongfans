@@ -26,17 +26,9 @@ This motherboard was designed and sold by ASUS and is one of the first third-par
 
 ## Known Issues
 
-### 7A Bridge Chip Instability
+<!--@include: @/parts/known-issues/7a-errata.md -->
 
-The 7A2000 bridge chip provides PCIe interfaces on this motherboard, but has known (though not officially confirmed) issues that can cause driver instability, screen or application crashes, and even system freezes when using certain peripherals, especially AMD GCN 1.0 to 4.0 series graphics cards. Some distributions provide temporary patches to mitigate these issues, though some users still report problems.
-
-If you experience similar issues, the community recommends improving the case or bridge chip cooling.
-
-### USB Device Loss
-
-Users have reported that USB keyboards and mice randomly stop working after boot and require repeated plugging and unplugging.
-
-Loongson Technology engineers have traced this to [a hardware defect in the Loongson 7A2000 bridge chip](https://github.com/torvalds/linux/commit/bcb60d438547355b8f9ad48645909139b64d3482). This issue has been worked around in Linux Kernel 6.15-rc1 and later. Commercial ABI2.0 distributions using the 6.6 kernel and ABI1.0 systems using the 4.19 kernel also include this workaround.
+<!--@include: @/parts/known-issues/usb-device-lost.md -->
 
 ### Lack of Firmware Update
 

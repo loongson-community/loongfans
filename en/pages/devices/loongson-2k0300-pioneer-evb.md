@@ -2,11 +2,10 @@
 layout: page
 returnLink: /en/pages/devices
 pageTitle: Product Specification Database
-pageSubTitle: Loongson 2K0300 Pioneer board
+pageSubTitle: Loongson 2K0300 "Pioneer"
 ---
 
-
-The Loongson 2K0300 Pioneer board is a development board from Loongson Technology based on the 2K0300 platform.
+The Loongson 2K0300 "Pioneer" is a development board launched based on Loongson 2K0300.
 
 ## Key Specifications
 

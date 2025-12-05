@@ -1,8 +1,8 @@
 ---
 layout: page
 returnLink: /en/pages/guides
-pageTitle: FAQ Collection
-pageSubTitle: Known issues on various desktop platforms
+pageTitle: Common Issues
+pageSubTitle: Common Issues Found on Desktop and Server Platforms
 ---
 
 <!--@include: @/parts/en/known-issues/7a-errata.md -->

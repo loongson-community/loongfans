@@ -2,11 +2,10 @@
 layout: page
 returnLink: /en/pages/devices
 pageTitle: Product Specification Database
-pageSubTitle: Loongson 2K0300 Hummingbird board
+pageSubTitle: Loongson 2K0300 "Hummingbird"
 ---
 
-
-The Loongson 2K0300 Hummingbird board is a development board from Loongson Technology based on the 2K0300 platform.
+The Loongson 2K0300 "Hummingbird" is a development board based on Loongson 2K0300.
 
 ## Key Specifications
 
@@ -22,7 +21,7 @@ The Loongson 2K0300 Hummingbird board is a development board from Loongson Techn
 | Interfaces (Video) | 1 × LCD output |
 | Interfaces (Other) | 2 × SPI, 4 × PWM, 4 × CAN-FD, 40-pin GPIO |
 
-†: The USB-C interface is for serial connection only.
+†: The USB-C interface can only be used for power and serial connection.
 
 ## Known Issues
 

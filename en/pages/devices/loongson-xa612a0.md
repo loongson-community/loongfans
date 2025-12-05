@@ -5,10 +5,9 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson XA612A0
 ---
 
+The Loongson XA612A0 is an ATX (244×305mm) desktop motherboard based on Loongson 3A6000-HV.
 
-The Loongson XA612A0 is an ATX (244×305mm) desktop motherboard from Loongson Technology, based on the 3A6000-HV platform.
-
-This motherboard is Loongson's first 3A6000 motherboard and is generally considered an evaluation board.
+This motherboard is the first 3A6000 motherboard released by Loongson and is generally considered an evaluation board (EVB).
 
 ## Key Specifications
 
@@ -25,16 +24,14 @@ This motherboard is Loongson's first 3A6000 motherboard and is generally conside
 | Interfaces (Video) | 1 × HDMI, 1 × VGA |
 | Interfaces (Other) | 1 set of 3.5mm (input, output, Line-In) interfaces, 1 × RS-232 serial port (DB-9) |
 
-†: The ECC support range of this motherboard is currently unclear, and it is not clear whether it supports Registered ECC memory. DMI information also does not expose 72-bit wide memory.
+†: The state of ECC memory support of this motherboard is currently unclear. It is also not clear whether it supports Registered ECC memory. DMI information also does not declare 72-bit wide memory interface.
 
 ## Known Issues
 
-### 7A Bridge Chip Stability Issues
-
-The 7A2000 bridge chip provides PCIe interfaces on this motherboard, but has known (though not officially confirmed) issues that can cause driver instability, screen or application crashes, and even system freezes when using certain peripherals, especially AMD GCN 1.0 to 4.0 series graphics cards. Some distributions provide temporary patches to mitigate these issues, though some users still report problems.
+<!--@include: @/parts/known-issues/7a-errata.md -->
 
 If you experience similar issues, the community recommends improving the case or bridge chip cooling.
 ## Product Images
 
 [![](/public/images/devices/loongson-xa612a0.thumbnail.webp)](/public/images/devices/loongson-xa612a0.webp)
-Source: "XA612A0 Motherboard User Manual V1.0"
+Source: "XA612A0 主板使用手册 V1.0"

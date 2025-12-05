@@ -1,8 +1,8 @@
 ---
 layout: page
 returnLink: /en/
-pageTitle: About the Community
-pageSubTitle: The mysterious eastern third-party community
+pageTitle: About Our Community
+pageSubTitle: That Mysterious Community for Mysterious Processors
 ---
 
 <script setup>
@@ -11,6 +11,6 @@ import CardGroup from "../../components/about/CardGroup.vue"
 
 ![](/public/images/logo_about.webp)
 
-The Loongson Hobbyists Community was founded on October 24, 2024, also known as Programmers' Day in China. It is an online community of hobbyists, industry professionals, and students dedicated to building the Loongson (LoongArch) software and hardware ecosystem.
+The Loongson Hobbyists' Community was founded on October 24, 2024 (Programmers' Day). We are an Internet-based community of Loongson hobbyists, industry workers, and students, dedicated to the construction of Loongson's (LoongArch) software and hardware ecosystem.
 
 <CardGroup />
