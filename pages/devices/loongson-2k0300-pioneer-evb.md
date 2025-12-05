@@ -5,7 +5,6 @@ pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 2K0300 先锋派
 ---
 
-
 龙芯 2K0300 先锋派是由龙芯中科推出的，基于 2K0300 平台设计的开发板。
 
 ## 主要规格
@@ -32,4 +31,3 @@ pageSubTitle: 龙芯 2K0300 先锋派
 
 ![](/public/images/devices/loongson-2k0300-pioneer-evb.webp)
 来源：龙芯中科
-

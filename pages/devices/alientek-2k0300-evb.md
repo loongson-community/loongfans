@@ -30,4 +30,3 @@ pageSubTitle: 正点原子 2K0300 开发板
 ![](/public/images/devices/alientek-2k0300-evb-1.webp)
 ![](/public/images/devices/alientek-2k0300-evb-2.webp)
 来源：正点原子
-

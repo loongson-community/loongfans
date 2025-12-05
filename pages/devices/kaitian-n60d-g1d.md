@@ -5,7 +5,6 @@ pageTitle: 产品规格数据库
 pageSubTitle: 联想开天 N60d-G1d
 ---
 
-
 联想开天 N60d-G1d 是一款基于 3A6000 处理器的 14 寸笔记本电脑，其重量约 1.5kg，搭载 1920x1200 (WUXGA) 屏幕，接口较为丰富，续航约 3-4 小时。
 
 ## 主要规格
@@ -29,18 +28,15 @@ pageSubTitle: 联想开天 N60d-G1d
 
 ### ABI 2.0 系统下触摸板无法使用
 
-该笔记本的触摸板在 ABI 2.0 系统下暂时无法使用。
+<!--@include: @/parts/known-issues/touchpad-err-in-abi2.md -->
 
 <!--@include: @/parts/known-issues/loonggpu-err-in-abi2.md -->
 
 <!--@include: @/parts/known-issues/smcv1-issue-in-abi2.md -->
 
-### 整机能耗较高
-
-该款笔记本使用 AVS（动态电压调整）而非完整的 DVFS（动态调频调压）节电模式，且电压调整范围相当有限，降频时处理器功耗未有显著降低，整体续航仍不理想。
+<!--@include: @/parts/known-issues/laptop-high-power-consumption.md -->
 
 ## 产品图片
 
 [![](/public/images/devices/kaitian-n60d-g1d.thumbnail.webp)](/public/images/devices/kaitian-n60d-g1d.webp)
 来源：白铭骢
-
