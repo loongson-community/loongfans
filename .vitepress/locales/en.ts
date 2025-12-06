@@ -4,6 +4,7 @@ export default {
   introToLoongson: 'Loongson: An Introduction',
   usageGuides: 'FAQ & Troubleshooting',
   supportMaterials: 'Support Materials',
+  contact: 'Contact',
   firmwareAndManuals: 'Firmware and Manuals',
   productSpecs: 'Product Specifications',
   compatibilityDb: 'Hardware Compatibility Database',

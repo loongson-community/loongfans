@@ -4,6 +4,7 @@ export default {
   introToLoongson: '初识龙芯',
   usageGuides: '玩机及踩坑指南',
   supportMaterials: '支持材料',
+  contact: '联系我们',
   firmwareAndManuals: '主板固件及说明书',
   productSpecs: '产品规格数据库',
   compatibilityDb: '软硬件兼容性数据库',

@@ -41,6 +41,10 @@
         </div>
 
         <div class="link_group">
+          <div class="link_type_title">
+            <div class="title">{{ t('contact') }}</div>
+            <div class="red_line"></div>
+          </div>
           <div class="link_type_box">
             <Link
               name="GitHub 主页"
