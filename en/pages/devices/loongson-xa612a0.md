@@ -5,11 +5,14 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson XA612A0
 ---
 
+::: info
 The Loongson XA612A0 is an ATX (244×305mm) desktop motherboard based on Loongson 3A6000-HV.
 
 This motherboard is the first 3A6000 motherboard released by Loongson and is generally considered an evaluation board (EVB).
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -26,12 +29,20 @@ This motherboard is the first 3A6000 motherboard released by Loongson and is gen
 
 †: The state of ECC memory support of this motherboard is currently unclear. It is also not clear whether it supports Registered ECC memory. DMI information also does not declare 72-bit wide memory interface.
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 <!--@include: @/en/parts/known-issues/7a-errata.md -->
 
 If you experience similar issues, the community recommends improving the case or bridge chip cooling.
-## Product Images
+
+</template>
+
+<template #image>
 
 [![](/public/images/devices/loongson-xa612a0.thumbnail.webp)](/public/images/devices/loongson-xa612a0.webp)
 Source: "XA612A0 主板使用手册 V1.0"
+
+</template>
+</Device>

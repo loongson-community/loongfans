@@ -5,13 +5,16 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson XA61200
 ---
 
+::: info
 The Loongson XA61200 is a DTX (203×244mm) desktop motherboard based on Loongson 3A6000-HV.
 
 This motherboard is generally considered the reference design for all Loongson 3A6000 motherboards. In addition to Loongson Technology, many other manufacturers have launched derivative designs based on this motherboard. The motherboard was released in 2023 and is the first Loongson motherboard to reach below the CNY 2000 price point and saw general availability from common e-commerce sites.
 
 Due to its good cost-to-performance ratio at that time, it was well received by the user community (and affectionately named "the Green Board"). The XA61200 was the first motherboard for many Loongson beginners.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -26,12 +29,19 @@ Due to its good cost-to-performance ratio at that time, it was well received by 
 | Interfaces (Video) | 1 × HDMI, 1 × VGA |
 | Interfaces (Other) | 1 × m.2 Key E interface (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 set of 3.5mm (input, output, Line-In) interfaces, 1 × RS-232 serial port (DB-9) |
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 <!--@include: @/en/parts/known-issues/7a-errata.md -->
 
-## Product Images
+</template>
+
+<template #image>
 
 [![](/public/images/devices/loongson-xa61200.thumbnail.webp)](/public/images/devices/loongson-xa61200.webp)
 Source: "XA61200 主板产品使用手册 V1.1"
+
+</template>
+</Device>
 

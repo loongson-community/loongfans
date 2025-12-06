@@ -5,11 +5,14 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson AC612A0_V1.1
 ---
 
+::: info
 The Loongson AC612A0_V1.1 is an ATX (244×305mm) desktop/server motherboard based on Loongson 3C6000/S.
 
 This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relatively comprehensive set of interfaces and support for out-of-band management (BMC) modules for remote operation and management.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -27,11 +30,18 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 - †: Supports BMC modules based on AST2500 or Loongson 2K0500.
 - ‡: There is also a version of this motherboard known as "domestic[-only] (Chinese) component", which does not come with a slot for BMC modules.
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 <!--@include: @/en/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
-## Product Images
+</template>
+
+<template #image>
 
 [![](/public/images/devices/loongson-ac612a0-v1.1.thumbnail.webp)](/public/images/devices/loongson-ac612a0-v1.1.webp)
 Source: "龙芯 3C6000 单路服务器主板产品规格书 V1.0"
+
+</template>
+</Device>

@@ -5,9 +5,12 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson 2K0300 "Pioneer"
 ---
 
+::: info
 The Loongson 2K0300 "Pioneer" is a development board launched based on Loongson 2K0300.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -23,11 +26,18 @@ The Loongson 2K0300 "Pioneer" is a development board launched based on Loongson 
 
 †: USB-C for power and serial.
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 None noted.
 
-## Product Images
+</template>
+
+<template #image>
 
 ![](/public/images/devices/loongson-2k0300-pioneer-evb.webp)
 Source: Loongson Technology
+
+</template>
+</Device>

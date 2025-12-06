@@ -5,9 +5,12 @@ pageTitle: Product Specification Database
 pageSubTitle: OrangePi Nova v1.0
 ---
 
+::: info
 The OrangePi Nova v1.0 is a Nano-ITX (120×120mm) motherboard based on Loongson 2K3000.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -23,11 +26,18 @@ The OrangePi Nova v1.0 is a Nano-ITX (120×120mm) motherboard based on Loongson 
 
 †: One USB-C port is for power delivery only, without data transfer capability.
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 None noted.
 
-## Product Images
+</template>
+
+<template #image>
 
 [![](/public/images/devices/opi-nova-v1.0.thumbnail.webp)](/public/images/devices/opi-nova-v1.0.webp)
 Source: Bai Mingcong, Xi Ruoyao
+
+</template>
+</Device>
