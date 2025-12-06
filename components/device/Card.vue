@@ -34,6 +34,8 @@ const tags = computed(() => props.tags.split(",").map((i) => i.trim()));
 <style scoped>
 .card {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   padding: 16px;
   color: unset;
@@ -69,6 +71,7 @@ const tags = computed(() => props.tags.split(",").map((i) => i.trim()));
   flex-direction: column;
   justify-content: space-between;
   padding-block: 8px;
+  min-width: 200px;
 }
 
 .name {
@@ -85,6 +88,7 @@ const tags = computed(() => props.tags.split(",").map((i) => i.trim()));
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .tag {
