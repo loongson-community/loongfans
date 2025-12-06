@@ -1,5 +1,5 @@
 <template>
-  <template v-for="family in devices" :key="family.family">
+  <template v-for="family in tm('devices')" :key="family.family">
     <h2>{{ family.family }}</h2>
     <template v-for="category in family.categories" :key="category.title">
       <h3>{{ category.title }}</h3>
@@ -20,7 +20,9 @@
 
 <script setup>
 import Card from "./Card.vue";
-import { devices } from "./data";
+import { useI18n } from "vue-i18n";
+
+const { tm } = useI18n();
 </script>
 
 <style>
