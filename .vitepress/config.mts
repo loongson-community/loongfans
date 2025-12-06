@@ -32,5 +32,8 @@ export default defineConfig({
   appearance: false,
   vite: {
     plugins: [Icons({ scale: 1 })],
+    ssr: {
+      noExternal: ['vue-i18n'],
+    },
   },
 })
