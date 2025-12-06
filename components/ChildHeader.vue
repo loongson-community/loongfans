@@ -158,6 +158,7 @@ body {
 
   .back_row {
     padding: 20px 30px;
+    max-width: unset;
   }
 }
 
