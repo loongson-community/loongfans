@@ -6,7 +6,7 @@ export default defineConfig({
   locales: {
     root: {
       label: '简体中文',
-      lang: 'zh-Hans',
+      lang: 'zh',
       title: "龙芯爱好者社区",
       description: "龙芯爱好者社区导航站"
     },

@@ -20,6 +20,7 @@ export default {
   loongApps: 'LoongApps',
 
   // ChildFooter.vue
+  language: 'Language',
   siteSource: 'Sources',
   reportIssue: 'Report Content Issue',
   aboutCommunity: "About",
