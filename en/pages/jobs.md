@@ -1,11 +1,11 @@
 ---
 layout: page
 returnLink: /en/
-pageTitle: Bounties and Internship Opportunities
+pageTitle: Internships and Bounties
 pageSubTitle: Love Driven, or Maybe Material Driven? ( ͡° ͜ʖ ͡°)
 ---
 
-# Community Bounty
+# Community Bounties
 
 ### U-Boot Support for OrangePi Nova
 

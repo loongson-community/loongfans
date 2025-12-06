@@ -2,7 +2,7 @@
 layout: page
 returnLink: /en/pages/devices
 pageTitle: Product Specification Database
-pageSubTitle: ALIENTEK 2K0300 development board
+pageSubTitle: ALIENTEK 2K0300 Development Board
 ---
 
 The ALIENTEK 2K0300 Development Board is a development board based on Loongson 2K0300.

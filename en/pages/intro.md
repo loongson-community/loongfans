@@ -106,7 +106,7 @@ At this point, you already have some basic understandings on Loongson. The follo
 - [FAQ & Troubleshooting](/en/pages/guides)
 - [Loongson Motherboard and CPU Database](/en/pages/devices)
 - [*AREWELOONGYET?*: LoongArch Ecosystem Construction Information Site](https://areweloongyet.com/)
-- [Loong 1-2-3: Compatibility Data Website for LoongArch](https://loong123.cn/)
+- [Loong 1-2-3: Compatibility Database for LoongArch](https://loong123.cn/)
 
 Collected reading materials:
 

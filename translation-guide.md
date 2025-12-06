@@ -15,7 +15,7 @@
   - ✅ This motherboard was designed and sold by ASUS and is one of the first third-party Loongson 3A6000 motherboards
   - 调整语序，把主语放前面
 - 「中科云 3A6000 小主机是一款类似 Intel NUC 规格的小型台式机，搭载 3A6000-HV 处理器」
-  - ❌ The CTCISZ 3A6000 mini PC is a small desktop computer similar to the Intel NUC specification, equipped with a 3A6000-HV processor
+  - ❌ The CTCISZ 3A6000 NUC is a small desktop computer similar to the Intel NUC specification, equipped with a 3A6000-HV processor
   - ✅ The CTCISZ 3A6000 NUC is an Intel NUC-style mini PC powered by Loongson 3A6000-HV
   - 「类似 Intel NUC 规格」用 "NUC-style" 更简洁
   - 「搭载」用 "powered by" 比 "equipped with" 更地道
@@ -121,7 +121,7 @@
 - 服务器: server
 - 开发板/评估板: development board / evaluation board (EVB)
 - 整机: pre-built system
-- 小主机: mini PC 
+- 小主机: NUC 
 - 板载: onboard
 - 独立显卡: discrete graphics card
 - 集成显卡: integrated graphics
