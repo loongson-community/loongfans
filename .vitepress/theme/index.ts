@@ -5,8 +5,8 @@ import { definePreset } from "@primeuix/themes";
 import { createI18n } from 'vue-i18n'
 
 import './custom.css'
-import en from '../locales/en.js'
-import zh from '../locales/zh.js'
+import en from '../locales/en'
+import zh from '../locales/zh'
 import Layout from './Layout.vue'
 import DeviceDetail from "../../components/device/Detail.vue";
 
@@ -14,6 +14,7 @@ import type { App } from "vue";
 
 const i18n = createI18n({
   legacy: false,
+  globalInjection: true,
   locale: 'zh',
   fallbackLocale: 'en',
   messages: {
