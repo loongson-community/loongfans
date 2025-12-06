@@ -2,15 +2,15 @@ export default {
   // Index.vue
   beginnerResources: 'Loongson 101',
   introToLoongson: 'Loongson: An Introduction',
-  usageGuides: 'FAQ & Troubleshooting',
+  usageGuides: 'FAQ & Troubleshooting Guides',
   supportMaterials: 'Support Materials',
   contact: 'Contact',
   firmwareAndManuals: 'Firmware and Manuals',
   productSpecs: 'Product Specifications',
-  compatibilityDb: 'Hardware Compatibility Database',
+  compatibilityDb: 'Loong 1-2-3',
   communityResources: 'Community Resources',
   biweeklyMeeting: 'LoongArch Biweekly',
-  jobsAndBounties: 'Intership and Bounties',
+  jobsAndBounties: 'Internships and Bounties',
   devBoardProgram: 'Roaming Loongson Program',
   githubPage: 'GitHub Page',
   communityForum: 'Community BBS',
@@ -21,9 +21,9 @@ export default {
   loongApps: 'LoongApps',
 
   // ChildFooter.vue
-  siteSource: 'Site Sources',
+  siteSource: 'Sources',
   reportIssue: 'Report Content Issue',
-  aboutCommunity: "About Loongson Hobbyists' Community",
+  aboutCommunity: "About",
   copyright: 'Copyright',
   communityName: "Loongson Hobbyists' Community",
 
@@ -31,13 +31,13 @@ export default {
   goBack: 'Go Back',
 
   // CardGroup.vue (about page)
-  aboutGithubName: 'GitHub Page',
+  aboutGithubName: 'GitHub',
   aboutGithubDescription: 'The planetary generator powered by community tech',
   aboutBilibiliName: 'BiliBili',
   aboutBilibiliDescription: 'Follow the best Loongson hobbyists\' community',
-  aboutWechatName: 'WeChat Group',
+  aboutWechatName: 'WeChat',
   aboutWechatDescription: 'Chat with us!',
-  aboutQQName: 'QQ Group',
+  aboutQQName: 'QQ',
   aboutQQDescription: 'Keep in touch!'
 }
 
