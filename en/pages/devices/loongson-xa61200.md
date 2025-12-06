@@ -28,7 +28,7 @@ Due to its good cost-to-performance ratio at that time, it was well received by 
 
 ## Known Issues
 
-<!--@include: @/parts/known-issues/7a-errata.md -->
+<!--@include: @/en/parts/known-issues/7a-errata.md -->
 
 ## Product Images
 

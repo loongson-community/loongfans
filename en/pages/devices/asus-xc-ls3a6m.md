@@ -26,9 +26,9 @@ This motherboard was designed and sold by ASUS and is one of the first third-par
 
 ## Known Issues
 
-<!--@include: @/parts/known-issues/7a-errata.md -->
+<!--@include: @/en/parts/known-issues/7a-errata.md -->
 
-<!--@include: @/parts/known-issues/usb-device-lost.md -->
+<!--@include: @/en/parts/known-issues/usb-device-lost.md -->
 
 ### Lack of Firmware Update
 
