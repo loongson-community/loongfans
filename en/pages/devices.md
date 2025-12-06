@@ -1,7 +1,7 @@
 ---
 layout: page
 returnLink: /en/
-pageTitle: Product Specification Database
+pageTitle: Product Specifications
 pageSubTitle: Overview of specifications, features, and known issues
 ---
 
@@ -42,8 +42,8 @@ For processor specifications, details, and parameter comparisons, please see:
 
 ### Pre-built Systems
 
-- [Morefine 3A6000 mini PC (3A6000-HV @ 2.5GHz)](/en/pages/devices/morefine-m700s)
-- [CTCISZ 3A6000 mini PC (3A6000-HV @ 2.5GHz)](/en/pages/devices/ctcisz-3a6000-nuc)
+- [Morefine 3A6000 NUC (3A6000-HV @ 2.5GHz)](/en/pages/devices/morefine-m700s)
+- [CTCISZ 3A6000 NUC (3A6000-HV @ 2.5GHz)](/en/pages/devices/ctcisz-3a6000-nuc)
 
 ## 2K3000/3B6000M
 
@@ -54,13 +54,13 @@ For processor specifications, details, and parameter comparisons, please see:
 
 ### Pre-built Systems
 
-- [CTCISZ 3B6000M mini PC (3B6000M @ 2.5GHz)](/en/pages/devices/ctcisz-3b6000m-nuc)
+- [CTCISZ 3B6000M NUC (3B6000M @ 2.5GHz)](/en/pages/devices/ctcisz-3b6000m-nuc)
 
 ## 2K0300
 
 ### Motherboards and Development Boards
 
-- [Loongson 2K0300 Hummingbird board](/en/pages/devices/loongson-2k0300-hummingbird-evb)
-- [Loongson 2K0300 Pioneer board](/en/pages/devices/loongson-2k0300-pioneer-evb)
-- [ALIENTEK 2K0300 development board](/en/pages/devices/alientek-2k0300-evb)
+- [Loongson 2K0300 "Hummingbird"](/en/pages/devices/loongson-2k0300-hummingbird-evb)
+- [Loongson 2K0300 "Pioneer"](/en/pages/devices/loongson-2k0300-pioneer-evb)
+- [ALIENTEK 2K0300 Development Board](/en/pages/devices/alientek-2k0300-evb)
 - [CTCISZ ForeverPi](/en/pages/devices/ctcisz-foreverpi)
