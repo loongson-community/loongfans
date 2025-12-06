@@ -1,6 +1,23 @@
 <template>
-    <div class="child_footer_info">
+  <div class="child_footer_info">
     <div class="child_footer_link">
+      <Button
+        :label="t('language')" unstyled class="language-button" @click="(e) => op.toggle(e)">
+        <template #icon>
+          <IconTranslate />
+        </template>
+      </Button>
+      <Popover ref="op">
+        <div class="language-popover-content">
+          <Button
+            v-for="lang in Object.keys(LANGUAGE_DISPLAY_NAMES)"
+            :label="LANGUAGE_DISPLAY_NAMES[lang]"
+            variant="text"
+            @click="() => handleLanguageChange(lang)"
+          />
+        </div>
+      </Popover>
+      <span>|</span>
       <a href="https://github.com/loongson-community/loongfans" target="_blank">{{ t('siteSource') }}</a>
       <span>|</span>
       <a href="https://github.com/loongson-community/loongfans/issues/new" target="_blank">{{ t('reportIssue') }}</a>
@@ -17,16 +34,27 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { useData } from 'vitepress';
+import { useData, useRouter } from 'vitepress';
 import { useI18n } from 'vue-i18n';
-import { getLocalePrefix } from '../.vitepress/utils/language';
+import { Button, Popover } from "primevue";
+import IconTranslate from '~icons/material-symbols/translate'
+import { getLocalePrefix, getLocaleUrl, setStoredLanguage, LANGUAGE_DISPLAY_NAMES } from '../.vitepress/utils/language';
 
 const { t } = useI18n();
-const { localeIndex } = useData();
+const { localeIndex, lang } = useData();
+const router = useRouter();
 const basePath = computed(() => getLocalePrefix(localeIndex.value));
+const op = ref();
 
 let year = new Date().getFullYear();
 const copyrightYear = ref(year);
+
+function handleLanguageChange(language) {
+  op.value.hide()
+  if(language !== lang.value)
+    setStoredLanguage(language)
+    router.go(getLocaleUrl(language, router.route.path))
+}
 </script>
 
 <style scoped>
@@ -73,6 +101,34 @@ const copyrightYear = ref(year);
 .child_footer_info a:hover {
   color: #e60013;
 }
+
+.language-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.language-button svg {
+  margin-right: 0.5em;
+}
+
+.language-button:hover {
+  color: #e60013;
+}
+
+.language-popover-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.p-popover-content button {
+  display: block;
+  color: unset;
+}
+
 /*响应式处理-开始*/
 @media (max-width: 1200px) {
   .child_footer_info {

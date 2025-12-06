@@ -20,6 +20,7 @@ export default {
   loongApps: '龙芯应用合作社',
 
   // ChildFooter.vue
+  language: '语言',
   siteSource: '站点源码',
   reportIssue: '报告问题',
   aboutCommunity: '关于龙芯爱好者社区',

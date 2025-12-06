@@ -7,6 +7,11 @@ export enum SupportedLanguage {
 
 const SUPPORTED_LANGUAGES = Object.values(SupportedLanguage);
 
+export const LANGUAGE_DISPLAY_NAMES: Record<SupportedLanguage, string> = {
+  [SupportedLanguage.EN]: 'English',
+  [SupportedLanguage.ZH]: '简体中文'
+}
+
 /**
  * 语言路径前缀映射
  * 注意：root locale（中文）的前缀为空字符串
@@ -87,7 +92,7 @@ export function handleFirstVisitRedirect(router: Router) {
 /**
  * @param url URL starts with `/`
  */
-function getLocaleUrl(lang: SupportedLanguage, url: string) {
+export function getLocaleUrl(lang: SupportedLanguage, url: string) {
   return LANGUAGE_PREFIXES[lang] + normalizeUrl(url);
 }
 

@@ -13,11 +13,11 @@ import type { App } from "vue";
 
 const i18n = createI18n({
   legacy: false,
-  locale: 'zh-Hans',
+  locale: 'zh',
   fallbackLocale: 'en',
   messages: {
     'en': en,
-    'zh-Hans': zh
+    'zh': zh
   }
 })
 
