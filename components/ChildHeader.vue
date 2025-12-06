@@ -27,7 +27,6 @@ import { useI18n } from 'vue-i18n'
 import IconArrowCircleLeftOutline from '~icons/material-symbols/arrow-circle-left-outline'
 import BackToTop from './BackToTop.vue';
 import Button from './Button.vue';
-import BackToTop from './BackToTop.vue'
 
 const { frontmatter } = useData()
 const { t } = useI18n()
