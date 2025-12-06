@@ -5,9 +5,12 @@ pageTitle: Product Specification Database
 pageSubTitle: Lenovo Kaitian N60d-G1d
 ---
 
+::: info
 The Lenovo Kaitian N60d-G1d is a 14-inch laptop based on Loongson 3A6000. Weighing approximately 1.5kg, the N60d-G1d equipped with a 1920x1200 (WUXGA) display, relatively rich interfaces, and a battery life of about 3-4 hours.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -24,7 +27,9 @@ The Lenovo Kaitian N60d-G1d is a 14-inch laptop based on Loongson 3A6000. Weighi
 
 †: One of the USB-C interfaces can be used for charging.
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 <!--@include: @/en/parts/known-issues/touchpad-err-in-abi2.md -->
 
@@ -34,7 +39,12 @@ The Lenovo Kaitian N60d-G1d is a 14-inch laptop based on Loongson 3A6000. Weighi
 
 <!--@include: @/en/parts/known-issues/laptop-high-power-consumption.md -->
 
-## Product Images
+</template>
+
+<template #image>
 
 [![](/public/images/devices/kaitian-n60d-g1d.thumbnail.webp)](/public/images/devices/kaitian-n60d-g1d.webp)
 Source: Bai Mingcong
+
+</template>
+</Device>

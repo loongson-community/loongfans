@@ -5,9 +5,12 @@ pageTitle: Product Specification Database
 pageSubTitle: ALIENTEK 2K0300 Development Board
 ---
 
+::: info
 The ALIENTEK 2K0300 Development Board is a development board based on Loongson 2K0300.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -21,12 +24,19 @@ The ALIENTEK 2K0300 Development Board is a development board based on Loongson 2
 | Interfaces (Video) | 1 × LCD output |
 | Interfaces (Other) | 1 × 3.5mm headphone/microphone jack, 1 × speaker, 1 × mPCIe interface (available for 4G LTE), 1 × SIM card slot, 1 × microphone, 1 × ADC, 1 × RS-232 serial port (DB-9), 2 × CAN-FD, 2 × RS-485, 14-pin user expansion I/O |
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 None noted.
 
-## Product Images
+</template>
+
+<template #image>
 
 ![](/public/images/devices/alientek-2k0300-evb-1.webp)
 ![](/public/images/devices/alientek-2k0300-evb-2.webp)
 Source: ALIENTEK
+
+</template>
+</Device>

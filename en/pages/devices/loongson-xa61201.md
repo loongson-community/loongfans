@@ -5,14 +5,17 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson XA61201
 ---
 
+::: info
 The Loongson XA61201 is a DTX (203×244mm) desktop motherboard based on Loongson 3A6000-HV.
 
 Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 motherboard:
 
 - Supports ECC memory
 - Has its PCIe 3.0 x8 slot in the third slot space changed to a PCIe 3.0 x16 interface (x8 lanes)
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -29,12 +32,19 @@ Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 mothe
 
 †: The state of ECC memory support of this motherboard is currently unclear. It is also not clear whether it supports Registered ECC memory. DMI information also does not declare 72-bit wide memory interface.
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 <!--@include: @/en/parts/known-issues/7a-errata.md -->
 
-## Product Images
+</template>
+
+<template #image>
 
 [![](/public/images/devices/loongson-xa61201.thumbnail.webp)](/public/images/devices/loongson-xa61201.webp)
 Source: "XA61201 主板产品使用手册 V1.0"
+
+</template>
+</Device>
 

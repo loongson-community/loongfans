@@ -5,9 +5,12 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson 2K3000 AI evaluation board
 ---
 
+::: info
 The Loongson 2K3000 AI Evaluation Board is a development board launched by Loongson Technology, based on Loongson 2K3000.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -21,11 +24,18 @@ The Loongson 2K3000 AI Evaluation Board is a development board launched by Loong
 | Interfaces (Video) | 1 × HDMI, 1 × eDP |
 | Interfaces (Other) | 1 × m.2 Key E interface (PCIe + USB), 1 × 3.5mm headphone/microphone jack, 1 × SIM card slot (supports 4G LTE), 2 × CAN-FD, 2 × serial port (RS-232), 2 × RS-485, 1 × UART TTL |
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 None noted.
 
-## Product Images
+</template>
+
+<template #image>
 
 ![](/public/images/devices/loongson-2k3000-ai-evb.webp)
 Source: Loongson Technology
+
+</template>
+</Device>

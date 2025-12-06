@@ -5,9 +5,12 @@ pageTitle: Product Specification Database
 pageSubTitle: Loongson 2K0300 "Hummingbird"
 ---
 
+::: info
 The Loongson 2K0300 "Hummingbird" is a development board based on Loongson 2K0300.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -23,12 +26,19 @@ The Loongson 2K0300 "Hummingbird" is a development board based on Loongson 2K030
 
 †: The USB-C interface can only be used for power and serial connection.
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 None noted.
 
-## Product Images
+</template>
+
+<template #image>
 
 ![](/public/images/devices/loongson-2k0300-hummingbird-evb.webp)
 Source: Loongson Technology
+
+</template>
+</Device>
 

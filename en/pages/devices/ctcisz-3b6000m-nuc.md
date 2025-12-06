@@ -5,9 +5,12 @@ pageTitle: Product Specification Database
 pageSubTitle: CTCISZ 3B6000M NUC
 ---
 
+::: info
 The CTCISZ 3B6000M NUC is an Intel NUC-style mini PC powered by Loongson 3B6000M and comes with DisplayPort and HDMI outputs and two Gigabit (GbE) Ethernet ports.
+:::
 
-## Key Specifications
+<Device>
+<template #spec>
 
 | Category | Specification |
 |------|------|
@@ -22,10 +25,17 @@ The CTCISZ 3B6000M NUC is an Intel NUC-style mini PC powered by Loongson 3B6000M
 
 †: One of the USB-C interfaces may only be used to power the board and cannot be used for data transfer.
 
-## Known Issues
+</template>
+
+<template #known-issues>
 
 None noted.
 
-## Product Images
+</template>
+
+<template #image>
 
 (Coming Soon)
+
+</template>
+</Device>
