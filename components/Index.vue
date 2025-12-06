@@ -12,12 +12,8 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a :href="`${basePath}/pages/intro`">
-              <span class="name">{{ t('introToLoongson') }}</span>
-            </a>
-            <a :href="`${basePath}/pages/guides`">
-              <span class="name">{{ t('usageGuides') }}</span>
-            </a>
+            <Link :href="`${basePath}/pages/intro`" :name="t('introToLoongson')" />
+            <Link :href="`${basePath}/pages/guides`" :name="t('usageGuides')" />
           </div>
         </div>
 
@@ -27,16 +23,9 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a :href="`${basePath}/pages/support`">
-              <span class="name">{{ t('firmwareAndManuals') }}</span>
-            </a>
-            <a :href="`${basePath}/pages/devices`">
-              <span class="name">{{ t('productSpecs') }}</span>
-            </a>
-            <a href="https://loong123.cn/" target="_blank">
-              <span class="name">{{ t('compatibilityDb') }}</span>
-              <span class="icon_link"></span>
-            </a>
+            <Link :href="`${basePath}/pages/support`" :name="t('firmwareAndManuals')" />
+            <Link :href="`${basePath}/pages/devices`" :name="t('productSpecs')" />
+            <Link href="https://loong123.cn/" :name="t('compatibilityDb')" />
           </div>
         </div>
 
@@ -72,24 +61,11 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a :href="`${basePath}/pages/biweekly`">
-              <span class="name">{{ t('biweeklyMeeting') }}</span>
-            </a>
-            <a :href="`${basePath}/pages/jobs`">
-              <span class="name">{{ t('jobsAndBounties') }}</span>
-            </a>
-            <a href="https://github.com/loongson-community/1024" target="_blank">
-              <span class="name">{{ t('devBoardProgram') }}</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://www.loongbbs.cn/" target="_blank">
-              <span class="name">{{ t('communityForum') }}</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://areweloongyet.com/" target="_blank">
-              <span class="name">{{ t('areWeLoongYet') }}</span>
-              <span class="icon_link"></span>
-            </a>
+            <Link :href="`${basePath}/pages/biweekly`" :name="t('biweeklyMeeting')" />
+            <Link :href="`${basePath}/pages/jobs`" :name="t('jobsAndBounties')" />
+            <Link href="https://github.com/loongson-community/1024" :name="t('devBoardProgram')" />
+            <Link href="https://www.loongbbs.cn/" :name="t('communityForum')" />
+            <Link href="https://areweloongyet.com/" :name="t('areWeLoongYet')" />
           </div>
         </div>
 
@@ -99,18 +75,9 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <a href="https://www.loongson.cn/" target="_blank">
-              <span class="name">{{ t('loongsonTech') }}</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://www.loongeco.cn/" target="_blank">
-              <span class="name">{{ t('loongsonEco') }}</span>
-              <span class="icon_link"></span>
-            </a>
-            <a href="https://app.loongapps.cn/" target="_blank">
-              <span class="name">{{ t('loongApps') }}</span>
-              <span class="icon_link"></span>
-            </a>
+            <Link href="https://www.loongson.cn/" :name="t('loongsonTech')" />
+            <Link href="https://www.loongeco.cn/" :name="t('loongsonEco')" />
+            <Link href="https://app.loongapps.cn/" :name="t('loongApps')" />
           </div>
         </div>
       </div>
