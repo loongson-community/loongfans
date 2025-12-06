@@ -29,7 +29,7 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 
 ## Known Issues
 
-<!--@include: @/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
+<!--@include: @/en/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
 ## Product Images
 

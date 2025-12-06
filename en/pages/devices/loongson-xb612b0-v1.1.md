@@ -28,7 +28,7 @@ Compared to the [AC612A0_V1.1](/en/pages/devices/loongson-ac612a0-v1.1.md) based
 
 ## Known Issues
 
-<!--@include: @/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
+<!--@include: @/en/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
 ## Product Images
 

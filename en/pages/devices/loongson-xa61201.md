@@ -31,7 +31,7 @@ Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 mothe
 
 ## Known Issues
 
-<!--@include: @/parts/known-issues/7a-errata.md -->
+<!--@include: @/en/parts/known-issues/7a-errata.md -->
 
 ## Product Images
 
