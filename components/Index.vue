@@ -47,18 +47,18 @@
           </div>
           <div class="link_type_box">
             <Link
-              name="GitHub 主页"
+              :name="t('aboutGithubName')"
               href="https://github.com/loongson-community"
             >
               <IconGithub />
             </Link>
-            <Link name="Bilibili" href="https://space.bilibili.com/70360929">
+            <Link :name="t('aboutBilibiliName')" href="https://space.bilibili.com/70360929">
               <IconBilibili />
             </Link>
-            <Link name="微信群" qr-link="/images/about/qr-wechat-group.png">
+            <Link :name="t('aboutWechatName')" qr-link="/images/about/qr-wechat-group.png">
               <IconWechat />
             </Link>
-            <Link name="QQ 群" qr-link="/images/about/qr-qq-group.png">
+            <Link :name="t('aboutQQName')" qr-link="/images/about/qr-qq-group.png">
               <IconQq />
             </Link>
           </div>
