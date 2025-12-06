@@ -12,29 +12,25 @@
 </template>
 
 <script setup>
-import { watchEffect, onMounted } from 'vue'
+import { onMounted, watch } from 'vue'
 import { useData } from 'vitepress'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vitepress';
 import ChildHeader from "/components/ChildHeader.vue";
 import ChildFooter from "/components/ChildFooter.vue";
-import { handleFirstVisitRedirect, setStoredLanguage } from '../utils/language'
+import { handleFirstVisitRedirect } from '../utils/language'
 
 const { lang } = useData()
 const { locale } = useI18n()
+const router = useRouter()
 
 // 首次访问时自动检测并重定向
 onMounted(() => {
-  handleFirstVisitRedirect()
+  handleFirstVisitRedirect(router)
 })
 
 // 同步 VitePress 语言和 vue-i18n locale
-watchEffect(() => {
-  locale.value = lang.value
-  // 监听语言切换，更新 localStorage
-  if (lang.value) {
-    setStoredLanguage(lang.value)
-  }
-})
+watch(lang, () => locale.value = lang.value, { immediate: true })
 </script>
 
 <style type="text/css">

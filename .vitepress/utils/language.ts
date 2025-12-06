@@ -1,3 +1,5 @@
+import type { Router } from "vitepress";
+
 export enum SupportedLanguage {
   EN = 'en',
   ZH = 'zh',
@@ -68,24 +70,34 @@ export function getLocalePrefix(localeIndex: string): string {
 /**
  * 根据语言偏好进行首次访问的重定向，只在首次访问时调用
  */
-export function handleFirstVisitRedirect() {
-  const storedLang = getStoredLanguage()
-  const targetLang = detectBrowserLanguage(storedLang)
-  if (targetLang) {
-    return;
+export function handleFirstVisitRedirect(router: Router) {
+  let storedLang = getStoredLanguage();
+  const targetLang = detectBrowserLanguage(storedLang);
+
+  if (!storedLang) {
+    const lang = navigator.language;
+    const defaultLang = detectBrowserLanguage(lang);
+    setStoredLanguage(defaultLang);
+    storedLang = defaultLang;
   }
 
-  const lang = navigator.language
-  const defaultLang = detectBrowserLanguage(lang)
-  setStoredLanguage(defaultLang)
-  if (defaultLang === SupportedLanguage.ZH) {
-    return
-  }
-
-  // 非中文用户需要重定向到指定前缀
-  const currentPath = window.location.pathname
-  const targetPrefix = LANGUAGE_PREFIXES[defaultLang]
-  const newPath = targetPrefix + currentPath;
-  window.location.pathname = newPath;
+  router.go(getLocaleUrl(storedLang as SupportedLanguage, router.route.path));
 }
 
+/**
+ * @param url URL starts with `/`
+ */
+function getLocaleUrl(lang: SupportedLanguage, url: string) {
+  return LANGUAGE_PREFIXES[lang] + normalizeUrl(url);
+}
+
+/**
+ * @param url URL starts with `/`
+ */
+function normalizeUrl(url: string) {
+  for (const lang of SUPPORTED_LANGUAGES) {
+    const prefix = LANGUAGE_PREFIXES[lang] + "/";
+    if (url.startsWith(prefix)) return "/" + url.replace(prefix, "");
+    if (url === LANGUAGE_PREFIXES[lang] + ".html") return "/";
+  }
+}
