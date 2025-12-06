@@ -1,3 +1,5 @@
+import { devices } from './zh/devices'
+
 export default {
   // Index.vue
   beginnerResources: '新手资源',
@@ -38,6 +40,7 @@ export default {
   aboutWechatName: '微信群',
   aboutWechatDescription: '常聊天！',
   aboutQQName: 'QQ 群',
-  aboutQQDescription: '常联系！'
-}
+  aboutQQDescription: '常联系！',
 
+  devices
+}

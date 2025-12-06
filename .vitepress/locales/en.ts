@@ -1,3 +1,5 @@
+import { devices } from './en/devices'
+
 export default {
   // Index.vue
   beginnerResources: 'Loongson 101',
@@ -38,6 +40,8 @@ export default {
   aboutWechatName: 'WeChat',
   aboutWechatDescription: 'Chat with us!',
   aboutQQName: 'QQ',
-  aboutQQDescription: 'Keep in touch!'
+  aboutQQDescription: 'Keep in touch!',
+
+  devices
 }
 
