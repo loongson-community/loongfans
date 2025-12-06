@@ -12,7 +12,6 @@ export default {
   biweeklyMeeting: 'LoongArch Biweekly',
   jobsAndBounties: 'Internships and Bounties',
   devBoardProgram: 'Roaming Loongson Program',
-  githubPage: 'GitHub Page',
   communityForum: 'Community BBS',
   areWeLoongYet: 'Are We Loong Yet?',
   loongsonOfficial: 'Official Sites',

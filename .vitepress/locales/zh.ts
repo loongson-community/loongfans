@@ -12,7 +12,6 @@ export default {
   biweeklyMeeting: '龙架构双周会',
   jobsAndBounties: '悬赏与实习机会',
   devBoardProgram: '开发板漂流计划',
-  githubPage: 'GitHub 主页',
   communityForum: '爱好者社区论坛',
   areWeLoongYet: '咱龙了吗？',
   loongsonOfficial: '龙芯官方',

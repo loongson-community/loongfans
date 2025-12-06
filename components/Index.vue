@@ -82,10 +82,6 @@
               <span class="name">{{ t('devBoardProgram') }}</span>
               <span class="icon_link"></span>
             </a>
-            <a href="https://github.com/loongson-community" target="_blank">
-              <span class="name">{{ t('githubPage') }}</span>
-              <span class="icon_link"></span>
-            </a>
             <a href="https://www.loongbbs.cn/" target="_blank">
               <span class="name">{{ t('communityForum') }}</span>
               <span class="icon_link"></span>
