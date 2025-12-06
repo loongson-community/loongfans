@@ -6,16 +6,18 @@
     class="card"
     :class="qrLink ? 'expand' : undefined"
   >
-    <div>
-      <div class="name">
-        <span>{{ name }}</span>
-        <IconOpenInNew v-if="href" />
-        <IconQrCode2 v-if="qrLink" />
+    <div class="card-main">
+      <div>
+        <div class="name">
+          <span>{{ name }}</span>
+          <IconOpenInNew v-if="href" />
+          <IconQrCode2 v-if="qrLink" />
+        </div>
+        <div class="description">{{ description }}</div>
       </div>
-      <div class="description">{{ description }}</div>
-    </div>
-    <div class="icon">
-      <slot />
+      <div class="icon">
+        <slot />
+      </div>
     </div>
     <div v-if="qrLink" class="qr-container">
       <img :src="qrLink" :alt="`${name}`" class="qr" />
@@ -41,9 +43,6 @@ defineProps({
   --height: 82px;
   --expand-height: 132px;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   padding: 16px;
   color: unset;
   background-color: white;
@@ -61,6 +60,11 @@ defineProps({
 .icon {
   color: v-bind(color);
   font-size: 24px;
+}
+
+.card-main {
+  display: flex;
+  justify-content: space-between;
 }
 
 .name {

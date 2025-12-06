@@ -31,9 +31,9 @@ export default {
 
   // CardGroup.vue (about page)
   aboutGithubName: 'GitHub',
-  aboutGithubDescription: 'The planetary generator powered by community tech',
+  aboutGithubDescription: 'Community projects and discussions',
   aboutBilibiliName: 'BiliBili',
-  aboutBilibiliDescription: 'Follow the best Loongson hobbyists\' community',
+  aboutBilibiliDescription: 'Follow for event videos and more',
   aboutWechatName: 'WeChat',
   aboutWechatDescription: 'Chat with us!',
   aboutQQName: 'QQ',
