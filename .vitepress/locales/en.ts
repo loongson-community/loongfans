@@ -42,6 +42,12 @@ export default {
   aboutQQName: 'QQ',
   aboutQQDescription: 'Keep in touch!',
 
+  // Device/Detail.vue
+  deviceTabSpec: 'Specifications',
+  deviceTabKnownIssues: 'Known Issues',
+  deviceTabImage: 'Images',
+  deviceTabDownload: 'Downloads',
+
   devices
 }
 

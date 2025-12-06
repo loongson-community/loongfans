@@ -2,10 +2,10 @@
   <div class="tabs">
     <Tabs value="spec">
       <TabList>
-        <Tab value="spec">主要规格</Tab>
-        <Tab value="known-issues">已知问题</Tab>
-        <Tab value="image">产品图片</Tab>
-        <Tab value="download" v-if="$slots.download">文件下载</Tab>
+        <Tab value="spec">{{ t('deviceTabSpec') }}</Tab>
+        <Tab value="known-issues">{{ t('deviceTabKnownIssues') }}</Tab>
+        <Tab value="image">{{ t('deviceTabImage') }}</Tab>
+        <Tab value="download" v-if="$slots.download">{{ t('deviceTabDownload') }}</Tab>
       </TabList>
       <TabPanels>
         <TabPanel value="spec">
@@ -31,6 +31,9 @@ import TabList from "primevue/tablist";
 import Tab from "primevue/tab";
 import TabPanels from "primevue/tabpanels";
 import TabPanel from "primevue/tabpanel";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 </script>
 
 <style scoped>

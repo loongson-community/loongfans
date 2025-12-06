@@ -42,5 +42,11 @@ export default {
   aboutQQName: 'QQ 群',
   aboutQQDescription: '常联系！',
 
+  // Device/Detail.vue
+  deviceTabSpec: '主要规格',
+  deviceTabKnownIssues: '已知问题',
+  deviceTabImage: '产品图片',
+  deviceTabDownload: '文件下载',
+
   devices
 }
