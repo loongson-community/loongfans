@@ -1,7 +1,7 @@
 <template>
   <div class="home_body">
     <div class="main_logo">
-      <img src="/images/logo.webp" />
+      <img :src="`${basePath}/images/logo.webp`" />
     </div>
 
     <div class="site_nav_box">
