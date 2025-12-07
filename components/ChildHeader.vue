@@ -2,8 +2,6 @@
   <div class="header_box">
     <div class="page_body">
       <div class="main_title">
-        <!-- <h1><slot name="pageTitle"></slot></h1>
-        <h4><slot name="pageSubTitle"></slot></h4> -->
         <h1>{{ $frontmatter.pageTitle }}</h1>
         <h4>{{ $frontmatter.pageSubTitle }}</h4>
       </div>

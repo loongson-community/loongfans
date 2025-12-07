@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import PrimeVue from "primevue/config";
+import ToastService from 'primevue/toastservice';
 import Material from "@primeuix/themes/aura";
 import { definePreset } from "@primeuix/themes";
 import { createI18n } from 'vue-i18n'
@@ -9,6 +10,7 @@ import en from '../locales/en'
 import zh from '../locales/zh'
 import Layout from './Layout.vue'
 import DeviceDetail from "../../components/device/Detail.vue";
+import ChipTables from "../../components/chips/ChipTables.vue";
 
 import type { App } from "vue";
 
@@ -51,5 +53,7 @@ export default {
       theme: { preset: Preset, options: { darkModeSelector: false } },
     });
     app.component('Device', DeviceDetail)
+    app.use(ToastService);
+    app.component("ChipTables", ChipTables)
   },
 };

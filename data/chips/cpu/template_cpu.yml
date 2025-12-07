@@ -1,0 +1,64 @@
+basic:
+  name: 
+  series: 
+  market: 1 # 1=桌面 2=移动 3=服务器 4=嵌入式
+  
+ext_info: 
+  pic: ""
+  manual: ""
+
+cpu: 
+  cores: 
+  threads: 
+  arch: ""
+  freq: ""
+  l1_inst_cache: ""
+  l1_data_cache: ""
+  l2_cache: ""
+  l3_cache: ""
+  voltage: ""
+  tpc: ""
+  tdp: ""
+
+gpu:
+  available: false
+  name: "N/A"
+  
+memory:
+  max: ""
+  types: ""
+  channels: 
+  ecc: true # true=支持 false=不支持
+
+exp:
+  io_name: ""
+  io_rev: ""
+  lanes: 
+  usb_5gbps: 
+  usb2: 
+  sata: 
+  eth: 
+  spi: 
+  uart: 
+  i2c: 
+  gpio: 
+  avs: 
+  d2d: false # true=支持 false=不支持
+  d2d_name: 
+
+package:
+  socket: ""
+  temperature: ""
+  t_case: "70℃"
+  t_junction: "85℃"
+  size: ""
+
+power:
+  shutdown_of_the_clocks: true # true=支持 false=不支持
+  frequency_scaling: true # true=支持 false=不支持
+  voltage_scaling: true # true=支持 false=不支持
+
+technologies:
+  set: "64-Bit"
+  set_extensions: "LSX, LASX"
+  
