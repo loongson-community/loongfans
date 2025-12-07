@@ -87,6 +87,7 @@ export default {
   },
   non_product: "请从左侧选择产品并添加，以在此查看对比结果",
   up_to_four_chips: "最多支持 4 款产品进行比对",
+  notice: "注意",
   status: {
     yes: "是",
     no: "否",
