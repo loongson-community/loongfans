@@ -75,11 +75,11 @@ pageSubTitle:
 
 ## 7A2000
 
-[7A2000](/pages/chips/cpu/7a2000/7A2000.md)  
-[7A2000-i](/pages/chips/cpu/7a2000/7A2000-i.md)  
-[7A2000-F](/pages/chips/cpu/7a2000/7A2000-F.md)
+[7A2000](/pages/chips/chipset/7a2000/7A2000.md)  
+[7A2000-i](/pages/chips/chipset/7a2000/7A2000-i.md)  
+[7A2000-F](/pages/chips/chipset/7a2000/7A2000-F.md)
 
 ## 7A1000
 
-[7A1000](/pages/chips/cpu/7a1000/7A1000.md)  
-[7A1000-i](/pages/chips/cpu/7a1000/7A1000-i.md)
+[7A1000](/pages/chips/chipset/7a1000/7A1000.md)  
+[7A1000-i](/pages/chips/chipset/7a1000/7A1000-i.md)
