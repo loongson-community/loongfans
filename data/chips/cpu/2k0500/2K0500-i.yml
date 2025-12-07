@@ -1,0 +1,63 @@
+basic:
+  name: 2K0500-i
+  series: 2K0500
+  market: 4
+  
+ext_info: 
+  pic: "/images/chips/cpu/2K0500.webp"
+  manual: ""
+
+cpu: 
+  cores: 1
+  threads: 1
+  arch: "LA264"
+  freq: "0.8 GHz"
+  l1_inst_cache: "32 KB"
+  l1_data_cache: "32 KB"
+  l2_cache: "512 KB"
+  l3_cache: "N/A"
+  voltage: "1.1 V"
+  tpc: "3 W"
+  tdp: "5 W"
+
+gpu:
+  available: true
+  name: "unknown"
+  
+memory:
+  max: "1 GB"
+  types: "DDR3-1066"
+  channels: "1 (32-Bit)"
+  ecc: false
+
+exp:
+  io_name: "PCI Express"
+  io_rev: "2.0"
+  lanes: "2-Lanes"
+  usb_5gbps: 1
+  usb2: 4
+  sata: 2
+  eth: "2 (1Gbps)"
+  spi: 6
+  uart: 10
+  i2c: 6
+  gpio: 155
+  avs: 0
+  d2d: false
+  other: "eMMC, SDIO, CAN, LIO, RTC, LPC"
+
+package:
+  socket: "FCBGA531"
+  temperature: "-40 - 85℃"
+  t_case: "N/A"
+  t_junction: "125℃"
+  size: "21 mm x 21 mm"
+
+power:
+  shutdown_of_the_clocks: false
+  frequency_scaling: true
+  voltage_scaling: true
+
+technologies:
+  set: "64-Bit"
+  set_extensions: "N/A"

@@ -1,0 +1,35 @@
+basic:
+  name: 7A1000-i
+  series: 7A1000
+  market: 1
+  
+ext_info: 
+  pic: "/images/chips/chipset/7A1000-i.webp"
+  manual: ""
+
+chipset:
+  interface: "HyperTransport 3.0 16-Lanes"
+  
+gpu:
+  available: true
+  name: "LG100"
+
+exp:
+  io_name: "PCI Express"
+  io_rev: "2.0"
+  lanes: 32-Lanes
+  usb_5gbps: 0 
+  usb2: 6
+  sata: 3
+  eth: 2
+  spi: 1
+  uart: 1
+  i2c: 1
+  gpio: 57
+  avs: 0
+  other: "RTC LPC HDA I2S"
+
+package:
+  socket: "FCBGA804"
+  temperature: "0 - 70℃"
+  size: "31 mm * 31 mm"

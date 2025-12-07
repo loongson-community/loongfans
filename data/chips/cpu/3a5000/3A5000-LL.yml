@@ -1,0 +1,64 @@
+basic:
+  name: 3A5000-LL
+  series: 3A5000
+  market: 1 # 1=桌面 2=移动 3=服务器 4=嵌入式
+  
+ext_info: 
+  pic: "/images/chips/cpu/3A5000.webp"
+  manual: ""
+
+cpu: 
+  cores: 4
+  threads: 4
+  arch: "LA464"
+  freq: "2.3 GHz"
+  l1_inst_cache: "64 KB"
+  l1_data_cache: "64 KB"
+  l2_cache: "1 MB (256 KB * 4)"
+  l3_cache: "16 MB"
+  voltage: "1.15 V"
+  tpc: "30 W"
+  tdp: "45 W"
+
+gpu:
+  available: false
+  name: "N/A"
+
+memory:
+  max: "64 GB"
+  types: "DDR4-3200"
+  channels: "2 (72-Bit)"
+  ecc: true
+
+exp:
+  io_name: "HyperTransport"
+  io_rev: "3.0"
+  lanes: 16-Lanes
+  usb_5gbps: 0
+  usb2: 0
+  sata: 0
+  eth: 0
+  spi: 1
+  uart: 1
+  i2c: 2
+  gpio: 16
+  avs: 0
+  d2d: false
+  d2d_name: 
+
+package:
+  socket: "FCBGA1283"
+  temperature: "0 - 70℃"
+  t_case: "70℃"
+  t_junction: "85℃"
+  size: "37.5 mm * 37.5 mm"
+
+power:
+  shutdown_of_the_clocks: true
+  frequency_scaling: true
+  voltage_scaling: true
+
+technologies:
+  set: "64-Bit"
+  set_extensions: "LSX, LASX"
+  
