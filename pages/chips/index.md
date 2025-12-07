@@ -55,6 +55,12 @@ pageSubTitle:
 [2K2000](/pages/chips/cpu/2k2000/2K2000.md)  
 [2K2000-i](/pages/chips/cpu/2k2000/2K2000-i.md)
 
+### 2K1500
+
+[2K1500](/pages/chips/cpu/2k1500/2K1500.md)  
+[2K1500-i](/pages/chips/cpu/2k1500/2K1500-i.md)
+[2K1500-i-LL](/pages/chips/cpu/2k1500/2K1500-i-LL.md)
+
 ### 2K1000
 
 [2K1000LA](/pages/chips/cpu/2k1000/2K1000LA.md)  

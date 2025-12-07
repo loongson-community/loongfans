@@ -1,7 +1,7 @@
 basic:
   name: 3B5000
   series: 3A5000
-  market: 3 # 1=桌面 2=移动 3=服务器 4=嵌入式
+  market: 3
   
 ext_info: 
   pic: "/images/chips/cpu/3B5000.jpg"
