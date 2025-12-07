@@ -1,5 +1,4 @@
 <template>
-    <Toast />
     <div class="chips-data-pages">
         <div class="chips-data-link">
             <div class="chips-pic" style="margin-top: 20px">
@@ -312,8 +311,8 @@ const toggleCompare = () => {
         } else {
             toast.add({
                 severity: "info",
-                summary: t("chips.messages.max_compare"),
-                detail: t("chips.messages.max_compare_detail"),
+                summary: t("chips.notice"),
+                detail: t("chips.up_to_four_chips"),
                 life: 3000,
             });
             return;
