@@ -67,33 +67,14 @@ const { t, locale } = useI18n();
 
 <style scoped>
 .card-group {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
-  align-items: start;
-  margin-block: 16px;
+  margin-top: 32px;
 }
 
 .card-group > * {
-  width: 100%;
-  margin-inline: auto;
-}
-
-@media (min-width: 40rem) {
-  .card-group {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 64rem) {
-  .card-group {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 80rem) {
-  .card-group {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  width: 300px;
 }
 </style>
