@@ -35,12 +35,7 @@
             <div class="red_line"></div>
           </div>
           <div class="link_type_box">
-            <Link
-              :name="t('aboutGithubName')"
-              href="https://github.com/loongson-community"
-            >
-              <IconGithub />
-            </Link>
+
             <Link :name="t('aboutBilibiliName')" href="https://space.bilibili.com/70360929">
               <IconBilibili />
             </Link>
@@ -49,6 +44,12 @@
             </Link>
             <Link :name="t('aboutQQName')" qr-link="/images/about/qr-qq-group.png">
               <IconQq />
+            </Link>
+            <Link :name="t('aboutMatrixName')" href="https://matrix.to/#/#loongson-users:matrix.org">
+              <IconMatrix />
+            </Link>
+            <Link v-if="locale !== 'zh'" :name="t('aboutTelegramName')" href="https://t.me/loongson_users">
+              <IconTelegram />
             </Link>
           </div>
         </div>
@@ -63,6 +64,10 @@
           <div class="link_type_box">
             <Link :href="`${basePath}/pages/biweekly`" :name="t('biweeklyMeeting')" />
             <Link :href="`${basePath}/pages/jobs`" :name="t('jobsAndBounties')" />
+            <Link
+              :name="t('aboutGithubName')"
+              href="https://github.com/loongson-community"
+            />
             <Link href="https://github.com/loongson-community/1024" :name="t('devBoardProgram')" />
             <Link href="https://www.loongbbs.cn/" :name="t('communityForum')" />
             <Link href="https://areweloongyet.com/" :name="t('areWeLoongYet')" />
@@ -88,15 +93,16 @@
 <script setup>
 import { computed } from "vue";
 import { useData } from 'vitepress';
-import IconGithub from "~icons/simple-icons/github";
 import IconBilibili from "~icons/simple-icons/bilibili";
 import IconWechat from "~icons/simple-icons/wechat";
 import IconQq from "~icons/simple-icons/qq";
+import IconMatrix from "~icons/simple-icons/matrix";
+import IconTelegram from "~icons/simple-icons/telegram"
 import Link from "./index/Link.vue";
 import { useI18n } from 'vue-i18n';
 import { getLocalePrefix } from '../.vitepress/utils/language';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const { localeIndex } = useData();
 const basePath = computed(() => getLocalePrefix(localeIndex.value));
 </script>
@@ -205,7 +211,7 @@ body {
   padding: 20px 0px;
 }
 
-.link_type_box a {
+.link_type_box > * {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -222,13 +228,13 @@ body {
   word-wrap: break-word;
 }
 
-.link_type_box a .name {
+.link_type_box > * .name {
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
 }
 
-.link_type_box a:hover {
+.link_type_box > *:hover {
   font-weight: bold;
   color: #e60013;
 }

@@ -41,6 +41,10 @@ export default {
   aboutWechatDescription: 'Chat with us!',
   aboutQQName: 'QQ',
   aboutQQDescription: 'Keep in touch!',
+  aboutMatrixName: 'Matrix',
+  aboutMatrixDescription: 'Hang out and chat on Matrix!',
+  aboutTelegramName: 'Telegram',
+  aboutTelegramDescription: 'Telegram with us!',
 
   // Device/Detail.vue
   deviceTabSpec: 'Specifications',
