@@ -50,7 +50,7 @@ defineProps({
   border: 1px solid;
   border-radius: 12px;
   min-width: 260px;
-  max-width: 400px;
+  max-width: 300px;
   overflow: hidden;
   min-height: var(--height);
   margin-top: 0;
