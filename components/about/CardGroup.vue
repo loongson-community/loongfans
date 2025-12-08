@@ -32,6 +32,23 @@
     >
       <IconQq />
     </Card>
+    <Card
+      :name="t('aboutMatrixName')"
+      :description="t('aboutMatrixDescription')"
+      href="https://matrix.to/#/#loongson-users:matrix.org"
+      color="#000000"
+    >
+      <IconMatrix />
+    </Card>
+    <Card
+      v-if="locale !== 'zh'"
+      :name="t('aboutTelegramName')"
+      :description="t('aboutTelegramDescription')"
+      href="https://t.me/loongson_users"
+      color="#26A5E4"
+    >
+      <IconTelegram />
+    </Card>
   </div>
 </template>
 
@@ -42,8 +59,10 @@ import IconGithub from "~icons/simple-icons/github";
 import IconBilibili from "~icons/simple-icons/bilibili";
 import IconWechat from "~icons/simple-icons/wechat";
 import IconQq from "~icons/simple-icons/qq";
+import IconMatrix from "~icons/simple-icons/matrix";
+import IconTelegram from "~icons/simple-icons/telegram"
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 </script>
 
 <style scoped>

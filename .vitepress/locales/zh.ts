@@ -41,6 +41,10 @@ export default {
   aboutWechatDescription: '常聊天！',
   aboutQQName: 'QQ 群',
   aboutQQDescription: '常联系！',
+  aboutMatrixName: 'Matrix 群',
+  aboutMatrixDescription: '常闲聊！',
+  aboutTelegramName: 'Telegram 群',
+  aboutTelegramDescription: '常发电报！',
 
   // Device/Detail.vue
   deviceTabSpec: '主要规格',
