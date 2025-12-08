@@ -60,7 +60,7 @@ const target = props.href?.startsWith("http") ? "_blank" : undefined;
 }
 
 .icon {
-  margin-right: 4px;
+  margin-right: 0.5em;
 }
 
 .extra-icon {
