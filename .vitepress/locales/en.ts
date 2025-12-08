@@ -35,7 +35,7 @@ export default {
   // CardGroup.vue (about page)
   aboutGithubName: 'GitHub',
   aboutGithubDescription: 'Community projects and discussions',
-  aboutBilibiliName: 'BiliBili',
+  aboutBilibiliName: 'Bilibili',
   aboutBilibiliDescription: 'Follow for event videos and more',
   aboutWechatName: 'WeChat',
   aboutWechatDescription: 'Chat with us!',
