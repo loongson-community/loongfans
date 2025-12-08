@@ -24,7 +24,7 @@ export default {
   // ChildFooter.vue
   language: 'Language',
   siteSource: 'Sources',
-  reportIssue: 'Report Content Issue',
+  reportIssue: 'Feedback',
   aboutCommunity: "About",
   copyright: 'Copyright',
   communityName: "Loongson Hobbyists' Community",
