@@ -60,9 +60,10 @@ function handleLanguageChange(language) {
 <style scoped>
 .child_footer_info {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 8px;
   clear: both;
   width: 100%;
   max-width: var(--content-max-width);
@@ -72,6 +73,10 @@ function handleLanguageChange(language) {
   margin: 0px auto;
   margin-top: 60px;
   padding-bottom: 10px;
+}
+
+.child_footer_info > * {
+  margin-inline: auto;
 }
 
 .child_footer_link,
@@ -92,6 +97,7 @@ function handleLanguageChange(language) {
   text-align: center;
 }
 
+.language-button,
 .child_footer_info a {
   font-size: 16px;
   color: #000000;
@@ -106,8 +112,6 @@ function handleLanguageChange(language) {
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
 }
 
 .language-button svg {
@@ -148,6 +152,7 @@ function handleLanguageChange(language) {
     padding: 10px;
   }
 
+  .language-button,
   .child_footer_info a {
     font-size: 14px;
   }
