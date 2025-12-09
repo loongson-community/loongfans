@@ -55,5 +55,7 @@ export default {
   deviceTabDownload: '文件下载',
 
   devices,
+
+  // Chips/*.vue
   chips
 };

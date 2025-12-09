@@ -15,6 +15,12 @@
     <Button :href="frontmatter.returnLink" :text="t('goBack')" class="btn_back">
       <IconArrowCircleLeftOutline />
     </Button>
+    <Button
+      v-if="frontmatter.returnLink === '/pages/chips'"
+      :href="t('chips.buttons.links')"
+      :text="compareButtonText"
+      class="btn_back">
+    </Button>
   </div>
   <BackToTop />
 </template>
@@ -22,12 +28,48 @@
 <script setup>
 import { useData } from 'vitepress'
 import { useI18n } from 'vue-i18n'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import IconArrowCircleLeftOutline from '~icons/material-symbols/arrow-circle-left-outline'
 import BackToTop from './BackToTop.vue';
 import Button from './Button.vue';
 
 const { frontmatter } = useData()
 const { t } = useI18n()
+
+// 以下是对比列表的计数器
+const compareListLength = ref(0)
+
+const updateLength = () => {
+  const list = JSON.parse(localStorage.getItem("cpuCompareList") || "[]")
+  compareListLength.value = list.length
+}
+
+const compareButtonText = computed(() => {
+  return t('chips.buttons.title') + " (" + compareListLength.value + ")"
+})
+
+// 监听 CPU 列表计数器事件
+const handleCounterChange = (e) => {
+  if (e.key === "cpuCompareList") {
+    updateLength()
+  }
+}
+
+// 监听自定义事件（同一标签页内）
+const handleCounterEvent = () => {
+  updateLength()
+}
+
+onMounted(() => {
+  updateLength()
+  window.addEventListener('counter', handleCounterChange)
+  window.addEventListener('cpuCompareListUpdated', handleCounterEvent)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('counter', handleCounterChange)
+  window.removeEventListener('cpuCompareListUpdated', handleCounterEvent)
+})
 </script>
 
 <style>
@@ -118,7 +160,13 @@ body {
 }
 
 .back_row {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+  gap: 10px;
   clear: both;
   width: auto;
   max-width: var(--content-max-width);
