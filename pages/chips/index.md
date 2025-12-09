@@ -4,8 +4,9 @@ returnLink: /
 pageTitle: 龙芯产品芯片参数 [施工中]
 pageSubTitle: 
 ---
-
 ## 龙芯3号
+
+[CPU 芯片对比](/pages/chips/cpu/cpucompare.md)
 
 ### 3A6000
 
@@ -79,13 +80,13 @@ pageSubTitle:
 
 ## 龙芯7A
 
-## 7A2000
+### 7A2000
 
 [7A2000](/pages/chips/chipset/7a2000/7A2000.md)  
 [7A2000-i](/pages/chips/chipset/7a2000/7A2000-i.md)  
 [7A2000-F](/pages/chips/chipset/7a2000/7A2000-F.md)
 
-## 7A1000
+### 7A1000
 
 [7A1000](/pages/chips/chipset/7a1000/7A1000.md)  
 [7A1000-i](/pages/chips/chipset/7a1000/7A1000-i.md)

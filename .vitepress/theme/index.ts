@@ -11,6 +11,7 @@ import zh from '../locales/zh'
 import Layout from './Layout.vue'
 import DeviceDetail from "../../components/device/Detail.vue";
 import ChipTables from "../../components/chips/ChipTables.vue";
+import CpuCompare from '../../components/chips/compare/CpuCompare.vue';
 
 import type { App } from "vue";
 
@@ -55,5 +56,7 @@ export default {
     app.component('Device', DeviceDetail)
     app.use(ToastService);
     app.component("ChipTables", ChipTables)
+    app.component('Device', DeviceDetail)
+    app.component("CpuCompare", CpuCompare)
   },
 };

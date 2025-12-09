@@ -319,6 +319,7 @@ const toggleCompare = () => {
         }
     }
     localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value));
+    window.dispatchEvent(new CustomEvent('cpuCompareListUpdated'));
 };
 </script>
 

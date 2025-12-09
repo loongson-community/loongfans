@@ -6,7 +6,7 @@
                 <div v-for="chip in compareChips" :key="chip.basic.name" class="compare-cell compare-never">
                     <img :src="chip.ext_info.pic" style="max-width: 100px; margin-bottom: 10px" />
                     <h3>{{ chip.basic.name }}</h3>
-                    <el-button type="danger" size="small" @click="removeFromCompare(chip.basic.name)">{{ $t('chips.buttons.remove') }}</el-button>
+                    <Button severity="danger" size="small" @click="removeFromCompare(chip.basic.name)" :label="$t('chips.buttons.remove')" />
                 </div>
             </div>
 
@@ -158,8 +158,8 @@
                         class="compare-cell"
                         :class="{ 'same-as-first': isSame(chip, 'gpu.available') }"
                     >
-                        <span v-if="chip.gpu.available == true">{{ $t('status.chips.yes') }}</span>
-                        <span v-else-if="chip.gpu.available == false">{{ $t('status.chips.no') }}</span>
+                        <span v-if="chip.gpu.available == true">{{ $t('chips.status.yes') }}</span>
+                        <span v-else-if="chip.gpu.available == false">{{ $t('chips.status.no') }}</span>
                     </div>
                 </div>
                 <div class="compare-row">
@@ -213,8 +213,8 @@
                         class="compare-cell"
                         :class="{ 'same-as-first': isSame(chip, 'memory.ecc') }"
                     >
-                        <span v-if="chip.memory.ecc == true">{{ $t('status.chips.supported') }}</span>
-                        <span v-else-if="chip.memory.ecc == false">{{ $t('status.chips.unsupported') }}</span>
+                        <span v-if="chip.memory.ecc == true">{{ $t('chips.status.supported') }}</span>
+                        <span v-else-if="chip.memory.ecc == false">{{ $t('chips.status.unsupported') }}</span>
                     </div>
                 </div>
             </div>
@@ -348,8 +348,8 @@
                         class="compare-cell"
                         :class="{ 'same-as-first': isSame(chip, 'exp.d2d') }"
                     >
-                        <span v-if="chip.exp.d2d == true">{{ $t('status.chips.supported') }}</span>
-                        <span v-else-if="chip.exp.d2d == false">{{ $t('status.chips.unsupported') }}</span>
+                        <span v-if="chip.exp.d2d == true">{{ $t('chips.status.supported') }}</span>
+                        <span v-else-if="chip.exp.d2d == false">{{ $t('chips.status.unsupported') }}</span>
                     </div>
                 </div>
                 <div class="compare-row">
@@ -440,8 +440,8 @@
                         class="compare-cell"
                         :class="{ 'same-as-first': isSame(chip, 'power.shutdown_of_the_clocks') }"
                     >
-                        <span v-if="chip.power.shutdown_of_the_clocks == true">{{ $t('status.chips.supported') }}</span>
-                        <span v-else-if="chip.power.shutdown_of_the_clocks == false">{{ $t('status.chips.unsupported') }}</span>
+                        <span v-if="chip.power.shutdown_of_the_clocks == true">{{ $t('chips.status.supported') }}</span>
+                        <span v-else-if="chip.power.shutdown_of_the_clocks == false">{{ $t('chips.status.unsupported') }}</span>
                     </div>
                 </div>
                 <div class="compare-row">
@@ -451,8 +451,8 @@
                         class="compare-cell"
                         :class="{ 'same-as-first': isSame(chip, 'power.frequency_scaling') }"
                     >
-                        <span v-if="chip.power.frequency_scaling == true">{{ $t('status.chips.supported') }}</span>
-                        <span v-else-if="chip.power.frequency_scaling == false">{{ $t('status.chips.unsupported') }}</span>
+                        <span v-if="chip.power.frequency_scaling == true">{{ $t('chips.status.supported') }}</span>
+                        <span v-else-if="chip.power.frequency_scaling == false">{{ $t('chips.status.unsupported') }}</span>
                     </div>
                 </div>
                 <div class="compare-row">
@@ -462,8 +462,8 @@
                         class="compare-cell"
                         :class="{ 'same-as-first': isSame(chip, 'power.voltage_scaling') }"
                     >
-                        <span v-if="chip.power.voltage_scaling == true">{{ $t('status.chips.supported') }}</span>
-                        <span v-else-if="chip.power.voltage_scaling == false">{{ $t('status.chips.unsupported') }}</span>
+                        <span v-if="chip.power.voltage_scaling == true">{{ $t('chips.status.supported') }}</span>
+                        <span v-else-if="chip.power.voltage_scaling == false">{{ $t('chips.status.unsupported') }}</span>
                     </div>
                 </div>
             </div>
@@ -500,10 +500,11 @@
 
 <script setup>
     import { ref, computed, onMounted } from "vue";
-    import chipsJson from "../../../../data/chips.min.json";
+    import chipsJson from "../../../data/chips.min.json";
+    import Button from "primevue/button";
 
     // 初始化 LocalStorage
-    const compareList = ref(JSON.parse(localStorage.getItem("cpuCompareList")) || []);
+    const compareList = ref(JSON.parse(localStorage.getItem("cpuCompareList") || "[]"));
 
     const compareChips = computed(() => {
         return compareList.value.map(chipId => chipsJson.cpu[chipId]);
@@ -513,6 +514,7 @@
     const removeFromCompare = chipName => {
         compareList.value = compareList.value.filter(id => chipsJson.cpu[id].basic.name !== chipName);
         localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value));
+        window.dispatchEvent(new CustomEvent('cpuCompareListUpdated'));
     };
 
     // 获取键值

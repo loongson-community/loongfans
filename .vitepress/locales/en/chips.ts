@@ -1,8 +1,10 @@
 export default {
   buttons: {
+    title: "CPU Compare",
     add_compare: "Add Compare",
     remove_compare: "Remove Compare",
     remove: "Remove",
+    links: "/en/pages/chips/cpu/cpucompare" // DO NOT REMOVE AND CHANGE THIS!!!
   },
   basic: {
     title: "Basic Information",
@@ -86,7 +88,7 @@ export default {
     set_extensions: "Instruction Set Extensions",
   },
   non_product:
-    "Please select products from the left and add it to view the comparison results here",
+    "Please select products from the previous page and add it to view the comparison results here",
   up_to_four_chips: "NOTICE: Up to 4 products for comparison",
   status: {
     yes: "Yes",

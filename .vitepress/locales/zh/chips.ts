@@ -1,8 +1,10 @@
 export default {
   buttons: {
+    title: "CPU 芯片对比",
     add_compare: "加入对比",
     remove_compare: "移除对比",
     remove: "删除",
+    links: "/pages/chips/cpu/cpucompare" // 这里指向的是一个链接，请不要删除或修改它!
   },
   basic: {
     title: "基本信息",
@@ -85,7 +87,7 @@ export default {
     set: "指令集",
     set_extensions: "指令集扩展",
   },
-  non_product: "请从左侧选择产品并添加，以在此查看对比结果",
+  non_product: "请从上一页选择产品并添加，以在此查看对比结果",
   up_to_four_chips: "最多支持 4 款产品进行比对",
   notice: "注意",
   status: {
