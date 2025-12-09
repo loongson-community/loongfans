@@ -1,7 +1,7 @@
 ---
 layout: page
 returnLink: /en/pages/chips
-pageTitle: CPU Compare
+pageTitle: Compare CPUs
 pageSubTitle: 
 ---
 ::: raw
