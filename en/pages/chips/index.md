@@ -6,7 +6,7 @@ pageSubTitle:
 ---
 ## Loongson 3 Series
 
-[CPU Compare](/en/pages/chips/cpu/cpucompare.md)
+[Compare CPUs](/en/pages/chips/cpu/cpucompare.md)
 
 ### 3A6000
 

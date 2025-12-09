@@ -4,13 +4,14 @@ export default {
     add_compare: "Add Compare",
     remove_compare: "Remove Compare",
     remove: "Remove",
+    clear: "Clear List",
     links: "/en/pages/chips/cpu/cpucompare" // DO NOT REMOVE AND CHANGE THIS!!!
   },
   basic: {
     title: "Basic Information",
     name: "Product Name",
     series: "Product Series",
-    market: "Market Type",
+    market: "Market Segmentation",
     market_type: {
       desktop: "Desktop",
       mobile: "Mobile",

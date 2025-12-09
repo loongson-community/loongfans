@@ -2,7 +2,9 @@
     <div v-if="compareChips.length > 0" class="compare-container">
         <div class="compare-table">
             <div class="compare-row compare-header"><!-- 产品名称 -->
-                <div class="compare-cell"></div>
+                <div class="compare-cell">
+                    <Button severity="danger" size="small" @click="clearCompare" :label="$t('chips.buttons.clear')" />
+                </div>
                 <div v-for="chip in compareChips" :key="chip.basic.name" class="compare-cell compare-never">
                     <img :src="chip.ext_info.pic" style="max-width: 100px; margin-bottom: 10px" />
                     <h3>{{ chip.basic.name }}</h3>
@@ -513,6 +515,13 @@
     // 删除对比选项
     const removeFromCompare = chipName => {
         compareList.value = compareList.value.filter(id => chipsJson.cpu[id].basic.name !== chipName);
+        localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value));
+        window.dispatchEvent(new CustomEvent('cpuCompareListUpdated'));
+    };
+
+    // 清空对比列表
+    const clearCompare = () => {
+        compareList.value = [];
         localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value));
         window.dispatchEvent(new CustomEvent('cpuCompareListUpdated'));
     };
