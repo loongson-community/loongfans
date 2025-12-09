@@ -16,7 +16,7 @@
       <IconArrowCircleLeftOutline />
     </Button>
     <Button
-      v-if="frontmatter.returnLink === '/pages/chips'"
+      v-if="frontmatter.returnLink === '/pages/chips' || frontmatter.returnLink === '/en/pages/chips'"
       :href="t('chips.buttons.links')"
       :text="compareButtonText"
       class="btn_back">
@@ -55,7 +55,7 @@ const handleCounterChange = (e) => {
   }
 }
 
-// 监听自定义事件（同一标签页内）
+// 在当前标签页监听计数器事件
 const handleCounterEvent = () => {
   updateLength()
 }
