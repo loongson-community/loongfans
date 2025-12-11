@@ -44,4 +44,49 @@ pageSubTitle: 龙芯 AC612A0_V1.1
 来源：《龙芯 3C6000 单路服务器主板产品规格书 V1.0》
 
 </template>
+
+<template #download>
+
+<DeviceDownloadCard
+  title="Intel Chipset Device Software version 10.1.19627.8423 for NUC"
+  version="10.1.19627.8423"
+  size="4.99 MB"
+  date="2024/03/01"
+  sha256="20C771DF9B243AEEBDA407BE7AACAF0146A214C08CBB4078886ED52C349F8EAE"
+  latest
+>
+
+Installs the Intel Chipset Device Software for NUC.
+
+It is important to install this software first after installing a Windows operating system, before installing any other device drivers.
+This action ensures that Windows recognizes all chipset components. If the operating system cannot identify all of the chipset components, you may experience the following issues:
+
+- Yellow question marks in Device Manager
+- Unknown devices in Device Manager
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="Intel Integrated Sensor Solution Firmware build 5.6.0.7683v2"
+  version="5.6.0.7683v2"
+  size="610.95 KB"
+  date="2025/11/12"
+>
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="Intel Gigabit Ethernet Network Connection Driver"
+  version="2.1.3.15"
+  size="636.2 KB"
+  date="2024/04/29"
+  sha256="20C771DF9B243AEEBDA407BE7AACAF0146A214C08CBB4078886ED52C349F8EAE"
+>
+
+Installs the LAN driver for NUC products with the Intel Gigabit Ethernet Network Connection.
+
+You may be prompted to remove the existing LAN driver before installing this version. If so, uninstall the existing version, and this version will install.
+
+</DeviceDownloadCard>
+
+</template>
 </Device>
