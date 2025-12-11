@@ -7,6 +7,10 @@
   margin: 16px 0px;
 }
 
+.p-toast-summary {
+  line-height: var(--p-toast-icon-size);
+}
+
 .header_redline {
   display: block;
   clear: both;

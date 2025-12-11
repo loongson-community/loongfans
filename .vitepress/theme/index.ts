@@ -16,6 +16,7 @@ import Layout from './Layout.vue'
 import DeviceDetail from "../../components/device/Detail.vue";
 import ChipTables from "../../components/chips/ChipTables.vue";
 import CpuCompare from '../../components/chips/compare/CpuCompare.vue';
+import DeviceDownloadCard from '../../components/device/DownloadCard.vue';
 
 import type { App } from "vue";
 
@@ -55,7 +56,7 @@ export default {
     // Components
     app.component('Device', DeviceDetail)
     app.component("ChipTables", ChipTables)
-    app.component('Device', DeviceDetail)
     app.component("CpuCompare", CpuCompare)
+    app.component('DeviceDownloadCard', DeviceDownloadCard);
   },
 };

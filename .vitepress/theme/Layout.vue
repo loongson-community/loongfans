@@ -1,5 +1,6 @@
 <template>
   <!-- 必须包裹容器 -->
+      <Toast />
   <div class="vp-doc">
     <Toast />
     <DynamicDialog />
@@ -18,10 +19,10 @@ import { onMounted, watch } from 'vue'
 import { useData } from 'vitepress'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vitepress';
+import Toast from 'primevue/toast';
 import ChildHeader from "/components/ChildHeader.vue";
 import ChildFooter from "/components/ChildFooter.vue";
 import { handleFirstVisitRedirect } from '../utils/language'
-import Toast from 'primevue/toast';
 import DynamicDialog from 'primevue/dynamicdialog';
 
 const { lang } = useData()
