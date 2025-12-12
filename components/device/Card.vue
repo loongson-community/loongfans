@@ -25,7 +25,7 @@ const props = defineProps({
   spec: String,
   href: String,
   image: String,
-  tags: Array,
+  tags: String,
 });
 
 const tags = computed(() => props.tags.split(",").map((i) => i.trim()));

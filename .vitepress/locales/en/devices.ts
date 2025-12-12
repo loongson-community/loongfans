@@ -1,20 +1,4 @@
-export interface Device {
-  name: string;
-  href: string;
-  image: string;
-  spec: string;
-  tags: string;
-}
-
-export interface DeviceCategory {
-  title: string;
-  devices: Device[];
-}
-
-export interface DeviceFamily {
-  family: string;
-  categories: DeviceCategory[];
-}
+import type { DeviceFamily } from "../zh/devices";
 
 export const devices: DeviceFamily[] = [
   {
