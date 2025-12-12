@@ -1,17 +1,19 @@
 <template>
   <button v-if="text" class="copy-inline" @click="copyToClipboard(text)">
     <IconContentCopy class="icon" />
-    {{ type }}: {{ text }}
+    {{ type }}
   </button>
 </template>
 
 <script setup>
+import { computed } from "vue";
 import { useToast } from "primevue/usetoast";
 import IconContentCopy from "~icons/material-symbols/content-copy";
 
-defineProps({ text: String, type: String });
-
+const props = defineProps({ text: String, type: String });
 const toast = useToast();
+
+const textWithColon = computed(() => `": ${props.text}"`);
 
 function copyToClipboard(text) {
   navigator.clipboard
@@ -43,7 +45,9 @@ function copyToClipboard(text) {
   margin-right: 0.3em;
 }
 
-@media (width >= 48rem) {
-
+@media (width >= 64rem) {
+  .copy-inline::after {
+    content: v-bind("textWithColon");
+  }
 }
 </style>
