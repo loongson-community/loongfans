@@ -58,11 +58,15 @@ pageSubTitle: 龙芯 AC612A0_V1.1
 
 Installs the Intel Chipset Device Software for NUC.
 
+<template #detail>
+
 It is important to install this software first after installing a Windows operating system, before installing any other device drivers.
 This action ensures that Windows recognizes all chipset components. If the operating system cannot identify all of the chipset components, you may experience the following issues:
 
 - Yellow question marks in Device Manager
 - Unknown devices in Device Manager
+
+</template>
 
 </DeviceDownloadCard>
 
