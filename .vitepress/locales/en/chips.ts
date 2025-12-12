@@ -20,6 +20,7 @@ export default {
     },
   },
   cpu: {
+    name: "CPU",
     title: "CPU Specifications",
     cores: "Cores",
     threads: "Threads",
@@ -34,6 +35,7 @@ export default {
     tdp: "Thermal Design Power",
   },
   chipset: {
+    name: "Chipset",
     title: "Chipset Specifications",
     interface: "Interface",
   },
