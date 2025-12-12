@@ -20,6 +20,7 @@ export default {
     },
   },
   cpu: {
+    name: "中央处理器",
     title: "CPU 规格",
     cores: "核心数",
     threads: "线程数",
@@ -34,6 +35,7 @@ export default {
     tdp: "热设计功耗",
   },
   chipset: {
+    name: "桥片",
     title: "桥片规格",
     interface: "前端接口",
   },

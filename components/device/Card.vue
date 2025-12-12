@@ -28,7 +28,7 @@ const props = defineProps({
   tags: String,
 });
 
-const tags = computed(() => props.tags.split(",").map((i) => i.trim()));
+const tags = computed(() => props.tags?.split(",").map((i) => i.trim()));
 </script>
 
 <style scoped>
