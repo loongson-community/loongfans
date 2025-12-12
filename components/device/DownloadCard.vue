@@ -12,7 +12,13 @@
           <CopyInline :text="sha256" type="SHA-256" />
         </div>
       </div>
-      <Button label="Download" class="download-button">
+      <Button
+        as="a"
+        :href="url"
+        label="Download"
+        target="_blank"
+        class="download-button"
+      >
         <template #icon>
           <IconDownload />
         </template>
@@ -80,6 +86,7 @@ defineProps({
   size: String,
   date: String,
   sha256: String,
+  url: String,
   latest: Boolean,
 });
 
@@ -131,6 +138,8 @@ const expand = ref(false);
 .download-button {
   min-width: fit-content;
   align-self: flex-start;
+  color: white;
+  text-decoration: unset;
 }
 
 .changelog-title-bar {
