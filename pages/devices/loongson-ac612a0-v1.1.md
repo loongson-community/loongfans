@@ -53,6 +53,7 @@ pageSubTitle: 龙芯 AC612A0_V1.1
   size="4.99 MB"
   date="2024/03/01"
   sha256="20C771DF9B243AEEBDA407BE7AACAF0146A214C08CBB4078886ED52C349F8EAE"
+  url="https://loongson.cn"
   latest
 >
 
