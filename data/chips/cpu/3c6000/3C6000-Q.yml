@@ -1,0 +1,64 @@
+basic:
+  name: 3C6000/Q
+  series: 3C6000
+  market: 3
+  
+ext_info: 
+  pic: "/images/chips/cpu/3C6000Q.webp"
+  manual: ""
+
+cpu: 
+  cores: 64
+  threads: 128
+  arch: "LA664"
+  freq: "2.0 GHz"
+  l1_inst_cache: "64 KB"
+  l1_data_cache: "64 KB"
+  l2_cache: "16 MB (256 KB * 16 * 4)"
+  l3_cache: "128 MB (32 MB * 4)"
+  voltage: "N/A"
+  tpc: "300 W"
+  tdp: "N/A"
+
+gpu:
+  available: false
+  name: "N/A"
+  
+memory:
+  max: "N/A"
+  types: "DDR4-3200"
+  channels: "8 (72-Bit)"
+  ecc: true # 1=支持 0=不支持
+
+exp:
+  io_name: "PCI Express"
+  io_rev: "4.0/3.0"
+  lanes: 128-Lanes
+  usb_5gbps: 0
+  usb2: 0
+  sata: 0
+  eth: 0
+  spi: 1
+  uart: 1
+  i2c: 3
+  avs: 1
+  gpio: 16
+  d2d: true
+  d2d_name: lcl
+
+package:
+  socket: "FCBGA6128"
+  temperature: "N/A"
+  t_case: "N/A"
+  t_junction: "N/A"
+  size: "N/A"
+
+power:
+  shutdown_of_the_clocks: true
+  frequency_scaling: true
+  voltage_scaling: true
+
+technologies:
+  set: "64-Bit"
+  set_extensions: "LSX, LASX"
+  

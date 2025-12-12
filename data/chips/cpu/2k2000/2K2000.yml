@@ -1,0 +1,63 @@
+basic:
+  name: 2K2000
+  series: 2K2000
+  market: 2
+  
+ext_info: 
+  pic: "/images/chips/cpu/2K2000.webp"
+  manual: ""
+
+cpu: 
+  cores: 2
+  threads: 2
+  arch: "LA364"
+  freq: "1.4 GHz"
+  l1_inst_cache: "64 KB"
+  l1_data_cache: "64 KB"
+  l2_cache: "2 MB"
+  l3_cache: "N/A"
+  voltage: "1.25 V"
+  tpc: "9 W"
+  tdp: "10.5 W"
+
+gpu:
+  available: true
+  name: "unknown"
+  
+memory:
+  max: "32 GB"
+  types: "DDR4-2400"
+  channels: "1 (72-Bit)"
+  ecc: true
+
+exp:
+  io_name: "PCI Express"
+  io_rev: "3.0"
+  lanes: "12-Lanes (3 * 4-Lanes)"
+  usb_5gbps: 4
+  usb2: 9
+  sata: 2
+  eth: "2 (1Gbps)"
+  spi: 2
+  uart: 4
+  i2c: 4
+  gpio: 96
+  avs: 1
+  d2d: false
+  other: "eMMC, SDIO, CAN，LPC，LIO，AVS"
+
+package:
+  socket: "FCBGA883"
+  temperature: "0 - 70℃"
+  t_case: "N/A"
+  t_junction: "N/A"
+  size: "27 mm * 27 mm"
+
+power:
+  shutdown_of_the_clocks: false
+  frequency_scaling: true
+  voltage_scaling: true
+
+technologies:
+  set: "64-Bit"
+  set_extensions: "LSX"

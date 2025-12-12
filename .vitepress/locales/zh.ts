@@ -1,4 +1,5 @@
-import { devices } from './zh/devices'
+import { devices } from './zh/devices';
+import chips from './zh/chips';
 
 export default {
   // Index.vue
@@ -7,6 +8,7 @@ export default {
   usageGuides: '玩机及踩坑指南',
   supportMaterials: '支持材料',
   contact: '联系我们',
+  chipsData: '芯片规格数据库',
   firmwareAndManuals: '主板固件及说明书',
   productSpecs: '产品规格数据库',
   compatibilityDb: '软硬件兼容性数据库',
@@ -52,5 +54,8 @@ export default {
   deviceTabImage: '产品图片',
   deviceTabDownload: '文件下载',
 
-  devices
-}
+  devices,
+
+  // Chips/*.vue
+  chips
+};

@@ -1,6 +1,7 @@
 <template>
   <!-- 必须包裹容器 -->
   <div class="vp-doc">
+    <Toast />
     <div class="main">
       <div class="header_redline"></div>
       <!-- 如果是首页就不渲染子页面头部 -->
@@ -19,6 +20,7 @@ import { useRouter } from 'vitepress';
 import ChildHeader from "/components/ChildHeader.vue";
 import ChildFooter from "/components/ChildFooter.vue";
 import { handleFirstVisitRedirect } from '../utils/language'
+import Toast from 'primevue/toast';
 
 const { lang } = useData()
 const { locale } = useI18n()

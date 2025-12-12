@@ -1,4 +1,5 @@
 import { devices } from './en/devices'
+import chips from './en/chips'
 
 export default {
   // Index.vue
@@ -7,6 +8,7 @@ export default {
   usageGuides: 'FAQ & Troubleshooting Guides',
   supportMaterials: 'Support Materials',
   contact: 'Contact',
+  chipsData: 'Chips Data',
   firmwareAndManuals: 'Firmware and Manuals',
   productSpecs: 'Product Specifications',
   compatibilityDb: 'Loong 1-2-3',
@@ -52,6 +54,7 @@ export default {
   deviceTabImage: 'Images',
   deviceTabDownload: 'Downloads',
 
-  devices
+  devices,
+  chips
 }
 
