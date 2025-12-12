@@ -1,5 +1,5 @@
 <template>
-  <template v-for="family in tm('devices')" :key="family.family">
+  <template v-for="family in data" :key="family.family">
     <h2>{{ family.family }}</h2>
     <template v-for="category in family.categories" :key="category.title">
       <h3>{{ category.title }}</h3>
@@ -18,11 +18,11 @@
   </template>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Card from "./Card.vue";
-import { useI18n } from "vue-i18n";
+import type { DeviceFamily } from "../../.vitepress/locales/zh/devices";
 
-const { tm } = useI18n();
+defineProps<{data: DeviceFamily[]}>();
 </script>
 
 <style>
