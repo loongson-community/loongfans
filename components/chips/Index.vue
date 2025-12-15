@@ -5,10 +5,13 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import DeviceIndex from "../device/Index.vue";
-import type { DeviceFamily } from "../../.vitepress/locales/zh/devices";
 import chipsJson from "../../data/chips.min.json";
+import { LANGUAGE_PREFIXES } from "../../.vitepress/utils/language";
 
-const { t } = useI18n();
+import type { SupportedLanguage } from "../../.vitepress/utils/language";
+import type { DeviceFamily } from "../../.vitepress/locales/zh/devices";
+
+const { t, locale } = useI18n();
 
 const chipsData = [
   {
@@ -21,10 +24,12 @@ const chipsData = [
         .filter(([, value]) => value.basic.series === series)
         .map(([key, value]) => ({
           name: value.basic.name,
-          href: `/pages/chips/cpu/${series}/${key}`,
+          href: `${
+            LANGUAGE_PREFIXES[locale.value as SupportedLanguage]
+          }/pages/chips/cpu/${series}/${key}`,
           image: value.ext_info.pic,
           spec: `${value.cpu.arch} ${value.cpu.freq}`,
-          tags: `${value.cpu.cores}C${value.cpu.threads}T`
+          tags: `${value.cpu.cores}C${value.cpu.threads}T`,
         })),
     })),
   },
@@ -38,7 +43,9 @@ const chipsData = [
         .filter(([, value]) => value.basic.series === series)
         .map(([key, value]) => ({
           name: value.basic.name,
-          href: `/pages/chips/chipset/${series}/${key}`,
+          href: `${
+            LANGUAGE_PREFIXES[locale.value as SupportedLanguage]
+          }/pages/chips/chipset/${series}/${key}`,
           image: value.ext_info.pic,
           spec: `${value.chipset.interface}`,
         })),
