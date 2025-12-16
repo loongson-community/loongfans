@@ -9,6 +9,7 @@ export default {
   beginnerResources: 'Loongson 101',
   introToLoongson: 'Loongson: An Introduction',
   usageGuides: 'FAQ & Troubleshooting Guides',
+  devGuides: 'Development Guides',
   supportMaterials: 'Support Materials',
   contact: 'Contact',
   chipsData: 'Chips Data',
@@ -57,6 +58,19 @@ export default {
   deviceTabKnownIssues: 'Known Issues',
   deviceTabImage: 'Images',
   deviceTabDownload: 'Downloads',
+
+  // sdk/Detail.vue
+  gnuInstall: 'GNU Toolchain',
+  llvmInstall: 'LLVM Toolchain',
+  rustInstall: "Rust",
+  nodejsInstall: 'Node.js',
+  golangInstall: 'Go',
+  pythonInstall: 'Python',
+  dotnetInstall: '.NET',
+  javaInstall: 'Java',
+  kernelInstall: 'Linux Kernel',
+  dockerInstall: 'Docker',
+  cirunnerInstall: 'CI Runners',
 
   devices,
   chips,
