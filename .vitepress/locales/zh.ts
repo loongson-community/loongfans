@@ -10,6 +10,7 @@ export default {
   beginnerResources: '新手资源',
   introToLoongson: '初识龙芯',
   usageGuides: '玩机及踩坑指南',
+  devGuides: '开发者指南',
   supportMaterials: '支持材料',
   contact: '联系我们',
   chipsData: '芯片规格数据库',
@@ -59,9 +60,20 @@ export default {
   deviceTabImage: '产品图片',
   deviceTabDownload: '文件下载',
 
-  devices,
+  // sdk/Detail.vue
+  gnuInstall: 'GNU 工具链',
+  llvmInstall: 'LLVM 工具链',
+  rustInstall: "Rust",
+  nodejsInstall: 'Node.js',
+  golangInstall: 'Go',
+  pythonInstall: 'Python',
+  dotnetInstall: '.NET',
+  javaInstall: 'Java',
+  kernelInstall: 'Linux 内核',
+  dockerInstall: 'Docker',
+  cirunnerInstall: 'CI 代理 (Runner)',
 
-  // Chips/*.vue
+  devices,
   chips,
   help,
   osDataList
