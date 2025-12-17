@@ -24,6 +24,8 @@ import SdkIndex from "../components/sdk/Index.vue"
 考虑到 ABI 2.0（“新世界”）是龙架构社区用户和开发者使用的现行标准，本指南仅面向 ABI 2.0 系统介绍工具链的安装配置方法，而不再介绍 ABI 1.0（“旧世界”）系统相关信息。如果您有面向 ABI 1.0 的开发需求，我们建议您与相关项目方沟通并再次确认需求，并在确认有明确必要时，参考来自[龙芯开源社区 (loongnix.cn)](https://www.loongnix.cn/) 的相关资料。
 :::
 
+---
+
 <SdkIndex>
 <template #gnu>
 
