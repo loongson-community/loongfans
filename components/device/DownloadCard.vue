@@ -6,7 +6,7 @@
           {{ title }}
         </div>
         <div class="metadata">
-          <span>Version: {{ version }}</span>
+          <span>{{ t("deviceDownloadVersion", { version }) }}</span>
           <span>{{ size }}</span>
           <span>{{ date }}</span>
           <CopyInline :text="sha256" type="SHA-256" />
@@ -37,7 +37,9 @@
             <IconExpandMore />
           </template>
         </Button>
-        <div class="changelog-title-text">Changelog</div>
+        <div class="changelog-title-text">
+          {{ t("deviceDownloadChangelog") }}
+        </div>
       </div>
       <div class="changelog">
         <div class="changelog-main">
@@ -52,7 +54,7 @@
   <div v-else class="mb-[24px]">
     <Panel :header="title" toggleable collapsed>
       <div class="metadata">
-        <span>Version: {{ version }}</span>
+        <span>{{ t("deviceDownloadVersion", { version }) }}</span>
         <span>{{ size }}</span>
         <span>{{ date }}</span>
         <CopyInline :text="sha256" type="SHA-256" />
@@ -64,7 +66,9 @@
       </Button>
       <div v-if="$slots.default" class="changelog">
         <Divider />
-        <div class="changelog-title-text">Changelog</div>
+        <div class="changelog-title-text">
+          {{ t("deviceDownloadChangelog") }}
+        </div>
         <div class="changelog-detail">
           <slot />
         </div>
@@ -75,6 +79,7 @@
 
 <script setup>
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 import { Button, Panel, Divider } from "primevue";
 import IconDownload from "~icons/material-symbols/download";
 import IconExpandMore from "~icons/material-symbols/expand-more";
@@ -89,6 +94,8 @@ defineProps({
   url: String,
   latest: Boolean,
 });
+
+const { t } = useI18n();
 
 const expand = ref(false);
 </script>
