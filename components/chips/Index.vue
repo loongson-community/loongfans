@@ -26,7 +26,7 @@ const chipsData = [
           name: value.basic.name,
           href: `${
             LANGUAGE_PREFIXES[locale.value as SupportedLanguage]
-          }/pages/chips/cpu/${series}/${key}`,
+          }/pages/chips/cpu/${series}/${key}`.toLowerCase(),
           image: value.ext_info.pic,
           spec: `${value.cpu.arch} ${value.cpu.freq}`,
           tags: `${value.cpu.cores}C${value.cpu.threads}T`,
@@ -45,7 +45,7 @@ const chipsData = [
           name: value.basic.name,
           href: `${
             LANGUAGE_PREFIXES[locale.value as SupportedLanguage]
-          }/pages/chips/chipset/${series}/${key}`,
+          }/pages/chips/chipset/${series}/${key}`.toLowerCase(),
           image: value.ext_info.pic,
           spec: `${value.chipset.interface}`,
         })),
