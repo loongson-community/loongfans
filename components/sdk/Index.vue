@@ -1,25 +1,13 @@
 <template>
-  <div>
-    <Accordion :value="sdkList[0].name">
-      <AccordionPanel v-for="sdk in sdkList" :value="sdk.name">
-        <AccordionHeader>
-          <component :is="sdk.icon" class="icon"/>
-          {{ sdk.title }}
-        </AccordionHeader>
-        <AccordionContent>
-          <slot :name="sdk.name" />
-        </AccordionContent>
-      </AccordionPanel>
-    </Accordion>
+  <div class="sdk-grid">
+    <a v-for="sdk in sdkList" class="sdk-item">
+      <component :is="sdk.icon" class="sdk-icon" />
+      <div>{{ sdk.title }}</div>
+    </a>
   </div>
 </template>
 
 <script setup>
-import Accordion from 'primevue/accordion';
-import AccordionPanel from 'primevue/accordionpanel';
-import AccordionHeader from 'primevue/accordionheader';
-import AccordionContent from 'primevue/accordioncontent';
-
 import { useI18n } from "vue-i18n";
 
 import IconGnu from '~icons/simple-icons/gnu';
@@ -100,7 +88,26 @@ const sdkList = [
   font-size: 0.9em;
 }
 
-.icon {
-  font-size: 1.2em;
+.sdk-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.sdk-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 2px solid;
+  border-color: #ddd;
+  border-radius: 16px;
+  color: unset;
+  text-decoration: none;
+}
+
+.sdk-icon {
+  font-size: 48px;
 }
 </style>
