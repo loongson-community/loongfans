@@ -58,6 +58,8 @@ export default {
   deviceTabKnownIssues: '已知问题',
   deviceTabImage: '产品图片',
   deviceTabDownload: '文件下载',
+  deviceDownloadVersion: '版本号：{version}',
+  deviceDownloadChangelog: '更改日志',
 
   // sdk/Detail.vue
   gnuInstall: 'GNU 工具链',

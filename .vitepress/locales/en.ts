@@ -57,6 +57,8 @@ export default {
   deviceTabKnownIssues: 'Known Issues',
   deviceTabImage: 'Images',
   deviceTabDownload: 'Downloads',
+  deviceDownloadVersion: 'Version: {version}',
+  deviceDownloadChangelog: 'Changelog',
 
   // sdk/Detail.vue
   gnuInstall: 'GNU Toolchain',
