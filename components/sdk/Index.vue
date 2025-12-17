@@ -1,26 +1,32 @@
 <template>
   <div class="sdk-grid">
-    <a v-for="sdk in sdkList" class="sdk-item">
+    <a v-for="sdk in sdkList" :href="`#${sdk.name}`" class="sdk-item">
       <component :is="sdk.icon" class="sdk-icon" />
       <div>{{ sdk.title }}</div>
     </a>
+  </div>
+  <div>
+    <template v-for="sdk in sdkList">
+      <h2 :id="sdk.name">{{ sdk.title }}</h2>
+      <slot :name="sdk.name" />
+    </template>
   </div>
 </template>
 
 <script setup>
 import { useI18n } from "vue-i18n";
 
-import IconGnu from '~icons/simple-icons/gnu';
-import IconLlvm from '~icons/simple-icons/llvm';
-import IconRust from '~icons/simple-icons/rust';
-import IconNodejs from '~icons/simple-icons/nodedotjs';
-import IconGolang from '~icons/simple-icons/go';
-import IconPython from '~icons/simple-icons/python';
-import IconDotnet from '~icons/simple-icons/dotnet';
-import IconJava from '~icons/simple-icons/openjdk';
-import IconLinux from '~icons/simple-icons/linux';
-import IconDocker from '~icons/simple-icons/docker';
-import IconGithubActions from '~icons/simple-icons/githubactions';
+import IconGnu from "~icons/simple-icons/gnu";
+import IconLlvm from "~icons/simple-icons/llvm";
+import IconRust from "~icons/simple-icons/rust";
+import IconNodejs from "~icons/simple-icons/nodedotjs";
+import IconGolang from "~icons/simple-icons/go";
+import IconPython from "~icons/simple-icons/python";
+import IconDotnet from "~icons/simple-icons/dotnet";
+import IconJava from "~icons/simple-icons/openjdk";
+import IconLinux from "~icons/simple-icons/linux";
+import IconDocker from "~icons/simple-icons/docker";
+import IconGithubActions from "~icons/simple-icons/githubactions";
 
 const { t } = useI18n();
 
@@ -79,8 +85,8 @@ const sdkList = [
     name: "cirunner",
     title: t("cirunnerInstall"),
     icon: IconGithubActions,
-  }
-]
+  },
+];
 </script>
 
 <style scoped>
@@ -90,7 +96,7 @@ const sdkList = [
 
 .sdk-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
   gap: 24px;
 }
 
@@ -105,6 +111,7 @@ const sdkList = [
   border-radius: 16px;
   color: unset;
   text-decoration: none;
+  text-align: center;
 }
 
 .sdk-icon {
