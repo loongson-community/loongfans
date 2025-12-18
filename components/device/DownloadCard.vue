@@ -8,7 +8,7 @@
         <div class="metadata">
           <span>{{ t("deviceDownloadVersion", { version }) }}</span>
           <span>{{ formattedSize }}</span>
-          <span>{{ new Date(date).toLocaleDateString("en-CA") }}</span>
+          <span>{{ formattedDate }}</span>
           <CopyInline :text="sha256" type="SHA-256" />
         </div>
       </div>
@@ -56,7 +56,7 @@
       <div class="metadata">
         <span>{{ t("deviceDownloadVersion", { version }) }}</span>
         <span>{{ formattedSize }}</span>
-        <span>{{ new Date(date).toLocaleDateString("en-CA") }}</span>
+        <span>{{ formattedDate }}</span>
         <CopyInline :text="sha256" type="SHA-256" />
       </div>
       <Button label="Download" class="download-button mt-[8px]">
@@ -89,7 +89,7 @@ const props = defineProps({
   title: String,
   version: String,
   size: Number,
-  date: String,
+  date: String, // Unix 时间戳或者 Date() 认识的格式
   sha256: String,
   url: String,
   latest: Boolean,
@@ -98,6 +98,13 @@ const props = defineProps({
 const { t } = useI18n();
 
 const expand = ref(false);
+
+const formattedDate = computed(() =>
+  new Date(
+    // `.md` 文件中传的参数好像只会是字符串类型
+    /^\d+$/.test(props.date) ? Number(props.date) * 1000 : props.date
+  ).toLocaleDateString("en-CA")
+);
 
 const formattedSize = computed(() => {
   if (!props.size) return "";
