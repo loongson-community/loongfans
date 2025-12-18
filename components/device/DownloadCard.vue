@@ -8,7 +8,7 @@
         <div class="metadata">
           <span>{{ t("deviceDownloadVersion", { version }) }}</span>
           <span>{{ formattedSize }}</span>
-          <span>{{ date }}</span>
+          <span>{{ new Date(date).toLocaleDateString("en-CA") }}</span>
           <CopyInline :text="sha256" type="SHA-256" />
         </div>
       </div>
@@ -56,7 +56,7 @@
       <div class="metadata">
         <span>{{ t("deviceDownloadVersion", { version }) }}</span>
         <span>{{ formattedSize }}</span>
-        <span>{{ date }}</span>
+        <span>{{ new Date(date).toLocaleDateString("en-CA") }}</span>
         <CopyInline :text="sha256" type="SHA-256" />
       </div>
       <Button label="Download" class="download-button mt-[8px]">
