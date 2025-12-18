@@ -7,7 +7,7 @@
         </div>
         <div class="metadata">
           <span>{{ t("deviceDownloadVersion", { version }) }}</span>
-          <span>{{ size }}</span>
+          <span>{{ formattedSize }}</span>
           <span>{{ date }}</span>
           <CopyInline :text="sha256" type="SHA-256" />
         </div>
@@ -55,7 +55,7 @@
     <Panel :header="title" toggleable collapsed>
       <div class="metadata">
         <span>{{ t("deviceDownloadVersion", { version }) }}</span>
-        <span>{{ size }}</span>
+        <span>{{ formattedSize }}</span>
         <span>{{ date }}</span>
         <CopyInline :text="sha256" type="SHA-256" />
       </div>
@@ -78,17 +78,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { Button, Panel, Divider } from "primevue";
 import IconDownload from "~icons/material-symbols/download";
 import IconExpandMore from "~icons/material-symbols/expand-more";
 import CopyInline from "./CopyInline.vue";
 
-defineProps({
+const props = defineProps({
   title: String,
   version: String,
-  size: String,
+  size: Number,
   date: String,
   sha256: String,
   url: String,
@@ -98,6 +98,13 @@ defineProps({
 const { t } = useI18n();
 
 const expand = ref(false);
+
+const formattedSize = computed(() => {
+  if (!props.size) return "";
+  const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+  const unit = Math.floor(Math.log(props.size) / Math.log(1024));
+  return `${(props.size / 1024 ** unit).toFixed(2)} ${units[unit]}`;
+});
 </script>
 
 <style scoped>
