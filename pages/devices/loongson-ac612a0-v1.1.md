@@ -50,7 +50,7 @@ pageSubTitle: 龙芯 AC612A0_V1.1
 <DeviceDownloadCard
   title="Intel Chipset Device Software version 10.1.19627.8423 for NUC"
   version="10.1.19627.8423"
-  size="4.99 MB"
+  :size="5232271"
   date="2024/03/01"
   sha256="20C771DF9B243AEEBDA407BE7AACAF0146A214C08CBB4078886ED52C349F8EAE"
   url="https://loongson.cn"
@@ -74,7 +74,7 @@ This action ensures that Windows recognizes all chipset components. If the opera
 <DeviceDownloadCard
   title="Intel Integrated Sensor Solution Firmware build 5.6.0.7683v2"
   version="5.6.0.7683v2"
-  size="610.95 KB"
+  :size="5232394"
   date="2025/11/12"
 >
 </DeviceDownloadCard>
@@ -82,7 +82,7 @@ This action ensures that Windows recognizes all chipset components. If the opera
 <DeviceDownloadCard
   title="Intel Gigabit Ethernet Network Connection Driver"
   version="2.1.3.15"
-  size="636.2 KB"
+  :size="651469"
   date="2024/04/29"
   sha256="20C771DF9B243AEEBDA407BE7AACAF0146A214C08CBB4078886ED52C349F8EAE"
 >
