@@ -44,7 +44,7 @@ exp:
   gpio: 96
   avs: 1
   d2d: false
-  other: "eMMC, SDIO, CAN，LPC，LIO，AVS"
+  other: "eMMC, SDIO, CAN, LPC, LIO, AVS"
 
 package:
   socket: "FCBGA883"
@@ -60,4 +60,4 @@ power:
 
 technologies:
   set: "64-Bit"
-  set_extensions: "LSX"
+  set_extensions: "LBT, LSX"

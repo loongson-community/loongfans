@@ -1,5 +1,5 @@
 basic:
-  name: 3B6000-8
+  name: 3B6000/8
   series: 3B6000
   market: 1
   
@@ -32,7 +32,7 @@ memory:
 
 exp:
   io_name: "PCI Express"
-  io_rev: "4.0"
+  io_rev: "4.0/3.0"
   lanes: 32-Lanes (2*16-Lanes)
   usb_5gbps: 0
   usb2: 0
@@ -59,4 +59,4 @@ power:
 
 technologies:
   set: "64-Bit"
-  set_extensions: "LSX, LASX"
+  set_extensions: "LBT, LSX, LASX"
