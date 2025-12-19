@@ -3,7 +3,8 @@
     <div class="main-content">
       <div class="text">
         <div class="title">
-          {{ title }}
+          <span>{{ title }}</span>
+          <span v-if="debugVersion">{{ t("deviceDownloadDebugVersion") }}</span>
         </div>
         <div class="metadata">
           <span>{{ t("deviceDownloadVersion", { version }) }}</span>
@@ -52,9 +53,21 @@
     </template>
   </div>
   <div v-else class="mb-[24px]">
-    <Panel :header="title" toggleable collapsed>
+    <Panel toggleable collapsed>
+      <template #header>
+        <div class="panel-header">
+          <div>
+            <span>{{ title }}</span>
+            <span v-if="debugVersion">{{
+              t("deviceDownloadDebugVersion")
+            }}</span>
+          </div>
+          <span class="panel-header-version">
+            {{ version }}
+          </span>
+        </div>
+      </template>
       <div class="metadata">
-        <span>{{ t("deviceDownloadVersion", { version }) }}</span>
         <span>{{ formattedSize }}</span>
         <span>{{ formattedDate }}</span>
         <CopyInline :text="sha256" type="SHA-256" />
@@ -98,6 +111,7 @@ const props = defineProps({
   sha256: String,
   url: String,
   latest: Boolean,
+  debugVersion: Boolean,
 });
 
 const { t } = useI18n();
@@ -146,6 +160,10 @@ const formattedSize = computed(() => {
   font-size: larger;
   font-weight: bold;
   overflow-wrap: anywhere;
+}
+
+.debug-tooltip {
+  cursor: pointer;
 }
 
 .metadata {
@@ -214,6 +232,18 @@ const formattedSize = computed(() => {
 
 :deep(.p-panel-title) {
   line-height: unset;
+}
+
+.panel-header {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.5em;
+}
+
+.panel-header-version {
+  font-size: small;
+  color: #8d8d8d;
+  overflow-wrap: anywhere;
 }
 
 @media (width >= 40rem) {
