@@ -44,7 +44,7 @@ exp:
   gpio: 16
   avs: 1
   d2d: true
-  d2d_name: ccnuma
+  d2d_name: ht3
 
 package:
   socket: "FCLGA4129"
