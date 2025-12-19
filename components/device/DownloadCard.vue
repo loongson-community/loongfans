@@ -59,7 +59,12 @@
         <span>{{ formattedDate }}</span>
         <CopyInline :text="sha256" type="SHA-256" />
       </div>
-      <Button label="Download" class="download-button mt-[8px]">
+      <Button
+        as="a"
+        :href="url"
+        label="Download"
+        class="download-button mt-[8px]"
+      >
         <template #icon>
           <IconDownload />
         </template>
