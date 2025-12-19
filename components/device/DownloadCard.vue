@@ -55,7 +55,7 @@
   <div v-else class="mb-[24px]">
     <Panel toggleable collapsed>
       <template #header>
-        <div class="panel-header">
+        <b class="panel-header">
           <div>
             <span>{{ title }}</span>
             <span v-if="debugVersion">{{
@@ -65,7 +65,7 @@
           <span class="panel-header-version">
             {{ version }}
           </span>
-        </div>
+        </b>
       </template>
       <div class="metadata">
         <span>{{ formattedSize }}</span>
@@ -120,7 +120,6 @@ const expand = ref(false);
 
 const formattedDate = computed(() =>
   new Date(
-    // `.md` 文件中传的参数好像只会是字符串类型
     /^\d+$/.test(props.date) ? Number(props.date) * 1000 : props.date
   ).toLocaleDateString("en-CA")
 );
