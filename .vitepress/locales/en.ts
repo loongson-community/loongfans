@@ -59,6 +59,7 @@ export default {
   deviceTabDownload: 'Downloads',
   deviceDownloadVersion: 'Version: {version}',
   deviceDownloadChangelog: 'Changelog',
+  deviceDownloadDebugVersion: ' (Debug)',
 
   // sdk/Detail.vue
   gnuInstall: 'GNU Toolchain',

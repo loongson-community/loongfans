@@ -60,6 +60,7 @@ export default {
   deviceTabDownload: '文件下载',
   deviceDownloadVersion: '版本号：{version}',
   deviceDownloadChangelog: '更改日志',
+  deviceDownloadDebugVersion: '（调试版）',
 
   // sdk/Detail.vue
   gnuInstall: 'GNU 工具链',
