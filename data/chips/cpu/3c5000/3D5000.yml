@@ -60,5 +60,5 @@ power:
 
 technologies:
   set: "64-Bit"
-  set_extensions: "LSX, LASX"
+  set_extensions: "LBT, LSX, LASX"
   

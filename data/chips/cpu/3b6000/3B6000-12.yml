@@ -1,5 +1,5 @@
 basic:
-  name: 3B6000-12
+  name: 3B6000/12
   series: 3B6000
   market: 1
   
@@ -11,7 +11,7 @@ cpu:
   cores: 12
   threads: 24
   arch: "LA664"
-  freq: "2.3 GHz"
+  freq: "2.2 GHz"
   l1_inst_cache: "64 KB"
   l1_data_cache: "64 KB"
   l2_cache: "3 MB (256 KB * 12)"
@@ -32,7 +32,7 @@ memory:
 
 exp:
   io_name: "PCI Express"
-  io_rev: "4.0"
+  io_rev: "4.0/3.0"
   lanes: 32-Lanes (2*16-Lanes)
   usb_5gbps: 0
   usb2: 0
@@ -59,4 +59,4 @@ power:
 
 technologies:
   set: "64-Bit"
-  set_extensions: "LSX, LASX"
+  set_extensions: "LBT, LSX, LASX"
