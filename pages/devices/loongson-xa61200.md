@@ -66,7 +66,7 @@ IDK what to write here.
   sha256="0aed4e73d01f490f5808f18df0056e0f70e38bd2344c45c30bedb6ca0557c6a1"
   url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523dbg.fd"
   latest
-  debugVersion
+  debug
 >
 
 IDK what to write here.
@@ -90,7 +90,7 @@ IDK what to write here.
   date="2024-02-29"
   sha256="50da40f1101974f81ce8d64d907efe6362e3e89183080b3c137561683530a7f2"
   url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2402_0325dbg.fd"
-  debugVersion
+  debug
 >
 </DeviceDownloadCard>
 
@@ -111,7 +111,7 @@ IDK what to write here.
   date="2023-11-29"
   sha256="c8366b5c56675e048df9ef1e0227bf57d0e4efdcc7068798410c18a9277100c3"
   url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg.fd"
-  debugVersion
+  debug
 >
 </DeviceDownloadCard>
 
