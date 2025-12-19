@@ -4,7 +4,7 @@
       <div class="text">
         <div class="title">
           <span>{{ title }}</span>
-          <span v-if="debugVersion">{{ t("deviceDownloadDebugVersion") }}</span>
+          <span v-if="debug">{{ t("deviceDownloadDebugVersion") }}</span>
         </div>
         <div class="metadata">
           <span>{{ t("deviceDownloadVersion", { version }) }}</span>
@@ -58,7 +58,7 @@
         <b class="panel-header">
           <div>
             <span>{{ title }}</span>
-            <span v-if="debugVersion">{{
+            <span v-if="debug">{{
               t("deviceDownloadDebugVersion")
             }}</span>
           </div>
@@ -111,7 +111,7 @@ const props = defineProps({
   sha256: String,
   url: String,
   latest: Boolean,
-  debugVersion: Boolean,
+  debug: Boolean,
 });
 
 const { t } = useI18n();
