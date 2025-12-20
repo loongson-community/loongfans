@@ -126,7 +126,7 @@ const formattedDate = computed(() =>
 
 const formattedSize = computed(() => {
   if (!props.size) return "";
-  const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+  const units = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
   const unit = Math.floor(Math.log(props.size) / Math.log(1024));
   return `${(props.size / 1024 ** unit).toFixed(2)} ${units[unit]}`;
 });
