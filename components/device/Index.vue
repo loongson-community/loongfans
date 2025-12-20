@@ -26,7 +26,7 @@ import type { DeviceFamily } from "../../.vitepress/locales/zh/devices";
 defineProps<{data: DeviceFamily[], showCompareButton: boolean}>();
 </script>
 
-<style>
+<style scoped>
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
