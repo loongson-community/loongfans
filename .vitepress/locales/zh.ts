@@ -1,5 +1,6 @@
 import { devices } from './zh/devices';
 import chips from './zh/chips';
+import helps from './zh/helps';
 
 export default {
   // Index.vue
@@ -57,5 +58,6 @@ export default {
   devices,
 
   // Chips/*.vue
-  chips
+  chips,
+  helps
 };

@@ -1,5 +1,6 @@
 import { devices } from './en/devices'
 import chips from './en/chips'
+import helps from './en/helps'
 
 export default {
   // Index.vue
@@ -55,6 +56,7 @@ export default {
   deviceTabDownload: 'Downloads',
 
   devices,
-  chips
+  chips,
+  helps
 }
 
