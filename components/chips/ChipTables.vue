@@ -21,9 +21,12 @@
                         <div class="grid grid-nogutter">
                             <div v-for="(item, key) in props.fields.basic" :key="key" class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">{{
-                                        $t(`chips.basic.${key}`)
-                                    }}</label>
+                                    <label>
+                                        {{ $t(`chips.basic.${key}`) }}
+                                        <a v-if="key !== 'name'" @click="showHelpDialog('basic.' + key, 'basic_'+key)">
+                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                        </a>
+                                    </label>
                                     <div class="value">
                                         <span v-if="key === 'market'">
                                             <span v-if="chipData.basic[key] == 1">{{
@@ -56,9 +59,12 @@
                         <div class="grid grid-nogutter">
                             <div v-for="(item, key) in props.fields.cpu" :key="key" class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">{{
-                                        $t(`chips.cpu.${key}`)
-                                    }}</label>
+                                    <label>
+                                        {{ $t(`chips.cpu.${key}`) }}
+                                        <a v-if="['voltage', 'tpc', 'tdp'].includes(key)" @click="showHelpDialog('cpu.' + key, 'cpu_'+key)">
+                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                        </a>
+                                    </label>
                                     <div class="value">{{ chipData.cpu[key] }}</div>
                                 </div>
                             </div>
@@ -76,7 +82,7 @@
                             <div v-for="(item, key) in props.fields.chipset" :key="key"
                                 class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">{{
+                                    <label>{{
                                         $t(`chips.chipset.${key}`)
                                     }}</label>
                                     <div class="value">{{ chipData.chipset[key] }}</div>
@@ -95,7 +101,7 @@
                         <div class="grid grid-nogutter">
                             <div v-for="(item, key) in props.fields.gpu" :key="key" class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">{{
+                                    <label>{{
                                         $t(`chips.gpu.${key}`)
                                     }}</label>
                                     <div class="value">
@@ -122,9 +128,12 @@
                         <div class="grid grid-nogutter">
                             <div v-for="(item, key) in props.fields.memory" :key="key" class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">{{
-                                        $t(`chips.memory.${key}`)
-                                    }}</label>
+                                    <label>
+                                        {{ $t(`chips.memory.${key}`) }}
+                                        <a v-if="key === 'ecc'" @click="showHelpDialog('memory.' + key, 'memory_'+key)">
+                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                        </a>
+                                    </label>
                                     <div class="value">
                                         <span v-if="key === 'ecc'">
                                             <span v-if="chipData.memory[key] == true">{{
@@ -151,14 +160,13 @@
                         <div class="grid grid-nogutter">
                             <div v-for="(item, key) in props.fields.exp" :key="key" class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">
-                                        <span v-if="key === 'd2d'">{{
-                                            $t(`chips.exp.d2d.title`)
-                                        }}</span>
-                                        <span v-else-if="key === 'd2d_name'">{{
-                                            $t(`chips.exp.d2d.d2d_name`)
-                                        }}</span>
+                                    <label>
+                                        <span v-if="key === 'd2d'">{{ $t(`chips.exp.d2d`) }}</span>
+                                        <span v-else-if="key === 'd2d_name'">{{ $t(`chips.exp.d2d_name`) }}</span>
                                         <span v-else>{{ $t(`chips.exp.${key}`) }}</span>
+                                        <a v-if="['io_name', 'io_rev', 'd2d', 'd2d_name'].includes(key)" @click="showHelpDialog('exp.' + key, 'exp_'+key)">
+                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                        </a>
                                     </label>
                                     <div class="value">
                                         <span v-if="key === 'd2d'">
@@ -171,9 +179,9 @@
                                         </span>
                                         <span v-else-if="key === 'd2d_name'">
                                             <span v-if="chipData.exp[key] == 'lcl'">{{
-                                                $t("chips.exp.d2d.lcl")
+                                                $t("chips.exp.d2d_lcl")
                                             }}</span>
-                                            <span v-else-if="chipData.exp[key] == 'ccnuma'">ccNUMA</span>
+                                            <span v-else-if="chipData.exp[key] == 'ht3'">HyperTransport 3.0</span>
                                             <span v-else>N/A</span>
                                         </span>
                                         <span v-else>{{ chipData.exp[key] || "N/A" }}</span>
@@ -194,10 +202,13 @@
                             <div v-for="(item, key) in props.fields.package" :key="key"
                                 class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">
+                                    <label>
                                         <span v-if="key === 't_case'">T<sub>CASE</sub></span>
                                         <span v-else-if="key === 't_junction'">T<sub>JUNCTION</sub></span>
                                         <span v-else>{{ $t(`chips.package.${key}`) }}</span>
+                                        <a v-if="['temperature', 't_case', 't_junction'].includes(key)" @click="showHelpDialog('package.' + key, 'package_'+key)">
+                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                        </a>
                                     </label>
                                     <div class="value">{{ chipData.package[key] || "N/A" }}</div>
                                 </div>
@@ -215,9 +226,12 @@
                         <div class="grid grid-nogutter">
                             <div v-for="(item, key) in props.fields.power" :key="key" class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">{{
-                                        $t(`chips.power.${key}`)
-                                    }}</label>
+                                    <label>
+                                        {{ $t(`chips.power.${key}`) }}
+                                        <a @click="showHelpDialog('power.' + key, 'power_'+key)">
+                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                        </a>
+                                    </label>
                                     <div class="value">
                                         <span v-if="chipData.power[key] == true">{{
                                             $t("chips.status.supported")
@@ -242,7 +256,7 @@
                             <div v-for="(item, key) in props.fields.technologies" :key="key"
                                 class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label class="font-bold block mb-2">{{
+                                    <label>{{
                                         $t(`chips.tech.${key}`)
                                     }}</label>
                                     <div class="value">{{ chipData.technologies[key] }}</div>
@@ -257,7 +271,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, defineComponent, h } from "vue";
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
@@ -265,8 +279,12 @@ const { t } = useI18n();
 import Button from "primevue/button";
 import DataView from "primevue/dataview";
 import { useToast } from "primevue/usetoast";
+import { useDialog } from 'primevue/usedialog';
 const toast = useToast();
+const dialog = useDialog();
 
+import MaterialSymbolsIndeterminateQuestionBox from '~icons/material-symbols/indeterminate-question-box';
+import * as ChipDescriptions from "./ChipDescriptions.vue";
 import chipsJson from "../../data/chips.min.json";
 
 const props = defineProps({
@@ -321,6 +339,48 @@ const toggleCompare = () => {
     localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value));
     window.dispatchEvent(new CustomEvent('cpuCompareListUpdated'));
 };
+
+const showHelpDialog = (header, key) => {
+    const headerText = header; // 保存原始字符串
+    
+    if (key === "package_t_case") {
+        header = defineComponent({
+            setup() {
+                return () => h('span', { class: 'p-dialog-title' }, ['T', h('sub', 'CASE')]);
+            }
+        })
+    } else if (key === "package_t_junction") {
+        header = defineComponent({
+            setup() {
+                return () => h('span', { class: 'p-dialog-title' }, ['T', h('sub', 'JUNCTION')]);
+            }
+        })
+    } else {
+        header = defineComponent({
+            setup() {
+                return () => h('span', { class: 'p-dialog-title' },t(`chips.${headerText}`));
+            }
+        })
+    }
+
+    dialog.open(ChipDescriptions[key], {
+        props: {
+            header: null,
+            style: {
+                width: '50vw',
+            },
+            breakpoints:{
+                '960px': '75vw',
+                '640px': '90vw'
+            },
+            modal: true,
+            dismissableMask: true
+        },
+        templates: {
+            header: header
+        }
+    });
+}
 </script>
 
 <style lang="css" scoped>
@@ -371,12 +431,22 @@ const toggleCompare = () => {
     color: #4b5563;
     font-size: 0.875rem;
     margin-bottom: 4px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .field .value {
     color: #111827;
     font-size: 1rem;
     font-weight: 500;
+}
+
+.field a {
+    cursor: pointer;
 }
 
 .chips-pic img {

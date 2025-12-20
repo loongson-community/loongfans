@@ -1,30 +1,23 @@
 import DefaultTheme from 'vitepress/theme'
+
+// PrimeVue init
 import PrimeVue from "primevue/config";
 import ToastService from 'primevue/toastservice';
+import DialogService from 'primevue/dialogservice';
+
 import Material from "@primeuix/themes/aura";
 import { definePreset } from "@primeuix/themes";
-import { createI18n } from 'vue-i18n'
+
+// Make vue-i18n configs to a file
+import i18n from './i18n';
 
 import './custom.css'
-import en from '../locales/en'
-import zh from '../locales/zh'
 import Layout from './Layout.vue'
 import DeviceDetail from "../../components/device/Detail.vue";
 import ChipTables from "../../components/chips/ChipTables.vue";
 import CpuCompare from '../../components/chips/compare/CpuCompare.vue';
 
 import type { App } from "vue";
-
-const i18n = createI18n({
-  legacy: false,
-  globalInjection: true,
-  locale: 'zh',
-  fallbackLocale: 'en',
-  messages: {
-    'en': en,
-    'zh': zh
-  }
-})
 
 const Preset = definePreset(Material, {
   semantic: {
@@ -49,12 +42,18 @@ export default {
   // 覆盖布局但继承功能
   Layout,
   enhanceApp({ app }: { app: App }) {
+    // vue-i18n init
     app.use(i18n)
+
+    // PrimeVue init
     app.use(PrimeVue, {
       theme: { preset: Preset, options: { darkModeSelector: false } },
     });
-    app.component('Device', DeviceDetail)
     app.use(ToastService);
+    app.use(DialogService);
+
+    // Components
+    app.component('Device', DeviceDetail)
     app.component("ChipTables", ChipTables)
     app.component('Device', DeviceDetail)
     app.component("CpuCompare", CpuCompare)

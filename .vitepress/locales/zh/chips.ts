@@ -66,11 +66,9 @@ export default {
     avs: "AVS 数量",
     gpio: "GPIO 数量",
     num: "数量",
-    d2d: {
-      title: "片间互联",
-      d2d_name: "片间互联技术",
-      lcl: "龙链",
-    },
+    d2d: "片间互联",
+    d2d_name: "片间互联技术",
+    d2d_lcl: "龙链",
     other: "其他接口",
   },
   package: {
