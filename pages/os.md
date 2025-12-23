@@ -15,7 +15,7 @@ import OsCard from "../components/os/OsCard.vue"
 <OsCard
   name="安同 OS (AOSC OS)"
   description="User-oriented community distribution by Anthon Open Source Community."
-  href="https://aosc.io"
+  href="https://aosc.io/aosc-os"
   image="/images/os/aosc.svg"
   tags="GNU, desktop"
 />
@@ -41,7 +41,7 @@ import OsCard from "../components/os/OsCard.vue"
 <OsCard
   name="Anolis OS"
   description="Anolis OS is equipped with two different versions of RHCK and ANCK kernels."
-  href="https://openanolis.cn/download"
+  href="https://openanolis.cn/anolisos"
   image="/images/os/openanolis.webp"
   tags="GNU, enterprise"
 />
