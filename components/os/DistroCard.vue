@@ -61,6 +61,7 @@ const tagList = computed(() =>
   align-items: center;
   justify-content: center;
   margin-right: 8px;
+  align-self: center;
 }
 
 .icon-container img {
