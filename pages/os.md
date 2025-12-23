@@ -51,7 +51,7 @@ import DistroCard from "../components/os/DistroCard.vue"
   name="CLFS for LoongArch"
   description="How to cross compile a LFS for LoongArch"
   href="https://github.com/sunhaiyong1978/CLFS-for-LoongArch"
-  image="/images/os/lfs.webp"
+  image="/images/os/lfs.svg"
   tags="GNU, DIY"
 />
 <!-- https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg -->
@@ -78,7 +78,7 @@ import DistroCard from "../components/os/DistroCard.vue"
   name="LFS LoongArch Edition"
   description="A project that provides you with step-by-step instructions for building your own custom Linux system, entirely from source code."
   href="https://www.linuxfromscratch.org/~xry111/lfs/"
-  image="/images/os/lfs.webp"
+  image="/images/os/lfs.svg"
   tags="GNU, DIY"
 />
 <!-- https://linuxfromscratch.org/images/lfs-logo.png -->
