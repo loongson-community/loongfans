@@ -7,12 +7,12 @@ pageSubTitle: 支持龙架构的操作系统
 ---
 
 <script setup>
-import DistroCard from "../components/os/DistroCard.vue"
+import OsCard from "../components/os/OsCard.vue"
 </script>
 
 <div class="distro-list">
 
-<DistroCard
+<OsCard
   name="安同 OS (AOSC OS)"
   description="User-oriented community distribution by Anthon Open Source Community."
   href="https://aosc.io"
@@ -21,7 +21,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc.svg -->
 
-<DistroCard
+<OsCard
   name="勇豹 (Yongbao)"
   description="Community-driven distribution for LoongArch platforms."
   href="https://github.com/sunhaiyong1978/Yongbao"
@@ -29,7 +29,7 @@ import DistroCard from "../components/os/DistroCard.vue"
   tags="GNU, desktop"
 />
 
-<DistroCard
+<OsCard
   name="Alpine"
   description="A security-oriented, lightweight Linux distribution based on musl libc and busybox."
   href="https://www.alpinelinux.org"
@@ -38,7 +38,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg -->
 
-<DistroCard
+<OsCard
   name="Anolis OS"
   description="Anolis OS is equipped with two different versions of RHCK and ANCK kernels."
   href="https://openanolis.cn/download"
@@ -47,7 +47,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf -->
 
-<DistroCard
+<OsCard
   name="CLFS for LoongArch"
   description="How to cross compile a LFS for LoongArch"
   href="https://github.com/sunhaiyong1978/CLFS-for-LoongArch"
@@ -56,7 +56,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg -->
 
-<DistroCard
+<OsCard
   name="deepin"
   description="Beautiful UI design, intimate human-computer interaction, and friendly community environment make you feel at home."
   href="https://www.deepin.org"
@@ -65,7 +65,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg -->
 
-<DistroCard
+<OsCard
   name="Gentoo"
   description="A free operating system based on Linux that can be automatically optimized and customized for just about any application or need."
   href="https://www.gentoo.org"
@@ -74,7 +74,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://www.gentoo.org/assets/img/logo/gentoo-signet.svg -->
 
-<DistroCard
+<OsCard
   name="LFS LoongArch Edition"
   description="A project that provides you with step-by-step instructions for building your own custom Linux system, entirely from source code."
   href="https://www.linuxfromscratch.org/~xry111/lfs/"
@@ -83,7 +83,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://linuxfromscratch.org/images/lfs-logo.png -->
 
-<DistroCard
+<OsCard
   name="Loong Arch Linux"
   description="Loong Arch Linux 是为 LoongArch 架构移植的 ArchLinux 发行版。"
   href="https://loongarchlinux.org/"
@@ -92,7 +92,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://loongarchlinux.org/images/favicons/apple-touch-icon.png -->
 
-<DistroCard
+<OsCard
   name="NixOS / Nixpkgs"
   description="Nix is a tool that takes a unique approach to package management and system configuration."
   href="https://nixos.org/"
@@ -101,7 +101,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://github.com/NixOS/nixos-artwork/raw/refs/heads/master/logo/nix-snowflake-colours.svg -->
 
-<DistroCard
+<OsCard
   name="OpenCloudOS"
   description="Long-term supported enterprise edition of OpenCloudOS."
   href="https://opencloudos.org"
@@ -109,7 +109,7 @@ import DistroCard from "../components/os/DistroCard.vue"
   tags="GNU, enterprise"
 />
 
-<DistroCard
+<OsCard
   name="openEuler"
   description="Open-source Linux for enterprise, cloud, edge, and embedded scenarios."
   href="https://openeuler.org"
@@ -118,7 +118,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg -->
 
-<DistroCard
+<OsCard
   name="OpenWrt"
   description="Linux distribution targeting embedded devices and routers."
   href="https://openwrt.org"
@@ -127,7 +127,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg -->
 
-<DistroCard
+<OsCard
   name="Proxmox VE"
   description="Open-source virtualization platform combining KVM and LXC."
   href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview"
@@ -136,7 +136,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- https://www.proxmox.com/en/about/company-details/media-kit -->
 
-<DistroCard
+<OsCard
   name="Slackware"
   description="The oldest actively maintained Linux distribution with a classic approach."
   href="https://www.slackware.com"
@@ -145,7 +145,7 @@ import DistroCard from "../components/os/DistroCard.vue"
 />
 <!-- http://www.slackware.com/grfx/shared/slackware_traditional_website_logo.png -->
 
-<DistroCard
+<OsCard
   name="T2 SDE"
   description="System Development Environment and source-based distribution builder."
   href="https://t2linux.com"
