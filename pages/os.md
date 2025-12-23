@@ -93,10 +93,10 @@ import OsCard from "../components/os/OsCard.vue"
 <!-- https://loongarchlinux.org/images/favicons/apple-touch-icon.png -->
 
 <OsCard
-  name="NixOS / Nixpkgs"
-  description="Nix is a tool that takes a unique approach to package management and system configuration."
-  href="https://nixos.org/"
-  image="/images/os/nix.svg"
+  name="Nix4Loong"
+  description="Nix4Loong is a community-driven project initiated by loongson-community."
+  href="https://nix4loong.cn/"
+  image="/images/os/nix4loong.svg"
   tags="GNU, reproducible"
 />
 <!-- https://github.com/NixOS/nixos-artwork/raw/refs/heads/master/logo/nix-snowflake-colours.svg -->
