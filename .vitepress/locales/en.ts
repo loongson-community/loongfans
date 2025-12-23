@@ -13,6 +13,7 @@ export default {
   chipsData: 'Chips Data',
   firmwareAndManuals: 'Firmware and Manuals',
   productSpecs: 'Product Specifications',
+  operatingSystems: 'Operating Systems',
   compatibilityDb: 'Loong 1-2-3',
   communityResources: 'Community Resources',
   biweeklyMeeting: 'LoongArch Biweekly',

@@ -13,6 +13,7 @@ export default {
   chipsData: '芯片规格数据库',
   firmwareAndManuals: '主板固件及说明书',
   productSpecs: '产品规格数据库',
+  operatingSystems: '操作系统',
   compatibilityDb: '软硬件兼容性数据库',
   communityResources: '社区资源',
   biweeklyMeeting: '龙架构双周会',
