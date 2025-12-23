@@ -13,68 +13,146 @@ import DistroCard from "../components/os/DistroCard.vue"
 <div class="distro-list">
 
 <DistroCard
+  name="安同 OS (AOSC OS)"
+  description="User-oriented community distribution by Anthon Open Source Community."
+  href="https://aosc.io"
+  image="/images/os/aosc.svg"
+  tags="GNU, desktop"
+/>
+<!-- https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc.svg -->
+
+<DistroCard
+  name="勇豹 (Yongbao)"
+  description="Community-driven distribution for LoongArch platforms."
+  href="https://github.com/sunhaiyong1978/Yongbao"
+  image="/images/os/linux.svg"
+  tags="GNU, desktop"
+/>
+
+<DistroCard
   name="Alpine"
   description="A security-oriented, lightweight Linux distribution based on musl libc and busybox."
   href="https://www.alpinelinux.org"
-  image="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg"
+  image="/images/os/alpine.svg"
   tags="musl, container"
 />
+<!-- https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg -->
 
 <DistroCard
   name="Anolis OS"
   description="Anolis OS is equipped with two different versions of RHCK and ANCK kernels."
   href="https://openanolis.cn/download"
-  image="https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf"
+  image="/images/os/openanolis.webp"
   tags="GNU, enterprise"
 />
+<!-- https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf -->
 
 <DistroCard
   name="CLFS for LoongArch"
   description="How to cross compile a LFS for LoongArch"
   href="https://github.com/sunhaiyong1978/CLFS-for-LoongArch"
-  image="https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg"
+  image="/images/os/lfs.webp"
   tags="GNU, DIY"
 />
+<!-- https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg -->
 
 <DistroCard
   name="deepin"
   description="Beautiful UI design, intimate human-computer interaction, and friendly community environment make you feel at home."
   href="https://www.deepin.org"
-  image="https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg"
+  image="/images/os/deepin.svg"
   tags="GNU, desktop"
 />
+<!-- https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg -->
 
 <DistroCard
   name="Gentoo"
   description="A free operating system based on Linux that can be automatically optimized and customized for just about any application or need."
   href="https://www.gentoo.org"
-  image="https://www.gentoo.org/assets/img/logo/gentoo-signet.svg"
+  image="/images/os/gentoo.svg"
   tags="GNU, source-based"
 />
+<!-- https://www.gentoo.org/assets/img/logo/gentoo-signet.svg -->
 
 <DistroCard
   name="LFS LoongArch Edition"
   description="A project that provides you with step-by-step instructions for building your own custom Linux system, entirely from source code."
   href="https://www.linuxfromscratch.org/~xry111/lfs/"
-  image="https://upload.wikimedia.org/wikipedia/commons/f/f1/Icons8_flat_linux.svg"
+  image="/images/os/lfs.webp"
   tags="GNU, DIY"
 />
+<!-- https://linuxfromscratch.org/images/lfs-logo.png -->
 
 <DistroCard
   name="Loong Arch Linux"
   description="Loong Arch Linux 是为 LoongArch 架构移植的 ArchLinux 发行版。"
   href="https://loongarchlinux.org/"
-  image="https://loongarchlinux.org/images/favicons/apple-touch-icon.png"
+  image="/images/os/loongarchlinux.png"
   tags="GNU, rolling"
 />
+<!-- https://loongarchlinux.org/images/favicons/apple-touch-icon.png -->
 
 <DistroCard
   name="NixOS / Nixpkgs"
   description="Nix is a tool that takes a unique approach to package management and system configuration."
   href="https://nixos.org/"
-  image="https://github.com/NixOS/nixos-artwork/raw/refs/heads/master/logo/nix-snowflake-colours.svg"
+  image="/images/os/nix.svg"
   tags="GNU, reproducible"
 />
+<!-- https://github.com/NixOS/nixos-artwork/raw/refs/heads/master/logo/nix-snowflake-colours.svg -->
+
+<DistroCard
+  name="OpenCloudOS"
+  description="Long-term supported enterprise edition of OpenCloudOS."
+  href="https://opencloudos.org"
+  image="/images/os/opencloudos.webp"
+  tags="GNU, enterprise"
+/>
+
+<DistroCard
+  name="openEuler"
+  description="Open-source Linux for enterprise, cloud, edge, and embedded scenarios."
+  href="https://openeuler.org"
+  image="/images/os/openeuler.svg"
+  tags="GNU, enterprise"
+/>
+<!-- https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg -->
+
+<DistroCard
+  name="OpenWrt"
+  description="Linux distribution targeting embedded devices and routers."
+  href="https://openwrt.org"
+  image="/images/os/openwrt.svg"
+  tags="embedded, router"
+/>
+<!-- https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg -->
+
+<DistroCard
+  name="Proxmox VE"
+  description="Open-source virtualization platform combining KVM and LXC."
+  href="https://www.proxmox.com/en/products/proxmox-virtual-environment/overview"
+  image="/images/os/proxmox.svg"
+  tags="virtualization, server"
+/>
+<!-- https://www.proxmox.com/en/about/company-details/media-kit -->
+
+<DistroCard
+  name="Slackware"
+  description="The oldest actively maintained Linux distribution with a classic approach."
+  href="https://www.slackware.com"
+  image="/images/os/slackware.webp"
+  tags="GNU, classic"
+/>
+<!-- http://www.slackware.com/grfx/shared/slackware_traditional_website_logo.png -->
+
+<DistroCard
+  name="T2 SDE"
+  description="System Development Environment and source-based distribution builder."
+  href="https://t2linux.com"
+  image="/images/os/t2linux.png"
+  tags="GNU, source-based"
+/>
+<!-- https://t2linux.com/images/t2logo.png -->
 
 </div>
 
