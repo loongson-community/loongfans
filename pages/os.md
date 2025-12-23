@@ -87,7 +87,7 @@ import DistroCard from "../components/os/DistroCard.vue"
   name="Loong Arch Linux"
   description="Loong Arch Linux 是为 LoongArch 架构移植的 ArchLinux 发行版。"
   href="https://loongarchlinux.org/"
-  image="/images/os/loongarchlinux.png"
+  image="/images/os/loongarchlinux.webp"
   tags="GNU, rolling"
 />
 <!-- https://loongarchlinux.org/images/favicons/apple-touch-icon.png -->
