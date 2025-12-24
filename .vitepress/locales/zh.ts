@@ -3,6 +3,7 @@ import chips from './zh/chips';
 import helps from './zh/helps';
 
 export default {
+  comma: "、",
   // Index.vue
   beginnerResources: '新手资源',
   introToLoongson: '初识龙芯',

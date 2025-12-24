@@ -35,12 +35,18 @@ export default {
         t_notice: "温度不代表 CPU 运行时的实际温度，取决于所使用散热器的性能。"
     },
     power: {
-        shutdown_of_the_clocks: "",
-        frequency_scaling: "",
-        voltage_scaling: ""
+        shutdown_of_the_clocks: "时钟动态关闭（Clock Gating）是一种低功耗设计技术，在电路模块空闲时，暂时关闭其时钟信号，从而避免不必要的动态功耗消耗。",
+        frequency_scaling: "时钟动态变频是 CPU 根据实时负载与功耗需求，动态调整其工作频率。",
+        voltage_scaling: "动态调压是指 CPU 根据当前工作频率和负载，在指定的电压范围内动态调整其核心工作电压"
     },
-    technologies: {
-        set: "",
-        set_extensions: ""
+    tech: {
+        isa: {
+            info: "指令集是指 CPU 理解并能执行的一套基本命令和指令。显示的值代表了处理器与之兼容的指令集。",
+            extensions: "指令集扩展是指在基础指令集上额外增加的一些可提升性能且同时确保在多个数据对象上进行相同操作的附加指令。",
+            LBT: "龙芯二进制翻译扩展(Loongson Binary Translation)\n用于提升跨指令系统二进制翻译在龙架构平台上的执行效率。其在基础部分之上进行扩展，同样包含非特权指令集和特权指令集两个部分。",
+            LVZ: "龙芯虚拟化扩展(Loongson Virtualization)\n用于为操作系统虚拟化提供硬件加速以提升性能。这部分涉及的基本上是特权资源，包括一些特权指令和控制状态寄存器、以及在例外和中断、存储管理等方面添加新的功能。",
+            LSX: "龙芯向量扩展(Loongson SIMD Extension)\n该指令集允许一条指令同时处理多个数据。它在 CPU 的专用寄存器中实现，用于加速计算密集型任务。LSX 支持操作的向量位宽是 128 位。",
+            LASX: "龙芯高级向量扩展(Loongson Advanced SIMD Extension)\n同 LSX，但 LASX 支持操作的向量位宽是 256 位。"
+        }
     }
 }

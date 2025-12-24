@@ -121,15 +121,39 @@ export const power_voltage_scaling = defineComponent({
 })
 
 // Technologies
-export const technologies_set = defineComponent({
+export const tech_isa = defineComponent({
   setup() {
-    return () => h('p', t("helps.technologies.set"));
+    return () => h('p', t("helps.tech.isa.info"));
   }
 })
 
-export const technologies_set_extensions = defineComponent({
+export const tech_isa_extensions = defineComponent({
   setup() {
-    return () => h('p', t("helps.technologies.set_extensions"));
+    return () => h('p', t("helps.tech.isa.extensions"));
+  }
+})
+
+export const tech_isa_LBT = defineComponent({
+  setup() {
+    return () => h('p', t("helps.tech.isa.LBT"));
+  }
+})
+
+export const tech_isa_LVZ = defineComponent({
+  setup() {
+    return () => h('p', t("helps.tech.isa.LVZ"));
+  }
+})
+
+export const tech_isa_LSX = defineComponent({
+  setup() {
+    return () => h('p', t("helps.tech.isa.LSX"));
+  }
+})
+
+export const tech_isa_LASX = defineComponent({
+  setup() {
+    return () => h('p', t("helps.tech.isa.LASX"));
   }
 })
 </script>

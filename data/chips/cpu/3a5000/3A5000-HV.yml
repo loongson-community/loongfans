@@ -59,6 +59,6 @@ power:
   voltage_scaling: true
 
 technologies:
-  set: "64-Bit"
-  set_extensions: "LBT, LSX, LASX"
+  isa: "64-Bit"
+  isa_extensions: ["LBT", "LVZ", "LSX", "LASX"]
   

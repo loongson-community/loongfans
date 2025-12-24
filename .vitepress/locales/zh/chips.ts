@@ -85,8 +85,8 @@ export default {
   },
   tech: {
     title: "先进技术",
-    set: "指令集",
-    set_extensions: "指令集扩展",
+    isa: "指令集",
+    isa_extensions: "指令集扩展",
   },
   non_product: "请从上一页选择产品并添加，以在此查看对比结果",
   up_to_four_chips: "最多支持 4 款产品进行比对",

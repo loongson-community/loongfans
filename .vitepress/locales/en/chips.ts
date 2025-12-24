@@ -87,8 +87,8 @@ export default {
   },
   tech: {
     title: "Advanced Technologies",
-    set: "Instruction Set",
-    set_extensions: "Instruction Set Extensions",
+    isa: "Instruction Set",
+    isa_extensions: "Instruction Set Extensions",
   },
   non_product:
     "Please select products from the previous page and add it to view the comparison results here",
