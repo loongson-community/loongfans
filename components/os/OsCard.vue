@@ -1,16 +1,16 @@
 <template>
-  <a :href="href" class="distro-card" target="_blank" rel="noopener">
+  <a :href="data.href" class="distro-card" target="_blank" rel="noopener">
     <div class="icon-container">
-      <img :src="image" :alt="name" />
+      <img :src="data.image" :alt="data.name" />
     </div>
     <div class="content">
       <div class="header">
-        <span class="name">{{ name }}</span>
+        <span class="name">{{ data.name }}</span>
         <div class="tags">
           <span v-for="tag in tagList" :key="tag" class="tag">{{ tag }}</span>
         </div>
       </div>
-      <p class="description">{{ description }}</p>
+      <p class="description">{{ data.description }}</p>
     </div>
     <div class="link-icon">
       <IconOpenInNew />
@@ -22,17 +22,13 @@
 import { computed } from "vue";
 import IconOpenInNew from "~icons/material-symbols/open-in-new";
 
+import type { OsData } from "../../.vitepress/locales/zh/os";
+
 const props = defineProps<{
-  name: string;
-  description: string;
-  href: string;
-  image: string;
-  tags: string;
+  data: OsData;
 }>();
 
-const tagList = computed(() =>
-  props.tags.split(",").map((t) => t.trim()).filter(Boolean)
-);
+const tagList = computed(() => props.data.tags.split(",").map((t) => t.trim()));
 </script>
 
 <style scoped>
