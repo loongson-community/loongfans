@@ -3,6 +3,7 @@ import chips from './en/chips'
 import helps from './en/helps'
 
 export default {
+  comma: ", ",
   // Index.vue
   beginnerResources: 'Loongson 101',
   introToLoongson: 'Loongson: An Introduction',

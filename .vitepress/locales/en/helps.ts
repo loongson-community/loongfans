@@ -28,8 +28,14 @@ export default {
         frequency_scaling: "",
         voltage_scaling: ""
     },
-    technologies: {
-        set: "",
-        set_extensions: ""
+    tech: {
+        isa: {
+            info: "",
+            extensions: "",
+            LBT: "",
+            LVZ: "",
+            LSX: "",
+            LASX: ""
+        }
     }
 }

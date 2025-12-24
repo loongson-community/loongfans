@@ -473,7 +473,7 @@
             <div class="compare-section"><!-- 支持技术 -->
                 <h3>{{ $t('chips.tech.title') }}</h3>
                 <div class="compare-row">
-                    <div class="compare-cell">{{ $t('chips.tech.set') }}</div>
+                    <div class="compare-cell">{{ $t('chips.tech.isa') }}</div>
                     <div
                         v-for="chip in compareChips"
                         class="compare-cell"
@@ -483,7 +483,7 @@
                     </div>
                 </div>
                 <div class="compare-row">
-                    <div class="compare-cell">{{ $t('chips.tech.set_extensions') }}</div>
+                    <div class="compare-cell">{{ $t('chips.tech.isa_extensions') }}</div>
                     <div
                         v-for="chip in compareChips"
                         class="compare-cell"

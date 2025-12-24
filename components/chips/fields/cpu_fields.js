@@ -58,7 +58,7 @@ export default {
         voltage_scaling: 'voltage_scaling'
     },
     technologies: {
-        set: 'set',
-        set_extensions: 'set_extensions'
+        isa: 'isa',
+        isa_extensions: 'isa_extensions'
     }
 }

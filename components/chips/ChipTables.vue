@@ -24,7 +24,7 @@
                                     <label>
                                         {{ $t(`chips.basic.${key}`) }}
                                         <a v-if="key !== 'name'" @click="showHelpDialog('basic.' + key, 'basic_'+key)">
-                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                            <MaterialSymbolsHelpOutline />
                                         </a>
                                     </label>
                                     <div class="value">
@@ -62,7 +62,7 @@
                                     <label>
                                         {{ $t(`chips.cpu.${key}`) }}
                                         <a v-if="['voltage', 'tpc', 'tdp'].includes(key)" @click="showHelpDialog('cpu.' + key, 'cpu_'+key)">
-                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                            <MaterialSymbolsHelpOutline />
                                         </a>
                                     </label>
                                     <div class="value">{{ chipData.cpu[key] }}</div>
@@ -131,7 +131,7 @@
                                     <label>
                                         {{ $t(`chips.memory.${key}`) }}
                                         <a v-if="key === 'ecc'" @click="showHelpDialog('memory.' + key, 'memory_'+key)">
-                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                            <MaterialSymbolsHelpOutline />
                                         </a>
                                     </label>
                                     <div class="value">
@@ -165,7 +165,7 @@
                                         <span v-else-if="key === 'd2d_name'">{{ $t(`chips.exp.d2d_name`) }}</span>
                                         <span v-else>{{ $t(`chips.exp.${key}`) }}</span>
                                         <a v-if="['io_name', 'io_rev', 'd2d', 'd2d_name'].includes(key)" @click="showHelpDialog('exp.' + key, 'exp_'+key)">
-                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                            <MaterialSymbolsHelpOutline />
                                         </a>
                                     </label>
                                     <div class="value">
@@ -207,7 +207,7 @@
                                         <span v-else-if="key === 't_junction'">T<sub>JUNCTION</sub></span>
                                         <span v-else>{{ $t(`chips.package.${key}`) }}</span>
                                         <a v-if="['temperature', 't_case', 't_junction'].includes(key)" @click="showHelpDialog('package.' + key, 'package_'+key)">
-                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                            <MaterialSymbolsHelpOutline />
                                         </a>
                                     </label>
                                     <div class="value">{{ chipData.package[key] || "N/A" }}</div>
@@ -229,7 +229,7 @@
                                     <label>
                                         {{ $t(`chips.power.${key}`) }}
                                         <a @click="showHelpDialog('power.' + key, 'power_'+key)">
-                                            <MaterialSymbolsIndeterminateQuestionBox />
+                                            <MaterialSymbolsHelpOutline />
                                         </a>
                                     </label>
                                     <div class="value">
@@ -256,10 +256,21 @@
                             <div v-for="(item, key) in props.fields.technologies" :key="key"
                                 class="col-12 md:col-6 lg:col-4">
                                 <div class="field">
-                                    <label>{{
-                                        $t(`chips.tech.${key}`)
-                                    }}</label>
-                                    <div class="value">{{ chipData.technologies[key] }}</div>
+                                    <label>
+                                        {{ $t(`chips.tech.${key}`) }}
+                                        <a @click="showHelpDialog('tech.' + key, 'tech_'+key)">
+                                            <MaterialSymbolsHelpOutline />
+                                        </a>
+                                    </label>
+                                    <div class="value">
+                                        <span id="isa-info" v-if="key === 'isa_extensions'" v-for="(isa_name) in chipData.technologies[key]">
+                                            <!-- 这里请不要暂时换行，会渲染多余的空格 -->
+                                            {{ isa_name }}<a @click="showHelpDialog('isa.' + isa_name, 'tech_isa_'+isa_name)">
+                                                <sup><MaterialSymbolsHelpOutline /></sup>
+                                            </a>
+                                        </span>
+                                        <span v-else>{{ chipData.technologies[key] }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +294,7 @@ import { useDialog } from 'primevue/usedialog';
 const toast = useToast();
 const dialog = useDialog();
 
-import MaterialSymbolsIndeterminateQuestionBox from '~icons/material-symbols/indeterminate-question-box';
+import MaterialSymbolsHelpOutline from '~icons/material-symbols/help-outline';
 import * as ChipDescriptions from "./ChipDescriptions.vue";
 import chipsJson from "../../data/chips.min.json";
 
@@ -342,25 +353,29 @@ const toggleCompare = () => {
 
 const showHelpDialog = (header, key) => {
     const headerText = header; // 保存原始字符串
-    
-    if (key === "package_t_case") {
+
+    // 特殊标题的映射
+    const specialHeaders = {
+        'package_t_case': () => ['T', h('sub', 'CASE')],
+        'package_t_junction': () => ['T', h('sub', 'JUNCTION')],
+        'tech_isa_LBT': () => ['LBT'],
+        'tech_isa_LVZ': () => ['LVZ'],
+        'tech_isa_LSX': () => ['LSX'],
+        'tech_isa_LASX': () => ['LASX']
+    };
+
+    if (specialHeaders[key]) {
         header = defineComponent({
             setup() {
-                return () => h('span', { class: 'p-dialog-title' }, ['T', h('sub', 'CASE')]);
+                return () => h('span', { class: 'p-dialog-title' }, specialHeaders[key]());
             }
-        })
-    } else if (key === "package_t_junction") {
-        header = defineComponent({
-            setup() {
-                return () => h('span', { class: 'p-dialog-title' }, ['T', h('sub', 'JUNCTION')]);
-            }
-        })
+        });
     } else {
         header = defineComponent({
             setup() {
-                return () => h('span', { class: 'p-dialog-title' },t(`chips.${headerText}`));
+                return () => h('span', { class: 'p-dialog-title' }, t(`chips.${headerText}`));
             }
-        })
+        });
     }
 
     dialog.open(ChipDescriptions[key], {
@@ -381,6 +396,8 @@ const showHelpDialog = (header, key) => {
         }
     });
 }
+
+const isaStyleVariables = computed(() => `"${t("comma")}"`)
 </script>
 
 <style lang="css" scoped>
@@ -427,7 +444,7 @@ const showHelpDialog = (header, key) => {
     background-color: #f3f4f6;
 }
 
-.field label {
+.field label{
     color: #4b5563;
     font-size: 0.875rem;
     margin-bottom: 4px;
@@ -443,6 +460,24 @@ const showHelpDialog = (header, key) => {
     color: #111827;
     font-size: 1rem;
     font-weight: 500;
+}
+
+.field .value #isa-info {
+    color: #111827;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    white-space: pre-wrap;
+    &:after{
+        content: v-bind(isaStyleVariables)
+    };
+    &:last-child {
+        &:after{
+            content: '';
+        }
+    }
 }
 
 .field a {
