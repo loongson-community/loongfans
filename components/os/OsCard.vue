@@ -7,7 +7,7 @@
       <div class="header">
         <span class="name">{{ data.name }}</span>
         <div class="tags">
-          <span v-for="tag in tagList" :key="tag" class="tag">{{ tag }}</span>
+          <span v-for="tag in data.tags" :key="tag" class="tag">{{ tag }}</span>
         </div>
       </div>
       <p class="description">{{ data.description }}</p>
@@ -19,16 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
 import IconOpenInNew from "~icons/material-symbols/open-in-new";
-
 import type { OsData } from "../../.vitepress/locales/zh/os";
 
-const props = defineProps<{
-  data: OsData;
-}>();
-
-const tagList = computed(() => props.data.tags.split(",").map((t) => t.trim()));
+defineProps<{ data: OsData }>();
 </script>
 
 <style scoped>

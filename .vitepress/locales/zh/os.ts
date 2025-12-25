@@ -3,7 +3,7 @@ export interface OsData {
   description: string,
   href: string,
   image: string,
-  tags: string
+  tags: string[]
 }
 
 export const osDataList = [
@@ -14,14 +14,14 @@ export const osDataList = [
     href: "https://aosc.io/aosc-os",
     // https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc.svg
     image: "/images/os/aosc.svg",
-    tags: "GNU, desktop",
+    tags: ["GNU", "desktop"],
   },
   {
     name: "勇豹 (Yongbao)",
     description: "Community-driven distribution for LoongArch platforms.",
     href: "https://github.com/sunhaiyong1978/Yongbao",
     image: "/images/os/linux.svg",
-    tags: "GNU, desktop",
+    tags: ["GNU", "desktop"],
   },
   {
     name: "Alpine",
@@ -30,7 +30,7 @@ export const osDataList = [
     href: "https://www.alpinelinux.org",
     // https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
     image: "/images/os/alpine.svg",
-    tags: "musl, container",
+    tags: ["musl", "container"],
   },
   {
     name: "Anolis OS",
@@ -39,14 +39,14 @@ export const osDataList = [
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
-    tags: "GNU, enterprise",
+    tags: ["GNU", "enterprise"],
   },
   {
     name: "CLFS for LoongArch",
     description: "How to cross compile a LFS for LoongArch",
     href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch",
     image: "/images/os/lfs.svg",
-    tags: "GNU, DIY",
+    tags: ["GNU", "DIY"],
   },
   {
     name: "deepin",
@@ -55,7 +55,7 @@ export const osDataList = [
     href: "https://www.deepin.org",
     // https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
     image: "/images/os/deepin.svg",
-    tags: "GNU, desktop",
+    tags: ["GNU", "desktop"],
   },
   {
     name: "Gentoo",
@@ -64,7 +64,7 @@ export const osDataList = [
     href: "https://www.gentoo.org",
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
-    tags: "GNU, source-based",
+    tags: ["GNU", "source-based"],
   },
   {
     name: "LFS LoongArch Edition",
@@ -72,7 +72,7 @@ export const osDataList = [
       "A project that provides you with step-by-step instructions for building your own custom Linux system, entirely from source code.",
     href: "https://www.linuxfromscratch.org/~xry111/lfs/",
     image: "/images/os/lfs.svg",
-    tags: "GNU, DIY",
+    tags: ["GNU", "DIY"],
   },
   {
     name: "Loong Arch Linux",
@@ -80,7 +80,7 @@ export const osDataList = [
       "Loong Arch Linux 是为 LoongArch 架构移植的 ArchLinux 发行版。",
     href: "https://loongarchlinux.org/",
     image: "/images/os/loongarchlinux.png",
-    tags: "GNU, rolling",
+    tags: ["GNU", "rolling"],
   },
   {
     name: "Nix4Loong",
@@ -89,14 +89,14 @@ export const osDataList = [
     href: "https://nix4loong.cn/",
     // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
     image: "/images/os/nix4loong.svg",
-    tags: "GNU, reproducible",
+    tags: ["GNU", "reproducible"],
   },
   {
     name: "OpenCloudOS",
     description: "Long-term supported enterprise edition of OpenCloudOS.",
     href: "https://opencloudos.org",
     image: "/images/os/opencloudos.webp",
-    tags: "GNU, enterprise",
+    tags: ["GNU", "enterprise"],
   },
   {
     name: "openEuler",
@@ -105,7 +105,7 @@ export const osDataList = [
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
-    tags: "GNU, enterprise",
+    tags: ["GNU", "enterprise"],
   },
   {
     name: "OpenWrt",
@@ -113,7 +113,7 @@ export const osDataList = [
     href: "https://openwrt.org",
     // https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
     image: "/images/os/openwrt.svg",
-    tags: "embedded, router",
+    tags: ["embedded", "router"],
   },
   {
     name: "Proxmox VE",
@@ -121,7 +121,7 @@ export const osDataList = [
     href: "https://www.proxmox.com/en/products/proxmox-virtual-environment/overview",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
-    tags: "virtualization, server",
+    tags: ["virtualization", "server"],
   },
   {
     name: "Slackware",
@@ -130,7 +130,7 @@ export const osDataList = [
     href: "https://www.slackware.com",
     // http://www.slackware.com/~msimons/slackware/grfx/shared/bluepiSW.jpg
     image: "/images/os/slackware.webp",
-    tags: "GNU, classic",
+    tags: ["GNU", "classic"],
   },
   {
     name: "T2 SDE",
@@ -139,6 +139,6 @@ export const osDataList = [
     href: "https://t2linux.com",
     // https://t2linux.com/images/t2logo.png
     image: "/images/os/t2linux.png",
-    tags: "GNU, source-based",
+    tags: ["GNU", "source-based"],
   },
 ] as OsData[];
