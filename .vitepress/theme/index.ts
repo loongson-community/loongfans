@@ -5,7 +5,7 @@ import PrimeVue from "primevue/config";
 import ToastService from 'primevue/toastservice';
 import DialogService from 'primevue/dialogservice';
 
-import Material from "@primeuix/themes/aura";
+import Material from "@primeuix/themes/material";
 import { definePreset } from "@primeuix/themes";
 
 // Make vue-i18n configs to a file
