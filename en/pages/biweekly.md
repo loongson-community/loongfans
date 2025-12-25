@@ -14,11 +14,11 @@ The LoongArch Biweekly currently uses Chinese as the default language, but we we
 :::
 
 ::: tip
-### The 26th "LoongArch biweekly" Meeting Announcement
+### The 28th "LoongArch biweekly" Meeting Announcement
 
-Meeting Time: 2:00 PM, December 7, 2025 (UTC+8, meeting expected to last an hour)
+Meeting Time: 2:00 PM, January 3, 2026 (UTC+8, meeting expected to last an hour)
 
-[Meeting Link](https://meeting.tencent.com/dm/AqaXFHNXATyN)｜[Biweekly Slides](https://www.kdocs.cn/l/ctfV9YLds9og)｜[Livestream Link](https://live.bilibili.com/1754798211)｜Meeting ID: 675-3259-9046
+[Meeting Link](https://meeting.tencent.com/dm/P07yMaTQxECg)｜[Biweekly Slides](https://www.kdocs.cn/l/cvOZnsjUeuxC)｜[Livestream Link](https://live.bilibili.com/1754798211)｜Meeting ID: 728-211-994
 
 Biweekly slides may be edited **until the beginning of the meeting**. Those who wish to speak or ask questions at the biweekly should finish editing before this time (if you need editing permissions, please apply via Kingsoft Docs).
 :::
