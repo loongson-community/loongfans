@@ -58,9 +58,11 @@ Source: "XA612A0 主板使用手册 V1.0"
   latest
 >
 
-- Add Gpu Emu Switch
-  - If you are using a high-end graphics card, please turn this option off,
-the BIOS only provides 7A DC.
+Add GPU Emulation switch.
+
+<template #detail>
+Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will allow the firmware to bypass emulation routines and only enable the 7A display controller.
+</template>
 
 </DeviceDownloadCard>
 
@@ -75,8 +77,11 @@ the BIOS only provides 7A DC.
   debug
 >
 
-- Add Gpu Emu Switch
-  - If you are using a high-end graphics card, please turn this option off,
+Add GPU Emulation switch.
+
+<template #detail>
+Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will allow the firmware to bypass emulation routines and only enable the 7A display controller.
+</template>
 
 </DeviceDownloadCard>
 

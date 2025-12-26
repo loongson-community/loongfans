@@ -43,5 +43,144 @@ Due to its good cost-to-performance ratio at that time, it was well received by 
 Source: "XA61200 主板产品使用手册 V1.1"
 
 </template>
-</Device>
 
+<template #download>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="V4.0.05756_prestable2405_0523rel"
+  size="8388608"
+  date="2024-05-23"
+  sha256="e7fac091127d5a759d4c043472f1d6f0838acba7f6efb8da72cccaacedad7e5d"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523rel.fd"
+  latest
+>
+
+Introduces firmware-level driver for YT6801 NIC, support for custom fan curves, fast boot, and TPM. Fixes cache synchronization on S3 suspend, improving stability.
+
+<template #detail>
+
+Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware))：
+
+1.  Add YT6801UndiDxe Support.
+2.  Use 128bit to distinguish different ChipName.
+3.  UI: Add UsbXhci Controller Switch.
+5.  UI: Add SmartFan Config.
+    REF: #98
+6.  Add support for a range of chip models.
+7.  UI: Add FastBoot option.
+8.  Add SuperIo Virtual Bus.
+9.  Optimize StatusCode.
+10. Add Tpm Support.
+11. Optimize 3rd OptionRom process.
+12. UpdateFwDxe: Add inspection rules.
+13. Optimize language selection function.
+14. AcpiStrSleep: Fix cache synchronization memory.
+    REF: #88
+15. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
+16. Update mem code to V3.35.
+17. UI: Add real-time display of temperature.
+18. Information: Display SATA DVD info in UI Setup
+19. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
+20. Add 4M/8M flash compatibility.
+21. Add Smbios 32/64bit tables.
+22. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
+23. Transfer frequency points to the kernel based on different chip models.
+24. some bug fixs.
+
+</template>
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="V4.0.05756_prestable2405_0523dbg"
+  size="8388608"
+  date="2024-05-23"
+  sha256="0aed4e73d01f490f5808f18df0056e0f70e38bd2344c45c30bedb6ca0557c6a1"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523dbg.fd"
+  latest
+  debug
+>
+
+Introduces firmware-level driver for YT6801 NIC, support for custom fan curves, fast boot, and TPM. Fixes cache synchronization on S3 suspend, improving stability.
+
+<template #detail>
+
+Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware))：
+
+1.  Add YT6801UndiDxe Support.
+2.  Use 128bit to distinguish different ChipName.
+3.  UI: Add UsbXhci Controller Switch.
+5.  UI: Add SmartFan Config.
+    REF: #98
+6.  Add support for a range of chip models.
+7.  UI: Add FastBoot option.
+8.  Add SuperIo Virtual Bus.
+9.  Optimize StatusCode.
+10. Add Tpm Support.
+11. Optimize 3rd OptionRom process.
+12. UpdateFwDxe: Add inspection rules.
+13. Optimize language selection function.
+14. AcpiStrSleep: Fix cache synchronization memory.
+    REF: #88
+15. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
+16. Update mem code to V3.35.
+17. UI: Add real-time display of temperature.
+18. Information: Display SATA DVD info in UI Setup
+19. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
+20. Add 4M/8M flash compatibility.
+21. Add Smbios 32/64bit tables.
+22. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
+23. Transfer frequency points to the kernel based on different chip models.
+24. some bug fixs.
+
+</template>
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="V4.0.05634_prestable2402_0325rel"
+  size="4194304"
+  date="2024-02-29"
+  sha256="0ae9de39b02052896dc5d18a4b96cc550ca8af8613c181def39de4b17ff7875d"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2402_0325rel.fd"
+>
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="V4.0.05634_prestable2402_0325dbg"
+  size="4194304"
+  date="2024-02-29"
+  sha256="50da40f1101974f81ce8d64d907efe6362e3e89183080b3c137561683530a7f2"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2402_0325dbg.fd"
+  debug
+>
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="V4.0.05634_prestable2311rel"
+  size="4194304"
+  date="2023-11-29"
+  sha256="c8366b5c56675e048df9ef1e0227bf57d0e4efdcc7068798410c18a9277100c3"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311rel.fd"
+>
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="V4.0.05634_prestable2311dbg"
+  size="4194304"
+  date="2023-11-29"
+  sha256="c8366b5c56675e048df9ef1e0227bf57d0e4efdcc7068798410c18a9277100c3"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg.fd"
+  debug
+>
+</DeviceDownloadCard>
+
+</template>
+
+</Device>
