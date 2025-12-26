@@ -1,5 +1,5 @@
 <template>
-  <DeviceIndex :data="chipsData" />
+  <DeviceIndex :data="chipsData" show-compare-button />
 </template>
 
 <script setup lang="ts">
