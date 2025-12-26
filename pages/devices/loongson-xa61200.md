@@ -57,6 +57,7 @@ pageSubTitle: 龙芯 XA61200
 新增 YT6801 网卡固件驱动、自定义风扇曲线、快速启动及 TPM 支持等新功能，并修复睡眠时的缓存同步问题，提高可靠性。
 
 <template #detail>
+
 本次更新的详细更改如下（摘自 [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware)）：
 
 1.  Add YT6801UndiDxe Support.
@@ -84,6 +85,7 @@ pageSubTitle: 龙芯 XA61200
 22. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
 23. Transfer frequency points to the kernel based on different chip models.
 24. some bug fixs.
+
 </template>
 
 </DeviceDownloadCard>
@@ -102,6 +104,7 @@ pageSubTitle: 龙芯 XA61200
 新增 YT6801 网卡固件驱动、自定义风扇曲线、快速启动及 TPM 支持等新功能，并修复睡眠时的缓存同步问题，提高可靠性。
 
 <template #detail>
+
 本次更新的详细更改如下（摘自 [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware)）：
 
 1.  Add YT6801UndiDxe Support.
@@ -129,6 +132,7 @@ pageSubTitle: 龙芯 XA61200
 22. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
 23. Transfer frequency points to the kernel based on different chip models.
 24. some bug fixs.
+
 </template>
 
 </DeviceDownloadCard>
