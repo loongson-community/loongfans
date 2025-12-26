@@ -12,10 +12,10 @@ cpu:
   threads: 16
   arch: "LA464"
   freq: "2.0 GHz"
-  l1_inst_cache: "64 KB"
-  l1_data_cache: "64 KB"
-  l2_cache: "4 MB (256 KB * 16)"
-  l3_cache: "32 MB"
+  l1_inst_cache: "64 KiB"
+  l1_data_cache: "64 KiB"
+  l2_cache: "4 MiB (256 KiB × 16)"
+  l3_cache: "32 MiB"
   voltage: "1.15 V"
   tpc: "110 W"
   tdp: "160 W"
@@ -33,7 +33,7 @@ memory:
 exp:
   io_name: "HyperTransport"
   io_rev: "3.0"
-  lanes: 64-Lanes (4 * 16-Lanes)
+  lanes: 64 (4 × 16)
   usb_5gbps: 0
   usb2: 0
   sata: 0
@@ -51,10 +51,10 @@ package:
   temperature: "0 - 70℃"
   t_case: "70℃"
   t_junction: "85℃"
-  size: "52.5 mm * 52.5 mm"
+  size: "52.5 mm × 52.5 mm"
 
 power:
-  shutdown_of_the_clocks: true
+  clock_gating: true
   frequency_scaling: true
   voltage_scaling: true
 

@@ -12,9 +12,9 @@ cpu:
   threads: 2
   arch: "LA264"
   freq: "1.2 GHz"
-  l1_inst_cache: "32 KB"
-  l1_data_cache: "32 KB"
-  l2_cache: "2 MB"
+  l1_inst_cache: "32 KiB"
+  l1_data_cache: "32 KiB"
+  l2_cache: "2 MiB"
   l3_cache: "N/A"
   voltage: "1.2 V"
   tpc: "4 W"
@@ -25,7 +25,7 @@ gpu:
   name: ""
   
 memory:
-  max: "2 GB"
+  max: "2 GiB"
   types: "DDR3-1600"
   channels: "1 (64-Bit)"
   ecc: true
@@ -33,7 +33,7 @@ memory:
 exp:
   io_name: "PCI Express"
   io_rev: "3.0"
-  lanes: "8-Lanes"
+  lanes: "8"
   usb_5gbps: 0
   usb2: 5
   sata: 1
@@ -51,10 +51,10 @@ package:
   temperature: "-40 - 85℃"
   t_case: "N/A"
   t_junction: "N/A"
-  size: "27 mm x 27 mm"
+  size: "27 mm × 27 mm"
 
 power:
-  shutdown_of_the_clocks: false
+  clock_gating: false
   frequency_scaling: true
   voltage_scaling: true
 

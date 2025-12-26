@@ -12,9 +12,9 @@ cpu:
   threads: 2
   arch: "LA364"
   freq: "1.4 GHz"
-  l1_inst_cache: "64 KB"
-  l1_data_cache: "64 KB"
-  l2_cache: "2 MB"
+  l1_inst_cache: "64 KiB"
+  l1_data_cache: "64 KiB"
+  l2_cache: "2 MiB"
   l3_cache: "N/A"
   voltage: "1.25 V"
   tpc: "9 W"
@@ -25,7 +25,7 @@ gpu:
   name: "unknown"
   
 memory:
-  max: "32 GB"
+  max: "32 GiB"
   types: "DDR4-2400"
   channels: "1 (72-Bit)"
   ecc: true
@@ -33,7 +33,7 @@ memory:
 exp:
   io_name: "PCI Express"
   io_rev: "3.0"
-  lanes: "12-Lanes (3 * 4-Lanes)"
+  lanes: "12 (3 × 4)"
   usb_5gbps: 4
   usb2: 9
   sata: 2
@@ -51,10 +51,10 @@ package:
   temperature: "0 - 70℃"
   t_case: "N/A"
   t_junction: "N/A"
-  size: "27 mm * 27 mm"
+  size: "27 mm × 27 mm"
 
 power:
-  shutdown_of_the_clocks: false
+  clock_gating: false
   frequency_scaling: true
   voltage_scaling: true
 
