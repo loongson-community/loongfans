@@ -64,3 +64,18 @@ chipset.forEach(files => {
 
 fs.writeFileSync(__dirname + "/chips.json", JSON.stringify(chips, null, "\t"))
 fs.writeFileSync(__dirname + "/chips.min.json", JSON.stringify(chips))
+
+// #region FIXME: to be refactored
+const nameKeyMap = {}
+Object.keys(chips).forEach(category => {
+    const categoryEntries = chips[category]
+    if (!categoryEntries || typeof categoryEntries !== 'object') return
+    Object.entries(categoryEntries).forEach(([key, value]) => {
+        const name = value?.basic?.name
+        if (typeof name === 'string' && name.length) {
+            nameKeyMap[name] = key
+        }
+    })
+})
+fs.writeFileSync(__dirname + "/chips_name_map.min.json", JSON.stringify(nameKeyMap))
+// #endregion

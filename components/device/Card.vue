@@ -33,6 +33,8 @@ import { useI18n } from "vue-i18n";
 import { Button } from "primevue";
 import { useToast } from "primevue/usetoast";
 
+import chipsNameMap from '../../data/chips_name_map.min.json'
+
 const props = defineProps({
   name: String,
   spec: String,
@@ -52,7 +54,7 @@ const compareList = ref(
   JSON.parse(localStorage.getItem("cpuCompareList") || "[]")
 );
 const isComparing = computed(() => {
-  return compareList.value.includes(props.name);
+  return compareList.value.includes(chipsNameMap[props.name]);
 });
 
 const toggleCompare = () => {
@@ -60,11 +62,11 @@ const toggleCompare = () => {
     localStorage.getItem("cpuCompareList") || "[]"
   );
   if (isComparing.value) {
-    compareList.value = compareList.value.filter((id) => id !== props.name);
+    compareList.value = compareList.value.filter((id) => id !== chipsNameMap[props.name]);
   } else {
     if (compareList.value.length < 4) {
       // Limit to 4 chips for comparison
-      compareList.value.push(props.name);
+      compareList.value.push(chipsNameMap[props.name]);
     } else {
       toast.add({
         severity: "info",
