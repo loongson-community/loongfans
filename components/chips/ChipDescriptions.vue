@@ -7,71 +7,71 @@ const { t } = i18n.global;
 // Basic 
 export const basic_series = defineComponent({
   setup() {
-    return () => h('p', t("helps.basic.series"));
+    return () => h('p', t("help.basic.series"));
   }
 })
 
 export const basic_market = defineComponent({
   setup() {
-    return () => h('p', t("helps.basic.market"));
+    return () => h('p', t("help.basic.market"));
   }
 })
 
 // CPU
 export const cpu_voltage = defineComponent({
   setup() {
-    return () => h('p', t("helps.cpu.voltage"));
+    return () => h('p', t("help.cpu.voltage"));
   }
 })
 
 export const cpu_tpc = defineComponent({
   setup() {
-    return () => h('p', t("helps.cpu.tpc"));
+    return () => h('p', t("help.cpu.tpc"));
   }
 })
 
 export const cpu_tdp = defineComponent({
   setup() {
-    return () => h('p', t("helps.cpu.tdp"));
+    return () => h('p', t("help.cpu.tdp"));
   }
 })
 
 // Memory
 export const memory_ecc = defineComponent({
   setup() {
-    return () => h('p', t("helps.memory.ecc"));
+    return () => h('p', t("help.memory.ecc"));
   }
 })
 
 // Expansion
 export const exp_io_name = defineComponent({
   setup() {
-    return () => h('p', t("helps.exp.io_name"));
+    return () => h('p', t("help.exp.io_name"));
   }
 })
 
 export const exp_io_rev = defineComponent({
   setup() {
-    return () => h('p', t("helps.exp.io_rev"));
+    return () => h('p', t("help.exp.io_rev"));
   }
 })
 
 export const exp_d2d = defineComponent({
   setup() {
-    return () => h('p', t("helps.exp.d2d"));
+    return () => h('p', t("help.exp.d2d"));
   }
 })
 
 export const exp_d2d_name = defineComponent({
   setup() {
-    return () => h('p', t("helps.exp.d2d_name"));
+    return () => h('p', t("help.exp.d2d_name"));
   }
 })
 
 // Package
 export const package_temperature = defineComponent({
   setup() {
-    return () => h('p', t("helps.package.temperature"));
+    return () => h('p', t("help.package.temperature"));
   }
 })
 
@@ -80,10 +80,10 @@ export const package_t_case = defineComponent({
     return () => h('p', [
       h('span', 'T'),
       h('sub', 'CASE '),
-      t("helps.package.t_case"),
+      t("help.package.t_case"),
       h('span', 'T'),
       h('sub', 'CASE '),
-      t("helps.package.t_notice")
+      t("help.package.t_notice")
     ]);
   }
 })
@@ -93,67 +93,67 @@ export const package_t_junction = defineComponent({
     return () => h('p', [
       h('span', 'T'),
       h('sub', 'JUNCTION '),
-      t("helps.package.t_junction"),
+      t("help.package.t_junction"),
       h('span', 'T'),
       h('sub', 'JUNCTION '),
-      t("helps.package.t_notice")
+      t("help.package.t_notice")
     ]);
   }
 })
 
 // Power
-export const power_shutdown_of_the_clocks = defineComponent({
+export const power_clock_gating = defineComponent({
   setup() {
-    return () => h('p', t("helps.power.shutdown_of_the_clocks"));
+    return () => h('p', t("help.power.clock_gating"));
   }
 })
 
 export const power_frequency_scaling = defineComponent({
   setup() {
-    return () => h('p', t("helps.power.frequency_scaling"));
+    return () => h('p', t("help.power.frequency_scaling"));
   }
 })
 
 export const power_voltage_scaling = defineComponent({
   setup() {
-    return () => h('p', t("helps.power.voltage_scaling"));
+    return () => h('p', t("help.power.voltage_scaling"));
   }
 })
 
 // Technologies
 export const tech_isa = defineComponent({
   setup() {
-    return () => h('p', t("helps.tech.isa.info"));
+    return () => h('p', t("help.tech.isa.info"));
   }
 })
 
 export const tech_isa_extensions = defineComponent({
   setup() {
-    return () => h('p', t("helps.tech.isa.extensions"));
+    return () => h('p', t("help.tech.isa.extensions"));
   }
 })
 
 export const tech_isa_LBT = defineComponent({
   setup() {
-    return () => h('p', t("helps.tech.isa.LBT"));
+    return () => h('p', t("help.tech.isa.LBT"));
   }
 })
 
 export const tech_isa_LVZ = defineComponent({
   setup() {
-    return () => h('p', t("helps.tech.isa.LVZ"));
+    return () => h('p', t("help.tech.isa.LVZ"));
   }
 })
 
 export const tech_isa_LSX = defineComponent({
   setup() {
-    return () => h('p', t("helps.tech.isa.LSX"));
+    return () => h('p', t("help.tech.isa.LSX"));
   }
 })
 
 export const tech_isa_LASX = defineComponent({
   setup() {
-    return () => h('p', t("helps.tech.isa.LASX"));
+    return () => h('p', t("help.tech.isa.LASX"));
   }
 })
 </script>

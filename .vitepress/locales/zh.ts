@@ -1,6 +1,6 @@
 import { devices } from './zh/devices';
 import chips from './zh/chips';
-import helps from './zh/helps';
+import help from './zh/help';
 
 export default {
   comma: "、",
@@ -60,5 +60,5 @@ export default {
 
   // Chips/*.vue
   chips,
-  helps
+  help
 };

@@ -436,14 +436,14 @@
             <div class="compare-section"><!-- 功耗管理 -->
                 <h3>{{ $t('chips.power.title') }}</h3>
                 <div class="compare-row">
-                    <div class="compare-cell">{{ $t('chips.power.shutdown_of_the_clocks') }}</div>
+                    <div class="compare-cell">{{ $t('chips.power.clock_gating') }}</div>
                     <div
                         v-for="chip in compareChips"
                         class="compare-cell"
-                        :class="{ 'same-as-first': isSame(chip, 'power.shutdown_of_the_clocks') }"
+                        :class="{ 'same-as-first': isSame(chip, 'power.clock_gating') }"
                     >
-                        <span v-if="chip.power.shutdown_of_the_clocks == true">{{ $t('chips.status.supported') }}</span>
-                        <span v-else-if="chip.power.shutdown_of_the_clocks == false">{{ $t('chips.status.unsupported') }}</span>
+                        <span v-if="chip.power.clock_gating == true">{{ $t('chips.status.supported') }}</span>
+                        <span v-else-if="chip.power.clock_gating == false">{{ $t('chips.status.unsupported') }}</span>
                     </div>
                 </div>
                 <div class="compare-row">
