@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="256px"
+   height="256px"
+   viewBox="0 0 256 256"
+   version="1.1"
+   id="svg69"
+   sodipodi:docname="kylinos.svg"
+   inkscape:version="1.4.2 (unknown)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview69"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.9711655"
+     inkscape:cx="108.78418"
+     inkscape:cy="137.61703"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg69" />
+  <title
+     id="title1">kylin-startmenu</title>
+  <defs
+     id="defs2">
+    <linearGradient
+       x1="124"
+       y1="8"
+       x2="124"
+       y2="238.7384"
+       id="linearGradient-1"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(4,4)">
+      <stop
+         stop-color="#F4F5F8"
+         offset="0%"
+         id="stop1" />
+      <stop
+         stop-color="#D7DAE3"
+         offset="100%"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <g
+     id="资源-1"
+     transform="matrix(1.4933333,0,0,1.4933333,16.000002,16.000002)"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1">
+    <polygon
+       id="路径"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="74.675477,75.176552 55.465004,60.950565 68.277102,43.332178 63.641679,24.782288 43.654982,35.182618 43.63744,35.178285 63.641679,24.782288 71.952111,0.034660543 71.974038,0 52.237311,20.103115 49.476669,19.60487 54.607648,6.9342749 50.393229,14.230319 54.640539,6.8064642 36.195328,25.592479 34.978365,26.274858 18.826745,36.322083 11.046954,52.707855 0,71.517698 10.404485,97.337637 13.680418,117.3541 17.932113,127.51397 10.992135,135.75885 3.5456379,144.60379 23.580575,144.60379 26.15045,126.49365 34.193369,113.97686 47.468132,116.36194 62.551895,110.40033 73.614197,104.64018 84.573442,111.89073 94.806894,119.07196 100.51456,126.25103 84.075693,149.95451 105.07104,150 104.07116,138.12443 119.26675,124.11074 111.55274,108.35752 110.62522,89.188077 126.0949,80.189333 134.81537,81.863871 138.64826,67.958494 134.85484,81.840042 146.58593,77.639617 146.60347,77.656947 150,53.635025 144.46556,60.619124 149.95614,53.635025 131.65565,59.315021 120.46179,75.876262 109.5157,81.67757 101.42016,86.016637 " />
+    <polygon
+       id="polygon2"
+       fill="#b2def0"
+       fill-rule="nonzero"
+       points="31.573062,77.973225 46.663402,81.989515 38.769588,60.229193 18.182084,76.129717 " />
+    <polygon
+       id="polygon3"
+       points="79.071892,131.57792 78.960063,131.64074 79.056543,131.69057 " />
+    <polygon
+       id="polygon4"
+       stroke="#231815"
+       stroke-width="0.88"
+       points="75.613963,91.841775 75.640276,91.384689 74.956146,91.56449 " />
+    <polygon
+       id="polygon5"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="74.956146,91.56449 75.613963,91.841775 95.662057,100.21446 101.42016,86.016637 " />
+    <polygon
+       id="polygon6"
+       fill="#b2def0"
+       fill-rule="nonzero"
+       points="74.956146,91.56449 46.663402,81.989515 43.244942,98.479269 " />
+    <polygon
+       id="polygon7"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="22.126798,103.24726 31.573062,77.973225 18.182084,76.129717 " />
+    <polygon
+       id="polygon8"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="22.126798,103.24726 46.663402,81.989515 31.573062,77.973225 " />
+    <polygon
+       id="polygon9"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="43.244942,98.479269 46.663402,81.989515 22.126798,103.24726 " />
+    <polygon
+       id="polygon10"
+       stroke="#231815"
+       stroke-width="0.88"
+       points="43.514647,35.256271 43.536575,35.143625 43.352386,35.080802 " />
+    <polygon
+       id="polygon11"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="55.465004,60.950565 55.837767,49.458429 38.769588,60.229193 " />
+    <polygon
+       id="polygon12"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="55.465004,60.950565 46.663402,81.989515 74.675477,75.176552 " />
+    <polygon
+       id="polygon13"
+       stroke="#231815"
+       stroke-width="0.88"
+       points="43.352386,35.080802 43.536575,35.143625 43.571658,34.972488 " />
+    <polygon
+       id="polygon14"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="55.465004,60.950565 38.769588,60.229193 46.663402,81.989515 " />
+    <polygon
+       id="polygon15"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="71.656093,127.32551 78.841656,140.00477 78.942521,131.64941 78.960063,131.64074 " />
+    <polygon
+       id="polygon16"
+       fill="#004380"
+       fill-rule="nonzero"
+       points="71.656093,127.32551 58.352824,140.00477 78.841656,140.00477 " />
+    <polygon
+       id="polygon17"
+       fill="#004380"
+       fill-rule="nonzero"
+       points="84.573442,111.89073 71.656093,127.32551 78.960063,131.64074 79.071892,131.57792 " />
+    <polygon
+       id="polygon18"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="119.26675,124.11074 100.51456,126.25103 104.07116,138.12443 " />
+    <polygon
+       id="polygon19"
+       fill="#004380"
+       fill-rule="nonzero"
+       points="100.51456,126.25103 84.075693,149.95451 105.07104,150 104.07116,138.12443 90.805169,141.31104 104.55795,149.07716 90.805169,141.31104 104.07116,138.12443 " />
+    <polygon
+       id="polygon20"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="84.573442,111.89073 79.071892,131.57792 94.841791,118.95946 " />
+    <polygon
+       id="polygon21"
+       fill="#004380"
+       fill-rule="nonzero"
+       points="111.55274,108.35752 100.51456,126.25103 119.26675,124.11074 " />
+    <polygon
+       id="polygon22"
+       fill="#004380"
+       fill-rule="nonzero"
+       points="10.992135,135.75885 3,145 23.577068,145 " />
+    <polygon
+       id="polygon23"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="52.237311,20.103115 62.165975,16.221134 71.974038,0 " />
+    <polygon
+       id="polygon24"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="34.903812,26.909579 47.518565,19.251766 54.640539,6.8064642 " />
+    <polygon
+       id="polygon25"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="84.573442,111.89073 94.806894,119.07196 100.51456,126.25103 111.55274,108.35752 " />
+    <polygon
+       id="polygon26"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="52.237311,20.103115 63.641679,24.782288 62.165975,16.221134 " />
+    <polygon
+       id="polygon27"
+       fill="#b2def0"
+       fill-rule="nonzero"
+       points="54.607648,6.9342749 47.463747,19.299424 49.459128,19.650362 " />
+    <polygon
+       id="polygon28"
+       fill="#b2def0"
+       fill-rule="nonzero"
+       points="71.954304,0.028161691 62.165975,16.221134 63.641679,24.782288 " />
+    <polygon
+       id="polygon29"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="13.680418,117.3541 17.932113,127.51397 10.992135,135.75885 26.15045,126.49365 " />
+    <polygon
+       id="polygon30"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="18.182084,76.129717 38.769588,60.229193 18.497836,56.737143 " />
+    <polygon
+       id="polygon31"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="10.992135,135.75885 23.577068,145 26.15045,126.49365 " />
+    <polygon
+       id="polygon32"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="110.62522,89.188077 95.662057,100.21446 111.55274,108.35752 " />
+    <polygon
+       id="polygon33"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="111.55274,108.35752 95.662057,100.21446 84.573442,111.89073 " />
+    <polygon
+       id="polygon34"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="110.62522,89.188077 101.42016,86.016637 95.662057,100.21446 " />
+    <polygon
+       id="polygon35"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="126.1563,80.152506 120.46179,75.876262 110.62522,89.188077 " />
+    <polygon
+       id="polygon36"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="84.573442,111.89073 95.662057,100.21446 73.614197,104.64018 " />
+    <polygon
+       id="polygon37"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="120.46179,75.876262 109.5157,81.67757 101.42016,86.016637 110.62522,89.188077 " />
+    <polygon
+       id="polygon38"
+       fill="#004380"
+       fill-rule="nonzero"
+       points="73.614197,104.64018 43.244942,98.479269 62.551895,110.40033 " />
+    <polygon
+       id="polygon39"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="73.614197,104.64018 95.662057,100.21446 74.956146,91.56449 " />
+    <polygon
+       id="polygon40"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="43.244942,98.479269 73.614197,104.64018 74.956146,91.56449 " />
+    <polygon
+       id="polygon41"
+       fill="#b2def0"
+       fill-rule="nonzero"
+       points="138.64826,67.958494 138.81052,67.80902 149.95614,53.635025 131.65565,59.315021 " />
+    <polygon
+       id="polygon42"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="146.60347,77.633118 138.64826,67.958494 134.85484,81.840042 " />
+    <polygon
+       id="polygon43"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="126.02254,80.176335 134.81537,81.863871 138.64826,67.958494 " />
+    <polygon
+       id="polygon44"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="126.19796,80.193666 131.65565,59.315021 120.46179,75.876262 " />
+    <polygon
+       id="polygon45"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="138.64826,67.958494 146.60347,77.656947 150,53.635025 " />
+    <polygon
+       id="polygon46"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="126.02254,80.176335 138.64826,67.958494 131.65565,59.315021 " />
+    <polygon
+       id="polygon47"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="62.551895,110.40033 43.244942,98.479269 47.468132,116.36194 " />
+    <polygon
+       id="polygon48"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="18.826745,36.322083 18.497836,56.737143 38.769588,60.229193 " />
+    <polygon
+       id="polygon49"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="18.826745,36.322083 36.568092,40.715307 34.978365,26.274858 " />
+    <polygon
+       id="polygon50"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="18.826745,36.322083 38.769588,60.229193 36.568092,40.715307 " />
+    <polygon
+       id="polygon51"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="18.366273,56.71548 18.497836,56.737143 18.826745,36.322083 11.046954,52.707855 " />
+    <polygon
+       id="polygon52"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="43.352386,35.080802 34.978365,26.274858 36.568092,40.715307 38.769588,60.229193 43.514647,35.256271 " />
+    <polygon
+       id="polygon53"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="43.352386,35.080802 43.514647,35.256271 47.518565,19.251766 34.978365,26.274858 " />
+    <polygon
+       id="polygon54"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="0,71.517698 18.366273,56.71548 11.046954,52.707855 " />
+    <polygon
+       id="polygon55"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="18.182084,76.129717 18.497836,56.737143 18.366273,56.71548 0,71.517698 " />
+    <polygon
+       id="polygon56"
+       fill="#004380"
+       fill-rule="nonzero"
+       points="34.193369,113.97686 22.126798,103.24726 26.15045,126.49365 " />
+    <polygon
+       id="polygon57"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="47.468132,116.36194 43.244942,98.479269 34.193369,113.97686 " />
+    <polygon
+       id="polygon58"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="26.15045,126.49365 22.126798,103.24726 13.680418,117.3541 " />
+    <polygon
+       id="polygon59"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="34.193369,113.97686 43.244942,98.479269 22.126798,103.24726 " />
+    <polygon
+       id="polygon60"
+       fill="#0062b0"
+       fill-rule="nonzero"
+       points="10.404485,97.337637 18.182084,76.129717 0,71.517698 " />
+    <polygon
+       id="polygon61"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="13.680418,117.3541 22.126798,103.24726 10.404485,97.337637 " />
+    <polygon
+       id="polygon62"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="10.404485,97.337637 22.126798,103.24726 18.182084,76.129717 " />
+    <polygon
+       id="polygon63"
+       fill="#b2def0"
+       fill-rule="nonzero"
+       points="74.675477,75.176552 74.956146,91.56449 101.42016,86.016637 " />
+    <polygon
+       id="polygon64"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="74.956146,91.56449 74.675477,75.176552 46.663402,81.989515 " />
+    <polygon
+       id="polygon65"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="38.769588,60.229193 55.837767,49.458429 43.514647,35.256271 " />
+    <polygon
+       id="polygon66"
+       fill="#009fe8"
+       fill-rule="nonzero"
+       points="43.536575,35.143625 43.514647,35.256271 55.837767,49.458429 68.277102,43.332178 " />
+    <polygon
+       id="polygon67"
+       fill="#b2def0"
+       fill-rule="nonzero"
+       points="68.277102,43.332178 55.837767,49.458429 55.465004,60.950565 " />
+    <polygon
+       id="polygon68"
+       fill="#b2def0"
+       fill-rule="nonzero"
+       points="68.277102,43.332178 63.641679,24.782288 43.514647,35.256271 " />
+    <polygon
+       id="polygon69"
+       fill="#0091da"
+       fill-rule="nonzero"
+       points="43.514647,35.243274 63.641679,24.782288 52.237311,20.103115 47.518565,19.251766 " />
+  </g>
+  <metadata
+     id="metadata69">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>kylin-startmenu</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
