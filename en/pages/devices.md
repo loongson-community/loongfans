@@ -20,4 +20,4 @@ For processor specifications, details, and parameter comparisons, please see:
 - [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel)
 :::
 
-<DeviceIndex />
+<DeviceIndex :data="$tm('devices')" />

@@ -7,10 +7,7 @@ pageSubTitle: 规格参数、特色配置及已知问题一览
 ---
 
 <script setup>
-import { useI18n } from "vue-i18n";
 import DeviceIndex from "../components/device/Index.vue"
-
-const { tm } = useI18n();
 </script>
 
 
@@ -23,4 +20,4 @@ const { tm } = useI18n();
 - [龙芯中科官方网站"芯片产品"板块](https://www.loongson.cn/product/channel)
 :::
 
-<DeviceIndex :data="tm('devices')" />
+<DeviceIndex :data="$tm('devices')" />
