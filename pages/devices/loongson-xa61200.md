@@ -50,7 +50,7 @@ pageSubTitle: 龙芯 XA61200
   size="8388608"
   date="2024-05-23"
   sha256="e7fac091127d5a759d4c043472f1d6f0838acba7f6efb8da72cccaacedad7e5d"
-  url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523rel.fd"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523rel.fd"
   latest
 >
 
@@ -64,7 +64,7 @@ IDK what to write here.
   size="8388608"
   date="2024-05-23"
   sha256="0aed4e73d01f490f5808f18df0056e0f70e38bd2344c45c30bedb6ca0557c6a1"
-  url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523dbg.fd"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523dbg.fd"
   latest
   debug
 >
@@ -79,7 +79,7 @@ IDK what to write here.
   size="4194304"
   date="2024-02-29"
   sha256="0ae9de39b02052896dc5d18a4b96cc550ca8af8613c181def39de4b17ff7875d"
-  url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2402_0325rel.fd"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2402_0325rel.fd"
 >
 </DeviceDownloadCard>
 
@@ -89,7 +89,7 @@ IDK what to write here.
   size="4194304"
   date="2024-02-29"
   sha256="50da40f1101974f81ce8d64d907efe6362e3e89183080b3c137561683530a7f2"
-  url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2402_0325dbg.fd"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2402_0325dbg.fd"
   debug
 >
 </DeviceDownloadCard>
@@ -100,7 +100,7 @@ IDK what to write here.
   size="4194304"
   date="2023-11-29"
   sha256="c8366b5c56675e048df9ef1e0227bf57d0e4efdcc7068798410c18a9277100c3"
-  url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311rel.fd"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311rel.fd"
 >
 </DeviceDownloadCard>
 
@@ -110,7 +110,7 @@ IDK what to write here.
   size="4194304"
   date="2023-11-29"
   sha256="c8366b5c56675e048df9ef1e0227bf57d0e4efdcc7068798410c18a9277100c3"
-  url="/devices/loongson-xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg.fd"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg.fd"
   debug
 >
 </DeviceDownloadCard>
