@@ -251,4 +251,9 @@ const formattedSize = computed(() => {
     gap: var(--common-gap);
   }
 }
+
+.vp-doc li > ol,
+.vp-doc li > ul {
+  margin: 4px 0 0;
+}
 </style>
