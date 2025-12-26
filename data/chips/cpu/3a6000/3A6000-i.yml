@@ -12,10 +12,10 @@ cpu:
   threads: 8
   arch: "LA664"
   freq: "2.0 GHz"
-  l1_inst_cache: "64 KB"
-  l1_data_cache: "64 KB"
-  l2_cache: "1 MB (256 KB * 4)"
-  l3_cache: "16 MB"
+  l1_inst_cache: "64 KiB"
+  l1_data_cache: "64 KiB"
+  l2_cache: "1 MiB (256 KiB × 4)"
+  l3_cache: "16 MiB"
   voltage: "1.05 V"
   tpc: "28 W"
   tdp: "50 W"
@@ -25,7 +25,7 @@ gpu:
   name: "N/A"
   
 memory:
-  max: "64 GB"
+  max: "64 GiB"
   types: "DDR4-3200"
   channels: "2 (72-Bit)"
   ecc: true
@@ -33,7 +33,7 @@ memory:
 exp:
   io_name: "HyperTransport"
   io_rev: "3.0"
-  lanes: 16-Lanes
+  lanes: 16
   usb_5gbps: 0
   usb2: 0
   sata: 0
@@ -50,10 +50,10 @@ package:
   temperature: "-40 - 85℃"
   t_case: "85℃"
   t_junction: "100℃"
-  size: "35 mm * 35 mm"
+  size: "35 mm × 35 mm"
 
 power:
-  shutdown_of_the_clocks: true
+  clock_gating: true
   frequency_scaling: true
   voltage_scaling: true
 

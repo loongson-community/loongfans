@@ -12,10 +12,10 @@ cpu:
   threads: 64
   arch: "LA664"
   freq: "2.1 GHz"
-  l1_inst_cache: "64 KB"
-  l1_data_cache: "64 KB"
-  l2_cache: "8 MB (256 KB * 16 * 2)"
-  l3_cache: "64 MB (32 MB * 2)"
+  l1_inst_cache: "64 KiB"
+  l1_data_cache: "64 KiB"
+  l2_cache: "8 MiB (256 KiB × 16 × 2)"
+  l3_cache: "64 MiB (32 MiB × 2)"
   voltage: "N/A"
   tpc: "200 W"
   tdp: "N/A"
@@ -33,7 +33,7 @@ memory:
 exp:
   io_name: "PCI Express"
   io_rev: "4.0/3.0"
-  lanes: 128-Lanes
+  lanes: 128
   usb_5gbps: 0
   usb2: 0
   sata: 0
@@ -54,7 +54,7 @@ package:
   size: "N/A"
 
 power:
-  shutdown_of_the_clocks: true
+  clock_gating: true
   frequency_scaling: true
   voltage_scaling: true
 

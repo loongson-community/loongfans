@@ -54,7 +54,7 @@ package:
   size: ""
 
 power:
-  shutdown_of_the_clocks: true # true=支持 false=不支持
+  clock_gating: true # true=支持 false=不支持
   frequency_scaling: true # true=支持 false=不支持
   voltage_scaling: true # true=支持 false=不支持
 

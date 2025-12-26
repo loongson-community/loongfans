@@ -12,9 +12,9 @@ cpu:
   threads: 1
   arch: "LA264"
   freq: "1.0 GHz"
-  l1_inst_cache: "32 KB"
-  l1_data_cache: "32 KB"
-  l2_cache: "512 KB"
+  l1_inst_cache: "32 KiB"
+  l1_data_cache: "32 KiB"
+  l2_cache: "512 KiB"
   l3_cache: "N/A"
   voltage: "1.0 V"
   tpc: "1 W"
@@ -25,7 +25,7 @@ gpu:
   name: "N/A"
   
 memory:
-  max: "1 GB"
+  max: "1 GiB"
   types: "DDR4-1600"
   channels: "1 (16-Bit)"
   ecc: true
@@ -51,10 +51,10 @@ package:
   temperature: "-40 - 105℃"
   t_case: "N/A"
   t_junction: "105℃"
-  size: "12 mm x 12 mm"
+  size: "12 mm × 12 mm"
 
 power:
-  shutdown_of_the_clocks: false
+  clock_gating: false
   frequency_scaling: true
   voltage_scaling: true
 
