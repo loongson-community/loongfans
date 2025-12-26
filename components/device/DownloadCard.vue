@@ -16,7 +16,7 @@
       <Button
         as="a"
         :href="url"
-        label="Download"
+        :label="$t('deviceDownloadButton')"
         target="_blank"
         class="download-button"
       >
