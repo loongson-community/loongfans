@@ -2,117 +2,90 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1000"
-   height="1000"
-   viewBox="0 0 1000 1000"
-   id="svg2"
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="Logo of Anthon Open Source Community.svg"
-   inkscape:export-filename="Logo of Anthon Open Source Community.png"
-   inkscape:export-xdpi="300"
-   inkscape:export-ydpi="300">
-  <title
-     id="title3336">Logo of Anthon Open Source Community</title>
-  <defs
-     id="defs4" />
+   id="svg367"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="aosc-os-kinfocenter.svg"
+   inkscape:export-filename="aosc-os.png"
+   inkscape:export-xdpi="90.311111"
+   inkscape:export-ydpi="90.311111"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="base"
+     id="namedview369"
      pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.524"
-     inkscape:cx="500"
-     inkscape:cy="500"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="true"
-     units="px"
-     inkscape:snap-nodes="true"
-     inkscape:snap-others="true"
-     inkscape:snap-global="false"
-     showguides="false"
-     inkscape:snap-bbox="false"
-     inkscape:snap-to-guides="true" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Logo of Anthon Open Source Community</dc:title>
-        <dc:creator>
-          <cc:Agent>
-            <dc:title>Junde Yi</dc:title>
-          </cc:Agent>
-        </dc:creator>
-        <cc:license
-           rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
-        <dc:contributor>
-          <cc:Agent>
-            <dc:title>Tom Yan, Jeff Bai, Junde Yi</dc:title>
-          </cc:Agent>
-        </dc:contributor>
-      </cc:Work>
-      <cc:License
-         rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#Reproduction" />
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#Distribution" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#Notice" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#Attribution" />
-        <cc:permits
-           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
-        <cc:requires
-           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
-      </cc:License>
-    </rdf:RDF>
-  </metadata>
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0431611"
+     inkscape:cx="154.33858"
+     inkscape:cy="279.4391"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs364" />
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="图层 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-52.362161)">
-    <circle
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.29900002;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
-       id="path8317"
-       cx="501.58014"
-       cy="552.36218"
-       r="475.19086" />
-    <circle
-       r="54.066284"
-       cy="550.36218"
-       cx="524"
-       id="circle8306"
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.96379739;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate" />
-    <path
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#c00000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.75142097;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
-       d="M 513.8418,176.91489 A 373.65318,373.65318 0 0 0 140.18945,550.56724 373.65318,373.65318 0 0 0 513.8418,924.21958 l 0,-182.49414 A 191.87151,191.87151 0 0 1 332.12891,550.36216 191.87151,191.87151 0 0 1 513.8418,358.85044 l 0,-181.93555 z"
-       id="circle8373"
-       inkscape:connector-curvature="0" />
-    <path
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#0070c0;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.75142097;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
-       d="M 514.76758,394.05161 A 156.0855,156.0855 0 0 0 358.68359,550.13755 156.0855,156.0855 0 0 0 514.76758,706.22154 l 0,-74.27149 a 82.154182,82.154182 0 0 1 -72.92188,-81.58789 82.154182,82.154182 0 0 1 72.92188,-81.5332 l 0,-74.77735 z"
-       id="path8382"
-       inkscape:connector-curvature="0" />
-    <path
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ffc000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.75142097;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
-       d="m 531.56836,230.53013 0,160.87305 A 159.33853,159.33853 0 0 1 683.33789,550.36216 159.33853,159.33853 0 0 1 531.56836,709.43247 l 0,160.86719 A 319.88508,319.88508 0 0 0 851.45312,550.41489 319.88508,319.88508 0 0 0 531.56836,230.53013 Z"
-       id="path8387"
-       inkscape:connector-curvature="0" />
+     id="layer1">
+    <g
+       id="g558"
+       transform="matrix(1.5398488,0,0,1.5398488,131.25715,-84.234382)">
+      <rect
+         style="fill:#cf0404;fill-opacity:1;stroke-width:1.33542;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         id="rect844-8-5-5"
+         width="24.244947"
+         height="38.514389"
+         x="101.69484"
+         y="164.03403"
+         transform="matrix(0.98802429,0.15429845,-0.85036973,0.52618564,0,0)"
+         rx="2.8510263" />
+      <rect
+         style="fill:#f4ba29;fill-opacity:1;stroke-width:1.33542;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         id="rect844-3-58-04-3"
+         width="21.551065"
+         height="38.514389"
+         x="76.282173"
+         y="135.97957"
+         transform="matrix(0.98802429,0.15429845,-0.85036973,0.52618564,0,0)"
+         rx="2.8510263" />
+      <rect
+         style="fill:#0990eb;fill-opacity:1;stroke-width:1.33542;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         id="rect844-3-5-43-8-8"
+         width="10.775533"
+         height="18.454813"
+         x="101.78922"
+         y="141.94713"
+         transform="matrix(0.98802429,0.15429845,-0.85036973,0.52618564,0,0)"
+         rx="2.8510263" />
+      <rect
+         style="fill:#b4b4b4;fill-opacity:1;stroke-width:1.33542;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         id="rect844-3-6-71-7-8"
+         width="13.469416"
+         height="24.071493"
+         x="59.18325"
+         y="118.28104"
+         transform="matrix(0.98802429,0.15429845,-0.85036973,0.52618564,0,0)"
+         inkscape:transform-center-x="5.6372972"
+         inkscape:transform-center-y="33.13425"
+         rx="2.8510263"
+         inkscape:export-filename="test3"
+         inkscape:export-xdpi="90.311111"
+         inkscape:export-ydpi="90.311111" />
+    </g>
   </g>
 </svg>
