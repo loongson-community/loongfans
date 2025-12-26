@@ -86,6 +86,15 @@ export const osDataList = [
     tags: ["社区", "DIY", "滚动更新"],
   },
   {
+    name: "红旗 Linux",
+    description:
+      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
+    href: "https://www.chinaredflag.cn/",
+    // https://commons.wikimedia.org/wiki/File:RedFlag_Linux-Logo.svg
+    image: "/images/os/redflag.svg",
+    tags: ["商业", "桌面", "服务器"],
+  },
+  {
     name: "开放麒麟",
     description:
       "新手友好的桌面 Linux 发行版",
