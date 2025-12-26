@@ -106,12 +106,16 @@ const sdkList = [
   align-items: center;
   gap: 16px;
   padding: 16px;
-  border: 2px solid;
-  border-color: #ddd;
+  border: 1px solid;
   border-radius: 16px;
   color: unset;
   text-decoration: none;
   text-align: center;
+}
+
+.sdk-item:hover {
+  color: #e60013;
+  border-color: #e60013;
 }
 
 .sdk-icon {
