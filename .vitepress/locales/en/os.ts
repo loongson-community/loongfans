@@ -170,7 +170,7 @@ export const osDataList = [
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
-    tags: ["Virtualization", "Commercial"],
+    tags: ["Commercial", "Virtualization"],
   },
   {
     name: "RedFlag Linux",
