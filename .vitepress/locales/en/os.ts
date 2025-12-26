@@ -205,7 +205,6 @@ export const osDataList = [
       "Commercial Linux distribution for business informationization.",
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
-	// TODO: I didn't find a logo w/o text, maybe remove it manually?
     image: "/images/os/uos.svg",
     tags: ["Commercial", "Desktop", "Server", "Immutable"],
   },
