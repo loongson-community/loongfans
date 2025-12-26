@@ -56,7 +56,7 @@ export default {
     io_name: "I/O 通信接口",
     io_rev: "I/O 通信修订版",
     lanes: "通道",
-    usb_5gbps: "USB 5Gbps 数量",
+    usb_5gbps: "USB 3.2 Gen 1 (5Gbps) 数量",
     usb2: "USB 2.0 数量",
     sata: "SATA 数量",
     eth: "网口数量",
