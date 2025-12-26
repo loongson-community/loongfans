@@ -14,7 +14,6 @@ export default {
   supportMaterials: '支持材料',
   contact: '联系我们',
   chipsData: '芯片规格数据库',
-  firmwareAndManuals: '主板固件及说明书',
   productSpecs: '产品规格数据库',
   operatingSystems: '操作系统',
   compatibilityDb: '软硬件兼容性数据库',
