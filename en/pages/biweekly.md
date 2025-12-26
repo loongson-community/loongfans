@@ -2,7 +2,7 @@
 layout: page
 returnLink: /en/
 pageTitle: LoongArch Biweekly
-pageSubTitle: Fortnight Gatherings for Loongson Community Developers and Hobbyists
+pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 ---
 
 The LoongArch Biweekly is a regular community meeting organized by Loongson hobbyists. The meeting agenda comprises updates on upstream projects, Linux distro (and other OS projects), and community affairs. The reports are generally followed by contributor discussions and Q&A sessions.
