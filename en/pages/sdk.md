@@ -2,8 +2,8 @@
 layout: page
 # 返回首页
 returnLink: /
-pageTitle: Developer Guide
-pageSubTitle: Getting Started with LoongArch Development and Precautions
+pageTitle: Developer's Guide
+pageSubTitle: Guides and Notes on Developing for LoongArch
 ---
 
 <script setup>
