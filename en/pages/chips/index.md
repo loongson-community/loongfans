@@ -1,8 +1,8 @@
 ---
 layout: doc
 returnLink: /
-pageTitle: Loongson Products
-pageSubTitle: 
+pageTitle: Chip Database
+pageSubTitle: Learn About and Compare Features and Performance of Loongson Processors and Chips
 ---
 
 <script setup>
