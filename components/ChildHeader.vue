@@ -16,7 +16,7 @@
       <IconArrowCircleLeftOutline />
     </Button>
     <Button
-      v-if="frontmatter.returnLink === '/pages/chips' || frontmatter.returnLink === '/en/pages/chips'"
+      v-if="page.filePath.includes('pages/chips')"
       :href="t('chips.buttons.links')"
       :text="compareButtonText"
       class="btn_back">
@@ -33,7 +33,7 @@ import IconArrowCircleLeftOutline from '~icons/material-symbols/arrow-circle-lef
 import BackToTop from './BackToTop.vue';
 import Button from './Button.vue';
 
-const { frontmatter } = useData()
+const { frontmatter, page } = useData()
 const { t } = useI18n()
 
 // 以下是对比列表的计数器
