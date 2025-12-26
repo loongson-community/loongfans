@@ -1,114 +1,173 @@
 export const osDataList = [
   {
-    name: '安同 OS (AOSC OS)',
-    description: 'User-oriented community distribution by Anthon Open Source Community.',
-    href: 'https://aosc.io/aosc-os',
-    image: '/images/os/aosc.svg',
-    tags: ['GNU', 'desktop'],
+    name: "Alpine Linux",
+    description:
+      "A security-oriented, lightweight Linux distribution based on musl libc and BusyBox.",
+    href: "https://www.alpinelinux.org",
+    // https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
+    image: "/images/os/alpine.svg",
+    tags: ["Container"],
   },
   {
-    name: '勇豹 (Yongbao)',
-    description: 'Community-driven distribution for LoongArch platforms.',
-    href: 'https://github.com/sunhaiyong1978/Yongbao',
-    image: '/images/os/linux.svg',
-    tags: ['GNU', 'desktop'],
+    name: "Anolis OS",
+    description:
+      "A Linux distribution for compatibility with the traditional CentOS operating habits.",
+    href: "https://openanolis.cn/anolisos",
+    // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
+    image: "/images/os/openanolis.webp",
+    tags: ["Commercial", "Server"],
   },
   {
-    name: 'Alpine',
-    description: 'A security-oriented, lightweight Linux distribution based on musl libc and busybox.',
-    href: 'https://www.alpinelinux.org',
-    image: '/images/os/alpine.svg',
-    tags: ['musl', 'container'],
+    name: "AOSC OS",
+    description:
+      "A Linux distribution focusing on simplicity and reliablity, designed for experimented Linux users.",
+    href: "https://aosc.io/aosc-os",
+    // https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc-os-kinfocenter.svg
+    image: "/images/os/aosc.svg",
+    tags: ["Desktop", "Rolling"],
   },
   {
-    name: 'Anolis OS',
-    description: 'Anolis OS is equipped with two different versions of RHCK and ANCK kernels.',
-    href: 'https://openanolis.cn/anolisos',
-    image: '/images/os/openanolis.webp',
-    tags: ['GNU', 'enterprise'],
+    name: "Arch Linux for Loong64",
+    description:
+      "A lightweight and flexible Linux distribution that tries to Keep It Simple.",
+    href: "https://loongarchlinux.lcpu.dev/",
+    image: "/images/os/loongarchlinux.png",
+    tags: ["Rolling"],
   },
   {
-    name: 'CLFS for LoongArch',
-    description: 'How to cross compile a LFS for LoongArch',
-    href: 'https://github.com/sunhaiyong1978/CLFS-for-LoongArch',
-    image: '/images/os/lfs.svg',
-    tags: ['GNU', 'DIY'],
+    name: "CLFS for LoongArch",
+    description: "A cookbook for fully cross-compile a Linux distribution from source code.",
+    href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch",
+    image: "/images/os/lfs.svg",
+    tags: ["DIY"],
   },
   {
-    name: 'deepin',
-    description: 'Beautiful UI design, intimate human-computer interaction, and friendly community environment make you feel at home.',
-    href: 'https://www.deepin.org',
-    image: '/images/os/deepin.svg',
-    tags: ['GNU', 'desktop'],
+    name: "Debian",
+    description:
+      "A universal Linux distribution which can be used and redistributed freely.",
+    href: "https://www.debian.org",
+    // https://www.debian.org/logos/openlogo-nd.svg
+    image: "/images/os/debian.svg",
+    tags: [],
   },
   {
-    name: 'Gentoo',
-    description: 'A free operating system based on Linux that can be automatically optimized and customized for just about any application or need.',
-    href: 'https://www.gentoo.org',
-    image: '/images/os/gentoo.svg',
-    tags: ['GNU', 'source-based'],
+    name: "deepin",
+    description:
+      "A desktop distribution which is friendly to new users.",
+    href: "https://www.deepin.org",
+    // https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
+    image: "/images/os/deepin.svg",
+    tags: ["Desktop", "Immutable"],
   },
   {
-    name: 'LFS LoongArch Edition',
-    description: 'A project that provides you with step-by-step instructions for building your own custom Linux system, entirely from source code.',
-    href: 'https://www.linuxfromscratch.org/~xry111/lfs/',
-    image: '/images/os/lfs.svg',
-    tags: ['GNU', 'DIY'],
+    name: "Fedora Remix LoongArch",
+    description:
+      "A desktop distribution for software developers and all makers.",
+    href: "https://github.com/fedora-remix-loongarch/releases-info",
+    // https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
+    image: "/images/os/fedora_remix.png",
+    tags: ["Desktop"],
   },
   {
-    name: 'Loong Arch Linux',
-    description: 'Loong Arch Linux 是为 LoongArch 架构移植的 ArchLinux 发行版。',
-    href: 'https://loongarchlinux.org/',
-    image: '/images/os/loongarchlinux.png',
-    tags: ['GNU', 'rolling'],
+    name: "Gentoo",
+    description:
+      "A highly flexible, source-based Linux distribution.",
+    href: "https://www.gentoo.org",
+    // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
+    image: "/images/os/gentoo.svg",
+    tags: ["DIY", "Rolling"],
   },
   {
-    name: 'Nix4Loong',
-    description: 'Nix4Loong is a community-driven project initiated by loongson-community.',
-    href: 'https://nix4loong.cn/',
-    image: '/images/os/nix4loong.svg',
-    tags: ['GNU', 'reproducible'],
+    name: "KylinOS",
+    description:
+      "A commercial Linux distribution for business informationization.",
+    href: "https://www.kylinos.cn",
+	// TODO: I didn't find a good logo
+    image: "/images/os/linux.svg",
+    tags: ["Commercial", "Desktop", "Server", "Immutable"],
   },
   {
-    name: 'OpenCloudOS',
-    description: 'Long-term supported enterprise edition of OpenCloudOS.',
-    href: 'https://opencloudos.org',
-    image: '/images/os/opencloudos.webp',
-    tags: ['GNU', 'enterprise'],
+    name: "LFS LoongArch Edition",
+    description:
+      "A project that provides you with step-by-step instructions for building your own custom Linux system, entirely from source code.",
+    href: "https://www.linuxfromscratch.org/~xry111/lfs/#loongarch",
+    image: "/images/os/lfs.svg",
+    tags: ["DIY"],
   },
   {
-    name: 'openEuler',
-    description: 'Open-source Linux for enterprise, cloud, edge, and embedded scenarios.',
-    href: 'https://openeuler.org',
-    image: '/images/os/openeuler.svg',
-    tags: ['GNU', 'enterprise'],
+    name: "Nix4Loong",
+    description:
+      "A Linux distribution with declarative package management.",
+    href: "https://nix4loong.cn/",
+    // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
+    image: "/images/os/nix4loong.svg",
+    tags: ["Atomicity Upgrade"],
   },
   {
-    name: 'OpenWrt',
-    description: 'Linux distribution targeting embedded devices and routers.',
-    href: 'https://openwrt.org',
-    image: '/images/os/openwrt.svg',
-    tags: ['embedded', 'router'],
+    name: "OpenCloudOS",
+    description: "A distribution for servers maintained by the OpenCloudOS community.",
+    href: "https://opencloudos.org",
+    image: "/images/os/opencloudos.webp",
+    tags: ["Server", "Commercial"],
   },
   {
-    name: 'Proxmox VE',
-    description: 'Open-source virtualization platform combining KVM and LXC.',
-    href: 'https://www.proxmox.com/en/products/proxmox-virtual-environment/overview',
-    image: '/images/os/proxmox.svg',
-    tags: ['virtualization', 'server'],
+    name: "openEuler",
+    description:
+      "An open-source operating system for digital infrastructures like server, cloud platform, edge computing, and embedded platform.",
+    href: "https://openeuler.org",
+    // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
+    image: "/images/os/openeuler.svg",
+    tags: ["Server", "Commercial"],
   },
   {
-    name: 'Slackware',
-    description: 'The oldest actively maintained Linux distribution with a classic approach.',
-    href: 'https://www.slackware.com',
-    image: '/images/os/slackware.webp',
-    tags: ['GNU', 'classic'],
+    name: "OpenWrt",
+    description: "A Linux distribution for embedded devices and routers.",
+    href: "https://openwrt.org",
+    // https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
+    image: "/images/os/openwrt.svg",
+    tags: ["Router"],
   },
   {
-    name: 'T2 SDE',
-    description: 'System Development Environment and source-based distribution builder.',
-    href: 'https://t2linux.com',
-    image: '/images/os/t2linux.png',
-    tags: ['GNU', 'source-based'],
+    name: "Proxmox VE",
+    description: "A complete open-source platform for enterprise virtualization.  The LoongArch port is developed and maintained by Lierfang.",
+    href: "https://www.lierfang.com//#/open/third",
+    // https://www.proxmox.com/en/about/company-details/media-kit
+    image: "/images/os/proxmox.svg",
+    tags: ["Virtualization", "Commercial"],
   },
-]
+  {
+    name: "Slackwareloong",
+    description:
+      "A highly customizable Linux distribution for pure UNIX experience.",
+    href: "https://www.slackware.com",
+    // http://www.slackware.com/~msimons/slackware/grfx/shared/bluepiSW.jpg
+    image: "/images/os/slackware.webp",
+    tags: ["Rolling"],
+  },
+  {
+    name: "T2 SDE",
+    description:
+      "A development toolkit providing the tools and scripts to build your own custom distribution tailored to specific use cases.",
+    href: "https://t2linux.com",
+    // https://t2linux.com/images/t2logo.png
+    image: "/images/os/t2linux.png",
+    tags: ["DIY"],
+  },
+  {
+    name: "UOS",
+    description:
+      "A commercial Linux distribution for business informationization.",
+    href: "https://chinauos.com",
+    // https://www.uniontech.com/statics/home/images/logo-1.svg
+	// TODO: I didn't find a logo w/o text, maybe remove it manually?
+    image: "/images/os/uos.svg",
+    tags: ["Commercial", "Desktop", "Server", "Immutable"],
+  },
+  {
+    name: "Yongbao",
+    description: "A fully cross-compiled immutable Linux distribution.",
+    href: "https://github.com/sunhaiyong1978/Yongbao",
+    image: "/images/os/linux.svg",
+    tags: ["Desktop", "Immutable"],
+  },
+] as OsData[];
