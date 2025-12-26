@@ -25,7 +25,6 @@
           </div>
           <div class="link_type_box">
             <Link :href="`${basePath}/pages/chips`" :name="t('chipsData')" />
-            <Link :href="`${basePath}/pages/support`" :name="t('firmwareAndManuals')" />
             <Link :href="`${basePath}/pages/devices`" :name="t('productSpecs')" />
             <Link :href="`${basePath}/pages/os`" :name="t('operatingSystems')" />
             <Link href="https://loong123.cn/" :name="t('compatibilityDb')" />
