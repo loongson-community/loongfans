@@ -56,7 +56,7 @@ export const osDataList = [
     href: "https://www.debian.org",
     // https://www.debian.org/logos/openlogo-nd.svg
     image: "/images/os/debian.svg",
-    tags: ["社区"],
+    tags: ["社区", "桌面", "服务器"],
   },
   {
     name: "deepin",
