@@ -16,7 +16,7 @@ Loongson has many processor and board models, but they are generally sold bundle
 ::: info
 For processor specifications, details, and parameter comparisons, please see:
 
-- [Loong 1-2-3 Site "Loongson Chip Parameters" Database](https://loong123.cn/chips/)
+- [Chips Database](/en/pages/chips)
 - [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel)
 :::
 
