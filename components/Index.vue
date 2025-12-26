@@ -14,6 +14,7 @@
           <div class="link_type_box">
             <Link :href="`${basePath}/pages/intro`" :name="t('introToLoongson')" />
             <Link :href="`${basePath}/pages/guides`" :name="t('usageGuides')" />
+            <Link :href="`${basePath}/pages/os`" :name="t('operatingSystems')" />
             <Link :href="`${basePath}/pages/sdk`" :name="t('devGuides')" />
           </div>
         </div>
@@ -26,7 +27,6 @@
           <div class="link_type_box">
             <Link :href="`${basePath}/pages/chips`" :name="t('chipsData')" />
             <Link :href="`${basePath}/pages/devices`" :name="t('productSpecs')" />
-            <Link :href="`${basePath}/pages/os`" :name="t('operatingSystems')" />
             <Link href="https://loong123.cn/" :name="t('compatibilityDb')" />
           </div>
         </div>
