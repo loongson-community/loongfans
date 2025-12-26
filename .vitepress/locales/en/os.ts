@@ -71,6 +71,15 @@ export const osDataList = [
     tags: ["Community", "Desktop", "Immutable"],
   },
   {
+    name: "eweOS",
+    description:
+      "Bleeding-edge Linux distribution built on musl libc and many other new technologies.",
+    href: "https://os.ewe.moe/",
+    // https://os.ewe.moe/
+    image: "/images/os/eweos.svg",
+    tags: ["Community", "Rolling"],
+  },
+  {
     name: "Fedora Remix LoongArch",
     description:
       "Desktop-oriented distro for software developers and all makers.",
@@ -87,6 +96,15 @@ export const osDataList = [
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
     tags: ["Community", "DIY", "Rolling"],
+  },
+  {
+    name: "GXDE OS",
+    description:
+      "Linux distribution built atop a continually updated DDE 15 fork.",
+    href: "https://www.gxde.top/en/",
+    // https://www.gxde.top/logo.png
+    image: "/images/os/gxde.png",
+    tags: ["Community", "Desktop"],
   },
   {
     name: "KylinOS",

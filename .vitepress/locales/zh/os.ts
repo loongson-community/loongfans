@@ -68,6 +68,15 @@ export const osDataList = [
     tags: ["社区", "桌面", "不可变"],
   },
   {
+    name: "eweOS",
+    description:
+      "基于 musl libc 及其他技术的前沿 Linux 发行版",
+    href: "https://os.ewe.moe/",
+    // https://os.ewe.moe/
+    image: "/images/os/eweos.svg",
+    tags: ["社区", "滚动更新"],
+  },
+  {
     name: "Fedora Remix LoongArch",
     description:
       "面向开发者和内容创作者的桌面发行版",
@@ -84,6 +93,15 @@ export const osDataList = [
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
     tags: ["社区", "DIY", "滚动更新"],
+  },
+  {
+    name: "GXDE OS",
+    description:
+      "围绕 DDE 15 继续维护的 Linux 发行版",
+    href: "https://www.gxde.top/",
+    // https://www.gxde.top/logo.png
+    image: "/images/os/gxde.png",
+    tags: ["社区", "桌面"],
   },
   {
     name: "红旗 Linux",
