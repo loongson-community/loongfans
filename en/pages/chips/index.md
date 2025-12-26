@@ -9,6 +9,4 @@ pageSubTitle:
 import ChipsIndex from "../../../components/chips/Index.vue"
 </script>
 
-[Compare Processors](/en/pages/chips/cpu/compare.md)
-
 <ChipsIndex />
