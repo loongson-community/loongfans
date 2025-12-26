@@ -173,6 +173,15 @@ export const osDataList = [
     tags: ["Virtualization", "Commercial"],
   },
   {
+    name: "RedFlag Linux",
+    description:
+      "Commercial Linux distribution for business informationization.",
+    href: "https://www.chinaredflag.cn/",
+    // https://commons.wikimedia.org/wiki/File:RedFlag_Linux-Logo.svg
+    image: "/images/os/redflag.svg",
+    tags: ["Commercial", "Desktop", "Server"],
+  },
+  {
     name: "Slackwareloong",
     description:
       "Highly customizable Linux distribution for pure UNIX experience.",
