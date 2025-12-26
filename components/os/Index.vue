@@ -30,12 +30,11 @@ const tagSet = computed(() => new Set(osDataList.value.flatMap((i) => i.tags)));
 const selectedTags = reactive<Record<string, boolean>>({});
 
 const filteredOsList = computed(() => {
-  const activeTags = new Set(
-    Object.keys(selectedTags).filter((t) => selectedTags[t])
+  const activeTags = Object.keys(selectedTags).filter((t) => selectedTags[t]);
+  if (activeTags.length === 0) return osDataList.value;
+  return osDataList.value.filter((os) =>
+    activeTags.every((t) => os.tags.includes(t))
   );
-  return activeTags.size
-    ? osDataList.value.filter((os) => os.tags.some((t) => activeTags.has(t)))
-    : osDataList.value;
 });
 </script>
 
