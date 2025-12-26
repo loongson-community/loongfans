@@ -56,7 +56,8 @@ pageSubTitle: 龙芯 XA612A0
   latest
 >
 
-IDK what to write here.
+- 新增 GPU 仿真开关
+  - 若使用高端显卡，请关闭此选项，因 BIOS 仅提供 7A 显示控制器。
 
 </DeviceDownloadCard>
 
@@ -71,7 +72,8 @@ IDK what to write here.
   debug
 >
 
-IDK what to write here.
+- 新增 GPU 仿真开关
+  - 若使用高端显卡，请关闭此选项，因 BIOS 仅提供 7A 显示控制器。
 
 </DeviceDownloadCard>
 

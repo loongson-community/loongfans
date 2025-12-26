@@ -45,4 +45,61 @@ If you experience similar issues, the community recommends improving the case or
 Source: "XA612A0 主板使用手册 V1.0"
 
 </template>
+
+<template #download>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="stable2311pllrel"
+  size="4194304"
+  date="2024-01-02"
+  sha256="6862745ef05a7a7f284064d258a36fa9c6bf885eccdebe4a7dba05803c7dd7bc"
+  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_stable2311pllrel.fd"
+  latest
+>
+
+- Add Gpu Emu Switch
+  - If you are using a high-end graphics card, please turn this option off,
+the BIOS only provides 7A DC.
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="stable2311plldbg"
+  size="4194304"
+  date="2024-01-02"
+  sha256="c570d7fb4d405d6e4930e84831ef82538cdc3e2c4c016a2976902660d49e63eb"
+  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
+  latest
+  debug
+>
+
+- Add Gpu Emu Switch
+  - If you are using a high-end graphics card, please turn this option off,
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="prestable2405rel"
+  size="8388608"
+  date="2024-05-25"
+  sha256="6862745ef05a7a7f284064d258a36fa9c6bf885eccdebe4a7dba05803c7dd7bc"
+  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_prestable2405rel.fd"
+>
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI Firmware"
+  version="stable2311plldbg"
+  size="8388608"
+  date="2024-05-25"
+  sha256="242f3b2b04de64a863e3bdc429339ca8736eb9437ced166abf3839b72982c233"
+  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
+  debug
+>
+</DeviceDownloadCard>
+
+</template>
 </Device>
