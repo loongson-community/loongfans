@@ -13,12 +13,25 @@
           {{ tag }}
         </div>
       </div>
+      <Button
+        v-if="showCompareButton"
+        class="floating-button"
+        :label="
+          isComparing
+            ? $t('chips.buttons.remove_compare')
+            : $t('chips.buttons.add_compare')
+        "
+        @click.prevent.stop="toggleCompare"
+      />
     </div>
   </a>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
+import { useI18n } from "vue-i18n";
+import { Button } from "primevue";
+import { useToast } from "primevue/usetoast";
 
 const props = defineProps({
   name: String,
@@ -26,9 +39,46 @@ const props = defineProps({
   href: String,
   image: String,
   tags: String,
+  showCompareButton: Boolean,
 });
 
+const { t } = useI18n();
+const toast = useToast();
+
 const tags = computed(() => props.tags?.split(",").map((i) => i.trim()));
+
+// #region FIXME: to be refactor
+const compareList = ref(
+  JSON.parse(localStorage.getItem("cpuCompareList") || "[]")
+);
+const isComparing = computed(() => {
+  return compareList.value.includes(props.name);
+});
+
+const toggleCompare = () => {
+  compareList.value = JSON.parse(
+    localStorage.getItem("cpuCompareList") || "[]"
+  );
+  if (isComparing.value) {
+    compareList.value = compareList.value.filter((id) => id !== props.name);
+  } else {
+    if (compareList.value.length < 4) {
+      // Limit to 4 chips for comparison
+      compareList.value.push(props.name);
+    } else {
+      toast.add({
+        severity: "info",
+        summary: t("chips.notice"),
+        detail: t("chips.up_to_four_chips"),
+        life: 3000,
+      });
+      return;
+    }
+  }
+  localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value));
+  window.dispatchEvent(new CustomEvent("cpuCompareListUpdated"));
+};
+// #endregion
 </script>
 
 <style scoped>
@@ -72,6 +122,7 @@ const tags = computed(() => props.tags?.split(",").map((i) => i.trim()));
   justify-content: space-between;
   padding-block: 8px;
   min-width: 200px;
+  position: relative;
 }
 
 .name {
@@ -97,5 +148,25 @@ const tags = computed(() => props.tags?.split(",").map((i) => i.trim()));
   border-color: #8d8d8d;
   border-radius: 8px;
   font-size: 0.9em;
+}
+
+.floating-button {
+  opacity: 0;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .floating-button {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .floating-button {
+    display: none;
+  }
 }
 </style>

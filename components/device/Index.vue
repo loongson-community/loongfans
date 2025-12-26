@@ -12,6 +12,7 @@
           :image="device.image"
           :spec="device.spec"
           :tags="device.tags"
+          :show-compare-button="showCompareButton"
         />
       </div>
     </template>
@@ -22,7 +23,7 @@
 import Card from "./Card.vue";
 import type { DeviceFamily } from "../../.vitepress/locales/zh/devices";
 
-defineProps<{data: DeviceFamily[]}>();
+defineProps<{data: DeviceFamily[], showCompareButton: boolean}>();
 </script>
 
 <style>
