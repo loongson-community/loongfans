@@ -136,7 +136,7 @@ export const osDataList = [
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
-    tags: ["社区", "商业", "服务器"],
+    tags: ["商业", "服务器"],
   },
   {
     name: "Nix4Loong",
