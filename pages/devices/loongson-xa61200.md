@@ -54,7 +54,37 @@ pageSubTitle: 龙芯 XA61200
   latest
 >
 
-IDK what to write here.
+新增 YT6801 网卡固件驱动、自定义风扇曲线、快速启动及 TPM 支持等新功能，并修复睡眠时的缓存同步问题，提高可靠性。
+
+<template #detail>
+本次更新的详细更改如下（摘自 [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware)）：
+
+1.  Add YT6801UndiDxe Support.
+2.  Use 128bit to distinguish different ChipName.
+3.  UI: Add UsbXhci Controller Switch.
+5.  UI: Add SmartFan Config.
+    REF: #98
+6.  Add support for a range of chip models.
+7.  UI: Add FastBoot option.
+8.  Add SuperIo Virtual Bus.
+9.  Optimize StatusCode.
+10. Add Tpm Support.
+11. Optimize 3rd OptionRom process.
+12. UpdateFwDxe: Add inspection rules.
+13. Optimize language selection function.
+14. AcpiStrSleep: Fix cache synchronization memory.
+    REF: #88
+15. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
+16. Update mem code to V3.35.
+17. UI: Add real-time display of temperature.
+18. Information: Display SATA DVD info in UI Setup
+19. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
+20. Add 4M/8M flash compatibility.
+21. Add Smbios 32/64bit tables.
+22. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
+23. Transfer frequency points to the kernel based on different chip models.
+24. some bug fixs.
+</template>
 
 </DeviceDownloadCard>
 
@@ -69,7 +99,37 @@ IDK what to write here.
   debug
 >
 
-IDK what to write here.
+新增 YT6801 网卡固件驱动、自定义风扇曲线、快速启动及 TPM 支持等新功能，并修复睡眠时的缓存同步问题，提高可靠性。
+
+<template #detail>
+本次更新的详细更改如下（摘自 [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware)）：
+
+1.  Add YT6801UndiDxe Support.
+2.  Use 128bit to distinguish different ChipName.
+3.  UI: Add UsbXhci Controller Switch.
+5.  UI: Add SmartFan Config.
+    REF: #98
+6.  Add support for a range of chip models.
+7.  UI: Add FastBoot option.
+8.  Add SuperIo Virtual Bus.
+9.  Optimize StatusCode.
+10. Add Tpm Support.
+11. Optimize 3rd OptionRom process.
+12. UpdateFwDxe: Add inspection rules.
+13. Optimize language selection function.
+14. AcpiStrSleep: Fix cache synchronization memory.
+    REF: #88
+15. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
+16. Update mem code to V3.35.
+17. UI: Add real-time display of temperature.
+18. Information: Display SATA DVD info in UI Setup
+19. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
+20. Add 4M/8M flash compatibility.
+21. Add Smbios 32/64bit tables.
+22. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
+23. Transfer frequency points to the kernel based on different chip models.
+24. some bug fixs.
+</template>
 
 </DeviceDownloadCard>
 

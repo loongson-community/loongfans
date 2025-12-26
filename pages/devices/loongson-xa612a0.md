@@ -56,8 +56,11 @@ pageSubTitle: 龙芯 XA612A0
   latest
 >
 
-- 新增 GPU 仿真开关
-  - 若使用高端显卡，请关闭此选项，因 BIOS 仅提供 7A 显示控制器。
+新增 GPU 仿真开关
+
+<template #detail>
+若使用 AMD RDNA 系列显卡，请关闭此选项，使得 BIOS 仅提供 7A 显示控制器，绕过仿真流程。
+</template>
 
 </DeviceDownloadCard>
 
@@ -72,8 +75,11 @@ pageSubTitle: 龙芯 XA612A0
   debug
 >
 
-- 新增 GPU 仿真开关
-  - 若使用高端显卡，请关闭此选项，因 BIOS 仅提供 7A 显示控制器。
+新增 GPU 仿真开关
+
+<template #detail>
+若使用 AMD RDNA 系列显卡，请关闭此选项，使得 BIOS 仅提供 7A 显示控制器，绕过仿真流程。
+</template>
 
 </DeviceDownloadCard>
 
