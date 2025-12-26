@@ -1,7 +1,6 @@
 import { devices } from './zh/devices';
 import chips from './zh/chips';
 import help from './zh/help';
-import { devices } from './zh/devices'
 import { osDataList } from './zh/os'
 
 export default {
