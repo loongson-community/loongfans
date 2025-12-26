@@ -72,7 +72,7 @@ For processor specifications, details, and comparisons, please see:
 
 ### Common Board Models
 
-The following are some of the common board models currently available. For board specifications, please see the [Product Specification Database](/en/pages/devices):
+The following are some of the common board models currently available. For board specifications, please see the [Product Database](/en/pages/devices):
 
 - Loongson 3C6000/S: AC612A0_V1.1
 - Loongson 3B6000: XB612B0_V1.1
