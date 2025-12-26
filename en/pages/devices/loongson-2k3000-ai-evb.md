@@ -1,7 +1,7 @@
 ---
 layout: page
 returnLink: /en/pages/devices
-pageTitle: Product Specification Database
+pageTitle: Product Database
 pageSubTitle: Loongson 2K3000 AI evaluation board
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 returnLink: /en/pages/devices
-pageTitle: Product Specification Database
+pageTitle: Product Database
 pageSubTitle: Morefine M700S NUC
 ---
 

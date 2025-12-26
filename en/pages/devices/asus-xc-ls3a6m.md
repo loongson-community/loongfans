@@ -1,7 +1,7 @@
 ---
 layout: page
 returnLink: /en/pages/devices
-pageTitle: Product Specification Database
+pageTitle: Product Database
 pageSubTitle: ASUS XC-LS3A6M
 ---
 
