@@ -10,7 +10,7 @@ export const osDataList = [
   {
     name: "Alpine Linux",
     description:
-      "基于 musl libc 和 busybox 的，注重安全性的轻量级 Linux 发行版。",
+      "基于 musl libc 和 BusyBox 的，注重安全性的轻量级 Linux 发行版",
     href: "https://www.alpinelinux.org",
     // https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
     image: "/images/os/alpine.svg",
@@ -28,7 +28,7 @@ export const osDataList = [
   {
     name: "安同 OS",
     description:
-      "以“简明可靠”为设计及维护目标的，面向有一定 Linux 使用经验用户的发行版。",
+      "以“简明可靠”为设计及维护目标的，面向有一定 Linux 使用经验用户的发行版",
     href: "https://aosc.io/aosc-os",
     // https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc-os-kinfocenter.svg
     image: "/images/os/aosc.svg",
@@ -37,14 +37,14 @@ export const osDataList = [
   {
     name: "Arch Linux for Loong64",
     description:
-      "试图保持易用性的，可定制的轻量级 Linux 发行版。",
+      "试图保持易用性的，可定制的轻量级 Linux 发行版",
     href: "https://loongarchlinux.lcpu.dev/",
     image: "/images/os/loongarchlinux.png",
     tags: ["滚动更新"],
   },
   {
     name: "CLFS for LoongArch",
-    description: "介绍如何从源代码完全交叉编译一个 Linux 发行版。",
+    description: "介绍如何从源代码完全交叉编译一个 Linux 发行版",
     href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch",
     image: "/images/os/lfs.svg",
     tags: ["DIY"],
@@ -52,7 +52,7 @@ export const osDataList = [
   {
     name: "Debian",
     description:
-      "全功能的，可自由使用和分发的 Linux 发行版。",
+      "全功能的，可自由使用和分发的 Linux 发行版",
     href: "https://www.debian.org",
     // https://www.debian.org/logos/openlogo-nd.svg
     image: "/images/os/debian.svg",
@@ -61,7 +61,7 @@ export const osDataList = [
   {
     name: "deepin",
     description:
-      "新手友好的桌面 Linux 发行版。",
+      "新手友好的桌面 Linux 发行版",
     href: "https://www.deepin.org",
     // https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
     image: "/images/os/deepin.svg",
@@ -70,7 +70,7 @@ export const osDataList = [
   {
     name: "Fedora Remix LoongArch",
     description:
-      "面向开发者和内容创作者的桌面发行版。",
+      "面向开发者和内容创作者的桌面发行版",
     href: "https://github.com/fedora-remix-loongarch/releases-info",
     // https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
     image: "/images/os/fedora_remix.png",
@@ -79,7 +79,7 @@ export const osDataList = [
   {
     name: "Gentoo",
     description:
-      "高度可定制的，基于源代码的 Linux 发行版。",
+      "高度可定制的，基于源代码的 Linux 发行版",
     href: "https://www.gentoo.org",
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
@@ -88,7 +88,7 @@ export const osDataList = [
   {
     name: "LFS 龙架构版",
     description:
-      "详细介绍如何完全从源代码构建自定义的 Linux 系统。",
+      "详细介绍如何完全从源代码构建自定义的 Linux 系统",
     href: "https://www.linuxfromscratch.org/~xry111/lfs/#loongarch",
     image: "/images/os/lfs.svg",
     tags: ["DIY"],
@@ -96,7 +96,7 @@ export const osDataList = [
   {
     name: "龙蜥操作系统",
     description:
-      "兼容 CentOS 传统操作习惯的 Linux 发行版。",
+      "兼容 CentOS 传统操作习惯的 Linux 发行版",
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
@@ -105,7 +105,7 @@ export const osDataList = [
   {
     name: "Nix4Loong",
     description:
-      "采用声明式包管理的 Linux 发行版。",
+      "采用声明式包管理的 Linux 发行版",
     href: "https://nix4loong.cn/",
     // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
     image: "/images/os/nix4loong.svg",
@@ -113,7 +113,7 @@ export const osDataList = [
   },
   {
     name: "OpenCloudOS",
-    description: "鸥栖社区维护的服务器操作系统。",
+    description: "鸥栖社区维护的服务器操作系统",
     href: "https://opencloudos.org",
     image: "/images/os/opencloudos.webp",
     tags: ["服务器", "商业"],
@@ -121,7 +121,7 @@ export const osDataList = [
   {
     name: "openEuler",
     description:
-      "面向服务器、云计算、边缘计算、嵌入式等数字基础设施的开源操作系统。",
+      "面向服务器、云计算、边缘计算、嵌入式等数字基础设施的开源操作系统",
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
@@ -129,7 +129,7 @@ export const osDataList = [
   },
   {
     name: "OpenWrt",
-    description: "面向嵌入式设备和路由器的 Linux 发行版。",
+    description: "面向嵌入式设备和路由器的 Linux 发行版",
     href: "https://openwrt.org",
     // https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
     image: "/images/os/openwrt.svg",
@@ -137,7 +137,7 @@ export const osDataList = [
   },
   {
     name: "Proxmox VE",
-    description: "面向企业虚拟化平台的全功能开源服务器管理平台，其龙架构移植由梨儿方科技完成并持续维护。",
+    description: "面向企业虚拟化平台的全功能开源服务器管理平台，其龙架构移植由梨儿方科技完成并持续维护",
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
@@ -146,7 +146,7 @@ export const osDataList = [
   {
     name: "Slackwareloong",
     description:
-      "高度可定制的，追求纯粹 UNIX 体验的 Linux 发行版。",
+      "高度可定制的，追求纯粹 UNIX 体验的 Linux 发行版",
     href: "https://www.slackware.com",
     // http://www.slackware.com/~msimons/slackware/grfx/shared/bluepiSW.jpg
     image: "/images/os/slackware.webp",
@@ -155,7 +155,7 @@ export const osDataList = [
   {
     name: "T2 SDE",
     description:
-      "基于源代码的发行版开发套件，提供为特定场景定制 Linux 发行版的工具和脚本。",
+      "基于源代码的发行版开发套件，提供为特定场景定制 Linux 发行版的工具和脚本",
     href: "https://t2linux.com",
     // https://t2linux.com/images/t2logo.png
     image: "/images/os/t2linux.png",
@@ -164,7 +164,7 @@ export const osDataList = [
   {
     name: "UOS",
     description:
-      "面向行业信息化应用的商用桌面和服务器 Linux 发行版。",
+      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
 	// TODO: I didn't find a logo w/o text, maybe remove it manually?
@@ -174,7 +174,7 @@ export const osDataList = [
   {
     name: "银河麒麟操作系统",
     description:
-      "面向行业信息化应用的商用桌面和服务器 Linux 发行版。",
+      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://www.kylinos.cn",
     image: "/images/os/kylinos.svg",
     tags: ["商业", "桌面", "服务器", "不可变"],
