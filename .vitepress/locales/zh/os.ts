@@ -176,8 +176,7 @@ export const osDataList = [
     description:
       "面向行业信息化应用的商用桌面和服务器 Linux 发行版。",
     href: "https://www.kylinos.cn",
-	// TODO: I didn't find a good logo
-    image: "/images/os/linux.svg",
+    image: "/images/os/kylinos.svg",
     tags: ["商业", "桌面", "服务器", "不可变"],
   },
   {
