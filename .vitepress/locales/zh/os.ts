@@ -14,7 +14,7 @@ export const osDataList = [
     href: "https://www.alpinelinux.org",
     // https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
     image: "/images/os/alpine.svg",
-    tags: ["容器"],
+    tags: ["社区", "容器"],
   },
   {
     name: "ALT Linux",
@@ -32,7 +32,7 @@ export const osDataList = [
     href: "https://aosc.io/aosc-os",
     // https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc-os-kinfocenter.svg
     image: "/images/os/aosc.svg",
-    tags: ["桌面", "滚动更新"],
+    tags: ["社区", "桌面", "滚动更新"],
   },
   {
     name: "Arch Linux for Loong64",
@@ -40,14 +40,14 @@ export const osDataList = [
       "试图保持易用性的，可定制的轻量级 Linux 发行版",
     href: "https://loongarchlinux.lcpu.dev/",
     image: "/images/os/loongarchlinux.png",
-    tags: ["滚动更新"],
+    tags: ["社区", "滚动更新"],
   },
   {
     name: "CLFS for LoongArch",
     description: "介绍如何从源代码完全交叉编译一个 Linux 发行版",
     href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch",
     image: "/images/os/lfs.svg",
-    tags: ["DIY"],
+    tags: ["社区", "DIY"],
   },
   {
     name: "Debian",
@@ -56,7 +56,7 @@ export const osDataList = [
     href: "https://www.debian.org",
     // https://www.debian.org/logos/openlogo-nd.svg
     image: "/images/os/debian.svg",
-    tags: [],
+    tags: ["社区"],
   },
   {
     name: "deepin",
@@ -65,7 +65,7 @@ export const osDataList = [
     href: "https://www.deepin.org",
     // https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
     image: "/images/os/deepin.svg",
-    tags: ["桌面", "不可变"],
+    tags: ["社区", "桌面", "不可变"],
   },
   {
     name: "Fedora Remix LoongArch",
@@ -74,7 +74,7 @@ export const osDataList = [
     href: "https://github.com/fedora-remix-loongarch/releases-info",
     // https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
     image: "/images/os/fedora_remix.png",
-    tags: ["桌面"],
+    tags: ["社区", "桌面"],
   },
   {
     name: "Gentoo",
@@ -83,7 +83,16 @@ export const osDataList = [
     href: "https://www.gentoo.org",
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
-    tags: ["DIY", "滚动更新"],
+    tags: ["社区", "DIY", "滚动更新"],
+  },
+  {
+    name: "开放麒麟",
+    description:
+      "新手友好的桌面 Linux 发行版",
+    href: "https://www.openkylin.top/",
+    // https://www.openkylin.top/upload/202209/1664440595.png
+    image: "/images/os/openkylin.png",
+    tags: ["社区", "桌面"],
   },
   {
     name: "LFS 龙架构版",
@@ -91,7 +100,7 @@ export const osDataList = [
       "详细介绍如何完全从源代码构建自定义的 Linux 系统",
     href: "https://www.linuxfromscratch.org/~xry111/lfs/#loongarch",
     image: "/images/os/lfs.svg",
-    tags: ["DIY"],
+    tags: ["社区", "DIY"],
   },
   {
     name: "龙蜥操作系统",
@@ -100,7 +109,7 @@ export const osDataList = [
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
-    tags: ["商业", "服务器"],
+    tags: ["社区", "商业", "服务器"],
   },
   {
     name: "Nix4Loong",
@@ -109,7 +118,7 @@ export const osDataList = [
     href: "https://nix4loong.cn/",
     // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
     image: "/images/os/nix4loong.svg",
-    tags: ["原子升级"],
+    tags: ["社区", "原子升级"],
   },
   {
     name: "OpenCloudOS",
@@ -133,7 +142,7 @@ export const osDataList = [
     href: "https://openwrt.org",
     // https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
     image: "/images/os/openwrt.svg",
-    tags: ["路由器"],
+    tags: ["社区", "路由器"],
   },
   {
     name: "Proxmox VE",
@@ -141,7 +150,7 @@ export const osDataList = [
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
-    tags: ["虚拟化", "商业"],
+    tags: ["商业", "虚拟化"],
   },
   {
     name: "Slackwareloong",
@@ -150,7 +159,7 @@ export const osDataList = [
     href: "https://www.slackware.com",
     // http://www.slackware.com/~msimons/slackware/grfx/shared/bluepiSW.jpg
     image: "/images/os/slackware.webp",
-    tags: ["滚动更新"],
+    tags: ["社区", "滚动更新"],
   },
   {
     name: "T2 SDE",
@@ -159,7 +168,7 @@ export const osDataList = [
     href: "https://t2linux.com",
     // https://t2linux.com/images/t2logo.png
     image: "/images/os/t2linux.png",
-    tags: ["DIY"],
+    tags: ["社区", "DIY"],
   },
   {
     name: "UOS",
@@ -167,9 +176,17 @@ export const osDataList = [
       "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
-	// TODO: I didn't find a logo w/o text, maybe remove it manually?
     image: "/images/os/uos.svg",
     tags: ["商业", "桌面", "服务器", "不可变"],
+  },
+  {
+    name: "新支点操作系统",
+    description:
+      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
+    href: "https://www.gd-linux.com/",
+    // https://www.gd-linux.com/
+    image: "/images/os/newstart.png",
+    tags: ["商业", "桌面", "服务器"],
   },
   {
     name: "银河麒麟操作系统",
@@ -184,6 +201,15 @@ export const osDataList = [
     description: "完全交叉编译的不可变 Linux 发行版",
     href: "https://github.com/sunhaiyong1978/Yongbao",
     image: "/images/os/linux.svg",
-    tags: ["桌面", "不可变"],
+    tags: ["社区", "桌面", "不可变"],
+  },
+  {
+    name: "中科方德操作系统",
+    description:
+      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
+    href: "https://www.nfschina.com/",
+    // https://www.nfschina.com/template/default/images/logo.svg
+    image: "/images/os/nfs.svg",
+    tags: ["商业", "桌面", "服务器"],
   },
 ] as OsData[];
