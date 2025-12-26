@@ -79,12 +79,12 @@ export default {
   },
   power: {
     title: "功耗管理",
-    shutdown_of_the_clocks: "时钟动态关闭",
+    clock_gating: "时钟动态关闭",
     frequency_scaling: "时钟动态变频",
     voltage_scaling: "主电压域动态调压",
   },
   tech: {
-    title: "先进技术",
+    title: "指令集架构规格",
     isa: "指令集",
     isa_extensions: "指令集扩展",
   },

@@ -1,6 +1,6 @@
 import { devices } from './en/devices'
 import chips from './en/chips'
-import helps from './en/helps'
+import help from './en/help'
 
 export default {
   comma: ", ",
@@ -58,6 +58,6 @@ export default {
 
   devices,
   chips,
-  helps
+  help
 }
 

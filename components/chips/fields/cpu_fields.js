@@ -53,7 +53,7 @@ export default {
         size: 'size'
     },
     power: {
-        shutdown_of_the_clocks: 'shutdown_of_the_clocks',
+        clock_gating: 'clock_gating',
         frequency_scaling: 'frequency_scaling',
         voltage_scaling: 'voltage_scaling'
     },
