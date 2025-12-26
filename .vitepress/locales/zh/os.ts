@@ -17,6 +17,15 @@ export const osDataList = [
     tags: ["容器"],
   },
   {
+    name: "ALT Linux",
+    description:
+      "基于 RPM 软件包及 APT-RPM 软件包管理前端的商业 Linux 发行版",
+    href: "https://en.altlinux.org/Main_Page",
+    // https://www.altlinux.org/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Alt_linux_logo.svg
+    image: "/images/os/alt.svg",
+    tags: ["商业"],
+  },
+  {
     name: "安同 OS",
     description:
       "以“简明可靠”为设计及维护目标的，面向有一定 Linux 使用经验用户的发行版。",
