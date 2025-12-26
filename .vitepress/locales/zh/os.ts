@@ -21,7 +21,7 @@ export const osDataList = [
     description:
       "以“简明可靠”为设计及维护目标的，面向有一定 Linux 使用经验用户的发行版。",
     href: "https://aosc.io/aosc-os",
-    // https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc.svg
+    // https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc-os-kinfocenter.svg
     image: "/images/os/aosc.svg",
     tags: ["桌面", "滚动更新"],
   },
