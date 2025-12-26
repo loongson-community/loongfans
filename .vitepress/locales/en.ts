@@ -9,7 +9,7 @@ export default {
   beginnerResources: 'Loongson 101',
   introToLoongson: 'Loongson: An Introduction',
   usageGuides: 'FAQ & Troubleshooting Guides',
-  devGuides: 'Development Guides',
+  devGuides: 'Developer\'s Guide',
   supportMaterials: 'Support Materials',
   contact: 'Contact',
   chipsData: 'Chips Data',
