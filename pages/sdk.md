@@ -32,7 +32,7 @@ import SdkIndex from "../components/sdk/Index.vue"
 GCC 及 Binutils 已正式支持龙架构，您可以通过发行版仓库直接安装、下载二进制或交叉编译等方式安装该工具链。
 
 ::: tip
-请注意：GCC 和 Binutils 后续版本引入了对龙架构平台的支持增强，尤其是 GCC 14 引入了龙架构向量指令集支持、Binutils 2.41 引入了链接器松弛 (Relaxation) 支持及 medium 代码模型支持，对大规模软件项目的支持更佳，均属于关键功能更新。如有可能，请更新到至少如上版本。
+请注意：GCC 和 Binutils 后续版本引入了对龙架构平台的支持增强，尤其是 GCC 14 引入了龙架构向量指令集支持、Binutils 2.41 引入了链接器松弛 (Relaxation) 支持，而后 GCC 16 引入了 medium 代码模型支持，对大规模软件项目的支持更佳，均属于关键功能更新。如有可能，请更新到至少如上版本。
 
 如果您希望为软件项目发布通用二进制或正在维护 Linux 发行版，请注意阅读[《龙架构软件开发与构建约定》](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc)中的相关规范约束。
 :::
@@ -251,14 +251,14 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 
 | 描述 | 类型 |  对应配置项 | 链接 | 备注 |
 |------|------|-------------|------|------|
-| PixArt PS/2 总线设备支持 | 新功能 | `MOUSE_PS2_PIXART` (bool: y/n) | [1](https://lore.kernel.org/loongarch/20251127080203.3218018-1-zhoubinbin@loongson.cn/) | 用于清华同方超锐 L860-T2、卓怡恒通 L71 等基于 3A5000 及 3A6000 的笔记本，可解决这些设备上触摸板被错误识别为 PS/2 鼠标，导致手势失败的问题 |
+| PixArt PS/2 总线设备支持 | 新功能 | `MOUSE_PS2_PIXART` (bool: y/n) | [1](https://lore.kernel.org/loongarch/20251127080203.3218018-1-zhoubinbin@loongson.cn/) | 用于清华同方超锐 L860-T2、卓怡恒通 L71 等基于 3A5000 及 3A6000 的笔记本，可解决这些设备上触摸板被错误识别为 PS/2 鼠标，导致手势功能及手掌探测失效 |
 | HWMon（如温控等硬件监控功能）支持，可为龙芯 3 号家族提供处理器温控支持 | 新功能 | `CPU_HWMON` (bool: y/n) | [1](https://github.com/chenhuacai/linux/commit/2a6c1c74d93a21613a523aebc6494d654f35cf1a) | 不包括 7A 桥片监控支持；该补丁可能在 2K3000/3B6000M 等 SoC 平台上导致 `sensors(1)` 读出错误的温度传感器及数据 |
 | 多通道 DMA 支持 | 新功能 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
 | 2K3000/3B6000M 平台 CAN-FD 支持 | 新功能 | `CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/905bf46bcebfb) | 须搭配多通道 DMA 支持补丁使用 |
 | BPI1000/1001（“旧世界”）固件平台支持 | 新功能 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/06e031656e659), [2](https://github.com/AOSC-Tracking/linux/commit/6a2eb415543d7), [3](https://github.com/AOSC-Tracking/linux/commit/56209fafa1832), [4](https://github.com/AOSC-Tracking/linux/commit/85a8b0edaf388), [5](https://github.com/AOSC-Tracking/linux/commit/16f5059f8b43d), [6](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/ecd26b294d80e), [8](https://github.com/AOSC-Tracking/linux/commit/1c92272af179f) | 在联想开天 M540z、国光 3C5000L 四路服务器及部分使用 2020 - 2022 年份昆仑固件的平台上须打上，否则无法启动 |
 | 修复部分 3B6000 及 3C6000 家族处理器 PCIe 总线速率错误标记为 PCIe 1.0 的问题 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/ae2697f19a371) | 步进、批次影响范围不明，详见[此处说明](@/pages/guides/errata-desktop-and-server.html#早期-3b6000-3c6000-处理器步进-pcie-速率协商问题) |
 | 规避 DSDT 表中 GPIO 使用了不符合《龙芯 CPU 统一系统架构规范》规定的 `gsi_idx_map` 中断定义，导致无法使用 GPIO 作为中断源、部分笔记本触摸板不可用的问题 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/71068c266d426) | 原则上不影响 2K3000/3B6000M 及后续产品 |
-| 规避 AMD GCN 1.0 - 4.0 显卡在龙架构平台上时有驱动崩溃、复位和锁死的问题 | 规避 | 无 | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | 机理不明（属于实证型补丁）；deepin 等商用 6.6 内核中包含更为激进（但同样机理不明）的补丁集，参见[该 deeepin 合并请求](https://github.com/deepin-community/kernel/pull/1215) |
+| 规避 AMD GCN 1.0 - 4.0 显卡在龙架构平台上时有驱动崩溃、复位和锁死的问题 | 规避 | 无 | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | 机理不明（属于实证型补丁）；deepin 等商用 6.6 内核中包含更为激进（但同样机理不明）的补丁集，参见[该 deeepin 拉取请求](https://github.com/deepin-community/kernel/pull/1215) |
 | 规避 AMD "radeon" 显卡驱动（用于 TeraScale 2 及更早的显卡）在 7A 转出的 PCIe 总线上可能出现数据错误的问题 | 规避 | 无 | [1](https://github.com/chenhuacai/linux/commit/6266d0082b020ad68a3b3c6f314ba299b9d06d3d), [2](https://github.com/AOSC-Tracking/linux/commit/3b730340dee61) | 机理不明，但的确有效；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
 | 在 ACPI 初始化代码中注册 7A2000 桥片中的 3 号 PWM 控制器 `LOON0006:03` 为 `gsgpu_backlight`，以支持 LoongGPU 驱动的背光调节 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/6a22acfd684e4) | 该补丁是 LoongGPU 背光支持的前序补丁，LoongGPU 驱动相关补丁请见 [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/) |
 | 启用 USB root hub 的“远程唤醒”（如 USB 键盘、鼠标等输入设备）支持 | 规避 | 无 | [1](https://lore.kernel.org/all/20250131100630.342995-1-chenhuacai@loongson.cn/), [2](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/a683c47758586) | 加入该补丁后可使用键盘唤醒处于 ACPI S3 状态的龙架构设备，但已知会造成部分 x86 笔记本无法睡眠；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
@@ -274,7 +274,7 @@ Docker 软件已正式支持龙架构，您可以通过 Linux 发行版软件源
 |----------|----------|
 | 安同 OS | `oma install docker` |
 | Arch Linux | `sudo pacman -S docker` |
-| Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install docker` |
+| Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install docker.io` |
 | Fedora LoongArch Remix、openEuler、Anolis OS、OpenCloudOS 等 Red Hat 系发行版 | `sudo dnf install docker` |
 
 ::: tip
@@ -290,7 +290,7 @@ Docker 软件已正式支持龙架构，您可以通过 Linux 发行版软件源
 
 **GitHub Actions**
 
-目前 GitHub Actions Runner 由于 [NuGet 缺少龙架构支持](https://github.com/dotnet/sdk/issues/42248)，暂时无法推进二进制发布。如希望自行编译部署该 CI 代理，可参考此[合并请求](https://github.com/actions/runner/pull/3928)。
+目前 GitHub Actions Runner 由于 [NuGet 缺少龙架构支持](https://github.com/dotnet/sdk/issues/42248)，暂时无法推进二进制发布。如希望自行编译部署该 CI 代理，可参考此[拉取请求](https://github.com/actions/runner/pull/3928)。
 
 **GitLab Runner**
 
@@ -302,7 +302,7 @@ Gitea act_runner 已正式支持龙架构，但暂未提供龙架构二进制，
 
 **Forgejo Runner**
 
-Forgejo Runner 暂未合入龙架构支持，如希望自行编译部署该 CI 代理，可参考此[合并请求](https://code.forgejo.org/forgejo/runner/pulls/1144)。
+Forgejo Runner 暂未合入龙架构支持，如希望自行编译部署该 CI 代理，可参考此[拉取请求](https://code.forgejo.org/forgejo/runner/pulls/1144)。
 
 **Sourcehut**
 
