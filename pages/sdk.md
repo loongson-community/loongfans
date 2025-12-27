@@ -261,7 +261,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | 规避 AMD GCN 1.0 - 4.0 显卡在龙架构平台上时有驱动崩溃、复位和锁死的问题 | 规避 | 无 | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | 机理不明（属于实证型补丁）；deepin 等商用 6.6 内核中包含更为激进（但同样机理不明）的补丁集，参见[该 deeepin 拉取请求](https://github.com/deepin-community/kernel/pull/1215) |
 | 规避 AMD "radeon" 显卡驱动（用于 TeraScale 2 及更早的显卡）在 7A 转出的 PCIe 总线上可能出现数据错误的问题 | 规避 | 无 | [1](https://github.com/chenhuacai/linux/commit/6266d0082b020ad68a3b3c6f314ba299b9d06d3d), [2](https://github.com/AOSC-Tracking/linux/commit/3b730340dee61) | 机理不明，但的确有效；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
 | 在 ACPI 初始化代码中注册 7A2000 桥片中的 3 号 PWM 控制器 `LOON0006:03` 为 `gsgpu_backlight`，以支持 LoongGPU 驱动的背光调节 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/6a22acfd684e4) | 该补丁是 LoongGPU 背光支持的前序补丁，LoongGPU 驱动相关补丁请见 [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/) |
-| 启用 USB root hub 的“远程唤醒”（如 USB 键盘、鼠标等输入设备）支持 | 规避 | 无 | [1](https://lore.kernel.org/all/20250131100630.342995-1-chenhuacai@loongson.cn/), [2](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/a683c47758586) | 加入该补丁后可使用键盘唤醒处于 ACPI S3 状态的龙架构设备，但已知会造成部分 x86 笔记本无法睡眠；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
+| 启用 USB root hub 的“远程唤醒”（如 USB 键盘、鼠标等输入设备）支持 | 规避 | 无 | [1](https://lore.kernel.org/all/20250131100630.342995-1-chenhuacai@loongson.cn/), [2](https://github.com/AOSC-Tracking/linux/commit/a683c47758586) | 加入该补丁后可使用键盘唤醒处于 ACPI S3 状态的龙架构设备，但已知会造成部分 x86 笔记本无法睡眠；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
 
 
 </template>
