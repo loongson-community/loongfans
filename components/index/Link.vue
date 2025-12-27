@@ -65,6 +65,7 @@ const target = props.href?.startsWith("http") ? "_blank" : undefined;
 
 .extra-icon {
   margin-left: 4px;
+  flex-shrink: 0;
 }
 
 .qr-wrapper {
