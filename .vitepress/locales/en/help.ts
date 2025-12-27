@@ -24,7 +24,8 @@ export default {
         Note: PCI Express 4.0 support is implemented on the motherboard and firmware level. PLease contact your device manufacturer for details.`,
         d2d_name: `Die-to-Die Connection refers to the technology with which multiple processor dies interconnect.
 
-        Loongson Coherent Link is an in-house die-to-die connection, bringing lower latency and higher bandwidth than HyperTransport 3.0. HyperTransport is a high-speed, low-latency, and point-to-point serial/parallel bus, usually used to form connections between processors, chipsets, memory controllers, and I/O peripherals.`
+        Loongson Coherent Link is an in-house die-to-die connection, bringing lower latency and higher bandwidth than HyperTransport 3.0.
+        HyperTransport is a high-speed, low-latency, and point-to-point serial/parallel bus, usually used to form connections between processors, chipsets, memory controllers, and I/O peripherals.`
     },
     package: {
         temperature: "Temperature range refers to the range of temperature the surface of the chip package is allowed to reach.",
