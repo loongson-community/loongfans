@@ -24,7 +24,8 @@ export default {
         请注意：对于 PCI Express 4.0 的支持取决于主板和对应固件的支持，若有疑问请联系相关厂商。`,
         d2d_name: `片间互联技术指处理器所支持的互联技术名称。
 
-        龙链 (Loongson Coherent Link) 是由龙芯自研的片间互联技术，相比 HyperTransport 3.0，延迟更低，带宽更高；HyperTransport 是一种高速、低延迟、点对点的串行/并行总线技术，主要用于连接计算机内部的处理器、芯片组、内存控制器和 I/O 设备。`
+        龙链 (Loongson Coherent Link) 是由龙芯自研的片间互联技术，相比 HyperTransport 3.0，延迟更低，带宽更高；
+        HyperTransport 是一种高速、低延迟、点对点的串行/并行总线技术，主要用于连接计算机内部的处理器、芯片组、内存控制器和 I/O 设备。`
     },
     package: {
         temperature: "壳温范围指处理器外壳表面允许达到的温度区间。",

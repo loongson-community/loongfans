@@ -166,7 +166,7 @@
                                         <span v-if="key === 'd2d'">{{ $t(`chips.exp.d2d`) }}</span>
                                         <span v-else-if="key === 'd2d_name'">{{ $t(`chips.exp.d2d_name`) }}</span>
                                         <span v-else>{{ $t(`chips.exp.${key}`) }}</span>
-                                        <a v-if="['io_name', 'io_rev', 'd2d', 'd2d_name'].includes(key)" @click="showHelpDialog('exp.' + key, 'exp_'+key)">
+                                        <a v-if="['io_name', 'io_rev', 'd2d_name'].includes(key)" @click="showHelpDialog('exp.' + key, 'exp_'+key)">
                                             <MaterialSymbolsHelpOutline />
                                         </a>
                                     </label>
