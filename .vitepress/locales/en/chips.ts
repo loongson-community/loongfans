@@ -74,7 +74,7 @@ export default {
   package: {
     title: "Package Specifications",
     socket: "Socket",
-    temperature: "Case Temperature",
+    temperature: "Temperature Range",
     size: "Package Size",
   },
   power: {
