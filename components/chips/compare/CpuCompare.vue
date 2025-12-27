@@ -489,10 +489,12 @@
                         class="compare-cell"
                         :class="{ 'same-as-first': isSame(chip, 'technologies.isa_extensions') }"
                     >
-                        <!-- {{ chip.technologies.isa_extensions }} -->
-                        <span id="isa-info-compare" v-for="(isa_name) in chip.technologies.isa_extensions">
-                            {{ isa_name }}
-                        </span>
+                        <template v-if="chip.technologies.isa_extensions">
+                            <span id="isa-info-compare" v-for="(isa_name) in chip.technologies.isa_extensions">
+                                {{ isa_name }}
+                            </span>
+                        </template>
+                        <span v-else>N/A</span>
                     </div>
                 </div>
             </div>

@@ -265,12 +265,16 @@
                                         </a>
                                     </label>
                                     <div class="value">
-                                        <span id="isa-info" v-if="key === 'isa_extensions'" v-for="(isa_name) in chipData.technologies[key]">
-                                            <!-- 这里请不要暂时换行，会渲染多余的空格 -->
-                                            {{ isa_name }}<a @click="showHelpDialog('isa.' + isa_name, 'tech_isa_'+isa_name)">
-                                                <sup><MaterialSymbolsHelpOutline /></sup>
-                                            </a>
-                                        </span>
+                                        <template v-if="key === 'isa_extensions'">
+                                            <span id="isa-info" v-for="(isa_name) in chipData.technologies[key]">
+                                                <!-- 这里请不要暂时换行，会渲染多余的空格 -->
+                                                {{ isa_name }}<a @click="showHelpDialog('isa.' + isa_name, 'tech_isa_'+isa_name)">
+                                                    <sup><MaterialSymbolsHelpOutline /></sup>
+                                                </a>
+                                            </span>
+                                            <span v-if="!chipData.technologies[key]">N/A</span>
+                                            <!-- <span>N/A</span> -->
+                                        </template>
                                         <span v-else>{{ chipData.technologies[key] }}</span>
                                     </div>
                                 </div>
