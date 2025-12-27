@@ -8,7 +8,9 @@
                 <Button :label="isComparing
                     ? $t('chips.buttons.remove_compare')
                     : $t('chips.buttons.add_compare')
-                    " @click="toggleCompare" />
+                    " @click="toggleCompare"
+                    v-if="!props.fields.chipset"
+                />
             </div>
         </div>
 
