@@ -56,11 +56,11 @@ export const exp_io_rev = defineComponent({
   }
 })
 
-export const exp_d2d = defineComponent({
-  setup() {
-    return () => h('p', t("help.exp.d2d"));
-  }
-})
+// export const exp_d2d = defineComponent({
+//   setup() {
+//     return () => h('p', t("help.exp.d2d"));
+//   }
+// })
 
 export const exp_d2d_name = defineComponent({
   setup() {

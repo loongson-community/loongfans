@@ -1,5 +1,6 @@
 <template>
-  <DeviceIndex :data="chipsData" show-compare-button />
+  <DeviceIndex :data="cpuData" show-compare-button />
+  <DeviceIndex :data="chipsetData" />
 </template>
 
 <script setup lang="ts">
@@ -13,7 +14,7 @@ import type { DeviceFamily } from "../../.vitepress/locales/zh/devices";
 
 const { t, locale } = useI18n();
 
-const chipsData = [
+const cpuData = [
   {
     family: t("chips.cpu.name"),
     categories: Array.from(
@@ -33,6 +34,9 @@ const chipsData = [
         })),
     })),
   },
+] as DeviceFamily[];
+
+const chipsetData = [
   {
     family: t("chips.chipset.name"),
     categories: Array.from(

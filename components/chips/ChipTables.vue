@@ -8,7 +8,9 @@
                 <Button :label="isComparing
                     ? $t('chips.buttons.remove_compare')
                     : $t('chips.buttons.add_compare')
-                    " @click="toggleCompare" />
+                    " @click="toggleCompare"
+                    v-if="!props.fields.chipset"
+                />
             </div>
         </div>
 
@@ -164,7 +166,7 @@
                                         <span v-if="key === 'd2d'">{{ $t(`chips.exp.d2d`) }}</span>
                                         <span v-else-if="key === 'd2d_name'">{{ $t(`chips.exp.d2d_name`) }}</span>
                                         <span v-else>{{ $t(`chips.exp.${key}`) }}</span>
-                                        <a v-if="['io_name', 'io_rev', 'd2d', 'd2d_name'].includes(key)" @click="showHelpDialog('exp.' + key, 'exp_'+key)">
+                                        <a v-if="['io_name', 'io_rev', 'd2d_name'].includes(key)" @click="showHelpDialog('exp.' + key, 'exp_'+key)">
                                             <MaterialSymbolsHelpOutline />
                                         </a>
                                     </label>
@@ -263,12 +265,16 @@
                                         </a>
                                     </label>
                                     <div class="value">
-                                        <span id="isa-info" v-if="key === 'isa_extensions'" v-for="(isa_name) in chipData.technologies[key]">
-                                            <!-- 这里请不要暂时换行，会渲染多余的空格 -->
-                                            {{ isa_name }}<a @click="showHelpDialog('isa.' + isa_name, 'tech_isa_'+isa_name)">
-                                                <sup><MaterialSymbolsHelpOutline /></sup>
-                                            </a>
-                                        </span>
+                                        <template v-if="key === 'isa_extensions'">
+                                            <span id="isa-info" v-for="(isa_name) in chipData.technologies[key]">
+                                                <!-- 这里请不要暂时换行，会渲染多余的空格 -->
+                                                {{ isa_name }}<a @click="showHelpDialog('isa.' + isa_name, 'tech_isa_'+isa_name)">
+                                                    <sup><MaterialSymbolsHelpOutline /></sup>
+                                                </a>
+                                            </span>
+                                            <span v-if="!chipData.technologies[key]">N/A</span>
+                                            <!-- <span>N/A</span> -->
+                                        </template>
                                         <span v-else>{{ chipData.technologies[key] }}</span>
                                     </div>
                                 </div>
