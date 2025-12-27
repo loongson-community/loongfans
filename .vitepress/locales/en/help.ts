@@ -27,7 +27,7 @@ export default {
         Loongson Coherent Link is an in-house die-to-die connection, bringing lower latency and higher bandwidth than HyperTransport 3.0. HyperTransport is a high-speed, low-latency, and point-to-point serial/parallel bus, usually used to form connections between processors, chipsets, memory controllers, and I/O peripherals.`
     },
     package: {
-        temperature: "Case Temperature refers to the range of temperature the surface of the chip package is allowed to reach.",
+        temperature: "Temperature range refers to the range of temperature the surface of the chip package is allowed to reach.",
         t_case: " (Case Temperature) refers to the maximal temperature the surface of the chip temperature is allowed to reach.\n\nNote: ",
         t_junction: "(Junction Temperature) refers to the maximal temperature the internals of the chip (and transistors) are allowed to operate under.\n\nNote: ",
         t_notice: "dictates the performance requirements for the cooling devices and ambient requirements required for this chip."
