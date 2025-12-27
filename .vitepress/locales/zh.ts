@@ -31,7 +31,7 @@ export default {
   language: '语言',
   siteSource: '站点源码',
   reportIssue: '报告问题',
-  aboutCommunity: '关于龙芯爱好者社区',
+  aboutCommunity: '关于社区',
   copyright: '版权所有',
   communityName: '龙芯爱好者社区',
 
