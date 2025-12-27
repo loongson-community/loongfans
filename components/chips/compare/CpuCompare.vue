@@ -477,9 +477,9 @@
                     <div
                         v-for="chip in compareChips"
                         class="compare-cell"
-                        :class="{ 'same-as-first': isSame(chip, 'technologies.set') }"
+                        :class="{ 'same-as-first': isSame(chip, 'technologies.isa') }"
                     >
-                        {{ chip.technologies.set }}
+                        {{ chip.technologies.isa }}
                     </div>
                 </div>
                 <div class="compare-row">
@@ -487,9 +487,12 @@
                     <div
                         v-for="chip in compareChips"
                         class="compare-cell"
-                        :class="{ 'same-as-first': isSame(chip, 'technologies.set_extensions') }"
+                        :class="{ 'same-as-first': isSame(chip, 'technologies.isa_extensions') }"
                     >
-                        {{ chip.technologies.set_extensions }}
+                        <!-- {{ chip.technologies.isa_extensions }} -->
+                        <span id="isa-info-compare" v-for="(isa_name) in chip.technologies.isa_extensions">
+                            {{ isa_name }}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -502,6 +505,9 @@
 
 <script setup>
     import { ref, computed, onMounted } from "vue";
+    import { useI18n } from "vue-i18n";
+    const { t } = useI18n();
+
     import chipsJson from "../../../data/chips.min.json";
     import Button from "primevue/button";
 
@@ -538,6 +544,8 @@
         const currentValue = getFieldValue(chip, fieldPath);
         return JSON.stringify(firstValue) === JSON.stringify(currentValue);
     };
+
+    const isaStyleVariables = computed(() => `"${t("comma")}"`)
 </script>
 
 <style scoped>
@@ -581,6 +589,21 @@
         border: 1px solid #ebeef5;
         min-width: 200px;
         position: relative;
+    }
+
+    .compare-cell #isa-info-compare {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        white-space: pre-wrap;
+        &:after{
+            content: v-bind(isaStyleVariables)
+        };
+        &:last-child {
+            &:after{
+                content: '';
+            }
+        }
     }
 
     .compare-cell:last-child {
