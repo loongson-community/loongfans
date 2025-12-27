@@ -23,7 +23,7 @@ export const osDataList = [
     href: "https://en.altlinux.org/Main_Page",
     // https://www.altlinux.org/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Alt_linux_logo.svg
     image: "/images/os/alt.svg",
-    tags: ["商业"],
+    tags: ["可获取商业支持"],
   },
   {
     name: "安同 OS",
@@ -110,7 +110,7 @@ export const osDataList = [
     href: "https://www.chinaredflag.cn/",
     // https://commons.wikimedia.org/wiki/File:RedFlag_Linux-Logo.svg
     image: "/images/os/redflag.svg",
-    tags: ["商业", "桌面", "服务器"],
+    tags: ["可获取商业支持", "桌面", "服务器"],
   },
   {
     name: "开放麒麟",
@@ -136,7 +136,7 @@ export const osDataList = [
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
-    tags: ["商业", "服务器"],
+    tags: ["可获取商业支持", "服务器"],
   },
   {
     name: "Nix4Loong",
@@ -152,7 +152,7 @@ export const osDataList = [
     description: "鸥栖社区维护的服务器操作系统",
     href: "https://opencloudos.org",
     image: "/images/os/opencloudos.webp",
-    tags: ["服务器", "商业"],
+    tags: ["服务器", "可获取商业支持"],
   },
   {
     name: "openEuler",
@@ -161,7 +161,7 @@ export const osDataList = [
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
-    tags: ["服务器", "商业"],
+    tags: ["服务器", "可获取商业支持"],
   },
   {
     name: "OpenWrt",
@@ -177,7 +177,7 @@ export const osDataList = [
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
-    tags: ["商业", "虚拟化"],
+    tags: ["可获取商业支持", "虚拟化"],
   },
   {
     name: "Slackwareloong",
@@ -204,7 +204,7 @@ export const osDataList = [
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
     image: "/images/os/uos.svg",
-    tags: ["商业", "桌面", "服务器", "不可变"],
+    tags: ["可获取商业支持", "桌面", "服务器", "不可变"],
   },
   {
     name: "新支点操作系统",
@@ -213,7 +213,7 @@ export const osDataList = [
     href: "https://www.gd-linux.com/",
     // https://www.gd-linux.com/
     image: "/images/os/newstart.png",
-    tags: ["商业", "桌面", "服务器"],
+    tags: ["可获取商业支持", "桌面", "服务器"],
   },
   {
     name: "银河麒麟操作系统",
@@ -221,7 +221,7 @@ export const osDataList = [
       "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://www.kylinos.cn",
     image: "/images/os/kylinos.svg",
-    tags: ["商业", "桌面", "服务器", "不可变"],
+    tags: ["可获取商业支持", "桌面", "服务器", "不可变"],
   },
   {
     name: "勇豹",
@@ -237,6 +237,6 @@ export const osDataList = [
     href: "https://www.nfschina.com/",
     // https://www.nfschina.com/template/default/images/logo.svg
     image: "/images/os/nfs.svg",
-    tags: ["商业", "桌面", "服务器"],
+    tags: ["可获取商业支持", "桌面", "服务器"],
   },
 ] as OsData[];

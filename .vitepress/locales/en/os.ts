@@ -17,7 +17,7 @@ export const osDataList = [
     href: "https://en.altlinux.org/Main_Page",
     // https://www.altlinux.org/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Alt_linux_logo.svg
     image: "/images/os/alt.svg",
-    tags: ["Commercial"],
+    tags: ["Commercial Support Available"],
   },
   {
     name: "Anolis OS",
@@ -26,7 +26,7 @@ export const osDataList = [
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
-    tags: ["Commercial", "Server"],
+    tags: ["Commercial Support Available", "Server"],
   },
   {
     name: "AOSC OS",
@@ -112,7 +112,7 @@ export const osDataList = [
       "Commercial Linux distribution for business informationization.",
     href: "https://www.kylinos.cn",
     image: "/images/os/kylinos.svg",
-    tags: ["Commercial", "Desktop", "Server", "Immutable"],
+    tags: ["Commercial Support Available", "Desktop", "Server", "Immutable"],
   },
   {
     name: "LFS LoongArch Edition",
@@ -129,7 +129,7 @@ export const osDataList = [
     href: "https://www.gd-linux.com/",
     // https://www.gd-linux.com/
     image: "/images/os/newstart.png",
-    tags: ["Commercial", "Desktop", "Server"],
+    tags: ["Commercial Support Available", "Desktop", "Server"],
   },
   {
     name: "NFS-CHINA",
@@ -138,7 +138,7 @@ export const osDataList = [
     href: "https://www.nfschina.com/",
     // https://www.nfschina.com/template/default/images/logo.svg
     image: "/images/os/nfs.svg",
-    tags: ["Commercial", "Desktop", "Server"],
+    tags: ["Commercial Support Available", "Desktop", "Server"],
   },
   {
     name: "Nix4Loong",
@@ -154,7 +154,7 @@ export const osDataList = [
     description: "Distribution for servers maintained by the OpenCloudOS community.",
     href: "https://opencloudos.org",
     image: "/images/os/opencloudos.webp",
-    tags: ["Commercial", "Server"],
+    tags: ["Commercial Support Available", "Server"],
   },
   {
     name: "openEuler",
@@ -163,7 +163,7 @@ export const osDataList = [
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
-    tags: ["Commercial", "Server"],
+    tags: ["Commercial Support Available", "Server"],
   },
   {
     name: "openKylin",
@@ -188,7 +188,7 @@ export const osDataList = [
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
-    tags: ["Commercial", "Virtualization"],
+    tags: ["Commercial Support Available", "Virtualization"],
   },
   {
     name: "RedFlag Linux",
@@ -197,7 +197,7 @@ export const osDataList = [
     href: "https://www.chinaredflag.cn/",
     // https://commons.wikimedia.org/wiki/File:RedFlag_Linux-Logo.svg
     image: "/images/os/redflag.svg",
-    tags: ["Commercial", "Desktop", "Server"],
+    tags: ["Commercial Support Available", "Desktop", "Server"],
   },
   {
     name: "Slackwareloong",
@@ -224,7 +224,7 @@ export const osDataList = [
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
     image: "/images/os/uos.svg",
-    tags: ["Commercial", "Desktop", "Server", "Immutable"],
+    tags: ["Commercial Support Available", "Desktop", "Server", "Immutable"],
   },
   {
     name: "Yongbao",
