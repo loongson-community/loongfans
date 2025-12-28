@@ -13,7 +13,7 @@ import DeviceIndex from "../../components/device/Index.vue"
 
 Loongson has many processor and board models, but they are generally sold bundled as processor + motherboard (motherboard and CPU bundle). This page documents and presents all known Loongson motherboard and CPU bundles, as well as laptop and pre-built server system information.
 
-::: info
+:::info
 For processor specifications, details, and parameter comparisons, please see:
 
 - [Chips Database](/en/pages/chips)

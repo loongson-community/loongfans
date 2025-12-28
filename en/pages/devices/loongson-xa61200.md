@@ -5,7 +5,7 @@ pageTitle: Product Database
 pageSubTitle: Loongson XA61200
 ---
 
-::: info
+:::info
 The Loongson XA61200 is a DTX (203×244mm) desktop motherboard based on Loongson 3A6000-HV.
 
 This motherboard is generally considered the reference design for all Loongson 3A6000 motherboards. In addition to Loongson Technology, many other manufacturers have launched derivative designs based on this motherboard. The motherboard was released in 2023 and is the first Loongson motherboard to reach below the CNY 2000 price point and saw general availability from common e-commerce sites.

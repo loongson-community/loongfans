@@ -5,7 +5,7 @@ pageTitle: Product Database
 pageSubTitle: Loongson 2K3000 AI evaluation board
 ---
 
-::: info
+:::info
 The Loongson 2K3000 AI Evaluation Board is a development board launched by Loongson Technology, based on Loongson 2K3000.
 :::
 

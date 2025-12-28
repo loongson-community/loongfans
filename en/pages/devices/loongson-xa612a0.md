@@ -5,7 +5,7 @@ pageTitle: Product Database
 pageSubTitle: Loongson XA612A0
 ---
 
-::: info
+:::info
 The Loongson XA612A0 is an ATX (244×305mm) desktop motherboard based on Loongson 3A6000-HV.
 
 This motherboard is the first 3A6000 motherboard released by Loongson and is generally considered an evaluation board (EVB).

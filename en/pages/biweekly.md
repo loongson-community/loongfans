@@ -9,11 +9,11 @@ The LoongArch Biweekly is a regular community meeting organized by Loongson hobb
 
 The meeting is held every other Sunday at 2:00 PM (UTC+8) on Tencent Meeting, and is simultaneously livestreamed on Bilibili page [@龙芯爱好者社区](https://space.bilibili.com/70360929). Offline meetings are also arranged from time to time.
 
-::: tip
+:::tip
 The LoongArch Biweekly currently uses Chinese as the default language, but we welcome users of other languages - many of us speak English (some even speak Russian). If you'd like to hold a session in another language, please feel free to get in touch!
 :::
 
-::: tip
+:::tip
 ### The 28th "LoongArch Biweekly" Meeting Announcement
 
 Meeting Time: 2:00 PM, January 3, 2026 (UTC+8, meeting expected to last an hour)

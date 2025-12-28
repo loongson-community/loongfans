@@ -5,7 +5,7 @@ pageTitle: Product Database
 pageSubTitle: OrangePi Nova v1.0
 ---
 
-::: info
+:::info
 The OrangePi Nova v1.0 is a Nano-ITX (120×120mm) motherboard based on Loongson 2K3000.
 :::
 

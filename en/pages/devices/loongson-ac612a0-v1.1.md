@@ -5,7 +5,7 @@ pageTitle: Product Database
 pageSubTitle: Loongson AC612A0_V1.1
 ---
 
-::: info
+:::info
 The Loongson AC612A0_V1.1 is an ATX (244×305mm) desktop/server motherboard based on Loongson 3C6000/S.
 
 This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relatively comprehensive set of interfaces and support for out-of-band management (BMC) modules for remote operation and management.
