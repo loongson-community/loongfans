@@ -18,16 +18,16 @@
 </template>
 
 <script setup>
-import IconOpenInNew from "~icons/material-symbols/open-in-new";
-import IconQrCode2 from "~icons/material-symbols/qr-code-2";
+import IconOpenInNew from "~icons/material-symbols/open-in-new"
+import IconQrCode2 from "~icons/material-symbols/qr-code-2"
 
 const props = defineProps({
   href: { type: String, required: true },
   name: { type: String, required: true },
   qrLink: String,
-});
+})
 
-const target = props.href?.startsWith("http") ? "_blank" : undefined;
+const target = props.href?.startsWith("http") ? "_blank" : undefined
 </script>
 
 <style scoped>

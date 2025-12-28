@@ -26,8 +26,8 @@
 </template>
 
 <script setup>
-import IconOpenInNew from "~icons/material-symbols/open-in-new";
-import IconQrCode2 from "~icons/material-symbols/qr-code-2";
+import IconOpenInNew from "~icons/material-symbols/open-in-new"
+import IconQrCode2 from "~icons/material-symbols/qr-code-2"
 
 defineProps({
   name: String,
@@ -35,7 +35,7 @@ defineProps({
   href: String,
   qrLink: String,
   color: String,
-});
+})
 </script>
 
 <style scoped>
@@ -54,7 +54,10 @@ defineProps({
   overflow: hidden;
   min-height: var(--height);
   margin-top: 0;
-  transition: color 0.3s ease, margin-top 0.3s ease, height 0.3s ease;
+  transition:
+    color 0.3s ease,
+    margin-top 0.3s ease,
+    height 0.3s ease;
 }
 
 .icon {
@@ -85,7 +88,10 @@ defineProps({
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease,
+    margin-top 0.3s ease;
 }
 
 .qr {

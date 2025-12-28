@@ -2,14 +2,16 @@
   <div class="tabs">
     <Tabs value="spec">
       <TabList>
-        <Tab value="spec">{{ t('deviceTabSpec') }}</Tab>
-        <Tab value="known-issues">{{ t('deviceTabKnownIssues') }}</Tab>
-        <Tab value="image">{{ t('deviceTabImage') }}</Tab>
-        <Tab value="download" v-if="$slots.download">{{ t('deviceTabDownload') }}</Tab>
+        <Tab value="spec">{{ t("deviceTabSpec") }}</Tab>
+        <Tab value="known-issues">{{ t("deviceTabKnownIssues") }}</Tab>
+        <Tab value="image">{{ t("deviceTabImage") }}</Tab>
+        <Tab value="download" v-if="$slots.download">{{
+          t("deviceTabDownload")
+        }}</Tab>
       </TabList>
       <TabPanels>
         <TabPanel value="spec">
-          <slot name="spec"/>
+          <slot name="spec" />
         </TabPanel>
         <TabPanel value="known-issues">
           <slot name="known-issues" />
@@ -18,7 +20,7 @@
           <slot name="image" />
         </TabPanel>
         <TabPanel value="download" v-if="$slots.download">
-          <slot name="download"/>
+          <slot name="download" />
         </TabPanel>
       </TabPanels>
     </Tabs>
@@ -26,14 +28,14 @@
 </template>
 
 <script setup>
-import Tabs from "primevue/tabs";
-import TabList from "primevue/tablist";
-import Tab from "primevue/tab";
-import TabPanels from "primevue/tabpanels";
-import TabPanel from "primevue/tabpanel";
-import { useI18n } from "vue-i18n";
+import Tabs from "primevue/tabs"
+import TabList from "primevue/tablist"
+import Tab from "primevue/tab"
+import TabPanels from "primevue/tabpanels"
+import TabPanel from "primevue/tabpanel"
+import { useI18n } from "vue-i18n"
 
-const { t } = useI18n();
+const { t } = useI18n()
 </script>
 
 <style scoped>

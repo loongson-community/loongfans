@@ -1,14 +1,17 @@
 <template>
-  <div v-show="showButton"
-    @click="scrollToTop" class="set_to_top"
-    :style="{ opacity: showButton ? 1 : 0 }">
-    <IconVerticalAlignTop class="icon"/>
+  <div
+    v-show="showButton"
+    @click="scrollToTop"
+    class="set_to_top"
+    :style="{ opacity: showButton ? 1 : 0 }"
+  >
+    <IconVerticalAlignTop class="icon" />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import IconVerticalAlignTop from '~icons/material-symbols/vertical-align-top'
+import { ref, onMounted, onUnmounted } from "vue"
+import IconVerticalAlignTop from "~icons/material-symbols/vertical-align-top"
 
 const showButton = ref(false)
 
@@ -19,16 +22,16 @@ const handleScroll = () => {
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   })
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  window.addEventListener("scroll", handleScroll)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener("scroll", handleScroll)
 })
 </script>
 

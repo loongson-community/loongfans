@@ -57,17 +57,17 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-import { useData } from "vitepress";
-import Link from "./index/Link.vue";
-import LinkGroup from "./index/LinkGroup.vue";
-import LinkGroupContact from "./index/LinkGroupContact.vue";
-import { useI18n } from "vue-i18n";
-import { getLocalePrefix } from "../.vitepress/utils/language";
+import { computed } from "vue"
+import { useData } from "vitepress"
+import Link from "./index/Link.vue"
+import LinkGroup from "./index/LinkGroup.vue"
+import LinkGroupContact from "./index/LinkGroupContact.vue"
+import { useI18n } from "vue-i18n"
+import { getLocalePrefix } from "../.vitepress/utils/language"
 
-const { t, locale } = useI18n();
-const { localeIndex } = useData();
-const basePath = computed(() => getLocalePrefix(localeIndex.value));
+const { t, locale } = useI18n()
+const { localeIndex } = useData()
+const basePath = computed(() => getLocalePrefix(localeIndex.value))
 </script>
 
 <style>

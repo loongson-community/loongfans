@@ -4,21 +4,21 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import DeviceIndex from "../device/Index.vue";
-import chipsJson from "../../data/chips.min.json";
-import { LANGUAGE_PREFIXES } from "../../.vitepress/utils/language";
+import { useI18n } from "vue-i18n"
+import DeviceIndex from "../device/Index.vue"
+import chipsJson from "../../data/chips.min.json"
+import { LANGUAGE_PREFIXES } from "../../.vitepress/utils/language"
 
-import type { SupportedLanguage } from "../../.vitepress/utils/language";
-import type { DeviceFamily } from "../../.vitepress/locales/zh/devices";
+import type { SupportedLanguage } from "../../.vitepress/utils/language"
+import type { DeviceFamily } from "../../.vitepress/locales/zh/devices"
 
-const { t, locale } = useI18n();
+const { t, locale } = useI18n()
 
 const cpuData = [
   {
     family: t("chips.cpu.name"),
     categories: Array.from(
-      new Set(Object.values(chipsJson.cpu).map((i) => i.basic.series))
+      new Set(Object.values(chipsJson.cpu).map((i) => i.basic.series)),
     ).map((series) => ({
       title: series,
       devices: Object.entries(chipsJson.cpu)
@@ -34,13 +34,13 @@ const cpuData = [
         })),
     })),
   },
-] as DeviceFamily[];
+] as DeviceFamily[]
 
 const chipsetData = [
   {
     family: t("chips.chipset.name"),
     categories: Array.from(
-      new Set(Object.values(chipsJson.chipset).map((i) => i.basic.series))
+      new Set(Object.values(chipsJson.chipset).map((i) => i.basic.series)),
     ).map((series) => ({
       title: series,
       devices: Object.entries(chipsJson.chipset)
@@ -55,5 +55,5 @@ const chipsetData = [
         })),
     })),
   },
-] as DeviceFamily[];
+] as DeviceFamily[]
 </script>
