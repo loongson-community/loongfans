@@ -113,6 +113,15 @@ export const osDataList = [
     tags: ["可获取商业支持", "桌面", "服务器"],
   },
   {
+    name: "开源鸿蒙",
+    description:
+      "面向嵌入式和智能终端设备的操作系统",
+    href: "https://openharmony.cn",
+    // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
+    image: "/images/os/openharmony.svg",
+    tags: ["可获取商业支持", "桌面", "嵌入式"],
+  },
+  {
     name: "开放麒麟",
     description:
       "新手友好的桌面 Linux 发行版",
@@ -137,6 +146,15 @@ export const osDataList = [
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
     tags: ["可获取商业支持", "服务器"],
+  },
+  {
+    name: "Loongnix",
+    description:
+      "龙芯中科维护的参考 Linux 发行版",
+    href: "https://www.loongnix.cn/zh/loongnix/",
+    // Found in Plymouth theme.
+    image: "/images/os/loongnix.png",
+    tags: ["可获取商业支持", "桌面", "服务器"],
   },
   {
     name: "Nix4Loong",
