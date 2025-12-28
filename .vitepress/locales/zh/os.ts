@@ -152,7 +152,7 @@ export const osDataList = [
     description: "鸥栖社区维护的服务器操作系统",
     href: "https://opencloudos.org",
     image: "/images/os/opencloudos.webp",
-    tags: ["服务器", "可获取商业支持"],
+    tags: ["可获取商业支持", "服务器"],
   },
   {
     name: "openEuler",
@@ -161,7 +161,7 @@ export const osDataList = [
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
-    tags: ["服务器", "可获取商业支持"],
+    tags: ["可获取商业支持", "服务器"],
   },
   {
     name: "OpenWrt",

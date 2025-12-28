@@ -147,7 +147,7 @@ export const osDataList = [
     href: "https://nix4loong.cn/",
     // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
     image: "/images/os/nix4loong.svg",
-    tags: ["Atomic Updates", "Community"],
+    tags: ["Community", "Atomic Updates"],
   },
   {
     name: "OpenCloudOS",
