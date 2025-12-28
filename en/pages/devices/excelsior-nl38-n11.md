@@ -5,7 +5,7 @@ pageTitle: Product Database
 pageSubTitle: Excelsior NL38-N11
 ---
 
-::: info
+:::info
 The Excelsior NL38-N11 is a 14-inch laptop based on Loongson 3A6000. Weighing approximately 1.4kg, the NL38-N11 comes equipped with a 2240×1400 (2.2K) or 1920x1200 (WUXGA) display, a variety of ports, and a battery life of about 3-4 hours.
 
 Other manufacturers have also launched derivative models based on this design.

@@ -5,7 +5,7 @@ pageTitle: 产品规格数据库
 pageSubTitle: 中科云 3B6000M 小主机
 ---
 
-::: info
+:::info
 中科云 3B6000M 小主机是一款类似 Intel NUC 规格的小型台式机，搭载 3B6000M 处理器，并提供双 HDMI 输出及双千兆 (GbE) 以太网口。
 :::
 

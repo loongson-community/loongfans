@@ -5,7 +5,7 @@ pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 XA61201
 ---
 
-::: info
+:::info
 龙芯 XA61201 是由龙芯中科推出的，基于 3A6000-HV 平台设计的 DTX (203×244mm) 台式机主板。
 
 该主板相对于 [XA61200](/pages/devices/loongson-xa61200) 主要的差异有：

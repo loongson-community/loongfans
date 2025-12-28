@@ -5,7 +5,7 @@ pageTitle: Product Database
 pageSubTitle: Loongson XB612B0_V1.1
 ---
 
-::: info
+:::info
 The Loongson XB612B0_V1.1 is an mATX (244×244mm) desktop motherboard based on Loongson 3B6000.
 
 This motherboard may come with different 3B6000 processors, including 8/12/16 cores (16/24/32 threads) models, and supports Registered ECC memory. The motherboard also provides two m.2 NVMe (PCIe 3.0 x4) 2280 interfaces, the most amount of onboard NVMe slots amongst current Loongson-based motherboards.

@@ -37,7 +37,7 @@ In 2025, Loongson's current embedded and desktop chip products includes follows:
 - Loongson 3B6000M, 2K3000: 8-core low-power processors for industrial computers, embedded devices, desktops, and mobile devices.
 - Loongson 2K0300: Single-core embedded SoC for embedded devices and for educational purposes.
 
-::: tip
+:::tip
 Loongson 3B6000M is the sister model of 2K3000, clocked slightly higher than the latter (3B6000M is clocked at 2.5GHz, 2K3000 at 2.2GHz).
 :::
 
@@ -63,7 +63,7 @@ In addition to current products, the following commonly found chips are also bas
 
 - Loongson 3A5000 (4 cores, 4 threads), 2.0 - 2.3GHz
 
-::: info
+:::info
 For processor specifications, details, and comparisons, please see:
 
 - [Loong 1-2-3 Site "Loongson Chip Parameters" Database](https://loong123.cn/chips/)

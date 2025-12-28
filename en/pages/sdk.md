@@ -20,7 +20,7 @@ Thanks to the efforts of community contributors and Loongson engineers since 202
 
 This means that the process to install various programming toolchains is now similar, if not identical, to the x86 platform - this means installing them is as easy as installing from distro repositories and with single-line command pastes!
 
-::: tip
+:::tip
 Given that ABI 2.0 (“New World”) is used by most community users and developers, this guide focuses solely on introducing installation and configuration procedures for ABI 2.0 systems. ABI 1.0 (“Old World”) is not covered here. If you are in a scenario where you have to develop for ABI 1.0, we recommend reconsidering and confirming that criterion. Should that necessity arise, please refer to the documentation from [Loongson Open Source Community (loongnix.cn)](https://www.loongnix.cn/).
 :::
 
@@ -31,7 +31,7 @@ Given that ABI 2.0 (“New World”) is used by most community users and develop
 
 GCC and Binutils officially support LoongArch. They are available directly from your distro's repository, as binaries, or may be built through cross-compilation.
 
-::: tip
+:::tip
 Note: Later versions of GCC and Binutils introduces enhanced support for LoongArch. Notably, GCC 14 introduced support for LoongArch vector extensions, whereas Binutils 2.41 introduced support for linker relaxation and, later with GCC 16, medium code model (significantly improving compatibility with larger source projects). All these represent critical functional enhancements. As such, please update them to at least the aforementioned versions.
 
 If you intend to release universal binaries for projects or maintain a Linux distribution, please carefully review the relevant specifications and constraints outlined in the [*Software Development and Build Convention for LoongArch Architectures*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
@@ -60,7 +60,7 @@ If you do not have a LoongArch device or wish to cross-compile:
 
 LLVM officially supports LoongArch. It is available directly from your distro's repository, as binaries, or may be built through cross-compilation.
 
-::: tip
+:::tip
 Note: Later versions of LLVM have introduces enhanced support for LoongArch. LLVM 18 introduced support for LoongArch vector extensions. When available, please update to this version or later.
 
 If you intend to release universal binaries for projects or maintain a Linux distribution, please carefully review the relevant specifications and constraints outlined in the [*Software Development and Build Convention for LoongArch Architectures*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
@@ -113,7 +113,7 @@ To install Node.js on common Linux distributions and operating systems:
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install nodejs` |
 | Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install nodejs` |
 
-::: tip
+:::tip
 Many Linux distributions provide multiple versions of Node.js to suit the needs of different applications and projects. Please consult distro documentation and install alternative Node.js versions as needed.
 :::
 
@@ -149,7 +149,7 @@ To install Python on common Linux distributions and operating systems:
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install python3` |
 | Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS  | `sudo dnf install python3` |
 
-::: tip
+:::tip
 Since LoongArch still lacks definition for a "manylinux" baseline, the official PyPI repository does not host binaries for LoongArch. This means that when installing PyPI modules using `pip`, the respective modules will be compiled from source and you may need to install C/C++/Rust toolchains as needed.
 
 Loongson Technology hosts a PyPI binary repository for ABI 2.0 systems at [lpypi.loongnix.cn](http://lpypi.loongnix.cn/). You may edit `/etc/pip.conf` to and specify this as the default repository. alternatively, the [loong64](https://github.com/loong64) organization on GitHub maintains an independent PyPI binary repository. For configuration procedures, please refer to [the organization's README](https://github.com/loong64#pypi-repository).
@@ -180,7 +180,7 @@ To workaround this issue, you may obtain and deploy all necessary NuGet packages
 - Microsoft.NETCore.App.Runtime.linux-loongarch64.*.nupkg
 - runtime.linux-loongarch64.Microsoft.DotNet.ILCompiler.*.nupkg
 
-::: tip
+:::tip
 The distribution provided by loongson-community/dotnet-unofficial-build categorizes the aforementioned files as "release artifacts." Please download this package to obtain the components listed above.
 :::
 
@@ -213,7 +213,7 @@ To install Java on common Linux distributions and operating systems:
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install default-jdk` |
 | Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS  | `sudo dnf install java-latest-openjdk` |
 
-::: tip
+:::tip
 Many Linux distributions provide multiple versions of OpenJDK to suit the needs of different applications and projects. Please consult distro documentation and install alternative OpenJDK versions as needed.
 :::
 
@@ -223,7 +223,7 @@ Many Linux distributions provide multiple versions of OpenJDK to suit the needs 
 
 The Linux Kernel officially supports LoongArch. Generally, Linux distributions based on ABI 2.0 utilize the upstream kernel (along with platform-specific workarounds and other patches, see below). However, some commercial distributions ship the 6.6 "longterm" kernel with an extensive set of platform-specific patches.
 
-::: tip
+:::tip
 The Linux Kernel introduced LoongArch support since version 5.19. However, to fully leverage the hardware capabilities and performance of LoongArch, please use the latest mainline kernel.
 :::
 
@@ -276,7 +276,7 @@ To install Docker on common Linux distributions and operating systems:
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install docker.io` |
 | Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install docker` |
 
-::: tip
+:::tip
 There are only few LoongArch containers available in the official Docker registry. Loongson Technology maintains a [Docker image repository targeting LoongArch ABI 2.0](https://lcr.loongnix.cn/). You can [modify your Docker configuration](https://docs.docker.com/docker-hub/image-library/mirror/) to utilize this registry as needed.
 :::
 

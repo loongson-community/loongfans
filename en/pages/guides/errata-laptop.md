@@ -7,7 +7,7 @@ pageSubTitle: Common Issues Found on Various Laptop Platforms
 
 <!--@include: @/en/parts/known-issues/touchpad-err-in-abi2.md -->
 
-::: info
+:::info
 The description above is not applicable for Lenovo KaiTian N60d-G1d laptops, as there is no known solution to non-functional touchpads on these laptops.
 :::
 

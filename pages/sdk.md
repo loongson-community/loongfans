@@ -20,7 +20,7 @@ import SdkIndex from "../components/sdk/Index.vue"
 
 这意味着，获取各类编程工具链的方式已经和 x86 平台上别无二致，不论是通过发行版还是各类编程语言、工具链的官网直接复制一键安装命令，越来越多的编程工具和环境都可以非常简便地安装了！
 
-::: tip
+:::tip
 考虑到 ABI 2.0（“新世界”）是龙架构社区用户和开发者使用的现行标准，本指南仅面向 ABI 2.0 系统介绍工具链的安装配置方法，而不再介绍 ABI 1.0（“旧世界”）系统相关信息。如果您有面向 ABI 1.0 的开发需求，我们建议您与相关项目方沟通并再次确认需求，并在确认有明确必要时，参考来自[龙芯开源社区 (loongnix.cn)](https://www.loongnix.cn/) 的相关资料。
 :::
 
@@ -31,7 +31,7 @@ import SdkIndex from "../components/sdk/Index.vue"
 
 GCC 及 Binutils 已正式支持龙架构，您可以通过发行版仓库直接安装、下载二进制或交叉编译等方式安装该工具链。
 
-::: tip
+:::tip
 请注意：GCC 和 Binutils 后续版本引入了对龙架构平台的支持增强，尤其是 GCC 14 引入了龙架构向量指令集支持、Binutils 2.41 引入了链接器松弛 (Relaxation) 支持，而后 GCC 16 引入了 medium 代码模型支持，对大规模软件项目的支持更佳，均属于关键功能更新。如有可能，请更新到至少如上版本。
 
 如果您希望为软件项目发布通用二进制或正在维护 Linux 发行版，请注意阅读[《龙架构软件开发与构建约定》](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc)中的相关规范约束。
@@ -60,7 +60,7 @@ GCC 及 Binutils 已正式支持龙架构，您可以通过发行版仓库直接
 
 LLVM 已正式支持龙架构，您可以通过发行版仓库直接安装、下载二进制或交叉编译等方式安装该工具链。
 
-::: tip
+:::tip
 请注意：LLVM 后续版本引入了对龙架构平台的支持增强，其中 LLVM 18 引入了龙架构向量指令集支持。如有可能，请至少更新到该版本。
 
 如果您希望为软件项目发布通用二进制或正在维护 Linux 发行版，请注意阅读[《龙架构软件开发与构建约定》](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc)中的相关规范约束。
@@ -113,7 +113,7 @@ Node.js 已正式支持龙架构，您可以通过发行版仓库直接安装、
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install nodejs` |
 | Fedora LoongArch Remix、openEuler、Anolis OS、OpenCloudOS 等 Red Hat 系发行版 | `sudo dnf install nodejs` |
 
-::: tip
+:::tip
 由于软件维护和用户应用场景的需要，许多 Linux 发行版都提供了多个版本的 Node.js 工具链。您可以根据需要查阅相关发行版的文档，并安装您所需的 Node.js 版本。
 :::
 
@@ -149,7 +149,7 @@ Python 已正式支持龙架构，您可以通过发行版仓库直接安装、�
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install python3` |
 | Fedora LoongArch Remix、openEuler、Anolis OS、OpenCloudOS 等 Red Hat 系发行版 | `sudo dnf install python3` |
 
-::: tip
+:::tip
 由于龙架构仍缺少 manylinux 基线定义，目前 PyPI 官方源没有提供龙架构的模块二进制（这意味着如果您使用 `pip` 安装 PyPI 模块时，会现场编译相关模块，且可能会需要您安装对应的 C/C++/Rust 工具链）。
 
 龙芯中科目前在 [lpypi.loongnix.cn](http://lpypi.loongnix.cn/) 提供了面向 ABI 2.0 系统的 PyPI 二进制源，您可以编辑 `/etc/pip.conf` 修改 pip 配置以使用该源。此外 GitHub 上的 [loong64](https://github.com/loong64) 组织亦有维护独立的 PyPI 二进制源，具体配置方式请参阅[该组织的自述文件](https://github.com/loong64#pypi-repository)。
@@ -182,7 +182,7 @@ Python 已正式支持龙架构，您可以通过发行版仓库直接安装、�
 - Microsoft.NETCore.App.Runtime.linux-loongarch64.*.nupkg
 - runtime.linux-loongarch64.Microsoft.DotNet.ILCompiler.*.nupkg
 
-::: tip
+:::tip
 loongson-community/dotnet-unofficial-build 提供的发行版将上述文件归类为“源码构建用产物包”，请下载该包以获取上述组件。
 :::
 
@@ -215,7 +215,7 @@ loongson-community/dotnet-unofficial-build 提供的发行版将上述文件归�
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install default-jdk` |
 | Fedora LoongArch Remix、openEuler、Anolis OS、OpenCloudOS 等 Red Hat 系发行版 | `sudo dnf install java-latest-openjdk` |
 
-::: tip
+:::tip
 由于软件维护和用户应用场景的需要，许多 Linux 发行版都提供了多个版本的 JDK。您可以根据需要查阅相关发行版的文档，并安装您所需的 JDK 版本。
 :::
 
@@ -225,7 +225,7 @@ loongson-community/dotnet-unofficial-build 提供的发行版将上述文件归�
 
 上游 Linux 内核已正式支持龙架构。一般来说，基于 ABI 2.0 的 Linux 发行版均使用上游内核（外加平台规避等补丁，见下文参考），但也有部分商业性质的发行版会选用 6.6 内核并附加大量平台支持补丁。
 
-::: tip
+:::tip
 Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬件机能和性能，请使用最新主线内核分支。
 :::
 
@@ -277,7 +277,7 @@ Docker 软件已正式支持龙架构，您可以通过 Linux 发行版软件源
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install docker.io` |
 | Fedora LoongArch Remix、openEuler、Anolis OS、OpenCloudOS 等 Red Hat 系发行版 | `sudo dnf install docker` |
 
-::: tip
+:::tip
 目前在 Docker 官方仓库中的龙架构容器仍非常少；龙芯中科维护了[针对龙架构 ABI 2.0 的 Docker 镜像仓库](https://lcr.loongnix.cn/)，您可以按照需要[修改 Docker 配置](https://docs.docker.com/docker-hub/image-library/mirror/)以使用该镜像仓库。
 :::
 

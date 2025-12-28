@@ -4,7 +4,7 @@ returnLink: /pages/chips
 pageTitle: CPU 芯片对比
 pageSubTitle: 
 ---
-::: raw
+:::raw
 <ClientOnly>
     <CpuCompare />
 </ClientOnly>
