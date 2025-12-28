@@ -39,7 +39,7 @@ export const osDataList = [
     description:
       "试图保持易用性的，可定制的轻量级 Linux 发行版",
     href: "https://loongarchlinux.lcpu.dev/",
-    image: "/images/os/loongarchlinux.png",
+    image: "/images/os/loongarchlinux.webp",
     tags: ["社区", "滚动更新", "Linux", "ABI2.0"],
   },
   {
@@ -82,7 +82,7 @@ export const osDataList = [
       "面向开发者和内容创作者的桌面发行版",
     href: "https://github.com/fedora-remix-loongarch/releases-info",
     // https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
-    image: "/images/os/fedora_remix.png",
+    image: "/images/os/fedora_remix.webp",
     tags: ["社区", "桌面", "Linux", "ABI2.0"],
   },
   {
@@ -100,7 +100,7 @@ export const osDataList = [
       "围绕 DDE 15 继续维护的 Linux 发行版",
     href: "https://www.gxde.top/",
     // https://www.gxde.top/logo.png
-    image: "/images/os/gxde.png",
+    image: "/images/os/gxde.webp",
     tags: ["社区", "桌面", "Linux", "ABI2.0"],
   },
   {
@@ -118,7 +118,7 @@ export const osDataList = [
       "新手友好的桌面 Linux 发行版",
     href: "https://www.openkylin.top/",
     // https://www.openkylin.top/upload/202209/1664440595.png
-    image: "/images/os/openkylin.png",
+    image: "/images/os/openkylin.webp",
     tags: ["社区", "桌面", "Linux", "ABI2.0"],
   },
   {
@@ -154,7 +154,7 @@ export const osDataList = [
       "龙芯中科维护的参考 Linux 发行版",
     href: "https://www.loongnix.cn/zh/loongnix/",
     // Found in Plymouth theme.
-    image: "/images/os/loongnix.png",
+    image: "/images/os/loongnix.webp",
     tags: ["可获取商业支持", "桌面", "服务器", "Linux", "ABI2.0", "ABI1.0"],
   },
   {
@@ -213,7 +213,7 @@ export const osDataList = [
       "基于源代码的发行版开发套件，提供为特定场景定制 Linux 发行版的工具和脚本",
     href: "https://t2linux.com",
     // https://t2linux.com/images/t2logo.png
-    image: "/images/os/t2linux.png",
+    image: "/images/os/t2linux.webp",
     tags: ["社区", "DIY", "Linux", "ABI2.0"],
   },
   {
@@ -231,7 +231,7 @@ export const osDataList = [
       "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://www.gd-linux.com/",
     // https://www.gd-linux.com/
-    image: "/images/os/newstart.png",
+    image: "/images/os/newstart.webp",
     tags: ["可获取商业支持", "桌面", "服务器", "Linux", "ABI1.0"],
   },
   {

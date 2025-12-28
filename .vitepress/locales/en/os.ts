@@ -42,7 +42,7 @@ export const osDataList = [
     description:
       "Lightweight and flexible Linux distribution that tries to Keep It Simple.",
     href: "https://loongarchlinux.lcpu.dev/",
-    image: "/images/os/loongarchlinux.png",
+    image: "/images/os/loongarchlinux.webp",
     tags: ["Community", "Rolling", "Linux", "ABI2.0"],
   },
   {
@@ -85,7 +85,7 @@ export const osDataList = [
       "Desktop-oriented distro for software developers and all makers.",
     href: "https://github.com/fedora-remix-loongarch/releases-info",
     // https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
-    image: "/images/os/fedora_remix.png",
+    image: "/images/os/fedora_remix.webp",
     tags: ["Community", "Desktop", "Linux", "ABI2.0"],
   },
   {
@@ -103,7 +103,7 @@ export const osDataList = [
       "Linux distribution built atop a continually updated DDE 15 fork.",
     href: "https://www.gxde.top/en/",
     // https://www.gxde.top/logo.png
-    image: "/images/os/gxde.png",
+    image: "/images/os/gxde.webp",
     tags: ["Community", "Desktop", "Linux", "ABI2.0"],
   },
   {
@@ -128,7 +128,7 @@ export const osDataList = [
       "Reference Linux distribution from Loongson Technology.",
     href: "https://www.loongnix.cn/zh/loongnix/",
     // Found in Plymouth theme.
-    image: "/images/os/loongnix.png",
+    image: "/images/os/loongnix.webp",
     tags: ["Commercial Support Available", "Desktop", "Server", "Linux", "ABI2.0", "ABI1.0"],
   },
   {
@@ -137,7 +137,7 @@ export const osDataList = [
       "Commercial Linux distribution for business informationization.",
     href: "https://www.gd-linux.com/",
     // https://www.gd-linux.com/
-    image: "/images/os/newstart.png",
+    image: "/images/os/newstart.webp",
     tags: ["Commercial Support Available", "Desktop", "Server", "Linux", "ABI1.0"],
   },
   {
@@ -190,7 +190,7 @@ export const osDataList = [
       "User-friendly desktop-oriented distribution.",
     href: "https://www.openkylin.top/",
     // https://www.openkylin.top/upload/202209/1664440595.png
-    image: "/images/os/openkylin.png",
+    image: "/images/os/openkylin.webp",
     tags: ["Community", "Desktop", "Linux", "ABI2.0"],
   },
   {
@@ -233,7 +233,7 @@ export const osDataList = [
       "Distribution development toolkit providing the tools and scripts to build your own custom distribution tailored to specific use cases.",
     href: "https://t2linux.com",
     // https://t2linux.com/images/t2logo.png
-    image: "/images/os/t2linux.png",
+    image: "/images/os/t2linux.webp",
     tags: ["Community", "DIY", "Linux", "ABI2.0"],
   },
   {
