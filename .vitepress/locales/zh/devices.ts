@@ -1,19 +1,19 @@
 export interface Device {
-  name: string;
-  href: string;
-  image: string;
-  spec: string;
-  tags: string;
+  name: string
+  href: string
+  image: string
+  spec: string
+  tags: string
 }
 
 export interface DeviceCategory {
-  title: string;
-  devices: Device[];
+  title: string
+  devices: Device[]
 }
 
 export interface DeviceFamily {
-  family: string;
-  categories: DeviceCategory[];
+  family: string
+  categories: DeviceCategory[]
 }
 
 export const devices: DeviceFamily[] = [
@@ -201,4 +201,4 @@ export const devices: DeviceFamily[] = [
       },
     ],
   },
-];
+]

@@ -1,6 +1,6 @@
 <template>
   <!-- 必须包裹容器 -->
-      <Toast />
+  <Toast />
   <div class="vp-doc">
     <Toast />
     <DynamicDialog />
@@ -15,15 +15,15 @@
 </template>
 
 <script setup>
-import { onMounted, watch } from 'vue'
-import { useData } from 'vitepress'
-import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vitepress';
-import Toast from 'primevue/toast';
-import ChildHeader from "/components/ChildHeader.vue";
-import ChildFooter from "/components/ChildFooter.vue";
-import { handleFirstVisitRedirect } from '../utils/language'
-import DynamicDialog from 'primevue/dynamicdialog';
+import { onMounted, watch } from "vue"
+import { useData } from "vitepress"
+import { useI18n } from "vue-i18n"
+import { useRouter } from "vitepress"
+import Toast from "primevue/toast"
+import ChildHeader from "/components/ChildHeader.vue"
+import ChildFooter from "/components/ChildFooter.vue"
+import { handleFirstVisitRedirect } from "../utils/language"
+import DynamicDialog from "primevue/dynamicdialog"
 
 const { lang } = useData()
 const { locale } = useI18n()
@@ -35,7 +35,7 @@ onMounted(() => {
 })
 
 // 同步 VitePress 语言和 vue-i18n locale
-watch(lang, () => locale.value = lang.value, { immediate: true })
+watch(lang, () => (locale.value = lang.value), { immediate: true })
 </script>
 
 <style type="text/css">

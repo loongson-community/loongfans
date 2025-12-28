@@ -5,7 +5,7 @@ export default {
     remove_compare: "移除对比",
     remove: "删除",
     clear: "清空列表",
-    links: "/pages/chips/cpu/compare" // 这里指向的是一个链接，请不要删除或修改它!
+    links: "/pages/chips/cpu/compare", // 这里指向的是一个链接，请不要删除或修改它!
   },
   basic: {
     title: "基本信息",
@@ -97,4 +97,4 @@ export default {
     supported: "支持",
     unsupported: "不支持",
   },
-};
+}

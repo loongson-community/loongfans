@@ -1,4 +1,4 @@
-import type { DeviceFamily } from "../zh/devices";
+import type { DeviceFamily } from "../zh/devices"
 
 export const devices: DeviceFamily[] = [
   {
@@ -154,14 +154,14 @@ export const devices: DeviceFamily[] = [
         title: "Motherboards and Development Boards",
         devices: [
           {
-            name: "Loongson 2K0300 \"Hummingbird\"",
+            name: 'Loongson 2K0300 "Hummingbird"',
             href: "/en/pages/devices/loongson-2k0300-hummingbird-evb",
             image: "/images/devices/loongson-2k0300-hummingbird-evb.webp",
             spec: "2K0300",
             tags: "Development Board",
           },
           {
-            name: "Loongson 2K0300 \"Pioneer\"",
+            name: 'Loongson 2K0300 "Pioneer"',
             href: "/en/pages/devices/loongson-2k0300-pioneer-evb",
             image: "/images/devices/loongson-2k0300-pioneer-evb.webp",
             spec: "2K0300",
@@ -185,4 +185,4 @@ export const devices: DeviceFamily[] = [
       },
     ],
   },
-];
+]

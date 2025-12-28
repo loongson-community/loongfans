@@ -1,22 +1,22 @@
-import { defineConfig } from "vitepress";
-import Icons from "unplugin-icons/vite";
+import { defineConfig } from "vitepress"
+import Icons from "unplugin-icons/vite"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   locales: {
     root: {
-      label: '简体中文',
-      lang: 'zh',
+      label: "简体中文",
+      lang: "zh",
       title: "龙芯爱好者社区",
-      description: "龙芯爱好者社区导航站"
+      description: "龙芯爱好者社区导航站",
     },
     en: {
-      label: 'English',
-      lang: 'en',
-      link: '/en/',
+      label: "English",
+      lang: "en",
+      link: "/en/",
       title: "Loongson Hobbyists' Community",
-      description: "Loongson Hobbyists' Community Portal"
-    }
+      description: "Loongson Hobbyists' Community Portal",
+    },
   },
   ignoreDeadLinks: true,
   themeConfig: {
@@ -33,7 +33,7 @@ export default defineConfig({
   vite: {
     plugins: [Icons({ scale: 1 })],
     ssr: {
-      noExternal: ['vue-i18n'],
+      noExternal: ["vue-i18n"],
     },
   },
 })
