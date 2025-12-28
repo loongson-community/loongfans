@@ -14,7 +14,7 @@ export const osDataList = [
     href: "https://www.alpinelinux.org",
     // https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
     image: "/images/os/alpine.svg",
-    tags: ["社区", "容器", "嵌入式"],
+    tags: ["社区", "容器", "嵌入式", "Linux"],
   },
   {
     name: "ALT Linux",
@@ -23,7 +23,7 @@ export const osDataList = [
     href: "https://en.altlinux.org/Main_Page",
     // https://www.altlinux.org/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Alt_linux_logo.svg
     image: "/images/os/alt.svg",
-    tags: ["可获取商业支持"],
+    tags: ["可获取商业支持", "Linux"],
   },
   {
     name: "安同 OS",
@@ -32,7 +32,7 @@ export const osDataList = [
     href: "https://aosc.io/aosc-os",
     // https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc-os-kinfocenter.svg
     image: "/images/os/aosc.svg",
-    tags: ["社区", "桌面", "滚动更新"],
+    tags: ["社区", "桌面", "滚动更新", "Linux"],
   },
   {
     name: "Arch Linux for Loong64",
@@ -40,14 +40,14 @@ export const osDataList = [
       "试图保持易用性的，可定制的轻量级 Linux 发行版",
     href: "https://loongarchlinux.lcpu.dev/",
     image: "/images/os/loongarchlinux.png",
-    tags: ["社区", "滚动更新"],
+    tags: ["社区", "滚动更新", "Linux"],
   },
   {
     name: "CLFS for LoongArch",
     description: "介绍如何从源代码完全交叉编译一个 Linux 发行版",
     href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch",
     image: "/images/os/lfs.svg",
-    tags: ["社区", "DIY"],
+    tags: ["社区", "DIY", "Linux"],
   },
   {
     name: "Debian",
@@ -56,7 +56,7 @@ export const osDataList = [
     href: "https://www.debian.org",
     // https://www.debian.org/logos/openlogo-nd.svg
     image: "/images/os/debian.svg",
-    tags: ["社区", "桌面", "服务器"],
+    tags: ["社区", "桌面", "服务器", "Linux"],
   },
   {
     name: "deepin",
@@ -65,7 +65,7 @@ export const osDataList = [
     href: "https://www.deepin.org",
     // https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
     image: "/images/os/deepin.svg",
-    tags: ["社区", "桌面", "不可变"],
+    tags: ["社区", "桌面", "不可变", "Linux"],
   },
   {
     name: "eweOS",
@@ -74,7 +74,7 @@ export const osDataList = [
     href: "https://os.ewe.moe/",
     // https://os.ewe.moe/
     image: "/images/os/eweos.svg",
-    tags: ["社区", "滚动更新"],
+    tags: ["社区", "滚动更新", "Linux"],
   },
   {
     name: "Fedora Remix LoongArch",
@@ -83,7 +83,7 @@ export const osDataList = [
     href: "https://github.com/fedora-remix-loongarch/releases-info",
     // https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
     image: "/images/os/fedora_remix.png",
-    tags: ["社区", "桌面"],
+    tags: ["社区", "桌面", "Linux"],
   },
   {
     name: "Gentoo",
@@ -92,7 +92,7 @@ export const osDataList = [
     href: "https://www.gentoo.org",
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
-    tags: ["社区", "DIY", "滚动更新"],
+    tags: ["社区", "DIY", "滚动更新", "Linux"],
   },
   {
     name: "GXDE OS",
@@ -101,7 +101,7 @@ export const osDataList = [
     href: "https://www.gxde.top/",
     // https://www.gxde.top/logo.png
     image: "/images/os/gxde.png",
-    tags: ["社区", "桌面"],
+    tags: ["社区", "桌面", "Linux"],
   },
   {
     name: "红旗 Linux",
@@ -110,7 +110,7 @@ export const osDataList = [
     href: "https://www.chinaredflag.cn/",
     // https://commons.wikimedia.org/wiki/File:RedFlag_Linux-Logo.svg
     image: "/images/os/redflag.svg",
-    tags: ["可获取商业支持", "桌面", "服务器"],
+    tags: ["可获取商业支持", "桌面", "服务器", "Linux"],
   },
   {
     name: "开放麒麟",
@@ -119,7 +119,7 @@ export const osDataList = [
     href: "https://www.openkylin.top/",
     // https://www.openkylin.top/upload/202209/1664440595.png
     image: "/images/os/openkylin.png",
-    tags: ["社区", "桌面"],
+    tags: ["社区", "桌面", "Linux"],
   },
   {
     name: "开源鸿蒙",
@@ -129,7 +129,7 @@ export const osDataList = [
     // FIXME: The SVG somehow does not render on Firefox.
     // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
     image: "/images/os/openharmony.webp",
-    tags: ["可获取商业支持", "桌面", "嵌入式"],
+    tags: ["可获取商业支持", "桌面", "嵌入式", "鸿蒙"],
   },
   {
     name: "LFS 龙架构版",
@@ -137,7 +137,7 @@ export const osDataList = [
       "详细介绍如何完全从源代码构建自定义的 Linux 系统",
     href: "https://www.linuxfromscratch.org/~xry111/lfs/#loongarch",
     image: "/images/os/lfs.svg",
-    tags: ["社区", "DIY"],
+    tags: ["社区", "DIY", "Linux"],
   },
   {
     name: "龙蜥操作系统",
@@ -146,7 +146,7 @@ export const osDataList = [
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
-    tags: ["可获取商业支持", "服务器"],
+    tags: ["可获取商业支持", "服务器", "Linux"],
   },
   {
     name: "Loongnix",
@@ -155,7 +155,7 @@ export const osDataList = [
     href: "https://www.loongnix.cn/zh/loongnix/",
     // Found in Plymouth theme.
     image: "/images/os/loongnix.png",
-    tags: ["可获取商业支持", "桌面", "服务器"],
+    tags: ["可获取商业支持", "桌面", "服务器", "Linux"],
   },
   {
     name: "Nix4Loong",
@@ -164,14 +164,14 @@ export const osDataList = [
     href: "https://nix4loong.cn/",
     // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
     image: "/images/os/nix4loong.svg",
-    tags: ["社区", "原子升级"],
+    tags: ["社区", "原子升级", "Linux"],
   },
   {
     name: "OpenCloudOS",
     description: "鸥栖社区维护的服务器操作系统",
     href: "https://opencloudos.org",
     image: "/images/os/opencloudos.webp",
-    tags: ["可获取商业支持", "服务器"],
+    tags: ["可获取商业支持", "服务器", "Linux"],
   },
   {
     name: "openEuler",
@@ -180,7 +180,7 @@ export const osDataList = [
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
-    tags: ["可获取商业支持", "服务器", "嵌入式"],
+    tags: ["可获取商业支持", "服务器", "嵌入式", "Linux"],
   },
   {
     name: "OpenWrt",
@@ -188,7 +188,7 @@ export const osDataList = [
     href: "https://openwrt.org",
     // https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
     image: "/images/os/openwrt.svg",
-    tags: ["社区", "路由器", "嵌入式"],
+    tags: ["社区", "路由器", "嵌入式", "Linux"],
   },
   {
     name: "Proxmox VE",
@@ -196,7 +196,7 @@ export const osDataList = [
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
-    tags: ["可获取商业支持", "虚拟化"],
+    tags: ["可获取商业支持", "虚拟化", "Linux"],
   },
   {
     name: "Slackwareloong",
@@ -205,7 +205,7 @@ export const osDataList = [
     href: "https://www.slackware.com",
     // http://www.slackware.com/~msimons/slackware/grfx/shared/bluepiSW.jpg
     image: "/images/os/slackware.webp",
-    tags: ["社区", "滚动更新"],
+    tags: ["社区", "滚动更新", "Linux"],
   },
   {
     name: "T2 SDE",
@@ -214,7 +214,7 @@ export const osDataList = [
     href: "https://t2linux.com",
     // https://t2linux.com/images/t2logo.png
     image: "/images/os/t2linux.png",
-    tags: ["社区", "DIY"],
+    tags: ["社区", "DIY", "Linux"],
   },
   {
     name: "UOS",
@@ -223,7 +223,7 @@ export const osDataList = [
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
     image: "/images/os/uos.svg",
-    tags: ["可获取商业支持", "桌面", "服务器", "不可变"],
+    tags: ["可获取商业支持", "桌面", "服务器", "不可变", "Linux"],
   },
   {
     name: "新支点操作系统",
@@ -232,7 +232,7 @@ export const osDataList = [
     href: "https://www.gd-linux.com/",
     // https://www.gd-linux.com/
     image: "/images/os/newstart.png",
-    tags: ["可获取商业支持", "桌面", "服务器"],
+    tags: ["可获取商业支持", "桌面", "服务器", "Linux"],
   },
   {
     name: "银河麒麟操作系统",
@@ -240,14 +240,14 @@ export const osDataList = [
       "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://www.kylinos.cn",
     image: "/images/os/kylinos.svg",
-    tags: ["可获取商业支持", "桌面", "服务器", "不可变"],
+    tags: ["可获取商业支持", "桌面", "服务器", "不可变", "Linux"],
   },
   {
     name: "勇豹",
     description: "完全交叉编译的不可变 Linux 发行版",
     href: "https://github.com/sunhaiyong1978/Yongbao",
     image: "/images/os/linux.svg",
-    tags: ["社区", "桌面", "不可变"],
+    tags: ["社区", "桌面", "不可变", "Linux"],
   },
   {
     name: "中科方德操作系统",
@@ -256,6 +256,6 @@ export const osDataList = [
     href: "https://www.nfschina.com/",
     // https://www.nfschina.com/template/default/images/logo.svg
     image: "/images/os/nfs.svg",
-    tags: ["可获取商业支持", "桌面", "服务器"],
+    tags: ["可获取商业支持", "桌面", "服务器", "Linux"],
   },
 ] as OsData[];
