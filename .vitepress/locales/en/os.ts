@@ -8,7 +8,7 @@ export const osDataList = [
     href: "https://www.alpinelinux.org",
     // https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
     image: "/images/os/alpine.svg",
-    tags: ["Community", "Container", "Embedded"],
+    tags: ["Community", "Container", "Embedded", "Linux"],
   },
   {
     name: "ALT Linux",
@@ -17,7 +17,7 @@ export const osDataList = [
     href: "https://en.altlinux.org/Main_Page",
     // https://www.altlinux.org/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Alt_linux_logo.svg
     image: "/images/os/alt.svg",
-    tags: ["Commercial Support Available"],
+    tags: ["Commercial Support Available", "Linux"],
   },
   {
     name: "Anolis OS",
@@ -26,7 +26,7 @@ export const osDataList = [
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
-    tags: ["Commercial Support Available", "Server"],
+    tags: ["Commercial Support Available", "Server", "Linux"],
   },
   {
     name: "AOSC OS",
@@ -35,7 +35,7 @@ export const osDataList = [
     href: "https://aosc.io/aosc-os",
     // https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc-os-kinfocenter.svg
     image: "/images/os/aosc.svg",
-    tags: ["Community", "Desktop", "Rolling"],
+    tags: ["Community", "Desktop", "Rolling", "Linux"],
   },
   {
     name: "Arch Linux for Loong64",
@@ -43,14 +43,14 @@ export const osDataList = [
       "Lightweight and flexible Linux distribution that tries to Keep It Simple.",
     href: "https://loongarchlinux.lcpu.dev/",
     image: "/images/os/loongarchlinux.png",
-    tags: ["Community", "Rolling"],
+    tags: ["Community", "Rolling", "Linux"],
   },
   {
     name: "CLFS for LoongArch",
     description: "Cookbook for fully cross-compile a Linux distribution from source code.",
     href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch",
     image: "/images/os/lfs.svg",
-    tags: ["Community", "DIY"],
+    tags: ["Community", "DIY", "Linux"],
   },
   {
     name: "Debian",
@@ -59,7 +59,7 @@ export const osDataList = [
     href: "https://www.debian.org",
     // https://www.debian.org/logos/openlogo-nd.svg
     image: "/images/os/debian.svg",
-    tags: ["Community", "Desktop", "Server"],
+    tags: ["Community", "Desktop", "Server", "Linux"],
   },
   {
     name: "deepin",
@@ -68,7 +68,7 @@ export const osDataList = [
     href: "https://www.deepin.org",
     // https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
     image: "/images/os/deepin.svg",
-    tags: ["Community", "Desktop", "Immutable"],
+    tags: ["Community", "Desktop", "Immutable", "Linux"],
   },
   {
     name: "eweOS",
@@ -77,7 +77,7 @@ export const osDataList = [
     href: "https://os.ewe.moe/",
     // https://os.ewe.moe/
     image: "/images/os/eweos.svg",
-    tags: ["Community", "Rolling"],
+    tags: ["Community", "Rolling", "Linux"],
   },
   {
     name: "Fedora Remix LoongArch",
@@ -86,7 +86,7 @@ export const osDataList = [
     href: "https://github.com/fedora-remix-loongarch/releases-info",
     // https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
     image: "/images/os/fedora_remix.png",
-    tags: ["Community", "Desktop"],
+    tags: ["Community", "Desktop", "Linux"],
   },
   {
     name: "Gentoo",
@@ -95,7 +95,7 @@ export const osDataList = [
     href: "https://www.gentoo.org",
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
-    tags: ["Community", "DIY", "Rolling"],
+    tags: ["Community", "DIY", "Rolling", "Linux"],
   },
   {
     name: "GXDE OS",
@@ -104,7 +104,7 @@ export const osDataList = [
     href: "https://www.gxde.top/en/",
     // https://www.gxde.top/logo.png
     image: "/images/os/gxde.png",
-    tags: ["Community", "Desktop"],
+    tags: ["Community", "Desktop", "Linux"],
   },
   {
     name: "KylinOS",
@@ -112,7 +112,7 @@ export const osDataList = [
       "Commercial Linux distribution for business informationization.",
     href: "https://www.kylinos.cn",
     image: "/images/os/kylinos.svg",
-    tags: ["Commercial Support Available", "Desktop", "Server", "Immutable"],
+    tags: ["Commercial Support Available", "Desktop", "Server", "Immutable", "Linux"],
   },
   {
     name: "LFS LoongArch Edition",
@@ -120,7 +120,7 @@ export const osDataList = [
       "Project that provides you with step-by-step instructions for building your own custom Linux system, entirely from source code.",
     href: "https://www.linuxfromscratch.org/~xry111/lfs/#loongarch",
     image: "/images/os/lfs.svg",
-    tags: ["Community", "DIY"],
+    tags: ["Community", "DIY", "Linux"],
   },
   {
     name: "Loongnix",
@@ -129,7 +129,7 @@ export const osDataList = [
     href: "https://www.loongnix.cn/zh/loongnix/",
     // Found in Plymouth theme.
     image: "/images/os/loongnix.png",
-    tags: ["Commercial Support Available", "Desktop", "Server"],
+    tags: ["Commercial Support Available", "Desktop", "Server", "Linux"],
   },
   {
     name: "New Start",
@@ -138,7 +138,7 @@ export const osDataList = [
     href: "https://www.gd-linux.com/",
     // https://www.gd-linux.com/
     image: "/images/os/newstart.png",
-    tags: ["Commercial Support Available", "Desktop", "Server"],
+    tags: ["Commercial Support Available", "Desktop", "Server", "Linux"],
   },
   {
     name: "NFS-CHINA",
@@ -147,7 +147,7 @@ export const osDataList = [
     href: "https://www.nfschina.com/",
     // https://www.nfschina.com/template/default/images/logo.svg
     image: "/images/os/nfs.svg",
-    tags: ["Commercial Support Available", "Desktop", "Server"],
+    tags: ["Commercial Support Available", "Desktop", "Server", "Linux"],
   },
   {
     name: "Nix4Loong",
@@ -156,14 +156,14 @@ export const osDataList = [
     href: "https://nix4loong.cn/",
     // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
     image: "/images/os/nix4loong.svg",
-    tags: ["Community", "Atomic Updates"],
+    tags: ["Community", "Atomic Updates", "Linux"],
   },
   {
     name: "OpenCloudOS",
     description: "Distribution for servers maintained by the OpenCloudOS community.",
     href: "https://opencloudos.org",
     image: "/images/os/opencloudos.webp",
-    tags: ["Commercial Support Available", "Server"],
+    tags: ["Commercial Support Available", "Server", "Linux"],
   },
   {
     name: "openEuler",
@@ -172,7 +172,7 @@ export const osDataList = [
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
-    tags: ["Commercial Support Available", "Server"],
+    tags: ["Commercial Support Available", "Server", "Linux"],
   },
   {
     name: "OpenHarmony",
@@ -182,7 +182,7 @@ export const osDataList = [
     // FIXME: The SVG somehow does not render on Firefox.
     // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
     image: "/images/os/openharmony.webp",
-    tags: ["Commercial Support Available", "Desktop", "Embedded"],
+    tags: ["Commercial Support Available", "Desktop", "Embedded", "HarmonyOS"],
   },
   {
     name: "openKylin",
@@ -191,7 +191,7 @@ export const osDataList = [
     href: "https://www.openkylin.top/",
     // https://www.openkylin.top/upload/202209/1664440595.png
     image: "/images/os/openkylin.png",
-    tags: ["Community", "Desktop"],
+    tags: ["Community", "Desktop", "Linux"],
   },
   {
     name: "OpenWrt",
@@ -199,7 +199,7 @@ export const osDataList = [
     href: "https://openwrt.org",
     // https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
     image: "/images/os/openwrt.svg",
-    tags: ["Community", "Router", "Embedded"],
+    tags: ["Community", "Router", "Embedded", "Linux"],
   },
   {
     name: "Proxmox VE",
@@ -207,7 +207,7 @@ export const osDataList = [
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
-    tags: ["Commercial Support Available", "Virtualization"],
+    tags: ["Commercial Support Available", "Virtualization", "Linux"],
   },
   {
     name: "RedFlag Linux",
@@ -216,7 +216,7 @@ export const osDataList = [
     href: "https://www.chinaredflag.cn/",
     // https://commons.wikimedia.org/wiki/File:RedFlag_Linux-Logo.svg
     image: "/images/os/redflag.svg",
-    tags: ["Commercial Support Available", "Desktop", "Server"],
+    tags: ["Commercial Support Available", "Desktop", "Server", "Linux"],
   },
   {
     name: "Slackwareloong",
@@ -225,7 +225,7 @@ export const osDataList = [
     href: "https://www.slackware.com",
     // http://www.slackware.com/~msimons/slackware/grfx/shared/bluepiSW.jpg
     image: "/images/os/slackware.webp",
-    tags: ["Community", "Rolling"],
+    tags: ["Community", "Rolling", "Linux"],
   },
   {
     name: "T2 SDE",
@@ -234,7 +234,7 @@ export const osDataList = [
     href: "https://t2linux.com",
     // https://t2linux.com/images/t2logo.png
     image: "/images/os/t2linux.png",
-    tags: ["Community", "DIY"],
+    tags: ["Community", "DIY", "Linux"],
   },
   {
     name: "UOS",
@@ -243,13 +243,13 @@ export const osDataList = [
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
     image: "/images/os/uos.svg",
-    tags: ["Commercial Support Available", "Desktop", "Server", "Immutable"],
+    tags: ["Commercial Support Available", "Desktop", "Server", "Immutable", "Linux"],
   },
   {
     name: "Yongbao",
     description: "Fully cross-compiled immutable Linux distribution.",
     href: "https://github.com/sunhaiyong1978/Yongbao",
     image: "/images/os/linux.svg",
-    tags: ["Community", "Desktop", "Immutable"],
+    tags: ["Community", "Desktop", "Immutable", "Linux"],
   },
 ] as OsData[];
