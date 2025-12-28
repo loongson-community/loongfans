@@ -1,0 +1,7 @@
+/.github
+/.vscode
+/.vitepress
+/3rdparty
+/build
+/node_modules
+/public
