@@ -123,6 +123,15 @@ export const osDataList = [
     tags: ["Community", "DIY", "Linux", "ABI2.0"],
   },
   {
+    name: "loongFire",
+    description:
+      "LoongArch port of IPFire, an operating system for firewalls",
+    href: "https://www.bpfire.net/",
+    // From private exchange.
+    image: "/images/os/loongfire.webp",
+    tags: ["Community", "Server", "Firewall", "Linux", "ABI2.0"]
+  },
+  {
     name: "Loongnix",
     description:
       "Reference Linux distribution from Loongson Technology.",

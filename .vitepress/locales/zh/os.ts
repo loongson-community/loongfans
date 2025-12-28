@@ -149,6 +149,15 @@ export const osDataList = [
     tags: ["可获取商业支持", "服务器", "Linux", "ABI2.0", "ABI1.0"],
   },
   {
+    name: "loongFire",
+    description:
+      "防火墙操作系统 IPFire 的龙架构移植",
+    href: "https://www.bpfire.net/",
+    // From private exchange.
+    image: "/images/os/loongfire.webp",
+    tags: ["社区", "服务器", "防火墙", "Linux", "ABI2.0"]
+  },
+  {
     name: "Loongnix",
     description:
       "龙芯中科维护的参考 Linux 发行版",
