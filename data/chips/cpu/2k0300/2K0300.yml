@@ -2,12 +2,12 @@ basic:
   name: 2K0300
   series: 2K0300
   market: 4
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/2K0300.webp"
   manual: ""
 
-cpu: 
+cpu:
   cores: 1
   threads: 1
   arch: "LA264"
@@ -23,7 +23,7 @@ cpu:
 gpu:
   available: false
   name: "N/A"
-  
+
 memory:
   max: "1 GiB"
   types: "DDR4-1600"

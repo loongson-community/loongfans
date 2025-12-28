@@ -1,15 +1,15 @@
 basic:
-  name: 
-  series: 
+  name:
+  series:
   market: 1 # 1=桌面 2=移动 3=服务器 4=嵌入式
-  
-ext_info: 
+
+ext_info:
   pic: ""
   manual: ""
 
-cpu: 
-  cores: 
-  threads: 
+cpu:
+  cores:
+  threads:
   arch: ""
   freq: ""
   l1_inst_cache: ""
@@ -23,28 +23,28 @@ cpu:
 gpu:
   available: false
   name: "N/A"
-  
+
 memory:
   max: ""
   types: ""
-  channels: 
+  channels:
   ecc: true # true=支持 false=不支持
 
 exp:
   io_name: ""
   io_rev: ""
-  lanes: 
-  usb_5gbps: 
-  usb2: 
-  sata: 
-  eth: 
-  spi: 
-  uart: 
-  i2c: 
-  gpio: 
-  avs: 
+  lanes:
+  usb_5gbps:
+  usb2:
+  sata:
+  eth:
+  spi:
+  uart:
+  i2c:
+  gpio:
+  avs:
   d2d: false # true=支持 false=不支持
-  d2d_name: 
+  d2d_name:
 
 package:
   socket: ""
@@ -61,4 +61,3 @@ power:
 technologies:
   isa: "64-Bit"
   isa_extensions: ["LBT", "LVZ", "LSX", "LASX"]
-  

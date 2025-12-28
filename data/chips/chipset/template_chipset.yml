@@ -1,15 +1,15 @@
 basic:
-  name: 
-  series: 
+  name:
+  series:
   market: 1
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/chipset/.webp"
   manual: ""
 
 chipset:
   interface: "HyperTransport 3.0 × 16"
-  
+
 gpu:
   available: true
   name: ""
@@ -17,16 +17,16 @@ gpu:
 exp:
   io_name: "PCI Express"
   io_rev: "3.0"
-  lanes: 
-  usb_5gbps: 
-  usb2: 
-  sata: 
-  eth: 
-  spi: 
-  uart: 
-  i2c: 
-  gpio: 
-  avs: 
+  lanes:
+  usb_5gbps:
+  usb2:
+  sata:
+  eth:
+  spi:
+  uart:
+  i2c:
+  gpio:
+  avs:
   other: "RTC LPC HDA I2S"
 
 package:

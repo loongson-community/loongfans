@@ -2,12 +2,12 @@ basic:
   name: 3A5000-LL
   series: 3A5000
   market: 1
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/3A5000.webp"
   manual: ""
 
-cpu: 
+cpu:
   cores: 4
   threads: 4
   arch: "LA464"
@@ -44,7 +44,7 @@ exp:
   gpio: 16
   avs: 0
   d2d: false
-  d2d_name: 
+  d2d_name:
 
 package:
   socket: "FCBGA1283"
@@ -61,4 +61,3 @@ power:
 technologies:
   isa: "64-Bit"
   isa_extensions: ["LBT", "LVZ", "LSX", "LASX"]
-  

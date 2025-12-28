@@ -2,12 +2,12 @@ basic:
   name: 3B5000
   series: 3A5000
   market: 3
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/3B5000.jpg"
   manual: ""
 
-cpu: 
+cpu:
   cores: 4
   threads: 4
   arch: "LA464"
@@ -61,4 +61,3 @@ power:
 technologies:
   isa: "64-Bit"
   isa_extensions: ["LBT", "LVZ", "LSX", "LASX"]
-  

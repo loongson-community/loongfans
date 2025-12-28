@@ -2,12 +2,12 @@ basic:
   name: 3B6000/12
   series: 3B6000
   market: 1
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/3B6000.webp"
   manual: ""
 
-cpu: 
+cpu:
   cores: 12
   threads: 24
   arch: "LA664"
@@ -23,7 +23,7 @@ cpu:
 gpu:
   available: false
   name: "N/A"
-  
+
 memory:
   max: "64 GiB"
   types: "DDR4-3200"

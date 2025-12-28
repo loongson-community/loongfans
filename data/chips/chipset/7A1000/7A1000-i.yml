@@ -2,14 +2,14 @@ basic:
   name: 7A1000-i
   series: 7A1000
   market: 1
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/chipset/7A1000-i.webp"
   manual: ""
 
 chipset:
   interface: "HyperTransport 3.0 × 16"
-  
+
 gpu:
   available: true
   name: "Vivante GC1000"
@@ -18,7 +18,7 @@ exp:
   io_name: "PCI Express"
   io_rev: "2.0"
   lanes: 32
-  usb_5gbps: 0 
+  usb_5gbps: 0
   usb2: 6
   sata: 3
   eth: 2
