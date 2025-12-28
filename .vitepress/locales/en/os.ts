@@ -123,6 +123,15 @@ export const osDataList = [
     tags: ["Community", "DIY"],
   },
   {
+    name: "Loongnix",
+    description:
+      "Reference Linux distribution from Loongson Technology.",
+    href: "https://www.loongnix.cn/zh/loongnix/",
+    // Found in Plymouth theme.
+    image: "/images/os/loongnix.png",
+    tags: ["Commercial Support Available", "Desktop", "Server"],
+  },
+  {
     name: "New Start",
     description:
       "Commercial Linux distribution for business informationization.",
@@ -164,6 +173,15 @@ export const osDataList = [
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
     tags: ["Commercial Support Available", "Server"],
+  },
+  {
+    name: "OpenHarmony",
+    description:
+      "Operating system for embedded and smart terminal devices.",
+    href: "https://openharmony.cn",
+    // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
+    image: "/images/os/openharmony.svg",
+    tags: ["Commercial Support Available", "Desktop", "Embedded"],
   },
   {
     name: "openKylin",
