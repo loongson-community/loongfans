@@ -31,7 +31,7 @@ pageSubTitle: 联想开天 N60d-G1d
 
 <template #known-issues>
 
-### ABI 2.0 系统下触摸板无法使用
+### ABI2.0 系统下触摸板无法使用
 
 <!--@include: @/parts/known-issues/touchpad-err-in-abi2.md -->
 
