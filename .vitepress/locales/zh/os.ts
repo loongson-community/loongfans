@@ -14,7 +14,7 @@ export const osDataList = [
     href: "https://www.alpinelinux.org",
     // https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
     image: "/images/os/alpine.svg",
-    tags: ["社区", "容器"],
+    tags: ["社区", "容器", "嵌入式"],
   },
   {
     name: "ALT Linux",
@@ -113,15 +113,6 @@ export const osDataList = [
     tags: ["可获取商业支持", "桌面", "服务器"],
   },
   {
-    name: "开源鸿蒙",
-    description:
-      "面向嵌入式和智能终端设备的操作系统",
-    href: "https://openharmony.cn",
-    // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
-    image: "/images/os/openharmony.svg",
-    tags: ["可获取商业支持", "桌面", "嵌入式"],
-  },
-  {
     name: "开放麒麟",
     description:
       "新手友好的桌面 Linux 发行版",
@@ -129,6 +120,16 @@ export const osDataList = [
     // https://www.openkylin.top/upload/202209/1664440595.png
     image: "/images/os/openkylin.png",
     tags: ["社区", "桌面"],
+  },
+  {
+    name: "开源鸿蒙",
+    description:
+      "面向嵌入式和智能终端设备的操作系统",
+    href: "https://openharmony.cn",
+    // FIXME: The SVG somehow does not render on Firefox.
+    // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
+    image: "/images/os/openharmony.webp",
+    tags: ["可获取商业支持", "桌面", "嵌入式"],
   },
   {
     name: "LFS 龙架构版",
@@ -179,7 +180,7 @@ export const osDataList = [
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
-    tags: ["可获取商业支持", "服务器"],
+    tags: ["可获取商业支持", "服务器", "嵌入式"],
   },
   {
     name: "OpenWrt",
@@ -187,7 +188,7 @@ export const osDataList = [
     href: "https://openwrt.org",
     // https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
     image: "/images/os/openwrt.svg",
-    tags: ["社区", "路由器"],
+    tags: ["社区", "路由器", "嵌入式"],
   },
   {
     name: "Proxmox VE",

@@ -8,7 +8,7 @@ export const osDataList = [
     href: "https://www.alpinelinux.org",
     // https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
     image: "/images/os/alpine.svg",
-    tags: ["Community", "Container"],
+    tags: ["Community", "Container", "Embedded"],
   },
   {
     name: "ALT Linux",
@@ -179,8 +179,9 @@ export const osDataList = [
     description:
       "Operating system for embedded and smart terminal devices.",
     href: "https://openharmony.cn",
+    // FIXME: The SVG somehow does not render on Firefox.
     // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
-    image: "/images/os/openharmony.svg",
+    image: "/images/os/openharmony.webp",
     tags: ["Commercial Support Available", "Desktop", "Embedded"],
   },
   {
@@ -198,7 +199,7 @@ export const osDataList = [
     href: "https://openwrt.org",
     // https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
     image: "/images/os/openwrt.svg",
-    tags: ["Community", "Router"],
+    tags: ["Community", "Router", "Embedded"],
   },
   {
     name: "Proxmox VE",
