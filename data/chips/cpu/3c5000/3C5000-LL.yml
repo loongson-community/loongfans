@@ -2,12 +2,12 @@ basic:
   name: 3C5000-LL
   series: 3C5000
   market: 3
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/3C5000.webp"
   manual: ""
 
-cpu: 
+cpu:
   cores: 16
   threads: 16
   arch: "LA464"
@@ -23,7 +23,7 @@ cpu:
 gpu:
   available: false
   name: "N/A"
-  
+
 memory:
   max: "N/A"
   types: "DDR4-3200"
@@ -61,4 +61,3 @@ power:
 technologies:
   isa: "64-Bit"
   isa_extensions: ["LBT", "LVZ", "LSX", "LASX"]
-  

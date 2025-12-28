@@ -2,12 +2,12 @@ basic:
   name: 3B6000M/8
   series: 2K3000
   market: 2
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/3B6000M.webp"
   manual: ""
 
-cpu: 
+cpu:
   cores: 8
   threads: 8
   arch: "LA364E"
@@ -23,7 +23,7 @@ cpu:
 gpu:
   available: true
   name: "LG200"
-  
+
 memory:
   max: "32 GiB (DDR4) / 16 GiB (LPDDR4)"
   types: "DDR4-3200 / LPDDR4-4266"

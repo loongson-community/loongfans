@@ -2,12 +2,12 @@ basic:
   name: 2K1500-i-LL
   series: 2K1500
   market: 4
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/2K1500.webp"
   manual: ""
 
-cpu: 
+cpu:
   cores: 2
   threads: 2
   arch: "LA264"
@@ -23,7 +23,7 @@ cpu:
 gpu:
   available: false
   name: ""
-  
+
 memory:
   max: "2 GiB"
   types: "DDR3-1600"

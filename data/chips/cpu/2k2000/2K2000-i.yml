@@ -2,12 +2,12 @@ basic:
   name: 2K2000-i
   series: 2K2000
   market: 2
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/2K2000-i.webp"
   manual: ""
 
-cpu: 
+cpu:
   cores: 2
   threads: 2
   arch: "LA364"
@@ -23,7 +23,7 @@ cpu:
 gpu:
   available: true
   name: "unknown"
-  
+
 memory:
   max: "32 GiB"
   types: "DDR4-2400"

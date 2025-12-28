@@ -2,14 +2,14 @@ basic:
   name: 7A2000
   series: 7A2000
   market: 1
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/chipset/7A2000.webp"
   manual: ""
 
 chipset:
   interface: "HyperTransport 3.0 × 16"
-  
+
 gpu:
   available: true
   name: "LG110"

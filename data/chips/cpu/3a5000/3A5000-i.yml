@@ -2,12 +2,12 @@ basic:
   name: 3A5000-i / 3A5000-iHV (0.9 V)
   series: 3A5000
   market: 4
-  
-ext_info: 
+
+ext_info:
   pic: "/images/chips/cpu/3A5000-i.webp"
   manual: ""
 
-cpu: 
+cpu:
   cores: 4
   threads: 4
   arch: "LA464"
@@ -61,4 +61,3 @@ power:
 technologies:
   isa: "64-Bit"
   isa_extensions: ["LBT", "LVZ", "LSX", "LASX"]
-  
