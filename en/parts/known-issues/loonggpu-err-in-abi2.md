@@ -1,4 +1,4 @@
-### Backlight Control May Not be Available with ABI 2.0 Distros
+### Backlight Control May Not be Available with ABI2.0 Distros
 
 Due to a change in upstream kernel API and problematic Loongson PWM driver implementation, as well as the lack of `gpio_base` support, laptop backlight control may not be available with some Linux distros.
 

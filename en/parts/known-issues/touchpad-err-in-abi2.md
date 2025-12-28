@@ -1,4 +1,4 @@
-### Touchpads May Not Work with ABI 2.0 Distros
+### Touchpads May Not Work with ABI2.0 Distros
 
 Some laptops come with touchpads that are wired using an HID-over-I2C bus, which requires a GPIO pin to supply interrupts.
 

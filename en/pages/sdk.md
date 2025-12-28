@@ -21,7 +21,7 @@ Thanks to the efforts of community contributors and Loongson engineers since 202
 This means that the process to install various programming toolchains is now similar, if not identical, to the x86 platform - this means installing them is as easy as installing from distro repositories and with single-line command pastes!
 
 :::tip
-Given that ABI 2.0 (“New World”) is used by most community users and developers, this guide focuses solely on introducing installation and configuration procedures for ABI 2.0 systems. ABI 1.0 (“Old World”) is not covered here. If you are in a scenario where you have to develop for ABI 1.0, we recommend reconsidering and confirming that criterion. Should that necessity arise, please refer to the documentation from [Loongson Open Source Community (loongnix.cn)](https://www.loongnix.cn/).
+Given that ABI2.0 (“New World”) is used by most community users and developers, this guide focuses solely on introducing installation and configuration procedures for ABI2.0 systems. ABI1.0 (“Old World”) is not covered here. If you are in a scenario where you have to develop for ABI1.0, we recommend reconsidering and confirming that criterion. Should that necessity arise, please refer to the documentation from [Loongson Open Source Community (loongnix.cn)](https://www.loongnix.cn/).
 :::
 
 ---
@@ -152,7 +152,7 @@ To install Python on common Linux distributions and operating systems:
 :::tip
 Since LoongArch still lacks definition for a "manylinux" baseline, the official PyPI repository does not host binaries for LoongArch. This means that when installing PyPI modules using `pip`, the respective modules will be compiled from source and you may need to install C/C++/Rust toolchains as needed.
 
-Loongson Technology hosts a PyPI binary repository for ABI 2.0 systems at [lpypi.loongnix.cn](http://lpypi.loongnix.cn/). You may edit `/etc/pip.conf` to and specify this as the default repository. alternatively, the [loong64](https://github.com/loong64) organization on GitHub maintains an independent PyPI binary repository. For configuration procedures, please refer to [the organization's README](https://github.com/loong64#pypi-repository).
+Loongson Technology hosts a PyPI binary repository for ABI2.0 systems at [lpypi.loongnix.cn](http://lpypi.loongnix.cn/). You may edit `/etc/pip.conf` to and specify this as the default repository. alternatively, the [loong64](https://github.com/loong64) organization on GitHub maintains an independent PyPI binary repository. For configuration procedures, please refer to [the organization's README](https://github.com/loong64#pypi-repository).
 :::
 
 </template>
@@ -221,7 +221,7 @@ Many Linux distributions provide multiple versions of OpenJDK to suit the needs 
 
 <template #kernel>
 
-The Linux Kernel officially supports LoongArch. Generally, Linux distributions based on ABI 2.0 utilize the upstream kernel (along with platform-specific workarounds and other patches, see below). However, some commercial distributions ship the 6.6 "longterm" kernel with an extensive set of platform-specific patches.
+The Linux Kernel officially supports LoongArch. Generally, Linux distributions based on ABI2.0 utilize the upstream kernel (along with platform-specific workarounds and other patches, see below). However, some commercial distributions ship the 6.6 "longterm" kernel with an extensive set of platform-specific patches.
 
 :::tip
 The Linux Kernel introduced LoongArch support since version 5.19. However, to fully leverage the hardware capabilities and performance of LoongArch, please use the latest mainline kernel.
@@ -253,7 +253,7 @@ The following table lists all known and essential patches maintained by various 
 | HWMon support (thermal and other forms of hardware monitoring), providing CPU thermal control for the Loongson 3 family | Feature | `CPU_HWMON` (bool: y/n) | [1](https://github.com/chenhuacai/linux/commit/2a6c1c74d93a21613a523aebc6494d654f35cf1a) | Does not include support for thermal monitoring of the 7A bridge chip; this patch may cause `sensors(1)` to read incorrect temperature sensors and data on SoC platforms such as 2K3000/3B6000M. |
 | Multi-channel DMA Controller | Feature | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
 | 2K3000/3B6000M SoC CAN-FD Bus | Feature | `CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/905bf46bcebfb) | Must be used together with the patch for multi-channel DMA controller |
-| BPI1000/1001 (“Old World”) firmware support | Feature | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/06e031656e659), [2](https://github.com/AOSC-Tracking/linux/commit/6a2eb415543d7), [3](https://github.com/AOSC-Tracking/linux/commit/56209fafa1832), [4](https://github.com/AOSC-Tracking/linux/commit/85a8b0edaf388), [5](https://github.com/AOSC-Tracking/linux/commit/16f5059f8b43d), [6](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/ecd26b294d80e), [8](https://github.com/AOSC-Tracking/linux/commit/1c92272af179f) | Essential for booting ABI 2.0 systems on Lenovo Kaitian M540z, Gooxi 3C5000L quad-socket servers, and certain platforms shipping Kunlun firmware from 2020 to 2022. |
+| BPI1000/1001 (“Old World”) firmware support | Feature | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/06e031656e659), [2](https://github.com/AOSC-Tracking/linux/commit/6a2eb415543d7), [3](https://github.com/AOSC-Tracking/linux/commit/56209fafa1832), [4](https://github.com/AOSC-Tracking/linux/commit/85a8b0edaf388), [5](https://github.com/AOSC-Tracking/linux/commit/16f5059f8b43d), [6](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/ecd26b294d80e), [8](https://github.com/AOSC-Tracking/linux/commit/1c92272af179f) | Essential for booting ABI2.0 systems on Lenovo Kaitian M540z, Gooxi 3C5000L quad-socket servers, and certain platforms shipping Kunlun firmware from 2020 to 2022. |
 | PCIe bus speed detection quirk for some 3B6000 and 3C6000 family processors, where PCIe speeds were incorrectly limited to PCIe 1.0 | Workaround | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/ae2697f19a371) | The scope of impact processor steppings/batches is unclear. For details, see [the explanation here](@/pages/guides/errata-desktop-and-server.html#pcie-speed-negotiation-issue-with-early-3b6000-3c6000-steppings) |
 | Workaround for inoperaable GPIO due to device descriptions that does not comply with the *Loongson CPU Unified System Architecture Specification*, where GPIO devices were described within `gsi_idx_map` | Workaround | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/71068c266d426) | Should not affect 2K3000/3B6000M and later products |
 | Workaround for intermittent driver crashes, resets, and lockups with AMD GCN 1.0–4.0 GPUs on LoongArch platforms | Workaround | N/A | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | The mechanism behind this fix is unclear (empirical patch); commercial 6.6 kernels like deepin include a more aggressive (yet similarly unexplained) patchset. See [this deepin pull request](https://github.com/deepin-community/kernel/pull/1215). |
@@ -277,7 +277,7 @@ To install Docker on common Linux distributions and operating systems:
 | Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install docker` |
 
 :::tip
-There are only few LoongArch containers available in the official Docker registry. Loongson Technology maintains a [Docker image repository targeting LoongArch ABI 2.0](https://lcr.loongnix.cn/). You can [modify your Docker configuration](https://docs.docker.com/docker-hub/image-library/mirror/) to utilize this registry as needed.
+There are only few LoongArch containers available in the official Docker registry. Loongson Technology maintains a [Docker image repository targeting LoongArch ABI2.0](https://lcr.loongnix.cn/). You can [modify your Docker configuration](https://docs.docker.com/docker-hub/image-library/mirror/) to utilize this registry as needed.
 :::
 
 </template>

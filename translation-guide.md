@@ -185,7 +185,7 @@
 
 ## 格式规范
 
-- ABI 2.0 系统: ABI2.0 systems
+- ABI2.0 系统: ABI2.0 systems
 - 新世界 (ABI2.0): New World (ABI2.0)
 - Linux 内核: Linux Kernel
 
