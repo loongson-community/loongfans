@@ -1,4 +1,4 @@
-import { OsData } from "../zh/os";
+import { OsData } from "../zh/os"
 
 export const osDataList = [
   {
@@ -26,7 +26,13 @@ export const osDataList = [
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
-    tags: ["Commercial Support Available", "Server", "Linux", "ABI2.0", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Server",
+      "Linux",
+      "ABI2.0",
+      "ABI1.0",
+    ],
   },
   {
     name: "AOSC OS",
@@ -47,7 +53,8 @@ export const osDataList = [
   },
   {
     name: "CLFS for LoongArch",
-    description: "Cookbook for fully cross-compile a Linux distribution from source code.",
+    description:
+      "Cookbook for fully cross-compile a Linux distribution from source code.",
     href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch",
     image: "/images/os/lfs.svg",
     tags: ["Community", "DIY", "Linux", "ABI2.0"],
@@ -63,8 +70,7 @@ export const osDataList = [
   },
   {
     name: "deepin",
-    description:
-      "User-friendly desktop-oriented distribution.",
+    description: "User-friendly desktop-oriented distribution.",
     href: "https://www.deepin.org",
     // https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
     image: "/images/os/deepin.svg",
@@ -90,8 +96,7 @@ export const osDataList = [
   },
   {
     name: "Gentoo",
-    description:
-      "Highly flexible, source-based Linux distribution.",
+    description: "Highly flexible, source-based Linux distribution.",
     href: "https://www.gentoo.org",
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
@@ -112,7 +117,15 @@ export const osDataList = [
       "Commercial Linux distribution for business informationization.",
     href: "https://www.kylinos.cn",
     image: "/images/os/kylinos.svg",
-    tags: ["Commercial Support Available", "Desktop", "Server", "Immutable", "Linux", "ABI2.0", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Desktop",
+      "Server",
+      "Immutable",
+      "Linux",
+      "ABI2.0",
+      "ABI1.0",
+    ],
   },
   {
     name: "LFS LoongArch Edition",
@@ -124,21 +137,26 @@ export const osDataList = [
   },
   {
     name: "loongFire",
-    description:
-      "LoongArch port of IPFire, an operating system for firewalls",
+    description: "LoongArch port of IPFire, an operating system for firewalls",
     href: "https://www.bpfire.net/",
     // From private exchange.
     image: "/images/os/loongfire.webp",
-    tags: ["Community", "Server", "Firewall", "Linux", "ABI2.0"]
+    tags: ["Community", "Server", "Firewall", "Linux", "ABI2.0"],
   },
   {
     name: "Loongnix",
-    description:
-      "Reference Linux distribution from Loongson Technology.",
+    description: "Reference Linux distribution from Loongson Technology.",
     href: "https://www.loongnix.cn/zh/loongnix/",
     // Found in Plymouth theme.
     image: "/images/os/loongnix.webp",
-    tags: ["Commercial Support Available", "Desktop", "Server", "Linux", "ABI2.0", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Desktop",
+      "Server",
+      "Linux",
+      "ABI2.0",
+      "ABI1.0",
+    ],
   },
   {
     name: "New Start",
@@ -147,7 +165,13 @@ export const osDataList = [
     href: "https://www.gd-linux.com/",
     // https://www.gd-linux.com/
     image: "/images/os/newstart.webp",
-    tags: ["Commercial Support Available", "Desktop", "Server", "Linux", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Desktop",
+      "Server",
+      "Linux",
+      "ABI1.0",
+    ],
   },
   {
     name: "NFS-CHINA",
@@ -156,12 +180,17 @@ export const osDataList = [
     href: "https://www.nfschina.com/",
     // https://www.nfschina.com/template/default/images/logo.svg
     image: "/images/os/nfs.svg",
-    tags: ["Commercial Support Available", "Desktop", "Server", "Linux", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Desktop",
+      "Server",
+      "Linux",
+      "ABI1.0",
+    ],
   },
   {
     name: "Nix4Loong",
-    description:
-      "Linux distribution with declarative package management.",
+    description: "Linux distribution with declarative package management.",
     href: "https://nix4loong.cn/",
     // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
     image: "/images/os/nix4loong.svg",
@@ -169,10 +198,17 @@ export const osDataList = [
   },
   {
     name: "OpenCloudOS",
-    description: "Distribution for servers maintained by the OpenCloudOS community.",
+    description:
+      "Distribution for servers maintained by the OpenCloudOS community.",
     href: "https://opencloudos.org",
     image: "/images/os/opencloudos.webp",
-    tags: ["Commercial Support Available", "Server", "Linux", "ABI2.0", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Server",
+      "Linux",
+      "ABI2.0",
+      "ABI1.0",
+    ],
   },
   {
     name: "openEuler",
@@ -181,22 +217,32 @@ export const osDataList = [
     href: "https://openeuler.org",
     // https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
     image: "/images/os/openeuler.svg",
-    tags: ["Commercial Support Available", "Server", "Linux", "ABI2.0", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Server",
+      "Linux",
+      "ABI2.0",
+      "ABI1.0",
+    ],
   },
   {
     name: "OpenHarmony",
-    description:
-      "Operating system for embedded and smart terminal devices.",
+    description: "Operating system for embedded and smart terminal devices.",
     href: "https://openharmony.cn",
     // FIXME: The SVG somehow does not render on Firefox.
     // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
     image: "/images/os/openharmony.webp",
-    tags: ["Commercial Support Available", "Desktop", "Embedded", "HarmonyOS", "ABI2.0"],
+    tags: [
+      "Commercial Support Available",
+      "Desktop",
+      "Embedded",
+      "HarmonyOS",
+      "ABI2.0",
+    ],
   },
   {
     name: "openKylin",
-    description:
-      "User-friendly desktop-oriented distribution.",
+    description: "User-friendly desktop-oriented distribution.",
     href: "https://www.openkylin.top/",
     // https://www.openkylin.top/upload/202209/1664440595.png
     image: "/images/os/openkylin.webp",
@@ -212,7 +258,8 @@ export const osDataList = [
   },
   {
     name: "Proxmox VE",
-    description: "Complete open-source platform for enterprise virtualization.  The LoongArch port is developed and maintained by Lierfang.",
+    description:
+      "Complete open-source platform for enterprise virtualization.  The LoongArch port is developed and maintained by Lierfang.",
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
@@ -225,7 +272,13 @@ export const osDataList = [
     href: "https://www.chinaredflag.cn/",
     // https://commons.wikimedia.org/wiki/File:RedFlag_Linux-Logo.svg
     image: "/images/os/redflag.svg",
-    tags: ["Commercial Support Available", "Desktop", "Server", "Linux", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Desktop",
+      "Server",
+      "Linux",
+      "ABI1.0",
+    ],
   },
   {
     name: "Slackwareloong",
@@ -252,7 +305,14 @@ export const osDataList = [
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
     image: "/images/os/uos.svg",
-    tags: ["Commercial Support Available", "Desktop", "Server", "Immutable", "Linux", "ABI1.0"],
+    tags: [
+      "Commercial Support Available",
+      "Desktop",
+      "Server",
+      "Immutable",
+      "Linux",
+      "ABI1.0",
+    ],
   },
   {
     name: "Yongbao",
@@ -261,4 +321,4 @@ export const osDataList = [
     image: "/images/os/linux.svg",
     tags: ["Community", "Desktop", "Immutable", "Linux", "ABI2.0"],
   },
-] as OsData[];
+] as OsData[]

@@ -5,7 +5,7 @@ export default {
     remove_compare: "Remove from Comparison",
     remove: "Remove",
     clear: "Clear Selection",
-    links: "/en/pages/chips/cpu/compare" // DO NOT REMOVE OR CHANGE THIS!!!
+    links: "/en/pages/chips/cpu/compare", // DO NOT REMOVE OR CHANGE THIS!!!
   },
   basic: {
     title: "Basic Information",
@@ -90,7 +90,8 @@ export default {
   },
   non_product:
     "Please select chip products from the index or their detail pages and add them for comparison.",
-  up_to_four_chips: "Only up to four (4) chips may be compared at the same time.",
+  up_to_four_chips:
+    "Only up to four (4) chips may be compared at the same time.",
   notice: "Notice",
   status: {
     yes: "Yes",
@@ -98,4 +99,4 @@ export default {
     supported: "Supported",
     unsupported: "Not Supported",
   },
-};
+}

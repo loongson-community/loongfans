@@ -1,8 +1,8 @@
 export interface OsData {
-  name: string,
-  description: string,
-  href: string,
-  image: string,
+  name: string
+  description: string
+  href: string
+  image: string
   tags: string[]
 }
 
@@ -18,8 +18,7 @@ export const osDataList = [
   },
   {
     name: "ALT Linux",
-    description:
-      "基于 RPM 软件包及 APT-RPM 软件包管理前端的商业 Linux 发行版",
+    description: "基于 RPM 软件包及 APT-RPM 软件包管理前端的商业 Linux 发行版",
     href: "https://en.altlinux.org/Main_Page",
     // https://www.altlinux.org/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Alt_linux_logo.svg
     image: "/images/os/alt.svg",
@@ -36,8 +35,7 @@ export const osDataList = [
   },
   {
     name: "Arch Linux for Loong64",
-    description:
-      "试图保持易用性的，可定制的轻量级 Linux 发行版",
+    description: "试图保持易用性的，可定制的轻量级 Linux 发行版",
     href: "https://loongarchlinux.lcpu.dev/",
     image: "/images/os/loongarchlinux.webp",
     tags: ["社区", "滚动更新", "Linux", "ABI2.0"],
@@ -51,8 +49,7 @@ export const osDataList = [
   },
   {
     name: "Debian",
-    description:
-      "全功能的，可自由使用和分发的 Linux 发行版",
+    description: "全功能的，可自由使用和分发的 Linux 发行版",
     href: "https://www.debian.org",
     // https://www.debian.org/logos/openlogo-nd.svg
     image: "/images/os/debian.svg",
@@ -60,8 +57,7 @@ export const osDataList = [
   },
   {
     name: "deepin",
-    description:
-      "新手友好的桌面 Linux 发行版",
+    description: "新手友好的桌面 Linux 发行版",
     href: "https://www.deepin.org",
     // https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
     image: "/images/os/deepin.svg",
@@ -69,8 +65,7 @@ export const osDataList = [
   },
   {
     name: "eweOS",
-    description:
-      "基于 musl libc 及其他技术的前沿 Linux 发行版",
+    description: "基于 musl libc 及其他技术的前沿 Linux 发行版",
     href: "https://os.ewe.moe/",
     // https://os.ewe.moe/
     image: "/images/os/eweos.svg",
@@ -78,8 +73,7 @@ export const osDataList = [
   },
   {
     name: "Fedora Remix LoongArch",
-    description:
-      "面向开发者和内容创作者的桌面发行版",
+    description: "面向开发者和内容创作者的桌面发行版",
     href: "https://github.com/fedora-remix-loongarch/releases-info",
     // https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
     image: "/images/os/fedora_remix.webp",
@@ -87,8 +81,7 @@ export const osDataList = [
   },
   {
     name: "Gentoo",
-    description:
-      "高度可定制的，基于源代码的 Linux 发行版",
+    description: "高度可定制的，基于源代码的 Linux 发行版",
     href: "https://www.gentoo.org",
     // https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
     image: "/images/os/gentoo.svg",
@@ -96,8 +89,7 @@ export const osDataList = [
   },
   {
     name: "GXDE OS",
-    description:
-      "围绕 DDE 15 继续维护的 Linux 发行版",
+    description: "围绕 DDE 15 继续维护的 Linux 发行版",
     href: "https://www.gxde.top/",
     // https://www.gxde.top/logo.png
     image: "/images/os/gxde.webp",
@@ -105,8 +97,7 @@ export const osDataList = [
   },
   {
     name: "红旗 Linux",
-    description:
-      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
+    description: "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://www.chinaredflag.cn/",
     // https://commons.wikimedia.org/wiki/File:RedFlag_Linux-Logo.svg
     image: "/images/os/redflag.svg",
@@ -114,8 +105,7 @@ export const osDataList = [
   },
   {
     name: "开放麒麟",
-    description:
-      "新手友好的桌面 Linux 发行版",
+    description: "新手友好的桌面 Linux 发行版",
     href: "https://www.openkylin.top/",
     // https://www.openkylin.top/upload/202209/1664440595.png
     image: "/images/os/openkylin.webp",
@@ -123,8 +113,7 @@ export const osDataList = [
   },
   {
     name: "开源鸿蒙",
-    description:
-      "面向嵌入式和智能终端设备的操作系统",
+    description: "面向嵌入式和智能终端设备的操作系统",
     href: "https://openharmony.cn",
     // FIXME: The SVG somehow does not render on Firefox.
     // https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
@@ -133,16 +122,14 @@ export const osDataList = [
   },
   {
     name: "LFS 龙架构版",
-    description:
-      "详细介绍如何完全从源代码构建自定义的 Linux 系统",
+    description: "详细介绍如何完全从源代码构建自定义的 Linux 系统",
     href: "https://www.linuxfromscratch.org/~xry111/lfs/#loongarch",
     image: "/images/os/lfs.svg",
     tags: ["社区", "DIY", "Linux", "ABI2.0"],
   },
   {
     name: "龙蜥操作系统",
-    description:
-      "兼容 CentOS 传统操作习惯的 Linux 发行版",
+    description: "兼容 CentOS 传统操作习惯的 Linux 发行版",
     href: "https://openanolis.cn/anolisos",
     // https://oss.openanolis.cn/fragment/ekbqllugcshfozktgpyf
     image: "/images/os/openanolis.webp",
@@ -150,17 +137,15 @@ export const osDataList = [
   },
   {
     name: "loongFire",
-    description:
-      "防火墙操作系统 IPFire 的龙架构移植",
+    description: "防火墙操作系统 IPFire 的龙架构移植",
     href: "https://www.bpfire.net/",
     // From private exchange.
     image: "/images/os/loongfire.webp",
-    tags: ["社区", "服务器", "防火墙", "Linux", "ABI2.0"]
+    tags: ["社区", "服务器", "防火墙", "Linux", "ABI2.0"],
   },
   {
     name: "Loongnix",
-    description:
-      "龙芯中科维护的参考 Linux 发行版",
+    description: "龙芯中科维护的参考 Linux 发行版",
     href: "https://www.loongnix.cn/zh/loongnix/",
     // Found in Plymouth theme.
     image: "/images/os/loongnix.webp",
@@ -168,8 +153,7 @@ export const osDataList = [
   },
   {
     name: "Nix4Loong",
-    description:
-      "采用声明式包管理的 Linux 发行版",
+    description: "采用声明式包管理的 Linux 发行版",
     href: "https://nix4loong.cn/",
     // https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
     image: "/images/os/nix4loong.svg",
@@ -201,7 +185,8 @@ export const osDataList = [
   },
   {
     name: "Proxmox VE",
-    description: "面向企业虚拟化平台的全功能开源服务器管理平台，其龙架构移植由梨儿方科技完成并持续维护",
+    description:
+      "面向企业虚拟化平台的全功能开源服务器管理平台，其龙架构移植由梨儿方科技完成并持续维护",
     href: "https://www.lierfang.com//#/open/third",
     // https://www.proxmox.com/en/about/company-details/media-kit
     image: "/images/os/proxmox.svg",
@@ -209,8 +194,7 @@ export const osDataList = [
   },
   {
     name: "Slackwareloong",
-    description:
-      "高度可定制的，追求纯粹 UNIX 体验的 Linux 发行版",
+    description: "高度可定制的，追求纯粹 UNIX 体验的 Linux 发行版",
     href: "https://www.slackware.com",
     // http://www.slackware.com/~msimons/slackware/grfx/shared/bluepiSW.jpg
     image: "/images/os/slackware.webp",
@@ -227,8 +211,7 @@ export const osDataList = [
   },
   {
     name: "UOS",
-    description:
-      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
+    description: "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://chinauos.com",
     // https://www.uniontech.com/statics/home/images/logo-1.svg
     image: "/images/os/uos.svg",
@@ -236,8 +219,7 @@ export const osDataList = [
   },
   {
     name: "新支点操作系统",
-    description:
-      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
+    description: "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://www.gd-linux.com/",
     // https://www.gd-linux.com/
     image: "/images/os/newstart.webp",
@@ -245,8 +227,7 @@ export const osDataList = [
   },
   {
     name: "银河麒麟操作系统",
-    description:
-      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
+    description: "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://www.kylinos.cn",
     image: "/images/os/kylinos.svg",
     tags: ["可获取商业支持", "桌面", "服务器", "不可变", "Linux", "ABI1.0"],
@@ -260,11 +241,10 @@ export const osDataList = [
   },
   {
     name: "中科方德操作系统",
-    description:
-      "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
+    description: "面向行业信息化应用的商用桌面和服务器 Linux 发行版",
     href: "https://www.nfschina.com/",
     // https://www.nfschina.com/template/default/images/logo.svg
     image: "/images/os/nfs.svg",
     tags: ["可获取商业支持", "桌面", "服务器", "Linux", "ABI1.0"],
   },
-] as OsData[];
+] as OsData[]

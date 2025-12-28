@@ -1,24 +1,24 @@
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from "vitepress/theme"
 
 // PrimeVue init
-import PrimeVue from "primevue/config";
-import ToastService from 'primevue/toastservice';
-import DialogService from 'primevue/dialogservice';
+import PrimeVue from "primevue/config"
+import ToastService from "primevue/toastservice"
+import DialogService from "primevue/dialogservice"
 
-import Material from "@primeuix/themes/material";
-import { definePreset } from "@primeuix/themes";
+import Material from "@primeuix/themes/material"
+import { definePreset } from "@primeuix/themes"
 
 // Make vue-i18n configs to a file
-import i18n from './i18n';
+import i18n from "./i18n"
 
-import './custom.css';
-import Layout from './Layout.vue'
-import DeviceDetail from "../../components/device/Detail.vue";
-import ChipTables from "../../components/chips/ChipTables.vue";
-import CpuCompare from '../../components/chips/compare/CpuCompare.vue';
-import DeviceDownloadCard from '../../components/device/DownloadCard.vue';
+import "./custom.css"
+import Layout from "./Layout.vue"
+import DeviceDetail from "../../components/device/Detail.vue"
+import ChipTables from "../../components/chips/ChipTables.vue"
+import CpuCompare from "../../components/chips/compare/CpuCompare.vue"
+import DeviceDownloadCard from "../../components/device/DownloadCard.vue"
 
-import type { App } from "vue";
+import type { App } from "vue"
 
 const Preset = definePreset(Material, {
   semantic: {
@@ -35,7 +35,7 @@ const Preset = definePreset(Material, {
       900: "{red.900}",
     },
   },
-});
+})
 
 export default {
   // 继承核心样式
@@ -49,14 +49,14 @@ export default {
     // PrimeVue init
     app.use(PrimeVue, {
       theme: { preset: Preset, options: { darkModeSelector: false } },
-    });
-    app.use(ToastService);
-    app.use(DialogService);
+    })
+    app.use(ToastService)
+    app.use(DialogService)
 
     // Components
-    app.component('Device', DeviceDetail)
+    app.component("Device", DeviceDetail)
     app.component("ChipTables", ChipTables)
     app.component("CpuCompare", CpuCompare)
-    app.component('DeviceDownloadCard', DeviceDownloadCard);
+    app.component("DeviceDownloadCard", DeviceDownloadCard)
   },
-};
+}
