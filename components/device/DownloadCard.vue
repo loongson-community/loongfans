@@ -58,9 +58,7 @@
         <b class="panel-header">
           <div>
             <span>{{ title }}</span>
-            <span v-if="debug">{{
-              t("deviceDownloadDebugVersion")
-            }}</span>
+            <span v-if="debug">{{ t("deviceDownloadDebugVersion") }}</span>
           </div>
           <span class="panel-header-version">
             {{ version }}
@@ -96,12 +94,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-import { useI18n } from "vue-i18n";
-import { Button, Panel, Divider } from "primevue";
-import IconDownload from "~icons/material-symbols/download";
-import IconExpandMore from "~icons/material-symbols/expand-more";
-import CopyInline from "./CopyInline.vue";
+import { ref, computed } from "vue"
+import { useI18n } from "vue-i18n"
+import { Button, Panel, Divider } from "primevue"
+import IconDownload from "~icons/material-symbols/download"
+import IconExpandMore from "~icons/material-symbols/expand-more"
+import CopyInline from "./CopyInline.vue"
 
 const props = defineProps({
   title: String,
@@ -112,24 +110,24 @@ const props = defineProps({
   url: String,
   latest: Boolean,
   debug: Boolean,
-});
+})
 
-const { t } = useI18n();
+const { t } = useI18n()
 
-const expand = ref(false);
+const expand = ref(false)
 
 const formattedDate = computed(() =>
   new Date(
-    /^\d+$/.test(props.date) ? Number(props.date) * 1000 : props.date
-  ).toLocaleDateString("en-CA")
-);
+    /^\d+$/.test(props.date) ? Number(props.date) * 1000 : props.date,
+  ).toLocaleDateString("en-CA"),
+)
 
 const formattedSize = computed(() => {
-  if (!props.size) return "";
-  const units = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
-  const unit = Math.floor(Math.log(props.size) / Math.log(1024));
-  return `${(props.size / 1024 ** unit).toFixed(2)} ${units[unit]}`;
-});
+  if (!props.size) return ""
+  const units = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"]
+  const unit = Math.floor(Math.log(props.size) / Math.log(1024))
+  return `${(props.size / 1024 ** unit).toFixed(2)} ${units[unit]}`
+})
 </script>
 
 <style scoped>

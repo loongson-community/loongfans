@@ -19,10 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import IconOpenInNew from "~icons/material-symbols/open-in-new";
-import type { OsData } from "../../.vitepress/locales/zh/os";
+import IconOpenInNew from "~icons/material-symbols/open-in-new"
+import type { OsData } from "../../.vitepress/locales/zh/os"
 
-defineProps<{ data: OsData }>();
+defineProps<{ data: OsData }>()
 </script>
 
 <style scoped>
@@ -36,7 +36,9 @@ defineProps<{ data: OsData }>();
   border-radius: 8px;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .distro-card:hover {

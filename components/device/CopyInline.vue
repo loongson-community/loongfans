@@ -6,14 +6,14 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-import { useToast } from "primevue/usetoast";
-import IconContentCopy from "~icons/material-symbols/content-copy";
+import { computed } from "vue"
+import { useToast } from "primevue/usetoast"
+import IconContentCopy from "~icons/material-symbols/content-copy"
 
-const props = defineProps({ text: String, type: String });
-const toast = useToast();
+const props = defineProps({ text: String, type: String })
+const toast = useToast()
 
-const textWithColon = computed(() => `": ${props.text}"`);
+const textWithColon = computed(() => `": ${props.text}"`)
 
 function copyToClipboard(text) {
   navigator.clipboard
@@ -25,8 +25,8 @@ function copyToClipboard(text) {
         summary: "Failed to copy",
         detail: e,
         life: 3000,
-      })
-    );
+      }),
+    )
 }
 </script>
 

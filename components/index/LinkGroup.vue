@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ title: string }>();
+defineProps<{ title: string }>()
 </script>
 
 <style scoped>

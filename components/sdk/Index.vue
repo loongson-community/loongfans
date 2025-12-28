@@ -14,21 +14,21 @@
 </template>
 
 <script setup>
-import { useI18n } from "vue-i18n";
+import { useI18n } from "vue-i18n"
 
-import IconGnu from "~icons/simple-icons/gnu";
-import IconLlvm from "~icons/simple-icons/llvm";
-import IconRust from "~icons/simple-icons/rust";
-import IconNodejs from "~icons/simple-icons/nodedotjs";
-import IconGolang from "~icons/simple-icons/go";
-import IconPython from "~icons/simple-icons/python";
-import IconDotnet from "~icons/simple-icons/dotnet";
-import IconJava from "~icons/simple-icons/openjdk";
-import IconLinux from "~icons/simple-icons/linux";
-import IconDocker from "~icons/simple-icons/docker";
-import IconGithubActions from "~icons/simple-icons/githubactions";
+import IconGnu from "~icons/simple-icons/gnu"
+import IconLlvm from "~icons/simple-icons/llvm"
+import IconRust from "~icons/simple-icons/rust"
+import IconNodejs from "~icons/simple-icons/nodedotjs"
+import IconGolang from "~icons/simple-icons/go"
+import IconPython from "~icons/simple-icons/python"
+import IconDotnet from "~icons/simple-icons/dotnet"
+import IconJava from "~icons/simple-icons/openjdk"
+import IconLinux from "~icons/simple-icons/linux"
+import IconDocker from "~icons/simple-icons/docker"
+import IconGithubActions from "~icons/simple-icons/githubactions"
 
-const { t } = useI18n();
+const { t } = useI18n()
 
 const sdkList = [
   {
@@ -86,7 +86,7 @@ const sdkList = [
     title: t("cirunnerInstall"),
     icon: IconGithubActions,
   },
-];
+]
 </script>
 
 <style scoped>

@@ -2,7 +2,11 @@
   <div class="child_footer_info">
     <div class="child_footer_link">
       <Button
-        :label="t('language')" unstyled class="language-button" @click="(e) => op.toggle(e)">
+        :label="t('language')"
+        unstyled
+        class="language-button"
+        @click="(e) => op.toggle(e)"
+      >
         <template #icon>
           <IconTranslate />
         </template>
@@ -18,42 +22,57 @@
         </div>
       </Popover>
       <span>|</span>
-      <a href="https://github.com/loongson-community/loongfans" target="_blank">{{ t('siteSource') }}</a>
+      <a
+        href="https://github.com/loongson-community/loongfans"
+        target="_blank"
+        >{{ t("siteSource") }}</a
+      >
       <span>|</span>
-      <a href="https://github.com/loongson-community/loongfans/issues/new" target="_blank">{{ t('reportIssue') }}</a>
+      <a
+        href="https://github.com/loongson-community/loongfans/issues/new"
+        target="_blank"
+        >{{ t("reportIssue") }}</a
+      >
       <span>|</span>
-      <a :href="`${basePath}/pages/about`">{{ t('aboutCommunity') }}</a>
+      <a :href="`${basePath}/pages/about`">{{ t("aboutCommunity") }}</a>
     </div>
 
     <div class="copyright_info">
-      <span>{{ t('copyright') }} &copy; 2024-{{ copyrightYear }}</span><span>{{ t('communityName') }}</span>
-      <a href="https://beian.miit.gov.cn" target="_blank">鄂ICP备2022017735号-12</a>
+      <span>{{ t("copyright") }} &copy; 2024-{{ copyrightYear }}</span
+      ><span>{{ t("communityName") }}</span>
+      <a href="https://beian.miit.gov.cn" target="_blank"
+        >鄂ICP备2022017735号-12</a
+      >
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-import { useData, useRouter } from 'vitepress';
-import { useI18n } from 'vue-i18n';
-import { Button, Popover } from "primevue";
-import IconTranslate from '~icons/material-symbols/translate'
-import { getLocalePrefix, getLocaleUrl, setStoredLanguage, LANGUAGE_DISPLAY_NAMES } from '../.vitepress/utils/language';
+import { ref, computed } from "vue"
+import { useData, useRouter } from "vitepress"
+import { useI18n } from "vue-i18n"
+import { Button, Popover } from "primevue"
+import IconTranslate from "~icons/material-symbols/translate"
+import {
+  getLocalePrefix,
+  getLocaleUrl,
+  setStoredLanguage,
+  LANGUAGE_DISPLAY_NAMES,
+} from "../.vitepress/utils/language"
 
-const { t } = useI18n();
-const { localeIndex, lang } = useData();
-const router = useRouter();
-const basePath = computed(() => getLocalePrefix(localeIndex.value));
-const op = ref();
+const { t } = useI18n()
+const { localeIndex, lang } = useData()
+const router = useRouter()
+const basePath = computed(() => getLocalePrefix(localeIndex.value))
+const op = ref()
 
-let year = new Date().getFullYear();
-const copyrightYear = ref(year);
+let year = new Date().getFullYear()
+const copyrightYear = ref(year)
 
 function handleLanguageChange(language) {
   op.value.hide()
-  if(language !== lang.value)
-    setStoredLanguage(language)
-    router.go(getLocaleUrl(language, router.route.path))
+  if (language !== lang.value) setStoredLanguage(language)
+  router.go(getLocaleUrl(language, router.route.path))
 }
 </script>
 

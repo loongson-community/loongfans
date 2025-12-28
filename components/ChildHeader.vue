@@ -19,19 +19,20 @@
       v-if="page.filePath.includes('pages/chips')"
       :href="t('chips.buttons.links')"
       :text="compareButtonText"
-      class="btn_back">
+      class="btn_back"
+    >
     </Button>
   </div>
   <BackToTop />
 </template>
 
 <script setup>
-import { useData } from 'vitepress'
-import { useI18n } from 'vue-i18n'
-import { ref, computed, onMounted, onUnmounted } from 'vue'
-import IconArrowCircleLeftOutline from '~icons/material-symbols/arrow-circle-left-outline'
-import BackToTop from './BackToTop.vue';
-import Button from './Button.vue';
+import { useData } from "vitepress"
+import { useI18n } from "vue-i18n"
+import { ref, computed, onMounted, onUnmounted } from "vue"
+import IconArrowCircleLeftOutline from "~icons/material-symbols/arrow-circle-left-outline"
+import BackToTop from "./BackToTop.vue"
+import Button from "./Button.vue"
 
 const { frontmatter, page } = useData()
 const { t } = useI18n()
@@ -45,7 +46,7 @@ const updateLength = () => {
 }
 
 const compareButtonText = computed(() => {
-  return t('chips.buttons.title') + " (" + compareListLength.value + ")"
+  return t("chips.buttons.title") + " (" + compareListLength.value + ")"
 })
 
 // 监听 CPU 列表计数器事件
@@ -62,20 +63,20 @@ const handleCounterEvent = () => {
 
 onMounted(() => {
   updateLength()
-  window.addEventListener('counter', handleCounterChange)
-  window.addEventListener('cpuCompareListUpdated', handleCounterEvent)
+  window.addEventListener("counter", handleCounterChange)
+  window.addEventListener("cpuCompareListUpdated", handleCounterEvent)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('counter', handleCounterChange)
-  window.removeEventListener('cpuCompareListUpdated', handleCounterEvent)
+  window.removeEventListener("counter", handleCounterChange)
+  window.removeEventListener("cpuCompareListUpdated", handleCounterEvent)
 })
 </script>
 
 <style>
 /* 引入基础样式 */
-@import 'vitepress/dist/client/theme-default/styles/base.css';
-@import 'vitepress/dist/client/theme-default/styles/vars.css';
+@import "vitepress/dist/client/theme-default/styles/base.css";
+@import "vitepress/dist/client/theme-default/styles/vars.css";
 
 body {
   background: none;
@@ -90,7 +91,7 @@ body {
   overflow: hidden;
   background: url("/images/bg_body.webp") no-repeat top center;
   background-size: cover;
-  background-color: #FFF;
+  background-color: #fff;
   border-bottom: 5px solid red;
   box-sizing: border-box;
 }

@@ -32,14 +32,14 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import IconBilibili from "~icons/simple-icons/bilibili";
-import IconWechat from "~icons/simple-icons/wechat";
-import IconQq from "~icons/simple-icons/qq";
-import IconMatrix from "~icons/simple-icons/matrix";
-import IconTelegram from "~icons/simple-icons/telegram";
-import Link from "./Link.vue";
-import LinkGroup from "./LinkGroup.vue";
+import { useI18n } from "vue-i18n"
+import IconBilibili from "~icons/simple-icons/bilibili"
+import IconWechat from "~icons/simple-icons/wechat"
+import IconQq from "~icons/simple-icons/qq"
+import IconMatrix from "~icons/simple-icons/matrix"
+import IconTelegram from "~icons/simple-icons/telegram"
+import Link from "./Link.vue"
+import LinkGroup from "./LinkGroup.vue"
 
-const { locale } = useI18n();
+const { locale } = useI18n()
 </script>

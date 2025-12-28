@@ -28,12 +28,12 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
-import { useI18n } from "vue-i18n";
-import { Button } from "primevue";
-import { useToast } from "primevue/usetoast";
+import { computed, ref } from "vue"
+import { useI18n } from "vue-i18n"
+import { Button } from "primevue"
+import { useToast } from "primevue/usetoast"
 
-import chipsNameMap from '../../data/chips_name_map.min.json'
+import chipsNameMap from "../../data/chips_name_map.min.json"
 
 const props = defineProps({
   name: String,
@@ -42,44 +42,44 @@ const props = defineProps({
   image: String,
   tags: String,
   showCompareButton: Boolean,
-});
+})
 
-const { t } = useI18n();
-const toast = useToast();
+const { t } = useI18n()
+const toast = useToast()
 
-const tags = computed(() => props.tags?.split(",").map((i) => i.trim()));
+const tags = computed(() => props.tags?.split(",").map((i) => i.trim()))
 
 // #region FIXME: to be refactor
 const compareList = ref(
-  JSON.parse(localStorage.getItem("cpuCompareList") || "[]")
-);
+  JSON.parse(localStorage.getItem("cpuCompareList") || "[]"),
+)
 const isComparing = computed(() => {
-  return compareList.value.includes(chipsNameMap[props.name]);
-});
+  return compareList.value.includes(chipsNameMap[props.name])
+})
 
 const toggleCompare = () => {
-  compareList.value = JSON.parse(
-    localStorage.getItem("cpuCompareList") || "[]"
-  );
+  compareList.value = JSON.parse(localStorage.getItem("cpuCompareList") || "[]")
   if (isComparing.value) {
-    compareList.value = compareList.value.filter((id) => id !== chipsNameMap[props.name]);
+    compareList.value = compareList.value.filter(
+      (id) => id !== chipsNameMap[props.name],
+    )
   } else {
     if (compareList.value.length < 4) {
       // Limit to 4 chips for comparison
-      compareList.value.push(chipsNameMap[props.name]);
+      compareList.value.push(chipsNameMap[props.name])
     } else {
       toast.add({
         severity: "info",
         summary: t("chips.notice"),
         detail: t("chips.up_to_four_chips"),
         life: 3000,
-      });
-      return;
+      })
+      return
     }
   }
-  localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value));
-  window.dispatchEvent(new CustomEvent("cpuCompareListUpdated"));
-};
+  localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value))
+  window.dispatchEvent(new CustomEvent("cpuCompareListUpdated"))
+}
 // #endregion
 </script>
 
@@ -97,7 +97,10 @@ const toggleCompare = () => {
   border-radius: 12px;
   max-width: 520px;
   overflow: hidden;
-  transition: color 0.3s ease, margin-top 0.3s ease, height 0.3s ease;
+  transition:
+    color 0.3s ease,
+    margin-top 0.3s ease,
+    height 0.3s ease;
 }
 
 .card:hover {
