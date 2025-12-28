@@ -60,7 +60,7 @@ Introduces firmware-level driver for YT6801 NIC, support for custom fan curves, 
 
 <template #detail>
 
-Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware))：
+Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firmware](https://github.com/loongson/Firmware))：
 
 1.  Add YT6801UndiDxe Support.
 2.  Use 128bit to distinguish different ChipName.
@@ -107,7 +107,7 @@ Introduces firmware-level driver for YT6801 NIC, support for custom fan curves, 
 
 <template #detail>
 
-Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware))：
+Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firmware](https://github.com/loongson/Firmware))：
 
 1.  Add YT6801UndiDxe Support.
 2.  Use 128bit to distinguish different ChipName.

@@ -25,13 +25,13 @@ Loongson's processors are divided into three families:
 - Loongson 2: SoCs for embedded and industrial computers/controllers, as well as solutions for mobile devices.
 - Loongson 1: SoCs/MCUs for edge devices and smaller embedded devices.
 
-Considering that the Loongson 3 and 2 families of chips receive significantly more attention amonst the hobbyists, we will focus on these two families here.
+Considering that the Loongson 3 and 2 families of chips receive significantly more attention amongst the hobbyists, we will focus on these two families here.
 
 ### Current Products
 
 In 2025, Loongson's current embedded and desktop chip products includes follows:
 
-- Loongson 3C6000 family: 16, 32, 64-core processors with mult-socket support, targetting workstations and servers, all models support SMT2 "hyperthreading".
+- Loongson 3C6000 family: 16, 32, 64-core processors with mult-socket support, targeting workstations and servers, all models support SMT2 "hyperthreading".
 - Loongson 3B6000 family: 8, 12, 16-core processors for high-end desktops and workstations, all models support SMT2 "hyperthreading".
 - Loongson 3A6000: 4-core processor for desktop and mobile devices, with SMT2 "hyperthreading".
 - Loongson 3B6000M, 2K3000: 8-core low-power processors for industrial computers, embedded devices, desktops, and mobile devices.

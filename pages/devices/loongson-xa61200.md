@@ -58,7 +58,7 @@ pageSubTitle: 龙芯 XA61200
 
 <template #detail>
 
-本次更新的详细更改如下（摘自 [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware)）：
+本次更新的详细更改如下（摘自 [GitHub: loongson/Firmware](https://github.com/loongson/Firmware)）：
 
 1.  Add YT6801UndiDxe Support.
 2.  Use 128bit to distinguish different ChipName.
@@ -105,7 +105,7 @@ pageSubTitle: 龙芯 XA61200
 
 <template #detail>
 
-本次更新的详细更改如下（摘自 [GitHub: loongson/Firwmare](https://github.com/loongson/Firmware)）：
+本次更新的详细更改如下（摘自 [GitHub: loongson/Firmware](https://github.com/loongson/Firmware)）：
 
 1.  Add YT6801UndiDxe Support.
 2.  Use 128bit to distinguish different ChipName.
