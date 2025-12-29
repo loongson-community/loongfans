@@ -1,0 +1,16 @@
+name: 
+  zh: "开源鸿蒙"
+  en: "OpenHarmony"
+href: "https://openharmony.cn"
+# FIXME: The SVG somehow does not render on Firefox.
+# https://commons.wikimedia.org/wiki/File:OpenHarmony_Logo_by_OpenAtom.svg
+image: "/images/os/openharmony.webp"
+description:
+  zh: "面向嵌入式和智能终端设备的操作系统"
+  en: "Operating system for embedded and smart terminal devices."
+tags: 
+  - commercial_support
+  - desktop
+  - embedded
+  - harmony
+  - abi2

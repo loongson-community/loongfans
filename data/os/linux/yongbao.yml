@@ -1,0 +1,14 @@
+name: 
+  zh: "勇豹"
+  en: "Yongbao"
+href: "https://github.com/sunhaiyong1978/Yongbao"
+image: "/images/os/linux.svg"
+description:
+  zh: "面向行业信息化应用的商用桌面和服务器 Linux 发行版"
+  en: "Commercial Linux distribution for business informationization."
+tags: 
+  - community
+  - desktop
+  - immutable
+  - linux
+  - abi2

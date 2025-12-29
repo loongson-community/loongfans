@@ -1,0 +1,15 @@
+name: 
+  zh: "安同 OS"
+  en: "AOSC OS"
+href: "https://aosc.io/aosc-os"
+# https://raw.githubusercontent.com/AOSC-Dev/logo/refs/heads/master/aosc-os-kinfocenter.svg
+image: "/images/os/aosc.svg"
+description:
+  zh: "以“简明可靠”为设计及维护目标的，面向有一定 Linux 使用经验用户的发行版"
+  en: "Linux distribution focusing on simplicity and reliablity, designed for experimented Linux users."
+tags: 
+  - community
+  - desktop
+  - rolling
+  - linux
+  - abi2

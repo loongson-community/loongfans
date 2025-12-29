@@ -1,5 +1,6 @@
-import { defineConfig } from "vitepress"
-import Icons from "unplugin-icons/vite"
+import { defineConfig } from "vitepress";
+import Icons from "unplugin-icons/vite";
+import AutoGenerateJson from "./plugins/AutoGenerateJson.js";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -31,7 +32,10 @@ export default defineConfig({
   // 完全禁用主题切换
   appearance: false,
   vite: {
-    plugins: [Icons({ scale: 1 })],
+    plugins: [
+      Icons({ scale: 1 }),
+      AutoGenerateJson()
+    ],
     ssr: {
       noExternal: ["vue-i18n"],
     },

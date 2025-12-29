@@ -7,7 +7,7 @@
       <div class="header">
         <span class="name">{{ data.name }}</span>
         <div class="tags">
-          <span v-for="tag in data.tags" :key="tag" class="tag">{{ tag }}</span>
+          <span v-for="tag in data.tags" :key="tag" class="tag">{{ translateTag(tag) }}</span>
         </div>
       </div>
       <p class="description">{{ data.description }}</p>
@@ -19,10 +19,12 @@
 </template>
 
 <script setup lang="ts">
-import IconOpenInNew from "~icons/material-symbols/open-in-new"
-import type { OsData } from "../../.vitepress/locales/zh/os"
+import IconOpenInNew from "~icons/material-symbols/open-in-new";
+import type { OsData } from "./osdata_api"
+import { useTagTranslation } from "./osdata_api"
 
-defineProps<{ data: OsData }>()
+const props = defineProps<{ data: OsData }>();
+const { translateTag } = useTagTranslation();
 </script>
 
 <style scoped>

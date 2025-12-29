@@ -1,0 +1,12 @@
+name: 
+  en: "Arch Linux for Loong64"
+href: "https://loongarchlinux.lcpu.dev"
+image: "/images/os/loongarchlinux.webp"
+description:
+  zh: "试图保持易用性的，可定制的轻量级 Linux 发行版"
+  en: "Lightweight and flexible Linux distribution that tries to Keep It Simple."
+tags: 
+  - community
+  - rolling
+  - linux
+  - abi2
