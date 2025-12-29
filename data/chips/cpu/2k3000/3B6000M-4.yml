@@ -1,6 +1,6 @@
 basic:
-  name: 3B6000M/8
-  series: 3B6000
+  name: 3B6000M/4
+  series: 2K3000
   market: 2
   
 ext_info: 
@@ -8,13 +8,13 @@ ext_info:
   manual: ""
 
 cpu: 
-  cores: 8
-  threads: 8
+  cores: 4
+  threads: 4
   arch: "LA364E"
   freq: "2.5 GHz"
   l1_inst_cache: "64 KiB"
   l1_data_cache: "64 KiB"
-  l2_cache: "6 MiB"
+  l2_cache: "3 MiB"
   l3_cache: "N/A"
   voltage: "N/A"
   tpc: "N/A"
