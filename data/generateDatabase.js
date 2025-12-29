@@ -46,6 +46,17 @@ function sortNames(a, b) {
   return a.localeCompare(b)
 }
 
+function sortNamesNormal(a, b) {
+    // 对第一位的字母排序（升序）
+    const name_a = a.charAt(0)
+    const name_b = b.charAt(0)
+    if (name_a !== name_b) {
+        return name_a.localeCompare(name_b)
+    }
+
+    return a.localeCompare(b)
+}
+
 const cpu = await glob(__dirname + "/chips/cpu/**/*.yml", glob_options)
 cpu.sort((a, b) => sortNames(basename(a, extname(a)), basename(b, extname(b))))
 cpu.forEach((files) => {
@@ -79,8 +90,19 @@ Object.keys(chips).forEach((category) => {
     }
   })
 })
-fs.writeFileSync(
-  __dirname + "/chips_name_map.min.json",
-  JSON.stringify(nameKeyMap),
-)
+fs.writeFileSync(__dirname + "/chips_name_map.json", JSON.stringify(nameKeyMap, null, "\t"))
+fs.writeFileSync(__dirname + "/chips_name_map.min.json", JSON.stringify(nameKeyMap))
 // #endregion
+
+// Generate OS List
+const os = []
+const os_list = await glob(__dirname + "/os/**/*.yml", glob_options)
+os_list.sort((a, b) => sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))))
+os_list.forEach(files => {
+    let yamlFile = fs.readFileSync(files, 'utf-8')
+    let jsonResult = yaml.load(yamlFile)
+    os.push(jsonResult)
+})
+
+fs.writeFileSync(__dirname + "/os.json", JSON.stringify(os, null, "\t"))
+fs.writeFileSync(__dirname + "/os.min.json", JSON.stringify(os))

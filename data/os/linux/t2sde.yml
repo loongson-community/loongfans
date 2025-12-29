@@ -1,0 +1,13 @@
+name: 
+  en: "T2 SDE"
+href: "https://t2linux.com"
+# https://t2linux.com/images/t2logo.png
+image: "/images/os/t2linux.webp"
+description:
+  zh: "基于源代码的发行版开发套件，提供为特定场景定制 Linux 发行版的工具和脚本"
+  en: "Distribution development toolkit providing the tools and scripts to build your own custom distribution tailored to specific use cases."
+tags: 
+  - community
+  - diy
+  - linux
+  - abi2

@@ -1,12 +1,10 @@
 {
   "type": "module",
   "scripts": {
-    "build": "npm run generateChipsData && vitepress build",
-    "dev": "npm run generateChipsData && vitepress dev",
-    "generateChipsData": "node ./data/generateChipsDatabase.js",
-    "lintPrettier": "prettier -c .",
-    "prettier": "prettier -w .",
-    "preview": "vitepress preview"
+    "dev": "npm run generateData && vitepress dev",
+    "build": "npm run generateData && vitepress build",
+    "preview": "vitepress preview",
+    "generateData": "node ./data/generateDatabase.js"
   },
   "dependencies": {
     "@primeuix/themes": "^2.0.2",

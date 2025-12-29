@@ -1,0 +1,15 @@
+name: 
+  zh: "银河麒麟操作系统"
+  en: "KylinOS"
+href: "https://www.kylinos.cn"
+image: "/images/os/kylinos.svg"
+description:
+  zh: "面向行业信息化应用的商用桌面和服务器 Linux 发行版"
+  en: "Commercial Linux distribution for business informationization."
+tags: 
+  - commercial_support
+  - desktop
+  - server
+  - immutable
+  - linux
+  - abi1

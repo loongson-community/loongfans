@@ -1,0 +1,14 @@
+name: 
+  en: "Gentoo"
+href: "https://www.gentoo.org"
+# https://www.gentoo.org/assets/img/logo/gentoo-signet.svg
+image: "/images/os/gentoo.svg"
+description:
+  zh: "高度可定制的，基于源代码的 Linux 发行版"
+  en: "Highly flexible, source-based Linux distribution."
+tags: 
+  - community
+  - diy
+  - rolling
+  - linux
+  - abi2

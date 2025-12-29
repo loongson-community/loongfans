@@ -1,0 +1,13 @@
+name: 
+  en: "GXDE OS"
+href: "https://www.gxde.top/"
+# https://www.gxde.top/logo.png
+image: "/images/os/gxde.webp"
+description:
+  zh: "围绕 DDE 15 继续维护的 Linux 发行版"
+  en: "Linux distribution built atop a continually updated DDE 15 fork."
+tags: 
+  - community
+  - desktop
+  - linux
+  - abi2
