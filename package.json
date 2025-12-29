@@ -4,6 +4,7 @@
     "build": "pnpm run generateData && vitepress build",
     "dev": "pnpm run generateData && vitepress dev",
     "generateData": "node ./data/generateDatabase.js",
+    "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",
     "prettier": "prettier -w .",
     "preview": "vitepress preview"
@@ -24,6 +25,8 @@
     "@unocss/preset-wind4": "^66.5.12",
     "glob": "^13.0.0",
     "js-yaml": "^4.1.1",
+    "markdownlint": "^0.40.0",
+    "markdownlint-cli2": "^0.20.0",
     "prettier": "^3.7.4",
     "unocss": "^66.5.12",
     "unplugin-icons": "^22.5.0",
