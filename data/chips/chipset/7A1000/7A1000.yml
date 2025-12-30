@@ -12,7 +12,7 @@ chipset:
   
 gpu:
   available: true
-  name: "LG100"
+  name: "Vivante GC1000"
 
 exp:
   io_name: "PCI Express"
