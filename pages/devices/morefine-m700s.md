@@ -33,7 +33,7 @@ pageSubTitle: 摩方 M700S 小主机
 
 <template #image>
 
-[![](/public/images/devices/morefine-m700s.thumbnail.webp)](/public/images/devices/morefine-m700s.webp)
+[![](/images/devices/morefine-m700s.thumbnail.webp)](/images/devices/morefine-m700s.webp)
 来源：[摩方官网](http://www.imorefine.com/h-pd-53.html)
 
 </template>

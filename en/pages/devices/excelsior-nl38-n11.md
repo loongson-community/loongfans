@@ -48,7 +48,7 @@ This laptop uses AVS (Adaptive Voltage Scaling) rather than full DVFS (Dynamic V
 
 <template #image>
 
-![](/public/images/devices/excelsior-nl38-n11.webp)
+![](/images/devices/excelsior-nl38-n11.webp)
 Source: [Excelsior Official Website](https://eaecis.com/cp_95/962.html)
 
 </template>

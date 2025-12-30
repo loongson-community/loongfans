@@ -42,7 +42,7 @@ pageSubTitle: 龙芯 XA61201
 
 <template #image>
 
-[![](/public/images/devices/loongson-xa61201.thumbnail.webp)](/public/images/devices/loongson-xa61201.webp)
+[![](/images/devices/loongson-xa61201.thumbnail.webp)](/images/devices/loongson-xa61201.webp)
 来源：《XA61201 主板产品使用手册 V1.0》
 
 </template>

@@ -36,7 +36,7 @@ None noted.
 
 <template #image>
 
-![](/public/images/devices/loongson-2k0300-hummingbird-evb.webp)
+![](/images/devices/loongson-2k0300-hummingbird-evb.webp)
 Source: Loongson Technology
 
 </template>

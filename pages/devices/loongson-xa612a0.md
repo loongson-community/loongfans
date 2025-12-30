@@ -39,7 +39,7 @@ pageSubTitle: 龙芯 XA612A0
 
 <template #image>
 
-[![](/public/images/devices/loongson-xa612a0.thumbnail.webp)](/public/images/devices/loongson-xa612a0.webp)
+[![](/images/devices/loongson-xa612a0.thumbnail.webp)](/images/devices/loongson-xa612a0.webp)
 来源：《XA612A0 主板使用手册 V1.0》
 
 </template>

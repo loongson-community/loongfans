@@ -40,7 +40,7 @@ pageSubTitle: 龙芯 AC612A0_V1.1
 
 <template #image>
 
-[![](/public/images/devices/loongson-ac612a0-v1.1.thumbnail.webp)](/public/images/devices/loongson-ac612a0-v1.1.webp)
+[![](/images/devices/loongson-ac612a0-v1.1.thumbnail.webp)](/images/devices/loongson-ac612a0-v1.1.webp)
 来源：《龙芯 3C6000 单路服务器主板产品规格书 V1.0》
 
 </template>

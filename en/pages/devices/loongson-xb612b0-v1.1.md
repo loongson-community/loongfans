@@ -39,7 +39,7 @@ Compared to the [AC612A0_V1.1](/en/pages/devices/loongson-ac612a0-v1.1.md) based
 
 <template #image>
 
-[![](/public/images/devices/loongson-xb612b0-v1.1.thumbnail.webp)](/public/images/devices/loongson-xb612b0-v1.1.webp)
+[![](/images/devices/loongson-xb612b0-v1.1.thumbnail.webp)](/images/devices/loongson-xb612b0-v1.1.webp)
 Source: Xi Ruoyao
 
 </template>

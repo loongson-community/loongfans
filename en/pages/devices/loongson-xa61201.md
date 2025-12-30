@@ -42,7 +42,7 @@ Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 mothe
 
 <template #image>
 
-[![](/public/images/devices/loongson-xa61201.thumbnail.webp)](/public/images/devices/loongson-xa61201.webp)
+[![](/images/devices/loongson-xa61201.thumbnail.webp)](/images/devices/loongson-xa61201.webp)
 Source: "XA61201 主板产品使用手册 V1.0"
 
 </template>

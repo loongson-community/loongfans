@@ -46,7 +46,7 @@ pageSubTitle: 卓怡恒通 NL38-N11
 
 <template #image>
 
-![](/public/images/devices/excelsior-nl38-n11.webp)
+![](/images/devices/excelsior-nl38-n11.webp)
 来源：[卓怡恒通官网](https://eaecis.com/cp_95/962.html)
 
 </template>

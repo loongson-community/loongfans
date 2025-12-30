@@ -36,7 +36,7 @@ pageSubTitle: 龙芯 2K0300 蜂鸟板
 
 <template #image>
 
-![](/public/images/devices/loongson-2k0300-hummingbird-evb.webp)
+![](/images/devices/loongson-2k0300-hummingbird-evb.webp)
 来源：龙芯中科
 
 </template>

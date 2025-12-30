@@ -34,7 +34,7 @@ None noted.
 
 <template #image>
 
-![](/public/images/devices/loongson-2k3000-ai-evb.webp)
+![](/images/devices/loongson-2k3000-ai-evb.webp)
 Source: Loongson Technology
 
 </template>

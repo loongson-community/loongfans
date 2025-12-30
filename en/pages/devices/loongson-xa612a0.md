@@ -41,7 +41,7 @@ If you experience similar issues, the community recommends improving the case or
 
 <template #image>
 
-[![](/public/images/devices/loongson-xa612a0.thumbnail.webp)](/public/images/devices/loongson-xa612a0.webp)
+[![](/images/devices/loongson-xa612a0.thumbnail.webp)](/images/devices/loongson-xa612a0.webp)
 Source: "XA612A0 主板使用手册 V1.0"
 
 </template>

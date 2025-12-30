@@ -36,7 +36,7 @@ OrangePi Nova v1.0 是由迅龙软件（香橙派）推出的，基于 2K3000-i 
 
 <template #image>
 
-[![](/public/images/devices/opi-nova-v1.0.thumbnail.webp)](/public/images/devices/opi-nova-v1.0.webp)
+[![](/images/devices/opi-nova-v1.0.thumbnail.webp)](/images/devices/opi-nova-v1.0.webp)
 来源：白铭骢、Xi Ruoyao
 
 </template>
