@@ -40,7 +40,7 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 
 <template #image>
 
-[![](/public/images/devices/loongson-ac612a0-v1.1.thumbnail.webp)](/public/images/devices/loongson-ac612a0-v1.1.webp)
+[![](/images/devices/loongson-ac612a0-v1.1.thumbnail.webp)](/images/devices/loongson-ac612a0-v1.1.webp)
 Source: "龙芯 3C6000 单路服务器主板产品规格书 V1.0"
 
 </template>

@@ -36,7 +36,7 @@ pageSubTitle: 龙芯 2K0300 先锋派
 
 <template #image>
 
-![](/public/images/devices/loongson-2k0300-pioneer-evb.webp)
+![](/images/devices/loongson-2k0300-pioneer-evb.webp)
 来源：龙芯中科
 
 </template>

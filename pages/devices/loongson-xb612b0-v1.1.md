@@ -37,7 +37,7 @@ pageSubTitle: 龙芯 XB612B0_V1.1
 
 <template #image>
 
-[![](/public/images/devices/loongson-xb612b0-v1.1.thumbnail.webp)](/public/images/devices/loongson-xb612b0-v1.1.webp)
+[![](/images/devices/loongson-xb612b0-v1.1.thumbnail.webp)](/images/devices/loongson-xb612b0-v1.1.webp)
 来源：Xi Ruoyao
 
 </template>

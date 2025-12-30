@@ -39,7 +39,7 @@ Due to its good cost-to-performance ratio at that time, it was well received by 
 
 <template #image>
 
-[![](/public/images/devices/loongson-xa61200.thumbnail.webp)](/public/images/devices/loongson-xa61200.webp)
+[![](/images/devices/loongson-xa61200.thumbnail.webp)](/images/devices/loongson-xa61200.webp)
 Source: "XA61200 主板产品使用手册 V1.1"
 
 </template>

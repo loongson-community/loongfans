@@ -52,7 +52,7 @@ If you have purchased this motherboard and encountered firmware-related issues, 
 
 <template #image>
 
-![](/public/images/devices/asus-xc-ls3a6m.webp)
+![](/images/devices/asus-xc-ls3a6m.webp)
 Source: [AliExpress](https://aliexpress.com/item/1005006592333955.html)
 
 </template>

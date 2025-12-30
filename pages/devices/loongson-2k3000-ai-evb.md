@@ -36,7 +36,7 @@ pageSubTitle: 龙芯 2K3000 AI 评估板
 
 <template #image>
 
-![](/public/images/devices/loongson-2k3000-ai-evb.webp)
+![](/images/devices/loongson-2k3000-ai-evb.webp)
 来源：龙芯中科
 
 </template>

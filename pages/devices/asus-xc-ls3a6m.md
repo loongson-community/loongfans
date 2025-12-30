@@ -52,7 +52,7 @@ pageSubTitle: 华硕 XC-LS3A6M
 
 <template #image>
 
-![](/public/images/devices/asus-xc-ls3a6m.webp)
+![](/images/devices/asus-xc-ls3a6m.webp)
 来源：[AliExpress 网店](https://aliexpress.com/item/1005006592333955.html)
 
 </template>

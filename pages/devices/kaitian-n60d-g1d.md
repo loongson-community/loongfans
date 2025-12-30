@@ -45,7 +45,7 @@ pageSubTitle: 联想开天 N60d-G1d
 
 <template #image>
 
-[![](/public/images/devices/kaitian-n60d-g1d.thumbnail.webp)](/public/images/devices/kaitian-n60d-g1d.webp)
+[![](/images/devices/kaitian-n60d-g1d.thumbnail.webp)](/images/devices/kaitian-n60d-g1d.webp)
 来源：白铭骢
 
 </template>
