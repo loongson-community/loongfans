@@ -1,11 +1,11 @@
-name: 
+name:
   en: "Loongnix"
 href: "https://www.loongnix.cn/zh/loongnix/"
 image: "/images/os/loongnix.webp" # Found in Plymouth theme.
 description:
   zh: "龙芯中科维护的参考 Linux 发行版"
   en: "Reference Linux distribution from Loongson Technology."
-tags: 
+tags:
   - commercial_support
   - desktop
   - server
