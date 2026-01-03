@@ -1,0 +1,15 @@
+name: 
+  zh: "新支点操作系统"
+  en: "New Start"
+href: "https://www.gd-linux.com/"
+# https://www.gd-linux.com/
+image: "/images/os/newstart.webp"
+description:
+  zh: "面向行业信息化应用的商用桌面和服务器 Linux 发行版"
+  en: "Commercial Linux distribution for business informationization."
+tags: 
+  - commercial_support
+  - desktop
+  - server
+  - linux
+  - abi1

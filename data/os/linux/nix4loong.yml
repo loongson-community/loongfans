@@ -1,0 +1,13 @@
+name: 
+  en: "Nix4Loong"
+href: "https://nix4loong.cn/"
+# https://nix4loong.cn/_next/static/media/icon.8a6748c7.svg
+image: "/images/os/nix4loong.svg"
+description:
+  zh: "采用声明式包管理的 Linux 发行版"
+  en: "Linux distribution with declarative package management."
+tags: 
+  - community
+  - atomicity
+  - linux
+  - abi2

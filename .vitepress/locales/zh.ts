@@ -1,7 +1,8 @@
 import { devices } from './zh/devices';
 import chips from './zh/chips';
 import help from './zh/help';
-import { osDataList } from './zh/os'
+// import { osDataList } from './zh/os'
+import os from './zh/os';
 
 export default {
   comma: "、",
@@ -78,5 +79,6 @@ export default {
   devices,
   chips,
   help,
-  osDataList
+  // osDataList
+  os
 };

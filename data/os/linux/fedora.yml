@@ -1,0 +1,13 @@
+name: 
+  en: "Fedora Remix LoongArch"
+href: "https://github.com/fedora-remix-loongarch/releases-info"
+# https://docs.fedoraproject.org/en-US/project/_images/logo/fedora_remix_magenta.png
+image: "/images/os/fedora_remix.webp"
+description:
+  zh: "面向开发者和内容创作者的桌面发行版"
+  en: "Desktop-oriented distro for software developers and all makers."
+tags: 
+  - community
+  - desktop
+  - linux
+  - abi2

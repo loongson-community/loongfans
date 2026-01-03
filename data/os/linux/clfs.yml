@@ -1,0 +1,12 @@
+name: 
+  en: "CLFS for LoongArch"
+href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch"
+image: "/images/os/lfs.svg"
+description:
+  zh: "介绍如何从源代码完全交叉编译一个 Linux 发行版"
+  en: "Cookbook for fully cross-compile a Linux distribution from source code."
+tags: 
+  - community
+  - diy
+  - linux
+  - abi2

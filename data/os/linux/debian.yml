@@ -1,0 +1,14 @@
+name: 
+  en: "Debian"
+href: "https://www.debian.org"
+# https://www.debian.org/logos/openlogo-nd.svg
+image: "/images/os/debian.svg"
+description:
+  zh: "全功能的，可自由使用和分发的 Linux 发行版"
+  en: "Universal Linux distribution which can be used and redistributed freely."
+tags: 
+  - community
+  - desktop
+  - server
+  - linux
+  - abi2

@@ -1,0 +1,14 @@
+name: 
+  en: "Alpine Linux"
+href: "https://www.alpinelinux.org"
+# https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/alpine-linux.svg
+image: "/images/os/alpine.svg"
+description:
+  zh: "基于 musl libc 和 BusyBox 的，注重安全性的轻量级 Linux 发行版"
+  en: "Security-oriented, lightweight Linux distribution based on musl libc and BusyBox."
+tags: 
+  - community
+  - container
+  - embedded
+  - linux
+  - abi2

@@ -5,8 +5,8 @@
         v-for="tag in tagSet"
         :key="tag"
         v-model="selectedTags[tag]"
-        :on-label="tag"
-        :off-label="tag"
+        :on-label="translateTag(tag)"
+        :off-label="translateTag(tag)"
         size="small"
       />
     </div>
@@ -21,19 +21,34 @@ import { computed, reactive } from "vue";
 import { useI18n } from "vue-i18n";
 import ToggleButton from "primevue/togglebutton";
 import OsCard from "./OsCard.vue";
-import type { OsData } from "../../.vitepress/locales/zh/os";
+import { useTagTranslation, OsData } from "./osdata_api"
 
-const { tm } = useI18n();
+import osDataJson from "../../data/os.min.json"
 
-const osDataList = computed(() => tm("osDataList") as OsData[]);
-const tagSet = computed(() => new Set(osDataList.value.flatMap((i) => i.tags)));
+const { locale } = useI18n();
+const { translateTag } = useTagTranslation();
+
+// 转换JSON数据
+const osDataList = computed(() => {
+  const data = osDataJson as OsData[];
+  const currentLocale = locale.value as 'zh' | 'en';
+  return data.map(item => ({
+    name: item.name[currentLocale] || item.name.en,
+    href: item.href,
+    image: item.image,
+    description: item.description[currentLocale] || item.description.en,
+    tags: item.tags
+  }));
+});
+
+const tagSet = computed(() => new Set(osDataList.value.flatMap((i: any) => i.tags)));
 const selectedTags = reactive<Record<string, boolean>>({});
 
 const filteredOsList = computed(() => {
-  const activeTags = Object.keys(selectedTags).filter((t) => selectedTags[t]);
+  const activeTags = Object.keys(selectedTags).filter((t: string) => selectedTags[t]);
   if (activeTags.length === 0) return osDataList.value;
-  return osDataList.value.filter((os) =>
-    activeTags.every((t) => os.tags.includes(t))
+  return osDataList.value.filter((os: any) =>
+    activeTags.every((t: string) => os.tags.includes(t))
   );
 });
 </script>
