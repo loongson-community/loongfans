@@ -41,6 +41,15 @@ export const osDataList = [
     tags: ["社区", "滚动更新", "Linux", "ABI2.0"],
   },
   {
+    name: "Buildroot",
+    description:
+      "Buildroot 是一个简单高效、易于使用的通过交叉编译来构建嵌入式 Linux 系统的工具",
+    href: "https://buildroot.org/",
+    // https://buildroot.org/images/logo.png
+    image: "/images/os/buildroot.webp",
+    tags: ["社区", "嵌入式", "DIY", "Linux", "ABI2.0"],
+  },
+  {
     name: "CLFS for LoongArch",
     description: "介绍如何从源代码完全交叉编译一个 Linux 发行版",
     href: "https://github.com/sunhaiyong1978/CLFS-for-LoongArch",
