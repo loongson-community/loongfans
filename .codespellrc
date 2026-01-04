@@ -1,3 +1,3 @@
 [codespell]
 ignore-words-list = HDA
-skip = ./node_modules,./public,package-lock.json
+skip = ./node_modules,./public,package-lock.json,./data/os/linux/uos.yml
