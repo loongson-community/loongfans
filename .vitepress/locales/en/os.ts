@@ -52,6 +52,15 @@ export const osDataList = [
     tags: ["Community", "Rolling", "Linux", "ABI2.0"],
   },
   {
+    name: "Buildroot",
+    description:
+      "Buildroot is a simple, efficient and easy-to-use tool to generate embedded Linux systems through cross-compilation.",
+    href: "https://buildroot.org/",
+    // https://buildroot.org/images/logo.png
+    image: "/images/os/buildroot.webp",
+    tags: ["Community", "Embedded", "DIY", "Linux", "ABI2.0"],
+  },
+  {
     name: "CLFS for LoongArch",
     description:
       "Cookbook for fully cross-compile a Linux distribution from source code.",
