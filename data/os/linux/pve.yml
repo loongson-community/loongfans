@@ -1,4 +1,4 @@
-name: 
+name:
   en: "Proxmox VE"
 href: "https://www.lierfang.com//#/open/third"
 # https://www.proxmox.com/en/about/company-details/media-kit
@@ -6,7 +6,7 @@ image: "/images/os/proxmox.svg"
 description:
   zh: "面向企业虚拟化平台的全功能开源服务器管理平台，其龙架构移植由梨儿方科技完成并持续维护"
   en: "Complete open-source platform for enterprise virtualization. The LoongArch port is developed and maintained by Lierfang."
-tags: 
+tags:
   - commercial_support
   - virt
   - linux

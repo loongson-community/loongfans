@@ -1,4 +1,4 @@
-name: 
+name:
   zh: "开放麒麟"
   en: "openKylin"
 href: "https://www.openkylin.top/"
@@ -6,7 +6,7 @@ image: "/images/os/openkylin.webp"
 description:
   zh: "新手友好的桌面 Linux 发行版"
   en: "User-friendly desktop-oriented distribution."
-tags: 
+tags:
   - community
   - desktop
   - linux

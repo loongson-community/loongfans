@@ -17,40 +17,44 @@
 </template>
 
 <script setup lang="ts">
-import { computed, reactive } from "vue";
-import { useI18n } from "vue-i18n";
-import ToggleButton from "primevue/togglebutton";
-import OsCard from "./OsCard.vue";
+import { computed, reactive } from "vue"
+import { useI18n } from "vue-i18n"
+import ToggleButton from "primevue/togglebutton"
+import OsCard from "./OsCard.vue"
 import { useTagTranslation, OsData } from "./osdata_api"
 
 import osDataJson from "../../data/os.min.json"
 
-const { locale } = useI18n();
-const { translateTag } = useTagTranslation();
+const { locale } = useI18n()
+const { translateTag } = useTagTranslation()
 
 // 转换JSON数据
 const osDataList = computed(() => {
-  const data = osDataJson as OsData[];
-  const currentLocale = locale.value as 'zh' | 'en';
-  return data.map(item => ({
+  const data = osDataJson as OsData[]
+  const currentLocale = locale.value as "zh" | "en"
+  return data.map((item) => ({
     name: item.name[currentLocale] || item.name.en,
     href: item.href,
     image: item.image,
     description: item.description[currentLocale] || item.description.en,
-    tags: item.tags
-  }));
-});
+    tags: item.tags,
+  }))
+})
 
-const tagSet = computed(() => new Set(osDataList.value.flatMap((i: any) => i.tags)));
-const selectedTags = reactive<Record<string, boolean>>({});
+const tagSet = computed(
+  () => new Set(osDataList.value.flatMap((i: any) => i.tags)),
+)
+const selectedTags = reactive<Record<string, boolean>>({})
 
 const filteredOsList = computed(() => {
-  const activeTags = Object.keys(selectedTags).filter((t: string) => selectedTags[t]);
-  if (activeTags.length === 0) return osDataList.value;
+  const activeTags = Object.keys(selectedTags).filter(
+    (t: string) => selectedTags[t],
+  )
+  if (activeTags.length === 0) return osDataList.value
   return osDataList.value.filter((os: any) =>
-    activeTags.every((t: string) => os.tags.includes(t))
-  );
-});
+    activeTags.every((t: string) => os.tags.includes(t)),
+  )
+})
 </script>
 
 <style scoped>

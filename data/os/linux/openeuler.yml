@@ -1,4 +1,4 @@
-name: 
+name:
   en: "openEuler"
 href: "https://openeuler.org"
 # https://upload.wikimedia.org/wikipedia/commons/8/88/OpenEuler-horizontal-left.svg
@@ -6,7 +6,7 @@ image: "/images/os/openeuler.svg"
 description:
   zh: "面向服务器、云计算、边缘计算、嵌入式等数字基础设施的开源操作系统"
   en: "Open-source operating system for digital infrastructures like server, cloud platform, edge computing, and embedded platform."
-tags: 
+tags:
   - commercial_support
   - server
   - embedded

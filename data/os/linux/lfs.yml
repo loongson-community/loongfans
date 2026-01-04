@@ -1,4 +1,4 @@
-name: 
+name:
   zh: "LFS 龙架构版"
   en: "LFS LoongArch Edition"
 href: "https://www.linuxfromscratch.org/~xry111/lfs/#loongarch"
@@ -6,7 +6,7 @@ image: "/images/os/lfs.svg"
 description:
   zh: "详细介绍如何完全从源代码构建自定义的 Linux 系统"
   en: "Project that provides you with step-by-step instructions for building your own custom Linux system, entirely from source code."
-tags: 
+tags:
   - community
   - diy
   - linux

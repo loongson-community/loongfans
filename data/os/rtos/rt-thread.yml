@@ -1,11 +1,11 @@
-name: 
+name:
   en: "RT-Thread"
 href: "https://www.rt-thread.org/"
 image: "/images/os/rt_thread.png"
 description:
   zh: "面向嵌入式的实时操作系统"
   en: "Real-time operating system for embedded devices."
-tags: 
+tags:
   - commercial_support
   - community
   - embedded

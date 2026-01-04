@@ -1,4 +1,4 @@
-name: 
+name:
   en: "OpenWRT"
 href: "https://openwrt.org"
 # https://raw.githubusercontent.com/openwrt/branding/refs/heads/master/logo/openwrt_logo_blue_and_dark_blue.svg
@@ -6,7 +6,7 @@ image: "/images/os/openwrt.svg"
 description:
   zh: "面向嵌入式设备和路由器的 Linux 发行版"
   en: "Linux distribution for embedded devices and routers."
-tags: 
+tags:
   - community
   - embedded
   - router
