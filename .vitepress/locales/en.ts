@@ -1,8 +1,8 @@
-import { devices } from './en/devices'
-import chips from './en/chips'
-import help from './en/help'
+import { devices } from "./en/devices"
+import chips from "./en/chips"
+import help from "./en/help"
 // import { osDataList } from './en/os'
-import os from './en/os'
+import os from "./en/os"
 
 export default {
   comma: ", ",
@@ -80,6 +80,6 @@ export default {
   chips,
   help,
   // osDataList
-  os
+  os,
 }
 

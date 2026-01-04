@@ -1,4 +1,4 @@
-name: 
+name:
   zh: "开源鸿蒙"
   en: "OpenHarmony"
 href: "https://openharmony.cn"
@@ -8,7 +8,7 @@ image: "/images/os/openharmony.webp"
 description:
   zh: "面向嵌入式和智能终端设备的操作系统"
   en: "Operating system for embedded and smart terminal devices."
-tags: 
+tags:
   - commercial_support
   - desktop
   - embedded

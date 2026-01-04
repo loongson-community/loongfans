@@ -1,4 +1,4 @@
-name: 
+name:
   zh: "" # optional
   en: ""
 href: ""
@@ -6,20 +6,20 @@ image: "/images/os/.svg"
 description:
   zh: ""
   en: ""
-tags: 
+tags:
   - atomicity # 原子化/原子更新
-  - commercial_support  # 可提供商业支持
+  - commercial_support # 可提供商业支持
   - community # 社区
   - container # 容器
-  - desktop   # 桌面
+  - desktop # 桌面
   - diy
-  - embedded  # 嵌入式
-  - firewall  # 防火墙
+  - embedded # 嵌入式
+  - firewall # 防火墙
   - immutable # 不可变
-  - rolling   # 滚动更新
-  - router    # 路由器
-  - server    # 服务器
-  - virt      # 虚拟化
+  - rolling # 滚动更新
+  - router # 路由器
+  - server # 服务器
+  - virt # 虚拟化
   - linux
   - bsd
   - harmony

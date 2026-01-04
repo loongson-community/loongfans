@@ -1,4 +1,4 @@
-name: 
+name:
   en: "deepin"
 href: "https://www.deepin.org"
 # https://upload.wikimedia.org/wikipedia/commons/f/f5/Deepin_logo.svg
@@ -6,7 +6,7 @@ image: "/images/os/deepin.svg"
 description:
   zh: "新手友好的桌面 Linux 发行版"
   en: "User-friendly desktop-oriented distribution."
-tags: 
+tags:
   - community
   - desktop
   - immutable

@@ -1,11 +1,11 @@
-name: 
+name:
   en: "loongFire"
 href: "https://www.bpfire.net/"
 image: "/images/os/debian.svg" # From private exchange.
 description:
   zh: "防火墙操作系统 IPFire 的龙架构移植"
   en: "LoongArch port of IPFire, an operating system for firewalls."
-tags: 
+tags:
   - community
   - server
   - firewall

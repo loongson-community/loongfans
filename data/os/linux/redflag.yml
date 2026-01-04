@@ -1,4 +1,4 @@
-name: 
+name:
   zh: "红旗 Linux"
   en: "RedFlag Linux"
 href: "https://www.chinaredflag.cn/"
@@ -7,7 +7,7 @@ image: "/images/os/redflag.svg"
 description:
   zh: "面向行业信息化应用的商用桌面和服务器 Linux 发行版"
   en: "Commercial Linux distribution for business informationization."
-tags: 
+tags:
   - commercial_support
   - desktop
   - server

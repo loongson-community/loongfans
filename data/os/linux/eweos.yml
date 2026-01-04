@@ -1,4 +1,4 @@
-name: 
+name:
   en: "eweOS"
 href: "https://os.ewe.moe/"
 # https://os.ewe.moe/
@@ -6,7 +6,7 @@ image: "/images/os/eweos.svg"
 description:
   zh: "基于 musl libc 及其他技术的前沿 Linux 发行版"
   en: "Bleeding-edge Linux distribution built on musl libc and many other new technologies."
-tags: 
+tags:
   - community
   - rolling
   - linux

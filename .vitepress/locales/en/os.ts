@@ -17,5 +17,5 @@ export default {
   harmony: "Harmony",
   rtos: "RTOS",
   abi1: "ABI1.0",
-  abi2: "ABI2.0"
+  abi2: "ABI2.0",
 }

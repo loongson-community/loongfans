@@ -1,4 +1,4 @@
-name: 
+name:
   en: "Slackwareloong"
 href: "https://www.slackware.com"
 # http://www.slackware.com/~msimons/slackware/grfx/shared/bluepiSW.jpg
@@ -6,7 +6,7 @@ image: "/images/os/slackware.webp"
 description:
   zh: "高度可定制的，追求纯粹 UNIX 体验的 Linux 发行版"
   en: "Highly customizable Linux distribution for pure UNIX experience."
-tags: 
+tags:
   - community
   - rolling
   - linux

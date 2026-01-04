@@ -17,5 +17,5 @@ export default {
   harmony: "鸿蒙",
   rtos: "实时系统",
   abi1: "ABI1.0",
-  abi2: "ABI2.0"
+  abi2: "ABI2.0",
 }

@@ -1,4 +1,4 @@
-name: 
+name:
   zh: "龙蜥操作系统"
   en: "Anolis OS"
 href: "https://openanolis.cn/anolisos"
@@ -7,7 +7,7 @@ image: "/images/os/openanolis.webp"
 description:
   zh: "兼容 CentOS 传统操作习惯的 Linux 发行版"
   en: "Linux distribution for compatibility with the traditional CentOS operating habits."
-tags: 
+tags:
   - commercial_support
   - server
   - linux

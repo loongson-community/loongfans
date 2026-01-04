@@ -1,4 +1,4 @@
-name: 
+name:
   zh: "中科方德操作系统"
   en: "NFS-CHINA"
 href: "https://www.nfschina.com"
@@ -7,7 +7,7 @@ image: "/images/os/nfs.svg"
 description:
   zh: "面向行业信息化应用的商用桌面和服务器 Linux 发行版"
   en: "Commercial Linux distribution for business informationization."
-tags: 
+tags:
   - commercial_support
   - desktop
   - server

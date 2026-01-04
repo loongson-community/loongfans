@@ -1,11 +1,11 @@
-name: 
+name:
   en: "OpenCloudOS"
 href: "https://opencloudos.org"
 image: "/images/os/opencloudos.webp"
 description:
   zh: "鸥栖社区维护的服务器操作系统"
   en: "Distribution for servers maintained by the OpenCloudOS community."
-tags: 
+tags:
   - commercial_support
   - server
   - linux
