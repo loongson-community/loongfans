@@ -1,11 +1,4 @@
-import { spawn } from "child_process"
-import { fileURLToPath } from "url"
-import { dirname, basename, extname, join } from "path"
-import { type } from "os"
-
-// Fix __filename and __dirname in ESM
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(fileURLToPath(import.meta.url))
+import { generateAll } from "../../data/generateDatabase"
 
 export default function AutoGenerateJson() {
   let statusGenerating = false
@@ -23,26 +16,9 @@ export default function AutoGenerateJson() {
     console.log("[AutoGenerateJson] Generating...")
 
     try {
-      // 将要用于生成数据的脚本
-      const scriptPath = join(__dirname, "../../data/generateDatabase.js")
-
-      const child = spawn("node", [scriptPath], {
-        stdio: "inherit",
-      })
-
-      child.on("close", (code) => {
-        statusGenerating = false
-        if (code === 0) {
-          console.log("[AutoGenerateJson] Generation complete!")
-        } else {
-          console.error(`[AutoGenerateJson] Error code: ${code}`)
-        }
-      })
-
-      child.on("error", (err) => {
-        statusGenerating = false
-        console.error("[AutoGenerateJson] Error:", err)
-      })
+      await generateAll(0) // Generate JSON without formatted files
+      statusGenerating = false
+      console.log("[AutoGenerateJson] Generation complete!")
     } catch (error) {
       statusGenerating = false
       console.error("[AutoGenerateJson] Error:", error)
