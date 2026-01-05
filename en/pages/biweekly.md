@@ -19,9 +19,9 @@ The meeting is simultaneously livestreamed on Bilibili page
 Offline meetings are also arranged from time to time.
 
 :::tip
-The LoongArch Biweekly currently uses Chinese as the default language, but we
-welcome users of other languages - many of us speak English (some even speak
-Russian).
+The LoongArch Biweekly currently uses Standard Chinese (Putonghua / Mandarin)
+as the default language, but we welcome users of other languages - many of us
+also speak English (some even speak Russian, and more).
 If you'd like to hold a session in another language, please feel free to get in touch!
 :::
 
