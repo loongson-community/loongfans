@@ -54,7 +54,7 @@ export const osDataList = [
   {
     name: "Buildroot",
     description:
-      "Buildroot is a simple, efficient and easy-to-use tool to generate embedded Linux systems through cross-compilation.",
+      "Tool to generate embedded Linux systems through cross-compilation.",
     href: "https://buildroot.org/",
     // https://buildroot.org/images/logo.png
     image: "/images/os/buildroot.webp",
