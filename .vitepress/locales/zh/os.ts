@@ -43,7 +43,7 @@ export const osDataList = [
   {
     name: "Buildroot",
     description:
-      "Buildroot 是一个简单高效、易于使用的通过交叉编译来构建嵌入式 Linux 系统的工具",
+      "用于通过交叉编译构建嵌入式 Linux 系统的工具",
     href: "https://buildroot.org/",
     // https://buildroot.org/images/logo.png
     image: "/images/os/buildroot.webp",
