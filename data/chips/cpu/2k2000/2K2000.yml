@@ -22,7 +22,7 @@ cpu:
 
 gpu:
   available: true
-  name: "unknown"
+  name: "LG120"
 
 memory:
   max: "32 GiB"
