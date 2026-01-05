@@ -57,60 +57,92 @@ function sortNamesNormal(a, b) {
   return a.localeCompare(b)
 }
 
-const cpu = await glob(__dirname + "/chips/cpu/**/*.yml", glob_options)
-cpu.sort((a, b) => sortNames(basename(a, extname(a)), basename(b, extname(b))))
-cpu.forEach((files) => {
-  let yamlFile = fs.readFileSync(files, "utf-8")
-  let jsonResult = yaml.load(yamlFile)
-  chips.cpu[basename(files, extname(files))] = jsonResult
-})
+export async function generateChipsDatabase(format_switch) {
+  // CPUs
+  const cpu = await glob(__dirname + "/chips/cpu/**/*.yml", glob_options)
+  cpu.sort((a, b) =>
+    sortNames(basename(a, extname(a)), basename(b, extname(b))),
+  )
+  cpu.forEach((files) => {
+    let yamlFile = fs.readFileSync(files, "utf-8")
+    let jsonResult = yaml.load(yamlFile)
+    chips.cpu[basename(files, extname(files))] = jsonResult
+  })
 
-const chipset = await glob(__dirname + "/chips/chipset/**/*.yml", glob_options)
-chipset.sort((a, b) =>
-  sortNames(basename(a, extname(a)), basename(b, extname(b))),
-)
-chipset.forEach((files) => {
-  let yamlFile = fs.readFileSync(files, "utf-8")
-  let jsonResult = yaml.load(yamlFile)
-  chips.chipset[basename(files, extname(files))] = jsonResult
-})
-
-fs.writeFileSync(__dirname + "/chips.json", JSON.stringify(chips, null, "\t"))
-fs.writeFileSync(__dirname + "/chips.min.json", JSON.stringify(chips))
+  // Chipsets
+  const chipset = await glob(
+    __dirname + "/chips/chipset/**/*.yml",
+    glob_options,
+  )
+  chipset.sort((a, b) =>
+    sortNames(basename(a, extname(a)), basename(b, extname(b))),
+  )
+  chipset.forEach((files) => {
+    let yamlFile = fs.readFileSync(files, "utf-8")
+    let jsonResult = yaml.load(yamlFile)
+    chips.chipset[basename(files, extname(files))] = jsonResult
+  })
+  if (format_switch === 1) {
+    fs.writeFileSync(
+      __dirname + "/chips.json",
+      JSON.stringify(chips, null, "\t"),
+    )
+  }
+  fs.writeFileSync(__dirname + "/chips.min.json", JSON.stringify(chips))
+}
 
 // #region FIXME: to be refactored
-const nameKeyMap = {}
-Object.keys(chips).forEach((category) => {
-  const categoryEntries = chips[category]
-  if (!categoryEntries || typeof categoryEntries !== "object") return
-  Object.entries(categoryEntries).forEach(([key, value]) => {
-    const name = value?.basic?.name
-    if (typeof name === "string" && name.length) {
-      nameKeyMap[name] = key
-    }
+export function generateChipsName(format_switch) {
+  const nameKeyMap = {}
+  Object.keys(chips).forEach((category) => {
+    const categoryEntries = chips[category]
+    if (!categoryEntries || typeof categoryEntries !== "object") return
+    Object.entries(categoryEntries).forEach(([key, value]) => {
+      const name = value?.basic?.name
+      if (typeof name === "string" && name.length) {
+        nameKeyMap[name] = key
+      }
+    })
   })
-})
-fs.writeFileSync(
-  __dirname + "/chips_name_map.json",
-  JSON.stringify(nameKeyMap, null, "\t"),
-)
-fs.writeFileSync(
-  __dirname + "/chips_name_map.min.json",
-  JSON.stringify(nameKeyMap),
-)
+  if (format_switch === 1) {
+    fs.writeFileSync(
+      __dirname + "/chips_name_map.json",
+      JSON.stringify(nameKeyMap, null, "\t"),
+    )
+  }
+
+  fs.writeFileSync(
+    __dirname + "/chips_name_map.min.json",
+    JSON.stringify(nameKeyMap),
+  )
+}
 // #endregion
 
 // Generate OS List
-const os = []
-const os_list = await glob(__dirname + "/os/**/*.yml", glob_options)
-os_list.sort((a, b) =>
-  sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
-)
-os_list.forEach((files) => {
-  let yamlFile = fs.readFileSync(files, "utf-8")
-  let jsonResult = yaml.load(yamlFile)
-  os.push(jsonResult)
-})
+export async function generateOsDatabase(format_switch) {
+  const os = []
+  const os_list = await glob(__dirname + "/os/**/*.yml", glob_options)
+  os_list.sort((a, b) =>
+    sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
+  )
+  os_list.forEach((files) => {
+    let yamlFile = fs.readFileSync(files, "utf-8")
+    let jsonResult = yaml.load(yamlFile)
+    os.push(jsonResult)
+  })
 
-fs.writeFileSync(__dirname + "/os.json", JSON.stringify(os, null, "\t"))
-fs.writeFileSync(__dirname + "/os.min.json", JSON.stringify(os))
+  if (format_switch === 1) {
+    fs.writeFileSync(__dirname + "/os.json", JSON.stringify(os, null, "\t"))
+  }
+  fs.writeFileSync(__dirname + "/os.min.json", JSON.stringify(os))
+}
+
+export async function generateAll(format_switch) {
+  await generateChipsDatabase(format_switch)
+  generateChipsName(format_switch)
+  await generateOsDatabase(format_switch)
+}
+
+// Default: Generating everyone without formatted data
+// If require formatted JSON files, set this function value to 1.
+generateAll(0).catch(console.error)
