@@ -6,6 +6,10 @@ pageTitle: 龙架构双周会
 pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 ---
 
+<script setup>
+import EventsCalendar from "../components/events/EventsCalendar.vue"
+import eventsICS from "../data/events.ics?raw"
+</script>
 
 龙架构双周会是由龙芯爱好者组织的社区会议，会议议程包括针对上游及各 Linux 发行版及其他系统项目的开发进展报告、社区事务报告，以及贡献者讨论及问答环节。
 
@@ -17,7 +21,12 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 龙架构双周会默认使用普通话，但我们同样欢迎其他语言使用者参会——许多与会者也会讲英语（甚至俄语等等）。如果您想用其它语言在会上做分享，请与我们联系！
 :::
 
-:::tip
+<div class="flex flex-col md:flex-row md:gap-6">
+    <div class="w-full md:flex-1">
+        <EventsCalendar :data="eventsICS" />
+    </div>
+    <div class="w-full">
+
 ### 第 28 次“龙架构双周会”会议公告
 
 会议时间：2026 年 1 月 3 日 14:00（UTC+8，会议预计一小时内结束）
@@ -25,7 +34,9 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 [会议链接][link-wemeet]｜[双周会幻灯片][link-slides]｜[直播链接][link-live]｜会议号：**728-211-994**
 
 双周会幻灯片将在**会前停止收集**，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。
-:::
+
+</div>
+</div>
 
 [link-live]: https://live.bilibili.com/1754798211
 [link-slides]: https://www.kdocs.cn/l/cvOZnsjUeuxC

@@ -5,6 +5,12 @@ pageTitle: LoongArch Biweekly
 pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 ---
 
+<script setup>
+import { Divider } from "primevue"
+import EventsCalendar from "../../components/events/EventsCalendar.vue"
+import eventsICS from "../../data/events.ics?raw"
+</script>
+
 The LoongArch Biweekly is a regular community meeting organized by Loongson
 hobbyists. The meeting agenda comprises updates on upstream projects, Linux
 distro (and other OS projects), and community affairs.
@@ -25,7 +31,12 @@ also speak English (some even speak Russian, and more).
 If you'd like to hold a session in another language, please feel free to get in touch!
 :::
 
-:::tip
+<div class="flex flex-col md:flex-row md:gap-6">
+    <div class="w-full md:flex-1">
+        <EventsCalendar :data="eventsICS" />
+    </div>
+    <div class="w-full">
+
 ### The 28th "LoongArch Biweekly" Meeting Announcement
 
 Meeting Time: 2:00 PM, January 3, 2026 (UTC+8, meeting expected to last an hour)
@@ -35,7 +46,9 @@ Meeting Time: 2:00 PM, January 3, 2026 (UTC+8, meeting expected to last an hour)
 Biweekly slides may be edited **until the beginning of the meeting**.
 Those who wish to speak or ask questions at the biweekly should finish editing
 before this time (if you need editing permissions, please apply via Kingsoft Docs).
-:::
+
+</div>
+</div>
 
 [link-live]: https://live.bilibili.com/1754798211
 [link-slides]: https://www.kdocs.cn/l/cvOZnsjUeuxC
