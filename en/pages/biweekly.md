@@ -6,9 +6,12 @@ pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 ---
 
 <script setup>
-import { Divider } from "primevue"
+import { getBiweeklyEvents } from '../../components/events/DataSource'
 import EventsCalendar from "../../components/events/EventsCalendar.vue"
 import eventsICS from "../../data/events.ics?raw"
+
+const now = new Date()
+const biweeklyData = getBiweeklyEvents(eventsICS, now)
 </script>
 
 The LoongArch Biweekly is a regular community meeting organized by Loongson
@@ -33,7 +36,7 @@ If you'd like to hold a session in another language, please feel free to get in 
 
 <div class="flex flex-col md:flex-row md:gap-6">
     <div class="w-full md:flex-1">
-        <EventsCalendar :data="eventsICS" />
+        <EventsCalendar :data="biweeklyData" :now="now" />
     </div>
     <div class="w-full">
 

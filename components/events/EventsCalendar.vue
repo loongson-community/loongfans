@@ -26,42 +26,16 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
-import IcalExpander from "ical-expander"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
-
-type EventItem = {
-  start: Date
-  title: string
-}
+import { type BiweeklyEventsResult } from "./DataSource"
 
 const { locale, t } = useI18n()
-const { data } = defineProps<{ data: string }>()
-const expander = new IcalExpander({ ics: data, maxIterations: 100 })
+const { data, now } = defineProps<{
+  data: BiweeklyEventsResult
+  now: Date
+}>()
 
-const expansionRangeStart = new Date(2024, 11, 8) // date of first biweekly event
-const thisYear = new Date().getFullYear()
-const expansionRangeEnd = new Date(thisYear + 1, 0, 1)
-const allExpandedEvents = expander.between(
-  expansionRangeStart,
-  expansionRangeEnd,
-)
-const simplifiedEvents: EventItem[] = [
-  ...allExpandedEvents.events.map((e) => ({
-    start: e.startDate.toJSDate(),
-    title: e.summary,
-  })),
-  ...allExpandedEvents.occurrences.map((o) => ({
-    start: o.startDate.toJSDate(),
-    title: o.item.summary,
-  })),
-]
-simplifiedEvents.sort((a, b) => a.start.getTime() - b.start.getTime())
-const allBiweeklyEvents = simplifiedEvents.filter((e) =>
-  /龙架构双周会/i.test(e.title),
-)
-
-const now = new Date()
 const initialPage = {
   year: now.getFullYear(),
   month: now.getMonth() + 1,
@@ -79,27 +53,15 @@ const vCalAttrs: (typeof Calendar)["attributes"] = [
     },
   },
 ]
-let nextEventSeen = false
-for (
-  let issueNumber = 1;
-  issueNumber <= allBiweeklyEvents.length;
-  issueNumber++
-) {
-  const event = allBiweeklyEvents[issueNumber - 1]
-  const isFutureEvent = event.start.getTime() > now.getTime()
-  const isNextEvent = isFutureEvent && !nextEventSeen
-  if (isNextEvent) {
-    nextEventSeen = true
-  }
 
-  vCalAttrs.push({
-    key: `biweekly-${issueNumber}`,
-    dates: event.start,
-    bar: isNextEvent ? null : isFutureEvent ? "theme-red" : "theme-past",
-    highlight: isNextEvent ? "theme-red" : null,
-    popover: {
-      label: t("loongarchBiweekly", { number: issueNumber }),
-    },
-  })
-}
+const allBiweeklyEventsForVCal = data.biweeklyEvents.map((be) => ({
+  key: `biweekly-${be.issueNumber}`,
+  dates: be.start,
+  bar: be.isNext ? null : be.isFuture ? "theme-red" : "theme-past",
+  highlight: be.isNext ? "theme-red" : null,
+  popover: {
+    label: t("loongarchBiweekly", { number: be.issueNumber }),
+  },
+}))
+vCalAttrs.push(...allBiweeklyEventsForVCal)
 </script>

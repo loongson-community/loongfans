@@ -7,8 +7,12 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 ---
 
 <script setup>
+import { getBiweeklyEvents } from '../components/events/DataSource'
 import EventsCalendar from "../components/events/EventsCalendar.vue"
 import eventsICS from "../data/events.ics?raw"
+
+const now = new Date()
+const biweeklyData = getBiweeklyEvents(eventsICS, now)
 </script>
 
 龙架构双周会是由龙芯爱好者组织的社区会议，会议议程包括针对上游及各 Linux 发行版及其他系统项目的开发进展报告、社区事务报告，以及贡献者讨论及问答环节。
@@ -23,7 +27,7 @@ import eventsICS from "../data/events.ics?raw"
 
 <div class="flex flex-col md:flex-row md:gap-6">
     <div class="w-full md:flex-1">
-        <EventsCalendar :data="eventsICS" />
+        <EventsCalendar :data="biweeklyData" :now="now" />
     </div>
     <div class="w-full">
 
