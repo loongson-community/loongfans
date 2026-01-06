@@ -48,7 +48,16 @@ export default {
 
     // PrimeVue init
     app.use(PrimeVue, {
-      theme: { preset: Preset, options: { darkModeSelector: false } },
+      theme: {
+        preset: Preset,
+        options: {
+          cssLayer: {
+            name: "primevue",
+            order: "theme, base, primevue",
+          },
+          darkModeSelector: false,
+        },
+      },
     })
     app.use(ToastService)
     app.use(DialogService)

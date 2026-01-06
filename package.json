@@ -11,8 +11,10 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "@primeuix/themes": "^2.0.2",
+    "@tailwindcss/vite": "^4.1.18",
     "ical-expander": "^3.2.0",
     "primevue": "^4.5.1",
+    "tailwindcss-primeui": "^0.6.1",
     "v-calendar": "^3.1.2",
     "vitepress": "^1.6.3"
   },
