@@ -7,12 +7,20 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 ---
 
 <script setup>
+import { useI18n } from "vue-i18n"
 import { getBiweeklyEvents } from '../components/events/DataSource'
 import EventsCalendar from "../components/events/EventsCalendar.vue"
 import eventsICS from "../data/events.ics?raw"
 
+const { d, locale, tm } = useI18n()
 const now = new Date()
 const biweeklyData = getBiweeklyEvents(eventsICS, now)
+const nextEvent = (
+    biweeklyData.nextEventIdx !== null
+    ? biweeklyData.biweeklyEvents[biweeklyData.nextEventIdx]
+    : null
+)
+// Chinese version does not need special treatment for rendering ordinal numbers
 </script>
 
 龙架构双周会是由龙芯爱好者组织的社区会议，会议议程包括针对上游及各 Linux 发行版及其他系统项目的开发进展报告、社区事务报告，以及贡献者讨论及问答环节。
@@ -29,11 +37,11 @@ const biweeklyData = getBiweeklyEvents(eventsICS, now)
     <div class="w-full md:flex-1">
         <EventsCalendar :data="biweeklyData" :now="now" />
     </div>
-    <div class="w-full">
+    <div class="w-full" v-if="nextEvent !== null">
 
-### 第 28 次“龙架构双周会”会议公告
+### 第 {{ nextEvent.issueNumber }} 次“龙架构双周会”会议公告
 
-会议时间：2026 年 1 月 3 日 14:00（UTC+8，会议预计一小时内结束）
+会议时间：{{ d(nextEvent.start, "long") }}（会议预计一小时内结束）
 
 [会议链接][link-wemeet]｜[双周会幻灯片][link-slides]｜[直播链接][link-live]｜会议号：**728-211-994**
 

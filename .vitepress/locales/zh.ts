@@ -79,6 +79,12 @@ export default {
   dockerInstall: "Docker",
   cirunnerInstall: "CI 代理 (Runner)",
 
+  // Utilities
+  formatOrdinalNumber: (n: number): string => {
+    // Chinese has no special morphology for ordinal numbers
+    return n.toString()
+  },
+
   devices,
   chips,
   help,

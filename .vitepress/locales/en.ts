@@ -3,6 +3,8 @@ import chips from "./en/chips"
 import help from "./en/help"
 import os from "./en/os"
 
+const pluralRules = new Intl.PluralRules("en", { type: "ordinal" })
+
 export default {
   comma: ", ",
   // Index.vue
@@ -78,6 +80,20 @@ export default {
   kernelInstall: "Linux Kernel",
   dockerInstall: "Docker",
   cirunnerInstall: "CI Runners",
+
+  // Utilities
+  formatOrdinalNumber: (n: number): string => {
+    switch (pluralRules.select(n)) {
+      case "one":
+        return n + "st"
+      case "two":
+        return n + "nd"
+      case "few":
+        return n + "rd"
+      default:
+        return n + "th"
+    }
+  },
 
   devices,
   chips,

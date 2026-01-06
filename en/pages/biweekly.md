@@ -6,12 +6,23 @@ pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 ---
 
 <script setup>
+import { useI18n } from "vue-i18n"
 import { getBiweeklyEvents } from '../../components/events/DataSource'
 import EventsCalendar from "../../components/events/EventsCalendar.vue"
 import eventsICS from "../../data/events.ics?raw"
 
+const { d, locale, tm } = useI18n()
 const now = new Date()
 const biweeklyData = getBiweeklyEvents(eventsICS, now)
+const nextEvent = (
+    biweeklyData.nextEventIdx !== null
+    ? biweeklyData.biweeklyEvents[biweeklyData.nextEventIdx]
+    : null
+)
+let issueNumberOrd = ""
+if (nextEvent !== null) {
+    issueNumberOrd = tm("formatOrdinalNumber")(nextEvent.issueNumber)
+}
 </script>
 
 The LoongArch Biweekly is a regular community meeting organized by Loongson
@@ -38,11 +49,11 @@ If you'd like to hold a session in another language, please feel free to get in 
     <div class="w-full md:flex-1">
         <EventsCalendar :data="biweeklyData" :now="now" />
     </div>
-    <div class="w-full">
+    <div class="w-full" v-if="nextEvent !== null">
 
-### The 28th "LoongArch Biweekly" Meeting Announcement
+### The {{ issueNumberOrd }} "LoongArch Biweekly" Meeting Announcement
 
-Meeting Time: 2:00 PM, January 3, 2026 (UTC+8, meeting expected to last an hour)
+Meeting Time: {{ d(nextEvent.start, "long") }} (meeting expected to last an hour)
 
 [Meeting Link][link-wemeet]｜[Biweekly Slides][link-slides]｜[Livestream Link][link-live]｜Meeting ID: **728-211-994**
 
