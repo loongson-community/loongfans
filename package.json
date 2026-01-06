@@ -9,9 +9,11 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@primeuix/themes": "^2.0.2",
     "ical-expander": "^3.2.0",
     "primevue": "^4.5.1",
+    "v-calendar": "^3.1.2",
     "vitepress": "^1.6.3"
   },
   "devDependencies": {
