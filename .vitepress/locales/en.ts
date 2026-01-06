@@ -62,6 +62,10 @@ export default {
   deviceDownloadDebugVersion: " (Debug)",
   deviceDownloadButton: "Download",
 
+  // events/EventsCalendar.vue
+  today: "Today",
+  loongarchBiweekly: "LoongArch Biweekly #{number}",
+
   // sdk/Detail.vue
   gnuInstall: "GNU Toolchain",
   llvmInstall: "LLVM Toolchain",

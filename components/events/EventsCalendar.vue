@@ -35,7 +35,7 @@ type EventItem = {
   title: string
 }
 
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const { data } = defineProps<{ data: string }>()
 const expander = new IcalExpander({ ics: data, maxIterations: 100 })
 
@@ -75,13 +75,17 @@ const vCalAttrs: (typeof Calendar)["attributes"] = [
       fillMode: "outline",
     },
     popover: {
-      label: "Today",
+      label: t("today"),
     },
   },
 ]
 let nextEventSeen = false
-for (let i = 0; i < allBiweeklyEvents.length; i++) {
-  const event = allBiweeklyEvents[i]
+for (
+  let issueNumber = 1;
+  issueNumber <= allBiweeklyEvents.length;
+  issueNumber++
+) {
+  const event = allBiweeklyEvents[issueNumber - 1]
   const isFutureEvent = event.start.getTime() > now.getTime()
   const isNextEvent = isFutureEvent && !nextEventSeen
   if (isNextEvent) {
@@ -89,12 +93,12 @@ for (let i = 0; i < allBiweeklyEvents.length; i++) {
   }
 
   vCalAttrs.push({
-    key: `biweekly-${i + 1}`,
+    key: `biweekly-${issueNumber}`,
     dates: event.start,
     bar: isNextEvent ? null : isFutureEvent ? "theme-red" : "theme-past",
     highlight: isNextEvent ? "theme-red" : null,
     popover: {
-      label: `LoongArch Biweekly #${i + 1}`,
+      label: t("loongarchBiweekly", { number: issueNumber }),
     },
   })
 }

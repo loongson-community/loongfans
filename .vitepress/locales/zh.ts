@@ -62,6 +62,10 @@ export default {
   deviceDownloadDebugVersion: "（调试版）",
   deviceDownloadButton: "下载",
 
+  // events/EventsCalendar.vue
+  today: "今天",
+  loongarchBiweekly: "龙架构双周会（第 {number} 次）",
+
   // sdk/Detail.vue
   gnuInstall: "GNU 工具链",
   llvmInstall: "LLVM 工具链",
