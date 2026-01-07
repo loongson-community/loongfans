@@ -6,6 +6,15 @@ pageTitle: 龙架构双周会
 pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 ---
 
+<style scoped>
+/* mimic the Tailwind "md" breakpoint */
+@media (width >= 48rem) {
+    .announcement-container h3 {
+        margin-top: 0;
+    }
+}
+</style>
+
 <script setup>
 import { useI18n } from "vue-i18n"
 import { getBiweeklyEvents } from '../components/events/DataSource'
@@ -34,12 +43,12 @@ const nextEvent = (
 :::
 
 <div class="flex flex-col md:flex-row md:gap-6">
-    <div class="w-full md:flex-1">
+    <div class="w-full flex justify-center md:flex-1">
         <EventsCalendar :data="biweeklyData" :now="now" />
     </div>
-    <div class="w-full" v-if="nextEvent !== null">
+    <div class="w-full announcement-container" v-if="nextEvent !== null">
 
-### 第 {{ nextEvent.issueNumber }} 次“龙架构双周会”会议公告
+### 第 {{ nextEvent.issueNumber }} 次“龙架构双周会”会议公告 {#biweekly-announcement}
 
 会议时间：{{ d(nextEvent.start, "long") }}（会议预计一小时内结束）
 

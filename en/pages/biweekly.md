@@ -5,6 +5,15 @@ pageTitle: LoongArch Biweekly
 pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 ---
 
+<style scoped>
+/* mimic the Tailwind "md" breakpoint */
+@media (width >= 48rem) {
+    .announcement-container h3 {
+        margin-top: 0;
+    }
+}
+</style>
+
 <script setup>
 import { useI18n } from "vue-i18n"
 import { getBiweeklyEvents } from '../../components/events/DataSource'
@@ -46,12 +55,12 @@ If you'd like to hold a session in another language, please feel free to get in 
 :::
 
 <div class="flex flex-col md:flex-row md:gap-6">
-    <div class="w-full md:flex-1">
+    <div class="w-full flex justify-center md:flex-1">
         <EventsCalendar :data="biweeklyData" :now="now" />
     </div>
-    <div class="w-full" v-if="nextEvent !== null">
+    <div class="w-full announcement-container" v-if="nextEvent !== null">
 
-### The {{ issueNumberOrd }} "LoongArch Biweekly" Meeting Announcement
+### The {{ issueNumberOrd }} "LoongArch Biweekly" Meeting Announcement {#biweekly-announcement}
 
 Meeting Time: {{ d(nextEvent.start, "long") }} (meeting expected to last an hour)
 
