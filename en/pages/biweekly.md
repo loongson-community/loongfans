@@ -17,7 +17,7 @@ pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 <script setup lang="ts">
 import { ref } from "vue"
 import { useI18n } from "vue-i18n"
-import { getBiweeklySlideLink } from "../../components/events/BiweeklyLinks"
+import { getBiweeklyBilibiliLink, getBiweeklySlideLink } from "../../components/events/BiweeklyLinks"
 import { getBiweeklyEvents, type BiweeklyEventItem } from '../../components/events/DataSource'
 import BiweeklyCalendar from "../../components/events/BiweeklyCalendar.vue"
 import eventsICS from "../../data/events.ics?raw"
@@ -27,14 +27,17 @@ const now = new Date()
 const biweeklyData = getBiweeklyEvents(eventsICS, now)
 
 const thisEvent = ref(null)
+const thisBiliLink = ref(null)
 const thisSlideLink = ref(null)
 
 const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
     if (be) {
         thisEvent.value = be
+        thisBiliLink.value = getBiweeklyBilibiliLink(be.issueNumber)
         thisSlideLink.value = getBiweeklySlideLink(be.issueNumber)
     } else {
         thisEvent.value = null
+        thisBiliLink.value = null
         thisSlideLink.value = null
     }
 }
@@ -94,6 +97,9 @@ The meeting has ended, but you can still view materials from the event:
 <ul>
     <li v-if="thisSlideLink !== null">
         <a :href="thisSlideLink" target="_blank" rel="noreferrer">Biweekly Slides</a>
+    </li>
+    <li v-if="thisBiliLink !== null">
+        <a :href="thisBiliLink" target="_blank" rel="noreferrer">Bilibili live replay</a>
     </li>
 </ul>
 
