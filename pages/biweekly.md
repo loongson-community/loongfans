@@ -18,7 +18,13 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 <script setup lang="ts">
 import { ref } from "vue"
 import { useI18n } from "vue-i18n"
-import { getBiweeklyBilibiliLink, getBiweeklySlideLink } from "../components/events/BiweeklyLinks"
+import {
+    bilibiliLiveLink,
+    getBiweeklyBilibiliLink,
+    getBiweeklySlideLink,
+    wemeetLink,
+    wemeetNumber,
+} from "../components/events/BiweeklyLinks"
 import { getBiweeklyEvents, type BiweeklyEventItem } from '../components/events/DataSource'
 import BiweeklyCalendar from "../components/events/BiweeklyCalendar.vue"
 import eventsICS from "../data/events.ics?raw"
@@ -69,7 +75,7 @@ const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
 
 会议时间：{{ d(thisEvent.start, "long") }}（会议预计一小时内结束）
 
-[会议链接][link-wemeet]｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">双周会幻灯片</a><span v-else>双周会幻灯片（暂未上传）</span>｜[直播链接][link-live]｜会议号：**728-211-994**
+<a :href="wemeetLink" target="_blank" rel="noreferrer">会议链接</a>｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">双周会幻灯片</a><span v-else>双周会幻灯片（暂未上传）</span>｜<a :href="bilibiliLiveLink" target="_blank" rel="noreferrer">直播链接</a>｜会议号：**{{ wemeetNumber }}**
 
 双周会幻灯片将在**会前停止收集**，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。
 
@@ -95,6 +101,3 @@ const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
 </div>
 </div>
 </div>
-
-[link-live]: https://live.bilibili.com/1754798211
-[link-wemeet]: https://meeting.tencent.com/dm/P07yMaTQxECg

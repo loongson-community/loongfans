@@ -17,7 +17,13 @@ pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 <script setup lang="ts">
 import { ref } from "vue"
 import { useI18n } from "vue-i18n"
-import { getBiweeklyBilibiliLink, getBiweeklySlideLink } from "../../components/events/BiweeklyLinks"
+import {
+    bilibiliLiveLink,
+    getBiweeklyBilibiliLink,
+    getBiweeklySlideLink,
+    wemeetLink,
+    wemeetNumber,
+} from "../../components/events/BiweeklyLinks"
 import { getBiweeklyEvents, type BiweeklyEventItem } from '../../components/events/DataSource'
 import BiweeklyCalendar from "../../components/events/BiweeklyCalendar.vue"
 import eventsICS from "../../data/events.ics?raw"
@@ -78,7 +84,7 @@ If you'd like to hold a session in another language, please feel free to get in 
 
 Meeting Time: {{ d(thisEvent.start, "long") }} (meeting expected to last an hour)
 
-[Meeting Link][link-wemeet]｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">Biweekly Slides</a><span v-else>Biweekly Slides (to be uploaded)</span>｜[Livestream Link][link-live]｜Meeting ID: **728-211-994**
+<a :href="wemeetLink" target="_blank" rel="noreferrer">Meeting Link</a>｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">Biweekly Slides</a><span v-else>Biweekly Slides (to be uploaded)</span>｜<a :href="bilibiliLiveLink" target="_blank" rel="noreferrer">Livestream Link</a>｜Meeting ID: **{{ wemeetNumber }}**
 
 Biweekly slides may be edited **until the beginning of the meeting**.
 Those who wish to speak or ask questions at the biweekly should finish editing
@@ -106,6 +112,3 @@ The meeting has ended, but you can still view materials from the event:
 </div>
 </div>
 </div>
-
-[link-live]: https://live.bilibili.com/1754798211
-[link-wemeet]: https://meeting.tencent.com/dm/P07yMaTQxECg

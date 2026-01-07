@@ -46,3 +46,9 @@ export function getBiweeklyBilibiliLink(index: number): string | null {
   const bvid = biweeklyLinkInfo[index]?.bvid
   return bvid ? `https://www.bilibili.com/video/${bvid}/` : null
 }
+
+export const wemeetLink = "https://meeting.tencent.com/dm/P07yMaTQxECg"
+
+export const wemeetNumber = "728-211-994"
+
+export const bilibiliLiveLink = "https://live.bilibili.com/1754798211"
