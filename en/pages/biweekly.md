@@ -16,6 +16,7 @@ pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 
 <script setup>
 import { useI18n } from "vue-i18n"
+import { getBiweeklySlideLink } from "../../components/events/BiweeklyLinks"
 import { getBiweeklyEvents } from '../../components/events/DataSource'
 import EventsCalendar from "../../components/events/EventsCalendar.vue"
 import eventsICS from "../../data/events.ics?raw"
@@ -28,9 +29,11 @@ const nextEvent = (
     ? biweeklyData.biweeklyEvents[biweeklyData.nextEventIdx]
     : null
 )
+let nextSlideLink = null
 let issueNumberOrd = ""
 if (nextEvent !== null) {
     issueNumberOrd = tm("formatOrdinalNumber")(nextEvent.issueNumber)
+    nextSlideLink = getBiweeklySlideLink(nextEvent.issueNumber)
 }
 </script>
 
@@ -64,7 +67,7 @@ If you'd like to hold a session in another language, please feel free to get in 
 
 Meeting Time: {{ d(nextEvent.start, "long") }} (meeting expected to last an hour)
 
-[Meeting Link][link-wemeet]｜[Biweekly Slides][link-slides]｜[Livestream Link][link-live]｜Meeting ID: **728-211-994**
+[Meeting Link][link-wemeet]｜<a :href="nextSlideLink" target="_blank" rel="noreferrer" v-if="nextSlideLink !== null">Biweekly Slides</a><span v-else>Biweekly Slides (to be uploaded)</span>｜[Livestream Link][link-live]｜Meeting ID: **728-211-994**
 
 Biweekly slides may be edited **until the beginning of the meeting**.
 Those who wish to speak or ask questions at the biweekly should finish editing
@@ -74,5 +77,4 @@ before this time (if you need editing permissions, please apply via Kingsoft Doc
 </div>
 
 [link-live]: https://live.bilibili.com/1754798211
-[link-slides]: https://www.kdocs.cn/l/cvOZnsjUeuxC
 [link-wemeet]: https://meeting.tencent.com/dm/P07yMaTQxECg

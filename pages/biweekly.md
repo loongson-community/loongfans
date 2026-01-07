@@ -17,6 +17,7 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 
 <script setup>
 import { useI18n } from "vue-i18n"
+import { getBiweeklySlideLink } from "../components/events/BiweeklyLinks"
 import { getBiweeklyEvents } from '../components/events/DataSource'
 import EventsCalendar from "../components/events/EventsCalendar.vue"
 import eventsICS from "../data/events.ics?raw"
@@ -29,6 +30,7 @@ const nextEvent = (
     ? biweeklyData.biweeklyEvents[biweeklyData.nextEventIdx]
     : null
 )
+const nextSlideLink = nextEvent !== null ? getBiweeklySlideLink(nextEvent.issueNumber) : null
 // Chinese version does not need special treatment for rendering ordinal numbers
 </script>
 
@@ -52,7 +54,7 @@ const nextEvent = (
 
 会议时间：{{ d(nextEvent.start, "long") }}（会议预计一小时内结束）
 
-[会议链接][link-wemeet]｜[双周会幻灯片][link-slides]｜[直播链接][link-live]｜会议号：**728-211-994**
+[会议链接][link-wemeet]｜<a :href="nextSlideLink" target="_blank" rel="noreferrer" v-if="nextSlideLink !== null">双周会幻灯片</a><span v-else>双周会幻灯片（暂未上传）</span>｜[直播链接][link-live]｜会议号：**728-211-994**
 
 双周会幻灯片将在**会前停止收集**，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。
 
@@ -60,5 +62,4 @@ const nextEvent = (
 </div>
 
 [link-live]: https://live.bilibili.com/1754798211
-[link-slides]: https://www.kdocs.cn/l/cvOZnsjUeuxC
 [link-wemeet]: https://meeting.tencent.com/dm/P07yMaTQxECg
