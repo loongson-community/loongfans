@@ -15,23 +15,30 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 }
 </style>
 
-<script setup>
+<script setup lang="ts">
+import { ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { getBiweeklySlideLink } from "../components/events/BiweeklyLinks"
-import { getBiweeklyEvents } from '../components/events/DataSource'
-import EventsCalendar from "../components/events/EventsCalendar.vue"
+import { getBiweeklyEvents, type BiweeklyEventItem } from '../components/events/DataSource'
+import BiweeklyCalendar from "../components/events/BiweeklyCalendar.vue"
 import eventsICS from "../data/events.ics?raw"
 
 const { d, locale, tm } = useI18n()
 const now = new Date()
 const biweeklyData = getBiweeklyEvents(eventsICS, now)
-const nextEvent = (
-    biweeklyData.nextEventIdx !== null
-    ? biweeklyData.biweeklyEvents[biweeklyData.nextEventIdx]
-    : null
-)
-const nextSlideLink = nextEvent !== null ? getBiweeklySlideLink(nextEvent.issueNumber) : null
-// Chinese version does not need special treatment for rendering ordinal numbers
+
+const thisEvent = ref(null)
+const thisSlideLink = ref(null)
+
+const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
+    if (be) {
+        thisEvent.value = be
+        thisSlideLink.value = getBiweeklySlideLink(be.issueNumber)
+    } else {
+        thisEvent.value = null
+        thisSlideLink.value = null
+    }
+}
 </script>
 
 龙架构双周会是由龙芯爱好者组织的社区会议，会议议程包括针对上游及各 Linux 发行版及其他系统项目的开发进展报告、社区事务报告，以及贡献者讨论及问答环节。
@@ -46,18 +53,40 @@ const nextSlideLink = nextEvent !== null ? getBiweeklySlideLink(nextEvent.issueN
 
 <div class="flex flex-col md:flex-row md:gap-6">
     <div class="w-full flex justify-center md:flex-1">
-        <EventsCalendar :data="biweeklyData" :now="now" />
+        <BiweeklyCalendar
+            :data="biweeklyData"
+            :now="now"
+            @biweeklySelected="onBiweeklySelected"
+        />
     </div>
-    <div class="w-full announcement-container" v-if="nextEvent !== null">
+    <div class="w-full announcement-container" v-if="thisEvent !== null">
+        <div v-if="thisEvent.isFuture">
 
-### 第 {{ nextEvent.issueNumber }} 次“龙架构双周会”会议公告 {#biweekly-announcement}
+### 第 {{ tm("formatOrdinalNumber")(thisEvent.issueNumber) }} 次“龙架构双周会”会议公告 {#biweekly-announcement}
 
-会议时间：{{ d(nextEvent.start, "long") }}（会议预计一小时内结束）
+会议时间：{{ d(thisEvent.start, "long") }}（会议预计一小时内结束）
 
-[会议链接][link-wemeet]｜<a :href="nextSlideLink" target="_blank" rel="noreferrer" v-if="nextSlideLink !== null">双周会幻灯片</a><span v-else>双周会幻灯片（暂未上传）</span>｜[直播链接][link-live]｜会议号：**728-211-994**
+[会议链接][link-wemeet]｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">双周会幻灯片</a><span v-else>双周会幻灯片（暂未上传）</span>｜[直播链接][link-live]｜会议号：**728-211-994**
 
 双周会幻灯片将在**会前停止收集**，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。
 
+</div>
+
+<div v-else>
+
+### 第 {{ tm("formatOrdinalNumber")(thisEvent.issueNumber) }} 次“龙架构双周会”会议回看 {#biweekly-archive}
+
+会议时间：{{ d(thisEvent.start, "long") }}
+
+本次会议已经结束，您仍可查看本次会议的相关资源：
+
+<ul>
+    <li v-if="thisSlideLink !== null">
+        <a :href="thisSlideLink" target="_blank" rel="noreferrer">双周会幻灯片</a>
+    </li>
+</ul>
+
+</div>
 </div>
 </div>
 

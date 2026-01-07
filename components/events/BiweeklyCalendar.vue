@@ -3,6 +3,7 @@
     :locale="locale"
     :attributes="vCalAttrs"
     :initial-page="initialPage"
+    @dayclick="onDayClick"
   />
 </template>
 
@@ -25,15 +26,25 @@
 </style>
 
 <script setup lang="ts">
+import _ from "lodash"
 import { useI18n } from "vue-i18n"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
-import { type BiweeklyEventsResult } from "./DataSource"
+import type { BiweeklyEventItem, BiweeklyEventsResult } from "./DataSource"
+
+// The CalendarDay type is not exported by v-calendar, so we redefine it here
+// with only the fields we need.
+interface CalendarDayForEvent {
+  id: string // "YYYY-MM-DD"
+}
 
 const { locale, t } = useI18n()
 const { data, now } = defineProps<{
   data: BiweeklyEventsResult
   now: Date
+}>()
+const emit = defineEmits<{
+  biweeklySelected: [BiweeklyEventItem | null]
 }>()
 
 const initialPage = {
@@ -64,4 +75,33 @@ const allBiweeklyEventsForVCal = data.biweeklyEvents.map((be) => ({
   },
 }))
 vCalAttrs.push(...allBiweeklyEventsForVCal)
+
+// make the next biweekly event initially selected
+emit("biweeklySelected", data.biweeklyEvents.find((be) => be.isNext) || null)
+
+// no event key is available in v-calendar's dayclick event, so we have to
+// maintain a map between date id and event data
+const formatDateID = (d: Date) => {
+  const y = d.getFullYear()
+  const m = String(d.getMonth() + 1).padStart(2, "0")
+  const day = String(d.getDate()).padStart(2, "0")
+  return `${y}-${m}-${day}`
+}
+
+const biweeklyIssueNumberByDateID = _.keyBy(data.biweeklyEvents, (be) => {
+  return formatDateID(be.start)
+})
+
+// make today point to the next biweekly event if clicked
+const nextEvent = data.biweeklyEvents.find((be) => be.isNext)
+if (nextEvent) {
+  biweeklyIssueNumberByDateID[formatDateID(now)] = nextEvent
+}
+
+const onDayClick = (d: CalendarDayForEvent) => {
+  const be = biweeklyIssueNumberByDateID[d.id]
+  if (be) {
+    emit("biweeklySelected", be)
+  }
+}
 </script>

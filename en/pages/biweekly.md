@@ -14,26 +14,29 @@ pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 }
 </style>
 
-<script setup>
+<script setup lang="ts">
+import { ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { getBiweeklySlideLink } from "../../components/events/BiweeklyLinks"
-import { getBiweeklyEvents } from '../../components/events/DataSource'
-import EventsCalendar from "../../components/events/EventsCalendar.vue"
+import { getBiweeklyEvents, type BiweeklyEventItem } from '../../components/events/DataSource'
+import BiweeklyCalendar from "../../components/events/BiweeklyCalendar.vue"
 import eventsICS from "../../data/events.ics?raw"
 
 const { d, locale, tm } = useI18n()
 const now = new Date()
 const biweeklyData = getBiweeklyEvents(eventsICS, now)
-const nextEvent = (
-    biweeklyData.nextEventIdx !== null
-    ? biweeklyData.biweeklyEvents[biweeklyData.nextEventIdx]
-    : null
-)
-let nextSlideLink = null
-let issueNumberOrd = ""
-if (nextEvent !== null) {
-    issueNumberOrd = tm("formatOrdinalNumber")(nextEvent.issueNumber)
-    nextSlideLink = getBiweeklySlideLink(nextEvent.issueNumber)
+
+const thisEvent = ref(null)
+const thisSlideLink = ref(null)
+
+const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
+    if (be) {
+        thisEvent.value = be
+        thisSlideLink.value = getBiweeklySlideLink(be.issueNumber)
+    } else {
+        thisEvent.value = null
+        thisSlideLink.value = null
+    }
 }
 </script>
 
@@ -59,20 +62,42 @@ If you'd like to hold a session in another language, please feel free to get in 
 
 <div class="flex flex-col md:flex-row md:gap-6">
     <div class="w-full flex justify-center md:flex-1">
-        <EventsCalendar :data="biweeklyData" :now="now" />
+        <BiweeklyCalendar
+            :data="biweeklyData"
+            :now="now"
+            @biweeklySelected="onBiweeklySelected"
+        />
     </div>
-    <div class="w-full announcement-container" v-if="nextEvent !== null">
+    <div class="w-full announcement-container" v-if="thisEvent !== null">
+        <div v-if="thisEvent.isFuture">
 
-### The {{ issueNumberOrd }} "LoongArch Biweekly" Meeting Announcement {#biweekly-announcement}
+### The {{ tm("formatOrdinalNumber")(thisEvent.issueNumber) }} "LoongArch Biweekly" Meeting Announcement {#biweekly-announcement}
 
-Meeting Time: {{ d(nextEvent.start, "long") }} (meeting expected to last an hour)
+Meeting Time: {{ d(thisEvent.start, "long") }} (meeting expected to last an hour)
 
-[Meeting Link][link-wemeet]｜<a :href="nextSlideLink" target="_blank" rel="noreferrer" v-if="nextSlideLink !== null">Biweekly Slides</a><span v-else>Biweekly Slides (to be uploaded)</span>｜[Livestream Link][link-live]｜Meeting ID: **728-211-994**
+[Meeting Link][link-wemeet]｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">Biweekly Slides</a><span v-else>Biweekly Slides (to be uploaded)</span>｜[Livestream Link][link-live]｜Meeting ID: **728-211-994**
 
 Biweekly slides may be edited **until the beginning of the meeting**.
 Those who wish to speak or ask questions at the biweekly should finish editing
 before this time (if you need editing permissions, please apply via Kingsoft Docs).
 
+</div>
+
+<div v-else>
+
+### The {{ tm("formatOrdinalNumber")(thisEvent.issueNumber) }} "LoongArch Biweekly" Meeting Archives
+
+Meeting Time: {{ d(thisEvent.start, "long") }}
+
+The meeting has ended, but you can still view materials from the event:
+
+<ul>
+    <li v-if="thisSlideLink !== null">
+        <a :href="thisSlideLink" target="_blank" rel="noreferrer">Biweekly Slides</a>
+    </li>
+</ul>
+
+</div>
 </div>
 </div>
 
