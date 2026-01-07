@@ -32,6 +32,7 @@ const biweeklyLinkInfo = {
   [26]: { slides: "ctfV9YLds9og", bvid: "BV1NY2fBZEqc" },
   [27]: { slides: "cdBJQLY01QZU", bvid: "BV1JaBHBsEJ9" },
   [28]: { slides: "cvOZnsjUeuxC", bvid: "BV195iiBjEPZ" },
+  [29]: { slides: "ct8dbp5iVzs9" },
 }
 
 export function getBiweeklySlideLink(index: number): string | null {
@@ -47,8 +48,8 @@ export function getBiweeklyBilibiliLink(index: number): string | null {
   return bvid ? `https://www.bilibili.com/video/${bvid}/` : null
 }
 
-export const wemeetLink = "https://meeting.tencent.com/dm/P07yMaTQxECg"
+export const wemeetLink = "https://meeting.tencent.com/dm/wKB4lc9UDrpI"
 
-export const wemeetNumber = "728-211-994"
+export const wemeetNumber = "564-2745-3376"
 
 export const bilibiliLiveLink = "https://live.bilibili.com/1754798211"
