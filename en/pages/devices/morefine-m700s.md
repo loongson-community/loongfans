@@ -38,4 +38,3 @@ Source: [Morefine Official Website](http://www.imorefine.com/h-pd-53.html)
 
 </template>
 </Device>
-

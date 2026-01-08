@@ -282,7 +282,6 @@ There are only few LoongArch containers available in the official Docker registr
 
 </template>
 
-
 <template #cirunner>
 
 Many code hosting platforms offer CI runner support and some already supports LoongArch natively

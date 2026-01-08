@@ -47,4 +47,3 @@ Source: "XA61201 主板产品使用手册 V1.0"
 
 </template>
 </Device>
-

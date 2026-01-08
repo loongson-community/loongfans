@@ -41,4 +41,3 @@ Source: Loongson Technology
 
 </template>
 </Device>
-

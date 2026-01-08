@@ -18,4 +18,3 @@ pageSubTitle: 各类笔记本平台已知问题
 ---
 
 <!--@include: @/parts/known-issues/smcv1-issue-in-abi2.md -->
-

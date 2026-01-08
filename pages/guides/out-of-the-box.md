@@ -54,4 +54,3 @@ pageSubTitle: 从购买入坑，如何获得良好体验？
 - 特色：Linux from Scratch、勇豹
 
 另外还有统信 UOS、银河麒麟、中科方德、openEuler 及开放鸿蒙等商用系统可供选用。
-
