@@ -34,8 +34,8 @@ pageSubTitle: 正点原子 2K0300 开发板
 
 <template #image>
 
-![](/images/devices/alientek-2k0300-evb-1.webp)
-![](/images/devices/alientek-2k0300-evb-2.webp)
+![正点原子 2K0300 开发板正面，带 I/O 接口说明](/images/devices/alientek-2k0300-evb-1.webp)
+![正点原子 2K0300 开发板背面](/images/devices/alientek-2k0300-evb-2.webp)
 来源：正点原子
 
 </template>

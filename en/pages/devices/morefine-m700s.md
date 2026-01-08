@@ -33,7 +33,7 @@ The Morefine M700S is an Intel NUC-style mini PC powered by Loongson 3A6000-HV a
 
 <template #image>
 
-[![](/images/devices/morefine-m700s.thumbnail.webp)](/images/devices/morefine-m700s.webp)
+[![3D rendering of Morefine M700S](/images/devices/morefine-m700s.thumbnail.webp)](/images/devices/morefine-m700s.webp)
 Source: [Morefine Official Website](http://www.imorefine.com/h-pd-53.html)
 
 </template>

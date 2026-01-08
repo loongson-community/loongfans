@@ -36,7 +36,7 @@ None noted.
 
 <template #image>
 
-[![](/images/devices/opi-nova-v1.0.thumbnail.webp)](/images/devices/opi-nova-v1.0.webp)
+[![Front-side photo of an OrangePi Nova 1.0](/images/devices/opi-nova-v1.0.thumbnail.webp)](/images/devices/opi-nova-v1.0.webp)
 Source: Bai Mingcong, Xi Ruoyao
 
 </template>

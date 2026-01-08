@@ -33,7 +33,7 @@ pageSubTitle: 中科云 3A6000 小主机
 
 <template #image>
 
-[![](/images/devices/ctcisz-3a6000-nuc.thumbnail.webp)](/images/devices/ctcisz-3a6000-nuc.webp)
+[![中科云 3A6000 小主机的实拍图](/images/devices/ctcisz-3a6000-nuc.thumbnail.webp)](/images/devices/ctcisz-3a6000-nuc.webp)
 来源：中科云
 
 </template>

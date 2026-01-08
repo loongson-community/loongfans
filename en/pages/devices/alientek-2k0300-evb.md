@@ -34,8 +34,8 @@ None noted.
 
 <template #image>
 
-![](/images/devices/alientek-2k0300-evb-1.webp)
-![](/images/devices/alientek-2k0300-evb-2.webp)
+![Front-side view of the ALIENTEK 2K0300 EVB, with interfaces annotated](/images/devices/alientek-2k0300-evb-1.webp)
+![Back-side view of the ALIENTEK 2K0300 EVB](/images/devices/alientek-2k0300-evb-2.webp)
 Source: ALIENTEK
 
 </template>

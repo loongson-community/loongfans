@@ -33,7 +33,7 @@ The CTCISZ 3A6000 NUC is an Intel NUC-style mini PC powered by Loongson 3A6000-H
 
 <template #image>
 
-[![](/images/devices/ctcisz-3a6000-nuc.thumbnail.webp)](/images/devices/ctcisz-3a6000-nuc.webp)
+[![Photo of a CTCISZ 3A6000 NUC](/images/devices/ctcisz-3a6000-nuc.thumbnail.webp)](/images/devices/ctcisz-3a6000-nuc.webp)
 Source: CTCISZ
 
 </template>

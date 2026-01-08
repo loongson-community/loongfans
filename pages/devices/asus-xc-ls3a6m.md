@@ -52,7 +52,7 @@ pageSubTitle: 华硕 XC-LS3A6M
 
 <template #image>
 
-![](/images/devices/asus-xc-ls3a6m.webp)
+![华硕 XC-LS3A6M 的正面与侧面，带 I/O 接口说明](/images/devices/asus-xc-ls3a6m.webp)
 来源：[AliExpress 网店](https://aliexpress.com/item/1005006592333955.html)
 
 </template>
