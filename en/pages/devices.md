@@ -17,6 +17,7 @@ For processor specifications, details, and parameter comparisons, please see:
 
 - [Chips Database](/en/pages/chips)
 - [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel)
+
 :::
 
 <DeviceIndex :data="$tm('devices')" />

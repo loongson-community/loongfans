@@ -68,6 +68,7 @@ For processor specifications, details, and comparisons, please see:
 
 - [Loong 1-2-3 Site "Loongson Chip Parameters" Database](https://loong123.cn/chips/)
 - [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel).
+
 :::
 
 ### Common Board Models

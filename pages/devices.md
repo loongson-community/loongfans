@@ -17,6 +17,7 @@ import DeviceIndex from "../components/device/Index.vue"
 
 - [芯片规格数据库](/pages/chips)
 - [龙芯中科官方网站"芯片产品"板块](https://www.loongson.cn/product/channel)
+
 :::
 
 <DeviceIndex :data="$tm('devices')" />

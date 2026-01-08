@@ -27,9 +27,11 @@ For instance, to build a Loongson desktop computer, there are some common tips t
 Memory compatibility has always been a challenge on Loongson platforms. If you use incompatible or unverified RAM modules, operating systems and applications may not run reliably.
 
 :::info
+
 - For a list of RAM modules known to be compatible on Loongson platforms, please see [Loong 1-2-3's Memory Compatibility List](https://loong123.cn/list-hardwares.html).
 - Generally speaking, RAM modules with Hynix chips are well supported.
 - If supported by the particular chip and motherboard, we recommend purchasing Registered ECC RAM modules.
+
 :::
 
 ## The GPU Question

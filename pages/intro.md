@@ -66,6 +66,7 @@ pageSubTitle: 欢迎来到 x86 和 ARM 远山之外的龙芯世界
 
 - [Loong 1-2-3 站点“龙芯芯片参数”数据库](https://loong123.cn/chips/)
 - [龙芯中科官方网站“芯片产品”板块](https://www.loongson.cn/product/channel)。
+
 :::
 
 ### 常见板卡型号

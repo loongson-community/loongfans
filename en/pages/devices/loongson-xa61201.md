@@ -12,6 +12,7 @@ Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 mothe
 
 - Supports ECC memory
 - Has its PCIe 3.0 x8 slot in the third slot space changed to a PCIe 3.0 x16 interface (x8 lanes)
+
 :::
 
 <Device>

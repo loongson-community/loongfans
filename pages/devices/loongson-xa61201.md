@@ -12,6 +12,7 @@ pageSubTitle: 龙芯 XA61201
 
 - 支持 ECC 内存
 - 第三槽位的 PCIe 3.0 x8 接口改为 PCIe 3.0 x16 接口（x8 信号）
+
 :::
 
 <Device>
