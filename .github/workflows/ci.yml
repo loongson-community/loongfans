@@ -38,5 +38,7 @@ jobs:
           cache: pnpm
       - name: Install deps
         run: pnpm install
+      - name: Lint Markdown files
+        run: pnpm run lintMarkdown
       - name: Check code style with Prettier
         run: pnpm run lintPrettier
