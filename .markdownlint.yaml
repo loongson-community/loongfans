@@ -17,3 +17,6 @@ MD034: false
 # Not all documents are articles, so naturally not all first lines should be
 # H1's
 MD041: false
+
+MD060:
+  style: compact # because this is the prevalent style used currently
