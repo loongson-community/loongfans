@@ -17,12 +17,12 @@ ForeverPi ships in "TF Card" and "Wi-Fi" versions - as both the Wi-Fi module amd
 ### Wi-Fi Version
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | CTCISZ |
 | Form Factor | 88×56mm |
 | Processor | 2K0300 @ 1.0GHz |
 | Memory | 512MiB DDR4 @ 2666MT/s (onboard) |
-| Interfaces (USB)  | 2 × USB 2.0 |
+| Interfaces (USB) | 2 × USB 2.0 |
 | Interfaces (Storage) | 4GB eMMC (onboard), 8Mbit NOR Flash |
 | Interfaces (Network) | 1 × GbE, onboard Wi-Fi + Bluetooth module (single antenna) |
 | Interfaces (Video) | 1 × LCD output |
@@ -31,12 +31,12 @@ ForeverPi ships in "TF Card" and "Wi-Fi" versions - as both the Wi-Fi module amd
 ### TF Card Version
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | CTCISZ |
 | Form Factor | 88×56mm |
 | Processor | 2K0300 @ 1.0GHz |
 | Memory | 512MiB DDR4 @ 2666MT/s (onboard) |
-| Interfaces (USB)  | 2 × USB 2.0 |
+| Interfaces (USB) | 2 × USB 2.0 |
 | Interfaces (Storage) | 256Mbit NOR Flash |
 | Interfaces (Network) | 1 × GbE |
 | Interfaces (Video) | None |

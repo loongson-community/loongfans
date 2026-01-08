@@ -13,11 +13,11 @@ The Morefine M700S is an Intel NUC-style mini PC powered by Loongson 3A6000-HV a
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | Morefine |
 | Processor | 3A6000-HV @ 2.5GHz |
 | Memory | DDR4 @ 3200MT/s (2 × SODIMM) |
-| Interfaces (USB)  | 4 × USB 3.0, 2 × USB 2.0, 1 × USB-C |
+| Interfaces (USB) | 4 × USB 3.0, 2 × USB 2.0, 1 × USB-C |
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 1 × SATA 3.0 |
 | Interfaces (Network) | 1 × GbE |
 | Interfaces (Video) | 2 × HDMI |

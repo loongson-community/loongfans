@@ -13,12 +13,12 @@ The Loongson 2K0300 "Hummingbird" is a development board based on Loongson 2K030
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | Loongson Technology |
 | Form Factor | 93×63mm |
 | Processor | 2K0300 @ 1.0GHz |
 | Memory | 512MiB DDR4 (onboard) |
-| Interfaces (USB)  | 2 × USB 2.0, 1 × USB-C† |
+| Interfaces (USB) | 2 × USB 2.0, 1 × USB-C† |
 | Interfaces (Storage) | 8GB eMMC (onboard) |
 | Interfaces (Network) | 1 × GbE |
 | Interfaces (Video) | 1 × LCD output |

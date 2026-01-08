@@ -40,7 +40,7 @@ If you intend to release universal binaries for projects or maintain a Linux dis
 To install GNU toolchain on common Linux distributions and operating systems:
 
 | Operating System | Installation Procedure |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install binutils gcc` |
 | Arch Linux | `sudo pacman -S binutils gcc` |
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install build-essential` |
@@ -49,7 +49,7 @@ To install GNU toolchain on common Linux distributions and operating systems:
 If you do not have a LoongArch device or wish to cross-compile:
 
 | Operating System | Installation Procedure |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install gcc+cross-loongarch64` |
 | Debian 13 and later, Ubuntu 24.04 and later, and their respective derivatives | `sudo apt install gcc-loongarch64-linux-gnu` |
 | Windows and other Linux distributions | Please install from GitHub repository [loongson/build-tools](https://github.com/loongson/build-tools) |
@@ -69,7 +69,7 @@ If you intend to release universal binaries for projects or maintain a Linux dis
 To install LLVM (including Clang) on common Linux distributions and operating systems:
 
 | Operating Systems | Installation Procedure |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install llvm` |
 | Arch Linux | `sudo pacman -S clang llvm` |
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install clang llvm` |
@@ -92,7 +92,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 To install Rust (rustc) and the Cargo package manager on common Linux distributions and operating systems:
 
 | Operating System | Installation Procedure |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install rustc` |
 | Arch Linux | `sudo pacman -S rustc` |
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install rust-all` |
@@ -107,7 +107,7 @@ Node.js officially supports LoongArch. It is available directly from your distro
 To install Node.js on common Linux distributions and operating systems:
 
 | Operating System | Installation Procedure |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install nodejs` |
 | Arch Linux | `sudo pacman -S nodejs` |
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install nodejs` |
@@ -126,7 +126,7 @@ Go officially supports LoongArch. It is available directly from your distro's re
 To install Go on common Linux distributions and operating systems:
 
 | Operating System | Installation Procedure |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install go` |
 | Arch Linux | `sudo pacman -S go` |
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install golang` |
@@ -143,11 +143,11 @@ Python officially supports LoongArch. It is available directly from your distro'
 To install Python on common Linux distributions and operating systems:
 
 | Operating System | Installation Procedure |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install python-3` |
 | Arch Linux | `sudo pacman -S python` |
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install python3` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS  | `sudo dnf install python3` |
+| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install python3` |
 
 :::tip
 Since LoongArch still lacks definition for a "manylinux" baseline, the official PyPI repository does not host binaries for LoongArch. This means that when installing PyPI modules using `pip`, the respective modules will be compiled from source and you may need to install C/C++/Rust toolchains as needed.
@@ -207,11 +207,11 @@ Due to non-technical reasons, Oracle OpenJDK does not currently support LoongArc
 To install Java on common Linux distributions and operating systems:
 
 | Operating System | Installation Procedures |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install openjdk` |
 | Arch Linux | `sudo pacman -S java-openjdk` |
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install default-jdk` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS  | `sudo dnf install java-latest-openjdk` |
+| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install java-latest-openjdk` |
 
 :::tip
 Many Linux distributions provide multiple versions of OpenJDK to suit the needs of different applications and projects. Please consult distro documentation and install alternative OpenJDK versions as needed.
@@ -232,14 +232,14 @@ The Linux Kernel introduced LoongArch support since version 5.19. However, to fu
 As noted above, newer Linux kernels are generally preferable due to their better support for LoongArch devices. However, as distros may have their own set of rules when it comes to kernel updates, we have assembled the guide below for your reference.
 
 | Linux Version | Key Feature Introduced |
-|---------------|------------------------------|
-| 6.18          | 2K2000/2K3000/3B6000M GPIO fixes |
-| 6.17          | 2K3000/3B6000M On-Chip NIC DWMAC Support; PWM Frequency Modulation Fix |
-| 6.16          | 2K2000/2K3000/3B6000M SDIO Support |
-| 6.14          | 3C6000 Family Multiplexing Support |
-| 6.12          | 3B6000/3C6000 family support (Advanced Extended IRQ model) |
-| 6.7           | Virtualization support |
-| 6.4           | Simultaneous Multi-Threading (SMT) support |
+| ------------- | ---------------------------- |
+| 6.18 | 2K2000/2K3000/3B6000M GPIO fixes |
+| 6.17 | 2K3000/3B6000M On-Chip NIC DWMAC Support; PWM Frequency Modulation Fix |
+| 6.16 | 2K2000/2K3000/3B6000M SDIO Support |
+| 6.14 | 3C6000 Family Multiplexing Support |
+| 6.12 | 3B6000/3C6000 family support (Advanced Extended IRQ model) |
+| 6.7 | Virtualization support |
+| 6.4 | Simultaneous Multi-Threading (SMT) support |
 
 ### Unmerged Patches
 
@@ -248,7 +248,7 @@ Generally, engineers at Loongson Technology and community developers pushes hard
 The following table lists all known and essential patches maintained by various downstream parties (developers, distribution communities, etc.), for your reference (the patch list below are based on `v6.19-rc1` and do not include patches already submitted to the upstream [loongarch](https://lore.kernel.org/loongarch) mailing list):
 
 | Description | Type | Kconfig Entry | Link | Notes |
-|-------------|------|-----------------------------|------|-------|
+| ----------- | ---- | ------------- | ---- | ----- |
 | PixArt PS/2 Devices | Feature | `MOUSE_PS2_PIXART` (bool: y/n) | [1](https://lore.kernel.org/loongarch/20251127080203.3218018-1-zhoubinbin@loongson.cn/) | For laptops such as the Tongfang Chaorui L860-T2 and Excelsior L71 based on 3A5000 and 3A6000, this patch fixes an issue where the touchpads were misidentified as PS/2 mice, breaking support for gestures and palm detection. |
 | HWMon support (thermal and other forms of hardware monitoring), providing CPU thermal control for the Loongson 3 family | Feature | `CPU_HWMON` (bool: y/n) | [1](https://github.com/chenhuacai/linux/commit/2a6c1c74d93a21613a523aebc6494d654f35cf1a) | Does not include support for thermal monitoring of the 7A bridge chip; this patch may cause `sensors(1)` to read incorrect temperature sensors and data on SoC platforms such as 2K3000/3B6000M. |
 | Multi-channel DMA Controller | Feature | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
@@ -270,7 +270,7 @@ Docker (utility) now officially supports LoongArch, usually available from your 
 To install Docker on common Linux distributions and operating systems:
 
 | Operating System | Installation Method |
-|----------|----------|
+| -------- | -------- |
 | AOSC OS | `oma install docker` |
 | Arch Linux | `sudo pacman -S docker` |
 | Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install docker.io` |

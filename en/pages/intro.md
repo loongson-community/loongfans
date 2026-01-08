@@ -45,16 +45,16 @@ Loongson 3B6000M is the sister model of 2K3000, clocked slightly higher than the
 
 The following table summarizes key feature differences across current products (from highest to lowest performance):
 
-| Model           | Core Count | Thread Count | Clock Speed  | Memory Channels | PCIe Speeds   | PCIe Lanes |
-|-----------------|------------|--------------|--------------|-----------------|---------------|------------|
-| 3C6000/Q        | 64         | 128          | 2.0 - 2.1GHz | 8               | 3.0/4.0†     | 64         |
-| 3C6000/D        | 32         | 64           | 2.1GHz       | 8               | 3.0/4.0†     | 64         |
-| 3C6000/S        | 16         | 32           | 2.2GHz       | 4               | 3.0/4.0†     | 64         |
-| 3B6000          | 8-16       | 16-32        | 2.3GHz       | 2               | 3.0/4.0†     | 32         |
-| 3A6000          | 4          | 8            | 2.0 - 2.5GHz | 2               | 3.0           | 32‡       |
-| 3B6000M         | 8          | 8            | ~2.5GHz      | 1               | 3.0           | 8          |
-| 2K3000          | 8          | 8            | ~2.2GHz      | 1               | 3.0           | 8          |
-| 2K0300          | 1          | 1            | 1GHz         | 1               | None          | None       |
+| Model | Core Count | Thread Count | Clock Speed | Memory Channels | PCIe Speeds | PCIe Lanes |
+| ----- | ---------- | ------------ | ----------- | --------------- | ----------- | ---------- |
+| 3C6000/Q | 64 | 128 | 2.0 - 2.1GHz | 8 | 3.0/4.0† | 64 |
+| 3C6000/D | 32 | 64 | 2.1GHz | 8 | 3.0/4.0† | 64 |
+| 3C6000/S | 16 | 32 | 2.2GHz | 4 | 3.0/4.0† | 64 |
+| 3B6000 | 8-16 | 16-32 | 2.3GHz | 2 | 3.0/4.0† | 32 |
+| 3A6000 | 4 | 8 | 2.0 - 2.5GHz | 2 | 3.0 | 32‡ |
+| 3B6000M | 8 | 8 | ~2.5GHz | 1 | 3.0 | 8 |
+| 2K3000 | 8 | 8 | ~2.2GHz | 1 | 3.0 | 8 |
+| 2K0300 | 1 | 1 | 1GHz | 1 | None | None |
 
 - †: Only some models support PCIe 4.0, please refer to the board models and suppliers' specifications.
 - ‡: PCIe is provided by the 7A2000 bridge chip.

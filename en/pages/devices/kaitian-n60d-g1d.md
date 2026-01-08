@@ -13,13 +13,13 @@ The Lenovo Kaitian N60d-G1d is a 14-inch laptop based on Loongson 3A6000. Weighi
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | Lenovo Kaitian |
 | Processor | 3A6000 @ 2.0GHz |
 | Memory | DDR4 @ 3200MT/s (1 × SODIMM), no onboard memory |
 | Screen | 14 inches, 2240×1400 (2.2K) or 1920x1200 (WUXGA) |
 | Weight | 1.5kg |
-| Interfaces (USB)  | 2 × USB 3.0, 2 × USB-C† |
+| Interfaces (USB) | 2 × USB 3.0, 2 × USB-C† |
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4) |
 | Interfaces (Network) | 1 × GbE |
 | Interfaces (Video) | 1 × HDMI |

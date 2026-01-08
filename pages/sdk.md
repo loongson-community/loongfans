@@ -40,7 +40,7 @@ GCC 及 Binutils 已正式支持龙架构，您可以通过发行版仓库直接
 如下是在几个常见 Linux 发行版和操作系统下安装 GNU 工具链的方法：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install binutils gcc` |
 | Arch Linux | `sudo pacman -S binutils gcc` |
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install build-essential` |
@@ -49,7 +49,7 @@ GCC 及 Binutils 已正式支持龙架构，您可以通过发行版仓库直接
 如果您没有龙架构设备或希望交叉编译：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install gcc+cross-loongarch64` |
 | Debian 13 及以上、Ubuntu 24.04 及以上，以及各衍生版 | `sudo apt install gcc-loongarch64-linux-gnu` |
 | Windows 及其他 Linux 发行版 | 请从 GitHub 仓库 [loongson/build-tools](https://github.com/loongson/build-tools) 安装 |
@@ -69,7 +69,7 @@ LLVM 已正式支持龙架构，您可以通过发行版仓库直接安装、下
 如下是在几个常见 Linux 发行版和操作系统下安装 LLVM 工具链（含 Clang）的方法：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install llvm` |
 | Arch Linux | `sudo pacman -S clang llvm` |
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install clang llvm` |
@@ -92,7 +92,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 如下是在几个常见 Linux 发行版和操作系统下安装 Rust (rustc) 及 Cargo 包管理器的方法：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install rustc` |
 | Arch Linux | `sudo pacman -S rustc` |
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install rust-all` |
@@ -107,7 +107,7 @@ Node.js 已正式支持龙架构，您可以通过发行版仓库直接安装、
 如下是在几个常见 Linux 发行版和操作系统下安装 Node.js 的方法：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install nodejs` |
 | Arch Linux | `sudo pacman -S nodejs` |
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install nodejs` |
@@ -126,7 +126,7 @@ Go 已正式支持龙架构，您可以通过发行版仓库直接安装、下�
 如下是在几个常见 Linux 发行版和操作系统下安装 Go 工具链的方法：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install go` |
 | Arch Linux | `sudo pacman -S go` |
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install golang` |
@@ -143,7 +143,7 @@ Python 已正式支持龙架构，您可以通过发行版仓库直接安装、�
 如下是在几个常见 Linux 发行版和操作系统下安装 Python 的方法：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install python-3` |
 | Arch Linux | `sudo pacman -S python` |
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install python3` |
@@ -209,7 +209,7 @@ loongson-community/dotnet-unofficial-build 提供的发行版将上述文件归�
 如下是在几个常见 Linux 发行版和操作系统下安装 Java 工具链的方法：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install openjdk` |
 | Arch Linux | `sudo pacman -S java-openjdk` |
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install default-jdk` |
@@ -234,14 +234,14 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 如前文所说，对于龙架构设备来说，Linux 内核是越新越好的。但考虑到 Linux 发行版有具体的维护规则和需要，如下是对 Linux 大版本更新对应的平台支持的说明：
 
 | Linux 版本 | 关键平台支持更新 |
-|------------|------------------|
-| 6.18       | 2K2000/2K3000/3B6000M GPIO 修复 |
-| 6.17       | 2K3000/3B6000M 片上网卡 DWMAC 支持；PWM 调频修复 |
-| 6.16       | 2K2000/2K3000/3B6000M SDIO 支持 |
-| 6.14       | 3C6000 家族多路支持 |
-| 6.12       | 3B6000/3C6000 家族支持（高级扩展 IRQ 模型） |
-| 6.7        | 虚拟化支持 |
-| 6.4        | 超线程 (SMT) 支持 |
+| ---------- | ---------------- |
+| 6.18 | 2K2000/2K3000/3B6000M GPIO 修复 |
+| 6.17 | 2K3000/3B6000M 片上网卡 DWMAC 支持；PWM 调频修复 |
+| 6.16 | 2K2000/2K3000/3B6000M SDIO 支持 |
+| 6.14 | 3C6000 家族多路支持 |
+| 6.12 | 3B6000/3C6000 家族支持（高级扩展 IRQ 模型） |
+| 6.7 | 虚拟化支持 |
+| 6.4 | 超线程 (SMT) 支持 |
 
 ### 未上游补丁
 
@@ -249,8 +249,8 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 
 下表中列出了目前已知的、正在各下游（开发者、发行版社区等）维护的必要支持补丁，供各位参考（补丁列表及代码基于 `v6.19-rc1` 技术状态，不包含已经提交到上游 [loongarch](https://lore.kernel.org/loongarch) 邮件列表的补丁）：
 
-| 描述 | 类型 |  对应配置项 | 链接 | 备注 |
-|------|------|-------------|------|------|
+| 描述 | 类型 | 对应配置项 | 链接 | 备注 |
+| ---- | ---- | ---------- | ---- | ---- |
 | PixArt PS/2 总线设备支持 | 新功能 | `MOUSE_PS2_PIXART` (bool: y/n) | [1](https://lore.kernel.org/loongarch/20251127080203.3218018-1-zhoubinbin@loongson.cn/) | 用于清华同方超锐 L860-T2、卓怡恒通 L71 等基于 3A5000 及 3A6000 的笔记本，可解决这些设备上触摸板被错误识别为 PS/2 鼠标，导致手势功能及手掌探测失效 |
 | HWMon（如温控等硬件监控功能）支持，可为龙芯 3 号家族提供处理器温控支持 | 新功能 | `CPU_HWMON` (bool: y/n) | [1](https://github.com/chenhuacai/linux/commit/2a6c1c74d93a21613a523aebc6494d654f35cf1a) | 不包括 7A 桥片监控支持；该补丁可能在 2K3000/3B6000M 等 SoC 平台上导致 `sensors(1)` 读出错误的温度传感器及数据 |
 | 多通道 DMA 支持 | 新功能 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
@@ -270,7 +270,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 Docker 软件已正式支持龙架构，您可以通过 Linux 发行版软件源安装；如下是在几个常见 Linux 发行版和操作系统下安装 Docker 的方法：
 
 | 操作系统 | 安装方式 |
-|----------|----------|
+| -------- | -------- |
 | 安同 OS | `oma install docker` |
 | Arch Linux | `sudo pacman -S docker` |
 | Debian、deepin、openKylin（开放麒麟）及 Loongnix 25 等 Debian 系发行版 | `sudo apt install docker.io` |

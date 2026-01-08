@@ -15,13 +15,13 @@ This motherboard is the first 3A6000 motherboard released by Loongson and is gen
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | Loongson Technology |
 | Form Factor | ATX (244×305mm) |
 | Processor | 3A6000-HV @ 2.5GHz |
 | Memory | DDR4 @ 3200MT/s (2 × DIMM), supports ECC† |
 | Interfaces (PCIe) | 2 × PCIe 3.0 x16 (x8 lanes), 1 × PCIe 3.0 x4 (x4 lanes) |
-| Interfaces (USB)  | USB 3.0 (2 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
+| Interfaces (USB) | USB 3.0 (2 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
 | Interfaces (Network) | 1 × GbE |
 | Interfaces (Video) | 1 × HDMI, 1 × VGA |

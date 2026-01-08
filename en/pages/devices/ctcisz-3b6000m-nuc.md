@@ -13,11 +13,11 @@ The CTCISZ 3B6000M NUC is an Intel NUC-style mini PC powered by Loongson 3B6000M
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | CTCISZ |
 | Processor | 3B6000M @ 2.5GHz |
 | Memory | DDR4 @ 3200MT/s (1 × SODIMM) |
-| Interfaces (USB)  | 3 × USB 3.0, 3 × USB 2.0, 2 × USB-C† |
+| Interfaces (USB) | 3 × USB 3.0, 3 × USB 2.0, 2 × USB-C† |
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4) |
 | Interfaces (Network) | 2 × GbE |
 | Interfaces (Video) | 1 × DisplayPort, 1 × HDMI |

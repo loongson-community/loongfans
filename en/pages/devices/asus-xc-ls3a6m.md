@@ -15,13 +15,13 @@ This motherboard was designed and sold by ASUS and is one of the first third-par
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | ASUS |
 | Form Factor | DTX (203×244mm) |
 | Processor | 3A6000-HV @ 2.5GHz |
 | Memory | DDR4 @ 3200MT/s (2 × DIMM) |
 | Interfaces (PCIe) | PCIe 3.0 x16 (x8 lanes), PCIe 3.0 x8 (x8 lanes), PCIe 3.0 x4 (x4 lanes) |
-| Interfaces (USB)  | USB 3.0 (3 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
+| Interfaces (USB) | USB 3.0 (3 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
 | Interfaces (Network) | 2 × GbE |
 | Interfaces (Video) | 1 × HDMI, 1 × VGA |

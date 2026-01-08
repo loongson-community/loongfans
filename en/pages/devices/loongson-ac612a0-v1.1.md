@@ -15,13 +15,13 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | Loongson Technology |
 | Form Factor | ATX (244×305mm) |
 | Processor | 3C6000/S @ 2.0/2.2GHz |
 | Memory | DDR4 @ 3200MT/s (2 × DIMM), supports RECC |
 | Interfaces (PCIe) | 2 × PCIe 3.0 x16, 2 × PCIe 3.0 x8 |
-| Interfaces (USB)  | USB 3.0 (2 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
+| Interfaces (USB) | USB 3.0 (2 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0, 1 × SFF-8654-4i interface |
 | Interfaces (Network) | 2 × GbE |
 | Interfaces (Video) | 1 × VGA |

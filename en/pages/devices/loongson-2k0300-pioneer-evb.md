@@ -13,12 +13,12 @@ The Loongson 2K0300 "Pioneer" is a development board launched based on Loongson 
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | Loongson Technology |
 | Form Factor | 85×56mm |
 | Processor | 2K0300 @ 1.0GHz |
 | Memory | 512MiB DDR4 (onboard) |
-| Interfaces (USB)  | 4 × USB 2.0, 1 × USB-C† |
+| Interfaces (USB) | 4 × USB 2.0, 1 × USB-C† |
 | Interfaces (Storage) | 1 × microSD card slot, 8GB eMMC (onboard) |
 | Interfaces (Network) | 1 × GbE, onboard Wi-Fi module |
 | Interfaces (Video) | 1 × LCD output |

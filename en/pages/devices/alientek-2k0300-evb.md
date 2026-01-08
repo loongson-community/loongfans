@@ -13,12 +13,12 @@ The ALIENTEK 2K0300 Development Board is a development board based on Loongson 2
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | ALIENTEK |
 | Form Factor | 42×37mm (core board), 180×100mm (base board) |
 | Processor | 2K0300 @ 1.0GHz |
 | Memory | 512MiB DDR4 (onboard) |
-| Interfaces (USB)  | 2 × USB 2.0, 2 × USB-C (1 × OTG, 1 × serial port) |
+| Interfaces (USB) | 2 × USB 2.0, 2 × USB-C (1 × OTG, 1 × serial port) |
 | Interfaces (Storage) | 1 × microSD card slot, 8GB eMMC (onboard) |
 | Interfaces (Network) | 2 × GbE, Wi-Fi + Bluetooth module (onboard) |
 | Interfaces (Video) | 1 × LCD output |

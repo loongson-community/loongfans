@@ -13,12 +13,12 @@ The Loongson 2K3000 AI Evaluation Board is a development board launched by Loong
 <template #spec>
 
 | Category | Specification |
-|------|------|
+| ---- | ---- |
 | Manufacturer | Loongson Technology |
 | Form Factor | 168×126mm |
 | Processor | 2K3000 @ 2.2GHz |
 | Memory | DDR4 @ 3200MT/s (1 × SODIMM) |
-| Interfaces (USB)  | USB 3.0 (2 × onboard, 1 × pin header interface), USB 2.0 (3 × pins) |
+| Interfaces (USB) | USB 3.0 (2 × onboard, 1 × pin header interface), USB 2.0 (3 × pins) |
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 1 × microSD card slot, 1 × SATA 3.0 |
 | Interfaces (Network) | 2 × GbE |
 | Interfaces (Video) | 1 × HDMI, 1 × eDP |
