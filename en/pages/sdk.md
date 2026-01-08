@@ -168,7 +168,7 @@ However, .NET toolchain binaries may be obtained through the following channels:
 
 For common Linux distributions, simply download the SDK package with the RID (.NET Runtime Identifier) `linux-loongarch64` to obtain the full toolchain (i.e., `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`). For instructions on installing the .NET SDK using tar packages, refer to the [official .NET documentation](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install).
 
-**Cross-Compiling .NET Applications for LoongArch**
+### Cross-Compiling .NET Applications for LoongArch
 
 .NET natively supports cross-compilation and cross-platform publishing. With .NET 9 or later, refer to [this article](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) and specify the target RID to publish .NET applications for LoongArch. However, since LoongArch is classified as a “community-supported architecture” for .NET, NuGet.org does not host .NET runtime packages targeting LoongArch, which may cause build failures.
 
@@ -194,7 +194,7 @@ Place the above files in a path that suits your needs (e.g., `/data/loongarch64-
 
 You should now be able to cross-compile .NET applications for LoongArch.
 
-**Compiling the .NET Toolchain**
+### Compiling the .NET Toolchain
 
 Compiling the .NET toolchain itself is a relatively involved process. To ease the learning curve, please refer to the [CI build scripts used by Loongson Technology](https://github.com/loongson/dotnet/blob/build/.github/workflows/build-sdk10.yml). This method utilizes the VMR source distribution package officially recommended by .NET for compilation.
 
@@ -227,7 +227,7 @@ The Linux Kernel officially supports LoongArch. Generally, Linux distributions b
 The Linux Kernel introduced LoongArch support since version 5.19. However, to fully leverage the hardware capabilities and performance of LoongArch, please use the latest mainline kernel.
 :::
 
-**Kernel Maintenance Reference**
+### Kernel Maintenance Reference
 
 As noted above, newer Linux kernels are generally preferable due to their better support for LoongArch devices. However, as distros may have their own set of rules when it comes to kernel updates, we have assembled the guide below for your reference.
 
@@ -241,7 +241,7 @@ As noted above, newer Linux kernels are generally preferable due to their better
 | 6.7           | Virtualization support |
 | 6.4           | Simultaneous Multi-Threading (SMT) support |
 
-**Unmerged Patches**
+### Unmerged Patches
 
 Generally, engineers at Loongson Technology and community developers pushes hardware enablement, optimizations, and fixes to the upstream (mainline) kernel. However, due to technical and non-technical reasons, some patches remain unmerged.
 
@@ -286,27 +286,27 @@ There are only few LoongArch containers available in the official Docker registr
 
 Many code hosting platforms offer CI runner support and some already supports LoongArch natively
 
-**GitHub Actions**
+### GitHub Actions
 
 GitHub Actions Runner could not produce binary releases due to [NuGet lacking LoongArch support](https://github.com/dotnet/sdk/issues/42248). If you wish to compile and deploy this CI agent yourself, please refer to this [pull request](https://github.com/actions/runner/pull/3928).
 
-**GitLab Runner**
+### GitLab Runner
 
 GitLab Runner officially supports LoongArch. To deploy, simply download and install packages or compressed archives tagged `loong64` from its [release page](https://gitlab.com/gitlab-org/gitlab-runner/-/releases).
 
-**Gitea act_runner**
+### Gitea act\_runner
 
 Gitea act_runner officially supports LoongArch, though LoongArch binaries are not yet available. For now, you may clone the [source code](https://gitea.com/gitea/act_runner) to compile and deploy this runner.
 
-**Forgejo Runner**
+### Forgejo Runner
 
 Forgejo Runner has not yet merged LoongArch support. If you wish to compile and deploy this runner yourself, please refer to this [pull request](https://code.forgejo.org/forgejo/runner/pulls/1144).
 
-**Sourcehut**
+### Sourcehut
 
 Sourcehut's CI proxy [builds.sr.ht](https://git.sr.ht/~sircmpwn/builds.sr.ht/) officially supports LoongArch. As this CI runner does not distribute binaries, you would need to build and deploy this runner from source.
 
-**Gitee**
+### Gitee
 
 Gitee has not yet merged LoongArch support. If you wish to compile and deploy this runner yourself, please refer to the following pull requests:
 
@@ -315,7 +315,7 @@ Gitee has not yet merged LoongArch support. If you wish to compile and deploy th
 - [gitee-go/runner-core#1](https://gitee.com/gitee-go/runner-core/pulls/1)
 - [gitee-go/runner#1](https://gitee.com/gitee-go/runner/pulls/1)
 
-**GitCode**
+### GitCode
 
 As inquired by community members, GitCode currently does not support self-hosted CI proxies and thus it is not possible to support LoongArch, at least for now.
 

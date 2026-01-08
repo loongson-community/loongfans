@@ -168,7 +168,7 @@ Python 已正式支持龙架构，您可以通过发行版仓库直接安装、�
 
 对于常见的 Linux 发行版，选择 RID（.NET 运行时标识符）为 `linux-loongarch64` 的 SDK 包即可获取完整工具链。如 `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`；关于如何使用 tar 包安装 .NET SDK，参阅 [.NET 官方文档](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install)
 
-**为龙架构交叉编译 .NET 程序**
+### 为龙架构交叉编译 .NET 程序
 
 .NET 原生支持交叉编译和跨平台发布，使用 .NET 9 以上版本并参考[本文](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog)指定目标 RID 后即可为龙架构发布 .NET 程序，但由于龙架构属于 .NET 的“社区支持架构”，NuGet.org 不提供目标为龙架构的 .NET 运行时包，在构建过程中会因此失败。
 
@@ -196,7 +196,7 @@ loongson-community/dotnet-unofficial-build 提供的发行版将上述文件归�
 
 方能交叉编译龙架构 .NET 程序。
 
-**编译 .NET 工具链**
+### 编译 .NET 工具链
 
 .NET 工具链本身的编译较为复杂，建议参考[龙芯中科使用的 CI 构建脚本](https://github.com/loongson/dotnet/blob/build/.github/workflows/build-sdk10.yml)；该方式使用 .NET 官方推荐的 VMR 源码发行包进行编译。
 
@@ -229,7 +229,7 @@ loongson-community/dotnet-unofficial-build 提供的发行版将上述文件归�
 Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬件机能和性能，请使用最新主线内核分支。
 :::
 
-**内核维护参考**
+### 内核维护参考
 
 如前文所说，对于龙架构设备来说，Linux 内核是越新越好的。但考虑到 Linux 发行版有具体的维护规则和需要，如下是对 Linux 大版本更新对应的平台支持的说明：
 
@@ -243,7 +243,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | 6.7        | 虚拟化支持 |
 | 6.4        | 超线程 (SMT) 支持 |
 
-**未上游补丁**
+### 未上游补丁
 
 长期以来，龙架构内核维护及新平台支持均有推送主线，但由于种种技术和非技术原因，部分龙架构功能相关的补丁仍未能上游化。
 
@@ -286,27 +286,27 @@ Docker 软件已正式支持龙架构，您可以通过 Linux 发行版软件源
 
 诸多代码托管平台均有提供 CI 代理 (Runner) 支持，其中已有一部分支持龙架构。
 
-**GitHub Actions**
+### GitHub Actions
 
 目前 GitHub Actions Runner 由于 [NuGet 缺少龙架构支持](https://github.com/dotnet/sdk/issues/42248)，暂时无法推进二进制发布。如希望自行编译部署该 CI 代理，可参考此[拉取请求](https://github.com/actions/runner/pull/3928)。
 
-**GitLab Runner**
+### GitLab Runner
 
 GitLab Runner 已正式支持龙架构，可通过其[发布页面](https://gitlab.com/gitlab-org/gitlab-runner/-/releases)下载 `loong64` 标记的软件包或压缩包，直接安装使用。
 
-**Gitea act_runner**
+### Gitea act\_runner
 
 Gitea act_runner 已正式支持龙架构，但暂未提供龙架构二进制，目前可拉取[源代码](https://gitea.com/gitea/act_runner)自行编译部署。
 
-**Forgejo Runner**
+### Forgejo Runner
 
 Forgejo Runner 暂未合入龙架构支持，如希望自行编译部署该 CI 代理，可参考此[拉取请求](https://code.forgejo.org/forgejo/runner/pulls/1144)。
 
-**Sourcehut**
+### Sourcehut
 
 Sourcehut 的 CI 代理 [builds.sr.ht](https://git.sr.ht/~sircmpwn/builds.sr.ht/) 已正式支持龙架构。该 CI 代理不发布二进制，您可以自行拉取代码编译部署。
 
-**Gitee**
+### Gitee
 
 Gitee 暂未合入龙架构支持，可参考如下拉取请求的代码自行编译部署：
 
@@ -315,7 +315,7 @@ Gitee 暂未合入龙架构支持，可参考如下拉取请求的代码自行�
 - [gitee-go/runner-core#1](https://gitee.com/gitee-go/runner-core/pulls/1)
 - [gitee-go/runner#1](https://gitee.com/gitee-go/runner/pulls/1)
 
-**GitCode**
+### GitCode
 
 据社区好友咨询，GitCode 暂未支持自建 CI 代理，暂时无法支持龙架构。
 
