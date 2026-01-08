@@ -379,7 +379,7 @@
           </div>
         </div>
         <div class="compare-row">
-          <div class="compare-cell">{{ $t("chips.exp.d2d.title") }}</div>
+          <div class="compare-cell">{{ $t("chips.exp.d2d") }}</div>
           <div
             v-for="chip in compareChips"
             class="compare-cell"
@@ -394,14 +394,14 @@
           </div>
         </div>
         <div class="compare-row">
-          <div class="compare-cell">{{ $t("chips.exp.d2d.d2d_name") }}</div>
+          <div class="compare-cell">{{ $t("chips.exp.d2d_name") }}</div>
           <div
             v-for="chip in compareChips"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.d2d_name') }"
           >
             <span v-if="chip.exp.d2d_name == 'lcl'">{{
-              $t("chips.exp.d2d.lcl")
+              $t("chips.exp.d2d_lcl")
             }}</span>
             <span v-else-if="chip.exp.d2d_name == 'ccnuma'">ccNUMA</span>
             <span v-else>N/A</span>
