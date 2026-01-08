@@ -60,31 +60,31 @@ pageSubTitle: 龙芯 XA61200
 
 本次更新的详细更改如下（摘自 [GitHub: loongson/Firmware](https://github.com/loongson/Firmware)）：
 
-1.  Add YT6801UndiDxe Support.
-2.  Use 128bit to distinguish different ChipName.
-3.  UI: Add UsbXhci Controller Switch.
-5.  UI: Add SmartFan Config.
-    REF: #98
-6.  Add support for a range of chip models.
-7.  UI: Add FastBoot option.
-8.  Add SuperIo Virtual Bus.
-9.  Optimize StatusCode.
-10. Add Tpm Support.
-11. Optimize 3rd OptionRom process.
-12. UpdateFwDxe: Add inspection rules.
-13. Optimize language selection function.
-14. AcpiStrSleep: Fix cache synchronization memory.
+1. Add YT6801UndiDxe Support.
+2. Use 128bit to distinguish different ChipName.
+3. UI: Add UsbXhci Controller Switch.
+4. UI: Add SmartFan Config.
+   REF: #98
+5. Add support for a range of chip models.
+6. UI: Add FastBoot option.
+7. Add SuperIo Virtual Bus.
+8. Optimize StatusCode.
+9. Add Tpm Support.
+10. Optimize 3rd OptionRom process.
+11. UpdateFwDxe: Add inspection rules.
+12. Optimize language selection function.
+13. AcpiStrSleep: Fix cache synchronization memory.
     REF: #88
-15. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
-16. Update mem code to V3.35.
-17. UI: Add real-time display of temperature.
-18. Information: Display SATA DVD info in UI Setup
-19. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
-20. Add 4M/8M flash compatibility.
-21. Add Smbios 32/64bit tables.
-22. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
-23. Transfer frequency points to the kernel based on different chip models.
-24. some bug fixs.
+14. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
+15. Update mem code to V3.35.
+16. UI: Add real-time display of temperature.
+17. Information: Display SATA DVD info in UI Setup
+18. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
+19. Add 4M/8M flash compatibility.
+20. Add Smbios 32/64bit tables.
+21. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
+22. Transfer frequency points to the kernel based on different chip models.
+23. some bug fixs.
 
 </template>
 
@@ -107,31 +107,31 @@ pageSubTitle: 龙芯 XA61200
 
 本次更新的详细更改如下（摘自 [GitHub: loongson/Firmware](https://github.com/loongson/Firmware)）：
 
-1.  Add YT6801UndiDxe Support.
-2.  Use 128bit to distinguish different ChipName.
-3.  UI: Add UsbXhci Controller Switch.
-5.  UI: Add SmartFan Config.
-    REF: #98
-6.  Add support for a range of chip models.
-7.  UI: Add FastBoot option.
-8.  Add SuperIo Virtual Bus.
-9.  Optimize StatusCode.
-10. Add Tpm Support.
-11. Optimize 3rd OptionRom process.
-12. UpdateFwDxe: Add inspection rules.
-13. Optimize language selection function.
-14. AcpiStrSleep: Fix cache synchronization memory.
+1. Add YT6801UndiDxe Support.
+2. Use 128bit to distinguish different ChipName.
+3. UI: Add UsbXhci Controller Switch.
+4. UI: Add SmartFan Config.
+   REF: #98
+5. Add support for a range of chip models.
+6. UI: Add FastBoot option.
+7. Add SuperIo Virtual Bus.
+8. Optimize StatusCode.
+9. Add Tpm Support.
+10. Optimize 3rd OptionRom process.
+11. UpdateFwDxe: Add inspection rules.
+12. Optimize language selection function.
+13. AcpiStrSleep: Fix cache synchronization memory.
     REF: #88
-15. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
-16. Update mem code to V3.35.
-17. UI: Add real-time display of temperature.
-18. Information: Display SATA DVD info in UI Setup
-19. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
-20. Add 4M/8M flash compatibility.
-21. Add Smbios 32/64bit tables.
-22. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
-23. Transfer frequency points to the kernel based on different chip models.
-24. some bug fixs.
+14. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
+15. Update mem code to V3.35.
+16. UI: Add real-time display of temperature.
+17. Information: Display SATA DVD info in UI Setup
+18. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
+19. Add 4M/8M flash compatibility.
+20. Add Smbios 32/64bit tables.
+21. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
+22. Transfer frequency points to the kernel based on different chip models.
+23. some bug fixs.
 
 </template>
 
