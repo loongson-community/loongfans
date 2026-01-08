@@ -14,9 +14,9 @@ pageSubTitle: # Subtitle
 | col 2 is      |   centered    |   $12 |
 | zebra stripes |   are neat    |    $1 |
 
-# Markdown Content
-
 ## Markdown Content
+
+### H3 heading
 
 ```sh
 npm init

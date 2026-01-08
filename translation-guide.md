@@ -68,9 +68,9 @@
 - 英文翻译：`en/pages/`
 - 英文版本中的 `returnLink` 路径需添加 `/en/` 前缀
 
-# 术语表
+## 术语表
 
-## 核心术语
+### 核心术语
 
 - 龙芯（品牌）: Loongson
 - 龙芯（公司）、龙芯中科: Loongson Technology
@@ -78,10 +78,11 @@
 - 我国: China
 - 自主/自主研发: independently developed / indigenous
 - 新世界 (ABI2.0) / 旧世界 (ABI1.0): New World (ABI2.0) / Old World(ABI1.0)
+  - ABI2.0 系统: ABI2.0 systems
 - MIPS 时代 / LoongArch 时代: MIPS era / LoongArch era
   - NOTE: 如涉及对比 MIPS 与龙架构的龙芯硬件或软件使用
 
-## 产品线与硬件
+### 产品线与硬件
 
 - 龙芯 3 号/2 号/1 号: Loongson 3/2/1 series
 - 桥片: bridge chip (e.g., 7A2000)
@@ -114,7 +115,7 @@
 - 勇豹: Yongbao
 - 龙芯开源社区: Loongson Open Source Community
 
-## 硬件与产品
+### 硬件与产品
 
 - 台式机: desktop (PC)
 - 笔记本: laptop
@@ -132,7 +133,7 @@
 - 嵌入式: embedded
 - 主要规格: key specifications
 
-## 厂商与具体板卡
+### 厂商与具体板卡
 
 - 华硕: ASUS
 - 联想开天: Lenovo Kaitian
@@ -153,11 +154,12 @@
 - 中科云 3B6000M 小主机: CTCISZ 3B6000M NUC
 - 2K3000 AI 开发板: 2K3000 AI development board
 
-## 软件与技术术语
+### 软件与技术术语
 
 - 上游: upstream
 - 发行版: distribution
 - 内核: kernel
+  - Linux 内核: the Linux Kernel
 - 内存兼容性: memory compatibility
 - 龙芯爱好者社区: Loongson Hobbyists' Community
   - NOTE: 爱好者 -> hobbyists
@@ -166,7 +168,7 @@
 - larch: typically part of LoongArch ELF relocation type constant names, e.g., R_LARCH_B26 is read as "R Larch B twenty-six"
 - 龙 64: loong64
 
-## 站点专用术语
+### 站点专用术语
 
 - 新手资源: Loongson 101
 - 初识龙芯: Loongson: An Introduction
@@ -183,12 +185,6 @@
 - 可用于 4G LTE: available for 4G LTE
 - 暂无记录: None noted
 
-## 格式规范
-
-- ABI2.0 系统: ABI2.0 systems
-- 新世界 (ABI2.0): New World (ABI2.0)
-- Linux 内核: Linux Kernel
-
-## 其他
+### 其他
 
 - 闲鱼: Goofish (China's second-hand marketplace platform)
