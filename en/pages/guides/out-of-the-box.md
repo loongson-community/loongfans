@@ -20,7 +20,7 @@ For instance, to build a Loongson desktop computer, there are some common tips t
 - All LoongArch-based motherboards all come with NVMe interfaces, using NVMe drives should provide good day-to-day experience.
 - Loongson processors, especially high-end models such as 3C6000/S, depends on high performance RAM modules and sufficient channels to perform at their fullest potential. It it generally recommended to purchase the appropriate amount of RAM at appropriate specifications.
 - Since the Loongson onboard/bridge chip graphics (such as LoongGPU LG110 integrated on the 7A2000 bridge chip) are known to be slow, we recommend purchasing a discrete graphics card to ensure a good desktop experience.
-    - AMD graphics cards are generally well supported (Intel cards may also be good options). NVIDIA graphics cards are not supported.
+  - AMD graphics cards are generally well supported (Intel cards may also be good options). NVIDIA graphics cards are not supported.
 
 ## The RAM Question
 
