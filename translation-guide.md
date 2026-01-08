@@ -110,8 +110,8 @@
 - 龙蜥: Anolis OS / openAnolis
 - 开放龙蜥: openAnolis
 - 鸥栖: OpenCloudOS
-- 安同 OS: AOSC OS 
-- 勇豹: Yongbao 
+- 安同 OS: AOSC OS
+- 勇豹: Yongbao
 - 龙芯开源社区: Loongson Open Source Community
 
 ## 硬件与产品
@@ -121,7 +121,7 @@
 - 服务器: server
 - 开发板/评估板: development board / evaluation board (EVB)
 - 整机: pre-built system
-- 小主机: NUC 
+- 小主机: NUC
 - 板载: onboard
 - 独立显卡: discrete graphics card
 - 集成显卡: integrated graphics

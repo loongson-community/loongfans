@@ -170,7 +170,7 @@ For common Linux distributions, simply download the SDK package with the RID (.N
 
 **Cross-Compiling .NET Applications for LoongArch**
 
-.NET natively supports cross-compilation and cross-platform publishing. With .NET 9 or later, refer to [this article](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) and specify the target RID to publish .NET applications for LoongArch. However, since LoongArch is classified as a “community-supported architecture” for .NET, NuGet.org does not host .NET runtime packages targeting LoongArch, which may cause build failures. 
+.NET natively supports cross-compilation and cross-platform publishing. With .NET 9 or later, refer to [this article](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) and specify the target RID to publish .NET applications for LoongArch. However, since LoongArch is classified as a “community-supported architecture” for .NET, NuGet.org does not host .NET runtime packages targeting LoongArch, which may cause build failures.
 
 To workaround this issue, you may obtain and deploy all necessary NuGet packages locally. To do so, simply obtain the following files from the toolchain release pages mentioned above (* denotes specific version numbers):
 
@@ -301,7 +301,7 @@ Gitea act_runner officially supports LoongArch, though LoongArch binaries are no
 
 **Forgejo Runner**
 
-Forgejo Runner has not yet merged LoongArch support. If you wish to compile and deploy this runner yourself, please refer to this [pull request](https://code.forgejo.org/forgejo/runner/pulls/1144).  
+Forgejo Runner has not yet merged LoongArch support. If you wish to compile and deploy this runner yourself, please refer to this [pull request](https://code.forgejo.org/forgejo/runner/pulls/1144).
 
 **Sourcehut**
 
