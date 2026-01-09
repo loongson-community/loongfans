@@ -2,7 +2,7 @@
   <div class="chips-data-pages">
     <div class="chips-data-link">
       <div class="chips-pic" style="margin-top: 20px">
-        <img :src="chipData?.ext_info?.pic" />
+        <img :src="commonData.ext_info?.pic" />
       </div>
       <div class="chip-actions">
         <Button
@@ -19,9 +19,9 @@
 
     <div class="chips-data-info">
       <!-- 基本信息 -->
-      <div v-if="props.fields.basic && chipData?.basic" class="chip-section">
+      <div v-if="props.fields.basic && commonData?.basic" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.basic.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[commonData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -39,20 +39,20 @@
                   </label>
                   <div class="value">
                     <span v-if="key === 'market'">
-                      <span v-if="chipData.basic[key] == 1">{{
+                      <span v-if="commonData.basic[key] == 1">{{
                         $t("chips.basic.market_type.desktop")
                       }}</span>
-                      <span v-else-if="chipData.basic[key] == 2">{{
+                      <span v-else-if="commonData.basic[key] == 2">{{
                         $t("chips.basic.market_type.mobile")
                       }}</span>
-                      <span v-else-if="chipData.basic[key] == 3">{{
+                      <span v-else-if="commonData.basic[key] == 3">{{
                         $t("chips.basic.market_type.server")
                       }}</span>
-                      <span v-else-if="chipData.basic[key] == 4">{{
+                      <span v-else-if="commonData.basic[key] == 4">{{
                         $t("chips.basic.market_type.embedded")
                       }}</span>
                     </span>
-                    <span v-else>{{ chipData.basic[key] }}</span>
+                    <span v-else>{{ commonData.basic[key] }}</span>
                   </div>
                 </div>
               </div>
@@ -62,9 +62,9 @@
       </div>
 
       <!-- CPU 参数 -->
-      <div v-if="props.fields.cpu && chipData?.cpu" class="chip-section">
+      <div v-if="props.fields.cpu && isCPU" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.cpu.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[cpuData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -74,13 +74,13 @@
                   <label>
                     {{ $t(`chips.cpu.${key}`) }}
                     <a
-                      v-if="['voltage', 'tpc', 'tdp'].includes(key)"
+                      v-if="['voltage', 'tpc', 'tdp'].includes(key.toString())"
                       @click="showHelpDialog('cpu.' + key, 'cpu_' + key)"
                     >
                       <MaterialSymbolsHelpOutline />
                     </a>
                   </label>
-                  <div class="value">{{ chipData.cpu[key] }}</div>
+                  <div class="value">{{ cpuData?.cpu[key] }}</div>
                 </div>
               </div>
             </div>
@@ -89,12 +89,9 @@
       </div>
 
       <!-- 芯片组参数 -->
-      <div
-        v-if="props.fields.chipset && chipData?.chipset"
-        class="chip-section"
-      >
+      <div v-if="props.fields.chipset && isChipset" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.chipset.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[chipsetData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -102,7 +99,7 @@
               <div v-for="(item, key) in props.fields.chipset" :key="key">
                 <div class="field">
                   <label>{{ $t(`chips.chipset.${key}`) }}</label>
-                  <div class="value">{{ chipData.chipset[key] }}</div>
+                  <div class="value">{{ chipsetData?.chipset[key] }}</div>
                 </div>
               </div>
             </div>
@@ -111,9 +108,9 @@
       </div>
 
       <!-- GPU 参数 -->
-      <div v-if="props.fields.gpu && chipData?.gpu" class="chip-section">
+      <div v-if="props.fields.gpu && gpuData" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.gpu.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[gpuData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -123,12 +120,12 @@
                   <label>{{ $t(`chips.gpu.${key}`) }}</label>
                   <div class="value">
                     <span v-if="key === 'available'">
-                      <span v-if="chipData.gpu[key]">{{
+                      <span v-if="gpuData[key]">{{
                         $t("chips.status.yes")
                       }}</span>
                       <span v-else>{{ $t("chips.status.no") }}</span>
                     </span>
-                    <span v-else>{{ chipData.gpu[key] }}</span>
+                    <span v-else>{{ gpuData[key] }}</span>
                   </div>
                 </div>
               </div>
@@ -138,9 +135,12 @@
       </div>
 
       <!-- 内存参数 -->
-      <div v-if="props.fields.memory && chipData?.memory" class="chip-section">
+      <div
+        v-if="props.fields.memory && isCPU && cpuData?.memory"
+        class="chip-section"
+      >
         <h3 style="margin: 0 !important">{{ $t("chips.memory.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[cpuData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -158,14 +158,14 @@
                   </label>
                   <div class="value">
                     <span v-if="key === 'ecc'">
-                      <span v-if="chipData.memory[key] == true">{{
+                      <span v-if="cpuData.memory[key] == true">{{
                         $t("chips.status.supported")
                       }}</span>
-                      <span v-else-if="chipData.memory[key] == false">{{
+                      <span v-else-if="cpuData.memory[key] == false">{{
                         $t("chips.status.unsupported")
                       }}</span>
                     </span>
-                    <span v-else>{{ chipData.memory[key] }}</span>
+                    <span v-else>{{ cpuData.memory[key] }}</span>
                   </div>
                 </div>
               </div>
@@ -175,9 +175,9 @@
       </div>
 
       <!-- 扩展性 -->
-      <div v-if="props.fields.exp && chipData?.exp" class="chip-section">
+      <div v-if="props.fields.exp && commonData?.exp" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.exp.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[commonData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -191,7 +191,11 @@
                     }}</span>
                     <span v-else>{{ $t(`chips.exp.${key}`) }}</span>
                     <a
-                      v-if="['io_name', 'io_rev', 'd2d_name'].includes(key)"
+                      v-if="
+                        ['io_name', 'io_rev', 'd2d_name'].includes(
+                          key.toString(),
+                        )
+                      "
                       @click="showHelpDialog('exp.' + key, 'exp_' + key)"
                     >
                       <MaterialSymbolsHelpOutline />
@@ -199,23 +203,23 @@
                   </label>
                   <div class="value">
                     <span v-if="key === 'd2d'">
-                      <span v-if="chipData.exp[key] == true">{{
+                      <span v-if="commonData.exp[key] == true">{{
                         $t("chips.status.supported")
                       }}</span>
-                      <span v-else-if="chipData.exp[key] == false">{{
+                      <span v-else-if="commonData.exp[key] == false">{{
                         $t("chips.status.unsupported")
                       }}</span>
                     </span>
                     <span v-else-if="key === 'd2d_name'">
-                      <span v-if="chipData.exp[key] == 'lcl'">{{
+                      <span v-if="commonData.exp[key] == 'lcl'">{{
                         $t("chips.exp.d2d_lcl")
                       }}</span>
-                      <span v-else-if="chipData.exp[key] == 'ht3'">
+                      <span v-else-if="commonData.exp[key] == 'ht3'">
                         HyperTransport 3.0
                       </span>
                       <span v-else>N/A</span>
                     </span>
-                    <span v-else>{{ chipData.exp[key] || "N/A" }}</span>
+                    <span v-else>{{ commonData.exp[key] || "N/A" }}</span>
                   </div>
                 </div>
               </div>
@@ -226,11 +230,11 @@
 
       <!-- 封装 -->
       <div
-        v-if="props.fields.package && chipData?.package"
+        v-if="props.fields.package && commonData?.package"
         class="chip-section"
       >
         <h3 style="margin: 0 !important">{{ $t("chips.package.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[commonData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -245,7 +249,9 @@
                     <span v-else>{{ $t(`chips.package.${key}`) }}</span>
                     <a
                       v-if="
-                        ['temperature', 't_case', 't_junction'].includes(key)
+                        ['temperature', 't_case', 't_junction'].includes(
+                          key.toString(),
+                        )
                       "
                       @click="
                         showHelpDialog('package.' + key, 'package_' + key)
@@ -254,7 +260,9 @@
                       <MaterialSymbolsHelpOutline />
                     </a>
                   </label>
-                  <div class="value">{{ chipData.package[key] || "N/A" }}</div>
+                  <div class="value">
+                    {{ commonData.package[key] || "N/A" }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -263,9 +271,12 @@
       </div>
 
       <!-- 功耗管理 -->
-      <div v-if="props.fields.power && chipData?.power" class="chip-section">
+      <div
+        v-if="props.fields.power && isCPU && cpuData?.power"
+        class="chip-section"
+      >
         <h3 style="margin: 0 !important">{{ $t("chips.power.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[cpuData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -279,10 +290,10 @@
                     </a>
                   </label>
                   <div class="value">
-                    <span v-if="chipData.power[key] == true">{{
+                    <span v-if="cpuData.power[key] == true">{{
                       $t("chips.status.supported")
                     }}</span>
-                    <span v-else-if="chipData.power[key] == false">{{
+                    <span v-else-if="cpuData.power[key] == false">{{
                       $t("chips.status.unsupported")
                     }}</span>
                   </div>
@@ -295,11 +306,11 @@
 
       <!-- 支持技术 -->
       <div
-        v-if="props.fields.technologies && chipData?.technologies"
+        v-if="props.fields.technologies && isCPU && cpuData?.technologies"
         class="chip-section"
       >
         <h3 style="margin: 0 !important">{{ $t("chips.tech.title") }}</h3>
-        <DataView :value="[chipData]" :layout="'list'">
+        <DataView :value="[cpuData]" :layout="'list'">
           <template #list="slotProps">
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -315,7 +326,7 @@
                   <div class="value">
                     <template v-if="key === 'isa_extensions'">
                       <span
-                        v-for="isa_name in chipData.technologies[key]"
+                        v-for="isa_name in cpuData.technologies[key]"
                         id="isa-info"
                         :key="isa_name"
                       >
@@ -332,10 +343,9 @@
                           <sup><MaterialSymbolsHelpOutline /></sup>
                         </a>
                       </span>
-                      <span v-if="!chipData.technologies[key]">N/A</span>
-                      <!-- <span>N/A</span> -->
+                      <span v-if="!cpuData.technologies[key]">N/A</span>
                     </template>
-                    <span v-else>{{ chipData.technologies[key] }}</span>
+                    <span v-else>{{ cpuData.technologies[key] }}</span>
                   </div>
                 </div>
               </div>
@@ -347,32 +357,50 @@
   </div>
 </template>
 
-<script setup>
-import { ref, computed, onMounted, defineComponent, h } from "vue"
+<script setup lang="ts">
+import {
+  computed,
+  defineComponent,
+  h,
+  ref,
+  onMounted,
+  type ComputedRef,
+  type Ref,
+} from "vue"
 import { useI18n } from "vue-i18n"
-const { t } = useI18n()
 
 // PrimeVue
 import Button from "primevue/button"
 import DataView from "primevue/dataview"
 import { useToast } from "primevue/usetoast"
 import { useDialog } from "primevue/usedialog"
-const toast = useToast()
-const dialog = useDialog()
 
 import MaterialSymbolsHelpOutline from "~icons/material-symbols/help-outline"
 import * as ChipDescriptions from "./ChipDescriptions.vue"
 import chipsJson from "../../data/chips.min.json"
+import type {
+  ChipCommonInfo,
+  ChipInfoDB,
+  ChipsetInfoItem,
+  CPUInfoItem,
+} from "../../types/data"
+
+const { t } = useI18n()
+const toast = useToast()
+const dialog = useDialog()
 
 const props = defineProps({
   chips: { type: String, required: true },
   fields: { type: Object, required: true },
 })
 
-// 根据字段类型获取芯片数据
-const chipData = ref(null)
+const chipsDB: ChipInfoDB = chipsJson as ChipInfoDB
 
-const compareList = ref([])
+// 根据字段类型获取芯片数据
+const cpuData: Ref<CPUInfoItem | null> = ref(null)
+const chipsetData: Ref<ChipsetInfoItem | null> = ref(null)
+
+const compareList: Ref<string[]> = ref([])
 
 const initCompareList = () => {
   const storedList = localStorage.getItem("cpuCompareList")
@@ -382,20 +410,6 @@ const initCompareList = () => {
 }
 
 onMounted(() => {
-  if (!props.chips || !props.fields?.type) return
-
-  switch (props.fields.type) {
-    case "cpu":
-      chipData.value = chipsJson.cpu[props.chips]
-      break
-    case "chipset":
-      chipData.value = chipsJson.chipset[props.chips]
-      break
-    default:
-      chipData.value = chipsJson.cpu[props.chips]
-      break
-  }
-
   initCompareList()
 })
 
@@ -423,6 +437,43 @@ const toggleCompare = () => {
   localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value))
   window.dispatchEvent(new CustomEvent("cpuCompareListUpdated"))
 }
+
+// 加载芯片数据
+switch (props.fields.type) {
+  case "cpu":
+    cpuData.value = chipsDB.cpu[props.chips] || null
+    break
+  case "chipset":
+    chipsetData.value = chipsDB.chipset[props.chips] || null
+    break
+  default:
+    cpuData.value = chipsDB.cpu[props.chips] || null
+    break
+}
+
+const isCPU = computed(() => {
+  return props.fields.type === "cpu"
+})
+
+const isChipset = computed(() => {
+  return props.fields.type === "chipset"
+})
+
+const commonData: ComputedRef<ChipCommonInfo> = computed(() => {
+  if (isChipset.value) {
+    return chipsetData.value as ChipCommonInfo
+  } else {
+    return cpuData.value as ChipCommonInfo
+  }
+})
+
+const gpuData = computed(() => {
+  if (isChipset.value) {
+    return chipsetData?.value?.gpu
+  } else {
+    return cpuData?.value?.gpu
+  }
+})
 
 const showHelpDialog = (header, key) => {
   const headerText = header // 保存原始字符串
@@ -457,7 +508,7 @@ const showHelpDialog = (header, key) => {
 
   dialog.open(ChipDescriptions[key], {
     props: {
-      header: null,
+      header: undefined,
       style: {
         width: "50vw",
       },
