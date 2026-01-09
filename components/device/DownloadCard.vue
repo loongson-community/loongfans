@@ -93,7 +93,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from "vue"
 import { useI18n } from "vue-i18n"
 import { Button, Panel, Divider } from "primevue"
@@ -101,16 +101,16 @@ import IconDownload from "~icons/material-symbols/download"
 import IconExpandMore from "~icons/material-symbols/expand-more"
 import CopyInline from "./CopyInline.vue"
 
-const props = defineProps({
-  title: String,
-  version: String,
-  size: Number,
-  date: String, // Unix 时间戳或者 Date() 认识的格式
-  sha256: String,
-  url: String,
-  latest: Boolean,
-  debug: Boolean,
-})
+const props = defineProps<{
+  title: string,
+  version: string,
+  size: number,
+  date: string, // Unix 时间戳或者 Date() 认识的格式
+  sha256: string,
+  url: string,
+  latest: boolean,
+  debug: boolean,
+}>()
 
 const { t } = useI18n()
 
