@@ -31,7 +31,7 @@ memory:
   ecc: true
 
 exp:
-  name: "HyperTransport"
+  io_name: "HyperTransport"
   io_rev: "3.0"
   lanes: 32 (2 × 16)
   usb_5gbps: 0
