@@ -1,11 +1,11 @@
 <template>
   <a :href="data.href" class="distro-card" target="_blank" rel="noopener">
     <div class="icon-container">
-      <img :src="data.image" :alt="data.name" />
+      <img :src="data.image" :alt="localizedName" />
     </div>
     <div class="content">
       <div class="header">
-        <span class="name">{{ data.name }}</span>
+        <span class="name">{{ localizedName }}</span>
         <div class="tags">
           <span v-for="tag in data.tags" :key="tag" class="tag">{{
             translateTag(tag)
@@ -21,12 +21,17 @@
 </template>
 
 <script setup lang="ts">
-import IconOpenInNew from "~icons/material-symbols/open-in-new"
-import type { OsData } from "./osdata_api"
-import { useTagTranslation } from "./osdata_api"
+import { useI18n } from "vue-i18n"
 
-defineProps<{ data: OsData }>()
+import IconOpenInNew from "~icons/material-symbols/open-in-new"
+import { useTagTranslation } from "./TagTranslation"
+import type { OSInfoItem } from "../../types/data"
+
+const { data } = defineProps<{ data: OSInfoItem }>()
+const { locale } = useI18n()
 const { translateTag } = useTagTranslation()
+
+const localizedName = data.name[locale.value as "zh" | "en"] || data.name.en
 </script>
 
 <style scoped>
