@@ -17,16 +17,15 @@
   </component>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import IconQrCode2 from "~icons/material-symbols/qr-code-2"
 
-const props = defineProps({
-  href: { type: String, required: true },
-  name: { type: String, required: true },
-  qrLink: String,
-})
-
+const props = defineProps<{
+  href: string,
+  name: string,
+  qrLink?: string,
+}>()
 const target = props.href?.startsWith("http") ? "_blank" : undefined
 </script>
 
