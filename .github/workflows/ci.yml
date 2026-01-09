@@ -42,3 +42,5 @@ jobs:
         run: pnpm run lintMarkdown
       - name: Check code style with Prettier
         run: pnpm run lintPrettier
+      - name: Lint code with ESLint
+        run: pnpm run eslint
