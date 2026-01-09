@@ -23,7 +23,7 @@
 import Card from "./Card.vue"
 import type { DeviceFamily } from "../../.vitepress/locales/zh/devices"
 
-defineProps<{ data: DeviceFamily[]; showCompareButton: boolean }>()
+defineProps<{ data: DeviceFamily[]; showCompareButton?: boolean }>()
 </script>
 
 <style scoped>
