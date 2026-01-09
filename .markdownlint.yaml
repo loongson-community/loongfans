@@ -1,0 +1,19 @@
+# It's fine to switch to different ul style for better readability
+MD004: false
+
+# Line breaks in CJK texts will influence typography, so we don't want to
+# enforce any line length limit globally
+MD013: false
+
+# Vitepress cannot use the "*.mdx" extension, yet we heavily utilize
+# inline components in Markdown files
+#
+# see https://github.com/vuejs/vitepress/issues/3101
+MD033: false
+
+# Bare URLs aren't a problem for us
+MD034: false
+
+# Not all documents are articles, so naturally not all first lines should be
+# H1's
+MD041: false
