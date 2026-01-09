@@ -364,8 +364,8 @@ import * as ChipDescriptions from "./ChipDescriptions.vue"
 import chipsJson from "../../data/chips.min.json"
 
 const props = defineProps({
-  chips: String,
-  fields: Object,
+  chips: { type: String, required: true },
+  fields: { type: Object, required: true },
 })
 
 // 根据字段类型获取芯片数据
@@ -437,6 +437,7 @@ const showHelpDialog = (header, key) => {
   }
 
   if (specialHeaders[key]) {
+    /* eslint-disable-next-line vue/one-component-per-file */
     header = defineComponent({
       setup() {
         return () =>
@@ -444,6 +445,7 @@ const showHelpDialog = (header, key) => {
       },
     })
   } else {
+    /* eslint-disable-next-line vue/one-component-per-file */
     header = defineComponent({
       setup() {
         return () =>

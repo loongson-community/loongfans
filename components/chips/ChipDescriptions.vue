@@ -1,8 +1,20 @@
-<template></template>
-<script>
+<template>
+  <!-- This "component" is never used directly -->
+  <div></div>
+</template>
+
+<script lang="ts">
 import { defineComponent, h } from "vue"
 import i18n from "../../.vitepress/theme/i18n"
 const { t } = i18n.global
+
+// The components are dynamically referenced by ChipTables, hence the apparent
+// multi-component architecture. Without re-architecturing of the ChipTables
+// component, the lint simply cannot be fixed.
+/* eslint-disable vue/one-component-per-file */
+
+// silence build error complaining about not exporting "default"
+export default defineComponent({})
 
 // Basic
 export const basic_series = defineComponent({
