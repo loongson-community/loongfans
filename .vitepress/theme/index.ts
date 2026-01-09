@@ -52,10 +52,16 @@ export default {
       theme: {
         preset: Preset,
         options: {
+          // CSS Layers cannot be used right now, otherwise PrimeVue Tab style
+          // will be lost (<button> style being reset in VitePress's base.css)
+          //
+          // https://github.com/vuejs/vitepress/issues/4425
+          /*
           cssLayer: {
             name: "primevue",
             order: "theme, base, primevue",
           },
+          */
           darkModeSelector: false,
         },
       },
