@@ -623,8 +623,8 @@
   </div>
 </template>
 
-<script setup>
-import { ref, computed, onMounted } from "vue"
+<script setup lang="ts">
+import { ref, computed, onMounted, type Ref } from "vue"
 import { useI18n } from "vue-i18n"
 const { t } = useI18n()
 
@@ -632,7 +632,7 @@ import chipsJson from "../../../data/chips.min.json"
 import Button from "primevue/button"
 
 // 初始化 LocalStorage
-const compareList = ref([])
+const compareList: Ref<string[]> = ref([])
 
 const initCompareList = () => {
   const storedList = localStorage.getItem("cpuCompareList")
