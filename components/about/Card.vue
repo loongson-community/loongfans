@@ -25,17 +25,17 @@
   </component>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import IconQrCode2 from "~icons/material-symbols/qr-code-2"
 
-defineProps({
-  name: String,
-  description: String,
-  href: String,
-  qrLink: String,
-  color: String,
-})
+defineProps<{
+  name: string,
+  description: string,
+  href: string,
+  qrLink: string,
+  color: string,
+}>()
 </script>
 
 <style scoped>
