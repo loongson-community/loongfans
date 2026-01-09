@@ -1,4 +1,4 @@
-import tailwindcss from "@tailwindcss/vite"
+import UnoCSS from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import { defineConfig } from "vitepress"
 import AutoGenerateJson from "./plugins/AutoGenerateJson.js"
@@ -33,7 +33,7 @@ export default defineConfig({
   // 完全禁用主题切换
   appearance: false,
   vite: {
-    plugins: [tailwindcss(), Icons({ scale: 1 }), AutoGenerateJson()],
+    plugins: [UnoCSS(), Icons({ scale: 1 }), AutoGenerateJson()],
     ssr: {
       noExternal: ["vue-i18n"],
     },

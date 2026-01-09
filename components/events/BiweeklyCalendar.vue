@@ -8,8 +8,6 @@
 </template>
 
 <style>
-@import "tailwindcss";
-
 .vc-theme-red {
   --vc-bar-bg: #e60013 !important;
   --vc-dot-bg: #e60013 !important;
@@ -19,9 +17,10 @@
 }
 
 .vc-theme-past {
-  --vc-bar-bg: var(--color-gray-400) !important;
-  --vc-dot-bg: var(--color-gray-400) !important;
-  --vc-highlight-solid-bg: var(--color-gray-400) !important;
+  /* Tailwind gray-400 */
+  --vc-bar-bg: oklch(70.7% 0.022 261.325) !important;
+  --vc-dot-bg: oklch(70.7% 0.022 261.325) !important;
+  --vc-highlight-solid-bg: oklch(70.7% 0.022 261.325) !important;
 }
 </style>
 

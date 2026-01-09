@@ -11,6 +11,7 @@ import { definePreset } from "@primeuix/themes"
 // Make vue-i18n configs to a file
 import i18n from "./i18n"
 
+import "virtual:uno.css"
 import "./custom.css"
 import Layout from "./Layout.vue"
 import DeviceDetail from "../../components/device/Detail.vue"
