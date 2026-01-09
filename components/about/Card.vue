@@ -30,11 +30,11 @@ import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import IconQrCode2 from "~icons/material-symbols/qr-code-2"
 
 defineProps<{
-  name: string,
-  description: string,
-  href: string,
-  qrLink: string,
-  color: string,
+  name: string
+  description: string
+  href: string
+  qrLink: string
+  color: string
 }>()
 </script>
 

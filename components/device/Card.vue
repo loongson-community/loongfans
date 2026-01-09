@@ -36,12 +36,12 @@ import { useToast } from "primevue/usetoast"
 import chipsNameMap from "../../data/chips_name_map.min.json"
 
 const props = defineProps<{
-  name: string,
-  spec: string,
-  href: string,
-  image: string,
-  tags: string,
-  showCompareButton: boolean,
+  name: string
+  spec: string
+  href: string
+  image: string
+  tags: string
+  showCompareButton: boolean
 }>()
 
 const { t } = useI18n()

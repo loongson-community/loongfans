@@ -9,8 +9,8 @@
 
 <script setup lang="ts">
 defineProps<{
-  text: string,
-  href: string,
+  text: string
+  href: string
 }>()
 </script>
 

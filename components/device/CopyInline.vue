@@ -10,7 +10,7 @@ import { computed } from "vue"
 import { useToast } from "primevue/usetoast"
 import IconContentCopy from "~icons/material-symbols/content-copy"
 
-const props = defineProps<{ text: string, type: string }>()
+const props = defineProps<{ text: string; type: string }>()
 const toast = useToast()
 
 const textWithColon = computed(() => `": ${props.text}"`)
