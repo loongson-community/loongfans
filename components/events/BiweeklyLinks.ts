@@ -3,7 +3,7 @@ type BiweeklyLinkInfo = {
   bvid?: string
 }
 
-const biweeklyLinkInfo = {
+const biweeklyLinkInfo: { [key: number]: BiweeklyLinkInfo } = {
   [1]: { slides: "coh66fsMG3lG", bvid: "BV1yvrKYBE9k" },
   [2]: { slides: "cgJyg8x8yfcU" },
   [3]: { slides: "chg109JA5kGw", bvid: "BV1TMrNYMEXL" },

@@ -5,7 +5,7 @@ import { glob } from "glob"
 // Fix __filename and __dirname in ESM
 import { fileURLToPath } from "url"
 import { dirname, basename, extname } from "path"
-import { type } from "os"
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(fileURLToPath(import.meta.url))
 

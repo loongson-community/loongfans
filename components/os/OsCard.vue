@@ -25,7 +25,7 @@ import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import type { OsData } from "./osdata_api"
 import { useTagTranslation } from "./osdata_api"
 
-const props = defineProps<{ data: OsData }>()
+defineProps<{ data: OsData }>()
 const { translateTag } = useTagTranslation()
 </script>
 

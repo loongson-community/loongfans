@@ -65,7 +65,7 @@ import LinkGroupContact from "./index/LinkGroupContact.vue"
 import { useI18n } from "vue-i18n"
 import { getLocalePrefix } from "../.vitepress/utils/language"
 
-const { t, locale } = useI18n()
+const { t } = useI18n()
 const { localeIndex } = useData()
 const basePath = computed(() => getLocalePrefix(localeIndex.value))
 </script>
