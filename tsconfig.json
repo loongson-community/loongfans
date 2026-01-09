@@ -1,4 +1,5 @@
 {
+  "extends": ["@vue/tsconfig"],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
