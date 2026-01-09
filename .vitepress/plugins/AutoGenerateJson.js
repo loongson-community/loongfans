@@ -1,4 +1,5 @@
 import { generateAll } from "../../data/generateDatabase"
+import process from "node:process"
 
 export default function AutoGenerateJson() {
   let statusGenerating = false
