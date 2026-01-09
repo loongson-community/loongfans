@@ -23,12 +23,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.basic.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.basic"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.basic" :key="key">
                 <div class="field">
                   <label>
                     {{ $t(`chips.basic.${key}`) }}
@@ -68,12 +66,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.cpu.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.cpu"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.cpu" :key="key">
                 <div class="field">
                   <label>
                     {{ $t(`chips.cpu.${key}`) }}
@@ -100,12 +96,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.chipset.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.chipset"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.chipset" :key="key">
                 <div class="field">
                   <label>{{ $t(`chips.chipset.${key}`) }}</label>
                   <div class="value">{{ chipData.chipset[key] }}</div>
@@ -121,12 +115,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.gpu.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.gpu"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.gpu" :key="key">
                 <div class="field">
                   <label>{{ $t(`chips.gpu.${key}`) }}</label>
                   <div class="value">
@@ -150,12 +142,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.memory.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.memory"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.memory" :key="key">
                 <div class="field">
                   <label>
                     {{ $t(`chips.memory.${key}`) }}
@@ -189,12 +179,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.exp.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.exp"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.exp" :key="key">
                 <div class="field">
                   <label>
                     <span v-if="key === 'd2d'">{{ $t(`chips.exp.d2d`) }}</span>
@@ -244,12 +232,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.package.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.package"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.package" :key="key">
                 <div class="field">
                   <label>
                     <span v-if="key === 't_case'">T<sub>CASE</sub></span>
@@ -281,12 +267,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.power.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.power"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.power" :key="key">
                 <div class="field">
                   <label>
                     {{ $t(`chips.power.${key}`) }}
@@ -317,12 +301,10 @@
         <h3 style="margin: 0 !important">{{ $t("chips.tech.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
-            <div class="grid grid-nogutter">
-              <div
-                v-for="(item, key) in props.fields.technologies"
-                :key="key"
-                class="col-12 md:col-6 lg:col-4"
-              >
+            <div
+              class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            >
+              <div v-for="(item, key) in props.fields.technologies" :key="key">
                 <div class="field">
                   <label>
                     {{ $t(`chips.tech.${key}`) }}
@@ -525,7 +507,6 @@ const isaStyleVariables = computed(() => `"${t("comma")}"`)
 }
 
 .field {
-  margin-bottom: 16px;
   padding: 12px;
   border-radius: 6px;
   background-color: #f9fafb;
