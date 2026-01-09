@@ -581,9 +581,18 @@ import chipsJson from "../../../data/chips.min.json"
 import Button from "primevue/button"
 
 // 初始化 LocalStorage
-const compareList = ref(
-  JSON.parse(localStorage.getItem("cpuCompareList") || "[]"),
-)
+const compareList = ref([])
+
+const initCompareList = () => {
+  const storedList = localStorage.getItem("cpuCompareList")
+  if (storedList) {
+    compareList.value = JSON.parse(storedList)
+  }
+}
+
+onMounted(() => {
+  initCompareList()
+})
 
 const compareChips = computed(() => {
   return compareList.value.map((chipId) => chipsJson.cpu[chipId])

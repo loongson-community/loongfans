@@ -389,6 +389,15 @@ const props = defineProps({
 // 根据字段类型获取芯片数据
 const chipData = ref(null)
 
+const compareList = ref([])
+
+const initCompareList = () => {
+  const storedList = localStorage.getItem("cpuCompareList")
+  if (storedList) {
+    compareList.value = JSON.parse(storedList)
+  }
+}
+
 onMounted(() => {
   if (!props.chips || !props.fields?.type) return
 
@@ -403,11 +412,9 @@ onMounted(() => {
       chipData.value = chipsJson.cpu[props.chips]
       break
   }
-})
 
-const compareList = ref(
-  JSON.parse(localStorage.getItem("cpuCompareList") || "[]"),
-)
+  initCompareList()
+})
 
 const isComparing = computed(() => {
   return compareList.value.includes(props.chips)

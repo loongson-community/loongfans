@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue"
+import { computed, onMounted, ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { Button } from "primevue"
 import { useToast } from "primevue/usetoast"
@@ -50,9 +50,19 @@ const toast = useToast()
 const tags = computed(() => props.tags?.split(",").map((i) => i.trim()))
 
 // #region FIXME: to be refactor
-const compareList = ref(
-  JSON.parse(localStorage.getItem("cpuCompareList") || "[]"),
-)
+const compareList = ref([])
+
+const initCompareList = () => {
+  const storedList = localStorage.getItem("cpuCompareList")
+  if (storedList) {
+    compareList.value = JSON.parse(storedList)
+  }
+}
+
+onMounted(() => {
+  initCompareList()
+})
+
 const isComparing = computed(() => {
   return compareList.value.includes(chipsNameMap[props.name])
 })
