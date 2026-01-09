@@ -48,7 +48,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from "vue"
 import { useData, useRouter } from "vitepress"
 import { useI18n } from "vue-i18n"
