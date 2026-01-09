@@ -77,7 +77,6 @@ export function getLocalePrefix(localeIndex: string): string {
  */
 export function handleFirstVisitRedirect(router: Router) {
   let storedLang = getStoredLanguage()
-  const targetLang = detectBrowserLanguage(storedLang)
 
   if (!storedLang) {
     const lang = navigator.language
