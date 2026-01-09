@@ -7,23 +7,6 @@
   />
 </template>
 
-<style>
-.vc-theme-red {
-  --vc-bar-bg: #e60013 !important;
-  --vc-dot-bg: #e60013 !important;
-  --vc-highlight-solid-bg: #e60013 !important;
-  --vc-highlight-outline-border: #e60013 !important;
-  --vc-highlight-outline-content-color: #e60013 !important;
-}
-
-.vc-theme-past {
-  /* Tailwind gray-400 */
-  --vc-bar-bg: oklch(70.7% 0.022 261.325) !important;
-  --vc-dot-bg: oklch(70.7% 0.022 261.325) !important;
-  --vc-highlight-solid-bg: oklch(70.7% 0.022 261.325) !important;
-}
-</style>
-
 <script setup lang="ts">
 import _ from "lodash"
 import { useI18n } from "vue-i18n"
@@ -104,3 +87,20 @@ const onDayClick = (d: CalendarDayForEvent) => {
   }
 }
 </script>
+
+<style>
+.vc-theme-red {
+  --vc-bar-bg: #e60013 !important;
+  --vc-dot-bg: #e60013 !important;
+  --vc-highlight-solid-bg: #e60013 !important;
+  --vc-highlight-outline-border: #e60013 !important;
+  --vc-highlight-outline-content-color: #e60013 !important;
+}
+
+.vc-theme-past {
+  /* Tailwind gray-400 */
+  --vc-bar-bg: oklch(70.7% 0.022 261.325) !important;
+  --vc-dot-bg: oklch(70.7% 0.022 261.325) !important;
+  --vc-highlight-solid-bg: oklch(70.7% 0.022 261.325) !important;
+}
+</style>

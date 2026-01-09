@@ -1,9 +1,9 @@
 <template>
   <div
     v-show="showButton"
-    @click="scrollToTop"
     class="set_to_top"
     :style="{ opacity: showButton ? 1 : 0 }"
+    @click="scrollToTop"
   >
     <IconVerticalAlignTop class="icon" />
   </div>

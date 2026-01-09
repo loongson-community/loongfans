@@ -6,20 +6,20 @@
       </div>
       <div class="chip-actions">
         <Button
+          v-if="!props.fields.chipset"
           :label="
             isComparing
               ? $t('chips.buttons.remove_compare')
               : $t('chips.buttons.add_compare')
           "
           @click="toggleCompare"
-          v-if="!props.fields.chipset"
         />
       </div>
     </div>
 
     <div class="chips-data-info">
       <!-- 基本信息 -->
-      <div class="chip-section" v-if="props.fields.basic && chipData?.basic">
+      <div v-if="props.fields.basic && chipData?.basic" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.basic.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
@@ -62,7 +62,7 @@
       </div>
 
       <!-- CPU 参数 -->
-      <div class="chip-section" v-if="props.fields.cpu && chipData?.cpu">
+      <div v-if="props.fields.cpu && chipData?.cpu" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.cpu.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
@@ -90,8 +90,8 @@
 
       <!-- 芯片组参数 -->
       <div
-        class="chip-section"
         v-if="props.fields.chipset && chipData?.chipset"
+        class="chip-section"
       >
         <h3 style="margin: 0 !important">{{ $t("chips.chipset.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
@@ -111,7 +111,7 @@
       </div>
 
       <!-- GPU 参数 -->
-      <div class="chip-section" v-if="props.fields.gpu && chipData?.gpu">
+      <div v-if="props.fields.gpu && chipData?.gpu" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.gpu.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
@@ -138,7 +138,7 @@
       </div>
 
       <!-- 内存参数 -->
-      <div class="chip-section" v-if="props.fields.memory && chipData?.memory">
+      <div v-if="props.fields.memory && chipData?.memory" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.memory.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
@@ -175,7 +175,7 @@
       </div>
 
       <!-- 扩展性 -->
-      <div class="chip-section" v-if="props.fields.exp && chipData?.exp">
+      <div v-if="props.fields.exp && chipData?.exp" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.exp.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
@@ -210,9 +210,9 @@
                       <span v-if="chipData.exp[key] == 'lcl'">{{
                         $t("chips.exp.d2d_lcl")
                       }}</span>
-                      <span v-else-if="chipData.exp[key] == 'ht3'"
-                        >HyperTransport 3.0</span
-                      >
+                      <span v-else-if="chipData.exp[key] == 'ht3'">
+                        HyperTransport 3.0
+                      </span>
                       <span v-else>N/A</span>
                     </span>
                     <span v-else>{{ chipData.exp[key] || "N/A" }}</span>
@@ -226,8 +226,8 @@
 
       <!-- 封装 -->
       <div
-        class="chip-section"
         v-if="props.fields.package && chipData?.package"
+        class="chip-section"
       >
         <h3 style="margin: 0 !important">{{ $t("chips.package.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
@@ -239,9 +239,9 @@
                 <div class="field">
                   <label>
                     <span v-if="key === 't_case'">T<sub>CASE</sub></span>
-                    <span v-else-if="key === 't_junction'"
-                      >T<sub>JUNCTION</sub></span
-                    >
+                    <span v-else-if="key === 't_junction'">
+                      T<sub>JUNCTION</sub>
+                    </span>
                     <span v-else>{{ $t(`chips.package.${key}`) }}</span>
                     <a
                       v-if="
@@ -263,7 +263,7 @@
       </div>
 
       <!-- 功耗管理 -->
-      <div class="chip-section" v-if="props.fields.power && chipData?.power">
+      <div v-if="props.fields.power && chipData?.power" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.power.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">
           <template #list="slotProps">
@@ -295,8 +295,8 @@
 
       <!-- 支持技术 -->
       <div
-        class="chip-section"
         v-if="props.fields.technologies && chipData?.technologies"
+        class="chip-section"
       >
         <h3 style="margin: 0 !important">{{ $t("chips.tech.title") }}</h3>
         <DataView :value="[chipData]" :layout="'list'">

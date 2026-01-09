@@ -7,8 +7,8 @@
           <Button
             severity="danger"
             size="small"
-            @click="clearCompare"
             :label="$t('chips.buttons.clear')"
+            @click="clearCompare"
           />
         </div>
         <div
@@ -24,8 +24,8 @@
           <Button
             severity="danger"
             size="small"
-            @click="removeFromCompare(chip.basic.name)"
             :label="$t('chips.buttons.remove')"
+            @click="removeFromCompare(chip.basic.name)"
           />
         </div>
       </div>

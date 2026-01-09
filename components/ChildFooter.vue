@@ -23,27 +23,26 @@
         </div>
       </Popover>
       <span>|</span>
-      <a
-        href="https://github.com/loongson-community/loongfans"
-        target="_blank"
-        >{{ t("siteSource") }}</a
-      >
+      <a href="https://github.com/loongson-community/loongfans" target="_blank">
+        {{ t("siteSource") }}
+      </a>
       <span>|</span>
       <a
         href="https://github.com/loongson-community/loongfans/issues/new"
         target="_blank"
-        >{{ t("reportIssue") }}</a
       >
+        {{ t("reportIssue") }}
+      </a>
       <span>|</span>
       <a :href="`${basePath}/pages/about`">{{ t("aboutCommunity") }}</a>
     </div>
 
     <div class="copyright_info">
-      <span>{{ t("copyright") }} &copy; 2024-{{ copyrightYear }}</span
-      ><span>{{ t("communityName") }}</span>
-      <a href="https://beian.miit.gov.cn" target="_blank"
-        >鄂ICP备2022017735号-12</a
-      >
+      <span>{{ t("copyright") }} &copy; 2024-{{ copyrightYear }}</span>
+      <span>{{ t("communityName") }}</span>
+      <a href="https://beian.miit.gov.cn" target="_blank">
+        鄂ICP备2022017735号-12
+      </a>
     </div>
   </div>
 </template>

@@ -46,7 +46,7 @@
         <div class="changelog-main">
           <slot />
         </div>
-        <div class="changelog-detail" v-show="expand">
+        <div v-show="expand" class="changelog-detail">
           <slot name="detail" />
         </div>
       </div>
