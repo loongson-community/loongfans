@@ -9,7 +9,7 @@ pageSubTitle: 摩方 M700S 小主机
 摩方 M700S 是一款类似 Intel NUC 规格的小型台式机，搭载 3A6000-HV 处理器，并提供双 HDMI 输出。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -37,4 +37,4 @@ pageSubTitle: 摩方 M700S 小主机
 来源：[摩方官网](http://www.imorefine.com/h-pd-53.html)
 
 </template>
-</Device>
+</DeviceDetail>

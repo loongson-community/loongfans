@@ -9,7 +9,7 @@ pageSubTitle: Morefine M700S NUC
 The Morefine M700S is an Intel NUC-style mini PC powered by Loongson 3A6000-HV and comes with two HDMI outputs.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -37,4 +37,4 @@ The Morefine M700S is an Intel NUC-style mini PC powered by Loongson 3A6000-HV a
 Source: [Morefine Official Website](http://www.imorefine.com/h-pd-53.html)
 
 </template>
-</Device>
+</DeviceDetail>

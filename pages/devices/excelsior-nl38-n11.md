@@ -11,7 +11,7 @@ pageSubTitle: 卓怡恒通 NL38-N11
 亦有其他厂商推出了基于此款模具的派生型号。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -50,4 +50,4 @@ pageSubTitle: 卓怡恒通 NL38-N11
 来源：[卓怡恒通官网](https://eaecis.com/cp_95/962.html)
 
 </template>
-</Device>
+</DeviceDetail>

@@ -9,7 +9,7 @@ pageSubTitle: OrangePi Nova v1.0
 OrangePi Nova v1.0 是由迅龙软件（香橙派）推出的，基于 2K3000-i 平台设计的 Nano-ITX (120×120mm) 小型主板。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -40,4 +40,4 @@ OrangePi Nova v1.0 是由迅龙软件（香橙派）推出的，基于 2K3000-i 
 来源：白铭骢、Xi Ruoyao
 
 </template>
-</Device>
+</DeviceDetail>

@@ -9,7 +9,7 @@ pageSubTitle: 龙芯 2K3000 AI 评估板
 龙芯 2K3000 AI 评估板是由龙芯中科推出的，基于 2K3000 平台设计的开发板。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -40,4 +40,4 @@ pageSubTitle: 龙芯 2K3000 AI 评估板
 来源：龙芯中科
 
 </template>
-</Device>
+</DeviceDetail>

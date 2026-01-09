@@ -11,7 +11,7 @@ The Excelsior NL38-N11 is a 14-inch laptop based on Loongson 3A6000. Weighing ap
 Other manufacturers have also launched derivative models based on this design.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -52,4 +52,4 @@ This laptop uses AVS (Adaptive Voltage Scaling) rather than full DVFS (Dynamic V
 Source: [Excelsior Official Website](https://eaecis.com/cp_95/962.html)
 
 </template>
-</Device>
+</DeviceDetail>

@@ -11,7 +11,7 @@ pageSubTitle: 龙芯 XA61200
 该主板一般被认为是 3A6000 平台的参考设计：除龙芯外，还有许多其他厂商推出了基于该主板的派生设计。该主板于 2023 年发布，是首个下探到 2000 元价位以下并大量出货的龙芯主板，由于其当时较高的性价比受到用户社区的喜好（并给予其“绿板”的昵称），并成为许多龙芯入门玩家的第一张主板。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -180,4 +180,4 @@ pageSubTitle: 龙芯 XA61200
 </DeviceDownloadCard>
 
 </template>
-</Device>
+</DeviceDetail>

@@ -11,7 +11,7 @@ pageSubTitle: 龙芯 XA612A0
 该主板是龙芯发售的第一款 3A6000 主板，一般认为属于评估开发板 (Evaluation Board)。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -105,4 +105,4 @@ pageSubTitle: 龙芯 XA612A0
 </DeviceDownloadCard>
 
 </template>
-</Device>
+</DeviceDetail>

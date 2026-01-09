@@ -11,7 +11,7 @@ pageSubTitle: 龙芯 AC612A0_V1.1
 该主板是龙芯 3C6000/S 平台的入门级板卡，接口较为完整，并支持带外管理 (BMC) 模组，可供远程操作和管理。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -44,4 +44,4 @@ pageSubTitle: 龙芯 AC612A0_V1.1
 来源：《龙芯 3C6000 单路服务器主板产品规格书 V1.0》
 
 </template>
-</Device>
+</DeviceDetail>

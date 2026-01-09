@@ -15,7 +15,7 @@ pageSubTitle: 龙芯 XA61201
 
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -47,4 +47,4 @@ pageSubTitle: 龙芯 XA61201
 来源：《XA61201 主板产品使用手册 V1.0》
 
 </template>
-</Device>
+</DeviceDetail>

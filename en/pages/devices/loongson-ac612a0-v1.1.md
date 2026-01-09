@@ -11,7 +11,7 @@ The Loongson AC612A0_V1.1 is an ATX (244×305mm) desktop/server motherboard base
 This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relatively comprehensive set of interfaces and support for out-of-band management (BMC) modules for remote operation and management.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -44,4 +44,4 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 Source: "龙芯 3C6000 单路服务器主板产品规格书 V1.0"
 
 </template>
-</Device>
+</DeviceDetail>

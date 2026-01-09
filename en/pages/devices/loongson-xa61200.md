@@ -13,7 +13,7 @@ This motherboard is generally considered the reference design for all Loongson 3
 Due to its good cost-to-performance ratio at that time, it was well received by the user community (and affectionately named "the Green Board"). The XA61200 was the first motherboard for many Loongson beginners.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -183,4 +183,4 @@ Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firm
 
 </template>
 
-</Device>
+</DeviceDetail>

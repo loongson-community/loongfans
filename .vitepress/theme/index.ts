@@ -70,7 +70,7 @@ export default {
     app.use(DialogService)
 
     // Components
-    app.component("Device", DeviceDetail)
+    app.component("DeviceDetail", DeviceDetail)
     app.component("ChipTables", ChipTables)
     app.component("CpuCompare", CpuCompare)
     app.component("DeviceDownloadCard", DeviceDownloadCard)

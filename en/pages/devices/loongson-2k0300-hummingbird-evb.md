@@ -9,7 +9,7 @@ pageSubTitle: Loongson 2K0300 "Hummingbird"
 The Loongson 2K0300 "Hummingbird" is a development board based on Loongson 2K0300.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -40,4 +40,4 @@ None noted.
 Source: Loongson Technology
 
 </template>
-</Device>
+</DeviceDetail>

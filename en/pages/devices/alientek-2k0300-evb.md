@@ -9,7 +9,7 @@ pageSubTitle: ALIENTEK 2K0300 Development Board
 The ALIENTEK 2K0300 Development Board is a development board based on Loongson 2K0300.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -39,4 +39,4 @@ None noted.
 Source: ALIENTEK
 
 </template>
-</Device>
+</DeviceDetail>

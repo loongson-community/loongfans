@@ -11,7 +11,7 @@ The ASUS XC-LS3A6M is a DTX (203×244mm) desktop motherboard based on Loongson 3
 This motherboard was designed and sold by ASUS and is one of the first third-party Loongson 3A6000 motherboards. The motherboard is known for its overclocking support, dual network ports, and additional onboard USB 3.0 ports.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -56,4 +56,4 @@ If you have purchased this motherboard and encountered firmware-related issues, 
 Source: [AliExpress](https://aliexpress.com/item/1005006592333955.html)
 
 </template>
-</Device>
+</DeviceDetail>

@@ -15,7 +15,7 @@ Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 mothe
 
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -47,4 +47,4 @@ Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 mothe
 Source: "XA61201 主板产品使用手册 V1.0"
 
 </template>
-</Device>
+</DeviceDetail>

@@ -13,7 +13,7 @@ This motherboard may come with different 3B6000 processors, including 8/12/16 co
 Compared to the [AC612A0_V1.1](/en/pages/devices/loongson-ac612a0-v1.1.md) based on Loongson 3C6000/S, the XB612B0_V1.1 motherboard provides two fewer memory slots and one fewer PCIe 3.0 x8 interface. However, considering its relatively smaller form factor, this motherboard still has a remarkable feature set and expandability, and offers better value for money for personal buyers.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -43,4 +43,4 @@ Compared to the [AC612A0_V1.1](/en/pages/devices/loongson-ac612a0-v1.1.md) based
 Source: Xi Ruoyao
 
 </template>
-</Device>
+</DeviceDetail>

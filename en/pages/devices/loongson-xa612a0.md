@@ -11,7 +11,7 @@ The Loongson XA612A0 is an ATX (244×305mm) desktop motherboard based on Loongso
 This motherboard is the first 3A6000 motherboard released by Loongson and is generally considered an evaluation board (EVB).
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -107,4 +107,4 @@ Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will all
 </DeviceDownloadCard>
 
 </template>
-</Device>
+</DeviceDetail>

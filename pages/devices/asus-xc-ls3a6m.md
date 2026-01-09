@@ -11,7 +11,7 @@ pageSubTitle: 华硕 XC-LS3A6M
 该主板由华硕设计发售，是龙芯 3A6000 首发的第三方主板之一，其特色包括超频支持、双网口和额外的 USB 3.0 板载接口。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -56,4 +56,4 @@ pageSubTitle: 华硕 XC-LS3A6M
 来源：[AliExpress 网店](https://aliexpress.com/item/1005006592333955.html)
 
 </template>
-</Device>
+</DeviceDetail>

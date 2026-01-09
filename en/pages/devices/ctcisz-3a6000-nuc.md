@@ -9,7 +9,7 @@ pageSubTitle: CTCISZ 3A6000 NUC
 The CTCISZ 3A6000 NUC is an Intel NUC-style mini PC powered by Loongson 3A6000-HV and comes with two HDMI outputs and two Gigabit (GbE) Ethernet ports.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -37,4 +37,4 @@ The CTCISZ 3A6000 NUC is an Intel NUC-style mini PC powered by Loongson 3A6000-H
 Source: CTCISZ
 
 </template>
-</Device>
+</DeviceDetail>

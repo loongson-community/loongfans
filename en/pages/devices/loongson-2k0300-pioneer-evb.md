@@ -9,7 +9,7 @@ pageSubTitle: Loongson 2K0300 "Pioneer"
 The Loongson 2K0300 "Pioneer" is a development board launched based on Loongson 2K0300.
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | Category | Specification |
@@ -40,4 +40,4 @@ None noted.
 Source: Loongson Technology
 
 </template>
-</Device>
+</DeviceDetail>

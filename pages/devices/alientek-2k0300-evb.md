@@ -9,7 +9,7 @@ pageSubTitle: 正点原子 2K0300 开发板
 正点原子 2K0300 开发板是一款基于 2K0300 平台设计的开发板。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -39,4 +39,4 @@ pageSubTitle: 正点原子 2K0300 开发板
 来源：正点原子
 
 </template>
-</Device>
+</DeviceDetail>

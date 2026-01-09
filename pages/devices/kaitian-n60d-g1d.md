@@ -9,7 +9,7 @@ pageSubTitle: 联想开天 N60d-G1d
 联想开天 N60d-G1d 是一款基于 3A6000 处理器的 14 寸笔记本电脑，其重量约 1.5kg，搭载 1920x1200 (WUXGA) 屏幕，接口较为丰富，续航约 3-4 小时。
 :::
 
-<Device>
+<DeviceDetail>
 <template #spec>
 
 | 类别 | 规格 |
@@ -49,4 +49,4 @@ pageSubTitle: 联想开天 N60d-G1d
 来源：白铭骢
 
 </template>
-</Device>
+</DeviceDetail>
