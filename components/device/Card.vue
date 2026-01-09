@@ -27,22 +27,22 @@
   </a>
 </template>
 
-<script setup>
-import { computed, onMounted, ref } from "vue"
+<script setup lang="ts">
+import { computed, onMounted, ref, type Ref } from "vue"
 import { useI18n } from "vue-i18n"
 import { Button } from "primevue"
 import { useToast } from "primevue/usetoast"
 
 import chipsNameMap from "../../data/chips_name_map.min.json"
 
-const props = defineProps({
-  name: String,
-  spec: String,
-  href: String,
-  image: String,
-  tags: String,
-  showCompareButton: Boolean,
-})
+const props = defineProps<{
+  name: string,
+  spec: string,
+  href: string,
+  image: string,
+  tags: string,
+  showCompareButton: boolean,
+}>()
 
 const { t } = useI18n()
 const toast = useToast()
@@ -50,7 +50,7 @@ const toast = useToast()
 const tags = computed(() => props.tags?.split(",").map((i) => i.trim()))
 
 // #region FIXME: to be refactor
-const compareList = ref([])
+const compareList: Ref<string[]> = ref([])
 
 const initCompareList = () => {
   const storedList = localStorage.getItem("cpuCompareList")
