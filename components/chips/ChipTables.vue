@@ -315,8 +315,9 @@
                   <div class="value">
                     <template v-if="key === 'isa_extensions'">
                       <span
-                        id="isa-info"
                         v-for="isa_name in chipData.technologies[key]"
+                        id="isa-info"
+                        :key="isa_name"
                       >
                         <!-- 这里请不要暂时换行，会渲染多余的空格 -->
                         {{ isa_name

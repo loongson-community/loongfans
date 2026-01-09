@@ -14,10 +14,11 @@
       <Popover ref="op">
         <div class="language-popover-content">
           <Button
-            v-for="lang in Object.keys(LANGUAGE_DISPLAY_NAMES)"
-            :label="LANGUAGE_DISPLAY_NAMES[lang]"
+            v-for="lng in Object.keys(LANGUAGE_DISPLAY_NAMES)"
+            :key="lng"
+            :label="LANGUAGE_DISPLAY_NAMES[lng]"
             variant="text"
-            @click="() => handleLanguageChange(lang)"
+            @click="() => handleLanguageChange(lng)"
           />
         </div>
       </Popover>

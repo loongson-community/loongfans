@@ -9,7 +9,7 @@
         <div class="description">{{ spec }}</div>
       </div>
       <div v-if="tags" class="tags-container">
-        <div v-for="tag in tags" class="tag">
+        <div v-for="tag in tags" :key="tag" class="tag">
           {{ tag }}
         </div>
       </div>

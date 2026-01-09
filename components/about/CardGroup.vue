@@ -2,6 +2,7 @@
   <div class="card-group">
     <Card
       v-for="item in cardDataMap[locale]"
+      :key="item.name"
       :name="item.name"
       :description="item.description"
       :href="item.href"

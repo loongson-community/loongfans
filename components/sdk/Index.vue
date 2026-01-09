@@ -1,12 +1,17 @@
 <template>
   <div class="sdk-grid">
-    <a v-for="sdk in sdkList" :href="`#${sdk.name}`" class="sdk-item">
+    <a
+      v-for="sdk in sdkList"
+      :key="sdk.name"
+      :href="`#${sdk.name}`"
+      class="sdk-item"
+    >
       <component :is="sdk.icon" class="sdk-icon" />
       <div>{{ sdk.title }}</div>
     </a>
   </div>
   <div>
-    <template v-for="sdk in sdkList">
+    <template v-for="sdk in sdkList" :key="sdk.name">
       <h2 :id="sdk.name">{{ sdk.title }}</h2>
       <slot :name="sdk.name" />
     </template>
