@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "build": "npm run generateData && vitepress build",
-    "dev": "npm run generateData && vitepress dev",
+    "build": "pnpm run generateData && vitepress build",
+    "dev": "pnpm run generateData && vitepress dev",
     "generateData": "node ./data/generateDatabase.js",
     "lintPrettier": "prettier -c .",
     "prettier": "prettier -w .",

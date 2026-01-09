@@ -29,12 +29,14 @@ jobs:
     steps:
       - name: Check out the source code
         uses: actions/checkout@v6
+      - name: Enable Corepack for PNPM
+        run: corepack enable
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
       - name: Install deps
-        run: npm install
+        run: pnpm install
       - name: Check code style with Prettier
-        run: npm run lintPrettier
+        run: pnpm run lintPrettier
