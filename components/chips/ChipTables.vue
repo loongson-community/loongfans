@@ -22,7 +22,7 @@
       <div v-if="props.fields.basic && commonData?.basic" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.basic.title") }}</h3>
         <DataView :value="[commonData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
@@ -65,7 +65,7 @@
       <div v-if="props.fields.cpu && isCPU" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.cpu.title") }}</h3>
         <DataView :value="[cpuData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
@@ -92,7 +92,7 @@
       <div v-if="props.fields.chipset && isChipset" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.chipset.title") }}</h3>
         <DataView :value="[chipsetData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
@@ -111,7 +111,7 @@
       <div v-if="props.fields.gpu && gpuData" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.gpu.title") }}</h3>
         <DataView :value="[gpuData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
@@ -141,7 +141,7 @@
       >
         <h3 style="margin: 0 !important">{{ $t("chips.memory.title") }}</h3>
         <DataView :value="[cpuData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
@@ -178,7 +178,7 @@
       <div v-if="props.fields.exp && commonData?.exp" class="chip-section">
         <h3 style="margin: 0 !important">{{ $t("chips.exp.title") }}</h3>
         <DataView :value="[commonData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
@@ -235,7 +235,7 @@
       >
         <h3 style="margin: 0 !important">{{ $t("chips.package.title") }}</h3>
         <DataView :value="[commonData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
@@ -277,7 +277,7 @@
       >
         <h3 style="margin: 0 !important">{{ $t("chips.power.title") }}</h3>
         <DataView :value="[cpuData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
@@ -311,7 +311,7 @@
       >
         <h3 style="margin: 0 !important">{{ $t("chips.tech.title") }}</h3>
         <DataView :value="[cpuData]" :layout="'list'">
-          <template #list="slotProps">
+          <template #list>
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
