@@ -11,19 +11,15 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "@primeuix/themes": "^2.0.2",
-    "@types/lodash": "^4.17.21",
-    "ical-expander": "^3.2.0",
-    "lodash": "^4.17.21",
-    "primevue": "^4.5.1",
-    "v-calendar": "^3.1.2",
     "vitepress": "^2.0.0-alpha.15"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@iconify-json/material-symbols": "^1.2.47",
     "@iconify-json/simple-icons": "^1.2.59",
+    "@popperjs/core": "^2.11.8",
+    "@primeuix/themes": "^2.0.2",
+    "@types/lodash": "^4.17.21",
     "@unocss/preset-wind4": "^66.5.12",
     "@vue/tsconfig": "^0.8.1",
     "eslint": "^9.39.2",
@@ -31,13 +27,17 @@
     "eslint-plugin-vue": "^10.6.2",
     "glob": "^13.0.0",
     "globals": "^17.0.0",
+    "ical-expander": "^3.2.0",
     "js-yaml": "^4.1.1",
+    "lodash": "^4.17.21",
     "markdownlint": "^0.40.0",
     "markdownlint-cli2": "^0.20.0",
     "prettier": "^3.7.4",
+    "primevue": "^4.5.1",
     "typescript-eslint": "^8.50.1",
     "unocss": "^66.5.12",
     "unplugin-icons": "^22.5.0",
+    "v-calendar": "^3.1.2",
     "vue": "^3.5.26",
     "vue-i18n": "11"
   }

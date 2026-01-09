@@ -8,27 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@popperjs/core':
-        specifier: ^2.11.8
-        version: 2.11.8
-      '@primeuix/themes':
-        specifier: ^2.0.2
-        version: 2.0.2
-      '@types/lodash':
-        specifier: ^4.17.21
-        version: 4.17.21
-      ical-expander:
-        specifier: ^3.2.0
-        version: 3.2.0
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
-      primevue:
-        specifier: ^4.5.1
-        version: 4.5.4(vue@3.5.26(typescript@5.9.3))
-      v-calendar:
-        specifier: ^3.1.2
-        version: 3.1.2(@popperjs/core@2.11.8)(vue@3.5.26(typescript@5.9.3))
       vitepress:
         specifier: ^2.0.0-alpha.15
         version: 2.0.0-alpha.15(@algolia/client-search@5.46.2)(jiti@2.6.1)(lightningcss@1.30.2)(postcss@8.5.6)(react@19.2.3)(search-insights@2.17.3)(typescript@5.9.3)
@@ -42,6 +21,15 @@ importers:
       '@iconify-json/simple-icons':
         specifier: ^1.2.59
         version: 1.2.65
+      '@popperjs/core':
+        specifier: ^2.11.8
+        version: 2.11.8
+      '@primeuix/themes':
+        specifier: ^2.0.2
+        version: 2.0.2
+      '@types/lodash':
+        specifier: ^4.17.21
+        version: 4.17.21
       '@unocss/preset-wind4':
         specifier: ^66.5.12
         version: 66.5.12
@@ -63,9 +51,15 @@ importers:
       globals:
         specifier: ^17.0.0
         version: 17.0.0
+      ical-expander:
+        specifier: ^3.2.0
+        version: 3.2.0
       js-yaml:
         specifier: ^4.1.1
         version: 4.1.1
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       markdownlint:
         specifier: ^0.40.0
         version: 0.40.0
@@ -75,6 +69,9 @@ importers:
       prettier:
         specifier: ^3.7.4
         version: 3.7.4
+      primevue:
+        specifier: ^4.5.1
+        version: 4.5.4(vue@3.5.26(typescript@5.9.3))
       typescript-eslint:
         specifier: ^8.50.1
         version: 8.52.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
@@ -84,6 +81,9 @@ importers:
       unplugin-icons:
         specifier: ^22.5.0
         version: 22.5.0(@vue/compiler-sfc@3.5.26)
+      v-calendar:
+        specifier: ^3.1.2
+        version: 3.1.2(@popperjs/core@2.11.8)(vue@3.5.26(typescript@5.9.3))
       vue:
         specifier: ^3.5.26
         version: 3.5.26(typescript@5.9.3)
