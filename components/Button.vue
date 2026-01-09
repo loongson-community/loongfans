@@ -7,11 +7,11 @@
   </a>
 </template>
 
-<script setup>
-defineProps({
-  text: String,
-  href: String,
-})
+<script setup lang="ts">
+defineProps<{
+  text: string,
+  href: string,
+}>()
 </script>
 
 <style scoped>
