@@ -38,6 +38,13 @@ export const devices: DeviceFamily[] = [
             spec: "3B6000 @ 2.3GHz, mATX",
             tags: "7A2000, 台式机主板",
           },
+          {
+            name: "龙芯 XB612B0_V1.2",
+            href: "/pages/devices/loongson-xb612b0-v1.2",
+            image: "/images/devices/loongson-xb612b0-v1.2.thumbnail.webp",
+            spec: "3B6000 @ 2.3GHz, mATX",
+            tags: "7A2000, 台式机主板",
+          },
         ],
       },
     ],
