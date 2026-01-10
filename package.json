@@ -1,10 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "build": "pnpm run generateData && vitepress build",
-    "dev": "pnpm run generateData && vitepress dev",
+    "build": "vitepress build",
+    "dev": "vitepress dev",
     "eslint": "eslint",
-    "generateData": "node ./data/generateDatabase.js",
     "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",
     "prettier": "prettier -w .",
