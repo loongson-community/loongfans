@@ -46,12 +46,52 @@ pageSubTitle: 龙芯 XA61200
 
 <DeviceDownloadCard
   title="UEFI 固件"
+  version="V1.0_V5.0.0344_stable202511_rel"
+  size="8388608"
+  date="2025-01-07"
+  sha256="93462a963c6b227bf23a5fef579ed3dcd268d3dcc0c5fa052e5a58b8b73416c1"
+  url="https://file.loongfans.cn/xa61200/EDK2505_XA61200-V1.0_V5.0.0344_stable202511_rel.fd"
+  latest
+>
+
+本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+<template #detail>
+
+<!--@include: @/parts/devices/changelist_V5.0.0343-stable2511.md -->
+
+</template>
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI 固件"
+  version="V1.0_V5.0.0344_stable202511_dbg"
+  size="8388608"
+  date="2025-01-07"
+  sha256="7e8913204aa35ff43e6b84ed3886531b3954a11b0c94c8c46504519a5e6f092d"
+  url="https://file.loongfans.cn/xa61200/EDK2505_XA61200-V1.0_V5.0.0344_stable202511_dbg.fd"
+  latest
+  debug
+>
+
+本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+<template #detail>
+
+<!--@include: @/parts/devices/changelist_V5.0.0343-stable2511.md -->
+
+</template>
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI 固件"
   version="V4.0.05756_prestable2405_0523rel"
   size="8388608"
   date="2024-05-23"
   sha256="e7fac091127d5a759d4c043472f1d6f0838acba7f6efb8da72cccaacedad7e5d"
   url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523rel.fd"
-  latest
 >
 
 新增 YT6801 网卡固件驱动、自定义风扇曲线、快速启动及 TPM 支持等新功能，并修复睡眠时的缓存同步问题，提高可靠性。
@@ -97,7 +137,6 @@ pageSubTitle: 龙芯 XA61200
   date="2024-05-23"
   sha256="0aed4e73d01f490f5808f18df0056e0f70e38bd2344c45c30bedb6ca0557c6a1"
   url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523dbg.fd"
-  latest
   debug
 >
 
