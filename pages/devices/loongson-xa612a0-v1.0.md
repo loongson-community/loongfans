@@ -2,11 +2,11 @@
 layout: page
 returnLink: /devices
 pageTitle: 产品规格数据库
-pageSubTitle: 龙芯 XA612A0
+pageSubTitle: 龙芯 XA612A0_v1.0
 ---
 
 :::info
-龙芯 XA612A0 是由龙芯中科推出的，基于 3A6000-HV 平台设计的 ATX (244×305mm) 台式机主板。
+龙芯 XA612A0_v1.0 是由龙芯中科推出的，基于 3A6000-HV 平台设计的 ATX (244×305mm) 台式机主板。
 
 该主板是龙芯发售的第一款 3A6000 主板，一般认为属于评估开发板 (Evaluation Board)。
 :::
@@ -39,7 +39,7 @@ pageSubTitle: 龙芯 XA612A0
 
 <template #image>
 
-[![](/images/devices/loongson-xa612a0.thumbnail.webp)](/images/devices/loongson-xa612a0.webp)
+[![](/images/devices/loongson-xa612a0-v1.0.thumbnail.webp)](/images/devices/loongson-xa612a0-v1.0.webp)
 来源：《XA612A0 主板使用手册 V1.0》
 
 </template>
@@ -52,7 +52,7 @@ pageSubTitle: 龙芯 XA612A0
   size="8388608"
   date="2025-01-07"
   sha256="5bebaec30b8933f9a0c65b38ac16a08b2ba206f4d2cfd80f6bb0846a00655665"
-  url="https://file.loongfans.cn/xa612a0/EDK2505_XA612A0-V1.0_V5.0.0344_stable202511_rel.fd"
+  url="https://file.loongfans.cn/xa612a0-v1.0/EDK2505_XA612A0-V1.0_V5.0.0344_stable202511_rel.fd"
   latest
 >
 
@@ -72,7 +72,7 @@ pageSubTitle: 龙芯 XA612A0
   size="8388608"
   date="2025-01-07"
   sha256="8f75aca6bcbac86bd9f678fb4b7de276d7e8808973f6da66d70b74e0e80b5c95"
-  url="https://file.loongfans.cn/xa612a0/EDK2505_XA612A0-V1.0_V5.0.0344_stable202511_dbg.fd"
+  url="https://file.loongfans.cn/xa612a0-v1.0/EDK2505_XA612A0-V1.0_V5.0.0344_stable202511_dbg.fd"
   debug
   latest
 >
@@ -93,7 +93,7 @@ pageSubTitle: 龙芯 XA612A0
   size="4194304"
   date="2024-01-02"
   sha256="6862745ef05a7a7f284064d258a36fa9c6bf885eccdebe4a7dba05803c7dd7bc"
-  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_stable2311pllrel.fd"
+  url="https://file.loongfans.cn/xa612a0-v1.0/UDK2018-3A6000-7A2000_XA612A0_stable2311pllrel.fd"
 >
 
 新增 GPU 仿真开关
@@ -110,7 +110,7 @@ pageSubTitle: 龙芯 XA612A0
   size="4194304"
   date="2024-01-02"
   sha256="c570d7fb4d405d6e4930e84831ef82538cdc3e2c4c016a2976902660d49e63eb"
-  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
+  url="https://file.loongfans.cn/xa612a0-v1.0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
   debug
 >
 
@@ -128,7 +128,7 @@ pageSubTitle: 龙芯 XA612A0
   size="8388608"
   date="2024-05-25"
   sha256="6862745ef05a7a7f284064d258a36fa9c6bf885eccdebe4a7dba05803c7dd7bc"
-  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_prestable2405rel.fd"
+  url="https://file.loongfans.cn/xa612a0-v1.0/UDK2018-3A6000-7A2000_XA612A0_prestable2405rel.fd"
 >
 </DeviceDownloadCard>
 
@@ -138,7 +138,7 @@ pageSubTitle: 龙芯 XA612A0
   size="8388608"
   date="2024-05-25"
   sha256="242f3b2b04de64a863e3bdc429339ca8736eb9437ced166abf3839b72982c233"
-  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
+  url="https://file.loongfans.cn/xa61200-v1.0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
   debug
 >
 </DeviceDownloadCard>

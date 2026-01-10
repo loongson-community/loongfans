@@ -2,11 +2,11 @@
 layout: page
 returnLink: /devices
 pageTitle: 产品规格数据库
-pageSubTitle: 龙芯 XA61201
+pageSubTitle: 龙芯 XA61201_v1.0
 ---
 
 :::info
-龙芯 XA61201 是由龙芯中科推出的，基于 3A6000-HV 平台设计的 DTX (203×244mm) 台式机主板。
+龙芯 XA61201_v1.0 是由龙芯中科推出的，基于 3A6000-HV 平台设计的 DTX (203×244mm) 台式机主板。
 
 该主板相对于 [XA61200](/devices/loongson-xa61200) 主要的差异有：
 
@@ -43,7 +43,7 @@ pageSubTitle: 龙芯 XA61201
 
 <template #image>
 
-[![](/images/devices/loongson-xa61201.thumbnail.webp)](/images/devices/loongson-xa61201.webp)
+[![](/images/devices/loongson-xa61201-v1.0.thumbnail.webp)](/images/devices/loongson-xa61201-v1.0.webp)
 来源：《XA61201 主板产品使用手册 V1.0》
 
 </template>
@@ -56,7 +56,7 @@ pageSubTitle: 龙芯 XA61201
   size="8388608"
   date="2025-01-07"
   sha256="4473366a2079b26302ef53112deab1e44ac5a5bb0f0090216a2da6f031680e52"
-  url="https://file.loongfans.cn/xa61201/EDK2505_XA61201-V1.0_V5.0.0344_stable202511_rel.fd"
+  url="https://file.loongfans.cn/xa61201-v1.0/EDK2505_XA61201-V1.0_V5.0.0344_stable202511_rel.fd"
   latest
 >
 
@@ -76,7 +76,7 @@ pageSubTitle: 龙芯 XA61201
   size="8388608"
   date="2025-01-07"
   sha256="90170bee1e0a8d978c94dd2138f7b164c1c230228654b284a6b34ea0efd8b18f"
-  url="https://file.loongfans.cn/xa61201/EDK2505_XA61201-V1.0_V5.0.0344_stable202511_dbg.fd"
+  url="https://file.loongfans.cn/xa61201-v1.0/EDK2505_XA61201-V1.0_V5.0.0344_stable202511_dbg.fd"
   debug
   latest
 >
