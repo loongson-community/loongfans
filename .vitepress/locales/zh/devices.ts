@@ -8,6 +8,13 @@ export const devices: DeviceFamily[] = [
         title: "主板及开发板",
         devices: [
           {
+            name: "龙芯 AC612A0_V1.0",
+            href: "/pages/devices/loongson-ac612a0-v1.0",
+            image: "/images/devices/loongson-ac612a0-v1.0.thumbnail.webp",
+            spec: "3C6000/S @ 2.3GHz, ATX",
+            tags: "7A2000, 支持 ECC 内存, 台式机主板",
+          },
+          {
             name: "龙芯 AC612A0_V1.1",
             href: "/devices/loongson-ac612a0-v1.1",
             image: "/images/devices/loongson-ac612a0-v1.1.thumbnail.webp",
