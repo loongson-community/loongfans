@@ -56,16 +56,18 @@ export const devices: DeviceFamily[] = [
             tags: "7A2000, Desktop Motherboard",
           },
           {
-            name: "Loongson XA61201",
-            href: "/en/devices/loongson-xa61201",
-            image: "/images/devices/loongson-xa61201.thumbnail.webp",
+
+            name: "Loongson XA61201_v1.0",
+            href: "/en/devices/loongson-xa61201-v1.0",
+            image: "/images/devices/loongson-xa61201-v1.0.thumbnail.webp",
             spec: "3A6000-HV @ 2.5GHz, DTX",
             tags: "7A2000, Desktop Motherboard",
           },
           {
-            name: "Loongson XA612A0",
-            href: "/en/devices/loongson-xa612a0",
-            image: "/images/devices/loongson-xa612a0.thumbnail.webp",
+
+            name: "Loongson XA612A0_v1.0",
+            href: "/en/devices/loongson-xa612a0-v1.0",
+            image: "/images/devices/loongson-xa612a0-v1.0.thumbnail.webp",
             spec: "3A6000-HV @ 2.5GHz, ATX",
             tags: "7A2000, Desktop Motherboard",
           },
