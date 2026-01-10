@@ -73,7 +73,7 @@
       <Button
         as="a"
         :href="url"
-        label="Download"
+        :label="$t('deviceDownloadButton')"
         class="download-button mt-[8px]"
       >
         <template #icon>
