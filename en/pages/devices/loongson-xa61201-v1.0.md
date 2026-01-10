@@ -2,11 +2,11 @@
 layout: page
 returnLink: /en/pages/devices
 pageTitle: Product Database
-pageSubTitle: Loongson XA61201
+pageSubTitle: Loongson XA61201_v1.0
 ---
 
 :::info
-The Loongson XA61201 is a DTX (203×244mm) desktop motherboard based on Loongson 3A6000-HV.
+The Loongson XA61201_v1.0 is a DTX (203×244mm) desktop motherboard based on Loongson 3A6000-HV.
 
 Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 motherboard:
 
@@ -43,7 +43,7 @@ Compared to the [XA61200](/en/pages/devices/loongson-xa61200), the XA61201 mothe
 
 <template #image>
 
-[![](/images/devices/loongson-xa61201.thumbnail.webp)](/images/devices/loongson-xa61201.webp)
+[![](/images/devices/loongson-xa61201-v1.0.thumbnail.webp)](/images/devices/loongson-xa61201-v1.0.webp)
 Source: "XA61201 主板产品使用手册 V1.0"
 
 </template>

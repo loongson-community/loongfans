@@ -2,11 +2,11 @@
 layout: page
 returnLink: /en/pages/devices
 pageTitle: Product Database
-pageSubTitle: Loongson XA612A0
+pageSubTitle: Loongson XA612A0_v1.0
 ---
 
 :::info
-The Loongson XA612A0 is an ATX (244×305mm) desktop motherboard based on Loongson 3A6000-HV.
+The Loongson XA612A0_v1.0 is an ATX (244×305mm) desktop motherboard based on Loongson 3A6000-HV.
 
 This motherboard is the first 3A6000 motherboard released by Loongson and is generally considered an evaluation board (EVB).
 :::
@@ -41,7 +41,7 @@ If you experience similar issues, the community recommends improving the case or
 
 <template #image>
 
-[![](/images/devices/loongson-xa612a0.thumbnail.webp)](/images/devices/loongson-xa612a0.webp)
+[![](/images/devices/loongson-xa612a0-v1.0.thumbnail.webp)](/images/devices/loongson-xa612a0-v1.0.webp)
 Source: "XA612A0 主板使用手册 V1.0"
 
 </template>
@@ -54,7 +54,7 @@ Source: "XA612A0 主板使用手册 V1.0"
   size="4194304"
   date="2024-01-02"
   sha256="6862745ef05a7a7f284064d258a36fa9c6bf885eccdebe4a7dba05803c7dd7bc"
-  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_stable2311pllrel.fd"
+  url="https://file.loongfans.cn/xa612a0-v1.0/UDK2018-3A6000-7A2000_XA612A0_stable2311pllrel.fd"
   latest
 >
 
@@ -72,7 +72,7 @@ Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will all
   size="4194304"
   date="2024-01-02"
   sha256="c570d7fb4d405d6e4930e84831ef82538cdc3e2c4c016a2976902660d49e63eb"
-  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
+  url="https://file.loongfans.cn/xa612a0-v1.0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
   latest
   debug
 >
@@ -91,7 +91,7 @@ Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will all
   size="8388608"
   date="2024-05-25"
   sha256="6862745ef05a7a7f284064d258a36fa9c6bf885eccdebe4a7dba05803c7dd7bc"
-  url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_prestable2405rel.fd"
+  url="https://file.loongfans.cn/xa612a0-v1.0/UDK2018-3A6000-7A2000_XA612A0_prestable2405rel.fd"
 >
 </DeviceDownloadCard>
 
@@ -101,7 +101,7 @@ Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will all
   size="8388608"
   date="2024-05-25"
   sha256="242f3b2b04de64a863e3bdc429339ca8736eb9437ced166abf3839b72982c233"
-  url="https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
+  url="https://file.loongfans.cn/xa61200-v1.0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
   debug
 >
 </DeviceDownloadCard>
