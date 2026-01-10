@@ -1,7 +1,7 @@
 import UnoCSS from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import { defineConfig } from "vitepress"
-import AutoGenerateJson from "./plugins/AutoGenerateJson.js"
+import loongfansData from "./plugins/loongfans-data"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -33,7 +33,7 @@ export default defineConfig({
   // 完全禁用主题切换
   appearance: false,
   vite: {
-    plugins: [UnoCSS(), Icons({ scale: 1 }), AutoGenerateJson()],
+    plugins: [UnoCSS(), Icons({ scale: 1 }), loongfansData()],
     ssr: {
       noExternal: ["vue-i18n"],
     },

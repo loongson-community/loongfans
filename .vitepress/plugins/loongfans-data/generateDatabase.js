@@ -8,6 +8,7 @@ import { dirname, basename, extname } from "path"
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(fileURLToPath(import.meta.url))
+const dataDir = __dirname + "/../../../data/"
 
 const chips = {
   cpu: {},
@@ -59,7 +60,7 @@ function sortNamesNormal(a, b) {
 
 export async function generateChipsDatabase(format_switch) {
   // CPUs
-  const cpu = await glob(__dirname + "/chips/cpu/**/*.yml", glob_options)
+  const cpu = await glob(dataDir + "chips/cpu/**/*.yml", glob_options)
   cpu.sort((a, b) =>
     sortNames(basename(a, extname(a)), basename(b, extname(b))),
   )
@@ -70,10 +71,7 @@ export async function generateChipsDatabase(format_switch) {
   })
 
   // Chipsets
-  const chipset = await glob(
-    __dirname + "/chips/chipset/**/*.yml",
-    glob_options,
-  )
+  const chipset = await glob(dataDir + "chips/chipset/**/*.yml", glob_options)
   chipset.sort((a, b) =>
     sortNames(basename(a, extname(a)), basename(b, extname(b))),
   )
@@ -83,12 +81,9 @@ export async function generateChipsDatabase(format_switch) {
     chips.chipset[basename(files, extname(files))] = jsonResult
   })
   if (format_switch === 1) {
-    fs.writeFileSync(
-      __dirname + "/chips.json",
-      JSON.stringify(chips, null, "\t"),
-    )
+    fs.writeFileSync(dataDir + "chips.json", JSON.stringify(chips, null, "\t"))
   }
-  fs.writeFileSync(__dirname + "/chips.min.json", JSON.stringify(chips))
+  fs.writeFileSync(dataDir + "chips.min.json", JSON.stringify(chips))
 }
 
 // #region FIXME: to be refactored
@@ -106,13 +101,13 @@ export function generateChipsName(format_switch) {
   })
   if (format_switch === 1) {
     fs.writeFileSync(
-      __dirname + "/chips_name_map.json",
+      dataDir + "chips_name_map.json",
       JSON.stringify(nameKeyMap, null, "\t"),
     )
   }
 
   fs.writeFileSync(
-    __dirname + "/chips_name_map.min.json",
+    dataDir + "chips_name_map.min.json",
     JSON.stringify(nameKeyMap),
   )
 }
@@ -121,7 +116,7 @@ export function generateChipsName(format_switch) {
 // Generate OS List
 export async function generateOsDatabase(format_switch) {
   const os = []
-  const os_list = await glob(__dirname + "/os/**/*.yml", glob_options)
+  const os_list = await glob(dataDir + "os/**/*.yml", glob_options)
   os_list.sort((a, b) =>
     sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
   )
@@ -132,9 +127,9 @@ export async function generateOsDatabase(format_switch) {
   })
 
   if (format_switch === 1) {
-    fs.writeFileSync(__dirname + "/os.json", JSON.stringify(os, null, "\t"))
+    fs.writeFileSync(dataDir + "os.json", JSON.stringify(os, null, "\t"))
   }
-  fs.writeFileSync(__dirname + "/os.min.json", JSON.stringify(os))
+  fs.writeFileSync(dataDir + "os.min.json", JSON.stringify(os))
 }
 
 export async function generateAll(format_switch) {
