@@ -71,6 +71,13 @@ export const devices: DeviceFamily[] = [
             spec: "3A6000-HV @ 2.5GHz, ATX",
             tags: "7A2000, 台式机主板",
           },
+          {
+            name: "龙芯 XA612B0_v1.0",
+            href: "/pages/devices/loongson-xa612b0-v1.0",
+            image: "/images/devices/loongson-xa612b0-v1.0.thumbnail.webp",
+            spec: "3A6000-HV @ 2.5GHz, ATX",
+            tags: "7A2000, 台式机主板",
+          },
         ],
       },
       {
