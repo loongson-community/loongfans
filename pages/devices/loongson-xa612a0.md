@@ -48,12 +48,52 @@ pageSubTitle: 龙芯 XA612A0
 
 <DeviceDownloadCard
   title="UEFI 固件"
+  version="V1.0_V5.0.0344_stable202511_rel"
+  size="8388608"
+  date="2025-01-07"
+  sha256="5bebaec30b8933f9a0c65b38ac16a08b2ba206f4d2cfd80f6bb0846a00655665"
+  url="https://file.loongfans.cn/xa612a0/EDK2505_XA612A0-V1.0_V5.0.0344_stable202511_rel.fd"
+  latest
+>
+
+本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+<template #detail>
+
+<!--@include: @/parts/devices/changelist_V5.0.0343-stable2511.md -->
+
+</template>
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI 固件"
+  version="V1.0_V5.0.0344_stable202511_dbg"
+  size="8388608"
+  date="2025-01-07"
+  sha256="8f75aca6bcbac86bd9f678fb4b7de276d7e8808973f6da66d70b74e0e80b5c95"
+  url="https://file.loongfans.cn/xa612a0/EDK2505_XA612A0-V1.0_V5.0.0344_stable202511_dbg.fd"
+  debug
+  latest
+>
+
+本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+<template #detail>
+
+<!--@include: @/parts/devices/changelist_V5.0.0343-stable2511.md -->
+
+</template>
+
+</DeviceDownloadCard>
+
+<DeviceDownloadCard
+  title="UEFI 固件"
   version="stable2311pllrel"
   size="4194304"
   date="2024-01-02"
   sha256="6862745ef05a7a7f284064d258a36fa9c6bf885eccdebe4a7dba05803c7dd7bc"
   url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_stable2311pllrel.fd"
-  latest
 >
 
 新增 GPU 仿真开关
@@ -71,7 +111,6 @@ pageSubTitle: 龙芯 XA612A0
   date="2024-01-02"
   sha256="c570d7fb4d405d6e4930e84831ef82538cdc3e2c4c016a2976902660d49e63eb"
   url="https://file.loongfans.cn/xa612a0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
-  latest
   debug
 >
 
