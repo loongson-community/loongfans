@@ -95,6 +95,7 @@ export interface ChipInterfaceSpecs {
   avs: number
   d2d?: boolean
   d2d_name?: string | null
+  other?: string
 }
 
 export interface ChipPackageSpecs {
