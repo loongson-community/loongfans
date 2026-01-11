@@ -6,7 +6,7 @@ pageTitle: 关于社区
 pageSubTitle: 东方神秘第三方社区
 ---
 
-<script setup>
+<script setup lang="ts">
 import CardGroup from "../components/about/CardGroup.vue"
 </script>
 

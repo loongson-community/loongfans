@@ -6,7 +6,7 @@ pageTitle: Developer's Guide
 pageSubTitle: Guides and Notes on Developing for LoongArch
 ---
 
-<script setup>
+<script setup lang="ts">
 import SdkIndex from "../../components/sdk/Index.vue"
 </script>
 
