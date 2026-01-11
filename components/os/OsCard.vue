@@ -12,7 +12,7 @@
           }}</span>
         </div>
       </div>
-      <p class="description">{{ data.description }}</p>
+      <p class="description">{{ localizedDescription }}</p>
     </div>
     <div class="link-icon">
       <IconOpenInNew />
@@ -25,13 +25,18 @@ import { useI18n } from "vue-i18n"
 
 import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import { useTagTranslation } from "./TagTranslation"
-import type { OSInfoItem } from "../../types/data"
+import type { LocalizedString, OSInfoItem } from "../../types/data"
 
 const { data } = defineProps<{ data: OSInfoItem }>()
 const { locale } = useI18n()
 const { translateTag } = useTagTranslation()
 
-const localizedName = data.name[locale.value as "zh" | "en"] || data.name.en
+const localizeMsgWithFallback = (msg: LocalizedString) => {
+  return msg[locale.value as "zh" | "en"] || msg.en
+}
+
+const localizedName = localizeMsgWithFallback(data.name)
+const localizedDescription = localizeMsgWithFallback(data.description)
 </script>
 
 <style scoped>
