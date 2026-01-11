@@ -2,8 +2,8 @@
   <div class="header_box">
     <div class="page_body">
       <div class="main_title">
-        <h1>{{ $frontmatter.pageTitle }}</h1>
-        <h4>{{ $frontmatter.pageSubTitle }}</h4>
+        <h1>{{ frontmatter.pageTitle }}</h1>
+        <h4>{{ frontmatter.pageSubTitle }}</h4>
       </div>
       <div class="brand_mark">
         <img src="/images/brand_mark.webp" />
@@ -26,7 +26,7 @@
   <BackToTop />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useData } from "vitepress"
 import { useI18n } from "vue-i18n"
 import { ref, computed, onMounted, onUnmounted } from "vue"

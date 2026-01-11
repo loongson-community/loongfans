@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useI18n } from "vue-i18n"
 import Card from "./Card.vue"
 import IconGithub from "~icons/simple-icons/github"

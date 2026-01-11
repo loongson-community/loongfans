@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue"
 import IconVerticalAlignTop from "~icons/material-symbols/vertical-align-top"
 
