@@ -7,25 +7,24 @@
     <div class="main">
       <div class="header_redline"></div>
       <!-- 如果是首页就不渲染子页面头部 -->
-      <ChildHeader v-if="$frontmatter.layout !== 'home'" />
+      <ChildHeader v-if="frontmatter.layout !== 'home'" />
       <Content class="body_content" />
     </div>
     <ChildFooter class="footer" />
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, watch } from "vue"
-import { useData } from "vitepress"
+import { useData, useRouter } from "vitepress"
 import { useI18n } from "vue-i18n"
-import { useRouter } from "vitepress"
-import Toast from "primevue/toast"
-import ChildHeader from "/components/ChildHeader.vue"
-import ChildFooter from "/components/ChildFooter.vue"
-import { handleFirstVisitRedirect } from "../utils/language"
 import DynamicDialog from "primevue/dynamicdialog"
+import Toast from "primevue/toast"
+import ChildHeader from "../../components/ChildHeader.vue"
+import ChildFooter from "../../components/ChildFooter.vue"
+import { handleFirstVisitRedirect } from "../utils/language"
 
-const { lang } = useData()
+const { frontmatter, lang } = useData()
 const { locale } = useI18n()
 const router = useRouter()
 
