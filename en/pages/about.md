@@ -5,7 +5,7 @@ pageTitle: About Our Community
 pageSubTitle: That Mysterious Community for Mysterious Processors
 ---
 
-<script setup>
+<script setup lang="ts">
 import CardGroup from "../../components/about/CardGroup.vue"
 </script>
 

@@ -6,7 +6,7 @@ pageSubTitle: Overview of specifications, features, and known issues
 ---
 
 
-<script setup>
+<script setup lang="ts">
 import DeviceIndex from "../../components/device/Index.vue"
 </script>
 

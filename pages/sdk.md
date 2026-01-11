@@ -6,7 +6,7 @@ pageTitle: 开发者指南
 pageSubTitle: 龙架构开发入门及注意事项
 ---
 
-<script setup>
+<script setup lang="ts">
 import SdkIndex from "../components/sdk/Index.vue"
 </script>
 
