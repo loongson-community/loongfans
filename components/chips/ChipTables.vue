@@ -26,7 +26,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.basic" :key="key">
+              <div v-for="(key, idx) in props.fields.basic" :key="idx">
                 <div class="field">
                   <label>
                     {{ $t(`chips.basic.${key}`) }}
@@ -69,7 +69,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.cpu" :key="key">
+              <div v-for="(key, idx) in props.fields.cpu" :key="idx">
                 <div class="field">
                   <label>
                     {{ $t(`chips.cpu.${key}`) }}
@@ -96,7 +96,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.chipset" :key="key">
+              <div v-for="(key, idx) in props.fields.chipset" :key="idx">
                 <div class="field">
                   <label>{{ $t(`chips.chipset.${key}`) }}</label>
                   <div class="value">{{ chipsetData?.chipset[key] }}</div>
@@ -115,7 +115,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.gpu" :key="key">
+              <div v-for="(key, idx) in props.fields.gpu" :key="idx">
                 <div class="field">
                   <label>{{ $t(`chips.gpu.${key}`) }}</label>
                   <div class="value">
@@ -145,7 +145,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.memory" :key="key">
+              <div v-for="(key, idx) in props.fields.memory" :key="idx">
                 <div class="field">
                   <label>
                     {{ $t(`chips.memory.${key}`) }}
@@ -182,7 +182,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.exp" :key="key">
+              <div v-for="(key, idx) in props.fields.exp" :key="idx">
                 <div class="field">
                   <label>
                     <span v-if="key === 'd2d'">{{ $t(`chips.exp.d2d`) }}</span>
@@ -239,7 +239,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.package" :key="key">
+              <div v-for="(key, idx) in props.fields.package" :key="idx">
                 <div class="field">
                   <label>
                     <span v-if="key === 't_case'">T<sub>CASE</sub></span>
@@ -281,7 +281,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.power" :key="key">
+              <div v-for="(key, idx) in props.fields.power" :key="idx">
                 <div class="field">
                   <label>
                     {{ $t(`chips.power.${key}`) }}
@@ -315,7 +315,7 @@
             <div
               class="grid grid-nogutter gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
             >
-              <div v-for="(item, key) in props.fields.technologies" :key="key">
+              <div v-for="(key, idx) in props.fields.technologies" :key="idx">
                 <div class="field">
                   <label>
                     {{ $t(`chips.tech.${key}`) }}
@@ -384,15 +384,16 @@ import type {
   ChipsetInfoItem,
   CPUInfoItem,
 } from "../../types/data"
+import type { ChipFieldsDescriptor } from "./fields"
 
 const { t } = useI18n()
 const toast = useToast()
 const dialog = useDialog()
 
-const props = defineProps({
-  chips: { type: String, required: true },
-  fields: { type: Object, required: true },
-})
+const props = defineProps<{
+  chips: string
+  fields: ChipFieldsDescriptor
+}>()
 
 const chipsDB: ChipInfoDB = chipsJson as ChipInfoDB
 
