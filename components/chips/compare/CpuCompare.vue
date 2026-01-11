@@ -1,5 +1,5 @@
 <template>
-  <div v-if="compareChips.length > 0" class="compare-container">
+  <div v-if="chipsBeingCompared.length > 0" class="compare-container">
     <div class="compare-table">
       <div class="compare-row compare-header">
         <!-- 产品名称 -->
@@ -12,7 +12,7 @@
           />
         </div>
         <div
-          v-for="chip in compareChips"
+          v-for="chip in chipsBeingCompared"
           :key="chip.basic.name"
           class="compare-cell compare-never"
         >
@@ -36,7 +36,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.basic.series") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell compare-never"
           >
@@ -46,7 +46,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.basic.market") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell compare-never"
           >
@@ -72,7 +72,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.cores") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.cores') }"
@@ -83,7 +83,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.threads") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.threads') }"
@@ -94,7 +94,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.arch") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.arch') }"
@@ -105,7 +105,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.freq") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.freq') }"
@@ -116,7 +116,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.l1_inst_cache") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.l1_inst_cache') }"
@@ -127,7 +127,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.l1_data_cache") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.l1_data_cache') }"
@@ -138,7 +138,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.l2_cache") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.l2_cache') }"
@@ -149,7 +149,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.l3_cache") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.l3_cache') }"
@@ -160,7 +160,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.voltage") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.voltage') }"
@@ -171,7 +171,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.tpc") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.tpc') }"
@@ -182,7 +182,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.cpu.tdp") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'cpu.tdp') }"
@@ -198,7 +198,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.gpu.available") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'gpu.available') }"
@@ -214,7 +214,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.gpu.name") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'gpu.name') }"
@@ -230,7 +230,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.memory.max") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'memory.max') }"
@@ -241,7 +241,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.memory.types") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'memory.types') }"
@@ -252,7 +252,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.memory.channels") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'memory.channels') }"
@@ -263,7 +263,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.memory.ecc") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'memory.ecc') }"
@@ -284,7 +284,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.exp.io_name") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.name') }"
@@ -295,7 +295,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.exp.io_rev") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.rev') }"
@@ -306,7 +306,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.exp.lanes") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.lanes') }"
@@ -317,7 +317,7 @@
         <div class="compare-row">
           <div class="compare-cell">USB 3.1 {{ $t("chips.exp.num") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.usb_5gbps') }"
@@ -328,7 +328,7 @@
         <div class="compare-row">
           <div class="compare-cell">USB 2.0 {{ $t("chips.exp.num") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.usb2') }"
@@ -339,7 +339,7 @@
         <div class="compare-row">
           <div class="compare-cell">SATA {{ $t("chips.exp.num") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.sata') }"
@@ -352,7 +352,7 @@
             {{ $t("chips.exp.eth") }}{{ $t("chips.exp.num") }}
           </div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.eth') }"
@@ -363,7 +363,7 @@
         <div class="compare-row">
           <div class="compare-cell">SPI {{ $t("chips.exp.num") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.spi') }"
@@ -374,7 +374,7 @@
         <div class="compare-row">
           <div class="compare-cell">UART {{ $t("chips.exp.num") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.uart') }"
@@ -385,7 +385,7 @@
         <div class="compare-row">
           <div class="compare-cell">I2C {{ $t("chips.exp.num") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.i2c') }"
@@ -396,7 +396,7 @@
         <div class="compare-row">
           <div class="compare-cell">GPIO {{ $t("chips.exp.num") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.gpio') }"
@@ -407,7 +407,7 @@
         <div class="compare-row">
           <div class="compare-cell">AVS {{ $t("chips.exp.num") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.avs') }"
@@ -418,7 +418,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.exp.d2d") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.d2d') }"
@@ -434,7 +434,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.exp.d2d_name") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.d2d_name') }"
@@ -449,7 +449,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.exp.other") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'exp.other') }"
@@ -466,7 +466,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.package.socket") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'package.socket') }"
@@ -477,7 +477,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.package.temperature") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'package.temperature') }"
@@ -488,7 +488,7 @@
         <div class="compare-row">
           <div class="compare-cell">T<sub>CASE</sub></div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'package.t_case') }"
@@ -499,7 +499,7 @@
         <div class="compare-row">
           <div class="compare-cell">T<sub>JUNCTION</sub></div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'package.t_junction') }"
@@ -510,7 +510,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.package.size") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'package.size') }"
@@ -526,7 +526,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.power.clock_gating") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'power.clock_gating') }"
@@ -544,7 +544,7 @@
             {{ $t("chips.power.frequency_scaling") }}
           </div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{
@@ -564,7 +564,7 @@
             {{ $t("chips.power.voltage_scaling") }}
           </div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'power.voltage_scaling') }"
@@ -585,7 +585,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.tech.isa") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{ 'same-as-first': isSame(chip, 'technologies.isa') }"
@@ -596,7 +596,7 @@
         <div class="compare-row">
           <div class="compare-cell">{{ $t("chips.tech.isa_extensions") }}</div>
           <div
-            v-for="chip in compareChips"
+            v-for="chip in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
             :class="{
@@ -626,10 +626,12 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, type Ref } from "vue"
 import { useI18n } from "vue-i18n"
-const { t } = useI18n()
+import Button from "primevue/button"
 
 import chipsJson from "../../../data/chips.min.json"
-import Button from "primevue/button"
+import type { CPUInfoItem } from "../../../types/data"
+
+const { t } = useI18n()
 
 // 初始化 LocalStorage
 const compareList: Ref<string[]> = ref([])
@@ -645,8 +647,8 @@ onMounted(() => {
   initCompareList()
 })
 
-const compareChips = computed(() => {
-  return compareList.value.map((chipId) => chipsJson.cpu[chipId])
+const chipsBeingCompared = computed(() => {
+  return compareList.value.map((chipId) => chipsJson.cpu[chipId] as CPUInfoItem)
 })
 
 // 删除对比选项
@@ -672,8 +674,8 @@ const getFieldValue = (chip, path) => {
 
 // 判断是否相同
 const isSame = (chip, fieldPath) => {
-  if (!compareChips.value.length || !fieldPath) return true
-  const firstValue = getFieldValue(compareChips.value[0], fieldPath)
+  if (!chipsBeingCompared.value.length || !fieldPath) return true
+  const firstValue = getFieldValue(chipsBeingCompared.value[0], fieldPath)
   const currentValue = getFieldValue(chip, fieldPath)
   return JSON.stringify(firstValue) === JSON.stringify(currentValue)
 }
