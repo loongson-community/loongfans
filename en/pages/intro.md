@@ -61,12 +61,12 @@ The following table summarizes key feature differences across current products (
 
 In addition to current products, the following commonly found chips are also based on LoongArch:
 
-- Loongson 3A5000 (4 cores, 4 threads), 2.0 - 2.3GHz
+- Loongson 3A5000 (4 cores, 4 threads), 2.0 - 2.5GHz
 
 :::info
 For processor specifications, details, and comparisons, please see:
 
-- [Loong 1-2-3 Site "Loongson Chip Parameters" Database](https://loong123.cn/chips/)
+- [Chip Specification Database](/en/pages/chips)
 - [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel).
 
 :::
@@ -111,6 +111,6 @@ At this point, you already have some basic understandings on Loongson. The follo
 
 Collected reading materials:
 
+- [Chip Specification Database](/en/pages/chips)
 - [*AREWELOONGYET?*: Reading Material "New World and Old World"](https://areweloongyet.com/docs/intro)
-- [Loong 1-2-3 Site "Loongson Chip Parameters" Database](https://loong123.cn/chips/)
 - [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel)
