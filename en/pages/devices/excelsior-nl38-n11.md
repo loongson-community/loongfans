@@ -17,7 +17,7 @@ Other manufacturers have also launched derivative models based on this design.
 | Category | Specification |
 | ---- | ---- |
 | Manufacturer | Excelsior |
-| Also Known As | Ipason NL38-N11 |
+| Also Known As | IPASON LL300 |
 | Processor | 3A6000 @ 2.0GHz |
 | Screen | 14 inches, 2240×1400 (2.2K) or 1920x1200 (WUXGA) |
 | Weight | 1.4kg |
