@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /pages/devices
+returnLink: /devices
 pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 XA61201
 ---
@@ -8,7 +8,7 @@ pageSubTitle: 龙芯 XA61201
 :::info
 龙芯 XA61201 是由龙芯中科推出的，基于 3A6000-HV 平台设计的 DTX (203×244mm) 台式机主板。
 
-该主板相对于 [XA61200](/pages/devices/loongson-xa61200) 主要的差异有：
+该主板相对于 [XA61200](/devices/loongson-xa61200) 主要的差异有：
 
 - 支持 ECC 内存
 - 第三槽位的 PCIe 3.0 x8 接口改为 PCIe 3.0 x16 接口（x8 信号）
@@ -37,7 +37,7 @@ pageSubTitle: 龙芯 XA61201
 
 <template #known-issues>
 
-<!--@include: @/parts/known-issues/7a-errata.md -->
+<!--@include: @/../parts/known-issues/7a-errata.md -->
 
 </template>
 

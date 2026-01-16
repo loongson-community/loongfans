@@ -16,7 +16,7 @@
       <IconArrowCircleLeftOutline />
     </Button>
     <Button
-      v-if="page.filePath.includes('pages/chips')"
+      v-if="page.filePath.includes('/chips')"
       :href="t('chips.buttons.links')"
       :text="compareButtonText"
       class="btn_back"

@@ -4,7 +4,7 @@ import Icons from "unplugin-icons/vite"
 import { defineConfig } from "vitepress"
 import loongfansData from "./plugins/loongfans-data"
 
-const srcDir = "./"
+const srcDir = "pages"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -18,13 +18,14 @@ export default defineConfig({
     en: {
       label: "English",
       lang: "en",
-      link: "/en/",
+      link: "/en",
       title: "Loongson Hobbyists' Community",
       description: "Loongson Hobbyists' Community Portal",
     },
   },
   ignoreDeadLinks: true,
   srcDir,
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     // nav: [

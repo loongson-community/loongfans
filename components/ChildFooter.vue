@@ -34,7 +34,7 @@
         {{ t("reportIssue") }}
       </a>
       <span>|</span>
-      <a :href="`${basePath}/pages/about`">{{ t("aboutCommunity") }}</a>
+      <a :href="`${basePath}/about`">{{ t("aboutCommunity") }}</a>
     </div>
 
     <div class="copyright_info">

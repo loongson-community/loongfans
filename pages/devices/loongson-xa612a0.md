@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /pages/devices
+returnLink: /devices
 pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 XA612A0
 ---
@@ -33,7 +33,7 @@ pageSubTitle: 龙芯 XA612A0
 
 <template #known-issues>
 
-<!--@include: @/parts/known-issues/7a-errata.md -->
+<!--@include: @/../parts/known-issues/7a-errata.md -->
 
 </template>
 
