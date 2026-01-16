@@ -25,7 +25,7 @@ import { useI18n } from "vue-i18n"
 
 import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import { useTagTranslation } from "./TagTranslation"
-import type { LocalizedString, OSInfoItem } from "../../types/data"
+import type { LocalizedString, OSInfoItem } from "types/data"
 
 const { data } = defineProps<{ data: OSInfoItem }>()
 const { locale } = useI18n()

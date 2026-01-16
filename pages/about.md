@@ -7,7 +7,7 @@ pageSubTitle: 东方神秘第三方社区
 ---
 
 <script setup lang="ts">
-import CardGroup from "../components/about/CardGroup.vue"
+import CardGroup from "@components/about/CardGroup.vue"
 </script>
 
 ![龙芯爱好者社区 Logo](/images/logo_about.webp)

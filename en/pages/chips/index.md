@@ -6,7 +6,7 @@ pageSubTitle: Learn About and Compare Features and Performance of Loongson Proce
 ---
 
 <script setup lang="ts">
-import ChipsIndex from "../../../components/chips/Index.vue"
+import ChipsIndex from "@components/chips/Index.vue"
 </script>
 
 <ChipsIndex />
