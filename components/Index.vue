@@ -8,17 +8,17 @@
       <div class="nav_list">
         <LinkGroup :title="$t('beginnerResources')">
           <Link
-            :href="`${basePath}/pages/intro`"
+            :href="`${basePath}/intro`"
             :name="t('introToLoongson')"
           />
-          <Link :href="`${basePath}/pages/guides`" :name="t('usageGuides')" />
-          <Link :href="`${basePath}/pages/os`" :name="t('operatingSystems')" />
-          <Link :href="`${basePath}/pages/sdk`" :name="t('devGuides')" />
+          <Link :href="`${basePath}/guides`" :name="t('usageGuides')" />
+          <Link :href="`${basePath}/os`" :name="t('operatingSystems')" />
+          <Link :href="`${basePath}/sdk`" :name="t('devGuides')" />
         </LinkGroup>
 
         <LinkGroup :title="$t('supportMaterials')">
-          <Link :href="`${basePath}/pages/chips`" :name="t('chipsData')" />
-          <Link :href="`${basePath}/pages/devices`" :name="t('productSpecs')" />
+          <Link :href="`${basePath}/chips`" :name="t('chipsData')" />
+          <Link :href="`${basePath}/devices`" :name="t('productSpecs')" />
           <Link href="https://loong123.cn/" :name="t('compatibilityDb')" />
         </LinkGroup>
 
@@ -28,10 +28,10 @@
       <div class="nav_list">
         <LinkGroup :title="$t('communityResources')">
           <Link
-            :href="`${basePath}/pages/biweekly`"
+            :href="`${basePath}/biweekly`"
             :name="t('biweeklyMeeting')"
           />
-          <Link :href="`${basePath}/pages/jobs`" :name="t('jobsAndBounties')" />
+          <Link :href="`${basePath}/jobs`" :name="t('jobsAndBounties')" />
           <Link
             :name="t('aboutGithubName')"
             href="https://github.com/loongson-community"

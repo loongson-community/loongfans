@@ -64,14 +64,14 @@ pageSubTitle: 欢迎来到 x86 和 ARM 远山之外的龙芯世界
 :::info
 欲知处理器规格、详情及参数比较，详请见：
 
-- [芯片规格数据库](/pages/chips)
+- [芯片规格数据库](/chips)
 - [龙芯中科官方网站“芯片产品”板块](https://www.loongson.cn/product/channel)。
 
 :::
 
 ### 常见板卡型号
 
-如下是现行的常见板卡型号，板卡规格详请见[产品规格数据库](/pages/devices)：
+如下是现行的常见板卡型号，板卡规格详请见[产品规格数据库](/devices)：
 
 - 龙芯 3C6000/S：AC612A0_V1.1
 - 龙芯 3B6000：XB612B0_V1.1
@@ -94,13 +94,13 @@ pageSubTitle: 欢迎来到 x86 和 ARM 远山之外的龙芯世界
 
 恭喜您，读到这里，相信您对龙芯这一新世界的理解已经有所了解了。如下是一系列来自本站和第三方站点的扩展阅读材料，从玩机指南到踩坑指南，从处理器规格到 ABI、固件实现细节，还有相信不少朋友已经听说过的“新旧世界问题”，社区爱好者们准备了许多优秀阅读材料，供您参考：
 
-- [玩机及踩坑指南](/pages/guides)
-- [产品规格数据库](/pages/devices)
+- [玩机及踩坑指南](/guides)
+- [产品规格数据库](/devices)
 - [《咱龙了吗？》：龙架构生态建设资讯站](https://areweloongyet.com/)
 - [Loong 1-2-3：适用于龙架构的兼容性数据网站](https://loong123.cn/)
 
 阅读材料：
 
-- [芯片规格数据库](/pages/chips)
+- [芯片规格数据库](/chips)
 - [《咱龙了吗？》：阅读材料之“新世界与旧世界”](https://areweloongyet.com/docs/intro)
 - [龙芯中科官方网站“芯片产品”板块](https://www.loongson.cn/product/channel)

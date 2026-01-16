@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /pages/devices
+returnLink: /devices
 pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 AC612A0_V1.1
 ---
@@ -34,7 +34,7 @@ pageSubTitle: 龙芯 AC612A0_V1.1
 
 <template #known-issues>
 
-<!--@include: @/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
+<!--@include: @/../parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
 </template>
 

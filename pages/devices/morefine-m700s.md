@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /pages/devices
+returnLink: /devices
 pageTitle: 产品规格数据库
 pageSubTitle: 摩方 M700S 小主机
 ---
@@ -27,7 +27,7 @@ pageSubTitle: 摩方 M700S 小主机
 
 <template #known-issues>
 
-<!--@include: @/parts/known-issues/usb-device-lost.md -->
+<!--@include: @/../parts/known-issues/usb-device-lost.md -->
 
 </template>
 

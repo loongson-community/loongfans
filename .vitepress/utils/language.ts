@@ -100,8 +100,10 @@ export function getLocaleUrl(lang: SupportedLanguage, url: string) {
  */
 function normalizeUrl(url: string) {
   for (const lang of SUPPORTED_LANGUAGES) {
+    if (url === LANGUAGE_PREFIXES[lang]) return "/"
     const prefix = LANGUAGE_PREFIXES[lang] + "/"
+    if (url === prefix) return "/"
     if (url.startsWith(prefix)) return "/" + url.replace(prefix, "")
-    if (url === LANGUAGE_PREFIXES[lang] + ".html") return "/"
   }
+  return url
 }
