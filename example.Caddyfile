@@ -1,0 +1,31 @@
+:80 {
+	root * /var/www/loongfans
+	encode gzip
+
+	# Remove trailing slashes (except root)
+	@trailingslash {
+		not path /
+		path_regexp trail (.+)/$
+	}
+	redir @trailingslash {re.trail.1} permanent
+
+	# Redirect .html extension to clean URLs
+	@htmlext {
+		path_regexp html (.+)\.html$
+	}
+	redir @htmlext {re.html.1} permanent
+
+	# Remove /pages and /en/pages prefix from URLs
+	@pages {
+		path_regexp pages ^/pages(.*)$
+	}
+	redir @pages {re.pages.1} permanent
+	@enpages {
+		path_regexp enpages ^/en/pages(.*)$
+	}
+	redir @enpages /en{re.enpages.1} permanent
+
+	try_files {path} {path}.html {path}/index.html
+
+	file_server
+}
