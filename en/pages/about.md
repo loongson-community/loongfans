@@ -6,7 +6,7 @@ pageSubTitle: That Mysterious Community for Mysterious Processors
 ---
 
 <script setup lang="ts">
-import CardGroup from "../../components/about/CardGroup.vue"
+import CardGroup from "@components/about/CardGroup.vue"
 </script>
 
 ![Logo of the Loongson Hobbyists' Community](/en/images/logo_about.webp)

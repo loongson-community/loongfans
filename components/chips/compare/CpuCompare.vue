@@ -628,8 +628,8 @@ import { ref, computed, onMounted, type Ref } from "vue"
 import { useI18n } from "vue-i18n"
 import Button from "primevue/button"
 
-import chipsJson from "../../../data/chips.min.json"
-import type { CPUInfoItem } from "../../../types/data"
+import chipsJson from "@data/chips.min.json"
+import type { CPUInfoItem } from "types/data"
 
 const { t } = useI18n()
 
