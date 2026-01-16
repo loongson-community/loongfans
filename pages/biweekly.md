@@ -24,10 +24,10 @@ import {
     getBiweeklySlideLink,
     wemeetLink,
     wemeetNumber,
-} from "../components/events/BiweeklyLinks"
-import { getBiweeklyEvents, type BiweeklyEventItem } from '../components/events/DataSource'
-import BiweeklyCalendar from "../components/events/BiweeklyCalendar.vue"
-import eventsICS from "../data/events/events.ics?raw"
+} from "@components/events/BiweeklyLinks"
+import { getBiweeklyEvents, type BiweeklyEventItem } from '@components/events/DataSource'
+import BiweeklyCalendar from "@components/events/BiweeklyCalendar.vue"
+import eventsICS from "@data/events/events.ics?raw"
 
 const { d, locale, tm } = useI18n()
 const now = new Date()
