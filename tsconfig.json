@@ -8,12 +8,23 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["unplugin-icons/types/vue"]
+    "types": ["unplugin-icons/types/vue"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./pages/*"],
+      "@components/*": ["./components/*"],
+      "@data/*": ["./data/*"],
+      "@root/*": ["./*"],
+      "@vitepress/*": ["./.vitepress/*"]
+    }
   },
   "include": [
     "components/**/*.vue",
     ".vitepress/**/*.ts",
     ".vitepress/**/*.vue"
   ],
-  "exclude": [".vitepress/cache", ".vitepress/dist"]
+  "exclude": [".vitepress/cache", ".vitepress/dist"],
+  "vueCompilerOptions": {
+    "vitePressExtensions": [".md"]
+  }
 }

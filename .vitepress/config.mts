@@ -1,7 +1,10 @@
+import { resolve } from 'path'
 import UnoCSS from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import { defineConfig } from "vitepress"
 import loongfansData from "./plugins/loongfans-data"
+
+const srcDir = "./"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -21,6 +24,7 @@ export default defineConfig({
     },
   },
   ignoreDeadLinks: true,
+  srcDir,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     // nav: [
@@ -37,5 +41,16 @@ export default defineConfig({
     ssr: {
       noExternal: ["vue-i18n"],
     },
+    resolve: {
+      alias: {
+        // `@` is an alias of `srcDir` in vitepress
+        // e.g. when using markdown file inclusion
+        '@': resolve(__dirname, `../${srcDir}`),
+        '@components': resolve(__dirname, '../components'),
+        '@data': resolve(__dirname, '../data'),
+        '@root': resolve(__dirname, '../'),
+        '@vitepress': resolve(__dirname, './')
+      }
+    }
   },
 })
