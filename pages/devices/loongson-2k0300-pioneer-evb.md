@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /pages/devices
+returnLink: /devices
 pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 2K0300 先锋派
 ---
