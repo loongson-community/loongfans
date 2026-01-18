@@ -44,3 +44,52 @@ jobs:
         run: pnpm run lintPrettier
       - name: Lint code with ESLint
         run: pnpm run eslint
+
+  build:
+    name: Test build on ${{ matrix.platform }} (${{ matrix.os_description }})
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+    strategy:
+      matrix:
+        include:
+          - platform: linux/amd64
+            os_description: "GHA ubuntu-latest"
+            qemu: false
+          - platform: linux/loong64
+            os_description: "Alpine 3.23"
+            qemu: true
+    steps:
+      - name: Check out the source code
+        uses: actions/checkout@v6
+      - name: "QEMU: Set up QEMU"
+        if: success() && matrix.qemu
+        uses: docker/setup-qemu-action@v3
+      - name: "Native: Enable Corepack for PNPM"
+        if: success() && !matrix.qemu
+        run: corepack enable
+      - name: "Native: Set up Node.js"
+        if: success() && !matrix.qemu
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - name: "Native: Run build"
+        if: success() && !matrix.qemu
+        run: pnpm install && pnpm run build
+      - name: "QEMU: Run build"
+        if: success() && matrix.qemu
+        uses: addnab/docker-run-action@v3
+        with:
+          # We cannot use the official "alpine" tag, due to loong64's
+          # inclusion being blocked by Docker Inc.
+          # https://github.com/docker-library/official-images/issues/16404
+          registry: registry.alpinelinux.org
+          image: "registry.alpinelinux.org/img/alpine:3.23"
+          options: |
+            --platform ${{ matrix.platform }}
+            -v ${{ github.workspace }}:/github/workspace
+            -e CI=true
+            -e GITHUB_ACTIONS=true
+            -e GITHUB_WORKSPACE=/github/workspace
+          run: /github/workspace/scripts/ci-build.sh
