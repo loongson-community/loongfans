@@ -12,19 +12,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  spellcheck:
-    name: Spellcheck
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the source code
-        uses: actions/checkout@v6
-      - name: Run codespell
-        uses: codespell-project/actions-codespell@v2
-        with:
-          check_filenames: true
-
-  lint:
-    name: Lints
+  build:
+    name: Lint & build
     runs-on: ubuntu-latest
     steps:
       - name: Check out the source code
@@ -44,3 +33,14 @@ jobs:
         run: pnpm run lintPrettier
       - name: Lint code with ESLint
         run: pnpm run eslint
+      - name: Run codespell
+        uses: codespell-project/actions-codespell@v2
+        with:
+          check_filenames: true
+      - name: Run build
+        run: pnpm run build
+      - name: Upload pages artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          path: "./.vitepress/dist/"
+          name: "pages-${{ github.sha }}"
