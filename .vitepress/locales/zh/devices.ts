@@ -92,8 +92,8 @@ export const devices: DeviceFamily[] = [
         devices: [
           {
             name: "卓怡恒通 NL38-N11",
-            href: "/pages/devices/excelsior-nl38-n11",
-            image: "/images/devices/excelsior-nl38-n11.webp",
+            href: "/pages/devices/ea-excelsior-nl38-n11",
+            image: "/images/devices/ea-excelsior-nl38-n11.webp",
             spec: "3A6000 @ 2.0GHz",
             tags: "笔记本电脑",
           },

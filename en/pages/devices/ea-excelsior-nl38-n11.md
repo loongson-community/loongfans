@@ -2,11 +2,11 @@
 layout: page
 returnLink: /en/pages/devices
 pageTitle: Product Database
-pageSubTitle: Excelsior NL38-N11
+pageSubTitle: EA EXCELSIOR NL38-N11
 ---
 
 :::info
-The Excelsior NL38-N11 is a 14-inch laptop based on Loongson 3A6000. Weighing approximately 1.4kg, the NL38-N11 comes equipped with a 2240×1400 (2.2K) or 1920x1200 (WUXGA) display, a variety of ports, and a battery life of about 3-4 hours.
+The EA EXCELSIOR NL38-N11 is a 14-inch laptop based on Loongson 3A6000. Weighing approximately 1.4kg, the NL38-N11 comes equipped with a 2240×1400 (2.2K) or 1920x1200 (WUXGA) display, a variety of ports, and a battery life of about 3-4 hours.
 
 Other manufacturers have also launched derivative models based on this design.
 :::
@@ -16,7 +16,7 @@ Other manufacturers have also launched derivative models based on this design.
 
 | Category | Specification |
 | ---- | ---- |
-| Manufacturer | Excelsior |
+| Manufacturer | EA EXCELSIOR |
 | Also Known As | IPASON LL300 |
 | Processor | 3A6000 @ 2.0GHz |
 | Screen | 14 inches, 2240×1400 (2.2K) or 1920x1200 (WUXGA) |
@@ -48,8 +48,8 @@ This laptop uses AVS (Adaptive Voltage Scaling) rather than full DVFS (Dynamic V
 
 <template #image>
 
-![](/images/devices/excelsior-nl38-n11.webp)
-Source: [Excelsior Official Website](https://eaecis.com/cp_95/962.html)
+![](/images/devices/ea-excelsior-nl38-n11.webp)
+Source: [EA EXCELSIOR Official Website](https://eaecis.com/cp_95/962.html)
 
 </template>
 </DeviceDetail>

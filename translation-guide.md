@@ -137,7 +137,7 @@
 
 - 华硕: ASUS
 - 联想开天: Lenovo Kaitian
-- 卓怡恒通: Excelsior
+- 卓怡恒通: EA EXCELSIOR
 - 摩方: Morefine
 - 中科云: CTCISZ
 - 正点原子: ALIENTEK
