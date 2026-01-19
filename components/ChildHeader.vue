@@ -16,8 +16,8 @@
       <IconArrowCircleLeftOutline />
     </Button>
     <Button
-      v-if="page.filePath.includes('/chips')"
-      :href="t('chips.buttons.links')"
+      v-if="page.filePath.includes('chips')"
+      :href="getLocaleUrl(locale, '/chips/cpu/compare')"
       :text="compareButtonText"
       class="btn_back"
     >
@@ -33,9 +33,10 @@ import { ref, computed, onMounted, onUnmounted } from "vue"
 import IconArrowCircleLeftOutline from "~icons/material-symbols/arrow-circle-left-outline"
 import BackToTop from "./BackToTop.vue"
 import Button from "./Button.vue"
+import { getLocaleUrl } from "@vitepress/utils/language"
 
 const { frontmatter, page } = useData()
-const { t } = useI18n()
+const { locale, t } = useI18n()
 
 // 以下是对比列表的计数器
 const compareListLength = ref(0)
