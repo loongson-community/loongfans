@@ -75,9 +75,9 @@ export const devices: DeviceFamily[] = [
         title: "Laptops",
         devices: [
           {
-            name: "Excelsior NL38-N11",
-            href: "/en/pages/devices/excelsior-nl38-n11",
-            image: "/images/devices/excelsior-nl38-n11.webp",
+            name: "EA EXCELSIOR NL38-N11",
+            href: "/en/pages/devices/ea-excelsior-nl38-n11",
+            image: "/images/devices/ea-excelsior-nl38-n11.webp",
             spec: "3A6000 @ 2.0GHz",
             tags: "Laptop",
           },
