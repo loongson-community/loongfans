@@ -1,0 +1,74 @@
+name: Edit Biweekly Events
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Biweekly issue number to edit"
+        required: true
+        type: integer
+      bvid:
+        description: "Set BVID of the biweekly event to (optional)"
+        required: false
+        type: string
+      slides_id:
+        description: "Set Slides ID of the biweekly event to (optional)"
+        required: false
+        type: string
+
+jobs:
+  edit-biweekly-events:
+    name: Edit Biweekly Events and Create PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Validate inputs
+        run: |
+          if [[ -z "${{ github.event.inputs.bvid }}" && -z "${{ github.event.inputs.slides_id }}" ]]; then
+            echo "At least one of 'bvid' or 'slides_id' must be provided."
+            exit 1
+          fi
+      - name: Check out the source code
+        uses: actions/checkout@v6
+      - name: Enable Corepack for PNPM
+        run: corepack enable
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Configure Git user
+        run: |
+          # The following credentials does not work with GHES, but we don't
+          # expect the repo to be hosted on GHES anyway.
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Make the edit
+        run: |
+          ARGS=(
+            -i ${{ github.event.inputs.issue_number }}
+          )
+          if [[ -n "${{ github.event.inputs.bvid }}" ]]; then
+            ARGS+=( --set-bvid "${{ github.event.inputs.bvid }}")
+          fi
+          if [[ -n "${{ github.event.inputs.slides_id }}" ]]; then
+            ARGS+=( --set-slides "${{ github.event.inputs.slides_id }}")
+          fi
+          ARGS+=( --commit )
+          pnpm run editBiweeklyEvents "${ARGS[@]}"
+
+      - name: Create a PR
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: "edit-biweekly-${{ github.event.inputs.issue_number }}"
+          branch-suffix: timestamp # always create a new branch
+          delete-branch: true
+          title: "Update data for LoongArch Biweekly ${{ github.event.inputs.issue_number }}"
+          body: |
+            _This is an automated PR coming from the `edit-biweekly-data` workflow._
