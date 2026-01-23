@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /devices
+returnLink: /pages/devices
 pageTitle: 产品规格数据库
 pageSubTitle: 卓怡恒通 NL38-N11
 ---
@@ -34,13 +34,13 @@ pageSubTitle: 卓怡恒通 NL38-N11
 
 <template #known-issues>
 
-<!--@include: @/../parts/known-issues/touchpad-err-in-abi2.md -->
+<!--@include: @/parts/known-issues/touchpad-err-in-abi2.md -->
 
-<!--@include: @/../parts/known-issues/loonggpu-err-in-abi2.md -->
+<!--@include: @/parts/known-issues/loonggpu-err-in-abi2.md -->
 
-<!--@include: @/../parts/known-issues/smcv1-issue-in-abi2.md -->
+<!--@include: @/parts/known-issues/smcv1-issue-in-abi2.md -->
 
-<!--@include: @/../parts/known-issues/laptop-high-power-consumption.md -->
+<!--@include: @/parts/known-issues/laptop-high-power-consumption.md -->
 
 </template>
 

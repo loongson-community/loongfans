@@ -15,7 +15,7 @@ import DeviceIndex from "@components/device/Index.vue"
 :::info
 欲知处理器规格、详情及参数比较，详请见：
 
-- [芯片规格数据库](/chips)
+- [芯片规格数据库](/pages/chips)
 - [龙芯中科官方网站"芯片产品"板块](https://www.loongson.cn/product/channel)
 
 :::

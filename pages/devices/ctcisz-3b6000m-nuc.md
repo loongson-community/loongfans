@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /devices
+returnLink: /pages/devices
 pageTitle: 产品规格数据库
 pageSubTitle: 中科云 3B6000M 小主机
 ---

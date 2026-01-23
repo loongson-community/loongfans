@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /devices
+returnLink: /pages/devices
 pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 XB612B0_V1.1
 ---
@@ -8,7 +8,7 @@ pageSubTitle: 龙芯 XB612B0_V1.1
 :::info
 龙芯 XB612B0_V1.1 是由龙芯中科推出的，基于 3B6000 平台设计的 mATX (244×244mm) 台式机主板。
 
-该主板可支持多个规格的 3B6000 处理器，支持包括 8/12/16 核心，16/24/32 线程的型号，并支持 Registered ECC 内存。该主板还提供 2 个 M.2 NVMe (PCIe 3.0 x4) 2280 接口，是基于龙芯的主板中 NVMe 接口最多的型号。与基于 3C6000/S 的 [AC612A0_V1.1](/devices/loongson-ac612a0-v1.1.md) 相比，XB612B0_V1.1 主板虽然少提供 2 个内存插槽和 1 个 PCIe 3.0 x8 接口，但考虑到它板型相对较小，该款主板依然有着可圈可点的特性集和扩展性，对个人用户来说亦有着更好的性价比。
+该主板可支持多个规格的 3B6000 处理器，支持包括 8/12/16 核心，16/24/32 线程的型号，并支持 Registered ECC 内存。该主板还提供 2 个 M.2 NVMe (PCIe 3.0 x4) 2280 接口，是基于龙芯的主板中 NVMe 接口最多的型号。与基于 3C6000/S 的 [AC612A0_V1.1](/pages/devices/loongson-ac612a0-v1.1.md) 相比，XB612B0_V1.1 主板虽然少提供 2 个内存插槽和 1 个 PCIe 3.0 x8 接口，但考虑到它板型相对较小，该款主板依然有着可圈可点的特性集和扩展性，对个人用户来说亦有着更好的性价比。
 :::
 
 <DeviceDetail>
@@ -31,7 +31,7 @@ pageSubTitle: 龙芯 XB612B0_V1.1
 
 <template #known-issues>
 
-<!--@include: @/../parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
+<!--@include: @/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
 </template>
 
