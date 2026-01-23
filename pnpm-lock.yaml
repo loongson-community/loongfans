@@ -24,6 +24,9 @@ importers:
       '@babel/types':
         specifier: ^7.28.6
         version: 7.28.6
+      '@commander-js/extra-typings':
+        specifier: ^14.0.0
+        version: 14.0.0(commander@14.0.2)
       '@eslint/js':
         specifier: ^9.39.2
         version: 9.39.2
@@ -60,6 +63,9 @@ importers:
       ajv:
         specifier: ^8.17.1
         version: 8.17.1
+      commander:
+        specifier: ^14.0.2
+        version: 14.0.2
       devalue:
         specifier: ^5.6.2
         version: 5.6.2
@@ -272,6 +278,11 @@ packages:
   '@babel/types@7.28.6':
     resolution: {integrity: sha512-0ZrskXVEHSWIqZM/sQZ4EV3jZJXRkio/WCxaqKZP1g//CEWEPSfeZFcms4XeKBCHU0ZKnIkdJeU/kF+eRp5lBg==}
     engines: {node: '>=6.9.0'}
+
+  '@commander-js/extra-typings@14.0.0':
+    resolution: {integrity: sha512-hIn0ncNaJRLkZrxBIp5AsW/eXEHNKYQBh0aPdoUqNgD+Io3NIykQqpKFyKcuasZhicGaEZJX/JBSIkZ4e5x8Dg==}
+    peerDependencies:
+      commander: ~14.0.0
 
   '@docsearch/core@4.4.0':
     resolution: {integrity: sha512-kiwNo5KEndOnrf5Kq/e5+D9NBMCFgNsDoRpKQJ9o/xnSlheh6b8AXppMuuUVVdAUIhIfQFk/07VLjjk/fYyKmw==}
@@ -1248,6 +1259,10 @@ packages:
   commander@13.1.0:
     resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
     engines: {node: '>=18'}
+
+  commander@14.0.2:
+    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
+    engines: {node: '>=20'}
 
   commander@8.3.0:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
@@ -2675,6 +2690,10 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
+  '@commander-js/extra-typings@14.0.0(commander@14.0.2)':
+    dependencies:
+      commander: 14.0.2
+
   '@docsearch/core@4.4.0(react@19.2.3)':
     optionalDependencies:
       react: 19.2.3
@@ -3622,6 +3641,8 @@ snapshots:
   comma-separated-tokens@2.0.3: {}
 
   commander@13.1.0: {}
+
+  commander@14.0.2: {}
 
   commander@8.3.0: {}
 
