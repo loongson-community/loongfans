@@ -89,11 +89,10 @@ export function handleFirstVisitRedirect(router: Router) {
 }
 
 /**
- * @param lang Accepts string for vue-i18n compatibility (useI18n().locale is typed as string)
  * @param url URL starts with `/`
  */
-export function getLocaleUrl(lang: SupportedLanguage | string, url: string) {
-  return LANGUAGE_PREFIXES[lang as SupportedLanguage] + normalizeUrl(url)
+export function getLocaleUrl(lang: SupportedLanguage, url: string) {
+  return LANGUAGE_PREFIXES[lang] + normalizeUrl(url)
 }
 
 /**

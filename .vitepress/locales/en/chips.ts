@@ -5,6 +5,7 @@ export default {
     remove_compare: "Remove from Comparison",
     remove: "Remove",
     clear: "Clear Selection",
+    links: "/en/chips/cpu/compare", // DO NOT REMOVE OR CHANGE THIS!!!
   },
   basic: {
     title: "Basic Information",
