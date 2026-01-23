@@ -7,7 +7,10 @@
     <div class="site_nav_box">
       <div class="nav_list">
         <LinkGroup :title="$t('beginnerResources')">
-          <Link :href="`${basePath}/intro`" :name="t('introToLoongson')" />
+          <Link
+            :href="`${basePath}/intro`"
+            :name="t('introToLoongson')"
+          />
           <Link :href="`${basePath}/guides`" :name="t('usageGuides')" />
           <Link :href="`${basePath}/os`" :name="t('operatingSystems')" />
           <Link :href="`${basePath}/sdk`" :name="t('devGuides')" />
@@ -24,7 +27,10 @@
 
       <div class="nav_list">
         <LinkGroup :title="$t('communityResources')">
-          <Link :href="`${basePath}/biweekly`" :name="t('biweeklyMeeting')" />
+          <Link
+            :href="`${basePath}/biweekly`"
+            :name="t('biweeklyMeeting')"
+          />
           <Link :href="`${basePath}/jobs`" :name="t('jobsAndBounties')" />
           <Link
             :name="t('aboutGithubName')"
