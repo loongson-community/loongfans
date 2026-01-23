@@ -3,6 +3,7 @@
   "scripts": {
     "build": "vitepress build",
     "dev": "vitepress dev",
+    "editBiweeklyEvents": "tsx ./scripts/editBiweeklyEvents/index.ts",
     "eslint": "eslint",
     "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",
@@ -14,15 +15,21 @@
     "vitepress": "^2.0.0-alpha.15"
   },
   "devDependencies": {
+    "@babel/generator": "^7.28.6",
+    "@babel/parser": "^7.28.6",
+    "@babel/types": "^7.28.6",
+    "@commander-js/extra-typings": "^14.0.0",
     "@eslint/js": "^9.39.2",
     "@iconify-json/material-symbols": "^1.2.47",
     "@iconify-json/simple-icons": "^1.2.59",
     "@popperjs/core": "^2.11.8",
     "@primeuix/themes": "^2.0.2",
+    "@types/babel__generator": "^7.27.0",
     "@types/lodash": "^4.17.21",
     "@types/node": "^25.0.3",
     "@unocss/preset-wind4": "^66.5.12",
     "@vue/tsconfig": "^0.8.1",
+    "commander": "^14.0.2",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.6.2",
@@ -35,11 +42,13 @@
     "markdownlint-cli2": "^0.20.0",
     "prettier": "^3.7.4",
     "primevue": "^4.5.1",
+    "tsx": "^4.21.0",
     "typescript-eslint": "^8.50.1",
     "unocss": "^66.5.12",
     "unplugin-icons": "^22.5.0",
     "v-calendar": "^3.1.2",
     "vue": "^3.5.26",
     "vue-i18n": "11"
-  }
+  },
+  "packageManager": "pnpm@10.28.1+sha512.7d7dbbca9e99447b7c3bf7a73286afaaf6be99251eb9498baefa7d406892f67b879adb3a1d7e687fc4ccc1a388c7175fbaae567a26ab44d1067b54fcb0d6a316"
 }
