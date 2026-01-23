@@ -58,7 +58,7 @@ import {
   getLocaleUrl,
   setStoredLanguage,
   LANGUAGE_DISPLAY_NAMES,
-} from "@vitepress/utils/language"
+} from "../.vitepress/utils/language"
 
 const { t } = useI18n()
 const { localeIndex, lang } = useData()

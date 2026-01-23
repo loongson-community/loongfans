@@ -377,13 +377,13 @@ import { useDialog } from "primevue/usedialog"
 
 import MaterialSymbolsHelpOutline from "~icons/material-symbols/help-outline"
 import * as ChipDescriptions from "./ChipDescriptions.vue"
-import chipsJson from "@data/chips.min.json"
+import chipsJson from "../../data/chips.min.json"
 import type {
   ChipCommonInfo,
   ChipInfoDB,
   ChipsetInfoItem,
   CPUInfoItem,
-} from "types/data"
+} from "../../types/data"
 import type { ChipFieldsDescriptor } from "./fields"
 
 const { t } = useI18n()

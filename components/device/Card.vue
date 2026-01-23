@@ -33,7 +33,7 @@ import { useI18n } from "vue-i18n"
 import { Button } from "primevue"
 import { useToast } from "primevue/usetoast"
 
-import chipsNameMap from "@data/chips_name_map.min.json"
+import chipsNameMap from "../../data/chips_name_map.min.json"
 
 const props = defineProps<{
   name: string

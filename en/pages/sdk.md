@@ -7,7 +7,7 @@ pageSubTitle: Guides and Notes on Developing for LoongArch
 ---
 
 <script setup lang="ts">
-import SdkIndex from "@components/sdk/Index.vue"
+import SdkIndex from "../../components/sdk/Index.vue"
 </script>
 
 When developing for non-x86 systems, many may find themselves asking:
