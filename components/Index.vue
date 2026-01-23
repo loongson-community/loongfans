@@ -63,7 +63,7 @@ import Link from "./index/Link.vue"
 import LinkGroup from "./index/LinkGroup.vue"
 import LinkGroupContact from "./index/LinkGroupContact.vue"
 import { useI18n } from "vue-i18n"
-import { getLocalePrefix } from "@vitepress/utils/language"
+import { getLocalePrefix } from "../.vitepress/utils/language"
 
 const { t } = useI18n()
 const { localeIndex } = useData()

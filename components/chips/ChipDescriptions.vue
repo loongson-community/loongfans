@@ -5,7 +5,7 @@
 
 <script lang="ts">
 import { defineComponent, h } from "vue"
-import i18n from "@vitepress/theme/i18n"
+import i18n from "../../.vitepress/theme/i18n"
 const { t } = i18n.global
 
 // The components are dynamically referenced by ChipTables, hence the apparent

@@ -21,9 +21,9 @@ import { computed, reactive } from "vue"
 import ToggleButton from "primevue/togglebutton"
 import OsCard from "./OsCard.vue"
 import { useTagTranslation } from "./TagTranslation"
-import type { OSInfoItem, OSTag } from "types/data"
+import type { OSInfoItem, OSTag } from "../../types/data"
 
-import osDataJson from "@data/os.min.json"
+import osDataJson from "../../data/os.min.json"
 
 const { translateTag } = useTagTranslation()
 
