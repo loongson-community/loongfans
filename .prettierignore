@@ -1,4 +1,4 @@
-/pages/public
+/public
 pnpm-*.yaml
 # TODO
 *.md
