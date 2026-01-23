@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /devices
+returnLink: /pages/devices
 pageTitle: 产品规格数据库
 pageSubTitle: 正点原子 2K0300 开发板
 ---

@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /devices
+returnLink: /pages/devices
 pageTitle: 产品规格数据库
 pageSubTitle: 龙芯 2K3000 AI 评估板
 ---

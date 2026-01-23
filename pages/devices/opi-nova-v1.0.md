@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /devices
+returnLink: /pages/devices
 pageTitle: 产品规格数据库
 pageSubTitle: OrangePi Nova v1.0
 ---
