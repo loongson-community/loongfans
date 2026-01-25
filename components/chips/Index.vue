@@ -1,5 +1,5 @@
 <template>
-  <DeviceIndex :data="cpuData" show-compare-button />
+  <DeviceIndex :data="cpuData" />
   <DeviceIndex :data="chipsetData" />
 </template>
 
@@ -24,6 +24,7 @@ const cpuData = [
       devices: Object.entries(chipsJson.cpu)
         .filter(([, value]) => value.basic.series === series)
         .map(([key, value]) => ({
+          comparisonKey: key,
           name: value.basic.name,
           href: `${
             LANGUAGE_PREFIXES[locale.value as SupportedLanguage]

@@ -1,4 +1,5 @@
 export interface Device {
+  comparisonKey?: string
   name: string
   href: string
   image: string

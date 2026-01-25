@@ -7,12 +7,12 @@
         <Card
           v-for="device in category.devices"
           :key="device.href"
+          :comparison-key="device.comparisonKey"
           :name="device.name"
           :href="device.href"
           :image="device.image"
           :spec="device.spec"
           :tags="device.tags"
-          :show-compare-button="showCompareButton"
         />
       </div>
     </template>
@@ -23,7 +23,7 @@
 import Card from "./Card.vue"
 import type { DeviceFamily } from "types/device"
 
-defineProps<{ data: DeviceFamily[]; showCompareButton?: boolean }>()
+defineProps<{ data: DeviceFamily[] }>()
 </script>
 
 <style scoped>

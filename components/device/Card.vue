@@ -14,7 +14,7 @@
         </div>
       </div>
       <Button
-        v-if="showCompareButton"
+        v-if="isComparisonEnabled"
         class="floating-button"
         :label="
           isComparing
@@ -33,15 +33,13 @@ import { useI18n } from "vue-i18n"
 import { Button } from "primevue"
 import { useToast } from "primevue/usetoast"
 
-import chipsNameMap from "@data/chips_name_map.min.json"
-
 const props = defineProps<{
   name: string
   spec: string
   href: string
   image: string
   tags: string
-  showCompareButton: boolean
+  comparisonKey?: string
 }>()
 
 const { t } = useI18n()
@@ -50,6 +48,10 @@ const toast = useToast()
 const tags = computed(() => props.tags?.split(",").map((i) => i.trim()))
 
 // #region FIXME: to be refactor
+const isComparisonEnabled = computed(() => {
+  return props.comparisonKey !== undefined
+})
+
 const compareList: Ref<string[]> = ref([])
 
 const initCompareList = () => {
@@ -60,23 +62,25 @@ const initCompareList = () => {
 }
 
 onMounted(() => {
-  initCompareList()
+  if (isComparisonEnabled.value) initCompareList()
 })
 
 const isComparing = computed(() => {
-  return compareList.value.includes(chipsNameMap[props.name])
+  return isComparisonEnabled.value
+    ? compareList.value.includes(props.comparisonKey!)
+    : false
 })
 
 const toggleCompare = () => {
   compareList.value = JSON.parse(localStorage.getItem("cpuCompareList") || "[]")
   if (isComparing.value) {
     compareList.value = compareList.value.filter(
-      (id) => id !== chipsNameMap[props.name],
+      (id) => id !== props.comparisonKey!,
     )
   } else {
     if (compareList.value.length < 4) {
       // Limit to 4 chips for comparison
-      compareList.value.push(chipsNameMap[props.name])
+      compareList.value.push(props.comparisonKey!)
     } else {
       toast.add({
         severity: "info",
