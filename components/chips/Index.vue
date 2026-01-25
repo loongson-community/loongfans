@@ -10,7 +10,7 @@ import chipsJson from "@data/chips.min.json"
 import { LANGUAGE_PREFIXES } from "@vitepress/utils/language"
 
 import type { SupportedLanguage } from "@vitepress/utils/language"
-import type { DeviceFamily } from "@vitepress/locales/zh/devices"
+import type { DeviceFamily } from "types/device"
 
 const { t, locale } = useI18n()
 
