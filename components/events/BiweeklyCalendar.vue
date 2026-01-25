@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import _ from "lodash"
+import keyBy from "lodash/keyBy"
 import { useI18n } from "vue-i18n"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
@@ -70,7 +70,7 @@ const formatDateID = (d: Date) => {
   return `${y}-${m}-${day}`
 }
 
-const biweeklyIssueNumberByDateID = _.keyBy(data.biweeklyEvents, (be) => {
+const biweeklyIssueNumberByDateID = keyBy(data.biweeklyEvents, (be) => {
   return formatDateID(be.start)
 })
 
