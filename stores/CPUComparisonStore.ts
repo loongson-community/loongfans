@@ -60,10 +60,19 @@ export const useCPUComparisonStore = defineStore("cpuComparison", () => {
     onMounted(() => {
       const storedList = localStorage.getItem("cpuCompareList")
       if (storedList) {
+        let parsed: object
         try {
-          compareList.value = JSON.parse(storedList) as string[]
-        } catch (e) {
-          // do nothing in case of malformed localStorage data
+          parsed = JSON.parse(storedList)
+        } catch (/* eslint-disable-line @typescript-eslint/no-unused-vars */ e) {
+          // clear the invalid data
+          localStorage.removeItem("cpuCompareList")
+          return
+        }
+
+        if (Array.isArray(parsed)) {
+          if (parsed.every((item) => typeof item === "string")) {
+            compareList.value = parsed
+          }
         }
       }
     })
