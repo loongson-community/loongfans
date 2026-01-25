@@ -8,11 +8,11 @@
         <Button
           v-if="!props.fields.chipset"
           :label="
-            isComparing
+            comparisonStore.isIncludedInComparison(props.chips)
               ? $t('chips.buttons.remove_compare')
               : $t('chips.buttons.add_compare')
           "
-          @click="toggleCompare"
+          @click="comparisonStore.toggleComparison(props.chips)"
         />
       </div>
     </div>
@@ -363,7 +363,6 @@ import {
   defineComponent,
   h,
   ref,
-  onMounted,
   type ComputedRef,
   type Ref,
 } from "vue"
@@ -372,7 +371,6 @@ import { useI18n } from "vue-i18n"
 // PrimeVue
 import Button from "primevue/button"
 import DataView from "primevue/dataview"
-import { useToast } from "primevue/usetoast"
 import { useDialog } from "primevue/usedialog"
 
 import MaterialSymbolsHelpOutline from "~icons/material-symbols/help-outline"
@@ -385,10 +383,11 @@ import type {
   CPUInfoItem,
 } from "types/data"
 import type { ChipFieldsDescriptor } from "./fields"
+import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
 
 const { t } = useI18n()
-const toast = useToast()
 const dialog = useDialog()
+const comparisonStore = useCPUComparisonStore()
 
 const props = defineProps<{
   chips: string
@@ -400,46 +399,6 @@ const chipsDB: ChipInfoDB = chipsJson as ChipInfoDB
 // 根据字段类型获取芯片数据
 const cpuData: Ref<CPUInfoItem | null> = ref(null)
 const chipsetData: Ref<ChipsetInfoItem | null> = ref(null)
-
-const compareList: Ref<string[]> = ref([])
-
-const initCompareList = () => {
-  const storedList = localStorage.getItem("cpuCompareList")
-  if (storedList) {
-    compareList.value = JSON.parse(storedList)
-  }
-}
-
-onMounted(() => {
-  initCompareList()
-})
-
-const isComparing = computed(() => {
-  return compareList.value.includes(props.chips)
-})
-
-const toggleCompare = () => {
-  if (isComparing.value) {
-    compareList.value = compareList.value.filter((id) => id !== props.chips)
-  } else {
-    if (compareList.value.length < 4) {
-      // Limit to 4 chips for comparison
-      compareList.value.push(props.chips)
-    } else {
-      toast.add({
-        severity: "info",
-        summary: t("chips.notice"),
-        detail: t("chips.up_to_four_chips"),
-        life: 3000,
-      })
-      return
-    }
-  }
-  localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value))
-  window.dispatchEvent(new CustomEvent("cpuCompareListUpdated"))
-}
-
-// 加载芯片数据
 switch (props.fields.type) {
   case "cpu":
     cpuData.value = chipsDB.cpu[props.chips] || null

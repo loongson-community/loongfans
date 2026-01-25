@@ -8,7 +8,7 @@
             severity="danger"
             size="small"
             :label="$t('chips.buttons.clear')"
-            @click="clearCompare"
+            @click="comparisonStore.clearComparison()"
           />
         </div>
         <div
@@ -25,7 +25,7 @@
             severity="danger"
             size="small"
             :label="$t('chips.buttons.remove')"
-            @click="removeFromCompare(chip.basic.name)"
+            @click="comparisonStore.removeFromComparison(chip.basic.name)"
           />
         </div>
       </div>
@@ -624,48 +624,22 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, type Ref } from "vue"
+import { computed } from "vue"
 import { useI18n } from "vue-i18n"
 import Button from "primevue/button"
 
 import chipsJson from "@data/chips.min.json"
+import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
 import type { CPUInfoItem } from "types/data"
 
 const { t } = useI18n()
-
-// 初始化 LocalStorage
-const compareList: Ref<string[]> = ref([])
-
-const initCompareList = () => {
-  const storedList = localStorage.getItem("cpuCompareList")
-  if (storedList) {
-    compareList.value = JSON.parse(storedList)
-  }
-}
-
-onMounted(() => {
-  initCompareList()
-})
+const comparisonStore = useCPUComparisonStore()
 
 const chipsBeingCompared = computed(() => {
-  return compareList.value.map((chipId) => chipsJson.cpu[chipId] as CPUInfoItem)
-})
-
-// 删除对比选项
-const removeFromCompare = (chipName) => {
-  compareList.value = compareList.value.filter(
-    (id) => chipsJson.cpu[id].basic.name !== chipName,
+  return comparisonStore.compareList.map(
+    (chipId) => chipsJson.cpu[chipId] as CPUInfoItem,
   )
-  localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value))
-  window.dispatchEvent(new CustomEvent("cpuCompareListUpdated"))
-}
-
-// 清空对比列表
-const clearCompare = () => {
-  compareList.value = []
-  localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value))
-  window.dispatchEvent(new CustomEvent("cpuCompareListUpdated"))
-}
+})
 
 // 获取键值
 const getFieldValue = (chip, path) => {

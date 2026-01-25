@@ -21,17 +21,18 @@
             ? $t('chips.buttons.remove_compare')
             : $t('chips.buttons.add_compare')
         "
-        @click.prevent.stop="toggleCompare"
+        @click.prevent.stop="
+          comparisonStore.toggleComparison(props.comparisonKey!)
+        "
       />
     </div>
   </a>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, type Ref } from "vue"
-import { useI18n } from "vue-i18n"
+import { computed } from "vue"
 import { Button } from "primevue"
-import { useToast } from "primevue/usetoast"
+import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
 
 const props = defineProps<{
   name: string
@@ -42,59 +43,19 @@ const props = defineProps<{
   comparisonKey?: string
 }>()
 
-const { t } = useI18n()
-const toast = useToast()
+const comparisonStore = useCPUComparisonStore()
 
 const tags = computed(() => props.tags?.split(",").map((i) => i.trim()))
 
-// #region FIXME: to be refactor
 const isComparisonEnabled = computed(() => {
   return props.comparisonKey !== undefined
 })
 
-const compareList: Ref<string[]> = ref([])
-
-const initCompareList = () => {
-  const storedList = localStorage.getItem("cpuCompareList")
-  if (storedList) {
-    compareList.value = JSON.parse(storedList)
-  }
-}
-
-onMounted(() => {
-  if (isComparisonEnabled.value) initCompareList()
-})
-
 const isComparing = computed(() => {
   return isComparisonEnabled.value
-    ? compareList.value.includes(props.comparisonKey!)
+    ? comparisonStore.isIncludedInComparison(props.comparisonKey!)
     : false
 })
-
-const toggleCompare = () => {
-  compareList.value = JSON.parse(localStorage.getItem("cpuCompareList") || "[]")
-  if (isComparing.value) {
-    compareList.value = compareList.value.filter(
-      (id) => id !== props.comparisonKey!,
-    )
-  } else {
-    if (compareList.value.length < 4) {
-      // Limit to 4 chips for comparison
-      compareList.value.push(props.comparisonKey!)
-    } else {
-      toast.add({
-        severity: "info",
-        summary: t("chips.notice"),
-        detail: t("chips.up_to_four_chips"),
-        life: 3000,
-      })
-      return
-    }
-  }
-  localStorage.setItem("cpuCompareList", JSON.stringify(compareList.value))
-  window.dispatchEvent(new CustomEvent("cpuCompareListUpdated"))
-}
-// #endregion
 </script>
 
 <style scoped>

@@ -29,48 +29,19 @@
 <script setup lang="ts">
 import { useData } from "vitepress"
 import { useI18n } from "vue-i18n"
-import { ref, computed, onMounted, onUnmounted } from "vue"
+import { computed } from "vue"
 import IconArrowCircleLeftOutline from "~icons/material-symbols/arrow-circle-left-outline"
 import BackToTop from "./BackToTop.vue"
 import Button from "./Button.vue"
+import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
 import { getLocaleUrl } from "@vitepress/utils/language"
 
 const { frontmatter, page } = useData()
 const { locale, t } = useI18n()
-
-// 以下是对比列表的计数器
-const compareListLength = ref(0)
-
-const updateLength = () => {
-  const list = JSON.parse(localStorage.getItem("cpuCompareList") || "[]")
-  compareListLength.value = list.length
-}
+const comparisonStore = useCPUComparisonStore()
 
 const compareButtonText = computed(() => {
-  return t("chips.buttons.title") + " (" + compareListLength.value + ")"
-})
-
-// 监听 CPU 列表计数器事件
-const handleCounterChange = (e) => {
-  if (e.key === "cpuCompareList") {
-    updateLength()
-  }
-}
-
-// 在当前标签页监听计数器事件
-const handleCounterEvent = () => {
-  updateLength()
-}
-
-onMounted(() => {
-  updateLength()
-  window.addEventListener("counter", handleCounterChange)
-  window.addEventListener("cpuCompareListUpdated", handleCounterEvent)
-})
-
-onUnmounted(() => {
-  window.removeEventListener("counter", handleCounterChange)
-  window.removeEventListener("cpuCompareListUpdated", handleCounterEvent)
+  return t("chips.buttons.title") + " (" + comparisonStore.listLength + ")"
 })
 </script>
 
