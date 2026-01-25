@@ -86,33 +86,6 @@ export async function generateChipsDatabase(format_switch) {
   fs.writeFileSync(dataDir + "chips.min.json", JSON.stringify(chips))
 }
 
-// #region FIXME: to be refactored
-export function generateChipsName(format_switch) {
-  const nameKeyMap = {}
-  Object.keys(chips).forEach((category) => {
-    const categoryEntries = chips[category]
-    if (!categoryEntries || typeof categoryEntries !== "object") return
-    Object.entries(categoryEntries).forEach(([key, value]) => {
-      const name = value?.basic?.name
-      if (typeof name === "string" && name.length) {
-        nameKeyMap[name] = key
-      }
-    })
-  })
-  if (format_switch === 1) {
-    fs.writeFileSync(
-      dataDir + "chips_name_map.json",
-      JSON.stringify(nameKeyMap, null, "\t"),
-    )
-  }
-
-  fs.writeFileSync(
-    dataDir + "chips_name_map.min.json",
-    JSON.stringify(nameKeyMap),
-  )
-}
-// #endregion
-
 // Generate OS List
 export async function generateOsDatabase(format_switch) {
   const os = []
@@ -134,7 +107,6 @@ export async function generateOsDatabase(format_switch) {
 
 export async function generateAll(format_switch) {
   await generateChipsDatabase(format_switch)
-  generateChipsName(format_switch)
   await generateOsDatabase(format_switch)
 }
 
