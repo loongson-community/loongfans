@@ -1,5 +1,8 @@
 import DefaultTheme from "vitepress/theme"
 
+import { createPinia } from "pinia"
+import { uneval } from "devalue"
+
 // PrimeVue init
 import PrimeVue from "primevue/config"
 import ToastService from "primevue/toastservice"
@@ -44,6 +47,11 @@ export default {
   // 覆盖布局但继承功能
   Layout,
   enhanceApp({ app }: { app: App }) {
+    // State management init
+    const pinia = createPinia()
+    app.use(pinia)
+    uneval(pinia.state.value)
+
     // vue-i18n init
     app.use(i18n)
 
