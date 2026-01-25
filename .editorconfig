@@ -12,3 +12,6 @@ trim_trailing_whitespace = true
 
 [{*.md,*.mdx}]
 indent_size = 4
+
+[*Caddyfile]
+indent_style = tab
