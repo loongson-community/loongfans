@@ -4,7 +4,7 @@
     <template v-for="category in family.categories" :key="category.title">
       <h3>{{ category.title }}</h3>
       <div class="card-grid">
-        <Card
+        <DeviceCard
           v-for="device in category.devices"
           :key="device.href"
           :comparison-key="device.comparisonKey"
@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import Card from "./Card.vue"
+import DeviceCard from "./DeviceCard.vue"
 import type { DeviceFamily } from "types/device"
 
 defineProps<{ data: DeviceFamily[] }>()
