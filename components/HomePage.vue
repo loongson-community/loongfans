@@ -7,16 +7,28 @@
     <div class="site_nav_box">
       <div class="nav_list">
         <LinkGroup :title="$t('beginnerResources')">
-          <Link :href="`${basePath}/intro`" :name="t('introToLoongson')" />
-          <Link :href="`${basePath}/guides`" :name="t('usageGuides')" />
-          <Link :href="`${basePath}/os`" :name="t('operatingSystems')" />
-          <Link :href="`${basePath}/sdk`" :name="t('devGuides')" />
+          <HomePageLink
+            :href="`${basePath}/intro`"
+            :name="t('introToLoongson')"
+          />
+          <HomePageLink :href="`${basePath}/guides`" :name="t('usageGuides')" />
+          <HomePageLink
+            :href="`${basePath}/os`"
+            :name="t('operatingSystems')"
+          />
+          <HomePageLink :href="`${basePath}/sdk`" :name="t('devGuides')" />
         </LinkGroup>
 
         <LinkGroup :title="$t('supportMaterials')">
-          <Link :href="`${basePath}/chips`" :name="t('chipsData')" />
-          <Link :href="`${basePath}/devices`" :name="t('productSpecs')" />
-          <Link href="https://loong123.cn/" :name="t('compatibilityDb')" />
+          <HomePageLink :href="`${basePath}/chips`" :name="t('chipsData')" />
+          <HomePageLink
+            :href="`${basePath}/devices`"
+            :name="t('productSpecs')"
+          />
+          <HomePageLink
+            href="https://loong123.cn/"
+            :name="t('compatibilityDb')"
+          />
         </LinkGroup>
 
         <LinkGroupContact class="link-group-1" />
@@ -24,24 +36,45 @@
 
       <div class="nav_list">
         <LinkGroup :title="$t('communityResources')">
-          <Link :href="`${basePath}/biweekly`" :name="t('biweeklyMeeting')" />
-          <Link :href="`${basePath}/jobs`" :name="t('jobsAndBounties')" />
-          <Link
+          <HomePageLink
+            :href="`${basePath}/biweekly`"
+            :name="t('biweeklyMeeting')"
+          />
+          <HomePageLink
+            :href="`${basePath}/jobs`"
+            :name="t('jobsAndBounties')"
+          />
+          <HomePageLink
             :name="t('aboutGithubName')"
             href="https://github.com/loongson-community"
           />
-          <Link
+          <HomePageLink
             href="https://github.com/loongson-community/1024"
             :name="t('devBoardProgram')"
           />
-          <Link href="https://www.loongbbs.cn/" :name="t('communityForum')" />
-          <Link href="https://areweloongyet.com/" :name="t('areWeLoongYet')" />
+          <HomePageLink
+            href="https://www.loongbbs.cn/"
+            :name="t('communityForum')"
+          />
+          <HomePageLink
+            href="https://areweloongyet.com/"
+            :name="t('areWeLoongYet')"
+          />
         </LinkGroup>
 
         <LinkGroup :title="$t('communityResources')">
-          <Link href="https://www.loongson.cn/" :name="t('loongsonTech')" />
-          <Link href="https://www.loongeco.cn/" :name="t('loongsonEco')" />
-          <Link href="https://app.loongapps.cn/" :name="t('loongApps')" />
+          <HomePageLink
+            href="https://www.loongson.cn/"
+            :name="t('loongsonTech')"
+          />
+          <HomePageLink
+            href="https://www.loongeco.cn/"
+            :name="t('loongsonEco')"
+          />
+          <HomePageLink
+            href="https://app.loongapps.cn/"
+            :name="t('loongApps')"
+          />
         </LinkGroup>
 
         <LinkGroupContact class="link-group-2" />
@@ -53,7 +86,7 @@
 <script setup lang="ts">
 import { computed } from "vue"
 import { useData } from "vitepress"
-import Link from "./index/Link.vue"
+import HomePageLink from "./index/HomePageLink.vue"
 import LinkGroup from "./index/LinkGroup.vue"
 import LinkGroupContact from "./index/LinkGroupContact.vue"
 import { useI18n } from "vue-i18n"
