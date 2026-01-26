@@ -1,6 +1,6 @@
 <template>
   <div class="card-group">
-    <Card
+    <AboutSocialLink
       v-for="item in cardDataMap[locale]"
       :key="item.name"
       :name="item.name"
@@ -10,13 +10,13 @@
       :color="item.color"
     >
       <component :is="item.icon" />
-    </Card>
+    </AboutSocialLink>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
-import Card from "./Card.vue"
+import AboutSocialLink from "./AboutSocialLink.vue"
 import IconGithub from "~icons/simple-icons/github"
 import IconBilibili from "~icons/simple-icons/bilibili"
 import IconWechat from "~icons/simple-icons/wechat"
