@@ -18,6 +18,10 @@ jobs:
     steps:
       - name: Check out the source code
         uses: actions/checkout@v6
+      - name: Install distro packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y caddy
       - name: Enable Corepack for PNPM
         run: corepack enable
       - name: Set up Node.js
@@ -29,8 +33,11 @@ jobs:
         run: pnpm install
       - name: Lint Markdown files
         run: pnpm run lintMarkdown
-      - name: Check code style with Prettier
-        run: pnpm run lintPrettier
+      - name: Check code style
+        run: |
+          # Caddy in Ubuntu 24.04 is version 2.6.2, which lacks support for "-d"
+          caddy fmt --diff example.Caddyfile
+          pnpm run lintPrettier
       - name: Lint code with ESLint
         run: pnpm run eslint
       - name: Run codespell
