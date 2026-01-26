@@ -5,7 +5,7 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
-import DeviceIndex from "../device/Index.vue"
+import DeviceIndex from "../device/DeviceIndex.vue"
 import chipsDB from "@data/chips.min.json"
 import { LANGUAGE_PREFIXES } from "@vitepress/utils/language"
 
