@@ -16,7 +16,7 @@ import i18n from "./i18n"
 
 import "virtual:uno.css"
 import "./custom.css"
-import Layout from "./Layout.vue"
+import LoongfansLayout from "./LoongfansLayout.vue"
 import DeviceDetail from "@components/device/Detail.vue"
 import ChipTables from "@components/chips/ChipTables.vue"
 import CpuCompare from "@components/chips/compare/CpuCompare.vue"
@@ -45,7 +45,7 @@ export default {
   // 继承核心样式
   extends: DefaultTheme,
   // 覆盖布局但继承功能
-  Layout,
+  LoongfansLayout,
   enhanceApp({ app }: { app: App }) {
     // State management init
     const pinia = createPinia()
