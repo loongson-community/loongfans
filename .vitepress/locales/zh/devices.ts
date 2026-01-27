@@ -9,7 +9,7 @@ export const devices: DeviceFamily[] = [
         devices: [
           {
             name: "龙芯 AC612A0_V1.0",
-            href: "/pages/devices/loongson-ac612a0-v1.0",
+            href: "/devices/loongson-ac612a0-v1.0",
             image: "/images/devices/loongson-ac612a0-v1.0.thumbnail.webp",
             spec: "3C6000/S @ 2.3GHz, ATX",
             tags: "7A2000, 支持 ECC 内存, 台式机主板",
@@ -40,7 +40,7 @@ export const devices: DeviceFamily[] = [
           },
           {
             name: "龙芯 XB612B0_V1.2",
-            href: "/pages/devices/loongson-xb612b0-v1.2",
+            href: "/devices/loongson-xb612b0-v1.2",
             image: "/images/devices/loongson-xb612b0-v1.2.thumbnail.webp",
             spec: "3B6000 @ 2.3GHz, mATX",
             tags: "7A2000, 台式机主板",
@@ -85,7 +85,7 @@ export const devices: DeviceFamily[] = [
           },
           {
             name: "龙芯 XA612B0_v1.0",
-            href: "/pages/devices/loongson-xa612b0-v1.0",
+            href: "/devices/loongson-xa612b0-v1.0",
             image: "/images/devices/loongson-xa612b0-v1.0.thumbnail.webp",
             spec: "3A6000-HV @ 2.5GHz, ATX",
             tags: "7A2000, 台式机主板",
