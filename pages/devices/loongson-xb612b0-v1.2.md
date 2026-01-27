@@ -31,7 +31,7 @@ pageSubTitle: 龙芯 XB612B0_V1.2
 
 <template #known-issues>
 
-<!--@include: @/parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
+<!--@include: @/../parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
 </template>
 
@@ -58,7 +58,7 @@ pageSubTitle: 龙芯 XB612B0_V1.2
 
 <template #detail>
 
-<!--@include: @/parts/devices/changelist_V5.0.0343-stable2511.md -->
+<!--@include: @/../parts/devices/changelist_V5.0.0343-stable2511.md -->
 
 </template>
 
@@ -79,7 +79,7 @@ pageSubTitle: 龙芯 XB612B0_V1.2
 
 <template #detail>
 
-<!--@include: @/parts/devices/changelist_V5.0.0343-stable2511.md -->
+<!--@include: @/../parts/devices/changelist_V5.0.0343-stable2511.md -->
 
 </template>
 

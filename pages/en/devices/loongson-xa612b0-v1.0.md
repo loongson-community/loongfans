@@ -62,7 +62,7 @@ This update is primarily based on the RefCode Stable2511 baseline. Detailed upda
 
 <template #detail>
 
-<!--@include: @/parts/devices/changelist_V5.0.0343-stable2511.md -->
+<!--@include: @/../parts/devices/changelist_V5.0.0343-stable2511.md -->
 
 </template>
 
@@ -83,7 +83,7 @@ This update is primarily based on the RefCode Stable2511 baseline. Detailed upda
 
 <template #detail>
 
-<!--@include: @/parts/devices/changelist_V5.0.0343-stable2511.md -->
+<!--@include: @/../parts/devices/changelist_V5.0.0343-stable2511.md -->
 
 </template>
 
