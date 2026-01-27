@@ -8,6 +8,13 @@ export const devices: DeviceFamily[] = [
         title: "Motherboards and Development Boards",
         devices: [
           {
+            name: "Loongson AC612A0_V1.0",
+            href: "/en/devices/loongson-ac612a0-v1.0",
+            image: "/images/devices/loongson-ac612a0-v1.0.thumbnail.webp",
+            spec: "3C6000/S @ 2.3GHz, ATX",
+            tags: "7A2000, ECC memory support, Desktop Motherboard",
+          },
+          {
             name: "Loongson AC612A0_V1.1",
             href: "/en/devices/loongson-ac612a0-v1.1",
             image: "/images/devices/loongson-ac612a0-v1.1.thumbnail.webp",
@@ -28,6 +35,13 @@ export const devices: DeviceFamily[] = [
             name: "Loongson XB612B0_V1.1",
             href: "/en/devices/loongson-xb612b0-v1.1",
             image: "/images/devices/loongson-xb612b0-v1.1.thumbnail.webp",
+            spec: "3B6000 @ 2.3GHz, mATX",
+            tags: "7A2000, Desktop Motherboard",
+          },
+          {
+            name: "Loongson XB612B0_V1.2",
+            href: "/en/devices/loongson-xb612b0-v1.2",
+            image: "/images/devices/loongson-xb612b0-v1.2.thumbnail.webp",
             spec: "3B6000 @ 2.3GHz, mATX",
             tags: "7A2000, Desktop Motherboard",
           },
@@ -66,6 +80,13 @@ export const devices: DeviceFamily[] = [
             name: "Loongson XA612A0_v1.0",
             href: "/en/devices/loongson-xa612a0-v1.0",
             image: "/images/devices/loongson-xa612a0-v1.0.thumbnail.webp",
+            spec: "3A6000-HV @ 2.5GHz, ATX",
+            tags: "7A2000, Desktop Motherboard",
+          },
+          {
+            name: "Loongson XA612B0_v1.0",
+            href: "/en/devices/loongson-xa612b0-v1.0",
+            image: "/images/devices/loongson-xa612b0-v1.0.thumbnail.webp",
             spec: "3A6000-HV @ 2.5GHz, ATX",
             tags: "7A2000, Desktop Motherboard",
           },
