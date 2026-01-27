@@ -25,3 +25,8 @@ pnpm run build
 ```
 
 构建后的站点数据将被存放在 `./.vitepress/dist`。
+
+每次向 `main` 分支或任一 PR 进行推送，都会触发本站的 CI 任务，所构建的静态数据会被自动部署到相应的环境。目前的部署环境情况如下：
+
+* 生产环境 `production`：自建后端
+* 预览环境 `preview`：Cloudflare Pages
