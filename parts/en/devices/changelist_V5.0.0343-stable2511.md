@@ -1,50 +1,67 @@
-- 彻底摆脱了旧世界环境V3.1向前兼容包袱,全平台默认启动均切换为V4.0接口规范:
-  参考链接:  https://github.com/tianocore/edk2/
-  1. 默认将构建编译链从GCC8.3切到GCC12/13/14，完全复用EDK2社区编译链;
-  2. Setup界面去除Legacy启动方式选项,完全复用社区VA-> PA 1:1地址映射内存管理模式;
-  3. 告别老旧的UDK2018,全面切换EDK2025,LoongArch架构大部分基础设施API均复用EDK2社区;
+**Firmware/System Interface Updates**
 
-- RefCode 各代码模块全面升级:
-  1. 芯片组新增支持3B6000/3C6000/3D6000/3E6000/2K3000等系列单路/多路;
-  2. PHY、MRC、SMC、IPMI、MultiArch、EMMc 等软硬件代码模块经历多次磨合迭代升级;
+- Removed forward compatibility code for legacy (ABI1.0) environments (V3.1), switching all platforms to the V4.0 system interface specification ([Reference Link](https://github.com/tianocore/edk2/)).
+- Switched compiler toolchain from GCC 8.3 to GCC 12/13/14, adopting EDK2's community toolchain.
+- Removed legacy boot mode options from the setup interface, fully adopting 1:1 VA => PA address mapping.
+- Migrated from UDK2018 to EDK2025, with most LoongArch infrastructure APIs now aligning with upstream EDK2 implementations.
 
-- 公共层新增功能如下:
-  1. 服务器支持ACPI.EDAC 上报内核查询ECC功能;
-  2. 增加全新模拟器MultiArch支持第三方x86外设卡 OptionRom/EFI 模拟及过滤机制;[界面可配置是否开启]
-  3. 固件界面增加内存频率调整选项，不同机型可配频率可能会有区别; [界面提供恢复选项或拔CMOS电池可恢复原始状态]
-  4. 同步EDK2上游LoongArch架构多核唤醒、异常、MMU等逻辑;
-  5. 固件界面增加 DSM#5 选项来允许控制内核 PCIe 资源分配策略;
-  6. 支持部分国产外设驱动, 如: 华瑞RAID驱动、网讯25G/40G网卡PXE;
-  7. 3B/C/6000/S/D/Q系列支持LCL/PCIe.GEN4训练;
-  8. 部分机型完善SMC功耗限制、睿频、风扇监测控制等功能;
-  9. 支持界面可配置多显卡设备 UEFI 下同时显示选项;
-  10. 支持TPM/安全启动：支持 SHA384、SHA1512、SM3 算法等, TPM需硬件支持;
-  11. 部分机型支持 SE 设备模式上报 DSDT 表内资源描述。
-  12. 界面分离PCIe、硬盘、USB信息，加入硬盘详细信息展示界面。
-  13. 加入可调界面/控制台分辨率选项。
-  14. 更新 SRAT 表到 6.5，支持 x2Apic 扩展。
+**Module Upgrades**
 
-- 公共层修复功能如下:
-  1. 修复单路机器外接显卡和 BMC 显卡同时在位情况下，优先显示选择 All Video 可能触发的宕机问题;
-  2. 修复开机屏幕显示固件版本编译时间出现乱码问题;
-  3. 修复固件下 gmac 网络显示不出来问题;
-  4. 去除界面下 Legacy Mode 子选项;
-  5. 调整桥片频率为 750M;
-  6. 优化兼容 AST2500 和 LS2K0500 BMC命令协议, 修复IPMI显示问题和个别命令错误问题;
-  7. 优化增强 SMBIOS 表相关问题, 主要针对type7解决逻辑问题;
-  8. 优化部分固件界面选项;
-  9. 修复写 RTC LP 意外停止问题。
-  10. 优化 ACPI 表相关问题;
-  11. 修复BMC.2K0500 版本高于 v2.2.2 时 BMC.Web 界面不同步 SMBIOS 问题;
-  12. 修复个别中文翻译问题;
-  13. 修复界面Sata 口控制器开关顺序错乱问题;
-  14. 修复启动时 logo 显示可能会出现黑一下问题;
-  15. 修复BMC.2K500 SOL 没有输出的问题;
-  16. 修复 SATA P-N 反接、PCIe LnkCap2 修正;
-  17. 优化Emmc驱动支持2K3000系列;
-  18. ACPI 表适配改进全芯片 PPTT、热区Hwmon监测适配 3C6000 系列;
-  19. 关闭PTW, 避免由于内核页表问题引入数据错, 带内核普遍修复后打开;
-  20. 部分平台移除ACPI.GPIO 资源避免系统差异存在兼容性问题,待系统补齐后补充;
-  21. 优化 BMC 在位动态检测界面显示、FRU 数据扩展、USB 网口界面控制等;
+- Added support for platforms based on single or multiple 3B6000, 3C6000/{S,D,Q}, and 2K3000/3B6000M platforms.
+- Upgraded software/hardware modules for PHY, MRC, SMC, IPMI, MultiArch, eMMC, etc.
 
-以上是大部分变更说明, 因板卡差异可能会有些许偏差, 详细不再展开;
+**New Features**
+
+General feature upgrades:
+
+- Introduced MultiArchUefiPkgs to support x86 Option ROM/EFI emulation and filtering for third-party peripherals (may be enabled/disabled in firmware setup).
+- Introduced option to configure memory frequencies - lowering memory clock speed for enhanced compatibility when necessary (frequencies configurable may vary by model; firmware setup offers options for restoration, CMOS battery removal may also be used as a way to reset settings).
+- Added setup options for for adjustable interface and console resolutions.
+- Added DSM#5 option to control PCIe resource allocation strategy with the Linux kernel.
+- Added support for Chinese-origin peripherals including HRDT's RAID controllers and BZWX's 25/40GbE NICs.
+- Added multi-GPU options and making it possible to display simultaneously with different GPUs under UEFI.
+- Added TPM and Secure Boot functionality, with support for algorithms such as SHA-384, SHA-512, and SM3 (hardware TPM support required).
+- Separated PCIe, hard drive, and USB information views and added detailed hard drive information display
+- Updated SRAT version to version 6.5, adding support for x2APIC extension.
+- Synchronized LoongArch multi-core wake-up, exception handling, MMU logic, etc., from EDK2 upstream.
+
+Platform-Specific features:
+
+- Added PCIe 4.0 device training support for Loongson Coherent Link (LCL) platforms - 3B6000 and 3C6000/S/D/Q series.
+- Added 2K3000 eMMC support.
+- Added ACPI Thermal Zone/HWMon monitoring support for 3C6000.
+- Added ACPI EDAC support for server platforms, enabling ECC status query from Linux.
+- Enhanced SMC-based power limiting, "turbo boost", and fan monitoring/control for select models.
+- Supported Security Engine (SE) resource description reporting via DSDT tables on select models.
+
+**Fixes and Optimizations**
+
+General fixes:
+
+- Fixed potential system crashes when selecting "All Video" as the primary display on single-socket server platforms with both discrete and BMC graphics cards installed.
+- Resolved garbled firmware version and build time display on the boot screen.
+- Optimized SMBIOS table support, primarily fixing logical issues with DMI Type 7.
+- Addressed unexpected hangs during RTC LP write operations.
+- Fixed known ACPI table issues.
+- Fixed incorrect sequence on SATA port controller toggles.
+- Fixed several Chinese translation issues.
+- Fixed sporadic logo blanking during boot-up.
+
+Platform-specific fixes and adjustments:
+
+- Fixed an issue where information on GMAC NICs may fail to display on certain models.
+- Reduced 7A2000 bridge chip frequency to 750MHz on server platforms.
+- Optimized AST2500 and LS2K0500 BMC command protocol compatibility, fixing IPMI display issues and errors with certain commands.
+- Fixed SMBIOS information de-synchronization in the BMC's Wweb interface when using LS2K0500 BMC with firmware versions higher than v2.2.2.
+- Fixed issues with SATA P-N reverse wiring and incorrect PCIe LnkCap2 settings on certain platforms.
+- Fixed 2K0500 BMC Serial-over-LAN (SOL) output.
+- Fixed PPTT tables for multiple chips.
+- Disabled PTW feature to prevent data corruption caused by Linux kernel page table issues (will re-enable once kernel fixes are widely available).
+- Removed ACPI GPIO resource descriptions for some platforms to avoid compatibility issues (will be reinstated once operatings system support is widely available).
+
+Functional optimizations:
+
+- Enhanced various firmware setup interfaces.
+- Enhanced BMC presence detection and setup interface, adding FRU data extensions, USB port interface controls, and more.
+
+The information above are originally supplied by Loongson Technology's [Firmware Release Notes](https://github.com/loongson/Firmware/blob/main/docs/changelist_V5.0.0343-stable2511.md), re-organized and rephrased at several places for better readability.
