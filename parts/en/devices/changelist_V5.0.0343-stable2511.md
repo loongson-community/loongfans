@@ -1,16 +1,16 @@
-**Firmware/System Interface Updates**
+## Firmware/System Interface Updates
 
 - Removed forward compatibility code for legacy (ABI1.0) environments (V3.1), switching all platforms to the V4.0 system interface specification ([Reference Link](https://github.com/tianocore/edk2/)).
 - Switched compiler toolchain from GCC 8.3 to GCC 12/13/14, adopting EDK2's community toolchain.
 - Removed legacy boot mode options from the setup interface, fully adopting 1:1 VA => PA address mapping.
 - Migrated from UDK2018 to EDK2025, with most LoongArch infrastructure APIs now aligning with upstream EDK2 implementations.
 
-**Module Upgrades**
+## Module Upgrades
 
 - Added support for platforms based on single or multiple 3B6000, 3C6000/{S,D,Q}, and 2K3000/3B6000M platforms.
 - Upgraded software/hardware modules for PHY, MRC, SMC, IPMI, MultiArch, eMMC, etc.
 
-**New Features**
+## New Features
 
 General feature upgrades:
 
@@ -34,7 +34,7 @@ Platform-Specific features:
 - Enhanced SMC-based power limiting, "turbo boost", and fan monitoring/control for select models.
 - Supported Security Engine (SE) resource description reporting via DSDT tables on select models.
 
-**Fixes and Optimizations**
+## Fixes and Optimizations
 
 General fixes:
 
