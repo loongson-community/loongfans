@@ -649,7 +649,7 @@ const getFieldValue = (chip, path) => {
 // 判断是否相同
 const isSame = (chip, fieldPath) => {
   if (!chipsBeingCompared.value.length || !fieldPath) return true
-  const firstValue = getFieldValue(chipsBeingCompared.value[0].chip, fieldPath)
+  const firstValue = getFieldValue(chipsBeingCompared.value[0]!.chip, fieldPath)
   const currentValue = getFieldValue(chip, fieldPath)
   return JSON.stringify(firstValue) === JSON.stringify(currentValue)
 }
