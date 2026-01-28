@@ -21,7 +21,10 @@
     }
   },
   "include": [
+    "*.mts",
+    "*.ts",
     "components/**/*.vue",
+    ".vitepress/**/*.mts",
     ".vitepress/**/*.ts",
     ".vitepress/**/*.vue"
   ],
