@@ -185,9 +185,9 @@ export function validateData() {
 export async function generateAll(format_switch) {
   await generateChipsDatabase(format_switch)
   await generateOsDatabase(format_switch)
-  validateData()
 }
 
 // Default: Generating everyone without formatted data
 // If require formatted JSON files, set this function value to 1.
 generateAll(0).catch(console.error)
+validateData()

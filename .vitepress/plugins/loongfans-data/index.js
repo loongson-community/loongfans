@@ -1,4 +1,4 @@
-import { generateAll } from "./generateDatabase.js"
+import { generateAll, validateData } from "./generateDatabase.js"
 import process from "node:process"
 import { glob } from "node:fs/promises"
 
@@ -9,7 +9,7 @@ export default function AutoGenerateJson() {
   /** @type {import("vite").ViteDevServer | null} */
   let viteServer = null
 
-  // 运行生成脚本
+  // Run Generate Script
   const runGenerateScript = async () => {
     if (statusGenerating) {
       console.log("[AutoGenerateJson] Script is running, exiting...")
@@ -37,6 +37,19 @@ export default function AutoGenerateJson() {
     }
   }
 
+  // Run validate func
+  const runValidation = () => {
+    try {
+      validateData()
+    } catch (error) {
+      console.error("[JsonValidator] Validation failed:", error)
+      // Kill build process if validation failed
+      if (process.env.NODE_ENV === "production") {
+        throw error
+      }
+    }
+  }
+
   return {
     name: "auto-generate-json",
 
@@ -55,40 +68,45 @@ export default function AutoGenerateJson() {
       watcher = server.watcher
       watcher.add("./data")
 
-      // 监听YAML文件变化
-      watcher.on("change", (path) => {
+      // Monitor changes to JSON files
+      const handleJsonChange = (path) => {
+        if (path.endsWith(".json")) {
+          console.log(`[JsonValidator] Detected changes in JSON file: ${path}`)
+          // Delay 500ms for validating
+          if (debounceTimer) clearTimeout(debounceTimer)
+          debounceTimer = setTimeout(() => {
+            runValidation()
+          }, 500)
+        }
+      }
+
+      const handleYamlChange = (path, status) => {
         if (path.endsWith(".yml") || path.endsWith(".yaml")) {
-          console.log(
-            `[AutoGenerateJson] Detected changes in YAML file: ${path}`,
-          )
+          console.log(`[AutoGenerateJson] Detected ${status} in YAML file: ${path}`)
           // 延迟500ms执行
           if (debounceTimer) clearTimeout(debounceTimer)
           debounceTimer = setTimeout(() => {
             runGenerateScript()
           }, 500)
         }
+      }
+
+      // 监听YAML文件变化
+      watcher.on("change", (path) => {
+        handleYamlChange(path, "change")
+        handleJsonChange(path)
       })
 
       // 监听新增YAML文件
       watcher.on("add", (path) => {
-        if (path.endsWith(".yml") || path.endsWith(".yaml")) {
-          console.log(`[AutoGenerateJson] Detected new YAML file: ${path}`)
-          if (debounceTimer) clearTimeout(debounceTimer)
-          debounceTimer = setTimeout(() => {
-            runGenerateScript()
-          }, 500)
-        }
+        handleYamlChange(path, "new")
+        handleJsonChange(path)
       })
 
       // 监听删除YAML文件
       watcher.on("unlink", (path) => {
-        if (path.endsWith(".yml") || path.endsWith(".yaml")) {
-          console.log(`[AutoGenerateJson] Detected delete YAML file: ${path}`)
-          if (debounceTimer) clearTimeout(debounceTimer)
-          debounceTimer = setTimeout(() => {
-            runGenerateScript()
-          }, 500)
-        }
+        handleYamlChange(path, "delete")
+        handleJsonChange(path)
       })
     },
 
