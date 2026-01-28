@@ -204,6 +204,21 @@ const formattedSize = computed(() => {
   font-size: small;
 }
 
+.changelog-detail > :slotted(h2) {
+  /*
+   * Behave sufficiently like **emphasis**, i.e. effectively match style of
+   * `.vp-doc > p > strong` to the extent feasible.
+   *
+   * Removing padding is not done, for example, because it would shift the
+   * VP component's added "#" element out of place.
+   */
+  margin: 0;
+  border-top: none;
+  font-size: inherit;
+  line-height: 28px;
+  letter-spacing: inherit;
+}
+
 .upside-down {
   transform: rotate(180deg);
 }
