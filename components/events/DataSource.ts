@@ -48,18 +48,14 @@ export function getBiweeklyEvents(
   )
 
   const allBiweeklyEvents = events.filter((e) => /龙架构双周会/i.test(e.title))
-  const result = []
-  let nextEventIdx = null
-  for (
-    let issueNumber = 1;
-    issueNumber <= allBiweeklyEvents.length;
-    issueNumber++
-  ) {
-    const event = allBiweeklyEvents[issueNumber - 1]
+  const result: BiweeklyEventItem[] = []
+  let nextEventIdx: number | null = null
+  for (const [idx, event] of allBiweeklyEvents.entries()) {
+    const issueNumber = idx + 1
     const isFuture = event.start.getTime() > now.getTime()
     const isNext = isFuture && nextEventIdx === null
     if (isNext) {
-      nextEventIdx = issueNumber - 1
+      nextEventIdx = idx
     }
 
     result.push({

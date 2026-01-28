@@ -22,7 +22,7 @@ import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import IconQrCode2 from "~icons/material-symbols/qr-code-2"
 
 const props = defineProps<{
-  href: string
+  href?: string
   name: string
   qrLink?: string
 }>()
