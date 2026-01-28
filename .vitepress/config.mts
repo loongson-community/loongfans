@@ -3,6 +3,7 @@ import UnoCSS from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import { defineConfig } from "vitepress"
 import loongfansData from "./plugins/loongfans-data"
+import dataTypeValidator from "./plugins/json-validator"
 
 const srcDir = "pages"
 
@@ -38,7 +39,12 @@ export default defineConfig({
   // 完全禁用主题切换
   appearance: false,
   vite: {
-    plugins: [UnoCSS(), Icons({ scale: 1 }), loongfansData()],
+    plugins: [
+      UnoCSS(),
+      Icons({ scale: 1 }),
+      loongfansData(),
+      dataTypeValidator()
+    ],
     ssr: {
       noExternal: ["vue-i18n"],
     },
