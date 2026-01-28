@@ -46,6 +46,8 @@ jobs:
         uses: codespell-project/actions-codespell@v2
         with:
           check_filenames: true
+      - name: Type-check the codebase
+        run: pnpm run typecheck
       - name: Run build
         run: pnpm run build
       - name: Upload pages artifacts
