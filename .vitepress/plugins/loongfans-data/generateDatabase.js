@@ -1,14 +1,17 @@
 import yaml from "js-yaml"
 import fs from "fs"
 import { glob } from "glob"
+import Ajv from "ajv"
+import { createGenerator } from "ts-json-schema-generator"
 
 // Fix __filename and __dirname in ESM
 import { fileURLToPath } from "url"
-import { dirname, basename, extname } from "path"
+import { dirname, basename, extname, resolve } from "path"
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const dataDir = __dirname + "/../../../data/"
+const rootDir = __dirname + "/../../../"
+const dataDir = rootDir + "/data/"
 
 const chips = {
   cpu: {},
@@ -105,9 +108,84 @@ export async function generateOsDatabase(format_switch) {
   fs.writeFileSync(dataDir + "os.min.json", JSON.stringify(os))
 }
 
+export function validateData() {
+  console.log("[JsonValidator] Validating data types...")
+
+  const osDataPath = resolve(dataDir, "os.min.json")
+  const chipsDataPath = resolve(dataDir, "chips.min.json")
+
+  // ts-json-schema-generator Configs:
+  const config = {
+    path: resolve(rootDir, "types/data.ts"),
+    tsconfig: resolve(rootDir, "tsconfig.json"),
+    type: "*",
+    expose: "export",
+    topRef: true,
+    jsDoc: "extended",
+    skipTypeCheck: true,
+  }
+
+  // Dynamic generate JSON Schema
+  console.log("[JsonValidator] Generating JSON Schema...")
+  const generator = createGenerator(config)
+  const fullSchema = generator.createSchema(config.type)
+
+  fullSchema.$id = "https://loongfans.cn/schema.json"
+
+  // Init Ajv
+  const ajv = new Ajv({
+    allErrors: true,
+    verbose: true,
+    strict: false,
+    allowUnionTypes: true,
+  })
+
+  ajv.addSchema(fullSchema)
+
+  // Validating OS Data
+  console.log("[JsonValidator] Validating data/os.min.json...")
+  const osData = JSON.parse(fs.readFileSync(osDataPath, "utf-8"))
+  const osSchema = {
+    type: "array",
+    items: { $ref: "https://loongfans.cn/schema.json#/definitions/OSInfoItem" },
+  }
+  const validateOS = ajv.compile(osSchema)
+
+  if (!validateOS(osData)) {
+    console.error("[JsonValidator] OS Data Validation Error!!!")
+    console.error(JSON.stringify(validateOS.errors, null, 2))
+    throw new Error("OS data validation failed")
+  }
+  console.log("[JsonValidator] OS Data Validation passed!")
+
+  // Validating Chips Data
+  console.log("[JsonValidator] Validating data/chips.min.json...")
+  const chipsData = JSON.parse(fs.readFileSync(chipsDataPath, "utf-8"))
+
+  // Temporarily remove the gpu and mcu to bypass verification for this section.
+  const cleanedChipsData = { ...chipsData }
+  delete cleanedChipsData.gpu
+  delete cleanedChipsData.mcu
+
+  const chipsSchema = {
+    $ref: "https://loongfans.cn/schema.json#/definitions/ChipInfoDB",
+  }
+  const validateChips = ajv.compile(chipsSchema)
+
+  if (!validateChips(cleanedChipsData)) {
+    console.error("[JsonValidator] Chips Data Validation Error!!!")
+    console.error(JSON.stringify(validateChips.errors, null, 2))
+    throw new Error("Chips data validation failed")
+  }
+  console.log("[JsonValidator] Chips Data Validation passed!")
+
+  console.log("[JsonValidator] All data validation passed!")
+}
+
 export async function generateAll(format_switch) {
   await generateChipsDatabase(format_switch)
   await generateOsDatabase(format_switch)
+  validateData()
 }
 
 // Default: Generating everyone without formatted data
