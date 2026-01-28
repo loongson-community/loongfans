@@ -9,7 +9,7 @@ export default function AutoGenerateJson() {
   /** @type {import("vite").ViteDevServer | null} */
   let viteServer = null
 
-  // 运行生成脚本
+  // Run Generate Script
   const runGenerateScript = async () => {
     if (statusGenerating) {
       console.log("[AutoGenerateJson] Script is running, exiting...")
@@ -32,6 +32,10 @@ export default function AutoGenerateJson() {
       }
     } catch (error) {
       console.error("[AutoGenerateJson] Error:", error)
+      // Kill build process if validation failed
+      if (process.env.NODE_ENV === "production") {
+        throw error
+      }
     } finally {
       statusGenerating = false
     }
@@ -55,11 +59,10 @@ export default function AutoGenerateJson() {
       watcher = server.watcher
       watcher.add("./data")
 
-      // 监听YAML文件变化
-      watcher.on("change", (path) => {
+      const handleYamlChange = (path, status) => {
         if (path.endsWith(".yml") || path.endsWith(".yaml")) {
           console.log(
-            `[AutoGenerateJson] Detected changes in YAML file: ${path}`,
+            `[AutoGenerateJson] Detected ${status} in YAML file: ${path}`,
           )
           // 延迟500ms执行
           if (debounceTimer) clearTimeout(debounceTimer)
@@ -67,28 +70,21 @@ export default function AutoGenerateJson() {
             runGenerateScript()
           }, 500)
         }
+      }
+
+      // 监听YAML文件变化
+      watcher.on("change", (path) => {
+        handleYamlChange(path, "change")
       })
 
       // 监听新增YAML文件
       watcher.on("add", (path) => {
-        if (path.endsWith(".yml") || path.endsWith(".yaml")) {
-          console.log(`[AutoGenerateJson] Detected new YAML file: ${path}`)
-          if (debounceTimer) clearTimeout(debounceTimer)
-          debounceTimer = setTimeout(() => {
-            runGenerateScript()
-          }, 500)
-        }
+        handleYamlChange(path, "new")
       })
 
       // 监听删除YAML文件
       watcher.on("unlink", (path) => {
-        if (path.endsWith(".yml") || path.endsWith(".yaml")) {
-          console.log(`[AutoGenerateJson] Detected delete YAML file: ${path}`)
-          if (debounceTimer) clearTimeout(debounceTimer)
-          debounceTimer = setTimeout(() => {
-            runGenerateScript()
-          }, 500)
-        }
+        handleYamlChange(path, "delete")
       })
     },
 
