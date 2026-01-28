@@ -628,9 +628,8 @@ import { computed } from "vue"
 import { useI18n } from "vue-i18n"
 import Button from "primevue/button"
 
-import chipsJson from "@data/chips.min.json"
+import chipsDB from "@data/chips.min.json"
 import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
-import type { CPUInfoItem } from "types/data"
 
 const { t } = useI18n()
 const comparisonStore = useCPUComparisonStore()
@@ -638,7 +637,7 @@ const comparisonStore = useCPUComparisonStore()
 const chipsBeingCompared = computed(() => {
   return comparisonStore.compareList.map((chipId) => ({
     id: chipId,
-    chip: chipsJson.cpu[chipId] as CPUInfoItem,
+    chip: chipsDB.cpu[chipId]!,
   }))
 })
 

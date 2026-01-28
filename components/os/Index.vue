@@ -21,23 +21,21 @@ import { computed, reactive } from "vue"
 import ToggleButton from "primevue/togglebutton"
 import OsCard from "./OsCard.vue"
 import { useTagTranslation } from "./TagTranslation"
-import type { OSInfoItem, OSTag } from "types/data"
+import type { OSTag } from "types/data"
 
-import osDataJson from "@data/os.min.json"
+import osData from "@data/os.min.json"
 
 const { translateTag } = useTagTranslation()
 
-const tagSet = computed(
-  () => new Set((osDataJson as OSInfoItem[]).flatMap((i) => i.tags)),
-)
+const tagSet = computed(() => new Set(osData.flatMap((i) => i.tags)))
 const selectedTags = reactive<Record<string, boolean>>({})
 
 const filteredOsList = computed(() => {
   const activeTags = Object.keys(selectedTags).filter(
     (t: string) => selectedTags[t],
   )
-  if (activeTags.length === 0) return osDataJson as OSInfoItem[]
-  return (osDataJson as OSInfoItem[]).filter((os) =>
+  if (activeTags.length === 0) return osData
+  return osData.filter((os) =>
     activeTags.every((t: string) => os.tags.includes(t as OSTag)),
   )
 })

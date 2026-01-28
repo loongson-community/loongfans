@@ -375,13 +375,8 @@ import { useDialog } from "primevue/usedialog"
 
 import MaterialSymbolsHelpOutline from "~icons/material-symbols/help-outline"
 import * as ChipDescriptions from "./ChipDescriptions.vue"
-import chipsJson from "@data/chips.min.json"
-import type {
-  ChipCommonInfo,
-  ChipInfoDB,
-  ChipsetInfoItem,
-  CPUInfoItem,
-} from "types/data"
+import chipsDB from "@data/chips.min.json"
+import type { ChipCommonInfo, ChipsetInfoItem, CPUInfoItem } from "types/data"
 import type { ChipFieldsDescriptor } from "./fields"
 import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
 
@@ -393,8 +388,6 @@ const props = defineProps<{
   chips: string
   fields: ChipFieldsDescriptor
 }>()
-
-const chipsDB: ChipInfoDB = chipsJson as ChipInfoDB
 
 // 根据字段类型获取芯片数据
 const cpuData: Ref<CPUInfoItem | null> = ref(null)
