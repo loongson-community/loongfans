@@ -114,6 +114,7 @@ export default function AutoGenerateJson() {
       if (process.env.NODE_ENV === "production") {
         console.log("[AutoGenerateJson] Generating...")
         runGenerateScript()
+        runValidation()
       }
     },
   }
