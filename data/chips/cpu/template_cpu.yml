@@ -1,6 +1,6 @@
 basic:
-  name:
-  series:
+  name: ""
+  series: ""
   market: 1 # 1=桌面 2=移动 3=服务器 4=嵌入式
 
 ext_info:
@@ -8,8 +8,8 @@ ext_info:
   manual: ""
 
 cpu:
-  cores:
-  threads:
+  cores: 0
+  threads: 0
   arch: ""
   freq: ""
   l1_inst_cache: ""
@@ -33,18 +33,19 @@ memory:
 exp:
   io_name: ""
   io_rev: ""
-  lanes:
-  usb_5gbps:
-  usb2:
-  sata:
-  eth:
-  spi:
-  uart:
-  i2c:
-  gpio:
-  avs:
+  lanes: 0
+  usb_5gbps: 0
+  usb2: 0
+  sata: 0
+  eth: 0
+  spi: 0
+  uart: 0
+  i2c: 0
+  gpio: 0
+  avs: 0
   d2d: false # true=支持 false=不支持
-  d2d_name:
+  d2d_name: ""
+  other: ""
 
 package:
   socket: ""
