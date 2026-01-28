@@ -43,7 +43,7 @@ export default defineConfig({
       UnoCSS(),
       Icons({ scale: 1 }),
       loongfansData(),
-      dataTypeValidator()
+      dataTypeValidator(),
     ],
     ssr: {
       noExternal: ["vue-i18n"],
