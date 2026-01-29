@@ -38,7 +38,11 @@ export default defineConfig({
   // 完全禁用主题切换
   appearance: false,
   vite: {
-    plugins: [UnoCSS(), Icons({ scale: 1 }), loongfansData()],
+    plugins: [
+      UnoCSS(),
+      Icons({ scale: 1 }),
+      loongfansData(),
+    ],
     ssr: {
       noExternal: ["vue-i18n"],
     },
