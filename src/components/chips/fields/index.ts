@@ -1,7 +1,4 @@
-export enum ChipType {
-  CPU = "cpu",
-  CHIPSET = "chipset",
-}
+export type ChipType = "cpu" | "chipset"
 
 export enum ChipFieldCategory {
   BASIC = "basic",
