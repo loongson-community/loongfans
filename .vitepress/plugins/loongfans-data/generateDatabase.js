@@ -43,27 +43,28 @@ const ajv = new Ajv({
   allowUnionTypes: true,
 })
 ajv.addSchema(jsonFullSchema)
+
+const chipsSchema = {
+  $ref: "https://loongfans.cn/schema.json#/definitions/ChipInfoDB",
+}
+
+const osSchema = {
+  type: "array",
+  items: { $ref: "https://loongfans.cn/schema.json#/definitions/OSInfoItem" },
+}
 // AJV configs End
 
 const glob_options = {
   ignore: ["**/template*.yml"],
 }
 
-function validateData(name, data, schema) {
-  let dataNames = name.toString() // Force conversion to String to output normal logs
-  console.log("[JsonValidator] Validating data types...")
-  console.log("[JsonValidator] Generating JSON Schema...")
-  console.log(`[JsonValidator] Validating ${dataNames} data...`)
-
-  const jsonSchema = schema
-  const validateOS = ajv.compile(jsonSchema)
-
-  if (!validateOS(data)) {
-    console.error(`[JsonValidator] ${dataNames} JSON Data Validation Error!!!`)
-    console.error(JSON.stringify(validateOS.errors, null, 2))
+function validateData(typ, data, schema) {
+  const validator = ajv.compile(schema)
+  if (!validator(data)) {
+    console.error(`[JsonValidator] ${typ} JSON Data Validation Error!!!`)
+    console.error(JSON.stringify(validator.errors, null, 2))
     throw new Error("JSON data validation failed")
   }
-  console.log(`[JsonValidator] ${dataNames} Data Validation passed!`)
 }
 
 // 以文件名进行排序
@@ -126,10 +127,6 @@ export async function generateChipsDatabase(format_switch) {
     chips.chipset[basename(files, extname(files))] = jsonResult
   })
 
-  const chipsSchema = {
-    $ref: "https://loongfans.cn/schema.json#/definitions/ChipInfoDB",
-  }
-
   // Temporarily remove the gpu and mcu to bypass verification for this section.
   const cleanedChipsData = { ...chips }
   delete cleanedChipsData.gpu
@@ -157,10 +154,6 @@ export async function generateOsDatabase(format_switch) {
     os.push(jsonResult)
   })
 
-  const osSchema = {
-    type: "array",
-    items: { $ref: "https://loongfans.cn/schema.json#/definitions/OSInfoItem" },
-  }
   validateData("OS", os, osSchema)
 
   if (format_switch === 1) {
