@@ -1,4 +1,4 @@
-import type { DeviceFamily } from "types/device"
+import type { DeviceFamily } from "@src/types/device"
 
 export const devices: DeviceFamily[] = [
   {

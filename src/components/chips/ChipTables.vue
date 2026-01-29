@@ -372,13 +372,17 @@ import { useI18n } from "vue-i18n"
 import Button from "primevue/button"
 import DataView from "primevue/dataview"
 import { useDialog } from "primevue/usedialog"
-
 import MaterialSymbolsHelpOutline from "~icons/material-symbols/help-outline"
-import * as ChipDescriptions from "./ChipDescriptions.vue"
+
 import chipsDB from "@data/chips.min.json"
-import type { ChipCommonInfo, ChipsetInfoItem, CPUInfoItem } from "types/data"
+import { useCPUComparisonStore } from "@src/stores/CPUComparisonStore"
+import type {
+  ChipCommonInfo,
+  ChipsetInfoItem,
+  CPUInfoItem,
+} from "@src/types/data"
+import * as ChipDescriptions from "./ChipDescriptions.vue"
 import type { ChipFieldsDescriptor } from "./fields"
-import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
 
 const { t } = useI18n()
 const dialog = useDialog()

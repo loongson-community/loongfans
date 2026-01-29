@@ -19,9 +19,10 @@
 <script setup lang="ts">
 import { computed, reactive } from "vue"
 import ToggleButton from "primevue/togglebutton"
+
+import type { OSTag } from "@src/types/data"
 import OsCard from "./OsCard.vue"
 import { useTagTranslation } from "./TagTranslation"
-import type { OSTag } from "types/data"
 
 import osData from "@data/os.min.json"
 

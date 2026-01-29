@@ -1,4 +1,4 @@
-import type { OSInfoItem } from "@root/types/data"
+import type { OSInfoItem } from "@src/types/data"
 
 const value: OSInfoItem[]
 export default value

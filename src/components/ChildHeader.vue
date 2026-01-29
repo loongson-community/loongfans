@@ -35,10 +35,11 @@ import { useData } from "vitepress"
 import { useI18n } from "vue-i18n"
 import { computed } from "vue"
 import IconArrowCircleLeftOutline from "~icons/material-symbols/arrow-circle-left-outline"
+
+import { useCPUComparisonStore } from "@src/stores/CPUComparisonStore"
+import { getLocaleUrl } from "@vitepress/utils/language"
 import BackToTop from "./BackToTop.vue"
 import ChildHeaderButton from "./ChildHeaderButton.vue"
-import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
-import { getLocaleUrl } from "@vitepress/utils/language"
 
 const { frontmatter, page } = useData()
 const { locale, t } = useI18n()

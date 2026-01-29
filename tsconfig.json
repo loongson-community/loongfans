@@ -14,16 +14,17 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./pages/*"],
-      "@components/*": ["./components/*"],
+      "@src/*": ["./src/*"],
       "@data/*": ["./data/*"],
-      "@root/*": ["./*"],
       "@vitepress/*": ["./.vitepress/*"]
     }
   },
   "include": [
     "*.mts",
     "*.ts",
-    "components/**/*.vue",
+    "src/**/*.mts",
+    "src/**/*.ts",
+    "src/**/*.vue",
     ".vitepress/**/*.mts",
     ".vitepress/**/*.ts",
     ".vitepress/**/*.vue"

@@ -23,9 +23,9 @@ import {
     getBiweeklySlideLink,
     wemeetLink,
     wemeetNumber,
-} from "@components/events/BiweeklyLinks"
-import { getBiweeklyEvents, type BiweeklyEventItem } from '@components/events/DataSource'
-import BiweeklyCalendar from "@components/events/BiweeklyCalendar.vue"
+} from "@src/components/events/BiweeklyLinks"
+import { getBiweeklyEvents, type BiweeklyEventItem } from '@src/components/events/DataSource'
+import BiweeklyCalendar from "@src/components/events/BiweeklyCalendar.vue"
 import eventsICS from "@data/events/events.ics?raw"
 
 const { d, locale, tm } = useI18n()

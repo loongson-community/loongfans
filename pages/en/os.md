@@ -7,7 +7,7 @@ pageSubTitle: Operating Systems for LoongArch
 ---
 
 <script setup lang="ts">
-import OsIndex from "@components/os/OsIndex.vue"
+import OsIndex from "@src/components/os/OsIndex.vue"
 </script>
 
 <OsIndex />

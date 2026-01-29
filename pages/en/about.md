@@ -6,7 +6,7 @@ pageSubTitle: That Mysterious Community for Mysterious Processors
 ---
 
 <script setup lang="ts">
-import AboutSocialLinks from "@components/about/AboutSocialLinks.vue"
+import AboutSocialLinks from "@src/components/about/AboutSocialLinks.vue"
 </script>
 
 ![Logo of the Loongson Hobbyists' Community](/en/images/logo_about.webp)

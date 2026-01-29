@@ -629,7 +629,7 @@ import { useI18n } from "vue-i18n"
 import Button from "primevue/button"
 
 import chipsDB from "@data/chips.min.json"
-import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
+import { useCPUComparisonStore } from "@src/stores/CPUComparisonStore"
 
 const { t } = useI18n()
 const comparisonStore = useCPUComparisonStore()

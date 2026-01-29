@@ -16,7 +16,7 @@ import type {
   OSInfoItem,
   ChipsetInfoItem,
   CPUInfoItem,
-} from "@root/types/data"
+} from "@src/types/data"
 
 // Artificial JSON schemas for verification
 const jsonSchemaNamespace = "https://loongfans.cn/schema.json"
@@ -82,7 +82,7 @@ class DatabaseGenerator {
 
     // validation
     const tsJSONSchemaConfig: Config = {
-      path: resolve(this.projectRoot, "types/data.ts"),
+      path: resolve(this.projectRoot, "src/types/data.ts"),
       tsconfig: resolve(this.projectRoot, "tsconfig.json"),
       type: "*",
       expose: "export",

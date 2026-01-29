@@ -20,8 +20,8 @@
 </template>
 
 <script setup lang="ts">
+import type { DeviceFamily } from "@src/types/device"
 import DeviceCard from "./DeviceCard.vue"
-import type { DeviceFamily } from "types/device"
 
 defineProps<{ data: DeviceFamily[] }>()
 </script>

@@ -5,12 +5,12 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
-import DeviceIndex from "../device/DeviceIndex.vue"
-import chipsDB from "@data/chips.min.json"
-import { LANGUAGE_PREFIXES } from "@vitepress/utils/language"
 
+import chipsDB from "@data/chips.min.json"
+import type { DeviceFamily } from "@src/types/device"
+import { LANGUAGE_PREFIXES } from "@vitepress/utils/language"
 import type { SupportedLanguage } from "@vitepress/utils/language"
-import type { DeviceFamily } from "types/device"
+import DeviceIndex from "../device/DeviceIndex.vue"
 
 const { t, locale } = useI18n()
 

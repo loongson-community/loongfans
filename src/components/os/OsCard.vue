@@ -22,10 +22,10 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
-
 import IconOpenInNew from "~icons/material-symbols/open-in-new"
+
+import type { LocalizedString, OSInfoItem } from "@src/types/data"
 import { useTagTranslation } from "./TagTranslation"
-import type { LocalizedString, OSInfoItem } from "types/data"
 
 const { data } = defineProps<{ data: OSInfoItem }>()
 const { locale } = useI18n()

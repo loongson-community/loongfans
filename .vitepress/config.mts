@@ -47,9 +47,8 @@ export default defineConfig({
         // `@` is an alias of `srcDir` in vitepress
         // e.g. when using markdown file inclusion
         "@": resolve(__dirname, `../${srcDir}`),
-        "@components": resolve(__dirname, "../components"),
+        "@src": resolve(__dirname, "../src"),
         "@data": resolve(__dirname, "../data"),
-        "@root": resolve(__dirname, "../"),
         "@vitepress": resolve(__dirname, "./"),
       },
     },

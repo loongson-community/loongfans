@@ -6,7 +6,7 @@ pageSubTitle: 在此了解和比较龙芯处理器及外围芯片的参数和性
 ---
 
 <script setup lang="ts">
-import ChipsIndex from "@components/chips/ChipsIndex.vue"
+import ChipsIndex from "@src/components/chips/ChipsIndex.vue"
 </script>
 
 <ChipsIndex />

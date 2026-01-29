@@ -7,7 +7,7 @@ pageSubTitle: 龙架构开发入门及注意事项
 ---
 
 <script setup lang="ts">
-import SdkIndex from "@components/sdk/SdkIndex.vue"
+import SdkIndex from "@src/components/sdk/SdkIndex.vue"
 </script>
 
 在非 x86 场景下，许多开发者朋友们可能会问：
