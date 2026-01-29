@@ -61,58 +61,8 @@ function sortNamesNormal(a, b) {
   return a.localeCompare(b)
 }
 
-export async function generateChipsDatabase(format_switch) {
-  // CPUs
-  const cpu = await glob(dataDir + "chips/cpu/**/*.yml", glob_options)
-  cpu.sort((a, b) =>
-    sortNames(basename(a, extname(a)), basename(b, extname(b))),
-  )
-  cpu.forEach((files) => {
-    let yamlFile = fs.readFileSync(files, "utf-8")
-    let jsonResult = yaml.load(yamlFile)
-    chips.cpu[basename(files, extname(files))] = jsonResult
-  })
-
-  // Chipsets
-  const chipset = await glob(dataDir + "chips/chipset/**/*.yml", glob_options)
-  chipset.sort((a, b) =>
-    sortNames(basename(a, extname(a)), basename(b, extname(b))),
-  )
-  chipset.forEach((files) => {
-    let yamlFile = fs.readFileSync(files, "utf-8")
-    let jsonResult = yaml.load(yamlFile)
-    chips.chipset[basename(files, extname(files))] = jsonResult
-  })
-  if (format_switch === 1) {
-    fs.writeFileSync(dataDir + "chips.json", JSON.stringify(chips, null, "\t"))
-  }
-  fs.writeFileSync(dataDir + "chips.min.json", JSON.stringify(chips))
-}
-
-// Generate OS List
-export async function generateOsDatabase(format_switch) {
-  const os = []
-  const os_list = await glob(dataDir + "os/**/*.yml", glob_options)
-  os_list.sort((a, b) =>
-    sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
-  )
-  os_list.forEach((files) => {
-    let yamlFile = fs.readFileSync(files, "utf-8")
-    let jsonResult = yaml.load(yamlFile)
-    os.push(jsonResult)
-  })
-
-  if (format_switch === 1) {
-    fs.writeFileSync(dataDir + "os.json", JSON.stringify(os, null, "\t"))
-  }
-  fs.writeFileSync(dataDir + "os.min.json", JSON.stringify(os))
-}
-
-export function validateData() {
+function validateData(name, data, schema) {
   console.log("[JsonValidator] Validating data types...")
-
-  const osDataPath = resolve(dataDir, "os.min.json")
-  const chipsDataPath = resolve(dataDir, "chips.min.json")
 
   // ts-json-schema-generator Configs:
   const config = {
@@ -143,43 +93,82 @@ export function validateData() {
   ajv.addSchema(fullSchema)
 
   // Validating OS Data
-  console.log("[JsonValidator] Validating data/os.min.json...")
-  const osData = JSON.parse(fs.readFileSync(osDataPath, "utf-8"))
-  const osSchema = {
-    type: "array",
-    items: { $ref: "https://loongfans.cn/schema.json#/definitions/OSInfoItem" },
-  }
-  const validateOS = ajv.compile(osSchema)
+  console.log(`[JsonValidator] Validating ${name} data...`)
+  const jsonSchema = schema
+  const validateOS = ajv.compile(jsonSchema)
 
-  if (!validateOS(osData)) {
-    console.error("[JsonValidator] OS Data Validation Error!!!")
+  if (!validateOS(data)) {
+    console.error(`[JsonValidator] ${name} JSON Data Validation Error!!!`)
     console.error(JSON.stringify(validateOS.errors, null, 2))
-    throw new Error("OS data validation failed")
+    throw new Error("JSON data validation failed")
   }
-  console.log("[JsonValidator] OS Data Validation passed!")
+  console.log(`[JsonValidator] ${name} Data Validation passed!`)
+}
 
-  // Validating Chips Data
-  console.log("[JsonValidator] Validating data/chips.min.json...")
-  const chipsData = JSON.parse(fs.readFileSync(chipsDataPath, "utf-8"))
+export async function generateChipsDatabase(format_switch) {
+  // CPUs
+  const cpu = await glob(dataDir + "chips/cpu/**/*.yml", glob_options)
+  cpu.sort((a, b) =>
+    sortNames(basename(a, extname(a)), basename(b, extname(b))),
+  )
+  cpu.forEach((files) => {
+    let yamlFile = fs.readFileSync(files, "utf-8")
+    let jsonResult = yaml.load(yamlFile)
+    chips.cpu[basename(files, extname(files))] = jsonResult
+  })
+
+  // Chipsets
+  const chipset = await glob(dataDir + "chips/chipset/**/*.yml", glob_options)
+  chipset.sort((a, b) =>
+    sortNames(basename(a, extname(a)), basename(b, extname(b))),
+  )
+  chipset.forEach((files) => {
+    let yamlFile = fs.readFileSync(files, "utf-8")
+    let jsonResult = yaml.load(yamlFile)
+    chips.chipset[basename(files, extname(files))] = jsonResult
+  })
+
+  const chips_schema = {
+    $ref: "https://loongfans.cn/schema.json#/definitions/ChipInfoDB",
+  }
 
   // Temporarily remove the gpu and mcu to bypass verification for this section.
-  const cleanedChipsData = { ...chipsData }
+  const cleanedChipsData = { ...chips }
   delete cleanedChipsData.gpu
   delete cleanedChipsData.mcu
 
-  const chipsSchema = {
-    $ref: "https://loongfans.cn/schema.json#/definitions/ChipInfoDB",
-  }
-  const validateChips = ajv.compile(chipsSchema)
+  validateData("Chips", cleanedChipsData, chips_schema)
 
-  if (!validateChips(cleanedChipsData)) {
-    console.error("[JsonValidator] Chips Data Validation Error!!!")
-    console.error(JSON.stringify(validateChips.errors, null, 2))
-    throw new Error("Chips data validation failed")
+  if (format_switch === 1) {
+    fs.writeFileSync(dataDir + "chips.json", JSON.stringify(chips, null, "\t"))
   }
-  console.log("[JsonValidator] Chips Data Validation passed!")
+  fs.writeFileSync(dataDir + "chips.min.json", JSON.stringify(chips))
+}
 
-  console.log("[JsonValidator] All data validation passed!")
+// Generate OS List
+export async function generateOsDatabase(format_switch) {
+  const os = []
+
+  const os_list = await glob(dataDir + "os/**/*.yml", glob_options)
+  os_list.sort((a, b) =>
+    sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
+  )
+  os_list.forEach((files) => {
+    let yamlFile = fs.readFileSync(files, "utf-8")
+    let jsonResult = yaml.load(yamlFile)
+    os.push(jsonResult)
+  })
+
+  const os_schema = {
+    type: "array",
+    items: { $ref: "https://loongfans.cn/schema.json#/definitions/OSInfoItem" },
+  }
+  validateData("OS", os, os_schema)
+
+  if (format_switch === 1) {
+    fs.writeFileSync(dataDir + "os.json", JSON.stringify(os, null, "\t"))
+  }
+  fs.writeFileSync(dataDir + "os.min.json", JSON.stringify(os))
 }
 
 export async function generateAll(format_switch) {
@@ -190,4 +179,3 @@ export async function generateAll(format_switch) {
 // Default: Generating everyone without formatted data
 // If require formatted JSON files, set this function value to 1.
 generateAll(0).catch(console.error)
-validateData()
