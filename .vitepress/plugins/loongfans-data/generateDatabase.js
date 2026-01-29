@@ -14,11 +14,23 @@ const __dirname = dirname(__filename)
 // Artificial JSON schemas for verification
 const jsonSchemaNamespace = "https://loongfans.cn/schema.json"
 
-const chipsSchema = {
+const cpuInfoInputSchema = {
+  $ref: `${jsonSchemaNamespace}#/definitions/CPUInfoItem`,
+}
+
+const chipsetInfoInputSchema = {
+  $ref: `${jsonSchemaNamespace}#/definitions/ChipsetInfoItem`,
+}
+
+const chipsOutputSchema = {
   $ref: `${jsonSchemaNamespace}#/definitions/ChipInfoDB`,
 }
 
-const osSchema = {
+const osInfoInputSchema = {
+  $ref: `${jsonSchemaNamespace}#/definitions/OSInfoItem`,
+}
+
+const osOutputSchema = {
   type: "array",
   items: { $ref: `${jsonSchemaNamespace}#/definitions/OSInfoItem` },
 }
@@ -51,23 +63,42 @@ class DatabaseGenerator {
     })
     ajv.addSchema(jsonFullSchema)
 
-    this.validatorForChips = ajv.compile(chipsSchema)
-    this.validatorForOS = ajv.compile(osSchema)
+    this.validatorForCPUInfoInput = ajv.compile(cpuInfoInputSchema)
+    this.validatorForChipsetInfoInput = ajv.compile(chipsetInfoInputSchema)
+    this.validatorForOSInfoInput = ajv.compile(osInfoInputSchema)
+    this.validatorForChipsOutput = ajv.compile(chipsOutputSchema)
+    this.validatorForOSOutput = ajv.compile(osOutputSchema)
   }
 
-  validateChipsData(data) {
-    if (!this.validatorForChips(data)) {
-      console.error("[JsonValidator] Chips JSON Data Validation Error!!!")
-      console.error(JSON.stringify(this.validatorForChips.errors, null, 2))
-      throw new Error("Chips JSON data validation failed")
+  validateData(data, kind, fileName = null) {
+    let validator = null
+    switch (kind) {
+      case "cpu":
+        validator = this.validatorForCPUInfoInput
+        break
+      case "chipset":
+        validator = this.validatorForChipsetInfoInput
+        break
+      case "os":
+        validator = this.validatorForOSInfoInput
+        break
+      case "chipsOutput":
+        validator = this.validatorForChipsOutput
+        break
+      case "osOutput":
+        validator = this.validatorForOSOutput
+        break
+      default:
+        throw new Error(`Unknown kind for validation: ${kind}`)
     }
-  }
 
-  validateOSData(data) {
-    if (!this.validatorForOS(data)) {
-      console.error("[JsonValidator] OS JSON Data Validation Error!!!")
-      console.error(JSON.stringify(this.validatorForOS.errors, null, 2))
-      throw new Error("OS JSON data validation failed")
+    if (!validator(data)) {
+      console.error(`[JsonValidator] ${kind} JSON Data Validation Error!!!`)
+      if (fileName) {
+        console.error(`  In file: ${fileName}`)
+      }
+      console.error(JSON.stringify(validator.errors, null, 2))
+      throw new Error(`${kind} JSON data validation failed`)
     }
   }
 
@@ -105,10 +136,11 @@ class DatabaseGenerator {
     cpuDataFiles.sort((a, b) =>
       sortNames(basename(a, extname(a)), basename(b, extname(b))),
     )
-    cpuDataFiles.forEach(async (files) => {
-      let yamlFile = await fs.readFile(files, "utf-8")
-      let jsonResult = yaml.load(yamlFile)
-      chips.cpu[basename(files, extname(files))] = jsonResult
+    cpuDataFiles.forEach(async (fileName) => {
+      const yamlFile = await fs.readFile(fileName, "utf-8")
+      const jsonResult = yaml.load(yamlFile)
+      this.validateData(jsonResult, "cpu", fileName)
+      chips.cpu[basename(fileName, extname(fileName))] = jsonResult
     })
 
     // Chipsets
@@ -116,10 +148,11 @@ class DatabaseGenerator {
     chipsetDataFiles.sort((a, b) =>
       sortNames(basename(a, extname(a)), basename(b, extname(b))),
     )
-    chipsetDataFiles.forEach(async (files) => {
-      let yamlFile = await fs.readFile(files, "utf-8")
+    chipsetDataFiles.forEach(async (fileName) => {
+      let yamlFile = await fs.readFile(fileName, "utf-8")
       let jsonResult = yaml.load(yamlFile)
-      chips.chipset[basename(files, extname(files))] = jsonResult
+      this.validateData(jsonResult, "chipset", fileName)
+      chips.chipset[basename(fileName, extname(fileName))] = jsonResult
     })
 
     // Temporarily remove the gpu and mcu to bypass verification for this section.
@@ -127,7 +160,7 @@ class DatabaseGenerator {
     delete cleanedChipsData.gpu
     delete cleanedChipsData.mcu
 
-    this.validateChipsData(cleanedChipsData)
+    this.validateData(cleanedChipsData, "chipsOutput")
     await this.emitFile("chips", chips)
   }
 
@@ -138,13 +171,14 @@ class DatabaseGenerator {
     osDataFiles.sort((a, b) =>
       sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
     )
-    osDataFiles.forEach(async (files) => {
-      let yamlFile = await fs.readFile(files, "utf-8")
+    osDataFiles.forEach(async (fileName) => {
+      let yamlFile = await fs.readFile(fileName, "utf-8")
       let jsonResult = yaml.load(yamlFile)
+      this.validateData(jsonResult, "os", fileName)
       os.push(jsonResult)
     })
 
-    this.validateOSData(os)
+    this.validateData(os, "osOutput")
     await this.emitFile("os", os)
   }
 }
