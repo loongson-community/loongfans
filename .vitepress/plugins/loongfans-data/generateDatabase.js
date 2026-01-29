@@ -20,8 +20,50 @@ const chips = {
   chipset: {},
 }
 
+// ts-json-schema-generator configs
+const tsJsonConfig = {
+  path: resolve(rootDir, "types/data.ts"),
+  tsconfig: resolve(rootDir, "tsconfig.json"),
+  type: "*",
+  expose: "export",
+  topRef: true,
+  jsDoc: "extended",
+  skipTypeCheck: true,
+}
+const schemaGenerator = createGenerator(tsJsonConfig)
+const jsonFullSchema = schemaGenerator.createSchema(tsJsonConfig.type)
+// ts-json-schema-generator End
+
+// AJV configs
+jsonFullSchema.$id = "https://loongfans.cn/schema.json"
+const ajv = new Ajv({
+  allErrors: true,
+  verbose: true,
+  strict: false,
+  allowUnionTypes: true,
+})
+ajv.addSchema(jsonFullSchema)
+// AJV configs End
+
 const glob_options = {
   ignore: ["**/template*.yml"],
+}
+
+function validateData(name, data, schema) {
+  let dataNames = name.toString() // Force conversion to String to output normal logs
+  console.log("[JsonValidator] Validating data types...")
+  console.log("[JsonValidator] Generating JSON Schema...")
+  console.log(`[JsonValidator] Validating ${dataNames} data...`)
+
+  const jsonSchema = schema
+  const validateOS = ajv.compile(jsonSchema)
+
+  if (!validateOS(data)) {
+    console.error(`[JsonValidator] ${dataNames} JSON Data Validation Error!!!`)
+    console.error(JSON.stringify(validateOS.errors, null, 2))
+    throw new Error("JSON data validation failed")
+  }
+  console.log(`[JsonValidator] ${dataNames} Data Validation passed!`)
 }
 
 // 以文件名进行排序
@@ -61,50 +103,6 @@ function sortNamesNormal(a, b) {
   return a.localeCompare(b)
 }
 
-function validateData(name, data, schema) {
-  console.log("[JsonValidator] Validating data types...")
-
-  // ts-json-schema-generator Configs:
-  const config = {
-    path: resolve(rootDir, "types/data.ts"),
-    tsconfig: resolve(rootDir, "tsconfig.json"),
-    type: "*",
-    expose: "export",
-    topRef: true,
-    jsDoc: "extended",
-    skipTypeCheck: true,
-  }
-
-  // Dynamic generate JSON Schema
-  console.log("[JsonValidator] Generating JSON Schema...")
-  const generator = createGenerator(config)
-  const fullSchema = generator.createSchema(config.type)
-
-  fullSchema.$id = "https://loongfans.cn/schema.json"
-
-  // Init Ajv
-  const ajv = new Ajv({
-    allErrors: true,
-    verbose: true,
-    strict: false,
-    allowUnionTypes: true,
-  })
-
-  ajv.addSchema(fullSchema)
-
-  // Validating OS Data
-  console.log(`[JsonValidator] Validating ${name} data...`)
-  const jsonSchema = schema
-  const validateOS = ajv.compile(jsonSchema)
-
-  if (!validateOS(data)) {
-    console.error(`[JsonValidator] ${name} JSON Data Validation Error!!!`)
-    console.error(JSON.stringify(validateOS.errors, null, 2))
-    throw new Error("JSON data validation failed")
-  }
-  console.log(`[JsonValidator] ${name} Data Validation passed!`)
-}
-
 export async function generateChipsDatabase(format_switch) {
   // CPUs
   const cpu = await glob(dataDir + "chips/cpu/**/*.yml", glob_options)
@@ -128,7 +126,7 @@ export async function generateChipsDatabase(format_switch) {
     chips.chipset[basename(files, extname(files))] = jsonResult
   })
 
-  const chips_schema = {
+  const chipsSchema = {
     $ref: "https://loongfans.cn/schema.json#/definitions/ChipInfoDB",
   }
 
@@ -137,7 +135,7 @@ export async function generateChipsDatabase(format_switch) {
   delete cleanedChipsData.gpu
   delete cleanedChipsData.mcu
 
-  validateData("Chips", cleanedChipsData, chips_schema)
+  validateData("Chips", cleanedChipsData, chipsSchema)
 
   if (format_switch === 1) {
     fs.writeFileSync(dataDir + "chips.json", JSON.stringify(chips, null, "\t"))
@@ -159,11 +157,11 @@ export async function generateOsDatabase(format_switch) {
     os.push(jsonResult)
   })
 
-  const os_schema = {
+  const osSchema = {
     type: "array",
     items: { $ref: "https://loongfans.cn/schema.json#/definitions/OSInfoItem" },
   }
-  validateData("OS", os, os_schema)
+  validateData("OS", os, osSchema)
 
   if (format_switch === 1) {
     fs.writeFileSync(dataDir + "os.json", JSON.stringify(os, null, "\t"))
@@ -175,7 +173,3 @@ export async function generateAll(format_switch) {
   await generateChipsDatabase(format_switch)
   await generateOsDatabase(format_switch)
 }
-
-// Default: Generating everyone without formatted data
-// If require formatted JSON files, set this function value to 1.
-generateAll(0).catch(console.error)
