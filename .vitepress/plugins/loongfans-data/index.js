@@ -82,7 +82,9 @@ export default function AutoGenerateJson() {
 
       const handleYamlChange = (path, status) => {
         if (path.endsWith(".yml") || path.endsWith(".yaml")) {
-          console.log(`[AutoGenerateJson] Detected ${status} in YAML file: ${path}`)
+          console.log(
+            `[AutoGenerateJson] Detected ${status} in YAML file: ${path}`,
+          )
           // 延迟500ms执行
           if (debounceTimer) clearTimeout(debounceTimer)
           debounceTimer = setTimeout(() => {
