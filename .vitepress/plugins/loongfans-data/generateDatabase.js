@@ -1,69 +1,151 @@
-import yaml from "js-yaml"
-import fs from "fs"
-import { glob } from "glob"
+import fs from "node:fs/promises"
+
 import Ajv from "ajv"
+import { glob } from "glob"
+import yaml from "js-yaml"
 import { createGenerator } from "ts-json-schema-generator"
 
 // Fix __filename and __dirname in ESM
 import { fileURLToPath } from "url"
 import { dirname, basename, extname, resolve } from "path"
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const rootDir = __dirname + "/../../../"
-const dataDir = rootDir + "/data/"
+const __dirname = dirname(__filename)
 
-const chips = {
-  cpu: {},
-  gpu: {},
-  mcu: {},
-  chipset: {},
-}
-
-// ts-json-schema-generator configs
-const tsJsonConfig = {
-  path: resolve(rootDir, "types/data.ts"),
-  tsconfig: resolve(rootDir, "tsconfig.json"),
-  type: "*",
-  expose: "export",
-  topRef: true,
-  jsDoc: "extended",
-  skipTypeCheck: true,
-}
-const schemaGenerator = createGenerator(tsJsonConfig)
-const jsonFullSchema = schemaGenerator.createSchema(tsJsonConfig.type)
-// ts-json-schema-generator End
-
-// AJV configs
-jsonFullSchema.$id = "https://loongfans.cn/schema.json"
-const ajv = new Ajv({
-  allErrors: true,
-  verbose: true,
-  strict: false,
-  allowUnionTypes: true,
-})
-ajv.addSchema(jsonFullSchema)
+// Artificial JSON schemas for verification
+const jsonSchemaNamespace = "https://loongfans.cn/schema.json"
 
 const chipsSchema = {
-  $ref: "https://loongfans.cn/schema.json#/definitions/ChipInfoDB",
+  $ref: `${jsonSchemaNamespace}#/definitions/ChipInfoDB`,
 }
 
 const osSchema = {
   type: "array",
-  items: { $ref: "https://loongfans.cn/schema.json#/definitions/OSInfoItem" },
-}
-// AJV configs End
-
-const glob_options = {
-  ignore: ["**/template*.yml"],
+  items: { $ref: `${jsonSchemaNamespace}#/definitions/OSInfoItem` },
 }
 
-function validateData(typ, data, schema) {
-  const validator = ajv.compile(schema)
-  if (!validator(data)) {
-    console.error(`[JsonValidator] ${typ} JSON Data Validation Error!!!`)
-    console.error(JSON.stringify(validator.errors, null, 2))
-    throw new Error("JSON data validation failed")
+class DatabaseGenerator {
+  constructor(projectRoot, verboseOutput = false) {
+    this.projectRoot = projectRoot
+    this.dataDir = this.projectRoot + "/data/"
+    this.verboseOutput = verboseOutput
+
+    // validation
+    const tsJSONSchemaConfig = {
+      path: resolve(this.projectRoot, "types/data.ts"),
+      tsconfig: resolve(this.projectRoot, "tsconfig.json"),
+      type: "*",
+      expose: "export",
+      topRef: true,
+      jsDoc: "extended",
+      skipTypeCheck: true,
+    }
+    const schemaGenerator = createGenerator(tsJSONSchemaConfig)
+    const jsonFullSchema = schemaGenerator.createSchema(tsJSONSchemaConfig.type)
+    jsonFullSchema.$id = jsonSchemaNamespace
+
+    const ajv = new Ajv({
+      allErrors: true,
+      verbose: true,
+      strict: false,
+      allowUnionTypes: true,
+    })
+    ajv.addSchema(jsonFullSchema)
+
+    this.validatorForChips = ajv.compile(chipsSchema)
+    this.validatorForOS = ajv.compile(osSchema)
+  }
+
+  validateChipsData(data) {
+    if (!this.validatorForChips(data)) {
+      console.error("[JsonValidator] Chips JSON Data Validation Error!!!")
+      console.error(JSON.stringify(this.validatorForChips.errors, null, 2))
+      throw new Error("Chips JSON data validation failed")
+    }
+  }
+
+  validateOSData(data) {
+    if (!this.validatorForOS(data)) {
+      console.error("[JsonValidator] OS JSON Data Validation Error!!!")
+      console.error(JSON.stringify(this.validatorForOS.errors, null, 2))
+      throw new Error("OS JSON data validation failed")
+    }
+  }
+
+  async generateAll() {
+    await Promise.all([this.generateChipsDatabase(), this.generateOSDatabase()])
+  }
+
+  async globDataFiles(pattern) {
+    const options = {
+      ignore: ["**/template*.yml"],
+    }
+    return glob(this.dataDir + pattern, options)
+  }
+
+  async emitFile(baseName, data) {
+    const fileName = this.verboseOutput
+      ? `${baseName}.json`
+      : `${baseName}.min.json`
+    const payload = this.verboseOutput
+      ? JSON.stringify(data, null, "\t")
+      : JSON.stringify(data)
+    await fs.writeFile(this.dataDir + fileName, payload)
+  }
+
+  async generateChipsDatabase() {
+    const chips = {
+      cpu: {},
+      gpu: {},
+      mcu: {},
+      chipset: {},
+    }
+
+    // CPUs
+    const cpuDataFiles = await this.globDataFiles("chips/cpu/**/*.yml")
+    cpuDataFiles.sort((a, b) =>
+      sortNames(basename(a, extname(a)), basename(b, extname(b))),
+    )
+    cpuDataFiles.forEach(async (files) => {
+      let yamlFile = await fs.readFile(files, "utf-8")
+      let jsonResult = yaml.load(yamlFile)
+      chips.cpu[basename(files, extname(files))] = jsonResult
+    })
+
+    // Chipsets
+    const chipsetDataFiles = await this.globDataFiles("chips/chipset/**/*.yml")
+    chipsetDataFiles.sort((a, b) =>
+      sortNames(basename(a, extname(a)), basename(b, extname(b))),
+    )
+    chipsetDataFiles.forEach(async (files) => {
+      let yamlFile = await fs.readFile(files, "utf-8")
+      let jsonResult = yaml.load(yamlFile)
+      chips.chipset[basename(files, extname(files))] = jsonResult
+    })
+
+    // Temporarily remove the gpu and mcu to bypass verification for this section.
+    const cleanedChipsData = { ...chips }
+    delete cleanedChipsData.gpu
+    delete cleanedChipsData.mcu
+
+    this.validateChipsData(cleanedChipsData)
+    await this.emitFile("chips", chips)
+  }
+
+  async generateOSDatabase() {
+    const os = []
+
+    const osDataFiles = await this.globDataFiles("os/**/*.yml")
+    osDataFiles.sort((a, b) =>
+      sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
+    )
+    osDataFiles.forEach(async (files) => {
+      let yamlFile = await fs.readFile(files, "utf-8")
+      let jsonResult = yaml.load(yamlFile)
+      os.push(jsonResult)
+    })
+
+    this.validateOSData(os)
+    await this.emitFile("os", os)
   }
 }
 
@@ -104,65 +186,8 @@ function sortNamesNormal(a, b) {
   return a.localeCompare(b)
 }
 
-export async function generateChipsDatabase(format_switch) {
-  // CPUs
-  const cpu = await glob(dataDir + "chips/cpu/**/*.yml", glob_options)
-  cpu.sort((a, b) =>
-    sortNames(basename(a, extname(a)), basename(b, extname(b))),
-  )
-  cpu.forEach((files) => {
-    let yamlFile = fs.readFileSync(files, "utf-8")
-    let jsonResult = yaml.load(yamlFile)
-    chips.cpu[basename(files, extname(files))] = jsonResult
-  })
-
-  // Chipsets
-  const chipset = await glob(dataDir + "chips/chipset/**/*.yml", glob_options)
-  chipset.sort((a, b) =>
-    sortNames(basename(a, extname(a)), basename(b, extname(b))),
-  )
-  chipset.forEach((files) => {
-    let yamlFile = fs.readFileSync(files, "utf-8")
-    let jsonResult = yaml.load(yamlFile)
-    chips.chipset[basename(files, extname(files))] = jsonResult
-  })
-
-  // Temporarily remove the gpu and mcu to bypass verification for this section.
-  const cleanedChipsData = { ...chips }
-  delete cleanedChipsData.gpu
-  delete cleanedChipsData.mcu
-
-  validateData("Chips", cleanedChipsData, chipsSchema)
-
-  if (format_switch === 1) {
-    fs.writeFileSync(dataDir + "chips.json", JSON.stringify(chips, null, "\t"))
-  }
-  fs.writeFileSync(dataDir + "chips.min.json", JSON.stringify(chips))
-}
-
-// Generate OS List
-export async function generateOsDatabase(format_switch) {
-  const os = []
-
-  const os_list = await glob(dataDir + "os/**/*.yml", glob_options)
-  os_list.sort((a, b) =>
-    sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
-  )
-  os_list.forEach((files) => {
-    let yamlFile = fs.readFileSync(files, "utf-8")
-    let jsonResult = yaml.load(yamlFile)
-    os.push(jsonResult)
-  })
-
-  validateData("OS", os, osSchema)
-
-  if (format_switch === 1) {
-    fs.writeFileSync(dataDir + "os.json", JSON.stringify(os, null, "\t"))
-  }
-  fs.writeFileSync(dataDir + "os.min.json", JSON.stringify(os))
-}
-
-export async function generateAll(format_switch) {
-  await generateChipsDatabase(format_switch)
-  await generateOsDatabase(format_switch)
+export async function generateAll(verboseOutput = false) {
+  const projectRoot = resolve(__dirname, "../../../")
+  const generator = new DatabaseGenerator(projectRoot, verboseOutput)
+  await generator.generateAll()
 }
