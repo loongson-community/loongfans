@@ -1,13 +1,14 @@
-import { generateAll } from "./generateDatabase.js"
 import process from "node:process"
 import { glob } from "node:fs/promises"
 
-export default function AutoGenerateJson() {
+import type { FSWatcher, Plugin, ViteDevServer } from "vite"
+import { generateAll } from "./generateDatabase.js"
+
+const autoGenerateJson = (): Plugin => {
   let statusGenerating = false
-  let watcher = null
-  let debounceTimer = null
-  /** @type {import("vite").ViteDevServer | null} */
-  let viteServer = null
+  let watcher: FSWatcher | null = null
+  let debounceTimer: NodeJS.Timeout | null = null
+  let viteServer: ViteDevServer | null = null
 
   // Run Generate Script
   const runGenerateScript = async () => {
@@ -20,7 +21,7 @@ export default function AutoGenerateJson() {
     console.log("[AutoGenerateJson] Generating...")
 
     try {
-      await generateAll(0) // Generate JSON without formatted files
+      await generateAll() // Generate JSON without formatted files
       console.log("[AutoGenerateJson] Generation complete!")
 
       if (viteServer) {
@@ -44,10 +45,7 @@ export default function AutoGenerateJson() {
   return {
     name: "auto-generate-json",
 
-    /**
-     * @param {import("vite").ViteDevServer} server
-     */
-    configureServer(server) {
+    configureServer(server: ViteDevServer) {
       viteServer = server
 
       server.httpServer?.once("listening", () => {
@@ -96,3 +94,5 @@ export default function AutoGenerateJson() {
     },
   }
 }
+
+export default autoGenerateJson

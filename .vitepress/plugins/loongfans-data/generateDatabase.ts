@@ -1,15 +1,22 @@
 import fs from "node:fs/promises"
 
-import Ajv from "ajv"
+import { Ajv, type ValidateFunction } from "ajv"
 import { glob } from "glob"
-import yaml from "js-yaml"
-import { createGenerator } from "ts-json-schema-generator"
+import { load as yamlLoad } from "js-yaml"
+import { createGenerator, type Config } from "ts-json-schema-generator"
 
 // Fix __filename and __dirname in ESM
-import { fileURLToPath } from "url"
-import { dirname, basename, extname, resolve } from "path"
+import { fileURLToPath } from "node:url"
+import { dirname, basename, extname, resolve } from "node:path"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
+
+import type {
+  ChipInfoDB,
+  OSInfoItem,
+  ChipsetInfoItem,
+  CPUInfoItem,
+} from "@root/types/data"
 
 // Artificial JSON schemas for verification
 const jsonSchemaNamespace = "https://loongfans.cn/schema.json"
@@ -36,13 +43,22 @@ const osOutputSchema = {
 }
 
 class DatabaseGenerator {
-  constructor(projectRoot, verboseOutput = false) {
+  projectRoot: string
+  dataDir: string
+  verboseOutput: boolean
+  validatorForCPUInfoInput: ValidateFunction
+  validatorForChipsetInfoInput: ValidateFunction
+  validatorForOSInfoInput: ValidateFunction
+  validatorForChipsOutput: ValidateFunction
+  validatorForOSOutput: ValidateFunction
+
+  constructor(projectRoot: string, verboseOutput: boolean = false) {
     this.projectRoot = projectRoot
     this.dataDir = this.projectRoot + "/data/"
     this.verboseOutput = verboseOutput
 
     // validation
-    const tsJSONSchemaConfig = {
+    const tsJSONSchemaConfig: Config = {
       path: resolve(this.projectRoot, "types/data.ts"),
       tsconfig: resolve(this.projectRoot, "tsconfig.json"),
       type: "*",
@@ -70,50 +86,78 @@ class DatabaseGenerator {
     this.validatorForOSOutput = ajv.compile(osOutputSchema)
   }
 
-  validateData(data, kind, fileName = null) {
-    let validator = null
-    switch (kind) {
-      case "cpu":
-        validator = this.validatorForCPUInfoInput
-        break
-      case "chipset":
-        validator = this.validatorForChipsetInfoInput
-        break
-      case "os":
-        validator = this.validatorForOSInfoInput
-        break
-      case "chipsOutput":
-        validator = this.validatorForChipsOutput
-        break
-      case "osOutput":
-        validator = this.validatorForOSOutput
-        break
-      default:
-        throw new Error(`Unknown kind for validation: ${kind}`)
-    }
+  validateCPUData(data: object, fileName: string | null = null) {
+    return this.validate<CPUInfoItem>(
+      data,
+      this.validatorForCPUInfoInput,
+      "CPU",
+      fileName,
+    )
+  }
 
+  validateChipsetData(data: object, fileName: string | null = null) {
+    return this.validate<ChipsetInfoItem>(
+      data,
+      this.validatorForChipsetInfoInput,
+      "Chipset",
+      fileName,
+    )
+  }
+
+  validateOSData(data: object, fileName: string | null = null) {
+    return this.validate<OSInfoItem>(
+      data,
+      this.validatorForOSInfoInput,
+      "OS",
+      fileName,
+    )
+  }
+
+  validateChipsOutputData(data: object) {
+    return this.validate<ChipInfoDB>(
+      data,
+      this.validatorForChipsOutput,
+      "Chips database output",
+    )
+  }
+
+  validateOSOutputData(data: object) {
+    return this.validate<OSInfoItem[]>(
+      data,
+      this.validatorForOSOutput,
+      "OS database output",
+    )
+  }
+
+  validate<T>(
+    data: object,
+    validator: ValidateFunction,
+    kind: string,
+    fileName: string | null = null,
+  ) {
     if (!validator(data)) {
-      console.error(`[JsonValidator] ${kind} JSON Data Validation Error!!!`)
+      console.error(`[JsonValidator] Type validation failed for ${kind}!`)
       if (fileName) {
         console.error(`  In file: ${fileName}`)
       }
       console.error(JSON.stringify(validator.errors, null, 2))
-      throw new Error(`${kind} JSON data validation failed`)
+      throw new Error(`${kind} type validation failed`)
     }
+    return data as T
   }
 
   async generateAll() {
     await Promise.all([this.generateChipsDatabase(), this.generateOSDatabase()])
   }
 
-  async globDataFiles(pattern) {
+  async globDataFiles(pattern: string) {
     const options = {
       ignore: ["**/template*.yml"],
     }
     return glob(this.dataDir + pattern, options)
   }
 
-  async emitFile(baseName, data) {
+  async emitFile(baseName: string, data: object) {
     const fileName = this.verboseOutput
       ? `${baseName}.json`
       : `${baseName}.min.json`
@@ -124,11 +168,12 @@ class DatabaseGenerator {
   }
 
   async generateChipsDatabase() {
-    const chips = {
+    const chips: ChipInfoDB = {
       cpu: {},
-      gpu: {},
-      mcu: {},
       chipset: {},
+      // These are not implemented and typed yet
+      // gpu: {},
+      // mcu: {},
     }
 
     // CPUs
@@ -137,10 +182,11 @@ class DatabaseGenerator {
       sortNames(basename(a, extname(a)), basename(b, extname(b))),
     )
     cpuDataFiles.forEach(async (fileName) => {
-      const yamlFile = await fs.readFile(fileName, "utf-8")
-      const jsonResult = yaml.load(yamlFile)
-      this.validateData(jsonResult, "cpu", fileName)
-      chips.cpu[basename(fileName, extname(fileName))] = jsonResult
+      const input = await loadUntypedYAML(fileName)
+      chips.cpu[basename(fileName, extname(fileName))] = this.validateCPUData(
+        input,
+        fileName,
+      )
     })
 
     // Chipsets
@@ -149,42 +195,38 @@ class DatabaseGenerator {
       sortNames(basename(a, extname(a)), basename(b, extname(b))),
     )
     chipsetDataFiles.forEach(async (fileName) => {
-      let yamlFile = await fs.readFile(fileName, "utf-8")
-      let jsonResult = yaml.load(yamlFile)
-      this.validateData(jsonResult, "chipset", fileName)
-      chips.chipset[basename(fileName, extname(fileName))] = jsonResult
+      const input = await loadUntypedYAML(fileName)
+      chips.chipset[basename(fileName, extname(fileName))] =
+        this.validateChipsetData(input, fileName)
     })
 
-    // Temporarily remove the gpu and mcu to bypass verification for this section.
-    const cleanedChipsData = { ...chips }
-    delete cleanedChipsData.gpu
-    delete cleanedChipsData.mcu
-
-    this.validateData(cleanedChipsData, "chipsOutput")
-    await this.emitFile("chips", chips)
+    await this.emitFile("chips", this.validateChipsOutputData(chips))
   }
 
   async generateOSDatabase() {
-    const os = []
+    const os: OSInfoItem[] = []
 
     const osDataFiles = await this.globDataFiles("os/**/*.yml")
     osDataFiles.sort((a, b) =>
       sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
     )
     osDataFiles.forEach(async (fileName) => {
-      let yamlFile = await fs.readFile(fileName, "utf-8")
-      let jsonResult = yaml.load(yamlFile)
-      this.validateData(jsonResult, "os", fileName)
-      os.push(jsonResult)
+      const input = await loadUntypedYAML(fileName)
+      os.push(this.validateOSData(input, fileName))
     })
 
-    this.validateData(os, "osOutput")
-    await this.emitFile("os", os)
+    await this.emitFile("os", this.validateOSOutputData(os))
   }
 }
 
+async function loadUntypedYAML(fileName: string) {
+  return yamlLoad(await fs.readFile(fileName, "utf-8"), {
+    filename: fileName,
+  }) as object
+}
+
 // 以文件名进行排序
-function sortNames(a, b) {
+function sortNames(a: string, b: string) {
   // 对第三位的数字排序（降序）
   const levelA = parseInt(a.charAt(2), 10)
   const levelB = parseInt(b.charAt(2), 10)
@@ -209,7 +251,7 @@ function sortNames(a, b) {
   return a.localeCompare(b)
 }
 
-function sortNamesNormal(a, b) {
+function sortNamesNormal(a: string, b: string) {
   // 对第一位的字母排序（升序）
   const nameA = a.charAt(0)
   const nameB = b.charAt(0)
@@ -220,7 +262,7 @@ function sortNamesNormal(a, b) {
   return a.localeCompare(b)
 }
 
-export async function generateAll(verboseOutput = false) {
+export async function generateAll(verboseOutput: boolean = false) {
   const projectRoot = resolve(__dirname, "../../../")
   const generator = new DatabaseGenerator(projectRoot, verboseOutput)
   await generator.generateAll()
