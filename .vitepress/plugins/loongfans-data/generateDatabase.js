@@ -152,24 +152,24 @@ class DatabaseGenerator {
 // 以文件名进行排序
 function sortNames(a, b) {
   // 对第三位的数字排序（降序）
-  const level_a = parseInt(a.charAt(2), 10)
-  const level_b = parseInt(b.charAt(2), 10)
-  if (level_a !== level_b) {
-    return level_b - level_a // 降序
+  const levelA = parseInt(a.charAt(2), 10)
+  const levelB = parseInt(b.charAt(2), 10)
+  if (levelA !== levelB) {
+    return levelB - levelA // 降序
   }
 
   // 对第二位的字母排序（升序）
-  const series_a = a.charAt(1)
-  const series_b = b.charAt(1)
-  if (series_a !== series_b) {
-    return series_a.localeCompare(series_b)
+  const seriesA = a.charAt(1)
+  const seriesB = b.charAt(1)
+  if (seriesA !== seriesB) {
+    return seriesA.localeCompare(seriesB)
   }
 
   // 对第四位的数字排序（降序）
-  const sublevel_a = parseInt(a.charAt(3), 10)
-  const sublevel_b = parseInt(b.charAt(3), 10)
-  if (sublevel_a !== sublevel_b) {
-    return sublevel_b - sublevel_a // 降序
+  const sublevelA = parseInt(a.charAt(3), 10)
+  const sublevelB = parseInt(b.charAt(3), 10)
+  if (sublevelA !== sublevelB) {
+    return sublevelB - sublevelA // 降序
   }
 
   return a.localeCompare(b)
@@ -177,10 +177,10 @@ function sortNames(a, b) {
 
 function sortNamesNormal(a, b) {
   // 对第一位的字母排序（升序）
-  const name_a = a.charAt(0)
-  const name_b = b.charAt(0)
-  if (name_a !== name_b) {
-    return name_a.localeCompare(name_b)
+  const nameA = a.charAt(0)
+  const nameB = b.charAt(0)
+  if (nameA !== nameB) {
+    return nameA.localeCompare(nameB)
   }
 
   return a.localeCompare(b)
