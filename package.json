@@ -19,6 +19,7 @@
     "@iconify-json/simple-icons": "^1.2.59",
     "@popperjs/core": "^2.11.8",
     "@primeuix/themes": "^2.0.2",
+    "@types/js-yaml": "^4.0.9",
     "@types/lodash": "^4.17.23",
     "@types/node": "^25.0.3",
     "@unocss/preset-wind4": "^66.5.12",
