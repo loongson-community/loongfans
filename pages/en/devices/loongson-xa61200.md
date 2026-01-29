@@ -33,7 +33,7 @@ Due to its good cost-to-performance ratio at that time, it was well received by 
 
 <template #known-issues>
 
-<!--@include: @/../parts/en/known-issues/7a-errata.md -->
+<!--@include: @parts/en/known-issues/7a-errata.md -->
 
 </template>
 

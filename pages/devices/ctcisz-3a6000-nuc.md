@@ -27,7 +27,7 @@ pageSubTitle: 中科云 3A6000 小主机
 
 <template #known-issues>
 
-<!--@include: @/../parts/known-issues/usb-device-lost.md -->
+<!--@include: @parts/known-issues/usb-device-lost.md -->
 
 </template>
 

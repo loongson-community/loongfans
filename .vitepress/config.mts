@@ -49,6 +49,7 @@ export default defineConfig({
         "@": resolve(__dirname, `../${srcDir}`),
         "@src": resolve(__dirname, "../src"),
         "@data": resolve(__dirname, "../data"),
+        "@parts": resolve(__dirname, "../parts"),
         "@vitepress": resolve(__dirname, "./"),
       },
     },

@@ -37,7 +37,7 @@ Compared to the [XA61200](/en/devices/loongson-xa61200), the XA61201 motherboard
 
 <template #known-issues>
 
-<!--@include: @/../parts/en/known-issues/7a-errata.md -->
+<!--@include: @parts/en/known-issues/7a-errata.md -->
 
 </template>
 

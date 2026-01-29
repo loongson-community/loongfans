@@ -33,7 +33,7 @@ pageSubTitle: 龙芯 XA612A0_v1.0
 
 <template #known-issues>
 
-<!--@include: @/../parts/known-issues/7a-errata.md -->
+<!--@include: @parts/known-issues/7a-errata.md -->
 
 </template>
 
@@ -60,7 +60,7 @@ pageSubTitle: 龙芯 XA612A0_v1.0
 
 <template #detail>
 
-<!--@include: @/../parts/devices/changelist_V5.0.0343-stable2511.md -->
+<!--@include: @parts/devices/changelist_V5.0.0343-stable2511.md -->
 
 </template>
 
@@ -81,7 +81,7 @@ pageSubTitle: 龙芯 XA612A0_v1.0
 
 <template #detail>
 
-<!--@include: @/../parts/devices/changelist_V5.0.0343-stable2511.md -->
+<!--@include: @parts/devices/changelist_V5.0.0343-stable2511.md -->
 
 </template>
 

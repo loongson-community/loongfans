@@ -31,9 +31,9 @@ pageSubTitle: 华硕 XC-LS3A6M
 
 <template #known-issues>
 
-<!--@include: @/../parts/known-issues/7a-errata.md -->
+<!--@include: @parts/known-issues/7a-errata.md -->
 
-<!--@include: @/../parts/known-issues/usb-device-lost.md -->
+<!--@include: @parts/known-issues/usb-device-lost.md -->
 
 ### 固件更新问题
 

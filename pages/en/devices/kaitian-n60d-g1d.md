@@ -31,13 +31,13 @@ The Lenovo Kaitian N60d-G1d is a 14-inch laptop based on Loongson 3A6000. Weighi
 
 <template #known-issues>
 
-<!--@include: @/../parts/en/known-issues/touchpad-err-in-abi2.md -->
+<!--@include: @parts/en/known-issues/touchpad-err-in-abi2.md -->
 
-<!--@include: @/../parts/en/known-issues/loonggpu-err-in-abi2.md -->
+<!--@include: @parts/en/known-issues/loonggpu-err-in-abi2.md -->
 
-<!--@include: @/../parts/en/known-issues/smcv1-issue-in-abi2.md -->
+<!--@include: @parts/en/known-issues/smcv1-issue-in-abi2.md -->
 
-<!--@include: @/../parts/en/known-issues/laptop-high-power-consumption.md -->
+<!--@include: @parts/en/known-issues/laptop-high-power-consumption.md -->
 
 </template>
 

@@ -33,7 +33,7 @@ Compared to the [AC612A0_V1.1](/en/devices/loongson-ac612a0-v1.1.md) based on Lo
 
 <template #known-issues>
 
-<!--@include: @/../parts/en/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
+<!--@include: @parts/en/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
 </template>
 

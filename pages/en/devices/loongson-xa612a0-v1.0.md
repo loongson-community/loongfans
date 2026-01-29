@@ -33,7 +33,7 @@ This motherboard is the first 3A6000 motherboard released by Loongson and is gen
 
 <template #known-issues>
 
-<!--@include: @/../parts/en/known-issues/7a-errata.md -->
+<!--@include: @parts/en/known-issues/7a-errata.md -->
 
 If you experience similar issues, the community recommends improving the case or bridge chip cooling.
 

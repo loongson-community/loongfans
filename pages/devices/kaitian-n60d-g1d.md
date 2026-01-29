@@ -33,13 +33,13 @@ pageSubTitle: 联想开天 N60d-G1d
 
 ### ABI2.0 系统下触摸板无法使用
 
-<!--@include: @/../parts/known-issues/touchpad-err-in-abi2.md -->
+<!--@include: @parts/known-issues/touchpad-err-in-abi2.md -->
 
-<!--@include: @/../parts/known-issues/loonggpu-err-in-abi2.md -->
+<!--@include: @parts/known-issues/loonggpu-err-in-abi2.md -->
 
-<!--@include: @/../parts/known-issues/smcv1-issue-in-abi2.md -->
+<!--@include: @parts/known-issues/smcv1-issue-in-abi2.md -->
 
-<!--@include: @/../parts/known-issues/laptop-high-power-consumption.md -->
+<!--@include: @parts/known-issues/laptop-high-power-consumption.md -->
 
 </template>
 

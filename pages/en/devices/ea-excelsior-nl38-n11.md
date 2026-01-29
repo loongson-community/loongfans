@@ -34,11 +34,11 @@ Other manufacturers have also launched derivative models based on this design.
 
 <template #known-issues>
 
-<!--@include: @/../parts/en/known-issues/touchpad-err-in-abi2.md -->
+<!--@include: @parts/en/known-issues/touchpad-err-in-abi2.md -->
 
-<!--@include: @/../parts/en/known-issues/loonggpu-err-in-abi2.md -->
+<!--@include: @parts/en/known-issues/loonggpu-err-in-abi2.md -->
 
-<!--@include: @/../parts/en/known-issues/smcv1-issue-in-abi2.md -->
+<!--@include: @parts/en/known-issues/smcv1-issue-in-abi2.md -->
 
 ### High System Power Consumption
 

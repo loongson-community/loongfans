@@ -34,7 +34,7 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 
 <template #known-issues>
 
-<!--@include: @/../parts/en/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
+<!--@include: @parts/en/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
 </template>
 
