@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
 import DeviceIndex from "../device/Index.vue"
-import chipsJson from "@data/chips.min.json"
+import chipsDB from "@data/chips.min.json"
 import { LANGUAGE_PREFIXES } from "@vitepress/utils/language"
 
 import type { SupportedLanguage } from "@vitepress/utils/language"
@@ -18,10 +18,10 @@ const cpuData = [
   {
     family: t("chips.cpu.name"),
     categories: Array.from(
-      new Set(Object.values(chipsJson.cpu).map((i) => i.basic.series)),
+      new Set(Object.values(chipsDB.cpu).map((i) => i.basic.series)),
     ).map((series) => ({
       title: series,
-      devices: Object.entries(chipsJson.cpu)
+      devices: Object.entries(chipsDB.cpu)
         .filter(([, value]) => value.basic.series === series)
         .map(([key, value]) => ({
           comparisonKey: key,
@@ -41,10 +41,10 @@ const chipsetData = [
   {
     family: t("chips.chipset.name"),
     categories: Array.from(
-      new Set(Object.values(chipsJson.chipset).map((i) => i.basic.series)),
+      new Set(Object.values(chipsDB.chipset).map((i) => i.basic.series)),
     ).map((series) => ({
       title: series,
-      devices: Object.entries(chipsJson.chipset)
+      devices: Object.entries(chipsDB.chipset)
         .filter(([, value]) => value.basic.series === series)
         .map(([key, value]) => ({
           name: value.basic.name,
