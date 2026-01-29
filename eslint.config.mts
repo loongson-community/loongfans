@@ -17,9 +17,6 @@ export default defineConfig(
     rules: {
       // override/add rules settings here, such as:
       // 'vue/no-unused-vars': 'error'
-
-      // TODO: fix things and enable later
-      "vue/multi-word-component-names": "off",
     },
     languageOptions: {
       ecmaVersion: "latest",

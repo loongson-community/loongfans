@@ -2,8 +2,8 @@
 layout: home
 ---
 
-<Index />
+<HomePage />
 
 <script setup lang="ts">
-import Index from "@components/Index.vue"
+import HomePage from "@components/HomePage.vue"
 </script>

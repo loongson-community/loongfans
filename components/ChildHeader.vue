@@ -12,16 +12,20 @@
   </div>
 
   <div class="back_row">
-    <Button :href="frontmatter.returnLink" :text="t('goBack')" class="btn_back">
+    <ChildHeaderButton
+      :href="frontmatter.returnLink"
+      :text="t('goBack')"
+      class="btn_back"
+    >
       <IconArrowCircleLeftOutline />
-    </Button>
-    <Button
+    </ChildHeaderButton>
+    <ChildHeaderButton
       v-if="page.filePath.includes('chips')"
       :href="getLocaleUrl(locale, '/chips/cpu/compare')"
       :text="compareButtonText"
       class="btn_back"
     >
-    </Button>
+    </ChildHeaderButton>
   </div>
   <BackToTop />
 </template>
@@ -32,7 +36,7 @@ import { useI18n } from "vue-i18n"
 import { computed } from "vue"
 import IconArrowCircleLeftOutline from "~icons/material-symbols/arrow-circle-left-outline"
 import BackToTop from "./BackToTop.vue"
-import Button from "./Button.vue"
+import ChildHeaderButton from "./ChildHeaderButton.vue"
 import { useCPUComparisonStore } from "@root/stores/CPUComparisonStore"
 import { getLocaleUrl } from "@vitepress/utils/language"
 
