@@ -18,20 +18,21 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 <script setup lang="ts">
 import { ref } from "vue"
 import { useI18n } from "vue-i18n"
-import {
-    bilibiliLiveLink,
-    getBiweeklyBilibiliLink,
-    getBiweeklySlideLink,
-    wemeetLink,
-    wemeetNumber,
-} from "@src/components/events/BiweeklyLinks"
-import { getBiweeklyEvents, type BiweeklyEventItem } from '@src/components/events/DataSource'
-import BiweeklyCalendar from "@src/components/events/BiweeklyCalendar.vue"
+
+import biweeklyDB from "@data/biweekly.min.json"
 import eventsICS from "@data/events/events.ics?raw"
+import {
+    getBiweeklyBilibiliLink,
+    getBiweeklyEvents,
+    getBiweeklySlideLink,
+    type BiweeklyEventItem,
+} from "@src/components/events/DataSource"
+import BiweeklyCalendar from "@src/components/events/BiweeklyCalendar.vue"
 
 const { d, locale, tm } = useI18n()
 const now = new Date()
-const biweeklyData = getBiweeklyEvents(eventsICS, now)
+const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
+const ei = biweeklyDB.eventInfo
 
 const thisEvent = ref(null)
 const thisBiliLink = ref(null)
@@ -63,7 +64,7 @@ const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
 <div class="flex flex-col md:flex-row md:gap-6">
     <div class="w-full flex justify-center md:flex-1">
         <BiweeklyCalendar
-            :data="biweeklyData"
+            :data="biweeklyEvents"
             :now="now"
             @biweeklySelected="onBiweeklySelected"
         />
@@ -75,7 +76,7 @@ const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
 
 会议时间：{{ d(thisEvent.start, "long") }}（会议预计一小时内结束）
 
-<a :href="wemeetLink" target="_blank" rel="noreferrer">会议链接</a>｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">双周会幻灯片</a><span v-else>双周会幻灯片（暂未上传）</span>｜<a :href="bilibiliLiveLink" target="_blank" rel="noreferrer">直播链接</a>｜会议号：**{{ wemeetNumber }}**
+<a :href="ei.wemeetLink" target="_blank" rel="noreferrer">会议链接</a>｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">双周会幻灯片</a><span v-else>双周会幻灯片（暂未上传）</span>｜<a :href="ei.bilibiliLiveLink" target="_blank" rel="noreferrer">直播链接</a>｜会议号：**{{ ei.wemeetNumber }}**
 
 双周会幻灯片将在**会前停止收集**，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。
 

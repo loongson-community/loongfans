@@ -145,3 +145,24 @@ export interface ChipInfoDB {
   cpu: { [key: string]: CPUInfoItem }
   chipset: { [key: string]: ChipsetInfoItem }
 }
+
+// Biweekly newsletter entries
+
+export type BiweeklyLinkInfo = {
+  bvid?: string
+  slides?: string
+}
+
+export interface BiweeklyEventInfo {
+  bilibiliLiveLink: string
+  wemeetLink: string
+  wemeetNumber: string
+}
+
+export interface BiweeklyDB {
+  eventInfo: BiweeklyEventInfo
+
+  // NOTE: in JS and JSON one cannot have numbers as keys, so string is used
+  // here. It is just the issue number in decimal.
+  links: { [key: string]: BiweeklyLinkInfo }
+}

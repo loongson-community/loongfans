@@ -4,14 +4,14 @@ import { Command } from "@commander-js/extra-typings"
 import { BiweeklyLinkEditor } from "./editor"
 
 // relative to project root
-const biweeklyLinkDataPath = "./components/events/BiweeklyLinks.ts"
+const biweeklyLinkDataPath = "./data/events/biweekly.yml"
 
 const makeGitCommitMessage = (
   issueNumber: number,
   bvidChanged: boolean,
   slidesIDChanged: boolean,
 ) => {
-  const changedParts = []
+  const changedParts: string[] = []
   if (bvidChanged) {
     changedParts.push("BVID")
   }
@@ -45,7 +45,7 @@ const extractBVIDFromURL = (urlString: string): string | null => {
     if (!pathname.startsWith("/video/")) return null
     const parts = pathname.split("/")
     if (parts.length < 3) return null
-    return parts[2] // e.g. "BV195iiBjEPZ"
+    return parts[2]! // e.g. "BV195iiBjEPZ"
   } catch {
     return null
   }
@@ -60,7 +60,7 @@ const extractKDocsIDFromURL = (urlString: string): string | null => {
     if (!pathname.startsWith("/l/")) return null
     const parts = pathname.split("/")
     if (parts.length < 3) return null
-    return parts[2] // e.g. "cvq9DSawFxLS"
+    return parts[2]! // e.g. "cvq9DSawFxLS"
   } catch {
     return null
   }
