@@ -22,6 +22,8 @@
   "include": [
     "*.mts",
     "*.ts",
+    "scripts/**/*.mts",
+    "scripts/**/*.ts",
     "src/**/*.mts",
     "src/**/*.ts",
     "src/**/*.vue",
