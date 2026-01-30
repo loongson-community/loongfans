@@ -2,7 +2,7 @@ import fs from "node:fs/promises"
 
 import { Ajv, type ValidateFunction } from "ajv"
 import { glob } from "glob"
-import { load as yamlLoad } from "js-yaml"
+import { parse as yamlParse } from "yaml"
 import { createGenerator, type Config } from "ts-json-schema-generator"
 
 // Fix __filename and __dirname in ESM
@@ -248,9 +248,7 @@ class DatabaseGenerator {
 }
 
 async function loadUntypedYAML(fileName: string) {
-  return yamlLoad(await fs.readFile(fileName, "utf-8"), {
-    filename: fileName,
-  }) as object
+  return yamlParse(await fs.readFile(fileName, "utf-8")) as object
 }
 
 // 按照龙芯芯片型号的命名规则，大体按照芯片型号所隐含的发布时间从新到旧排序
