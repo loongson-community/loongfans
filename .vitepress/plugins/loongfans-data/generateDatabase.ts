@@ -42,6 +42,29 @@ const osOutputSchema = {
   items: { $ref: `${jsonSchemaNamespace}#/definitions/OSInfoItem` },
 }
 
+type InputFileValidator<T> = (data: object, fileName: string) => T
+type TransformedInput<T> = {
+  key: string
+  data: T
+}
+
+function validate<T>(
+  data: object,
+  validator: ValidateFunction,
+  kind: string,
+  fileName: string | null = null,
+) {
+  if (!validator(data)) {
+    console.error(`[JsonValidator] Type validation failed for ${kind}!`)
+    if (fileName) {
+      console.error(`  In file: ${fileName}`)
+    }
+    console.error(JSON.stringify(validator.errors, null, 2))
+    throw new Error(`${kind} type validation failed`)
+  }
+  return data as T
+}
+
 class DatabaseGenerator {
   projectRoot: string
   dataDir: string
@@ -86,8 +109,8 @@ class DatabaseGenerator {
     this.validatorForOSOutput = ajv.compile(osOutputSchema)
   }
 
-  validateCPUData(data: object, fileName: string | null = null) {
-    return this.validate<CPUInfoItem>(
+  validateCPUData(data: object, fileName: string) {
+    return validate<CPUInfoItem>(
       data,
       this.validatorForCPUInfoInput,
       "CPU",
@@ -95,8 +118,8 @@ class DatabaseGenerator {
     )
   }
 
-  validateChipsetData(data: object, fileName: string | null = null) {
-    return this.validate<ChipsetInfoItem>(
+  validateChipsetData(data: object, fileName: string) {
+    return validate<ChipsetInfoItem>(
       data,
       this.validatorForChipsetInfoInput,
       "Chipset",
@@ -104,8 +127,8 @@ class DatabaseGenerator {
     )
   }
 
-  validateOSData(data: object, fileName: string | null = null) {
-    return this.validate<OSInfoItem>(
+  validateOSData(data: object, fileName: string) {
+    return validate<OSInfoItem>(
       data,
       this.validatorForOSInfoInput,
       "OS",
@@ -114,7 +137,7 @@ class DatabaseGenerator {
   }
 
   validateChipsOutputData(data: object) {
-    return this.validate<ChipInfoDB>(
+    return validate<ChipInfoDB>(
       data,
       this.validatorForChipsOutput,
       "Chips database output",
@@ -122,39 +145,60 @@ class DatabaseGenerator {
   }
 
   validateOSOutputData(data: object) {
-    return this.validate<OSInfoItem[]>(
+    return validate<OSInfoItem[]>(
       data,
       this.validatorForOSOutput,
       "OS database output",
     )
   }
 
-  validate<T>(
-    data: object,
-    validator: ValidateFunction,
-    kind: string,
-    fileName: string | null = null,
-  ) {
-    if (!validator(data)) {
-      console.error(`[JsonValidator] Type validation failed for ${kind}!`)
-      if (fileName) {
-        console.error(`  In file: ${fileName}`)
-      }
-      console.error(JSON.stringify(validator.errors, null, 2))
-      throw new Error(`${kind} type validation failed`)
-    }
-    return data as T
-  }
-
   async generateAll() {
     await Promise.all([this.generateChipsDatabase(), this.generateOSDatabase()])
   }
 
-  async globDataFiles(pattern: string) {
+  async processFiles<T>(
+    pattern: string,
+    validator: InputFileValidator<T>,
+    keySorter: (a: string, b: string) => number,
+  ): Promise<TransformedInput<T>[]> {
     const options = {
       ignore: ["**/template*.yml"],
     }
-    return glob(this.dataDir + pattern, options)
+    const files = await glob(this.dataDir + pattern, options)
+
+    const transformed = await Promise.all(
+      files.map(async (path) => {
+        const input = await loadUntypedYAML(path)
+        return {
+          key: basename(path, extname(path)),
+          data: validator(input, path),
+        }
+      }),
+    )
+    transformed.sort((a, b) => keySorter(a.key, b.key))
+    return transformed
+  }
+
+  async readAndTransformIntoArray<T>(
+    pattern: string,
+    validator: InputFileValidator<T>,
+    keySorter: (a: string, b: string) => number,
+  ): Promise<T[]> {
+    const transformed = await this.processFiles(pattern, validator, keySorter)
+    return transformed.map(({ data }) => data)
+  }
+
+  async readAndTransformIntoMap<T>(
+    pattern: string,
+    validator: InputFileValidator<T>,
+    keySorter: (a: string, b: string) => number,
+  ): Promise<{ [key: string]: T }> {
+    const transformed = await this.processFiles(pattern, validator, keySorter)
+    const result: { [key: string]: T } = {}
+    transformed.forEach(({ key, data }) => {
+      result[key] = data
+    })
+    return result
   }
 
   async emitFile(baseName: string, data: object) {
@@ -168,52 +212,36 @@ class DatabaseGenerator {
   }
 
   async generateChipsDatabase() {
+    const [cpuData, chipsetData] = await Promise.all([
+      this.readAndTransformIntoMap(
+        "chips/cpu/**/*.yml",
+        this.validateCPUData.bind(this),
+        sortNames,
+      ),
+      this.readAndTransformIntoMap(
+        "chips/chipset/**/*.yml",
+        this.validateChipsetData.bind(this),
+        sortNames,
+      ),
+    ])
+
     const chips: ChipInfoDB = {
-      cpu: {},
-      chipset: {},
+      cpu: cpuData,
+      chipset: chipsetData,
       // These are not implemented and typed yet
       // gpu: {},
       // mcu: {},
     }
 
-    // CPUs
-    const cpuDataFiles = await this.globDataFiles("chips/cpu/**/*.yml")
-    cpuDataFiles.sort((a, b) =>
-      sortNames(basename(a, extname(a)), basename(b, extname(b))),
-    )
-    cpuDataFiles.forEach(async (fileName) => {
-      const input = await loadUntypedYAML(fileName)
-      chips.cpu[basename(fileName, extname(fileName))] = this.validateCPUData(
-        input,
-        fileName,
-      )
-    })
-
-    // Chipsets
-    const chipsetDataFiles = await this.globDataFiles("chips/chipset/**/*.yml")
-    chipsetDataFiles.sort((a, b) =>
-      sortNames(basename(a, extname(a)), basename(b, extname(b))),
-    )
-    chipsetDataFiles.forEach(async (fileName) => {
-      const input = await loadUntypedYAML(fileName)
-      chips.chipset[basename(fileName, extname(fileName))] =
-        this.validateChipsetData(input, fileName)
-    })
-
     await this.emitFile("chips", this.validateChipsOutputData(chips))
   }
 
   async generateOSDatabase() {
-    const os: OSInfoItem[] = []
-
-    const osDataFiles = await this.globDataFiles("os/**/*.yml")
-    osDataFiles.sort((a, b) =>
-      sortNamesNormal(basename(a, extname(a)), basename(b, extname(b))),
+    const os = await this.readAndTransformIntoArray(
+      "os/**/*.yml",
+      this.validateOSData.bind(this),
+      sortNamesNormal,
     )
-    osDataFiles.forEach(async (fileName) => {
-      const input = await loadUntypedYAML(fileName)
-      os.push(this.validateOSData(input, fileName))
-    })
 
     await this.emitFile("os", this.validateOSOutputData(os))
   }
