@@ -15,15 +15,6 @@ importers:
         specifier: ^2.0.0-alpha.15
         version: 2.0.0-alpha.15(@algolia/client-search@5.46.2)(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(postcss@8.5.6)(react@19.2.3)(search-insights@2.17.3)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
     devDependencies:
-      '@babel/generator':
-        specifier: ^7.28.6
-        version: 7.28.6
-      '@babel/parser':
-        specifier: ^7.28.6
-        version: 7.28.6
-      '@babel/types':
-        specifier: ^7.28.6
-        version: 7.28.6
       '@commander-js/extra-typings':
         specifier: ^14.0.0
         version: 14.0.0(commander@14.0.2)
@@ -42,9 +33,6 @@ importers:
       '@primeuix/themes':
         specifier: ^2.0.2
         version: 2.0.2
-      '@types/babel__generator':
-        specifier: ^7.27.0
-        version: 7.27.0
       '@types/lodash':
         specifier: ^4.17.23
         version: 4.17.23
@@ -800,9 +788,6 @@ packages:
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
-
-  '@types/babel__generator@7.27.0':
-    resolution: {integrity: sha512-ufFd2Xi92OAVPYsy+P4n7/U7e68fex0+Ee8gSG9KX7eo084CWiQ4sdxktvdl0bOPupXtVJPY19zk6EwWqUQ8lg==}
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
@@ -3085,10 +3070,6 @@ snapshots:
   '@sindresorhus/merge-streams@4.0.0': {}
 
   '@standard-schema/spec@1.1.0': {}
-
-  '@types/babel__generator@7.27.0':
-    dependencies:
-      '@babel/types': 7.28.6
 
   '@types/debug@4.1.12':
     dependencies:

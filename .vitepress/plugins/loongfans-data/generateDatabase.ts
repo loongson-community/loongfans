@@ -12,14 +12,19 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 import type {
+  BiweeklyDB,
   ChipInfoDB,
-  OSInfoItem,
   ChipsetInfoItem,
   CPUInfoItem,
+  OSInfoItem,
 } from "@src/types/data"
 
 // Artificial JSON schemas for verification
 const jsonSchemaNamespace = "https://loongfans.cn/schema.json"
+
+const biweeklyDBSchema = {
+  $ref: `${jsonSchemaNamespace}#/definitions/BiweeklyDB`,
+}
 
 const cpuInfoInputSchema = {
   $ref: `${jsonSchemaNamespace}#/definitions/CPUInfoItem`,
@@ -69,6 +74,7 @@ class DatabaseGenerator {
   projectRoot: string
   dataDir: string
   verboseOutput: boolean
+  validatorForBiweeklyDB: ValidateFunction
   validatorForCPUInfoInput: ValidateFunction
   validatorForChipsetInfoInput: ValidateFunction
   validatorForOSInfoInput: ValidateFunction
@@ -102,11 +108,21 @@ class DatabaseGenerator {
     })
     ajv.addSchema(jsonFullSchema)
 
+    this.validatorForBiweeklyDB = ajv.compile(biweeklyDBSchema)
     this.validatorForCPUInfoInput = ajv.compile(cpuInfoInputSchema)
     this.validatorForChipsetInfoInput = ajv.compile(chipsetInfoInputSchema)
     this.validatorForOSInfoInput = ajv.compile(osInfoInputSchema)
     this.validatorForChipsOutput = ajv.compile(chipsOutputSchema)
     this.validatorForOSOutput = ajv.compile(osOutputSchema)
+  }
+
+  validateBiweeklyDBData(data: object, fileName: string) {
+    return validate<BiweeklyDB>(
+      data,
+      this.validatorForBiweeklyDB,
+      "LoongArch Biweekly data",
+      fileName,
+    )
   }
 
   validateCPUData(data: object, fileName: string) {
@@ -153,7 +169,11 @@ class DatabaseGenerator {
   }
 
   async generateAll() {
-    await Promise.all([this.generateChipsDatabase(), this.generateOSDatabase()])
+    await Promise.all([
+      this.generateBiweeklyDatabase(),
+      this.generateChipsDatabase(),
+      this.generateOSDatabase(),
+    ])
   }
 
   async processFiles<T>(
@@ -209,6 +229,13 @@ class DatabaseGenerator {
       ? JSON.stringify(data, null, "\t")
       : JSON.stringify(data)
     await fs.writeFile(this.dataDir + fileName, payload)
+  }
+
+  async generateBiweeklyDatabase() {
+    const path = this.dataDir + "events/biweekly.yml"
+    const obj = await loadUntypedYAML(path)
+    const db = this.validateBiweeklyDBData(obj, path)
+    await this.emitFile("biweekly", db)
   }
 
   async generateChipsDatabase() {

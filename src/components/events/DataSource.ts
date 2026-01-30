@@ -1,5 +1,7 @@
 import IcalExpander from "ical-expander"
 
+import biweeklyDB from "@data/biweekly.min.json"
+
 type EventItem = {
   start: Date
   title: string
@@ -70,4 +72,17 @@ export function getBiweeklyEvents(
     biweeklyEvents: result,
     nextEventIdx,
   }
+}
+
+export function getBiweeklySlideLink(index: number): string | null {
+  // www.kdocs.cn is the canonical domain for WPS Docs links
+  // bare kdocs.cn links will just 302 to www.kdocs.cn so save our users a
+  // round-trip
+  const kdocsID = biweeklyDB.links[index.toString(10)]?.slides
+  return kdocsID ? `https://kdocs.cn/l/${kdocsID}` : null
+}
+
+export function getBiweeklyBilibiliLink(index: number): string | null {
+  const bvid = biweeklyDB.links[index.toString(10)]?.bvid
+  return bvid ? `https://www.bilibili.com/video/${bvid}/` : null
 }

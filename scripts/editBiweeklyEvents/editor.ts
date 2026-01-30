@@ -1,45 +1,40 @@
-import { parse, type ParseResult } from "@babel/parser"
-import { generate } from "@babel/generator"
-import {
-  identifier,
-  numericLiteral,
-  objectExpression,
-  objectProperty,
-  stringLiteral,
-  type File,
-  type ObjectExpression,
-  type ObjectProperty,
-} from "@babel/types"
-import { format, resolveConfig } from "prettier"
+import { parseDocument, Document, Scalar, YAMLMap, Pair } from "yaml"
 
 type EditRequest = {
   newBVID?: string
   newSlidesID?: string
 }
 
+// NOTE: The implementation is ported to edit YAML data, from a manually crafted
+// Babel AST-based earlier version that worked on the previously TypeScript data
+// source. It is ported by GPT-5.2-Codex, so while it works fine, beware of
+// AI slop bits here and there...
+//
+// What I have fixed in the original AI output:
+//
+// - `Document` instead of `ReturnType<typeof parseDocument>`;
+// - `debugPrintLinksNode` instead of `debugPrintDataNode` (`linksNode`
+//   originally being `dataNode`).
 export class BiweeklyLinkEditor {
   debug: boolean = false
   filePath: string
-  ast: ParseResult<File>
-  dataNode: ObjectExpression
+  doc: Document
+  linksNode: YAMLMap
 
   constructor(code: string, filePath: string, debug: boolean = false) {
     this.debug = debug
     this.filePath = filePath
 
-    this.ast = parse(code, {
-      sourceType: "module",
-      plugins: ["typescript"],
-    })
-    this.dataNode = findBiweeklyLinkDataNode(this.ast)!
-    if (!this.dataNode) {
+    this.doc = parseDocument(code, { keepSourceTokens: true })
+    this.linksNode = findBiweeklyLinkDataNode(this.doc)!
+    if (!this.linksNode) {
       throw new Error(
         "Cannot find biweekly event data in the input, please refactor this script!",
       )
     }
 
     if (this.debug) {
-      debugPrintDataNode(this.dataNode)
+      debugPrintLinksNode(this.linksNode)
     }
   }
 
@@ -47,96 +42,61 @@ export class BiweeklyLinkEditor {
     console.log(
       `Setting slides ID to ${val} for biweekly issue #${issueNumber}`,
     )
-    editBiweeklyLinkData(this.dataNode, issueNumber, { newSlidesID: val })
+    editBiweeklyLinkData(this.linksNode, issueNumber, { newSlidesID: val })
   }
 
   editBVID(issueNumber: number, val: string) {
     console.log(`Setting BVID to ${val} for biweekly issue #${issueNumber}`)
-    editBiweeklyLinkData(this.dataNode, issueNumber, { newBVID: val })
+    editBiweeklyLinkData(this.linksNode, issueNumber, { newBVID: val })
   }
 
   async emit() {
     if (this.debug) {
       console.log("After edits:")
-      debugPrintDataNode(this.dataNode)
+      debugPrintLinksNode(this.linksNode)
     }
-    // regenerate code
-    const output = generate(this.ast, { retainLines: true })
-
-    // format with Prettier
-    const config = await resolveConfig(this.filePath)
-    const formatted = await format(output.code, {
-      ...config,
-      filepath: this.filePath,
-    })
+    const output = this.doc.toString()
     if (this.debug) {
-      console.log("Generated code:")
-      console.log(formatted)
+      console.log("Generated YAML:")
+      console.log(output)
     }
-    return formatted
+    return output
   }
 }
 
-const findBiweeklyLinkDataNode = (ast: ParseResult<File>) => {
-  for (const node of ast.program.body) {
-    if (node.type !== "VariableDeclaration") continue
-
-    for (const decl of node.declarations) {
-      if (decl.id.type !== "Identifier") continue
-      if (decl.id.name !== "biweeklyLinkInfo") continue
-      if (decl.init?.type !== "ObjectExpression")
-        throw new Error("unexpected AST structure for biweekly link data")
-
-      return decl.init
-    }
+const findBiweeklyLinkDataNode = (doc: Document): YAMLMap => {
+  const linksNode = doc.getIn(["links"])
+  if (!linksNode) {
+    const empty = new YAMLMap()
+    doc.set("links", empty)
+    return empty
   }
-  return null
+
+  if (!(linksNode instanceof YAMLMap)) {
+    throw new Error("unexpected YAML structure for biweekly link data")
+  }
+  return linksNode
 }
 
-enum PropKind {
-  Slides,
-  BVID,
-}
-
-const identifyPropKind = (
-  op: ObjectProperty,
-): { kind: PropKind; value: string } | null => {
-  if (!(op.key.type === "Identifier" && op.value.type === "StringLiteral")) {
-    return null
-  }
-  switch (op.key.name) {
-    case "slides":
-      return { kind: PropKind.Slides, value: op.value.value }
-    case "bvid":
-      return { kind: PropKind.BVID, value: op.value.value }
-    default:
-      return null
+const debugPrintLinksNode = (linksNode: YAMLMap) => {
+  for (const item of linksNode.items) {
+    if (!(item instanceof Pair)) continue
+    debugPrintIssueData(item)
   }
 }
 
-const debugPrintDataNode = (dataNode: ObjectExpression) => {
-  for (const prop of dataNode.properties) {
-    if (prop.type !== "ObjectProperty") continue
-    debugPrintIssueData(prop)
-  }
-}
-
-const debugPrintIssueData = (issueNode: ObjectProperty) => {
-  const issueNumber =
-    issueNode.key.type === "NumericLiteral" ? issueNode.key.value : null
+const debugPrintIssueData = (issuePair: Pair) => {
+  const issueNumber = getNumericKey(issuePair.key)
+  const issueMap = issuePair.value
   let slidesID: string | null = null
   let bvid: string | null = null
-  for (const valueProp of (issueNode.value as ObjectExpression).properties) {
-    const identified = identifyPropKind(valueProp as ObjectProperty)
-    if (!identified) continue
 
-    switch (identified.kind) {
-      case PropKind.Slides:
-        slidesID = identified.value
-        break
-      case PropKind.BVID:
-        bvid = identified.value
-        break
+  if (issueMap instanceof YAMLMap) {
+    for (const item of issueMap.items) {
+      if (!(item instanceof Pair)) continue
+      const key = getStringKey(item.key)
+      if (key === "slides") slidesID = getScalarValue(item.value)
+      if (key === "bvid") bvid = getScalarValue(item.value)
     }
   }
 
@@ -146,79 +106,139 @@ const debugPrintIssueData = (issueNode: ObjectProperty) => {
 }
 
 const editBiweeklyLinkData = (
-  dataNode: ObjectExpression,
+  linksNode: YAMLMap,
   issueNumber: number,
   edits: EditRequest,
 ) => {
-  let issueNode: ObjectProperty | null = null
-  for (const prop of dataNode.properties) {
-    if (prop.type !== "ObjectProperty") continue
-    const key = prop.key
-    if (key.type === "NumericLiteral" && key.value === issueNumber) {
-      issueNode = prop
-      break
-    }
+  const issueMap = ensureIssueMap(linksNode, issueNumber)
+
+  if (edits.newSlidesID) {
+    upsertIssueValue(issueMap, "slides", edits.newSlidesID)
+  }
+  if (edits.newBVID) {
+    upsertIssueValue(issueMap, "bvid", edits.newBVID)
   }
 
-  const newIssueNode = editIssueData(issueNode, issueNumber, edits)
-  if (!issueNode) {
-    dataNode.properties.push(newIssueNode)
+  sortIssueProperties(issueMap)
+}
+
+const ensureIssueMap = (linksNode: YAMLMap, issueNumber: number): YAMLMap => {
+  const existing = getIssueMap(linksNode, issueNumber)
+  if (existing) return existing
+
+  const issueMap = new YAMLMap()
+  insertIssueInOrder(linksNode, issueNumber, issueMap)
+  return issueMap
+}
+
+const getIssueMap = (
+  linksNode: YAMLMap,
+  issueNumber: number,
+): YAMLMap | null => {
+  for (const item of linksNode.items) {
+    if (!(item instanceof Pair)) continue
+    const key = getNumericKey(item.key)
+    if (key === issueNumber) {
+      if (item.value instanceof YAMLMap) {
+        return item.value
+      }
+      throw new Error("unexpected YAML structure for issue data")
+    }
+  }
+  return null
+}
+
+const insertIssueInOrder = (
+  linksNode: YAMLMap,
+  issueNumber: number,
+  issueMap: YAMLMap,
+) => {
+  const newPair = new Pair(new Scalar(issueNumber), issueMap)
+  const insertIndex = linksNode.items.findIndex((item) => {
+    if (!(item instanceof Pair)) return false
+    const key = getNumericKey(item.key)
+    return key !== null && key > issueNumber
+  })
+
+  if (insertIndex === -1) {
+    linksNode.items.push(newPair)
+  } else {
+    linksNode.items.splice(insertIndex, 0, newPair)
   }
 }
 
-const editIssueData = (
-  issueNode: ObjectProperty | null,
-  issueNumber: number,
-  edits: EditRequest,
-) => {
-  // make a new AST node for the issue if not existing already
-  if (!issueNode)
-    issueNode = objectProperty(
-      numericLiteral(issueNumber),
-      objectExpression([]),
-      /*computed=*/ true,
-    )
-
-  if (issueNode.value.type !== "ObjectExpression")
-    throw new Error("unexpected AST structure for issue data")
-
-  let bvidMutated = false
-  let slidesMutated = false
-  for (const valueProp of issueNode.value.properties) {
-    if (valueProp.type !== "ObjectProperty") continue
-    const identified = identifyPropKind(valueProp)
-    if (!identified) continue
-
-    if (identified.kind === PropKind.Slides && edits.newSlidesID) {
-      valueProp.value = stringLiteral(edits.newSlidesID)
-      slidesMutated = true
+const upsertIssueValue = (issueMap: YAMLMap, key: string, value: string) => {
+  const existing = findPair(issueMap, key)
+  if (existing) {
+    if (existing.value instanceof Scalar) {
+      existing.value.value = value
+      return
     }
-    if (identified.kind === PropKind.BVID && edits.newBVID) {
-      valueProp.value = stringLiteral(edits.newBVID)
-      bvidMutated = true
-    }
+    existing.value = createQuotedScalar(value)
+    return
   }
 
-  if (edits.newBVID && !bvidMutated) {
-    issueNode.value.properties.push(
-      objectProperty(identifier("bvid"), stringLiteral(edits.newBVID)),
-    )
-  }
-  if (edits.newSlidesID && !slidesMutated) {
-    issueNode.value.properties.push(
-      objectProperty(identifier("slides"), stringLiteral(edits.newSlidesID)),
-    )
-  }
+  issueMap.items.push(new Pair(new Scalar(key), createQuotedScalar(value)))
+}
 
-  // sort the properties to keep consistent order
-  // slides first, then bvid: video always comes after slides in time order
-  issueNode.value.properties.sort((a, b) => {
-    if (a.type !== "ObjectProperty" || b.type !== "ObjectProperty") return 0
-    const aIdentified = identifyPropKind(a)
-    const bIdentified = identifyPropKind(b)
-    if (!aIdentified || !bIdentified) return 0
-    return aIdentified.kind - bIdentified.kind
+const sortIssueProperties = (issueMap: YAMLMap) => {
+  const order = new Map([
+    ["slides", 0],
+    ["bvid", 1],
+  ])
+
+  issueMap.items.sort((a, b) => {
+    if (!(a instanceof Pair) || !(b instanceof Pair)) return 0
+    const aKey = getStringKey(a.key)
+    const bKey = getStringKey(b.key)
+    const aOrder = order.get(aKey ?? "") ?? 99
+    const bOrder = order.get(bKey ?? "") ?? 99
+    return aOrder - bOrder
   })
+}
 
-  return issueNode
+const findPair = (map: YAMLMap, key: string): Pair | null => {
+  for (const item of map.items) {
+    if (!(item instanceof Pair)) continue
+    if (getStringKey(item.key) === key) return item
+  }
+  return null
+}
+
+const getNumericKey = (key: unknown): number | null => {
+  if (key instanceof Scalar) {
+    if (typeof key.value === "number") return key.value
+    if (typeof key.value === "string") {
+      const parsed = Number(key.value)
+      return Number.isNaN(parsed) ? null : parsed
+    }
+    return null
+  }
+  if (typeof key === "number") return key
+  if (typeof key === "string") {
+    const parsed = Number(key)
+    return Number.isNaN(parsed) ? null : parsed
+  }
+  return null
+}
+
+const getStringKey = (key: unknown): string | null => {
+  if (key instanceof Scalar) {
+    return key.value == null ? null : String(key.value)
+  }
+  if (typeof key === "string") return key
+  return null
+}
+
+const getScalarValue = (value: unknown): string | null => {
+  if (value instanceof Scalar) {
+    return value.value == null ? null : String(value.value)
+  }
+  return null
+}
+
+const createQuotedScalar = (value: string): Scalar => {
+  const scalar = new Scalar(value)
+  scalar.type = Scalar.QUOTE_DOUBLE
+  return scalar
 }

@@ -17,20 +17,21 @@ pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 <script setup lang="ts">
 import { ref } from "vue"
 import { useI18n } from "vue-i18n"
-import {
-    bilibiliLiveLink,
-    getBiweeklyBilibiliLink,
-    getBiweeklySlideLink,
-    wemeetLink,
-    wemeetNumber,
-} from "@src/components/events/BiweeklyLinks"
-import { getBiweeklyEvents, type BiweeklyEventItem } from '@src/components/events/DataSource'
-import BiweeklyCalendar from "@src/components/events/BiweeklyCalendar.vue"
+
+import biweeklyDB from "@data/biweekly.min.json"
 import eventsICS from "@data/events/events.ics?raw"
+import {
+    getBiweeklyBilibiliLink,
+    getBiweeklyEvents,
+    getBiweeklySlideLink,
+    type BiweeklyEventItem,
+} from "@src/components/events/DataSource"
+import BiweeklyCalendar from "@src/components/events/BiweeklyCalendar.vue"
 
 const { d, locale, tm } = useI18n()
 const now = new Date()
-const biweeklyData = getBiweeklyEvents(eventsICS, now)
+const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
+const ei = biweeklyDB.eventInfo
 
 const thisEvent = ref(null)
 const thisBiliLink = ref(null)
@@ -72,7 +73,7 @@ If you'd like to hold a session in another language, please feel free to get in 
 <div class="flex flex-col md:flex-row md:gap-6">
     <div class="w-full flex justify-center md:flex-1">
         <BiweeklyCalendar
-            :data="biweeklyData"
+            :data="biweeklyEvents"
             :now="now"
             @biweeklySelected="onBiweeklySelected"
         />
@@ -84,7 +85,7 @@ If you'd like to hold a session in another language, please feel free to get in 
 
 Meeting Time: {{ d(thisEvent.start, "long") }} (meeting expected to last an hour)
 
-<a :href="wemeetLink" target="_blank" rel="noreferrer">Meeting Link</a>｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">Biweekly Slides</a><span v-else>Biweekly Slides (to be uploaded)</span>｜<a :href="bilibiliLiveLink" target="_blank" rel="noreferrer">Livestream Link</a>｜Meeting ID: **{{ wemeetNumber }}**
+<a :href="ei.wemeetLink" target="_blank" rel="noreferrer">Meeting Link</a>｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">Biweekly Slides</a><span v-else>Biweekly Slides (to be uploaded)</span>｜<a :href="ei.bilibiliLiveLink" target="_blank" rel="noreferrer">Livestream Link</a>｜Meeting ID: **{{ ei.wemeetNumber }}**
 
 Biweekly slides may be edited **until the beginning of the meeting**.
 Those who wish to speak or ask questions at the biweekly should finish editing
