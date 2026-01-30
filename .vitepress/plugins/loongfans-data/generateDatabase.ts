@@ -216,12 +216,12 @@ class DatabaseGenerator {
       this.readAndTransformIntoMap(
         "chips/cpu/**/*.yml",
         this.validateCPUData.bind(this),
-        sortNames,
+        compareLoongsonChipModelsNewestFirst,
       ),
       this.readAndTransformIntoMap(
         "chips/chipset/**/*.yml",
         this.validateChipsetData.bind(this),
-        sortNames,
+        compareLoongsonChipModelsNewestFirst,
       ),
     ])
 
@@ -240,7 +240,7 @@ class DatabaseGenerator {
     const os = await this.readAndTransformIntoArray(
       "os/**/*.yml",
       this.validateOSData.bind(this),
-      sortNamesNormal,
+      compareNamesAlphabetically,
     )
 
     await this.emitFile("os", this.validateOSOutputData(os))
@@ -253,16 +253,20 @@ async function loadUntypedYAML(fileName: string) {
   }) as object
 }
 
-// 以文件名进行排序
-function sortNames(a: string, b: string) {
+// 按照龙芯芯片型号的命名规则，大体按照芯片型号所隐含的发布时间从新到旧排序
+// e.g. 3A6600 < 3B6600 < 3C5000 < 3C5000L < 3C3000 < 2K3000
+// NOTE: 不幸的是，存在个别难以处理的例外情况，如 3C3000 实际新于 3C6000，但目前会被排到后面
+function compareLoongsonChipModelsNewestFirst(a: string, b: string) {
   // 对第三位的数字排序（降序）
-  const levelA = parseInt(a.charAt(2), 10)
-  const levelB = parseInt(b.charAt(2), 10)
-  if (levelA !== levelB) {
-    return levelB - levelA // 降序
+  // e.g. 3A6000 < 2K3000 < 3C3000
+  const generationA = parseInt(a.charAt(2), 10)
+  const generationB = parseInt(b.charAt(2), 10)
+  if (generationA !== generationB) {
+    return generationB - generationA // 降序
   }
 
   // 对第二位的字母排序（升序）
+  // e.g. 3A6000 < 3C3000
   const seriesA = a.charAt(1)
   const seriesB = b.charAt(1)
   if (seriesA !== seriesB) {
@@ -270,23 +274,17 @@ function sortNames(a: string, b: string) {
   }
 
   // 对第四位的数字排序（降序）
-  const sublevelA = parseInt(a.charAt(3), 10)
-  const sublevelB = parseInt(b.charAt(3), 10)
-  if (sublevelA !== sublevelB) {
-    return sublevelB - sublevelA // 降序
+  // e.g. 3B6600 < 3B6000
+  const subGenerationA = parseInt(a.charAt(3), 10)
+  const subGenerationB = parseInt(b.charAt(3), 10)
+  if (subGenerationA !== subGenerationB) {
+    return subGenerationB - subGenerationA // 降序
   }
 
   return a.localeCompare(b)
 }
 
-function sortNamesNormal(a: string, b: string) {
-  // 对第一位的字母排序（升序）
-  const nameA = a.charAt(0)
-  const nameB = b.charAt(0)
-  if (nameA !== nameB) {
-    return nameA.localeCompare(nameB)
-  }
-
+function compareNamesAlphabetically(a: string, b: string) {
   return a.localeCompare(b)
 }
 
