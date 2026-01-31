@@ -11,6 +11,15 @@ type EventInfoEditRequest = {
   newWemeetNumber?: string
 }
 
+type Changes = {
+  slidesID?: boolean
+  bvid?: boolean
+  livestreamLink?: boolean
+  wemeet?: boolean
+}
+
+type ChangedCallback = (changes: Changes) => void
+
 // NOTE: The implementation is ported to edit YAML data, from a manually crafted
 // Babel AST-based earlier version that worked on the previously TypeScript data
 // source. It is ported by GPT-5.2-Codex, so while it works fine, beware of
@@ -28,6 +37,15 @@ export class BiweeklyLinkEditor {
   doc: Document
   linksNode: YAMLMap
   eventInfoNode: YAMLMap
+
+  // changed status for various parts, used for generating commit messages
+  issueNumber: number | null = null
+  pendingChanges: Changes = {
+    slidesID: false,
+    bvid: false,
+    livestreamLink: false,
+    wemeet: false,
+  }
 
   constructor(code: string, filePath: string, debug: boolean = false) {
     this.debug = debug
@@ -51,12 +69,28 @@ export class BiweeklyLinkEditor {
     console.log(
       `Setting slides ID to ${val} for biweekly issue #${issueNumber}`,
     )
-    editBiweeklyLinkData(this.linksNode, issueNumber, { newSlidesID: val })
+    this.issueNumber = issueNumber
+    editBiweeklyLinkData(
+      this.linksNode,
+      issueNumber,
+      { newSlidesID: val },
+      (changes) => {
+        this.pendingChanges.slidesID ||= changes.slidesID ?? false
+      },
+    )
   }
 
   editBVID(issueNumber: number, val: string) {
     console.log(`Setting BVID to ${val} for biweekly issue #${issueNumber}`)
-    editBiweeklyLinkData(this.linksNode, issueNumber, { newBVID: val })
+    this.issueNumber = issueNumber
+    editBiweeklyLinkData(
+      this.linksNode,
+      issueNumber,
+      { newBVID: val },
+      (changes) => {
+        this.pendingChanges.bvid ||= changes.bvid ?? false
+      },
+    )
   }
 
   editEventInfo(edits: EventInfoEditRequest) {
@@ -71,7 +105,10 @@ export class BiweeklyLinkEditor {
     if (edits.newWemeetNumber) {
       console.log(`Setting Wemeet number to ${edits.newWemeetNumber}`)
     }
-    editBiweeklyEventInfo(this.eventInfoNode, edits)
+    editBiweeklyEventInfo(this.eventInfoNode, edits, (changes) => {
+      this.pendingChanges.livestreamLink ||= changes.livestreamLink ?? false
+      this.pendingChanges.wemeet ||= changes.wemeet ?? false
+    })
   }
 
   async emit() {
@@ -85,6 +122,38 @@ export class BiweeklyLinkEditor {
       console.log(output)
     }
     return output
+  }
+
+  touched(): boolean {
+    return (
+      this.pendingChanges.bvid! ||
+      this.pendingChanges.slidesID! ||
+      this.pendingChanges.livestreamLink! ||
+      this.pendingChanges.wemeet!
+    )
+  }
+
+  makeGitCommitMessage(): string {
+    const isIssueNumberRelevant =
+      this.pendingChanges.bvid || this.pendingChanges.slidesID
+    const changedParts: string[] = []
+    if (this.pendingChanges.bvid) {
+      changedParts.push("BVID")
+    }
+    if (this.pendingChanges.slidesID) {
+      changedParts.push("slides ID")
+    }
+    if (this.pendingChanges.livestreamLink) {
+      changedParts.push("livestream link")
+    }
+    if (this.pendingChanges.wemeet) {
+      changedParts.push("Wemeet info")
+    }
+
+    if (isIssueNumberRelevant && this.issueNumber != null) {
+      return `feat(biweekly): update ${changedParts.join(" and ")} for biweekly ${this.issueNumber}`
+    }
+    return `feat(biweekly): update ${changedParts.join(" and ")}`
   }
 }
 
@@ -146,33 +215,55 @@ const editBiweeklyLinkData = (
   linksNode: YAMLMap,
   issueNumber: number,
   edits: EditRequest,
+  onChanged: ChangedCallback,
 ) => {
   const issueMap = ensureIssueMap(linksNode, issueNumber)
+  const changes: Changes = { slidesID: false, bvid: false }
 
   if (edits.newSlidesID) {
-    upsertIssueValue(issueMap, "slides", edits.newSlidesID)
+    changes.slidesID = upsertIssueValue(issueMap, "slides", edits.newSlidesID)
   }
   if (edits.newBVID) {
-    upsertIssueValue(issueMap, "bvid", edits.newBVID)
+    changes.bvid = upsertIssueValue(issueMap, "bvid", edits.newBVID)
   }
 
   sortIssueProperties(issueMap)
+  onChanged(changes)
 }
 
 const editBiweeklyEventInfo = (
   eventInfoNode: YAMLMap,
   edits: EventInfoEditRequest,
+  onChanged: ChangedCallback,
 ) => {
+  const changes: Changes = {
+    livestreamLink: false,
+    wemeet: false,
+  }
+
   if (edits.newBilibiliLiveLink) {
-    upsertMapValue(eventInfoNode, "bilibiliLiveLink", edits.newBilibiliLiveLink)
+    changes.livestreamLink = upsertMapValue(
+      eventInfoNode,
+      "bilibiliLiveLink",
+      edits.newBilibiliLiveLink,
+    )
   }
   if (edits.newWemeetLink) {
-    upsertMapValue(eventInfoNode, "wemeetLink", edits.newWemeetLink)
+    changes.wemeet ||= upsertMapValue(
+      eventInfoNode,
+      "wemeetLink",
+      edits.newWemeetLink,
+    )
   }
   if (edits.newWemeetNumber) {
-    upsertMapValue(eventInfoNode, "wemeetNumber", edits.newWemeetNumber)
+    changes.wemeet ||= upsertMapValue(
+      eventInfoNode,
+      "wemeetNumber",
+      edits.newWemeetNumber,
+    )
   }
   sortEventInfoProperties(eventInfoNode)
+  onChanged(changes)
 }
 
 const ensureIssueMap = (linksNode: YAMLMap, issueNumber: number): YAMLMap => {
@@ -224,14 +315,16 @@ const upsertIssueValue = (issueMap: YAMLMap, key: string, value: string) => {
   const existing = findPair(issueMap, key)
   if (existing) {
     if (existing.value instanceof Scalar) {
+      if (existing.value.value === value) return false
       existing.value.value = value
-      return
+      return true
     }
     existing.value = createQuotedScalar(value)
-    return
+    return true
   }
 
   issueMap.items.push(new Pair(new Scalar(key), createQuotedScalar(value)))
+  return true
 }
 
 const sortIssueProperties = (issueMap: YAMLMap) => {
@@ -262,13 +355,15 @@ const upsertMapValue = (map: YAMLMap, key: string, value: string) => {
   const existing = findPair(map, key)
   if (existing) {
     if (existing.value instanceof Scalar) {
+      if (existing.value.value === value) return false
       existing.value.value = value
-      return
+      return true
     }
     existing.value = createQuotedScalar(value)
-    return
+    return true
   }
   map.items.push(new Pair(new Scalar(key), createQuotedScalar(value)))
+  return true
 }
 
 const sortEventInfoProperties = (eventInfoNode: YAMLMap) => {

@@ -6,37 +6,6 @@ import { BiweeklyLinkEditor } from "./editor"
 // relative to project root
 const biweeklyLinkDataPath = "./data/events/biweekly.yml"
 
-const makeGitCommitMessage = (
-  issueNumber: number | null,
-  bvidChanged: boolean,
-  slidesIDChanged: boolean,
-  liveLinkChanged: boolean,
-  wemeetLinkChanged: boolean,
-  wemeetNumberChanged: boolean,
-) => {
-  const changedParts: string[] = []
-  if (bvidChanged) {
-    changedParts.push("BVID")
-  }
-  if (slidesIDChanged) {
-    changedParts.push("slides ID")
-  }
-  if (liveLinkChanged) {
-    changedParts.push("live room link")
-  }
-  if (wemeetLinkChanged) {
-    changedParts.push("Wemeet link")
-  }
-  if (wemeetNumberChanged) {
-    changedParts.push("Wemeet number")
-  }
-
-  if (issueNumber != null) {
-    return `feat(biweekly): update ${changedParts.join(" and ")} for biweekly ${issueNumber}`
-  }
-  return `feat(biweekly): update ${changedParts.join(" and ")}`
-}
-
 const asyncCallGit = (args: string[]) => {
   return new Promise<void>((resolve, reject) => {
     const gitProcess = spawn("git", args, { stdio: "inherit" })
@@ -175,18 +144,16 @@ async function main() {
     })
   }
 
+  if (!editor.touched()) {
+    console.log("No changes were made, exiting.")
+    return
+  }
+
   const newCode = await editor.emit()
   await writeFile(biweeklyLinkDataPath, newCode, "utf-8")
 
   if (opts.commit) {
-    const commitMessage = makeGitCommitMessage(
-      issueNumber,
-      !!bvidToSet,
-      !!slidesIDtoSet,
-      !!liveLinkToSet,
-      !!wemeetLinkToSet,
-      !!wemeetNumberToSet,
-    )
+    const commitMessage = editor.makeGitCommitMessage()
 
     console.log("Staging changes for Git...")
     await asyncCallGit(["add", biweeklyLinkDataPath])
