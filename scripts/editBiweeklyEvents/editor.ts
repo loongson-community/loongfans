@@ -5,6 +5,12 @@ type EditRequest = {
   newSlidesID?: string
 }
 
+type EventInfoEditRequest = {
+  newBilibiliLiveLink?: string
+  newWemeetLink?: string
+  newWemeetNumber?: string
+}
+
 // NOTE: The implementation is ported to edit YAML data, from a manually crafted
 // Babel AST-based earlier version that worked on the previously TypeScript data
 // source. It is ported by GPT-5.2-Codex, so while it works fine, beware of
@@ -14,12 +20,14 @@ type EditRequest = {
 //
 // - `Document` instead of `ReturnType<typeof parseDocument>`;
 // - `debugPrintLinksNode` instead of `debugPrintDataNode` (`linksNode`
-//   originally being `dataNode`).
+//   originally being `dataNode`);
+// - simplified `sortEventInfoProperties` to just sort alphabetically.
 export class BiweeklyLinkEditor {
   debug: boolean = false
   filePath: string
   doc: Document
   linksNode: YAMLMap
+  eventInfoNode: YAMLMap
 
   constructor(code: string, filePath: string, debug: boolean = false) {
     this.debug = debug
@@ -27,6 +35,7 @@ export class BiweeklyLinkEditor {
 
     this.doc = parseDocument(code, { keepSourceTokens: true })
     this.linksNode = findBiweeklyLinkDataNode(this.doc)!
+    this.eventInfoNode = findBiweeklyEventInfoNode(this.doc)!
     if (!this.linksNode) {
       throw new Error(
         "Cannot find biweekly event data in the input, please refactor this script!",
@@ -48,6 +57,21 @@ export class BiweeklyLinkEditor {
   editBVID(issueNumber: number, val: string) {
     console.log(`Setting BVID to ${val} for biweekly issue #${issueNumber}`)
     editBiweeklyLinkData(this.linksNode, issueNumber, { newBVID: val })
+  }
+
+  editEventInfo(edits: EventInfoEditRequest) {
+    if (edits.newBilibiliLiveLink) {
+      console.log(
+        `Setting Bilibili live room link to ${edits.newBilibiliLiveLink}`,
+      )
+    }
+    if (edits.newWemeetLink) {
+      console.log(`Setting Wemeet link to ${edits.newWemeetLink}`)
+    }
+    if (edits.newWemeetNumber) {
+      console.log(`Setting Wemeet number to ${edits.newWemeetNumber}`)
+    }
+    editBiweeklyEventInfo(this.eventInfoNode, edits)
   }
 
   async emit() {
@@ -76,6 +100,19 @@ const findBiweeklyLinkDataNode = (doc: Document): YAMLMap => {
     throw new Error("unexpected YAML structure for biweekly link data")
   }
   return linksNode
+}
+
+const findBiweeklyEventInfoNode = (doc: Document): YAMLMap => {
+  const eventInfoNode = doc.getIn(["eventInfo"])
+  if (!eventInfoNode) {
+    const empty = new YAMLMap()
+    doc.set("eventInfo", empty)
+    return empty
+  }
+  if (!(eventInfoNode instanceof YAMLMap)) {
+    throw new Error("unexpected YAML structure for biweekly event info")
+  }
+  return eventInfoNode
 }
 
 const debugPrintLinksNode = (linksNode: YAMLMap) => {
@@ -120,6 +157,22 @@ const editBiweeklyLinkData = (
   }
 
   sortIssueProperties(issueMap)
+}
+
+const editBiweeklyEventInfo = (
+  eventInfoNode: YAMLMap,
+  edits: EventInfoEditRequest,
+) => {
+  if (edits.newBilibiliLiveLink) {
+    upsertMapValue(eventInfoNode, "bilibiliLiveLink", edits.newBilibiliLiveLink)
+  }
+  if (edits.newWemeetLink) {
+    upsertMapValue(eventInfoNode, "wemeetLink", edits.newWemeetLink)
+  }
+  if (edits.newWemeetNumber) {
+    upsertMapValue(eventInfoNode, "wemeetNumber", edits.newWemeetNumber)
+  }
+  sortEventInfoProperties(eventInfoNode)
 }
 
 const ensureIssueMap = (linksNode: YAMLMap, issueNumber: number): YAMLMap => {
@@ -203,6 +256,33 @@ const findPair = (map: YAMLMap, key: string): Pair | null => {
     if (getStringKey(item.key) === key) return item
   }
   return null
+}
+
+const upsertMapValue = (map: YAMLMap, key: string, value: string) => {
+  const existing = findPair(map, key)
+  if (existing) {
+    if (existing.value instanceof Scalar) {
+      existing.value.value = value
+      return
+    }
+    existing.value = createQuotedScalar(value)
+    return
+  }
+  map.items.push(new Pair(new Scalar(key), createQuotedScalar(value)))
+}
+
+const sortEventInfoProperties = (eventInfoNode: YAMLMap) => {
+  // just alphabetical order is fine
+  eventInfoNode.items.sort((a, b) => {
+    if (!(a instanceof Pair) || !(b instanceof Pair)) return 0
+    const aKey = getStringKey(a.key) ?? ""
+    const bKey = getStringKey(b.key) ?? ""
+    // there is no locale-agnostic codepoint-based comparison in JS yet, so we
+    // can only use localeCompare
+    // hope https://github.com/tc39/proposal-compare-strings-by-codepoint gets
+    // accepted someday...
+    return aKey.localeCompare(bKey)
+  })
 }
 
 const getNumericKey = (key: unknown): number | null => {
