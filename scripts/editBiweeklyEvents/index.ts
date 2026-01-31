@@ -7,9 +7,12 @@ import { BiweeklyLinkEditor } from "./editor"
 const biweeklyLinkDataPath = "./data/events/biweekly.yml"
 
 const makeGitCommitMessage = (
-  issueNumber: number,
+  issueNumber: number | null,
   bvidChanged: boolean,
   slidesIDChanged: boolean,
+  liveLinkChanged: boolean,
+  wemeetLinkChanged: boolean,
+  wemeetNumberChanged: boolean,
 ) => {
   const changedParts: string[] = []
   if (bvidChanged) {
@@ -18,8 +21,20 @@ const makeGitCommitMessage = (
   if (slidesIDChanged) {
     changedParts.push("slides ID")
   }
+  if (liveLinkChanged) {
+    changedParts.push("live room link")
+  }
+  if (wemeetLinkChanged) {
+    changedParts.push("Wemeet link")
+  }
+  if (wemeetNumberChanged) {
+    changedParts.push("Wemeet number")
+  }
 
-  return `feat(biweekly): update ${changedParts.join(" and ")} for biweekly ${issueNumber}`
+  if (issueNumber != null) {
+    return `feat(biweekly): update ${changedParts.join(" and ")} for biweekly ${issueNumber}`
+  }
+  return `feat(biweekly): update ${changedParts.join(" and ")}`
 }
 
 const asyncCallGit = (args: string[]) => {
@@ -69,7 +84,7 @@ const extractKDocsIDFromURL = (urlString: string): string | null => {
 async function main() {
   const program = new Command()
     .description("Edit biweekly link data")
-    .requiredOption(
+    .option(
       "-i, --issue <number>",
       "issue number of biweekly event to edit",
       parseInt,
@@ -83,16 +98,41 @@ async function main() {
       "--set-slides <kdocs-id>",
       "record this ID as the key to the slides on KDocs",
     )
+    .option(
+      "--set-live-link <url>",
+      "record this URL as the Bilibili live room link",
+    )
+    .option(
+      "--set-wemeet-link <url>",
+      "record this URL as the Wemeet meeting link",
+    )
+    .option(
+      "--set-wemeet-number <XXX-XXXX-XXXX>",
+      "record this string as the Wemeet meeting number",
+    )
     .option("--commit", "also commit the changes to Git", false)
     .parse(process.argv)
   const opts = program.opts()
 
-  const issueNumber = opts.issue
+  const issueNumber = opts.issue ?? null
   let bvidToSet: string | undefined = opts.setBvid
   let slidesIDtoSet: string | undefined = opts.setSlides
+  const liveLinkToSet: string | undefined = opts.setLiveLink
+  const wemeetLinkToSet: string | undefined = opts.setWemeetLink
+  const wemeetNumberToSet: string | undefined = opts.setWemeetNumber
 
-  if (!bvidToSet && !slidesIDtoSet) {
+  if (
+    !bvidToSet &&
+    !slidesIDtoSet &&
+    !liveLinkToSet &&
+    !wemeetLinkToSet &&
+    !wemeetNumberToSet
+  ) {
     console.error("No changes specified, check --help for usage.")
+    process.exit(1)
+  }
+  if ((bvidToSet || slidesIDtoSet) && issueNumber == null) {
+    console.error("Issue number is required when editing BVID or slides ID.")
     process.exit(1)
   }
 
@@ -110,7 +150,7 @@ async function main() {
         process.exit(1)
       }
     }
-    editor.editBVID(issueNumber, bvidToSet)
+    editor.editBVID(issueNumber!, bvidToSet)
   }
 
   if (slidesIDtoSet) {
@@ -124,7 +164,15 @@ async function main() {
         process.exit(1)
       }
     }
-    editor.editSlidesID(issueNumber, slidesIDtoSet)
+    editor.editSlidesID(issueNumber!, slidesIDtoSet)
+  }
+
+  if (liveLinkToSet || wemeetLinkToSet || wemeetNumberToSet) {
+    editor.editEventInfo({
+      newBilibiliLiveLink: liveLinkToSet,
+      newWemeetLink: wemeetLinkToSet,
+      newWemeetNumber: wemeetNumberToSet,
+    })
   }
 
   const newCode = await editor.emit()
@@ -135,6 +183,9 @@ async function main() {
       issueNumber,
       !!bvidToSet,
       !!slidesIDtoSet,
+      !!liveLinkToSet,
+      !!wemeetLinkToSet,
+      !!wemeetNumberToSet,
     )
 
     console.log("Staging changes for Git...")

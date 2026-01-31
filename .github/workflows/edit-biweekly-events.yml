@@ -5,7 +5,7 @@ on:
     inputs:
       issue_number:
         description: "Biweekly issue number to edit"
-        required: true
+        required: false
         type: integer
       bvid:
         description: "Set BVID of the biweekly event to (optional)"
@@ -13,6 +13,18 @@ on:
         type: string
       slides_id:
         description: "Set Slides ID of the biweekly event to (optional)"
+        required: false
+        type: string
+      bilibili_live_link:
+        description: "Set the Bilibili live room link to (optional)"
+        required: false
+        type: string
+      wemeet_link:
+        description: "Set the Wemeet meeting link to (optional)"
+        required: false
+        type: string
+      wemeet_number:
+        description: "Set the Wemeet meeting number to (optional, in the typical hyphenated format)"
         required: false
         type: string
 
@@ -26,8 +38,14 @@ jobs:
     steps:
       - name: Validate inputs
         run: |
-          if [[ -z "${{ github.event.inputs.bvid }}" && -z "${{ github.event.inputs.slides_id }}" ]]; then
-            echo "At least one of 'bvid' or 'slides_id' must be provided."
+          _provided_inputs=false
+          [[ -n "${{ github.event.inputs.bvid }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.slides_id }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.bilibili_live_link }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.wemeet_link }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.wemeet_number }}" ]] && _provided_inputs=true
+          if ! "$_provided_inputs"; then
+            echo "At least one edit input must be provided."
             exit 1
           fi
       - name: Check out the source code
@@ -51,24 +69,44 @@ jobs:
 
       - name: Make the edit
         run: |
-          ARGS=(
-            -i ${{ github.event.inputs.issue_number }}
-          )
+          ARGS=()
+          if [[ -n "${{ github.event.inputs.issue_number }}" ]]; then
+            ARGS+=( -i ${{ github.event.inputs.issue_number }} )
+          fi
           if [[ -n "${{ github.event.inputs.bvid }}" ]]; then
             ARGS+=( --set-bvid "${{ github.event.inputs.bvid }}")
           fi
           if [[ -n "${{ github.event.inputs.slides_id }}" ]]; then
             ARGS+=( --set-slides "${{ github.event.inputs.slides_id }}")
           fi
+          if [[ -n "${{ github.event.inputs.bilibili_live_link }}" ]]; then
+            ARGS+=( --set-live-link "${{ github.event.inputs.bilibili_live_link }}")
+          fi
+          if [[ -n "${{ github.event.inputs.wemeet_link }}" ]]; then
+            ARGS+=( --set-wemeet-link "${{ github.event.inputs.wemeet_link }}")
+          fi
+          if [[ -n "${{ github.event.inputs.wemeet_number }}" ]]; then
+            ARGS+=( --set-wemeet-number "${{ github.event.inputs.wemeet_number }}")
+          fi
           ARGS+=( --commit )
           pnpm run editBiweeklyEvents "${ARGS[@]}"
+
+      - name: Figure out the PR title
+        id: pr_title
+        run: |
+          issue_number="${{ github.event.inputs.issue_number }}"
+          if [[ -n ${issue_number} ]]; then
+            echo "PR_TITLE=Update data for LoongArch Biweekly ${issue_number}" >> $GITHUB_OUTPUT
+          else
+            echo "PR_TITLE=Update LoongArch Biweekly event info" >> $GITHUB_OUTPUT
+          fi
 
       - name: Create a PR
         uses: peter-evans/create-pull-request@v8
         with:
-          branch: "edit-biweekly-${{ github.event.inputs.issue_number }}"
+          branch: "edit-biweekly-${{ github.event.inputs.issue_number || 'event-info' }}"
           branch-suffix: timestamp # always create a new branch
           delete-branch: true
-          title: "Update data for LoongArch Biweekly ${{ github.event.inputs.issue_number }}"
+          title: ${{ steps.pr_title.outputs.PR_TITLE }}
           body: |
             _This is an automated PR coming from the `edit-biweekly-data` workflow._
