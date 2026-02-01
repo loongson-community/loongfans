@@ -1,5 +1,5 @@
 eventInfo:
-  bilibiliLiveLink: "https://live.bilibili.com/1754798211"
+  bilibiliLiveLink: "http://live.bilibili.com/1754798211"
   wemeetLink: "https://meeting.tencent.com/dm/wKB4lc9UDrpI"
   wemeetNumber: "564-2745-3376"
 
@@ -89,3 +89,5 @@ links:
     bvid: "BV195iiBjEPZ"
   29:
     slides: "ct8dbp5iVzs9"
+  30:
+    slides: "cvq9DSawFxLS"
