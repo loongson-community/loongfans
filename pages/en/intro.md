@@ -96,7 +96,7 @@ Outside of China, though, things get a bit more complex. Outside of using a shop
 
 - Telegram: @JeffBai
 - WeChat: mingcongbai
-- E-Mail: jeffbai@aosc.io
+- E-Mail: baimingcong@loongfans.cn
 
 If you are a student or community developer and are interested in porting, optimizing, and improving various software or applications to or for LoongArch, or need more computational power for your current project, you can also contact the [Roaming Loongson Project](https://github.com/loongson-community/1024) to borrow Loongson hardware (or have us donate it for your project).
 
