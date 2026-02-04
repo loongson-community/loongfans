@@ -1,15 +1,11 @@
+import { dirname, basename, extname, resolve } from "node:path"
 import fs from "node:fs/promises"
+import { fileURLToPath } from "node:url"
 
 import { Ajv, type ValidateFunction } from "ajv"
 import { glob } from "glob"
 import { parse as yamlParse } from "yaml"
 import { createGenerator, type Config } from "ts-json-schema-generator"
-
-// Fix __filename and __dirname in ESM
-import { fileURLToPath } from "node:url"
-import { dirname, basename, extname, resolve } from "node:path"
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
 
 import type {
   BiweeklyDB,
@@ -70,7 +66,7 @@ function validate<T>(
   return data as T
 }
 
-class DatabaseGenerator {
+export class DatabaseGenerator {
   projectRoot: string
   dataDir: string
   verboseOutput: boolean
@@ -81,7 +77,11 @@ class DatabaseGenerator {
   validatorForChipsOutput: ValidateFunction
   validatorForOSOutput: ValidateFunction
 
-  constructor(projectRoot: string, verboseOutput: boolean = false) {
+  constructor(projectRoot: string = "", verboseOutput: boolean = false) {
+    if (!projectRoot) {
+      const moduleDir = dirname(fileURLToPath(import.meta.url))
+      projectRoot = resolve(moduleDir, "../../../")
+    }
     this.projectRoot = projectRoot
     this.dataDir = this.projectRoot + "/data/"
     this.verboseOutput = verboseOutput
@@ -168,11 +168,11 @@ class DatabaseGenerator {
     )
   }
 
-  async generateAll() {
-    await Promise.all([
-      this.generateBiweeklyDatabase(),
-      this.generateChipsDatabase(),
-      this.generateOSDatabase(),
+  async generateAll(emit: boolean) {
+    return await Promise.all([
+      this.generateBiweeklyDatabase(emit),
+      this.generateChipsDatabase(emit),
+      this.generateOSDatabase(emit),
     ])
   }
 
@@ -231,14 +231,15 @@ class DatabaseGenerator {
     await fs.writeFile(this.dataDir + fileName, payload)
   }
 
-  async generateBiweeklyDatabase() {
+  async generateBiweeklyDatabase(emit: boolean) {
     const path = this.dataDir + "events/biweekly.yml"
     const obj = await loadUntypedYAML(path)
     const db = this.validateBiweeklyDBData(obj, path)
-    await this.emitFile("biweekly", db)
+    if (emit) await this.emitFile("biweekly", db)
+    return db
   }
 
-  async generateChipsDatabase() {
+  async generateChipsDatabase(emit: boolean) {
     const [cpuData, chipsetData] = await Promise.all([
       this.readAndTransformIntoMap(
         "chips/cpu/**/*.yml",
@@ -260,17 +261,19 @@ class DatabaseGenerator {
       // mcu: {},
     }
 
-    await this.emitFile("chips", this.validateChipsOutputData(chips))
+    if (emit) await this.emitFile("chips", this.validateChipsOutputData(chips))
+    return chips
   }
 
-  async generateOSDatabase() {
+  async generateOSDatabase(emit: boolean) {
     const os = await this.readAndTransformIntoArray(
       "os/**/*.yml",
       this.validateOSData.bind(this),
       compareNamesAlphabetically,
     )
 
-    await this.emitFile("os", this.validateOSOutputData(os))
+    if (emit) await this.emitFile("os", this.validateOSOutputData(os))
+    return os
   }
 }
 
@@ -314,7 +317,6 @@ function compareNamesAlphabetically(a: string, b: string) {
 }
 
 export async function generateAll(verboseOutput: boolean = false) {
-  const projectRoot = resolve(__dirname, "../../../")
-  const generator = new DatabaseGenerator(projectRoot, verboseOutput)
-  await generator.generateAll()
+  const generator = new DatabaseGenerator("", verboseOutput)
+  await generator.generateAll(true)
 }

@@ -2,14 +2,24 @@ import { readFile } from "node:fs/promises"
 
 import concat from "lodash/concat"
 import type { RouteModule } from "vitepress"
-// these imports from resolve aliases do not work for some reason, maybe because
-// this file is imported too early during VitePress build process
+// VitePress resolves dynamic routes *so* early (`resolvePages()` is called
+// just after this config module is loaded in `resolveConfig()`!), and that
+// means we get imported right after the `config.mts` is loaded and essentially
+// before anything Vite, and neither ready-made data modules nor resolve
+// aliases are available for us.
+//
+// See also https://github.com/vuejs/vitepress/issues/2826 for a similar use
+// case.
+//
 // import i18n from "@vitepress/theme/i18n"
 // import chipsDB from "@data/chips.min.json"
 
 import type { ChipsetInfoItem, CPUInfoItem } from "@src/types/data"
 import { defaultLocale, i18nForLocale } from "../../.vitepress/theme/i18n"
-import chipsDB from "../../data/chips.min.json"
+
+// Because a data import is impossible for clean builds for reasons explained
+// above, we have to duplicate work by generating data directly in the module.
+import { DatabaseGenerator } from "../../.vitepress/plugins/loongfans-data/generateDatabase"
 
 // for some reason this is not exported from vitepress
 // fortunately it is trivial enough to replicate here
@@ -128,6 +138,11 @@ class RouteCompiler {
 export const makeRouteModule = (locale: string): RouteModule => {
   return {
     async paths() {
+      // generate the data on the fly to avoid depending on data that haven't
+      // been created yet during clean builds
+      const generator = new DatabaseGenerator()
+      const chipsDB = await generator.generateChipsDatabase(false)
+
       const c = new RouteCompiler(locale)
       return concat(
         await c.compileRoutes({ category: "chipset", data: chipsDB.chipset }),

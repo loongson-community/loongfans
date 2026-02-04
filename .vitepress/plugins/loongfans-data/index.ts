@@ -2,7 +2,7 @@ import process from "node:process"
 import { glob } from "node:fs/promises"
 
 import type { FSWatcher, Plugin, ViteDevServer } from "vite"
-import { generateAll } from "./generateDatabase.js"
+import { generateAll } from "./generateDatabase"
 
 const autoGenerateJson = (): Plugin => {
   let statusGenerating = false
@@ -44,6 +44,9 @@ const autoGenerateJson = (): Plugin => {
 
   return {
     name: "auto-generate-json",
+    // data must be ready before vitepress:dynamic-routes, which is also an
+    // `enforce: pre` plugin
+    enforce: "pre",
 
     configureServer(server: ViteDevServer) {
       viteServer = server
