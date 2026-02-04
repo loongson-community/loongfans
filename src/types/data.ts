@@ -119,6 +119,7 @@ export interface CPUMicroarchitectureSpecs {
 
 export interface ChipCommonInfo {
   basic: ChipBasicInfo
+  notesPath?: string
   ext_info: ChipExtendedInfo
   exp: ChipInterfaceSpecs
   package: ChipPackageSpecs

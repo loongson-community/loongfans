@@ -3,6 +3,8 @@ basic:
   series: 3C5000
   market: 3
 
+notesPath: "chips/3c5000.md"
+
 ext_info:
   pic: "/images/chips/cpu/3C5000.webp"
   manual: ""

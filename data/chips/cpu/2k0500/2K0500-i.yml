@@ -3,6 +3,8 @@ basic:
   series: 2K0500
   market: 4
 
+notesPath: "chips/2k0500.md"
+
 ext_info:
   pic: "/images/chips/cpu/2K0500.webp"
   manual: ""

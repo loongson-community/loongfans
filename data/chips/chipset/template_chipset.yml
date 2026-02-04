@@ -3,6 +3,9 @@ basic:
   series: ""
   market: 1
 
+# 如该产品有注意事项，指向该注意事项 Markdown 碎片的相对路径，相对于 parts/ 目录
+# notesPath: ""
+
 ext_info:
   pic: "/images/chips/chipset/.webp"
   manual: ""

@@ -3,6 +3,8 @@ basic:
   series: 2K3000
   market: 2
 
+notesPath: "chips/2k3000.md"
+
 ext_info:
   pic: "/images/chips/cpu/3B6000M.webp"
   manual: ""

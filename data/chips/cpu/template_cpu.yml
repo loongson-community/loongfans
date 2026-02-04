@@ -3,6 +3,9 @@ basic:
   series: ""
   market: 1 # 1=桌面 2=移动 3=服务器 4=嵌入式
 
+# 如该产品有注意事项，指向该注意事项 Markdown 碎片的相对路径，相对于 parts/ 目录
+# notesPath: ""
+
 ext_info:
   pic: ""
   manual: ""
