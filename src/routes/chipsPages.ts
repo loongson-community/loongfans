@@ -63,11 +63,21 @@ class RouteCompiler {
     })
   }
 
-  async compileOneRoute(
-    category: string,
-    key: string,
-    value: CPUInfoItem | ChipsetInfoItem,
-  ): Promise<MyUserRouteConfig> {
+  async compileOneRoute({
+    category,
+    key,
+    value,
+  }:
+    | {
+        category: "cpu"
+        key: string
+        value: CPUInfoItem
+      }
+    | {
+        category: "chipset"
+        key: string
+        value: ChipsetInfoItem
+      }): Promise<MyUserRouteConfig> {
     const family = value.basic.series
     const categoryFamilyModel = `${category}/${family}/${key}`.toLowerCase()
 
@@ -88,21 +98,28 @@ class RouteCompiler {
         chipName: value.basic.name,
         chipKey: key,
         hasNotes: Boolean(value.notesPath).toString(),
-        subTitle:
-          category === "cpu" ? this.subTitleForCPU(value as CPUInfoItem) : "",
+        subTitle: category === "cpu" ? this.subTitleForCPU(value) : "",
         title: this.t("chips.pageTitle", { name: value.basic.name }),
       },
       content,
     }
   }
 
-  async compileRoutes(
-    category: string,
-    data: { [key: string]: CPUInfoItem | ChipsetInfoItem },
-  ): Promise<MyUserRouteConfig[]> {
+  async compileRoutes({
+    category,
+    data,
+  }:
+    | {
+        category: "cpu"
+        data: { [key: string]: CPUInfoItem }
+      }
+    | {
+        category: "chipset"
+        data: { [key: string]: ChipsetInfoItem }
+      }): Promise<MyUserRouteConfig[]> {
     return await Promise.all(
       Object.entries(data).map(([key, value]) =>
-        this.compileOneRoute(category, key, value),
+        this.compileOneRoute({ category, key, value }),
       ),
     )
   }
@@ -113,8 +130,8 @@ export const makeRouteModule = (locale: string): RouteModule => {
     async paths() {
       const c = new RouteCompiler(locale)
       return concat(
-        await c.compileRoutes("chipset", chipsDB.chipset),
-        await c.compileRoutes("cpu", chipsDB.cpu),
+        await c.compileRoutes({ category: "chipset", data: chipsDB.chipset }),
+        await c.compileRoutes({ category: "cpu", data: chipsDB.cpu }),
       )
     },
 
