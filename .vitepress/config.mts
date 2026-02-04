@@ -1,6 +1,7 @@
 import { resolve } from "path"
 import UnoCSS from "unocss/vite"
 import Icons from "unplugin-icons/vite"
+import Inspect from "vite-plugin-inspect"
 import { defineConfig } from "vitepress"
 import loongfansData from "./plugins/loongfans-data"
 
@@ -38,7 +39,7 @@ export default defineConfig({
   // 完全禁用主题切换
   appearance: false,
   vite: {
-    plugins: [UnoCSS(), Icons({ scale: 1 }), loongfansData()],
+    plugins: [Inspect(), UnoCSS(), Icons({ scale: 1 }), loongfansData()],
     ssr: {
       noExternal: ["vue-i18n"],
     },
