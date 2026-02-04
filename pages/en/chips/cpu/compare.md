@@ -2,10 +2,8 @@
 layout: page
 returnLink: /en/chips
 pageTitle: CPU comparison
-pageSubTitle: 
+pageSubTitle:
 ---
 :::raw
-<ClientOnly>
-    <CpuCompare />
-</ClientOnly>
+<CpuCompare />
 :::

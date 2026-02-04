@@ -2,10 +2,8 @@
 layout: page
 returnLink: /chips
 pageTitle: CPU 芯片对比
-pageSubTitle: 
+pageSubTitle:
 ---
 :::raw
-<ClientOnly>
-    <CpuCompare />
-</ClientOnly>
+<CpuCompare />
 :::

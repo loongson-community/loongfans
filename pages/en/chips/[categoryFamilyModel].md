@@ -30,9 +30,7 @@ switch (params.value.category) {
 # {{ $params.title }}
 
 :::raw
-<ClientOnly>
-    <ChipTables :chips="params.chipKey" :fields="fields" />
-</ClientOnly>
+<ChipTables :chips="params.chipKey" :fields="fields" />
 :::
 
 <template v-if="params.hasNotes === 'true'">
