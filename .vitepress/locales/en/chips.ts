@@ -1,4 +1,11 @@
 export default {
+  pageTitle: "Loongson {name}",
+  cpuPageSubTitle: {
+    cores: "{cores} Core | {cores} Cores",
+    threads: "{threads} Thread | {threads} Threads",
+    format: "{cores} / {threads}, {freq}",
+  },
+
   buttons: {
     title: "CPU Comparison",
     add_compare: "Add to Comparison",

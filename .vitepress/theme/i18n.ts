@@ -39,16 +39,24 @@ const datetimeFormats: I18nOptions["datetimeFormats"] = {
   },
 }
 
-const i18n = createI18n({
-  legacy: false,
-  globalInjection: true,
-  locale: "zh",
-  fallbackLocale: "en",
-  datetimeFormats,
-  messages: {
-    en: en,
-    zh: zh,
-  },
-})
+export const i18nForLocale = (
+  locale: string,
+  globalInjection: boolean = false,
+) =>
+  createI18n({
+    legacy: false,
+    globalInjection,
+    locale,
+    fallbackLocale: "en",
+    datetimeFormats,
+    messages: {
+      en: en,
+      zh: zh,
+    },
+  })
+
+export const defaultLocale = "zh"
+
+const i18n = i18nForLocale(defaultLocale, true)
 
 export default i18n

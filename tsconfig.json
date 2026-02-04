@@ -22,6 +22,8 @@
   "include": [
     "*.mts",
     "*.ts",
+    "pages/**/*.mts",
+    "pages/**/*.ts",
     "scripts/**/*.mts",
     "scripts/**/*.ts",
     "src/**/*.mts",

@@ -1,4 +1,11 @@
 export default {
+  pageTitle: "龙芯 {name}",
+  cpuPageSubTitle: {
+    cores: "{cores} 核",
+    threads: "{threads} 线程",
+    format: "{cores} {threads}，{freq}",
+  },
+
   buttons: {
     title: "CPU 芯片对比",
     add_compare: "加入对比",
