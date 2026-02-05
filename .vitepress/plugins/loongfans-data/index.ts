@@ -4,7 +4,7 @@ import { glob } from "node:fs/promises"
 import type { FSWatcher, Plugin, ViteDevServer } from "vite"
 import { generateAll } from "./generateDatabase"
 
-const autoGenerateJson = (): Plugin => {
+const loongfansData = (): Plugin => {
   let statusGenerating = false
   let watcher: FSWatcher | null = null
   let debounceTimer: NodeJS.Timeout | null = null
@@ -13,16 +13,16 @@ const autoGenerateJson = (): Plugin => {
   // Run Generate Script
   const runGenerateScript = async () => {
     if (statusGenerating) {
-      console.log("[AutoGenerateJson] Script is running, exiting...")
+      console.log("[loongfans-data] Script is running, exiting...")
       return
     }
 
     statusGenerating = true
-    console.log("[AutoGenerateJson] Generating...")
+    console.log("[loongfans-data] Generating...")
 
     try {
       await generateAll() // Generate JSON without formatted files
-      console.log("[AutoGenerateJson] Generation complete!")
+      console.log("[loongfans-data] Generation complete!")
 
       if (viteServer) {
         const root = process.cwd()
@@ -32,7 +32,7 @@ const autoGenerateJson = (): Plugin => {
         }
       }
     } catch (error) {
-      console.error("[AutoGenerateJson] Error:", error)
+      console.error("[loongfans-data] Error:", error)
       // Kill build process if validation failed
       if (process.env.NODE_ENV === "production") {
         throw error
@@ -43,7 +43,7 @@ const autoGenerateJson = (): Plugin => {
   }
 
   return {
-    name: "auto-generate-json",
+    name: "loongfans:data",
     // data must be ready before vitepress:dynamic-routes, which is also an
     // `enforce: pre` plugin
     enforce: "pre",
@@ -52,7 +52,7 @@ const autoGenerateJson = (): Plugin => {
       viteServer = server
 
       server.httpServer?.once("listening", () => {
-        console.log("[AutoGenerateJson] Generating initial data...")
+        console.log("[loongfans-data] Generating initial data...")
         runGenerateScript()
       })
 
@@ -63,7 +63,7 @@ const autoGenerateJson = (): Plugin => {
       const handleYamlChange = (path, status) => {
         if (path.endsWith(".yml") || path.endsWith(".yaml")) {
           console.log(
-            `[AutoGenerateJson] Detected ${status} in YAML file: ${path}`,
+            `[loongfans-data] Detected ${status} in YAML file: ${path}`,
           )
           // 延迟500ms执行
           if (debounceTimer) clearTimeout(debounceTimer)
@@ -91,11 +91,11 @@ const autoGenerateJson = (): Plugin => {
 
     buildStart() {
       if (process.env.NODE_ENV === "production") {
-        console.log("[AutoGenerateJson] Generating...")
+        console.log("[loongfans-data] Generating...")
         runGenerateScript()
       }
     },
   }
 }
 
-export default autoGenerateJson
+export default loongfansData
