@@ -17,7 +17,7 @@ import chipsetFields from "@src/client/components/chips/fields/chipset"
 const { params } = useData()
 
 let fields: ChipFieldsDescriptor
-switch (params.value.category) {
+switch (params!.value!.category) {
     case "cpu":
         fields = cpuFields
         break
@@ -27,13 +27,13 @@ switch (params.value.category) {
 }
 </script>
 
-# {{ $params.title }}
+# {{ params!.title }}
 
 :::raw
-<ChipTables :chips="params.chipKey" :fields="fields" />
+<ChipTables :chips="params!.chipKey" :fields="fields" />
 :::
 
-<template v-if="params.hasNotes === 'true'">
+<template v-if="params!.hasNotes === 'true'">
 
 ## Notices
 

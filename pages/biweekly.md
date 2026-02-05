@@ -16,7 +16,7 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 </style>
 
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref, type Ref } from "vue"
 import { useI18n } from "vue-i18n"
 
 import biweeklyDB from "virtual:loongfans-data/biweekly"
@@ -34,9 +34,9 @@ const now = new Date()
 const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
 const ei = biweeklyDB.eventInfo
 
-const thisEvent = ref(null)
-const thisBiliLink = ref(null)
-const thisSlideLink = ref(null)
+const thisEvent: Ref<BiweeklyEventItem | null> = ref(null)
+const thisBiliLink: Ref<string | null> = ref(null)
+const thisSlideLink: Ref<string | null> = ref(null)
 
 const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
     if (be) {
