@@ -91,7 +91,7 @@ class RouteCompiler {
     let content: string | undefined = undefined
     if (value.notesPath) {
       const notesURL = new URL(
-        `../../../parts/${this.localePart}${value.notesPath}`,
+        `../../../pages/parts/${this.localePart}${value.notesPath}`,
         import.meta.url,
       )
       content = await readFile(notesURL, "utf-8")

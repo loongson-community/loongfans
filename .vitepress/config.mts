@@ -28,6 +28,7 @@ export default defineConfig({
   },
   ignoreDeadLinks: true,
   srcDir,
+  srcExclude: ["parts/**/*.md"],
   cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -51,7 +52,6 @@ export default defineConfig({
         // e.g. when using markdown file inclusion
         "@": resolve(__dirname, `../${srcDir}`),
         "@data": resolve(__dirname, "../data"),
-        "@parts": resolve(__dirname, "../parts"),
         "@src": resolve(__dirname, "../src"),
       },
     },
