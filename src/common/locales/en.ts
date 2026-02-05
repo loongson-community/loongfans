@@ -87,7 +87,7 @@ export default {
       case "one":
         return n + "st"
       case "two":
-        return n + "nd"
+        return n + "nd" // codespell:ignore nd
       case "few":
         return n + "rd"
       default:
