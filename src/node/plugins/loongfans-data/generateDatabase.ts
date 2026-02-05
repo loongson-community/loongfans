@@ -69,7 +69,6 @@ function validate<T>(
 export class DatabaseGenerator {
   projectRoot: string
   dataDir: string
-  verboseOutput: boolean
   validatorForBiweeklyDB: ValidateFunction
   validatorForCPUInfoInput: ValidateFunction
   validatorForChipsetInfoInput: ValidateFunction
@@ -77,14 +76,13 @@ export class DatabaseGenerator {
   validatorForChipsOutput: ValidateFunction
   validatorForOSOutput: ValidateFunction
 
-  constructor(projectRoot: string = "", verboseOutput: boolean = false) {
+  constructor(projectRoot: string = "") {
     if (!projectRoot) {
       const moduleDir = dirname(fileURLToPath(import.meta.url))
       projectRoot = resolve(moduleDir, "../../../../")
     }
     this.projectRoot = projectRoot
     this.dataDir = this.projectRoot + "/data/"
-    this.verboseOutput = verboseOutput
 
     // validation
     const tsJSONSchemaConfig: Config = {
@@ -168,14 +166,6 @@ export class DatabaseGenerator {
     )
   }
 
-  async generateAll(emit: boolean) {
-    return await Promise.all([
-      this.generateBiweeklyDatabase(emit),
-      this.generateChipsDatabase(emit),
-      this.generateOSDatabase(emit),
-    ])
-  }
-
   async processFiles<T>(
     pattern: string,
     validator: InputFileValidator<T>,
@@ -221,25 +211,13 @@ export class DatabaseGenerator {
     return result
   }
 
-  async emitFile(baseName: string, data: object) {
-    const fileName = this.verboseOutput
-      ? `${baseName}.json`
-      : `${baseName}.min.json`
-    const payload = this.verboseOutput
-      ? JSON.stringify(data, null, "\t")
-      : JSON.stringify(data)
-    await fs.writeFile(this.dataDir + fileName, payload)
-  }
-
-  async generateBiweeklyDatabase(emit: boolean) {
+  async generateBiweeklyDatabase() {
     const path = this.dataDir + "events/biweekly.yml"
     const obj = await loadUntypedYAML(path)
-    const db = this.validateBiweeklyDBData(obj, path)
-    if (emit) await this.emitFile("biweekly", db)
-    return db
+    return this.validateBiweeklyDBData(obj, path)
   }
 
-  async generateChipsDatabase(emit: boolean) {
+  async generateChipsDatabase() {
     const [cpuData, chipsetData] = await Promise.all([
       this.readAndTransformIntoMap(
         "chips/cpu/**/*.yml",
@@ -253,27 +231,21 @@ export class DatabaseGenerator {
       ),
     ])
 
-    const chips: ChipInfoDB = {
+    return {
       cpu: cpuData,
       chipset: chipsetData,
       // These are not implemented and typed yet
       // gpu: {},
       // mcu: {},
     }
-
-    if (emit) await this.emitFile("chips", this.validateChipsOutputData(chips))
-    return chips
   }
 
-  async generateOSDatabase(emit: boolean) {
-    const os = await this.readAndTransformIntoArray(
+  async generateOSDatabase() {
+    return await this.readAndTransformIntoArray(
       "os/**/*.yml",
       this.validateOSData.bind(this),
       compareNamesAlphabetically,
     )
-
-    if (emit) await this.emitFile("os", this.validateOSOutputData(os))
-    return os
   }
 }
 
@@ -314,9 +286,4 @@ function compareLoongsonChipModelsNewestFirst(a: string, b: string) {
 
 function compareNamesAlphabetically(a: string, b: string) {
   return a.localeCompare(b)
-}
-
-export async function generateAll(verboseOutput: boolean = false) {
-  const generator = new DatabaseGenerator("", verboseOutput)
-  await generator.generateAll(true)
 }

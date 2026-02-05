@@ -1,6 +1,6 @@
 import IcalExpander from "ical-expander"
 
-import biweeklyDB from "@data/biweekly.min.json"
+import biweeklyDB from "virtual:loongfans-data/biweekly"
 
 type EventItem = {
   start: Date

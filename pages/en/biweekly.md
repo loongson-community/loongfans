@@ -18,7 +18,7 @@ pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 import { ref } from "vue"
 import { useI18n } from "vue-i18n"
 
-import biweeklyDB from "@data/biweekly.min.json"
+import biweeklyDB from "virtual:loongfans-data/biweekly"
 import eventsICS from "@data/events/events.ics?raw"
 import {
     getBiweeklyBilibiliLink,

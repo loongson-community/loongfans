@@ -19,7 +19,7 @@ pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 import { ref } from "vue"
 import { useI18n } from "vue-i18n"
 
-import biweeklyDB from "@data/biweekly.min.json"
+import biweeklyDB from "virtual:loongfans-data/biweekly"
 import eventsICS from "@data/events/events.ics?raw"
 import {
     getBiweeklyBilibiliLink,

@@ -1,44 +1,106 @@
-import process from "node:process"
-import { glob } from "node:fs/promises"
+import { basename, extname, relative } from "node:path"
 
-import type { FSWatcher, Plugin, ViteDevServer } from "vite"
-import { generateAll } from "./generateDatabase"
+import type { FSWatcher, Logger, Plugin, ViteDevServer } from "vite"
+import { DatabaseGenerator } from "./generateDatabase"
+
+enum DataKind {
+  Biweekly = "biweekly",
+  Chips = "chips",
+  OS = "os",
+}
+
+class Debouncer {
+  private timer: NodeJS.Timeout | null = null
+  private delay: number
+
+  constructor(delay: number) {
+    this.delay = delay
+  }
+
+  trigger(fn: () => void) {
+    if (this.timer) clearTimeout(this.timer)
+    this.timer = setTimeout(fn, this.delay)
+  }
+}
+
+const debounceTimeMS = 500
 
 const loongfansData = (): Plugin => {
-  let statusGenerating = false
+  const gen = new DatabaseGenerator("")
+  let logger: Logger
   let watcher: FSWatcher | null = null
-  let debounceTimer: NodeJS.Timeout | null = null
   let viteServer: ViteDevServer | null = null
 
-  // Run Generate Script
-  const runGenerateScript = async () => {
-    if (statusGenerating) {
-      console.log("[loongfans-data] Script is running, exiting...")
-      return
+  const debouncerForDataKinds: { [key in DataKind]: Debouncer } = {
+    [DataKind.Biweekly]: new Debouncer(debounceTimeMS),
+    [DataKind.Chips]: new Debouncer(debounceTimeMS),
+    [DataKind.OS]: new Debouncer(debounceTimeMS),
+  }
+
+  const virtualModuleIDPrefix = "virtual:loongfans-data/"
+  const resolvedVirtualModuleIDPrefix = "\0" + virtualModuleIDPrefix
+  const supportedDataKinds: string[] = Object.values(DataKind)
+
+  const logInfo = (message: string) => {
+    if (logger) logger.info(`[loongfans-data] ${message}`, { timestamp: true })
+  }
+
+  const emitDataModule = (data: object) => {
+    // Note: this is ES, not TS, because it's going to be directly consumed by
+    // the bundler without going through the TS compiler.
+    return `export default ${JSON.stringify(data)}\n`
+  }
+
+  const invalidateDataModule = (dataKind: DataKind) => {
+    if (!viteServer) return
+
+    const virtualModuleId = resolvedVirtualModuleIDPrefix + dataKind
+    const mod = viteServer.moduleGraph.getModuleById(virtualModuleId)
+    if (mod) {
+      viteServer.moduleGraph.invalidateModule(mod)
+      viteServer.ws.send({
+        type: "full-reload",
+        path: "*",
+      })
     }
+  }
 
-    statusGenerating = true
-    console.log("[loongfans-data] Generating...")
+  const handleDataFileChange = (path: string, status: string) => {
+    if (!(path.endsWith(".yml") || path.endsWith(".yaml"))) return
+    const baseName = basename(path, extname(path))
+    if (baseName.startsWith("template")) return
 
-    try {
-      await generateAll() // Generate JSON without formatted files
-      console.log("[loongfans-data] Generation complete!")
+    logInfo(`Detected ${status} data file: ${path}`)
 
-      if (viteServer) {
-        const root = process.cwd()
-        for await (const file of glob("data/*.json", { cwd: root })) {
-          const module = viteServer.moduleGraph.getModuleById(`${root}/${file}`)
-          if (module) viteServer.reloadModule(module)
-        }
-      }
-    } catch (error) {
-      console.error("[loongfans-data] Error:", error)
-      // Kill build process if validation failed
-      if (process.env.NODE_ENV === "production") {
-        throw error
-      }
-    } finally {
-      statusGenerating = false
+    // name of the topmost directory relative to gen.dataDir
+    const dataSubdir = relative(gen.dataDir, path).split("/")[0]
+    switch (dataSubdir) {
+      case "events":
+        debouncerForDataKinds[DataKind.Biweekly].trigger(async () => {
+          logInfo(
+            `Regenerating biweekly database due to ${status} file: ${path}`,
+          )
+          invalidateDataModule(DataKind.Biweekly)
+        })
+        break
+      case "chips":
+        debouncerForDataKinds[DataKind.Chips].trigger(async () => {
+          logInfo(`Regenerating chips database due to ${status} file: ${path}`)
+          invalidateDataModule(DataKind.Chips)
+        })
+        break
+      case "os":
+        debouncerForDataKinds[DataKind.OS].trigger(async () => {
+          logInfo(`Regenerating OS database due to ${status} file: ${path}`)
+          invalidateDataModule(DataKind.OS)
+        })
+        break
+      default:
+        // not a data directory we care about
+        logInfo(
+          `Ignoring file in unrecognized data subdirectory '${dataSubdir}'`,
+        )
+        break
     }
   }
 
@@ -48,52 +110,54 @@ const loongfansData = (): Plugin => {
     // `enforce: pre` plugin
     enforce: "pre",
 
-    configureServer(server: ViteDevServer) {
-      viteServer = server
-
-      server.httpServer?.once("listening", () => {
-        console.log("[loongfans-data] Generating initial data...")
-        runGenerateScript()
-      })
-
-      // 设置文件监听
-      watcher = server.watcher
-      watcher.add("./data")
-
-      const handleYamlChange = (path, status) => {
-        if (path.endsWith(".yml") || path.endsWith(".yaml")) {
-          console.log(
-            `[loongfans-data] Detected ${status} in YAML file: ${path}`,
-          )
-          // 延迟500ms执行
-          if (debounceTimer) clearTimeout(debounceTimer)
-          debounceTimer = setTimeout(() => {
-            runGenerateScript()
-          }, 500)
-        }
-      }
-
-      // 监听YAML文件变化
-      watcher.on("change", (path) => {
-        handleYamlChange(path, "change")
-      })
-
-      // 监听新增YAML文件
-      watcher.on("add", (path) => {
-        handleYamlChange(path, "new")
-      })
-
-      // 监听删除YAML文件
-      watcher.on("unlink", (path) => {
-        handleYamlChange(path, "delete")
-      })
+    configResolved(config) {
+      logger = config.logger
     },
 
-    buildStart() {
-      if (process.env.NODE_ENV === "production") {
-        console.log("[loongfans-data] Generating...")
-        runGenerateScript()
+    resolveId(id) {
+      if (!id.startsWith(virtualModuleIDPrefix)) return null
+
+      const dataKind = id.slice(virtualModuleIDPrefix.length)
+      if (!supportedDataKinds.includes(dataKind)) return null
+
+      // https://vite.dev/guide/api-plugin#virtual-modules-convention
+      return "\0" + id
+    },
+
+    async load(id) {
+      if (!id.startsWith(resolvedVirtualModuleIDPrefix)) return null
+      const dataKind = id.slice(resolvedVirtualModuleIDPrefix.length)
+      logInfo(`Emitting module for ${dataKind} data`)
+      switch (dataKind) {
+        case "biweekly":
+          return emitDataModule(await gen.generateBiweeklyDatabase())
+        case "chips":
+          return emitDataModule(await gen.generateChipsDatabase())
+        case "os":
+          return emitDataModule(await gen.generateOSDatabase())
+        default:
+          return null
       }
+    },
+
+    configureServer(server: ViteDevServer) {
+      viteServer = server
+      watcher = server.watcher
+
+      // configure HMR
+      watcher.add(gen.dataDir)
+
+      watcher.on("change", (path) => {
+        handleDataFileChange(path, "changed")
+      })
+
+      watcher.on("add", (path) => {
+        handleDataFileChange(path, "added")
+      })
+
+      watcher.on("unlink", (path) => {
+        handleDataFileChange(path, "deleted")
+      })
     },
   }
 }

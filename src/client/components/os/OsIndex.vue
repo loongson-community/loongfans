@@ -24,7 +24,7 @@ import type { OSTag } from "@src/types/data"
 import OsCard from "./OsCard.vue"
 import { useTagTranslation } from "./TagTranslation"
 
-import osData from "@data/os.min.json"
+import osData from "virtual:loongfans-data/os"
 
 const { translateTag } = useTagTranslation()
 

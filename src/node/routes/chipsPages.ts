@@ -137,7 +137,7 @@ export const makeRouteModule = (locale: string): RouteModule => {
       // generate the data on the fly to avoid depending on data that haven't
       // been created yet during clean builds
       const generator = new DatabaseGenerator()
-      const chipsDB = await generator.generateChipsDatabase(false)
+      const chipsDB = await generator.generateChipsDatabase()
 
       const c = new RouteCompiler(locale)
       return concat(

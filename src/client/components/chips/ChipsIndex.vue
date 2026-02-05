@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
 
-import chipsDB from "@data/chips.min.json"
+import chipsDB from "virtual:loongfans-data/chips"
 import { LANGUAGE_PREFIXES } from "@src/client/utils/language"
 import type { DeviceFamily } from "@src/types/device"
 import type { SupportedLanguage } from "@src/types/language"
