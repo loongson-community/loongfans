@@ -1,6 +1,7 @@
 import { createI18n, type I18nOptions } from "vue-i18n"
-import en from "../locales/en"
-import zh from "../locales/zh"
+
+import en from "./locales/en"
+import zh from "./locales/zh"
 
 // https://github.com/intlify/vue-i18n/issues/717
 const datetimeFormats: I18nOptions["datetimeFormats"] = {

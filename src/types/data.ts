@@ -1,4 +1,4 @@
-import type { SupportedLanguage } from "@vitepress/utils/language"
+import type { SupportedLanguage } from "@src/types/language"
 
 export type LocalizedString = { [lang in SupportedLanguage]?: string }
 

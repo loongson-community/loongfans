@@ -375,7 +375,7 @@ import { useDialog } from "primevue/usedialog"
 import MaterialSymbolsHelpOutline from "~icons/material-symbols/help-outline"
 
 import chipsDB from "@data/chips.min.json"
-import { useCPUComparisonStore } from "@src/stores/CPUComparisonStore"
+import { useCPUComparisonStore } from "@src/client/stores/CPUComparisonStore"
 import type {
   ChipCommonInfo,
   ChipsetInfoItem,

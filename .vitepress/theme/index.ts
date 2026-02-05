@@ -1,28 +1,21 @@
-import DefaultTheme from "vitepress/theme"
-
-import { createPinia } from "pinia"
 import { uneval } from "devalue"
-
-// PrimeVue init
+import { createPinia } from "pinia"
+import Material from "@primeuix/themes/material"
+import { definePreset } from "@primeuix/themes"
 import PrimeVue from "primevue/config"
 import ToastService from "primevue/toastservice"
 import DialogService from "primevue/dialogservice"
-
-import Material from "@primeuix/themes/material"
-import { definePreset } from "@primeuix/themes"
-
-// Make vue-i18n configs to a file
-import i18n from "./i18n"
-
 import "virtual:uno.css"
-import "./custom.css"
-import LoongfansLayout from "./LoongfansLayout.vue"
-import DeviceDetail from "@src/components/device/DeviceDetail.vue"
-import ChipTables from "@src/components/chips/ChipTables.vue"
-import CpuCompare from "@src/components/chips/compare/CpuCompare.vue"
-import DeviceDownloadCard from "@src/components/device/DownloadCard.vue"
-
+import DefaultTheme from "vitepress/theme"
 import type { App } from "vue"
+
+import i18n from "@src/common/i18n"
+import DeviceDetail from "@src/client/components/device/DeviceDetail.vue"
+import ChipTables from "@src/client/components/chips/ChipTables.vue"
+import CpuCompare from "@src/client/components/chips/compare/CpuCompare.vue"
+import DeviceDownloadCard from "@src/client/components/device/DownloadCard.vue"
+import LoongfansLayout from "./LoongfansLayout.vue"
+import "./custom.css"
 
 const Preset = definePreset(Material, {
   semantic: {

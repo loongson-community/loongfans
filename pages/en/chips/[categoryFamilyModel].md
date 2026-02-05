@@ -10,9 +10,9 @@ returnLink: /en/chips
 import { useData } from "vitepress"
 import { computed } from "vue"
 
-import type { ChipFieldsDescriptor } from "@src/components/chips/fields"
-import cpuFields from "@src/components/chips/fields/cpu"
-import chipsetFields from "@src/components/chips/fields/chipset"
+import type { ChipFieldsDescriptor } from "@src/client/components/chips/fields"
+import cpuFields from "@src/client/components/chips/fields/cpu"
+import chipsetFields from "@src/client/components/chips/fields/chipset"
 
 const { params } = useData()
 

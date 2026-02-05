@@ -90,7 +90,7 @@ import HomePageLink from "./index/HomePageLink.vue"
 import LinkGroup from "./index/LinkGroup.vue"
 import LinkGroupContact from "./index/LinkGroupContact.vue"
 import { useI18n } from "vue-i18n"
-import { getLocalePrefix } from "@vitepress/utils/language"
+import { getLocalePrefix } from "@src/client/utils/language"
 
 const { t } = useI18n()
 const { localeIndex } = useData()

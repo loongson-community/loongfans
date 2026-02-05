@@ -7,9 +7,9 @@
 import { useI18n } from "vue-i18n"
 
 import chipsDB from "@data/chips.min.json"
+import { LANGUAGE_PREFIXES } from "@src/client/utils/language"
 import type { DeviceFamily } from "@src/types/device"
-import { LANGUAGE_PREFIXES } from "@vitepress/utils/language"
-import type { SupportedLanguage } from "@vitepress/utils/language"
+import type { SupportedLanguage } from "@src/types/language"
 import DeviceIndex from "../device/DeviceIndex.vue"
 
 const { t, locale } = useI18n()

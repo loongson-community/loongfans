@@ -80,7 +80,7 @@ export class DatabaseGenerator {
   constructor(projectRoot: string = "", verboseOutput: boolean = false) {
     if (!projectRoot) {
       const moduleDir = dirname(fileURLToPath(import.meta.url))
-      projectRoot = resolve(moduleDir, "../../../")
+      projectRoot = resolve(moduleDir, "../../../../")
     }
     this.projectRoot = projectRoot
     this.dataDir = this.projectRoot + "/data/"

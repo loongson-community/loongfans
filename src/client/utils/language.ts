@@ -1,9 +1,5 @@
 import type { Router } from "vitepress"
-
-export enum SupportedLanguage {
-  EN = "en",
-  ZH = "zh",
-}
+import { SupportedLanguage } from "@src/types/language"
 
 const SUPPORTED_LANGUAGES = Object.values(SupportedLanguage)
 

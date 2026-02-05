@@ -3,7 +3,7 @@
   "scripts": {
     "build": "vitepress build",
     "dev": "vitepress dev",
-    "editBiweeklyEvents": "tsx ./scripts/editBiweeklyEvents/index.ts",
+    "editBiweeklyEvents": "tsx ./src/node/scripts/editBiweeklyEvents/index.ts",
     "eslint": "eslint",
     "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",

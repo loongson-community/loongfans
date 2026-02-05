@@ -5,5 +5,5 @@ layout: home
 <HomePage />
 
 <script setup lang="ts">
-import HomePage from "@src/components/HomePage.vue"
+import HomePage from "@src/client/components/HomePage.vue"
 </script>

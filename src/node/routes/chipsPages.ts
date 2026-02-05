@@ -10,16 +10,12 @@ import type { RouteModule } from "vitepress"
 //
 // See also https://github.com/vuejs/vitepress/issues/2826 for a similar use
 // case.
-//
-// import i18n from "@vitepress/theme/i18n"
-// import chipsDB from "@data/chips.min.json"
-
-import type { ChipsetInfoItem, CPUInfoItem } from "@src/types/data"
-import { defaultLocale, i18nForLocale } from "../../.vitepress/theme/i18n"
+import type { ChipsetInfoItem, CPUInfoItem } from "../../types/data"
+import { defaultLocale, i18nForLocale } from "../../common/i18n"
 
 // Because a data import is impossible for clean builds for reasons explained
 // above, we have to duplicate work by generating data directly in the module.
-import { DatabaseGenerator } from "../../.vitepress/plugins/loongfans-data/generateDatabase"
+import { DatabaseGenerator } from "../plugins/loongfans-data/generateDatabase"
 
 // for some reason this is not exported from vitepress
 // fortunately it is trivial enough to replicate here
@@ -95,7 +91,7 @@ class RouteCompiler {
     let content: string | undefined = undefined
     if (value.notesPath) {
       const notesURL = new URL(
-        `../../parts/${this.localePart}${value.notesPath}`,
+        `../../../parts/${this.localePart}${value.notesPath}`,
         import.meta.url,
       )
       content = await readFile(notesURL, "utf-8")

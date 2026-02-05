@@ -3,7 +3,9 @@ import UnoCSS from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import Inspect from "vite-plugin-inspect"
 import { defineConfig } from "vitepress"
-import loongfansData from "./plugins/loongfans-data"
+
+// resolve alias is not available for use yet
+import loongfansData from "../src/node/plugins/loongfans-data"
 
 const srcDir = "pages"
 
@@ -48,10 +50,9 @@ export default defineConfig({
         // `@` is an alias of `srcDir` in vitepress
         // e.g. when using markdown file inclusion
         "@": resolve(__dirname, `../${srcDir}`),
-        "@src": resolve(__dirname, "../src"),
         "@data": resolve(__dirname, "../data"),
         "@parts": resolve(__dirname, "../parts"),
-        "@vitepress": resolve(__dirname, "./"),
+        "@src": resolve(__dirname, "../src"),
       },
     },
   },

@@ -14,9 +14,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./pages/*"],
-      "@src/*": ["./src/*"],
       "@data/*": ["./data/*"],
-      "@vitepress/*": ["./.vitepress/*"]
+      "@parts/*": ["./parts/*"],
+      "@src/*": ["./src/*"]
     }
   },
   "include": [
@@ -24,8 +24,6 @@
     "*.ts",
     "pages/**/*.mts",
     "pages/**/*.ts",
-    "scripts/**/*.mts",
-    "scripts/**/*.ts",
     "src/**/*.mts",
     "src/**/*.ts",
     "src/**/*.vue",

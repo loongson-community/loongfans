@@ -20,9 +20,9 @@ import { useData, useRouter } from "vitepress"
 import { useI18n } from "vue-i18n"
 import DynamicDialog from "primevue/dynamicdialog"
 import Toast from "primevue/toast"
-import ChildHeader from "@src/components/ChildHeader.vue"
-import ChildFooter from "@src/components/ChildFooter.vue"
-import { handleFirstVisitRedirect } from "../utils/language"
+import ChildHeader from "@src/client/components/ChildHeader.vue"
+import ChildFooter from "@src/client/components/ChildFooter.vue"
+import { handleFirstVisitRedirect } from "@src/client/utils/language"
 
 const { frontmatter, lang } = useData()
 const { locale } = useI18n()
