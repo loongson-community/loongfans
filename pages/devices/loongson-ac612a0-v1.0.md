@@ -50,7 +50,7 @@ pageSubTitle: 龙芯 AC612A0_V1.0
 <DeviceDownloadCard
   title="UEFI 固件"
   version="V1.0_V5.0.0343_stable202511_rel"
-  size="6291456"
+  :size="6291456"
   date="2025-01-07"
   sha256="021a22173dcea9f001de5fa876b3e32897d119743dcdaea8d776822fc27678d5"
   url="https://file.loongfans.cn/ac612a0-v1.0/EDK2025_AC612A0-V1.0_V5.0.0343_stable202511_rel.fd"
@@ -70,7 +70,7 @@ pageSubTitle: 龙芯 AC612A0_V1.0
 <DeviceDownloadCard
   title="UEFI 固件"
   version="V1.0_V5.0.0343_stable202511_dbg"
-  size="6291456"
+  :size="6291456"
   date="2025-01-07"
   sha256="2fae03cb22673398c59d7f2c5b5ad62bf50dbbb42eaa06c2a3cf0bbf0c3f2593"
   url="https://file.loongfans.cn/ac612a0-v1.0/EDK2025_AC612A0-V1.0_V5.0.0343_stable202511_dbg.fd"

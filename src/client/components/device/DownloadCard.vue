@@ -109,7 +109,7 @@ const props = defineProps<{
   sha256: string
   url: string
   latest: boolean
-  debug: boolean
+  debug?: boolean
 }>()
 
 const { t } = useI18n()

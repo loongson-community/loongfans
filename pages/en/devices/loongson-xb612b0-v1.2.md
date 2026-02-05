@@ -49,7 +49,7 @@ Source: Xi Ruoyao
 <DeviceDownloadCard
   title="UEFI Firmware"
   version="V1.2_V5.0.0345_stable202511_rel"
-  size="6291456"
+  :size="6291456"
   date="2025-01-07"
   sha256="38ede1c5710c072d642853d26e30bb2a281c1f36fa588a017780324f71fe6a79"
   url="https://file.loongfans.cn/xb612b0-v1.2/EDK2025_XB612B0-V1.2_V5.0.0345_stable202511_rel.fd"
@@ -69,7 +69,7 @@ This update is primarily based on the RefCode Stable2511 baseline. Detailed upda
 <DeviceDownloadCard
   title="UEFI Firmware"
   version="V1.2_V5.0.0345_stable202511_dbg"
-  size="6291456"
+  :size="6291456"
   date="2025-01-07"
   sha256="c17a7848cd002564cda47eb4a0ded99605301c31e9f828895b0a27542940a0f0"
   url="https://file.loongfans.cn/xb612b0-v1.2/EDK2025_XB612B0-V1.2_V5.0.0345_stable202511_dbg.fd"

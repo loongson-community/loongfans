@@ -49,7 +49,7 @@ pageSubTitle: 龙芯 XA612B0_V1.0
 <DeviceDownloadCard
   title="UEFI 固件"
   version="V1.0_V5.0.0344_stable202511_rel"
-  size="8388608"
+  :size="8388608"
   date="2025-01-07"
   sha256="9b66cf320f66dde63ec1919698e4963862033c8f0c2fd6569c1125680e1d539e"
   url="https://file.loongfans.cn/xa612b0-v1.0/EDK2505_XA612B0-V1.0_V5.0.0344_stable202511_rel.fd"
@@ -69,7 +69,7 @@ pageSubTitle: 龙芯 XA612B0_V1.0
 <DeviceDownloadCard
   title="UEFI 固件"
   version="V1.0_V5.0.0344_stable202511_dbg"
-  size="8388608"
+  :size="8388608"
   date="2025-01-07"
   sha256="746de0cd6e30229f06e6708392aa17f75d03e0b3d2ddb4b9a2ce538cbbfe5e36"
   url="https://file.loongfans.cn/xa612b0-v1.0/EDK2505_XA612B0-V1.0_V5.0.0344_stable202511_dbg.fd"
