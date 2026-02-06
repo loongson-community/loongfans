@@ -1,6 +1,4 @@
-import type { SupportedLanguage } from "@src/types/language"
-
-export type LocalizedString = { [lang in SupportedLanguage]?: string }
+import type { LocalizedString } from "@src/types/language"
 
 // OS database entries
 
