@@ -287,7 +287,7 @@
             v-for="{ chip } in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
-            :class="{ 'same-as-first': isSame(chip, 'exp.name') }"
+            :class="{ 'same-as-first': isSame(chip, 'exp.io_name') }"
           >
             {{ chip.exp.io_name }}
           </div>
@@ -298,7 +298,7 @@
             v-for="{ chip } in chipsBeingCompared"
             :key="chip.basic.name"
             class="compare-cell"
-            :class="{ 'same-as-first': isSame(chip, 'exp.rev') }"
+            :class="{ 'same-as-first': isSame(chip, 'exp.io_rev') }"
           >
             {{ chip.exp.io_rev }}
           </div>
@@ -630,6 +630,36 @@ import Button from "primevue/button"
 
 import chipsDB from "virtual:loongfans-data/chips"
 import { useCPUComparisonStore } from "@src/client/stores/CPUComparisonStore"
+import type { CPUInfoItem } from "@src/types/data"
+
+/**
+ * Keys of CPUInfoItem whose values are sub-objects (sections with fields
+ * that can be compared).  Excludes primitive/optional leaf properties like
+ * `notesPath`.
+ */
+type CPUInfoItemSection = NonNullable<
+  {
+    [K in keyof CPUInfoItem]: CPUInfoItem[K] extends
+      | string
+      | number
+      | boolean
+      | string[]
+      | undefined
+      | null
+      ? never
+      : K
+  }[keyof CPUInfoItem]
+>
+
+/**
+ * All valid dotted field paths into a CPUInfoItem, e.g. `"cpu.cores"`,
+ * `"memory.max"`, used for comparison highlighting.
+ */
+type CPUInfoItemFieldPath = {
+  [S in CPUInfoItemSection]: CPUInfoItem[S] extends infer Sub extends object
+    ? `${S}.${string & keyof Sub}`
+    : never
+}[CPUInfoItemSection]
 
 const { t } = useI18n()
 const comparisonStore = useCPUComparisonStore()
@@ -642,12 +672,40 @@ const chipsBeingCompared = computed(() => {
 })
 
 // 获取键值
-const getFieldValue = (chip, path) => {
-  return path.split(".").reduce((obj, key) => (obj ? obj[key] : null), chip)
+type CPUFieldValue = string | number | boolean | string[] | null | undefined
+
+/**
+ * Index into a section sub-object by its field name at runtime.
+ *
+ * TypeScript interfaces lack index signatures, so a direct `obj[field]`
+ * is rejected.  We go through a generic helper: since `K extends keyof T`
+ * is satisfied when `K` is a *literal* known at the call site, narrowing
+ * the section first and then reading the field keeps full type-safety
+ * without resorting to `any` or `unknown`.
+ */
+function readField<T extends object>(obj: T, field: keyof T): CPUFieldValue {
+  return obj[field] as CPUFieldValue
+}
+
+const getFieldValue = (chip: CPUInfoItem, path: CPUInfoItemFieldPath): CPUFieldValue => {
+  const dot = path.indexOf(".")
+  const section = path.slice(0, dot) as CPUInfoItemSection
+  const field = path.slice(dot + 1)
+  switch (section) {
+    case "basic": return readField(chip.basic, field as keyof typeof chip.basic)
+    case "cpu": return readField(chip.cpu, field as keyof typeof chip.cpu)
+    case "gpu": return readField(chip.gpu, field as keyof typeof chip.gpu)
+    case "memory": return readField(chip.memory, field as keyof typeof chip.memory)
+    case "power": return readField(chip.power, field as keyof typeof chip.power)
+    case "technologies": return readField(chip.technologies, field as keyof typeof chip.technologies)
+    case "exp": return readField(chip.exp, field as keyof typeof chip.exp)
+    case "package": return readField(chip.package, field as keyof typeof chip.package)
+    case "ext_info": return readField(chip.ext_info, field as keyof typeof chip.ext_info)
+  }
 }
 
 // 判断是否相同
-const isSame = (chip, fieldPath) => {
+const isSame = (chip: CPUInfoItem, fieldPath: CPUInfoItemFieldPath) => {
   if (!chipsBeingCompared.value.length || !fieldPath) return true
   const firstValue = getFieldValue(chipsBeingCompared.value[0]!.chip, fieldPath)
   const currentValue = getFieldValue(chip, fieldPath)
