@@ -64,10 +64,8 @@ Run the minimal set needed for the touched area (e.g., Markdown lint for Markdow
 
 ### Translation workflow
 
-- Follow the rules in `translation-guide.md` exactly for EN content.
-- Chinese source: `pages/`
-- English translation: `pages/en/`
-- Ensure `returnLink` paths in EN include `/en/`.
+- Follow [the translation guide](./docs/translation-guide.md) exactly for translating content into English.
+- Refer to [the glossary](./docs/glossary.md) for jargons.
 
 ## Code style and conventions
 
