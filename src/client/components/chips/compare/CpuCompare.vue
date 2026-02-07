@@ -687,20 +687,35 @@ function readField<T extends object>(obj: T, field: keyof T): CPUFieldValue {
   return obj[field] as CPUFieldValue
 }
 
-const getFieldValue = (chip: CPUInfoItem, path: CPUInfoItemFieldPath): CPUFieldValue => {
+const getFieldValue = (
+  chip: CPUInfoItem,
+  path: CPUInfoItemFieldPath,
+): CPUFieldValue => {
   const dot = path.indexOf(".")
   const section = path.slice(0, dot) as CPUInfoItemSection
   const field = path.slice(dot + 1)
   switch (section) {
-    case "basic": return readField(chip.basic, field as keyof typeof chip.basic)
-    case "cpu": return readField(chip.cpu, field as keyof typeof chip.cpu)
-    case "gpu": return readField(chip.gpu, field as keyof typeof chip.gpu)
-    case "memory": return readField(chip.memory, field as keyof typeof chip.memory)
-    case "power": return readField(chip.power, field as keyof typeof chip.power)
-    case "technologies": return readField(chip.technologies, field as keyof typeof chip.technologies)
-    case "exp": return readField(chip.exp, field as keyof typeof chip.exp)
-    case "package": return readField(chip.package, field as keyof typeof chip.package)
-    case "ext_info": return readField(chip.ext_info, field as keyof typeof chip.ext_info)
+    case "basic":
+      return readField(chip.basic, field as keyof typeof chip.basic)
+    case "cpu":
+      return readField(chip.cpu, field as keyof typeof chip.cpu)
+    case "gpu":
+      return readField(chip.gpu, field as keyof typeof chip.gpu)
+    case "memory":
+      return readField(chip.memory, field as keyof typeof chip.memory)
+    case "power":
+      return readField(chip.power, field as keyof typeof chip.power)
+    case "technologies":
+      return readField(
+        chip.technologies,
+        field as keyof typeof chip.technologies,
+      )
+    case "exp":
+      return readField(chip.exp, field as keyof typeof chip.exp)
+    case "package":
+      return readField(chip.package, field as keyof typeof chip.package)
+    case "ext_info":
+      return readField(chip.ext_info, field as keyof typeof chip.ext_info)
   }
 }
 
