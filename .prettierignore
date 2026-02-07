@@ -1,5 +1,6 @@
 /pages/public
 pnpm-*.yaml
-# TODO
+# the Prettier style for Markdown differs from that of markdownlint, and we are
+# not currently mandating the Prettier style for Markdown content.
 *.md
 *.mdx
