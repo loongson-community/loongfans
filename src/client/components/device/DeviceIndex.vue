@@ -8,7 +8,7 @@ import { computed } from "vue"
 
 import deviceDB from "virtual:loongfans-data/device"
 import type { SupportedLanguage } from "@src/types/language"
-import { transformDeviceDB } from "@src/client/utils/deviceTransform"
+import { transformDeviceDB } from "./deviceTransform"
 import DeviceList from "./DeviceList.vue"
 
 const { locale } = useI18n()
