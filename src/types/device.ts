@@ -4,7 +4,7 @@ export interface Device {
   id: string
   name: string
   spec: string
-  tags: string
+  tags: string[]
 }
 
 export interface DeviceCategory<D = Device> {

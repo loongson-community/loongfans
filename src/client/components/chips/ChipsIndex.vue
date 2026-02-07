@@ -32,7 +32,7 @@ const cpuData = [
           }/chips/cpu/${series}/${key}`.toLowerCase(),
           image: value.ext_info.pic,
           spec: `${value.cpu.arch} ${value.cpu.freq}`,
-          tags: `${value.cpu.cores}C${value.cpu.threads}T`,
+          tags: [`${value.cpu.cores}C${value.cpu.threads}T`],
         })),
     })),
   },

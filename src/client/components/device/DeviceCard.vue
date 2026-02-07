@@ -39,13 +39,13 @@ const props = defineProps<{
   spec: string
   href: string
   image: string
-  tags: string
+  tags?: string[]
   comparisonKey?: string
 }>()
 
 const comparisonStore = useCPUComparisonStore()
 
-const tags = computed(() => props.tags?.split(",").map((i) => i.trim()))
+const tags = computed(() => props.tags?.map((i) => i?.trim()) || [])
 
 const isComparisonEnabled = computed(() => {
   return props.comparisonKey !== undefined

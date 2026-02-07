@@ -43,7 +43,7 @@ export function transformDeviceDB(
             name: d.name[lang] ?? d.name.en ?? d.id,
             image: d.image,
             spec: d.spec,
-            tags: d.tags.map((t) => tags[t]?.title[lang] ?? t).join(", "),
+            tags: d.tags.map((t) => tags[t]?.title[lang] ?? t),
           })),
         })),
     }))
