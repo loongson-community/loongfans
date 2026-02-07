@@ -15,7 +15,7 @@ const toast = useToast()
 
 const textWithColon = computed(() => `": ${props.text}"`)
 
-function copyToClipboard(text) {
+function copyToClipboard(text: string) {
   navigator.clipboard
     .writeText(text)
     .then(() => toast.add({ severity: "info", summary: "Copied", life: 3000 }))
