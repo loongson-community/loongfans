@@ -29,7 +29,7 @@ import {
 } from "@src/client/components/events/DataSource"
 import BiweeklyCalendar from "@src/client/components/events/BiweeklyCalendar.vue"
 
-const { d, locale, tm } = useI18n()
+const { d, locale, t } = useI18n()
 const now = new Date()
 const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
 const ei = biweeklyDB.eventInfo
@@ -72,7 +72,7 @@ const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
     <div class="w-full announcement-container" v-if="thisEvent !== null">
         <div v-if="thisEvent.isFuture">
 
-### 第 {{ tm("formatOrdinalNumber")(thisEvent.issueNumber) }} 次“龙架构双周会”会议公告 {#biweekly-announcement}
+### 第 {{ t("ordinalNumber", { n: thisEvent.issueNumber }) }} 次“龙架构双周会”会议公告 {#biweekly-announcement}
 
 会议时间：{{ d(thisEvent.start, "long") }}（会议预计一小时内结束）
 
@@ -84,7 +84,7 @@ const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
 
 <div v-else>
 
-### 第 {{ tm("formatOrdinalNumber")(thisEvent.issueNumber) }} 次“龙架构双周会”会议回看 {#biweekly-archive}
+### 第 {{ t("ordinalNumber", { n: thisEvent.issueNumber }) }} 次“龙架构双周会”会议回看 {#biweekly-archive}
 
 会议时间：{{ d(thisEvent.start, "long") }}
 

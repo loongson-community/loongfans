@@ -80,7 +80,7 @@ export default {
   cirunnerInstall: "CI 代理 (Runner)",
 
   // Utilities
-  formatOrdinalNumber: (n: number): string => {
+  ordinalNumber: ({ n }: { n: number }): string => {
     // Chinese has no special morphology for ordinal numbers
     return n.toString()
   },

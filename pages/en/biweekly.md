@@ -28,7 +28,7 @@ import {
 } from "@src/client/components/events/DataSource"
 import BiweeklyCalendar from "@src/client/components/events/BiweeklyCalendar.vue"
 
-const { d, locale, tm } = useI18n()
+const { d, locale, t } = useI18n()
 const now = new Date()
 const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
 const ei = biweeklyDB.eventInfo
@@ -81,7 +81,7 @@ If you'd like to hold a session in another language, please feel free to get in 
     <div class="w-full announcement-container" v-if="thisEvent !== null">
         <div v-if="thisEvent.isFuture">
 
-### The {{ tm("formatOrdinalNumber")(thisEvent.issueNumber) }} "LoongArch Biweekly" Meeting Announcement {#biweekly-announcement}
+### The {{ t("ordinalNumber", { n: thisEvent.issueNumber }) }} "LoongArch Biweekly" Meeting Announcement {#biweekly-announcement}
 
 Meeting Time: {{ d(thisEvent.start, "long") }} (meeting expected to last an hour)
 
@@ -95,7 +95,7 @@ before this time (if you need editing permissions, please apply via Kingsoft Doc
 
 <div v-else>
 
-### The {{ tm("formatOrdinalNumber")(thisEvent.issueNumber) }} "LoongArch Biweekly" Meeting Archives
+### The {{ t("ordinalNumber", { n: thisEvent.issueNumber }) }} "LoongArch Biweekly" Meeting Archives
 
 Meeting Time: {{ d(thisEvent.start, "long") }}
 

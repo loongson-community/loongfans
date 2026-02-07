@@ -82,7 +82,7 @@ export default {
   cirunnerInstall: "CI Runners",
 
   // Utilities
-  formatOrdinalNumber: (n: number): string => {
+  ordinalNumber: ({ n }: { n: number }): string => {
     switch (pluralRules.select(n)) {
       case "one":
         return n + "st"
