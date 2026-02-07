@@ -1,4 +1,3 @@
-import chain from "lodash/chain"
 import groupBy from "lodash/groupBy"
 import isEmpty from "lodash/isEmpty"
 import mapValues from "lodash/mapValues"
@@ -31,11 +30,11 @@ export function transformDeviceDB(
     (devices) => groupBy(devices, "category"),
   )
 
-  return chain(familyOrder)
+  return familyOrder
     .filter((fKey) => !isEmpty(grouped[fKey]))
     .map((fKey) => ({
       family: families[fKey]?.title[lang] ?? fKey,
-      categories: chain(categoryOrder)
+      categories: categoryOrder
         .filter((cKey) => !isEmpty(grouped[fKey]?.[cKey]))
         .map((cKey) => ({
           title: categories[cKey]?.title[lang] ?? cKey,
@@ -46,8 +45,6 @@ export function transformDeviceDB(
             spec: d.spec,
             tags: d.tags.map((t) => tags[t]?.title[lang] ?? t).join(", "),
           })),
-        }))
-        .value(),
+        })),
     }))
-    .value()
 }
