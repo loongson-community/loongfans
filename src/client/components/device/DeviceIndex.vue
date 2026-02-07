@@ -6,10 +6,10 @@
       <div class="card-grid">
         <DeviceCard
           v-for="device in category.devices"
-          :key="device.href"
+          :key="device.id"
           :comparison-key="device.comparisonKey"
           :name="device.name"
-          :href="device.href"
+          :href="devicePageLink(device)"
           :image="imageLink(device)"
           :spec="device.spec"
           :tags="device.tags"
@@ -20,17 +20,29 @@
 </template>
 
 <script setup lang="ts">
+import { useData } from "vitepress"
+import { computed } from "vue"
+
+import { getLocalePrefix } from "@src/client/utils/language"
 import type { DeviceForIndex, DeviceIndexData } from "@src/types/device"
 import DeviceCard from "./DeviceCard.vue"
 
 defineProps<{ data: DeviceIndexData }>()
 
+const { localeIndex } = useData()
+const basePath = computed(() => getLocalePrefix(localeIndex.value))
+const devicePageLink = (device: DeviceForIndex) => {
+  if (device.href) {
+    return device.href
+  }
+  return `${basePath.value}/devices/${device.id}`
+}
+
 const imageLink = (device: DeviceForIndex) => {
   if (device.image) {
     return device.image
   }
-  const deviceID = device.href.split("/").pop()!
-  return `/images/devices/${deviceID}.thumbnail.webp`
+  return `/images/devices/${device.id}.thumbnail.webp`
 }
 </script>
 

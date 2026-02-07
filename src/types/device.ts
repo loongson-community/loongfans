@@ -1,8 +1,8 @@
 // Device description schema
 
 export interface Device {
+  id: string
   name: string
-  href: string
   spec: string
   tags: string
 }
@@ -23,6 +23,7 @@ export interface DeviceFamily<C = DeviceCategory> {
 export interface DeviceForIndex extends Device {
   comparisonKey?: string
   image?: string
+  href?: string
 }
 
 export type DeviceIndexData = DeviceFamily<DeviceCategory<DeviceForIndex>>[]
