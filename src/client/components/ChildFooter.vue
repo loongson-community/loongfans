@@ -16,9 +16,9 @@
           <Button
             v-for="lng in Object.keys(LANGUAGE_DISPLAY_NAMES)"
             :key="lng"
-            :label="LANGUAGE_DISPLAY_NAMES[lng]"
+            :label="LANGUAGE_DISPLAY_NAMES[lng as SupportedLanguage]"
             variant="text"
-            @click="() => handleLanguageChange(lng)"
+            @click="() => handleLanguageChange(lng as SupportedLanguage)"
           />
         </div>
       </Popover>
@@ -59,6 +59,7 @@ import {
   setStoredLanguage,
   LANGUAGE_DISPLAY_NAMES,
 } from "@src/client/utils/language"
+import type { SupportedLanguage } from "@src/types/language"
 
 const { t } = useI18n()
 const { localeIndex, lang } = useData()
@@ -69,7 +70,7 @@ const op = ref()
 let year = new Date().getFullYear()
 const copyrightYear = ref(year)
 
-function handleLanguageChange(language) {
+function handleLanguageChange(language: SupportedLanguage) {
   op.value.hide()
   if (language !== lang.value) setStoredLanguage(language)
   router.go(getLocaleUrl(language, router.route.path))
