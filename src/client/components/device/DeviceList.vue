@@ -24,21 +24,21 @@ import { useData } from "vitepress"
 import { computed } from "vue"
 
 import { getLocalePrefix } from "@src/client/utils/language"
-import type { DeviceForIndex, DeviceIndexData } from "@src/types/device"
+import type { DeviceListItem, DeviceListData } from "@src/types/device"
 import DeviceCard from "./DeviceCard.vue"
 
-defineProps<{ data: DeviceIndexData }>()
+defineProps<{ data: DeviceListData }>()
 
 const { localeIndex } = useData()
 const basePath = computed(() => getLocalePrefix(localeIndex.value))
-const devicePageLink = (device: DeviceForIndex) => {
+const devicePageLink = (device: DeviceListItem) => {
   if (device.href) {
     return device.href
   }
   return `${basePath.value}/devices/${device.id}`
 }
 
-const imageLink = (device: DeviceForIndex) => {
+const imageLink = (device: DeviceListItem) => {
   if (device.image) {
     return device.image
   }

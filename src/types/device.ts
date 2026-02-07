@@ -17,13 +17,13 @@ export interface DeviceFamily<C = DeviceCategory> {
   categories: C[]
 }
 
-// For the DeviceIndex component, which is used to display not only the devices,
+// For the DeviceList component, which is used to display not only the devices,
 // *but also the chips*.
 
-export interface DeviceForIndex extends Device {
+export interface DeviceListItem extends Device {
   comparisonKey?: string
   image?: string
   href?: string
 }
 
-export type DeviceIndexData = DeviceFamily<DeviceCategory<DeviceForIndex>>[]
+export type DeviceListData = DeviceFamily<DeviceCategory<DeviceListItem>>[]

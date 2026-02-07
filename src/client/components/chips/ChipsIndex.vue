@@ -1,6 +1,6 @@
 <template>
-  <DeviceIndex :data="cpuData" />
-  <DeviceIndex :data="chipsetData" />
+  <DeviceList :data="cpuData" />
+  <DeviceList :data="chipsetData" />
 </template>
 
 <script setup lang="ts">
@@ -8,9 +8,9 @@ import { useI18n } from "vue-i18n"
 
 import chipsDB from "virtual:loongfans-data/chips"
 import { LANGUAGE_PREFIXES } from "@src/client/utils/language"
-import type { DeviceIndexData } from "@src/types/device"
+import type { DeviceListData } from "@src/types/device"
 import type { SupportedLanguage } from "@src/types/language"
-import DeviceIndex from "../device/DeviceIndex.vue"
+import DeviceList from "../device/DeviceList.vue"
 
 const { t, locale } = useI18n()
 
@@ -36,7 +36,7 @@ const cpuData = [
         })),
     })),
   },
-] as DeviceIndexData
+] as DeviceListData
 
 const chipsetData = [
   {
@@ -58,5 +58,5 @@ const chipsetData = [
         })),
     })),
   },
-] as DeviceIndexData
+] as DeviceListData
 </script>
