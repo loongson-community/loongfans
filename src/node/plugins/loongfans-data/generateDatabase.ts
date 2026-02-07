@@ -311,19 +311,37 @@ export class DatabaseGenerator {
   }
 
   async generateDeviceDatabase(): Promise<DeviceInfoDB> {
-    const familiesPath = this.dataDir + "devices/families.yml"
+    const devicesDir = this.dataDir + "devices/"
+    const familiesPath = devicesDir + "families.yml"
     const familiesObj = await loadUntypedYAML(familiesPath)
     const families = this.validateDeviceFamiliesConfigData(
       familiesObj,
       familiesPath,
     )
 
-    const devices = await this.readAndTransformIntoMap(
-      "devices/*.device.yml",
-      this.validateDeviceData.bind(this),
-      compareNamesAlphabetically,
-      ".device.yml",
+    // List all immediate child directories under devices/
+    const entries = await fs.readdir(devicesDir, { withFileTypes: true })
+    const deviceDirs = entries
+      .filter((e) => e.isDirectory())
+      .map((e) => e.name)
+      .sort(compareNamesAlphabetically)
+
+    // Load index.yml from each device directory
+    const deviceEntries = await Promise.all(
+      deviceDirs.map(async (deviceId) => {
+        const indexPath = devicesDir + deviceId + "/index.yml"
+        const obj = await loadUntypedYAML(indexPath)
+        return {
+          id: deviceId,
+          data: this.validateDeviceData(obj, indexPath),
+        }
+      }),
     )
+
+    const devices: { [key: string]: DeviceInfoItem } = {}
+    for (const { id, data } of deviceEntries) {
+      devices[id] = data
+    }
 
     return {
       families,
