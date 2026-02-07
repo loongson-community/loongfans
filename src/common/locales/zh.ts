@@ -81,6 +81,7 @@ export default {
   // Utilities
   ordinalNumber: ({ n }: { n: number }): string => {
     // Chinese has no special morphology for ordinal numbers
+    if (n === undefined || n === null) return ""
     return n.toString()
   },
 

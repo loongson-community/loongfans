@@ -82,6 +82,7 @@ export default {
 
   // Utilities
   ordinalNumber: ({ n }: { n: number }): string => {
+    if (n === undefined || n === null) return ""
     switch (pluralRules.select(n)) {
       case "one":
         return n + "st"
