@@ -25,6 +25,7 @@ const cpuData = [
         .filter(([, value]) => value.basic.series === series)
         .map(([key, value]) => ({
           comparisonKey: key,
+          id: key,
           name: value.basic.name,
           href: `${
             LANGUAGE_PREFIXES[locale.value as SupportedLanguage]
@@ -47,6 +48,7 @@ const chipsetData = [
       devices: Object.entries(chipsDB.chipset)
         .filter(([, value]) => value.basic.series === series)
         .map(([key, value]) => ({
+          id: key,
           name: value.basic.name,
           href: `${
             LANGUAGE_PREFIXES[locale.value as SupportedLanguage]
