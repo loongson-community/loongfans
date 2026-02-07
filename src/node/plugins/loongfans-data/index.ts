@@ -6,6 +6,7 @@ import { DatabaseGenerator } from "./generateDatabase"
 enum DataKind {
   Biweekly = "biweekly",
   Chips = "chips",
+  Device = "device",
   OS = "os",
 }
 
@@ -34,6 +35,7 @@ const loongfansData = (): Plugin => {
   const debouncerForDataKinds: { [key in DataKind]: Debouncer } = {
     [DataKind.Biweekly]: new Debouncer(debounceTimeMS),
     [DataKind.Chips]: new Debouncer(debounceTimeMS),
+    [DataKind.Device]: new Debouncer(debounceTimeMS),
     [DataKind.OS]: new Debouncer(debounceTimeMS),
   }
 
@@ -89,6 +91,12 @@ const loongfansData = (): Plugin => {
           invalidateDataModule(DataKind.Chips)
         })
         break
+      case "devices":
+        debouncerForDataKinds[DataKind.Device].trigger(async () => {
+          logInfo(`Regenerating device database due to ${status} file: ${path}`)
+          invalidateDataModule(DataKind.Device)
+        })
+        break
       case "os":
         debouncerForDataKinds[DataKind.OS].trigger(async () => {
           logInfo(`Regenerating OS database due to ${status} file: ${path}`)
@@ -133,6 +141,8 @@ const loongfansData = (): Plugin => {
           return emitDataModule(await gen.generateBiweeklyDatabase())
         case "chips":
           return emitDataModule(await gen.generateChipsDatabase())
+        case "device":
+          return emitDataModule(await gen.generateDeviceDatabase())
         case "os":
           return emitDataModule(await gen.generateOSDatabase())
         default:

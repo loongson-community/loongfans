@@ -12,6 +12,9 @@ import type {
   ChipInfoDB,
   ChipsetInfoItem,
   CPUInfoItem,
+  DeviceFamiliesConfig,
+  DeviceInfoDB,
+  DeviceInfoItem,
   OSInfoItem,
 } from "@src/types/data"
 
@@ -41,6 +44,18 @@ const osInfoInputSchema = {
 const osOutputSchema = {
   type: "array",
   items: { $ref: `${jsonSchemaNamespace}#/definitions/OSInfoItem` },
+}
+
+const deviceInfoInputSchema = {
+  $ref: `${jsonSchemaNamespace}#/definitions/DeviceInfoItem`,
+}
+
+const deviceFamiliesConfigSchema = {
+  $ref: `${jsonSchemaNamespace}#/definitions/DeviceFamiliesConfig`,
+}
+
+const deviceOutputSchema = {
+  $ref: `${jsonSchemaNamespace}#/definitions/DeviceInfoDB`,
 }
 
 type InputFileValidator<T> = (data: object, fileName: string) => T
@@ -75,6 +90,9 @@ export class DatabaseGenerator {
   validatorForOSInfoInput: ValidateFunction
   validatorForChipsOutput: ValidateFunction
   validatorForOSOutput: ValidateFunction
+  validatorForDeviceInfoInput: ValidateFunction
+  validatorForDeviceFamiliesConfig: ValidateFunction
+  validatorForDeviceOutput: ValidateFunction
 
   constructor(projectRoot: string = "") {
     if (!projectRoot) {
@@ -112,6 +130,11 @@ export class DatabaseGenerator {
     this.validatorForOSInfoInput = ajv.compile(osInfoInputSchema)
     this.validatorForChipsOutput = ajv.compile(chipsOutputSchema)
     this.validatorForOSOutput = ajv.compile(osOutputSchema)
+    this.validatorForDeviceInfoInput = ajv.compile(deviceInfoInputSchema)
+    this.validatorForDeviceFamiliesConfig = ajv.compile(
+      deviceFamiliesConfigSchema,
+    )
+    this.validatorForDeviceOutput = ajv.compile(deviceOutputSchema)
   }
 
   validateBiweeklyDBData(data: object, fileName: string) {
@@ -163,6 +186,32 @@ export class DatabaseGenerator {
       data,
       this.validatorForOSOutput,
       "OS database output",
+    )
+  }
+
+  validateDeviceData(data: object, fileName: string) {
+    return validate<DeviceInfoItem>(
+      data,
+      this.validatorForDeviceInfoInput,
+      "Device",
+      fileName,
+    )
+  }
+
+  validateDeviceFamiliesConfigData(data: object, fileName: string) {
+    return validate<DeviceFamiliesConfig>(
+      data,
+      this.validatorForDeviceFamiliesConfig,
+      "Device families config",
+      fileName,
+    )
+  }
+
+  validateDeviceOutputData(data: object) {
+    return validate<DeviceInfoDB>(
+      data,
+      this.validatorForDeviceOutput,
+      "Device database output",
     )
   }
 
@@ -246,6 +295,26 @@ export class DatabaseGenerator {
       this.validateOSData.bind(this),
       compareNamesAlphabetically,
     )
+  }
+
+  async generateDeviceDatabase(): Promise<DeviceInfoDB> {
+    const familiesPath = this.dataDir + "devices/families.yml"
+    const familiesObj = await loadUntypedYAML(familiesPath)
+    const families = this.validateDeviceFamiliesConfigData(
+      familiesObj,
+      familiesPath,
+    )
+
+    const devices = await this.readAndTransformIntoMap(
+      "devices/*.device.yml",
+      this.validateDeviceData.bind(this),
+      compareNamesAlphabetically,
+    )
+
+    return {
+      families,
+      devices,
+    }
   }
 }
 

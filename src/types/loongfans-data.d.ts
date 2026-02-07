@@ -8,6 +8,11 @@ declare module "virtual:loongfans-data/chips" {
   export default value
 }
 
+declare module "virtual:loongfans-data/device" {
+  const value: import("./data").DeviceInfoDB
+  export default value
+}
+
 declare module "virtual:loongfans-data/os" {
   const value: import("./data").OSInfoItem[]
   export default value

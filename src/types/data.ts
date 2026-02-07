@@ -165,3 +165,37 @@ export interface BiweeklyDB {
   // here. It is just the issue number in decimal.
   links: { [key: string]: BiweeklyLinkInfo }
 }
+
+// Device database entries
+
+export interface DeviceInfoItem {
+  name: LocalizedString
+  family: string
+  category: string
+  image: string
+  spec: string
+  tags: string[]
+}
+
+export interface DeviceFamilyMeta {
+  title: LocalizedString
+}
+
+export interface DeviceCategoryMeta {
+  title: LocalizedString
+}
+
+export interface DeviceTagMeta {
+  title: LocalizedString
+}
+
+export interface DeviceFamiliesConfig {
+  families: { [key: string]: DeviceFamilyMeta }
+  categories: { [key: string]: DeviceCategoryMeta }
+  tags: { [key: string]: DeviceTagMeta }
+}
+
+export interface DeviceInfoDB {
+  families: DeviceFamiliesConfig
+  devices: { [key: string]: DeviceInfoItem }
+}
