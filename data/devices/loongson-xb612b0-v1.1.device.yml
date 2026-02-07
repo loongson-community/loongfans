@@ -1,0 +1,10 @@
+name:
+  en: Loongson XB612B0_V1.1
+  zh: 龙芯 XB612B0_V1.1
+family: 3b6000
+category: board
+image: /images/devices/loongson-xb612b0-v1.1.thumbnail.webp
+spec: "3B6000 @ 2.3GHz, mATX"
+tags:
+  - 7a2000
+  - desktop-mb

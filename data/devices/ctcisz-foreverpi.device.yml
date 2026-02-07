@@ -1,0 +1,9 @@
+name:
+  en: CTCISZ ForeverPi
+  zh: 中科云久久派
+family: 2k0300
+category: board
+image: /images/devices/ctcisz-foreverpi.thumbnail.webp
+spec: "2K0300"
+tags:
+  - dev-board

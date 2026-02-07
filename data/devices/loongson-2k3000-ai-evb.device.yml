@@ -1,0 +1,9 @@
+name:
+  en: Loongson 2K3000 AI Evaluation Board
+  zh: 龙芯 2K3000 AI 评估板
+family: 2k3000
+category: board
+image: /images/devices/loongson-2k3000-ai-evb.thumbnail.webp
+spec: "2K3000 @ 2.2GHz"
+tags:
+  - dev-board

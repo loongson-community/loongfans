@@ -1,0 +1,10 @@
+name:
+  en: Morefine M700S
+  zh: 摩方 M700S
+family: 3a6000
+category: prebuilt
+image: /images/devices/morefine-m700s.thumbnail.webp
+spec: "3A6000-HV @ 2.5GHz"
+tags:
+  - nuc
+  - prebuilt

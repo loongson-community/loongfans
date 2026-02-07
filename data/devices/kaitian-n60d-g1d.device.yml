@@ -1,0 +1,9 @@
+name:
+  en: Lenovo Kaitian N60d-G1d
+  zh: 联想开天 N60d-G1d
+family: 3a6000
+category: laptop
+image: /images/devices/kaitian-n60d-g1d.thumbnail.webp
+spec: "3A6000 @ 2.0GHz"
+tags:
+  - laptop

@@ -1,0 +1,10 @@
+name:
+  en: CTCISZ 3A6000 NUC
+  zh: 中科云 3A6000 小主机
+family: 3a6000
+category: prebuilt
+image: /images/devices/ctcisz-3a6000-nuc.thumbnail.webp
+spec: "3A6000-HV @ 2.5GHz"
+tags:
+  - nuc
+  - prebuilt

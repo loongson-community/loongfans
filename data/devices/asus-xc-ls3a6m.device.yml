@@ -1,0 +1,10 @@
+name:
+  en: ASUS XC-LS3A6M
+  zh: 华硕 XC-LS3A6M
+family: 3a6000
+category: board
+image: /images/devices/asus-xc-ls3a6m.thumbnail.webp
+spec: "3A6000-HV @ 2.5GHz, mATX"
+tags:
+  - 7a2000
+  - desktop-mb

@@ -1,0 +1,10 @@
+name:
+  en: CTCISZ 3B6000M NUC
+  zh: 中科云 3B6000M 小主机
+family: 2k3000
+category: prebuilt
+image: /images/devices/ctcisz-3b6000m-nuc.thumbnail.webp
+spec: "3B6000M @ 2.5GHz"
+tags:
+  - nuc
+  - prebuilt

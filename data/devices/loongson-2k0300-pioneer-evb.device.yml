@@ -1,0 +1,9 @@
+name:
+  en: Loongson 2K0300 "Pioneer"
+  zh: 龙芯 2K0300 先锋派
+family: 2k0300
+category: board
+image: /images/devices/loongson-2k0300-pioneer-evb.thumbnail.webp
+spec: "2K0300"
+tags:
+  - dev-board

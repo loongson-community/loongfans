@@ -1,0 +1,10 @@
+name:
+  en: Loongson XA61201_v1.0
+  zh: 龙芯 XA61201_v1.0
+family: 3a6000
+category: board
+image: /images/devices/loongson-xa61201-v1.0.thumbnail.webp
+spec: "3A6000-HV @ 2.5GHz, DTX"
+tags:
+  - 7a2000
+  - desktop-mb

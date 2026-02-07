@@ -1,0 +1,65 @@
+families:
+  2k0300:
+    title:
+      en: 2K0300
+      zh: 2K0300
+  2k3000:
+    title:
+      en: 2K3000/3B6000M
+      zh: 2K3000/3B6000M
+  3a6000:
+    title:
+      en: 3A6000
+      zh: 3A6000
+  3b6000:
+    title:
+      en: 3B6000
+      zh: 3B6000
+  3c6000:
+    title:
+      en: 3C6000
+      zh: 3C6000
+
+categories:
+  board:
+    title:
+      en: Motherboards and Development Boards
+      zh: 主板及开发板
+  laptop:
+    title:
+      en: Laptops
+      zh: 笔记本电脑
+  prebuilt:
+    title:
+      en: Pre-built Systems
+      zh: 整机产品
+
+tags:
+  7a2000:
+    title:
+      en: 7A2000
+      zh: 7A2000
+  desktop-mb:
+    title:
+      en: Desktop Motherboard
+      zh: 台式机主板
+  dev-board:
+    title:
+      en: Development Board
+      zh: 开发板
+  ecc:
+    title:
+      en: ECC memory support
+      zh: 支持 ECC 内存
+  laptop:
+    title:
+      en: Laptop
+      zh: 笔记本电脑
+  nuc:
+    title:
+      en: NUC
+      zh: 小主机
+  prebuilt:
+    title:
+      en: Pre-built
+      zh: 整机

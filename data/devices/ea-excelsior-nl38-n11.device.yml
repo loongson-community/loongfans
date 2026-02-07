@@ -1,0 +1,9 @@
+name:
+  en: EA EXCELSIOR NL38-N11
+  zh: 卓怡恒通 NL38-N11
+family: 3a6000
+category: laptop
+image: /images/devices/ea-excelsior-nl38-n11.thumbnail.webp
+spec: "3A6000 @ 2.0GHz"
+tags:
+  - laptop
