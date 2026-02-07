@@ -6,7 +6,6 @@
     "moduleResolution": "bundler",
     "allowArbitraryExtensions": true, // for allowing .d.json.ts declarations
     "resolveJsonModule": false, // force use of our types and not inferred ones
-    "noImplicitAny": false, // Many components haven't been converted to TS yet
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
