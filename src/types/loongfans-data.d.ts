@@ -12,3 +12,8 @@ declare module "virtual:loongfans-data/os" {
   const value: import("./data").OSInfoItem[]
   export default value
 }
+
+declare module "@data/events/events.ics?raw" {
+  const value: string
+  export default value
+}
