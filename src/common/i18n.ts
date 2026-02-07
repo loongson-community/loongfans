@@ -1,10 +1,16 @@
-import { createI18n, type I18nOptions } from "vue-i18n"
+import { createI18n, type DefineDateTimeFormat } from "vue-i18n"
+
+import type { SupportedLanguage } from "@src/types/language"
 
 import en from "./locales/en"
 import zh from "./locales/zh"
 
+export type MessageSchema = typeof zh
+
 // https://github.com/intlify/vue-i18n/issues/717
-const datetimeFormats: I18nOptions["datetimeFormats"] = {
+const datetimeFormats: {
+  [key in SupportedLanguage]: DefineDateTimeFormat
+} = {
   en: {
     short: {
       year: "numeric",
@@ -44,7 +50,7 @@ export const i18nForLocale = (
   locale: string,
   globalInjection: boolean = false,
 ) =>
-  createI18n({
+  createI18n<[MessageSchema], SupportedLanguage>({
     legacy: false,
     globalInjection,
     locale,
