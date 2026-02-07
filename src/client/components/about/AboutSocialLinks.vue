@@ -1,12 +1,12 @@
 <template>
   <div class="card-group">
     <AboutSocialLink
-      v-for="item in cardDataMap[locale]"
+      v-for="item in cardDataMap[locale as keyof typeof cardDataMap]"
       :key="item.name"
       :name="item.name"
       :description="item.description"
-      :href="item.href"
-      :qr-link="item.qrLink"
+      :href="item.href ?? ''"
+      :qr-link="item.qrLink ?? ''"
       :color="item.color"
     >
       <component :is="item.icon" />
@@ -24,9 +24,18 @@ import IconQq from "~icons/simple-icons/qq"
 import IconMatrix from "~icons/simple-icons/matrix"
 import IconTelegram from "~icons/simple-icons/telegram"
 
+interface CardDataEntry {
+  name: string
+  description: string
+  href?: string
+  qrLink?: string
+  color: string
+  icon: typeof IconGithub
+}
+
 const { t, locale } = useI18n()
 
-const cardData = {
+const cardData: Record<string, CardDataEntry> = {
   github: {
     name: t("aboutGithubName"),
     description: t("aboutGithubDescription"),
@@ -71,10 +80,10 @@ const cardData = {
   },
 }
 
-const cardDataMap = {
-  zh: ["github", "bilibili", "wechat", "qq", "matrix"].map((i) => cardData[i]),
+const cardDataMap: Record<string, CardDataEntry[]> = {
+  zh: ["github", "bilibili", "wechat", "qq", "matrix"].map((i) => cardData[i]!),
   en: ["github", "bilibili", "telegram", "matrix", "wechat", "qq"].map(
-    (i) => cardData[i],
+    (i) => cardData[i]!,
   ),
 }
 </script>
