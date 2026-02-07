@@ -432,9 +432,9 @@ const gpuData = computed(() => {
   }
 })
 
-const showHelpDialog = (header, key) => {
-  const headerText = header // 保存原始字符串
+type ChipDescriptionKey = Exclude<keyof typeof ChipDescriptions, "default">
 
+const showHelpDialog = (headerPath: string, descKey: string) => {
   // 特殊标题的映射
   const specialHeaders = {
     package_t_case: () => ["T", h("sub", "CASE")],
@@ -445,24 +445,28 @@ const showHelpDialog = (header, key) => {
     tech_isa_LASX: () => ["LASX"],
   }
 
-  if (specialHeaders[key]) {
+  let headerComponent
+  if (descKey in specialHeaders) {
+    const specialKey = descKey as keyof typeof specialHeaders
     /* eslint-disable-next-line vue/one-component-per-file */
-    header = defineComponent({
+    headerComponent = defineComponent({
       setup() {
         return () =>
-          h("span", { class: "p-dialog-title" }, specialHeaders[key]())
+          h("span", { class: "p-dialog-title" }, specialHeaders[specialKey]())
       },
     })
   } else {
     /* eslint-disable-next-line vue/one-component-per-file */
-    header = defineComponent({
+    headerComponent = defineComponent({
       setup() {
         return () =>
-          h("span", { class: "p-dialog-title" }, t(`chips.${headerText}`))
+          h("span", { class: "p-dialog-title" }, t(`chips.${headerPath}`))
       },
     })
   }
 
+  const key = descKey as ChipDescriptionKey
+  if (!(key in ChipDescriptions)) return
   dialog.open(ChipDescriptions[key], {
     props: {
       header: undefined,
@@ -477,7 +481,7 @@ const showHelpDialog = (header, key) => {
       dismissableMask: true,
     },
     templates: {
-      header: header,
+      header: headerComponent,
     },
   })
 }
