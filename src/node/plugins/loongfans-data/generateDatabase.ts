@@ -219,6 +219,7 @@ export class DatabaseGenerator {
     pattern: string,
     validator: InputFileValidator<T>,
     keySorter: (a: string, b: string) => number,
+    extension?: string,
   ): Promise<TransformedInput<T>[]> {
     const options = {
       ignore: ["**/template*.yml"],
@@ -229,7 +230,7 @@ export class DatabaseGenerator {
       files.map(async (path) => {
         const input = await loadUntypedYAML(path)
         return {
-          key: basename(path, extname(path)),
+          key: basename(path, extension ?? extname(path)),
           data: validator(input, path),
         }
       }),
@@ -242,8 +243,14 @@ export class DatabaseGenerator {
     pattern: string,
     validator: InputFileValidator<T>,
     keySorter: (a: string, b: string) => number,
+    extension?: string,
   ): Promise<T[]> {
-    const transformed = await this.processFiles(pattern, validator, keySorter)
+    const transformed = await this.processFiles(
+      pattern,
+      validator,
+      keySorter,
+      extension,
+    )
     return transformed.map(({ data }) => data)
   }
 
@@ -251,8 +258,14 @@ export class DatabaseGenerator {
     pattern: string,
     validator: InputFileValidator<T>,
     keySorter: (a: string, b: string) => number,
+    extension?: string,
   ): Promise<{ [key: string]: T }> {
-    const transformed = await this.processFiles(pattern, validator, keySorter)
+    const transformed = await this.processFiles(
+      pattern,
+      validator,
+      keySorter,
+      extension,
+    )
     const result: { [key: string]: T } = {}
     transformed.forEach(({ key, data }) => {
       result[key] = data
@@ -309,6 +322,7 @@ export class DatabaseGenerator {
       "devices/*.device.yml",
       this.validateDeviceData.bind(this),
       compareNamesAlphabetically,
+      ".device.yml",
     )
 
     return {
