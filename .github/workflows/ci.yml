@@ -20,7 +20,14 @@ jobs:
     steps:
       - name: Check out the source code
         uses: actions/checkout@v6
-      - name: Install distro packages
+      - name: Detect if any Caddyfile was changed
+        id: caddyfile-changed
+        uses: tj-actions/changed-files@e0021407031f5be11a464abee9a0776171c79891 # v47.0.1
+        with:
+          files: |
+            example.Caddyfile
+      - name: Install Caddy for linting
+        if: steps.caddyfile-changed.outputs.any_changed == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y caddy
@@ -35,11 +42,13 @@ jobs:
         run: pnpm install
       - name: Lint Markdown files
         run: pnpm run lintMarkdown
-      - name: Check code style
+      - name: Check Caddyfile style
+        if: steps.caddyfile-changed.outputs.any_changed == 'true'
         run: |
           # Caddy in Ubuntu 24.04 is version 2.6.2, which lacks support for "-d"
           caddy fmt --diff example.Caddyfile
-          pnpm run lintPrettier
+      - name: Check code style
+        run: pnpm run lintPrettier
       - name: Lint code with ESLint
         run: pnpm run eslint
       - name: Run codespell
