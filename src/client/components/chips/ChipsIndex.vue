@@ -8,7 +8,7 @@ import { useI18n } from "vue-i18n"
 
 import chipsDB from "virtual:loongfans-data/chips"
 import { LANGUAGE_PREFIXES } from "@src/client/utils/language"
-import type { DeviceFamily } from "@src/types/device"
+import type { DeviceIndexData } from "@src/types/device"
 import type { SupportedLanguage } from "@src/types/language"
 import DeviceIndex from "../device/DeviceIndex.vue"
 
@@ -35,7 +35,7 @@ const cpuData = [
         })),
     })),
   },
-] as DeviceFamily[]
+] as DeviceIndexData
 
 const chipsetData = [
   {
@@ -56,5 +56,5 @@ const chipsetData = [
         })),
     })),
   },
-] as DeviceFamily[]
+] as DeviceIndexData
 </script>

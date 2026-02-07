@@ -20,10 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import type { DeviceFamily } from "@src/types/device"
+import type { DeviceIndexData } from "@src/types/device"
 import DeviceCard from "./DeviceCard.vue"
 
-defineProps<{ data: DeviceFamily[] }>()
+defineProps<{ data: DeviceIndexData }>()
 </script>
 
 <style scoped>
