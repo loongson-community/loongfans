@@ -58,7 +58,7 @@ export const devices: DeviceFamily[] = [
           {
             name: "ASUS XC-LS3A6M",
             href: "/en/devices/asus-xc-ls3a6m",
-            image: "/images/devices/asus-xc-ls3a6m.webp",
+            image: "/images/devices/asus-xc-ls3a6m.thumbnail.webp",
             spec: "3A6000-HV @ 2.5GHz, mATX",
             tags: "7A2000, Desktop Motherboard",
           },
@@ -98,7 +98,7 @@ export const devices: DeviceFamily[] = [
           {
             name: "EA EXCELSIOR NL38-N11",
             href: "/en/devices/ea-excelsior-nl38-n11",
-            image: "/images/devices/ea-excelsior-nl38-n11.webp",
+            image: "/images/devices/ea-excelsior-nl38-n11.thumbnail.webp",
             spec: "3A6000 @ 2.0GHz",
             tags: "Laptop",
           },
@@ -148,7 +148,7 @@ export const devices: DeviceFamily[] = [
           {
             name: "Loongson 2K3000 AI Evaluation Board",
             href: "/en/devices/loongson-2k3000-ai-evb",
-            image: "/images/devices/loongson-2k3000-ai-evb.webp",
+            image: "/images/devices/loongson-2k3000-ai-evb.thumbnail.webp",
             spec: "2K3000 @ 2.2GHz",
             tags: "Development Board",
           },
@@ -177,28 +177,29 @@ export const devices: DeviceFamily[] = [
           {
             name: 'Loongson 2K0300 "Hummingbird"',
             href: "/en/devices/loongson-2k0300-hummingbird-evb",
-            image: "/images/devices/loongson-2k0300-hummingbird-evb.webp",
+            image:
+              "/images/devices/loongson-2k0300-hummingbird-evb.thumbnail.webp",
             spec: "2K0300",
             tags: "Development Board",
           },
           {
             name: 'Loongson 2K0300 "Pioneer"',
             href: "/en/devices/loongson-2k0300-pioneer-evb",
-            image: "/images/devices/loongson-2k0300-pioneer-evb.webp",
+            image: "/images/devices/loongson-2k0300-pioneer-evb.thumbnail.webp",
             spec: "2K0300",
             tags: "Development Board",
           },
           {
             name: "ALIENTEK 2K0300 Development Board",
             href: "/en/devices/alientek-2k0300-evb",
-            image: "/images/devices/alientek-2k0300-evb-1.webp",
+            image: "/images/devices/alientek-2k0300-evb-1.thumbnail.webp",
             spec: "2K0300",
             tags: "Development Board",
           },
           {
             name: "CTCISZ ForeverPi",
             href: "/en/devices/ctcisz-foreverpi",
-            image: "/images/devices/loongson-2k0300-pioneer-evb.webp",
+            image: "/images/devices/ctcisz-foreverpi.thumbnail.webp",
             spec: "2K0300",
             tags: "Development Board",
           },

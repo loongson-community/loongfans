@@ -58,7 +58,7 @@ export const devices: DeviceFamily[] = [
           {
             name: "华硕 XC-LS3A6M",
             href: "/devices/asus-xc-ls3a6m",
-            image: "/images/devices/asus-xc-ls3a6m.webp",
+            image: "/images/devices/asus-xc-ls3a6m.thumbnail.webp",
             spec: "3A6000-HV @ 2.5GHz, mATX",
             tags: "7A2000, 台式机主板",
           },
@@ -98,7 +98,7 @@ export const devices: DeviceFamily[] = [
           {
             name: "卓怡恒通 NL38-N11",
             href: "/devices/ea-excelsior-nl38-n11",
-            image: "/images/devices/ea-excelsior-nl38-n11.webp",
+            image: "/images/devices/ea-excelsior-nl38-n11.thumbnail.webp",
             spec: "3A6000 @ 2.0GHz",
             tags: "笔记本电脑",
           },
@@ -148,7 +148,7 @@ export const devices: DeviceFamily[] = [
           {
             name: "龙芯 2K3000 AI 评估板",
             href: "/devices/loongson-2k3000-ai-evb",
-            image: "/images/devices/loongson-2k3000-ai-evb.webp",
+            image: "/images/devices/loongson-2k3000-ai-evb.thumbnail.webp",
             spec: "2K3000 @ 2.2GHz",
             tags: "开发板",
           },
@@ -177,28 +177,29 @@ export const devices: DeviceFamily[] = [
           {
             name: "龙芯 2K0300 蜂鸟板",
             href: "/devices/loongson-2k0300-hummingbird-evb",
-            image: "/images/devices/loongson-2k0300-hummingbird-evb.webp",
+            image:
+              "/images/devices/loongson-2k0300-hummingbird-evb.thumbnail.webp",
             spec: "2K0300",
             tags: "开发板",
           },
           {
             name: "龙芯 2K0300 先锋派",
             href: "/devices/loongson-2k0300-pioneer-evb",
-            image: "/images/devices/loongson-2k0300-pioneer-evb.webp",
+            image: "/images/devices/loongson-2k0300-pioneer-evb.thumbnail.webp",
             spec: "2K0300",
             tags: "开发板",
           },
           {
             name: "正点原子 2K0300 开发板",
             href: "/devices/alientek-2k0300-evb",
-            image: "/images/devices/alientek-2k0300-evb-1.webp",
+            image: "/images/devices/alientek-2k0300-evb.thumbnail.webp",
             spec: "2K0300",
             tags: "开发板",
           },
           {
             name: "中科云久久派",
             href: "/devices/ctcisz-foreverpi",
-            image: "/images/devices/loongson-2k0300-pioneer-evb.webp",
+            image: "/images/devices/ctcisz-foreverpi.thumbnail.webp",
             spec: "2K0300",
             tags: "开发板",
           },
