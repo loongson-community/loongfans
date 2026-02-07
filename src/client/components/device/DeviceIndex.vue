@@ -10,7 +10,7 @@
           :comparison-key="device.comparisonKey"
           :name="device.name"
           :href="device.href"
-          :image="device.image"
+          :image="imageLink(device)"
           :spec="device.spec"
           :tags="device.tags"
         />
@@ -20,10 +20,18 @@
 </template>
 
 <script setup lang="ts">
-import type { DeviceIndexData } from "@src/types/device"
+import type { DeviceForIndex, DeviceIndexData } from "@src/types/device"
 import DeviceCard from "./DeviceCard.vue"
 
 defineProps<{ data: DeviceIndexData }>()
+
+const imageLink = (device: DeviceForIndex) => {
+  if (device.image) {
+    return device.image
+  }
+  const deviceID = device.href.split("/").pop()!
+  return `/images/devices/${deviceID}.thumbnail.webp`
+}
 </script>
 
 <style scoped>

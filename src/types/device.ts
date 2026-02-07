@@ -3,7 +3,6 @@
 export interface Device {
   name: string
   href: string
-  image: string
   spec: string
   tags: string
 }
@@ -23,6 +22,7 @@ export interface DeviceFamily<C = DeviceCategory> {
 
 export interface DeviceForIndex extends Device {
   comparisonKey?: string
+  image?: string
 }
 
 export type DeviceIndexData = DeviceFamily<DeviceCategory<DeviceForIndex>>[]
