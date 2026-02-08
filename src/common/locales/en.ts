@@ -62,6 +62,12 @@ export default {
   deviceDownloadChangelog: "Changelog",
   deviceDownloadDebugVersion: " (Debug)",
   deviceDownloadButton: "Download",
+  downloadTypeUefiFirmware: "UEFI Firmware",
+  downloadTypeDatasheet: "Datasheet",
+  downloadTypeReferenceManual: "Reference Manual",
+  downloadTypeUserManual: "User Manual",
+  downloadTypeSchematicDiagram: "Schematic Diagram",
+  downloadTypeSdk: "SDK",
 
   // events/EventsCalendar.vue
   today: "Today",

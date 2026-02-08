@@ -60,6 +60,12 @@ export default {
   deviceDownloadChangelog: "更改日志",
   deviceDownloadDebugVersion: "（调试版）",
   deviceDownloadButton: "下载",
+  downloadTypeUefiFirmware: "UEFI 固件",
+  downloadTypeDatasheet: "数据手册",
+  downloadTypeReferenceManual: "参考手册",
+  downloadTypeUserManual: "用户手册",
+  downloadTypeSchematicDiagram: "原理图",
+  downloadTypeSdk: "SDK",
 
   // events/EventsCalendar.vue
   today: "今天",

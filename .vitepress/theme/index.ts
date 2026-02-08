@@ -13,7 +13,6 @@ import i18n from "@src/common/i18n"
 import DeviceDetail from "@src/client/components/device/DeviceDetail.vue"
 import ChipTables from "@src/client/components/chips/ChipTables.vue"
 import CpuCompare from "@src/client/components/chips/compare/CpuCompare.vue"
-import DeviceDownloadCard from "@src/client/components/device/DownloadCard.vue"
 import LoongfansLayout from "./LoongfansLayout.vue"
 import "./custom.css"
 
@@ -74,6 +73,5 @@ export default {
     app.component("DeviceDetail", DeviceDetail)
     app.component("ChipTables", ChipTables)
     app.component("CpuCompare", CpuCompare)
-    app.component("DeviceDownloadCard", DeviceDownloadCard)
   },
 }

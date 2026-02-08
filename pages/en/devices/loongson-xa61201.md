@@ -3,6 +3,7 @@ layout: page
 returnLink: /en/devices
 pageTitle: Product Database
 pageSubTitle: Loongson XA61201_v1.0
+deviceId: loongson-xa61201-v1.0
 ---
 
 :::info

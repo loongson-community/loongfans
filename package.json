@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "vite": "^7.3.1",
+    "markdown-it": "^14.1.0",
     "vitepress": "2.0.0-alpha.16"
   },
   "devDependencies": {
+    "@types/markdown-it": "^14.1.0",
     "@commander-js/extra-typings": "^14.0.0",
     "@eslint/js": "^9.39.2",
     "@iconify-json/material-symbols": "^1.2.53",

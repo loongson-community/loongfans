@@ -19,6 +19,8 @@ import type {
   DeviceInfoItem,
   OSInfoItem,
 } from "@src/types/data"
+import type { LocalizedString } from "@src/types/language"
+import { SupportedLanguage } from "@src/types/language"
 
 // Artificial JSON schemas for verification
 const jsonSchemaNamespace = "https://loongfans.cn/schema.json"
@@ -337,7 +339,10 @@ export class DatabaseGenerator {
       files.map(async (path) => {
         const obj = await loadUntypedYAML(path)
         const data = this.validateDownloadItemData(obj, path)
-        const expanded = await this.expandDownloadDescription(data, downloadsDir)
+        const expanded = await this.expandDownloadDescription(
+          data,
+          downloadsDir,
+        )
         return {
           key: basename(path, extname(path)),
           data: expanded,
@@ -391,7 +396,9 @@ export class DatabaseGenerator {
     const downloadKeys = new Set(Object.keys(downloadsDB))
     for (const [deviceId, deviceData] of Object.entries(devices)) {
       if (!deviceData.downloads?.length) continue
-      const missing = deviceData.downloads.filter((key) => !downloadKeys.has(key))
+      const missing = deviceData.downloads.filter(
+        (key) => !downloadKeys.has(key),
+      )
       if (missing.length) {
         throw new Error(
           `Device '${deviceId}' references missing downloads: ${missing.join(
@@ -413,10 +420,11 @@ export class DatabaseGenerator {
   ): Promise<DownloadItem> {
     if (!data.description) return data
 
-    const expanded: typeof data.description = {}
+    const expanded: LocalizedString = {}
     for (const [lang, content] of Object.entries(data.description)) {
       if (typeof content !== "string") continue
-      expanded[lang] = await expandIncludes(content, baseDir)
+      if (!(lang in SupportedLanguage)) continue
+      expanded[lang as SupportedLanguage] = await expandIncludes(content, baseDir)
     }
 
     return {
@@ -438,7 +446,11 @@ async function expandIncludes(content: string, baseDir: string) {
   for (const match of content.matchAll(pattern)) {
     const matchIndex = match.index ?? 0
     result += content.slice(lastIndex, matchIndex)
-    const includePath = match[1].trim()
+    const includePath = match[1]?.trim()
+    if (!includePath) {
+      lastIndex = matchIndex + match[0].length
+      continue
+    }
     const includeFullPath = resolve(baseDir, includePath)
     const includeContent = await fs.readFile(includeFullPath, "utf-8")
     result += includeContent

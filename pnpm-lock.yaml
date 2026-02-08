@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      markdown-it:
+        specifier: ^14.1.0
+        version: 14.1.0
       vite:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@25.2.0)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.8.2)
@@ -36,6 +39,9 @@ importers:
       '@types/lodash':
         specifier: ^4.17.23
         version: 4.17.23
+      '@types/markdown-it':
+        specifier: ^14.1.0
+        version: 14.1.2
       '@types/node':
         specifier: ^25.2.0
         version: 25.2.0

@@ -29,6 +29,7 @@
       <Divider />
       <div class="changelog-title-bar">
         <Button
+          v-if="$slots.detail"
           variant="text"
           class="expand-button"
           :class="expand ? 'upside-down' : ''"
@@ -46,7 +47,7 @@
         <div class="changelog-main">
           <slot />
         </div>
-        <div v-show="expand" class="changelog-detail">
+        <div v-if="$slots.detail" v-show="expand" class="changelog-detail">
           <slot name="detail" />
         </div>
       </div>
