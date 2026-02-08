@@ -18,7 +18,7 @@ This repository powers [the Loongson Hobbyists' Community portal](loongfans.cn).
 
 High level project layout:
 
-- `data/`: YAML data sources (chips, devices, OS, events).
+- `data/`: YAML data sources (chips, devices, downloads, OS, events).
 - `pages/`: Chinese Markdown content.
 - `pages/en/`: English Markdown translations.
 - `pages/public/`: static assets (images, localized public files).
@@ -61,6 +61,13 @@ Run the minimal set needed for the touched area (e.g., Markdown lint for Markdow
 - `data/events/biweekly.yml` is typed and validated during build.
 - `data/events/events.ics` is a hand‑managed data source. Use careful editing per the guidance in `data/events/README.md` and verify diffs for unexpected changes.
 - If updating biweekly data programmatically, use the existing script: `pnpm run editBiweeklyEvents`.
+
+### Download resources data
+
+- Source of truth is YAML in `data/downloads/`.
+- Use `data/downloads/changelogs/` for shared Markdown fragments referenced by
+  `description` via `<!--@include: ... -->`.
+- Devices reference download keys from their `data/devices/*/index.yml` entries.
 
 ### Documentation language
 
