@@ -29,29 +29,26 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue"
-import Tabs from "primevue/tabs"
-import TabList from "primevue/tablist"
 import Tab from "primevue/tab"
-import TabPanels from "primevue/tabpanels"
+import TabList from "primevue/tablist"
 import TabPanel from "primevue/tabpanel"
+import TabPanels from "primevue/tabpanels"
+import Tabs from "primevue/tabs"
+import { computed } from "vue"
 import { useI18n } from "vue-i18n"
-import { useData } from "vitepress"
 
 import deviceDB from "virtual:loongfans-data/device"
 import DownloadList from "./DownloadList.vue"
 
-const { t } = useI18n()
-const { page } = useData()
+const { deviceId } = defineProps<{
+  deviceId: string
+}>()
 
-const deviceId = computed(() => {
-  const match = page.value.filePath.match(/devices\/([^/]+)\.md$/)
-  return match?.[1] ?? null
-})
+const { t } = useI18n()
 
 const downloadKeys = computed(() => {
-  if (!deviceId.value) return []
-  return deviceDB.devices[deviceId.value]?.downloads ?? []
+  if (!deviceId) return []
+  return deviceDB.devices[deviceId]?.downloads ?? []
 })
 
 const hasDownloads = computed(() => downloadKeys.value.length > 0)

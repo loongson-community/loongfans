@@ -25,8 +25,7 @@ interface DevicePageRouteConfig {
 
 type DevicePageRouteParams = {
   deviceID: string
-  subTitle: string
-  title: string
+  deviceName: string
 }
 
 class RouteCompiler {
@@ -57,8 +56,7 @@ class RouteCompiler {
     return {
       params: {
         deviceID,
-        title: this.localizedName(item),
-        subTitle: this.localizedName(item),
+        deviceName: this.localizedName(item),
       },
       content,
     }
@@ -92,8 +90,8 @@ export const makeRouteModule = (locale: string): RouteModule => {
 
     transformPageData(pageData) {
       const params = pageData.params as DevicePageRouteParams
-      pageData.title = params.title
-      pageData.frontmatter["pageSubTitle"] = params.subTitle
+      pageData.title = params.deviceName
+      pageData.frontmatter["pageSubTitle"] = params.deviceName
       return pageData
     },
   }
