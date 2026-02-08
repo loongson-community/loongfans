@@ -12,7 +12,7 @@ import keyBy from "lodash/keyBy"
 import { useI18n } from "vue-i18n"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
-import type { BiweeklyEventItem, BiweeklyEventsResult } from "./DataSource"
+import type { BiweeklyEventItem, BiweeklyEventsResult } from "./dataSource"
 
 // The CalendarDay type is not exported by v-calendar, so we redefine it here
 // with only the fields we need.

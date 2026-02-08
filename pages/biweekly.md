@@ -26,7 +26,7 @@ import {
     getBiweeklyEvents,
     getBiweeklySlideLink,
     type BiweeklyEventItem,
-} from "@src/client/components/events/DataSource"
+} from "@src/client/components/events/dataSource"
 import BiweeklyCalendar from "@src/client/components/events/BiweeklyCalendar.vue"
 
 const { d, locale, t } = useI18n()
