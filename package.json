@@ -13,11 +13,9 @@
   },
   "dependencies": {
     "vite": "^7.3.1",
-    "markdown-it": "^14.1.0",
     "vitepress": "2.0.0-alpha.16"
   },
   "devDependencies": {
-    "@types/markdown-it": "^14.1.0",
     "@commander-js/extra-typings": "^14.0.0",
     "@eslint/js": "^9.39.2",
     "@iconify-json/material-symbols": "^1.2.53",
@@ -25,6 +23,7 @@
     "@popperjs/core": "^2.11.8",
     "@primeuix/themes": "^2.0.3",
     "@types/lodash": "^4.17.23",
+    "@types/markdown-it": "^14.1.0",
     "@types/node": "^25.2.0",
     "@unocss/preset-wind4": "^66.6.0",
     "@vue/tsconfig": "^0.8.1",
@@ -38,6 +37,7 @@
     "globals": "^17.3.0",
     "ical-expander": "^3.2.0",
     "lodash": "^4.17.23",
+    "markdown-it": "^14.1.0",
     "markdownlint": "^0.40.0",
     "markdownlint-cli2": "^0.20.0",
     "pinia": "^3.0.4",
