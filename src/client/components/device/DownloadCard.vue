@@ -205,7 +205,7 @@ const formattedSize = computed(() => {
   font-size: small;
 }
 
-.changelog-detail > :slotted(h2) {
+.changelog-detail > :slotted(.vp-doc) > h2 {
   /*
    * Behave sufficiently like **emphasis**, i.e. effectively match style of
    * `.vp-doc > p > strong` to the extent feasible.
