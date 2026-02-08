@@ -1,0 +1,16 @@
+type: uefi-firmware
+version: "V1.2_V5.0.0345_stable202511_dbg"
+size: 6291456
+date: "2025-01-07"
+sha256: "c17a7848cd002564cda47eb4a0ded99605301c31e9f828895b0a27542940a0f0"
+url: "https://file.loongfans.cn/xb612b0-v1.2/EDK2025_XB612B0-V1.2_V5.0.0345_stable202511_dbg.fd"
+debug: true
+description:
+  zh: |
+    本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+    <!--@include: ./changelogs/stable2511.md -->
+  en: |
+    Major update based on RefCode Stable2511 baseline; see code release notes for details.
+
+    <!--@include: ./changelogs/stable2511.en.md -->

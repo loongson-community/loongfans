@@ -42,49 +42,4 @@ pageSubTitle: 龙芯 XB612B0_V1.2
 
 </template>
 
-<template #download>
-
-<DeviceDownloadCard
-  title="UEFI 固件"
-  version="V1.2_V5.0.0345_stable202511_rel"
-  :size="6291456"
-  date="2025-01-07"
-  sha256="38ede1c5710c072d642853d26e30bb2a281c1f36fa588a017780324f71fe6a79"
-  url="https://file.loongfans.cn/xb612b0-v1.2/EDK2025_XB612B0-V1.2_V5.0.0345_stable202511_rel.fd"
-  latest
->
-
-本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
-
-<template #detail>
-
-<!--@include: @parts/devices/changelist_V5.0.0343-stable2511.md -->
-
-</template>
-
-</DeviceDownloadCard>
-
-<DeviceDownloadCard
-  title="UEFI 固件"
-  version="V1.2_V5.0.0345_stable202511_dbg"
-  :size="6291456"
-  date="2025-01-07"
-  sha256="c17a7848cd002564cda47eb4a0ded99605301c31e9f828895b0a27542940a0f0"
-  url="https://file.loongfans.cn/xb612b0-v1.2/EDK2025_XB612B0-V1.2_V5.0.0345_stable202511_dbg.fd"
-  debug
-  latest
->
-
-本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
-
-<template #detail>
-
-<!--@include: @parts/devices/changelist_V5.0.0343-stable2511.md -->
-
-</template>
-
-</DeviceDownloadCard>
-
-</template>
-
 </DeviceDetail>
