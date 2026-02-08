@@ -13,16 +13,9 @@
       :debug="item.debug"
     >
       <!-- eslint-disable vue/no-v-html -->
-      <div
-        v-if="item.briefHtml"
-        class="vp-doc"
-        v-html="item.briefHtml"
-      />
+      <div v-if="item.briefHtml" class="vp-doc" v-html="item.briefHtml" />
       <template v-if="item.detailHtml" #detail>
-        <div
-          class="vp-doc"
-          v-html="item.detailHtml"
-        />
+        <div class="vp-doc" v-html="item.detailHtml" />
       </template>
       <!-- eslint-enable vue/no-v-html -->
     </DownloadCard>

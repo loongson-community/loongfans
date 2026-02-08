@@ -422,7 +422,10 @@ export class DatabaseGenerator {
     const expanded: LocalizedString = {}
     for (const [lang, content] of Object.entries(data.description)) {
       if (typeof content !== "string") continue
-      expanded[lang as SupportedLanguage] = await expandIncludes(content, baseDir)
+      expanded[lang as SupportedLanguage] = await expandIncludes(
+        content,
+        baseDir,
+      )
     }
 
     return {

@@ -40,9 +40,7 @@ class RouteCompiler {
   }
 
   localizedName(item: DeviceInfoItem): string {
-    return (
-      item.name[this.locale as SupportedLanguage] ?? item.name.en ?? ""
-    )
+    return item.name[this.locale as SupportedLanguage] ?? item.name.en ?? ""
   }
 
   async compileOneRoute(
