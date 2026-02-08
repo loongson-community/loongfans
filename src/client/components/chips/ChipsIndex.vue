@@ -10,7 +10,7 @@ import chipsDB from "virtual:loongfans-data/chips"
 import { LANGUAGE_PREFIXES } from "@src/client/utils/language"
 import type { DeviceListData } from "@src/types/device"
 import type { SupportedLanguage } from "@src/types/language"
-import DeviceList from "../device/DeviceList.vue"
+import DeviceList from "../devices/DeviceList.vue"
 
 const { t, locale } = useI18n()
 
