@@ -44,7 +44,7 @@ const { t } = useI18n()
 const { page } = useData()
 
 const deviceId = computed(() => {
-  const match = page.value.filePath.match(/\/devices\/([^/]+)\.md$/)
+  const match = page.value.filePath.match(/devices\/([^/]+)\.md$/)
   return match?.[1] ?? null
 })
 
