@@ -8,3 +8,10 @@ spec: "3A6000-HV @ 2.5GHz, ATX"
 tags:
   - 7a2000
   - desktop-mb
+downloads:
+  - uefi-fw-loongson-xa612a0-v1.0-v5.0.0344_stable202511_rel
+  - uefi-fw-loongson-xa612a0-v1.0-v5.0.0344_stable202511_dbg
+  - uefi-fw-loongson-xa612a0-v1.0-prestable2405rel
+  - uefi-fw-loongson-xa612a0-v1.0-stable2311plldbg_20240525
+  - uefi-fw-loongson-xa612a0-v1.0-stable2311pllrel
+  - uefi-fw-loongson-xa612a0-v1.0-stable2311plldbg

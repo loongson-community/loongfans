@@ -1,0 +1,16 @@
+type: uefi-firmware
+version: "V1.0_V5.0.0344_stable202511_dbg"
+size: 8388608
+date: "2025-01-07"
+sha256: "8f75aca6bcbac86bd9f678fb4b7de276d7e8808973f6da66d70b74e0e80b5c95"
+url: "https://file.loongfans.cn/xa612a0-v1.0/EDK2505_XA612A0-V1.0_V5.0.0344_stable202511_dbg.fd"
+debug: true
+description:
+  zh: |
+    本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+    <!--@include: ./changelogs/stable2511.md -->
+  en: |
+    Major update based on RefCode Stable2511 baseline; see code release notes for details.
+
+    <!--@include: ./changelogs/stable2511.en.md -->

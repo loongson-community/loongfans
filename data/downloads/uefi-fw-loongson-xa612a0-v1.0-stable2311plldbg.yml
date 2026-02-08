@@ -1,0 +1,16 @@
+type: uefi-firmware
+version: "stable2311plldbg"
+size: 4194304
+date: "2024-01-02"
+sha256: "c570d7fb4d405d6e4930e84831ef82538cdc3e2c4c016a2976902660d49e63eb"
+url: "https://file.loongfans.cn/xa612a0-v1.0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
+debug: true
+description:
+  zh: |
+    新增 GPU 仿真开关
+
+    若使用 AMD RDNA 系列显卡，请关闭此选项，使得 BIOS 仅提供 7A 显示控制器，绕过仿真流程。
+  en: |
+    Add GPU Emulation switch.
+
+    Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will allow the firmware to bypass emulation routines and only enable the 7A display controller.

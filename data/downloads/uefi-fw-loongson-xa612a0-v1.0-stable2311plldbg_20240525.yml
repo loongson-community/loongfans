@@ -1,0 +1,7 @@
+type: uefi-firmware
+version: "stable2311plldbg"
+size: 8388608
+date: "2024-05-25"
+sha256: "242f3b2b04de64a863e3bdc429339ca8736eb9437ced166abf3839b72982c233"
+url: "https://file.loongfans.cn/xa61200-v1.0/UDK2018-3A6000-7A2000_XA612A0_stable2311plldbg.fd"
+debug: true
