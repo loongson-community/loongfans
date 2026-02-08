@@ -9,6 +9,8 @@ pageTitle: Product Database
 <script setup lang="ts">
 import { useData } from "vitepress"
 
+import DeviceDetail from "@src/client/components/device/DeviceDetail.vue"
+
 const { params } = useData()
 </script>
 

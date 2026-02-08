@@ -10,7 +10,6 @@ import DefaultTheme from "vitepress/theme"
 import type { App } from "vue"
 
 import i18n from "@src/common/i18n"
-import DeviceDetail from "@src/client/components/device/DeviceDetail.vue"
 import ChipTables from "@src/client/components/chips/ChipTables.vue"
 import CpuCompare from "@src/client/components/chips/compare/CpuCompare.vue"
 import LoongfansLayout from "./LoongfansLayout.vue"
@@ -70,7 +69,6 @@ export default {
     app.use(DialogService)
 
     // Components
-    app.component("DeviceDetail", DeviceDetail)
     app.component("ChipTables", ChipTables)
     app.component("CpuCompare", CpuCompare)
   },

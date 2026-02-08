@@ -9,6 +9,8 @@ pageTitle: 产品规格数据库
 <script setup lang="ts">
 import { useData } from "vitepress"
 
+import DeviceDetail from "@src/client/components/device/DeviceDetail.vue"
+
 const { params } = useData()
 </script>
 
