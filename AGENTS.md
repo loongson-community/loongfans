@@ -118,6 +118,8 @@ Examples: `fix(i18n): handle undefined values`, `refactor(data): migrate device 
 
 ## Validation checklist (choose what applies)
 
+Every commit must pass the relevant checks below **before** being finalized. Design documents and roadmaps intentionally omit per-step validation instructions because this checklist is the single source of truth.
+
 - ✅ `pnpm run typecheck` for TS/Vue changes
 - ✅ `pnpm run eslint` for code changes
 - ✅ `pnpm run lintMarkdown` for Markdown edits
