@@ -1,0 +1,15 @@
+type: uefi-firmware
+version: "V1.0_V5.0.0343_stable202511_rel"
+size: 6291456
+date: "2025-01-07"
+sha256: "021a22173dcea9f001de5fa876b3e32897d119743dcdaea8d776822fc27678d5"
+url: "https://file.loongfans.cn/ac612a0-v1.0/EDK2025_AC612A0-V1.0_V5.0.0343_stable202511_rel.fd"
+description:
+  zh: |
+    本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+    <!--@include: ./changelogs/stable2511.md -->
+  en: |
+    Major update based on RefCode Stable2511 baseline; see code release notes for details.
+
+    <!--@include: ./changelogs/stable2511.en.md -->
