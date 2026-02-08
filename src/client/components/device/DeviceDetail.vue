@@ -41,11 +41,9 @@ import deviceDB from "virtual:loongfans-data/device"
 import DownloadList from "./DownloadList.vue"
 
 const { t } = useI18n()
-const { page, frontmatter } = useData()
+const { page } = useData()
 
 const deviceId = computed(() => {
-  const explicitId = frontmatter.value?.deviceId
-  if (typeof explicitId === "string" && explicitId.length) return explicitId
   const match = page.value.filePath.match(/\/devices\/([^/]+)\.md$/)
   return match?.[1] ?? null
 })
