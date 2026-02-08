@@ -22,7 +22,7 @@ import ToggleButton from "primevue/togglebutton"
 
 import type { OSTag } from "@src/types/data"
 import OsCard from "./OsCard.vue"
-import { useTagTranslation } from "./TagTranslation"
+import { useTagTranslation } from "./tagTranslation"
 
 import osData from "virtual:loongfans-data/os"
 

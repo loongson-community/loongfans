@@ -26,7 +26,7 @@ import IconOpenInNew from "~icons/material-symbols/open-in-new"
 
 import type { OSInfoItem } from "@src/types/data"
 import type { LocalizedString } from "@src/types/language"
-import { useTagTranslation } from "./TagTranslation"
+import { useTagTranslation } from "./tagTranslation"
 
 const { data } = defineProps<{ data: OSInfoItem }>()
 const { locale } = useI18n()
