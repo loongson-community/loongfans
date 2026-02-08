@@ -100,7 +100,8 @@ import { useI18n } from "vue-i18n"
 import { Button, Panel, Divider } from "primevue"
 import IconDownload from "~icons/material-symbols/download"
 import IconExpandMore from "~icons/material-symbols/expand-more"
-import CopyInline from "./CopyInline.vue"
+
+import CopyInline from "@src/client/components/CopyInline.vue"
 
 const props = defineProps<{
   title: string
