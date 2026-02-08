@@ -10,6 +10,7 @@ returnLink: /chips
 import { useData } from "vitepress"
 import { computed } from "vue"
 
+import ChipTables from "@src/client/components/chips/ChipTables.vue"
 import type { ChipFieldsDescriptor } from "@src/client/components/chips/fields"
 import cpuFields from "@src/client/components/chips/fields/cpu"
 import chipsetFields from "@src/client/components/chips/fields/chipset"
@@ -29,9 +30,7 @@ switch (params!.value!.category) {
 
 # {{ params!.title }}
 
-:::raw
 <ChipTables :chips="params!.chipKey" :fields="fields" />
-:::
 
 <template v-if="params!.hasNotes === 'true'">
 
