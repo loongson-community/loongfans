@@ -6,6 +6,7 @@ import { Ajv, type ValidateFunction } from "ajv"
 import { glob } from "glob"
 import { parse as yamlParse } from "yaml"
 import { createGenerator, type Config } from "ts-json-schema-generator"
+import { createMarkdownRenderer } from "vitepress"
 
 import type {
   BiweeklyDB,
@@ -18,6 +19,7 @@ import type {
   DeviceInfoDB,
   DeviceInfoItem,
   OSInfoItem,
+  RenderedDownloadItem,
 } from "@src/types/data"
 import type { LocalizedString, SupportedLanguage } from "@src/types/language"
 
@@ -334,17 +336,16 @@ export class DatabaseGenerator {
       ignore: ["**/template*.yml"],
     })
 
+    const md = await createMarkdownRenderer(this.projectRoot)
+
     const entries = await Promise.all(
       files.map(async (path) => {
         const obj = await loadUntypedYAML(path)
         const data = this.validateDownloadItemData(obj, path)
-        const expanded = await this.expandDownloadDescription(
-          data,
-          downloadsDir,
-        )
+        const rendered = await this.renderDownloadItem(data, downloadsDir, md)
         return {
           key: basename(path, extname(path)),
-          data: expanded,
+          data: rendered,
         }
       }),
     )
@@ -413,30 +414,56 @@ export class DatabaseGenerator {
     }
   }
 
-  async expandDownloadDescription(
+  async renderDownloadItem(
     data: DownloadItem,
     baseDir: string,
-  ): Promise<DownloadItem> {
-    if (!data.description) return data
+    md: Awaited<ReturnType<typeof createMarkdownRenderer>>,
+  ): Promise<RenderedDownloadItem> {
+    const { description, ...rest } = data
+    if (!description) return rest
 
-    const expanded: LocalizedString = {}
-    for (const [lang, content] of Object.entries(data.description)) {
+    const briefHtml: LocalizedString = {}
+    const detailHtml: LocalizedString = {}
+    let hasBrief = false
+    let hasDetail = false
+
+    for (const [lang, content] of Object.entries(description)) {
       if (typeof content !== "string") continue
-      expanded[lang as SupportedLanguage] = await expandIncludes(
-        content,
-        baseDir,
-      )
+      const expanded = await expandIncludes(content, baseDir)
+      const { brief, detail } = splitOnTruncate(expanded)
+      if (brief) {
+        briefHtml[lang as SupportedLanguage] = await md.renderAsync(brief)
+        hasBrief = true
+      }
+      if (detail) {
+        detailHtml[lang as SupportedLanguage] = await md.renderAsync(detail)
+        hasDetail = true
+      }
     }
 
     return {
-      ...data,
-      description: expanded,
+      ...rest,
+      ...(hasBrief ? { briefHtml } : {}),
+      ...(hasDetail ? { detailHtml } : {}),
     }
   }
 }
 
 async function loadUntypedYAML(fileName: string) {
   return yamlParse(await fs.readFile(fileName, "utf-8")) as object
+}
+
+const truncateMarker = /<!--\s*truncate\s*-->/
+
+function splitOnTruncate(content: string) {
+  const match = truncateMarker.exec(content)
+  if (!match) return { brief: content.trim() || undefined, detail: undefined }
+  const brief = content.slice(0, match.index).trim()
+  const detail = content.slice(match.index + match[0].length).trim()
+  return {
+    brief: brief || undefined,
+    detail: detail || undefined,
+  }
 }
 
 async function expandIncludes(content: string, baseDir: string) {

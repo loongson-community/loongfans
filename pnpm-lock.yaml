@@ -36,9 +36,6 @@ importers:
       '@types/lodash':
         specifier: ^4.17.23
         version: 4.17.23
-      '@types/markdown-it':
-        specifier: ^14.1.0
-        version: 14.1.2
       '@types/node':
         specifier: ^25.2.0
         version: 25.2.0
@@ -78,9 +75,6 @@ importers:
       lodash:
         specifier: ^4.17.23
         version: 4.17.23
-      markdown-it:
-        specifier: ^14.1.0
-        version: 14.1.0
       markdownlint:
         specifier: ^0.40.0
         version: 0.40.0

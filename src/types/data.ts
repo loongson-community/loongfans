@@ -193,8 +193,25 @@ export interface DownloadItem {
   description?: LocalizedString
 }
 
+/**
+ * A download item with its Markdown description pre-rendered to HTML at build
+ * time. The `description` field is replaced by per-language `briefHtml` and
+ * `detailHtml` fragments, split on the `<!-- truncate -->` marker.
+ */
+export interface RenderedDownloadItem {
+  type: DownloadType
+  version: string
+  size: number
+  date: string
+  sha256: string
+  url: string
+  debug?: boolean
+  briefHtml?: LocalizedString
+  detailHtml?: LocalizedString
+}
+
 export interface DownloadsDB {
-  [resourceKey: string]: DownloadItem
+  [resourceKey: string]: RenderedDownloadItem
 }
 
 // Device database entries

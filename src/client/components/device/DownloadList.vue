@@ -25,10 +25,9 @@
 <script setup lang="ts">
 import { computed } from "vue"
 import { useI18n } from "vue-i18n"
-import MarkdownIt from "markdown-it"
 
 import downloadsDB from "virtual:loongfans-data/downloads"
-import type { DownloadItem } from "@src/types/data"
+import type { RenderedDownloadItem } from "@src/types/data"
 import { DownloadType } from "@src/types/data"
 import type { LocalizedString, SupportedLanguage } from "@src/types/language"
 import DownloadCard from "./DownloadCard.vue"
@@ -37,9 +36,7 @@ const props = defineProps<{ keys: string[] }>()
 
 const { locale, t } = useI18n()
 
-const markdown = new MarkdownIt({ html: true, linkify: true })
-
-type DownloadListItem = DownloadItem & {
+type DownloadListItem = RenderedDownloadItem & {
   key: string
   latest: boolean
   title: string
@@ -56,43 +53,23 @@ const downloadTypeTitles = computed(() => ({
   [DownloadType.SDK]: t("downloadTypeSdk"),
 }))
 
-function resolveLocalizedDescription(description?: LocalizedString) {
-  if (!description) return undefined
+function resolveLocalizedHtml(localized?: LocalizedString) {
+  if (!localized) return undefined
   const language = locale.value as SupportedLanguage
-  return description[language] ?? description.en ?? description.zh
-}
-
-function renderMarkdown(content?: string) {
-  return content ? markdown.render(content) : undefined
-}
-
-const truncateMarker = /<!--\s*truncate\s*-->/
-
-function splitDescription(description?: string) {
-  if (!description) return { brief: undefined, detail: undefined }
-  const match = truncateMarker.exec(description)
-  if (!match) return { brief: description, detail: undefined }
-  const brief = description.slice(0, match.index).trim()
-  const detail = description.slice(match.index + match[0].length).trim()
-  return {
-    brief: brief || undefined,
-    detail: detail || undefined,
-  }
+  return localized[language] ?? localized.en ?? localized.zh
 }
 
 const items = computed<DownloadListItem[]>(() => {
   const entries = props.keys.reduce<DownloadListItem[]>((acc, key) => {
     const item = downloadsDB[key]
     if (!item) return acc
-    const description = resolveLocalizedDescription(item.description)
-    const { brief, detail } = splitDescription(description)
     acc.push({
       ...item,
       key,
       latest: false,
       title: downloadTypeTitles.value[item.type],
-      briefHtml: renderMarkdown(brief),
-      detailHtml: renderMarkdown(detail),
+      briefHtml: resolveLocalizedHtml(item.briefHtml),
+      detailHtml: resolveLocalizedHtml(item.detailHtml),
     })
     return acc
   }, [])
