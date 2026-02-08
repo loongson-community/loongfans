@@ -62,6 +62,14 @@ Run the minimal set needed for the touched area (e.g., Markdown lint for Markdow
 - `data/events/events.ics` is a hand‑managed data source. Use careful editing per the guidance in `data/events/README.md` and verify diffs for unexpected changes.
 - If updating biweekly data programmatically, use the existing script: `pnpm run editBiweeklyEvents`.
 
+### Documentation language
+
+- Design documents in `docs/` should be written in Chinese.
+- Code identifiers, TypeScript types, and commit messages remain in English per convention.
+- Other internal documentation also currently in English:
+  - `AGENTS.md`
+  - YAML/code comments
+
 ### Translation workflow
 
 - Follow [the translation guide](./docs/translation-guide.md) exactly for translating content into English.
