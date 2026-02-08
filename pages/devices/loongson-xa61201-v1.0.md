@@ -48,49 +48,4 @@ pageSubTitle: 龙芯 XA61201_v1.0
 
 </template>
 
-<template #download>
-
-<DeviceDownloadCard
-  title="UEFI 固件"
-  version="V1.0_V5.0.0344_stable202511_rel"
-  :size="8388608"
-  date="2025-01-07"
-  sha256="4473366a2079b26302ef53112deab1e44ac5a5bb0f0090216a2da6f031680e52"
-  url="https://file.loongfans.cn/xa61201-v1.0/EDK2505_XA61201-V1.0_V5.0.0344_stable202511_rel.fd"
-  latest
->
-
-本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
-
-<template #detail>
-
-<!--@include: @parts/devices/changelist_V5.0.0343-stable2511.md -->
-
-</template>
-
-</DeviceDownloadCard>
-
-<DeviceDownloadCard
-  title="UEFI 固件"
-  version="V1.0_V5.0.0344_stable202511_dbg"
-  :size="8388608"
-  date="2025-01-07"
-  sha256="90170bee1e0a8d978c94dd2138f7b164c1c230228654b284a6b34ea0efd8b18f"
-  url="https://file.loongfans.cn/xa61201-v1.0/EDK2505_XA61201-V1.0_V5.0.0344_stable202511_dbg.fd"
-  debug
-  latest
->
-
-本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
-
-<template #detail>
-
-<!--@include: @parts/devices/changelist_V5.0.0343-stable2511.md -->
-
-</template>
-
-</DeviceDownloadCard>
-
-</template>
-
 </DeviceDetail>
