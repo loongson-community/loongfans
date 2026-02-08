@@ -1,0 +1,6 @@
+type: uefi-firmware
+version: "V4.0.05634_prestable2311rel"
+size: 4194304
+date: "2023-11-29"
+sha256: "c8366b5c56675e048df9ef1e0227bf57d0e4efdcc7068798410c18a9277100c3"
+url: "https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311rel.fd"

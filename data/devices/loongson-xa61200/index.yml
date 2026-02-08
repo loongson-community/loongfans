@@ -8,3 +8,12 @@ spec: "3A6000-HV @ 2.5GHz, DTX"
 tags:
   - 7a2000
   - desktop-mb
+downloads:
+  - uefi-fw-loongson-xa61200-v5.0.0344_stable202511_rel
+  - uefi-fw-loongson-xa61200-v5.0.0344_stable202511_dbg
+  - uefi-fw-loongson-xa61200-v4.0.05756_prestable2405_0523rel
+  - uefi-fw-loongson-xa61200-v4.0.05756_prestable2405_0523dbg
+  - uefi-fw-loongson-xa61200-v4.0.05634_prestable2402_0325rel
+  - uefi-fw-loongson-xa61200-v4.0.05634_prestable2402_0325dbg
+  - uefi-fw-loongson-xa61200-v4.0.05634_prestable2311rel
+  - uefi-fw-loongson-xa61200-v4.0.05634_prestable2311dbg

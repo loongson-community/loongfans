@@ -1,0 +1,67 @@
+type: uefi-firmware
+version: "V4.0.05756_prestable2405_0523rel"
+size: 8388608
+date: "2024-05-23"
+sha256: "e7fac091127d5a759d4c043472f1d6f0838acba7f6efb8da72cccaacedad7e5d"
+url: "https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523rel.fd"
+description:
+  zh: |
+    新增 YT6801 网卡固件驱动、自定义风扇曲线、快速启动及 TPM 支持等新功能，并修复睡眠时的缓存同步问题，提高可靠性。
+
+    本次更新的详细更改如下（摘自 [GitHub: loongson/Firmware](https://github.com/loongson/Firmware)）：
+
+    1. Add YT6801UndiDxe Support.
+    2. Use 128bit to distinguish different ChipName.
+    3. UI: Add UsbXhci Controller Switch.
+    4. UI: Add SmartFan Config.
+       REF: #98
+    5. Add support for a range of chip models.
+    6. UI: Add FastBoot option.
+    7. Add SuperIo Virtual Bus.
+    8. Optimize StatusCode.
+    9. Add Tpm Support.
+    10. Optimize 3rd OptionRom process.
+    11. UpdateFwDxe: Add inspection rules.
+    12. Optimize language selection function.
+    13. AcpiStrSleep: Fix cache synchronization memory.
+        REF: #88
+    14. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
+    15. Update mem code to V3.35.
+    16. UI: Add real-time display of temperature.
+    17. Information: Display SATA DVD info in UI Setup
+    18. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
+    19. Add 4M/8M flash compatibility.
+    20. Add Smbios 32/64bit tables.
+    21. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
+    22. Transfer frequency points to the kernel based on different chip models.
+    23. some bug fixs.
+  en: |
+    Introduces firmware-level driver for YT6801 NIC, support for custom fan curves, fast boot, and TPM. Fixes cache synchronization on S3 suspend, improving stability.
+
+    Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firmware](https://github.com/loongson/Firmware))：
+
+    1. Add YT6801UndiDxe Support.
+    2. Use 128bit to distinguish different ChipName.
+    3. UI: Add UsbXhci Controller Switch.
+    4. UI: Add SmartFan Config.
+       REF: #98
+    5. Add support for a range of chip models.
+    6. UI: Add FastBoot option.
+    7. Add SuperIo Virtual Bus.
+    8. Optimize StatusCode.
+    9. Add Tpm Support.
+    10. Optimize 3rd OptionRom process.
+    11. UpdateFwDxe: Add inspection rules.
+    12. Optimize language selection function.
+    13. AcpiStrSleep: Fix cache synchronization memory.
+        REF: #88
+    14. Information: Dynamically obtain cores from gEfiMpServiceProtocolGuid
+    15. Update mem code to V3.35.
+    16. UI: Add real-time display of temperature.
+    17. Information: Display SATA DVD info in UI Setup
+    18. Separate FV, decouple cache and mem execution, Lzma compresses the original logo data.
+    19. Add 4M/8M flash compatibility.
+    20. Add Smbios 32/64bit tables.
+    21. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
+    22. Transfer frequency points to the kernel based on different chip models.
+    23. some bug fixs.

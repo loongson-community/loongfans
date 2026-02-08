@@ -1,0 +1,6 @@
+type: uefi-firmware
+version: "V4.0.05634_prestable2402_0325rel"
+size: 4194304
+date: "2024-02-29"
+sha256: "0ae9de39b02052896dc5d18a4b96cc550ca8af8613c181def39de4b17ff7875d"
+url: "https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2402_0325rel.fd"
