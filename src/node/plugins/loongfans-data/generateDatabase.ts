@@ -12,6 +12,8 @@ import type {
   ChipInfoDB,
   ChipsetInfoItem,
   CPUInfoItem,
+  DownloadItem,
+  DownloadsDB,
   DeviceFamiliesConfig,
   DeviceInfoDB,
   DeviceInfoItem,
@@ -39,6 +41,10 @@ const chipsOutputSchema = {
 
 const osInfoInputSchema = {
   $ref: `${jsonSchemaNamespace}#/definitions/OSInfoItem`,
+}
+
+const downloadItemInputSchema = {
+  $ref: `${jsonSchemaNamespace}#/definitions/DownloadItem`,
 }
 
 const osOutputSchema = {
@@ -93,6 +99,7 @@ export class DatabaseGenerator {
   validatorForDeviceInfoInput: ValidateFunction
   validatorForDeviceFamiliesConfig: ValidateFunction
   validatorForDeviceOutput: ValidateFunction
+  validatorForDownloadItemInput: ValidateFunction
 
   constructor(projectRoot: string = "") {
     if (!projectRoot) {
@@ -128,6 +135,7 @@ export class DatabaseGenerator {
     this.validatorForCPUInfoInput = ajv.compile(cpuInfoInputSchema)
     this.validatorForChipsetInfoInput = ajv.compile(chipsetInfoInputSchema)
     this.validatorForOSInfoInput = ajv.compile(osInfoInputSchema)
+    this.validatorForDownloadItemInput = ajv.compile(downloadItemInputSchema)
     this.validatorForChipsOutput = ajv.compile(chipsOutputSchema)
     this.validatorForOSOutput = ajv.compile(osOutputSchema)
     this.validatorForDeviceInfoInput = ajv.compile(deviceInfoInputSchema)
@@ -212,6 +220,15 @@ export class DatabaseGenerator {
       data,
       this.validatorForDeviceOutput,
       "Device database output",
+    )
+  }
+
+  validateDownloadItemData(data: object, fileName: string) {
+    return validate<DownloadItem>(
+      data,
+      this.validatorForDownloadItemInput,
+      "Download item",
+      fileName,
     )
   }
 
@@ -310,6 +327,33 @@ export class DatabaseGenerator {
     )
   }
 
+  async generateDownloadsDatabase(): Promise<DownloadsDB> {
+    const downloadsDir = this.dataDir + "downloads/"
+    const files = await glob(downloadsDir + "*.yml", {
+      ignore: ["**/template*.yml"],
+    })
+
+    const entries = await Promise.all(
+      files.map(async (path) => {
+        const obj = await loadUntypedYAML(path)
+        const data = this.validateDownloadItemData(obj, path)
+        const expanded = await this.expandDownloadDescription(data, downloadsDir)
+        return {
+          key: basename(path, extname(path)),
+          data: expanded,
+        }
+      }),
+    )
+
+    entries.sort((a, b) => compareNamesAlphabetically(a.key, b.key))
+
+    const downloads: DownloadsDB = {}
+    for (const { key, data } of entries) {
+      downloads[key] = data
+    }
+    return downloads
+  }
+
   async generateDeviceDatabase(): Promise<DeviceInfoDB> {
     const devicesDir = this.dataDir + "devices/"
     const familiesPath = devicesDir + "families.yml"
@@ -343,15 +387,66 @@ export class DatabaseGenerator {
       devices[id] = data
     }
 
+    const downloadsDB = await this.generateDownloadsDatabase()
+    const downloadKeys = new Set(Object.keys(downloadsDB))
+    for (const [deviceId, deviceData] of Object.entries(devices)) {
+      if (!deviceData.downloads?.length) continue
+      const missing = deviceData.downloads.filter((key) => !downloadKeys.has(key))
+      if (missing.length) {
+        throw new Error(
+          `Device '${deviceId}' references missing downloads: ${missing.join(
+            ", ",
+          )}`,
+        )
+      }
+    }
+
     return {
       families,
       devices,
+    }
+  }
+
+  async expandDownloadDescription(
+    data: DownloadItem,
+    baseDir: string,
+  ): Promise<DownloadItem> {
+    if (!data.description) return data
+
+    const expanded: typeof data.description = {}
+    for (const [lang, content] of Object.entries(data.description)) {
+      if (typeof content !== "string") continue
+      expanded[lang] = await expandIncludes(content, baseDir)
+    }
+
+    return {
+      ...data,
+      description: expanded,
     }
   }
 }
 
 async function loadUntypedYAML(fileName: string) {
   return yamlParse(await fs.readFile(fileName, "utf-8")) as object
+}
+
+async function expandIncludes(content: string, baseDir: string) {
+  const pattern = /<!--\s*@include:\s*(.+?)\s*-->/g
+  let result = ""
+  let lastIndex = 0
+
+  for (const match of content.matchAll(pattern)) {
+    const matchIndex = match.index ?? 0
+    result += content.slice(lastIndex, matchIndex)
+    const includePath = match[1].trim()
+    const includeFullPath = resolve(baseDir, includePath)
+    const includeContent = await fs.readFile(includeFullPath, "utf-8")
+    result += includeContent
+    lastIndex = matchIndex + match[0].length
+  }
+
+  result += content.slice(lastIndex)
+  return result
 }
 
 // 按照龙芯芯片型号的命名规则，大体按照芯片型号所隐含的发布时间从新到旧排序

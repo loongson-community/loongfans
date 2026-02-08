@@ -7,6 +7,7 @@ enum DataKind {
   Biweekly = "biweekly",
   Chips = "chips",
   Device = "device",
+  Downloads = "downloads",
   OS = "os",
 }
 
@@ -36,6 +37,7 @@ const loongfansData = (): Plugin => {
     [DataKind.Biweekly]: new Debouncer(debounceTimeMS),
     [DataKind.Chips]: new Debouncer(debounceTimeMS),
     [DataKind.Device]: new Debouncer(debounceTimeMS),
+    [DataKind.Downloads]: new Debouncer(debounceTimeMS),
     [DataKind.OS]: new Debouncer(debounceTimeMS),
   }
 
@@ -68,14 +70,18 @@ const loongfansData = (): Plugin => {
   }
 
   const handleDataFileChange = (path: string, status: string) => {
-    if (!(path.endsWith(".yml") || path.endsWith(".yaml"))) return
     const baseName = basename(path, extname(path))
     if (baseName.startsWith("template")) return
+
+    const isYaml = path.endsWith(".yml") || path.endsWith(".yaml")
+    const isMarkdown = path.endsWith(".md")
 
     logInfo(`Detected ${status} data file: ${path}`)
 
     // name of the topmost directory relative to gen.dataDir
     const dataSubdir = relative(gen.dataDir, path).split("/")[0]
+    if (dataSubdir === "downloads" && !(isYaml || isMarkdown)) return
+    if (dataSubdir !== "downloads" && !isYaml) return
     switch (dataSubdir) {
       case "events":
         debouncerForDataKinds[DataKind.Biweekly].trigger(async () => {
@@ -95,6 +101,14 @@ const loongfansData = (): Plugin => {
         debouncerForDataKinds[DataKind.Device].trigger(async () => {
           logInfo(`Regenerating device database due to ${status} file: ${path}`)
           invalidateDataModule(DataKind.Device)
+        })
+        break
+      case "downloads":
+        debouncerForDataKinds[DataKind.Downloads].trigger(async () => {
+          logInfo(
+            `Regenerating downloads database due to ${status} file: ${path}`,
+          )
+          invalidateDataModule(DataKind.Downloads)
         })
         break
       case "os":
@@ -143,6 +157,8 @@ const loongfansData = (): Plugin => {
           return emitDataModule(await gen.generateChipsDatabase())
         case "device":
           return emitDataModule(await gen.generateDeviceDatabase())
+        case "downloads":
+          return emitDataModule(await gen.generateDownloadsDatabase())
         case "os":
           return emitDataModule(await gen.generateOSDatabase())
         default:

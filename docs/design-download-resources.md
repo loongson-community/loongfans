@@ -15,7 +15,7 @@ url、version、date）在中英文页面之间完全重复，容易导致同步
 
 ### 当前数据流
 
-```
+```plain
 pages/devices/<slug>.md          （中文，内联 <DeviceDownloadCard> props）
 pages/en/devices/<slug>.md       （英文，相同 props 重复）
     └──> <DeviceDownloadCard>    （src/client/components/device/DownloadCard.vue）
@@ -65,7 +65,7 @@ pages/en/devices/<slug>.md       （英文，相同 props 重复）
 
 ### 目录结构
 
-```
+```plain
 data/
   downloads/
     README.md
@@ -232,7 +232,7 @@ export interface DeviceInfoItem {
 以下属性**不**存储在 YAML 中，而是在构建或渲染时派生：
 
 | 属性 | 派生方式 |
-|------|----------|
+| --- | --- |
 | `latest` | 按 `(type, debug)` 分组，取 `date` 最新的条目。 |
 | `formattedSize` | 在 Vue 组件中由 `size` 计算（已有实现）。 |
 | `formattedDate` | 在 Vue 组件中由 `date` 计算（已有实现）。 |
@@ -240,7 +240,7 @@ export interface DeviceInfoItem {
 
 ### 虚拟模块
 
-```
+```plain
 virtual:loongfans-data/downloads  →  DownloadsDB
 ```
 
@@ -270,7 +270,7 @@ virtual:loongfans-data/downloads  →  DownloadsDB
 共享更改日志保持为 **Markdown 文件**（它们是自由格式的文本，不是结构化数据）。
 从 `pages/parts/` 迁移到 `data/downloads/changelogs/`：
 
-```
+```plain
 data/downloads/changelogs/
   stable2511.md             # 中文
   stable2511.en.md          # 英文翻译
@@ -325,7 +325,7 @@ const hasDownloads = computed(() =>
 ### 阶段 0：基础设施
 
 | # | 任务 | 涉及文件 |
-|---|------|----------|
+| --- | --- | --- |
 | 0.1 | 添加 `DownloadType` 枚举和 `DownloadItem`、`DownloadsDB` 类型定义 | `src/types/data.ts` |
 | 0.2 | 为 `DeviceInfoItem` 添加可选的 `downloads?: string[]` 字段 | `src/types/data.ts` |
 | 0.3 | 在 `DatabaseGenerator` 中添加 `DownloadItem` JSON Schema 引用和校验器 | `src/node/plugins/loongfans-data/generateDatabase.ts` |
@@ -339,7 +339,7 @@ const hasDownloads = computed(() =>
 ### 阶段 1：更改日志提取
 
 | # | 任务 | 涉及文件 |
-|---|------|----------|
+| --- | --- | --- |
 | 1.1 | 将 `pages/parts/devices/changelist_*.md` 移至 `data/downloads/changelogs/` | 文件移动 |
 | 1.2 | 将 `pages/parts/en/devices/changelist_*.md` 移至同目录，添加 `.en.md` 后缀 | 文件移动 |
 | 1.3 | 如果更改日志仍作为 include 使用，则更新 `@include` 引用路径 | 设备页面 |
@@ -347,7 +347,7 @@ const hasDownloads = computed(() =>
 ### 阶段 2：`DownloadList` 组件
 
 | # | 任务 | 涉及文件 |
-|---|------|----------|
+| --- | --- | --- |
 | 2.1 | 将 `DeviceDownloadCard.vue` 重命名为 `DownloadCard.vue` | `src/client/components/device/` |
 | 2.2 | 创建从虚拟模块读取数据的 `DownloadList.vue` | `src/client/components/device/` |
 | 2.3 | 为每个 `DownloadType` 枚举值添加 i18n 键映射 | `src/common/locales/` |
@@ -363,7 +363,7 @@ const hasDownloads = computed(() =>
 推荐顺序（简单 → 复杂）：
 
 | # | 设备 | 下载数量 | 备注 |
-|---|------|----------|------|
+| --- | --- | --- | --- |
 | 3.1 | `loongson-ac612a0-v1.0` | 2 | 当前正在编辑的文件；无英文页面 |
 | 3.2 | `loongson-xa61201-v1.0` | 2 | |
 | 3.3 | `loongson-xa612b0-v1.0` | 2 | |
@@ -372,6 +372,7 @@ const hasDownloads = computed(() =>
 | 3.6 | `loongson-xa61200` | 8 | 4 个版本 × release+debug；最复杂 |
 
 每设备检查清单：
+
 - [ ] 为该设备的每个下载资源创建 `data/downloads/<resource-key>.yml`
 - [ ] 在 `data/devices/<slug>/index.yml` 中添加 `downloads` 引用列表
 - [ ] 从中文页面移除内联 `<DeviceDownloadCard>` 代码块和 `#download` slot
@@ -380,7 +381,7 @@ const hasDownloads = computed(() =>
 ### 阶段 4：清理
 
 | # | 任务 |
-|---|------|
+| --- | --- |
 | 4.1 | 移除 `pages/parts/` 中的孤立更改日志片段（已迁移到 `data/downloads/changelogs/`） |
 | 4.2 | 更新 `AGENTS.md` 以记录新的数据类型 |
 
@@ -390,7 +391,7 @@ const hasDownloads = computed(() =>
 ### 阶段 5：未来增强
 
 | # | 增强项 | 优先级 |
-|---|--------|--------|
+| --- | --- | --- |
 | 5.1 | 下载索引页面（跨设备固件列表） | 中 |
 | 5.2 | 固件更新 RSS/Atom 订阅源 | 低 |
 | 5.3 | CI 完整性检查（获取 URL，验证 sha256） | 中 |

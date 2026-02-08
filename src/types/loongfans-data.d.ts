@@ -13,6 +13,11 @@ declare module "virtual:loongfans-data/device" {
   export default value
 }
 
+declare module "virtual:loongfans-data/downloads" {
+  const value: import("./data").DownloadsDB
+  export default value
+}
+
 declare module "virtual:loongfans-data/os" {
   const value: import("./data").OSInfoItem[]
   export default value

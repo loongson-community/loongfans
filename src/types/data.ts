@@ -166,6 +166,37 @@ export interface BiweeklyDB {
   links: { [key: string]: BiweeklyLinkInfo }
 }
 
+// Download database entries
+
+/**
+ * 下载资源类型枚举。
+ *
+ * 添加新类型时，请同步更新 i18n 映射。
+ */
+export enum DownloadType {
+  UEFIFirmware = "uefi-firmware",
+  Datasheet = "datasheet",
+  ReferenceManual = "reference-manual",
+  UserManual = "user-manual",
+  SchematicDiagram = "schematic-diagram",
+  SDK = "sdk",
+}
+
+export interface DownloadItem {
+  type: DownloadType
+  version: string
+  size: number
+  date: string
+  sha256: string
+  url: string
+  debug?: boolean
+  description?: LocalizedString
+}
+
+export interface DownloadsDB {
+  [resourceKey: string]: DownloadItem
+}
+
 // Device database entries
 
 export interface DeviceInfoItem {
@@ -175,6 +206,7 @@ export interface DeviceInfoItem {
   image: string
   spec: string
   tags: string[]
+  downloads?: string[]
 }
 
 export interface DeviceFamilyMeta {
