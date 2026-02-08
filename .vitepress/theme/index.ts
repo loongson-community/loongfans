@@ -10,7 +10,6 @@ import DefaultTheme from "vitepress/theme"
 import type { App } from "vue"
 
 import i18n from "@src/common/i18n"
-import CpuCompare from "@src/client/components/chips/compare/CpuCompare.vue"
 import LoongfansLayout from "./LoongfansLayout.vue"
 import "./custom.css"
 
@@ -66,8 +65,5 @@ export default {
     })
     app.use(ToastService)
     app.use(DialogService)
-
-    // Components
-    app.component("CpuCompare", CpuCompare)
   },
 }
