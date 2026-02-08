@@ -38,7 +38,7 @@ import { computed } from "vue"
 import { useI18n } from "vue-i18n"
 
 import deviceDB from "virtual:loongfans-data/device"
-import DownloadList from "./DownloadList.vue"
+import DownloadList from "@src/client/components/downloads/DownloadList.vue"
 
 const { deviceId } = defineProps<{
   deviceId: string
