@@ -19,8 +19,7 @@ import type {
   DeviceInfoItem,
   OSInfoItem,
 } from "@src/types/data"
-import type { LocalizedString } from "@src/types/language"
-import { SupportedLanguage } from "@src/types/language"
+import type { LocalizedString, SupportedLanguage } from "@src/types/language"
 
 // Artificial JSON schemas for verification
 const jsonSchemaNamespace = "https://loongfans.cn/schema.json"
@@ -423,7 +422,6 @@ export class DatabaseGenerator {
     const expanded: LocalizedString = {}
     for (const [lang, content] of Object.entries(data.description)) {
       if (typeof content !== "string") continue
-      if (!(lang in SupportedLanguage)) continue
       expanded[lang as SupportedLanguage] = await expandIncludes(content, baseDir)
     }
 
