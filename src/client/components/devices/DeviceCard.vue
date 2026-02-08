@@ -32,7 +32,7 @@
 <script setup lang="ts">
 import { computed } from "vue"
 import { Button } from "primevue"
-import { useCPUComparisonStore } from "@src/client/stores/CPUComparisonStore"
+import { useCPUComparisonStore } from "@src/client/stores/cpuComparisonStore"
 
 const props = defineProps<{
   name: string

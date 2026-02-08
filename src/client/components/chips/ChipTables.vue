@@ -375,7 +375,7 @@ import { useDialog } from "primevue/usedialog"
 import MaterialSymbolsHelpOutline from "~icons/material-symbols/help-outline"
 
 import chipsDB from "virtual:loongfans-data/chips"
-import { useCPUComparisonStore } from "@src/client/stores/CPUComparisonStore"
+import { useCPUComparisonStore } from "@src/client/stores/cpuComparisonStore"
 import type {
   ChipCommonInfo,
   ChipsetInfoItem,

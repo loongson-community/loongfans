@@ -629,7 +629,7 @@ import { useI18n } from "vue-i18n"
 import Button from "primevue/button"
 
 import chipsDB from "virtual:loongfans-data/chips"
-import { useCPUComparisonStore } from "@src/client/stores/CPUComparisonStore"
+import { useCPUComparisonStore } from "@src/client/stores/cpuComparisonStore"
 import type { CPUInfoItem } from "@src/types/data"
 
 /**
