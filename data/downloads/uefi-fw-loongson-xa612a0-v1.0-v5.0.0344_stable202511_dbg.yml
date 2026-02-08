@@ -9,8 +9,12 @@ description:
   zh: |
     本次主要基于 RefCode Stable2511 基线更新，详细更新说明按照流程需要查阅代码发布说明
 
+    <!-- truncate -->
+
     <!--@include: ./changelogs/stable2511.md -->
   en: |
     Major update based on RefCode Stable2511 baseline; see code release notes for details.
+
+    <!-- truncate -->
 
     <!--@include: ./changelogs/stable2511.en.md -->

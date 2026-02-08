@@ -14,10 +14,16 @@
     >
       <!-- eslint-disable vue/no-v-html -->
       <div
-        v-if="item.descriptionHtml"
+        v-if="item.briefHtml"
         class="vp-doc"
-        v-html="item.descriptionHtml"
+        v-html="item.briefHtml"
       />
+      <template v-if="item.detailHtml" #detail>
+        <div
+          class="vp-doc"
+          v-html="item.detailHtml"
+        />
+      </template>
       <!-- eslint-enable vue/no-v-html -->
     </DownloadCard>
   </div>
@@ -44,7 +50,8 @@ type DownloadListItem = DownloadItem & {
   key: string
   latest: boolean
   title: string
-  descriptionHtml?: string
+  briefHtml?: string
+  detailHtml?: string
 }
 
 const downloadTypeTitles = computed(() => ({
@@ -66,17 +73,33 @@ function renderMarkdown(content?: string) {
   return content ? markdown.render(content) : undefined
 }
 
+const truncateMarker = /<!--\s*truncate\s*-->/
+
+function splitDescription(description?: string) {
+  if (!description) return { brief: undefined, detail: undefined }
+  const match = truncateMarker.exec(description)
+  if (!match) return { brief: description, detail: undefined }
+  const brief = description.slice(0, match.index).trim()
+  const detail = description.slice(match.index + match[0].length).trim()
+  return {
+    brief: brief || undefined,
+    detail: detail || undefined,
+  }
+}
+
 const items = computed<DownloadListItem[]>(() => {
   const entries = props.keys.reduce<DownloadListItem[]>((acc, key) => {
     const item = downloadsDB[key]
     if (!item) return acc
     const description = resolveLocalizedDescription(item.description)
+    const { brief, detail } = splitDescription(description)
     acc.push({
       ...item,
       key,
       latest: false,
       title: downloadTypeTitles.value[item.type],
-      descriptionHtml: renderMarkdown(description),
+      briefHtml: renderMarkdown(brief),
+      detailHtml: renderMarkdown(detail),
     })
     return acc
   }, [])

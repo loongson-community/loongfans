@@ -8,8 +8,12 @@ description:
   zh: |
     新增 GPU 仿真开关
 
+    <!-- truncate -->
+
     若使用 AMD RDNA 系列显卡，请关闭此选项，使得 BIOS 仅提供 7A 显示控制器，绕过仿真流程。
   en: |
     Add GPU Emulation switch.
+
+    <!-- truncate -->
 
     Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will allow the firmware to bypass emulation routines and only enable the 7A display controller.

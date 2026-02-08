@@ -8,6 +8,8 @@ description:
   zh: |
     新增 YT6801 网卡固件驱动、自定义风扇曲线、快速启动及 TPM 支持等新功能，并修复睡眠时的缓存同步问题，提高可靠性。
 
+    <!-- truncate -->
+
     本次更新的详细更改如下（摘自 [GitHub: loongson/Firmware](https://github.com/loongson/Firmware)）：
 
     1. Add YT6801UndiDxe Support.
@@ -37,6 +39,8 @@ description:
     23. some bug fixs.
   en: |
     Introduces firmware-level driver for YT6801 NIC, support for custom fan curves, fast boot, and TPM. Fixes cache synchronization on S3 suspend, improving stability.
+
+    <!-- truncate -->
 
     Detailed changes for this updates are as follows (quoting [GitHub: loongson/Firmware](https://github.com/loongson/Firmware))：
 
