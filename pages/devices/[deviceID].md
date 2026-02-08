@@ -6,8 +6,8 @@ pageTitle: 产品规格数据库
 # pageSubTitle: {{ params.subTitle }}
 ---
 
-<script setup lang="ts">
-// TODO
-</script>
+<DeviceDetail>
 
 <!-- @content -->
+
+</DeviceDetail>

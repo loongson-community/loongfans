@@ -9,8 +9,8 @@ import type { RouteModule } from "vitepress"
 //
 // See also https://github.com/vuejs/vitepress/issues/2826 for a similar use
 // case.
-import type { DeviceInfoDB, DeviceInfoItem } from "../../types/data"
-import { defaultLocale, i18nForLocale } from "../../common/i18n"
+import type { DeviceInfoItem } from "../../types/data"
+import type { SupportedLanguage } from "../../types/language"
 
 // Because a data import is impossible for clean builds for reasons explained
 // above, we have to duplicate work by generating data directly in the module.
@@ -30,39 +30,47 @@ type DevicePageRouteParams = {
 }
 
 class RouteCompiler {
-  private i18n
   private locale: string
 
   constructor(locale: string) {
     this.locale = locale
-    this.i18n = i18nForLocale(locale)
   }
 
-  get localePart() {
-    return this.locale === defaultLocale ? "" : `${this.locale}/`
+  get contentSuffix() {
+    return `content.${this.locale}.md`
   }
 
-  get t() {
-    return this.i18n.global.t
+  localizedName(item: DeviceInfoItem): string {
+    return (
+      item.name[this.locale as SupportedLanguage] ?? item.name.en ?? ""
+    )
   }
 
-  async compileOneRoute(deviceID: string, item: DeviceInfoItem): Promise<DevicePageRouteConfig> {
-    // TODO: content
+  async compileOneRoute(
+    deviceID: string,
+    item: DeviceInfoItem,
+    devicesDir: string,
+  ): Promise<DevicePageRouteConfig> {
+    const contentPath = `${devicesDir}${deviceID}/${this.contentSuffix}`
+    const content = await readFile(contentPath, "utf-8")
+
     return {
       params: {
         deviceID,
-        title: "", // TODO
-        subTitle: this.t(
-          `deviceCategory.${item.category}`,
-        ),
+        title: this.localizedName(item),
+        subTitle: this.localizedName(item),
       },
+      content,
     }
   }
 
-  async compileRoutes(data: DeviceInfoDB): Promise<DevicePageRouteConfig[]> {
+  async compileRoutes(
+    devices: { [key: string]: DeviceInfoItem },
+    devicesDir: string,
+  ): Promise<DevicePageRouteConfig[]> {
     return await Promise.all(
-      Object.entries(data).map(([key, value]) =>
-        this.compileOneRoute(key, value),
+      Object.entries(devices).map(([key, value]) =>
+        this.compileOneRoute(key, value, devicesDir),
       ),
     )
   }
@@ -76,13 +84,15 @@ export const makeRouteModule = (locale: string): RouteModule => {
       const generator = new DatabaseGenerator()
       const devicesDB = await generator.generateDeviceDatabase()
 
+      const devicesDir = new URL("../../../data/devices/", import.meta.url)
+        .pathname
       const c = new RouteCompiler(locale)
+      return await c.compileRoutes(devicesDB.devices, devicesDir)
     },
 
     transformPageData(pageData) {
       const params = pageData.params as DevicePageRouteParams
       pageData.title = params.title
-      pageData.frontmatter["pageTitle"] = params.title
       pageData.frontmatter["pageSubTitle"] = params.subTitle
       return pageData
     },

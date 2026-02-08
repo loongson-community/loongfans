@@ -1,4 +1,5 @@
 <template>
+  <slot name="introduction" />
   <div class="tabs">
     <Tabs value="spec">
       <TabList>

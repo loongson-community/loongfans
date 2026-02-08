@@ -6,8 +6,8 @@ pageTitle: Product Database
 # pageSubTitle: {{ params.subTitle }}
 ---
 
-<script setup lang="ts">
-// TODO
-</script>
+<DeviceDetail>
 
 <!-- @content -->
+
+</DeviceDetail>
