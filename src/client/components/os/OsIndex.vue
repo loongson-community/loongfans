@@ -19,6 +19,7 @@
 <script setup lang="ts">
 import { computed, reactive } from "vue"
 import ToggleButton from "primevue/togglebutton"
+import { useI18n } from "vue-i18n"
 
 import type { OSTag } from "@src/types/data"
 import OsCard from "./OsCard.vue"
@@ -26,6 +27,7 @@ import { useTagTranslation } from "./tagTranslation"
 
 import osData from "virtual:loongfans-data/os"
 
+const { locale } = useI18n()
 const { translateTag } = useTagTranslation()
 
 const tagSet = computed(() => new Set(osData.flatMap((i) => i.tags)))
@@ -35,9 +37,20 @@ const filteredOsList = computed(() => {
   const activeTags = Object.keys(selectedTags).filter(
     (t: string) => selectedTags[t],
   )
-  if (activeTags.length === 0) return osData
-  return osData.filter((os) =>
-    activeTags.every((t: string) => os.tags.includes(t as OSTag)),
+  const filteredList =
+    activeTags.length === 0
+      ? osData
+      : osData.filter((os) =>
+          activeTags.every((t: string) => os.tags.includes(t as OSTag)),
+        )
+
+  const collator = new Intl.Collator(locale.value)
+
+  return filteredList.sort((a, b) =>
+    collator.compare(
+      a.name[locale.value] ?? a.name.en,
+      b.name[locale.value] ?? b.name.en,
+    ),
   )
 })
 </script>
