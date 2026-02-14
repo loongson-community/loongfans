@@ -1,24 +1,25 @@
+# Order families by performance of respective CPU, from high to low.
 families:
-  2k0300:
-    title:
-      en: 2K0300
-      zh: 2K0300
-  2k3000:
-    title:
-      en: 2K3000/3B6000M
-      zh: 2K3000/3B6000M
-  3a6000:
-    title:
-      en: 3A6000
-      zh: 3A6000
-  3b6000:
-    title:
-      en: 3B6000
-      zh: 3B6000
   3c6000:
     title:
       en: 3C6000
       zh: 3C6000
+  3b6000:
+    title:
+      en: 3B6000
+      zh: 3B6000
+  3a6000:
+    title:
+      en: 3A6000
+      zh: 3A6000
+  2k3000:
+    title:
+      en: 2K3000/3B6000M
+      zh: 2K3000/3B6000M
+  2k0300:
+    title:
+      en: 2K0300
+      zh: 2K0300
 
 categories:
   board:
