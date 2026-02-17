@@ -37,7 +37,7 @@
     "ical-expander": "^3.2.0",
     "lodash": "^4.17.23",
     "markdownlint": "^0.40.0",
-    "markdownlint-cli2": "^0.20.0",
+    "markdownlint-cli2": "^0.21.0",
     "pinia": "^3.0.4",
     "prettier": "^3.8.1",
     "primevue": "^4.5.4",
