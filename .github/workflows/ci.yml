@@ -40,23 +40,17 @@ jobs:
           cache: pnpm
       - name: Install deps
         run: pnpm install
-      - name: Lint Markdown files
-        run: pnpm run lintMarkdown
+      - name: Lint & Type-check
+        run: pnpm run checkAll
       - name: Check Caddyfile style
         if: steps.caddyfile-changed.outputs.any_changed == 'true'
         run: |
           # Caddy in Ubuntu 24.04 is version 2.6.2, which lacks support for "-d"
           caddy fmt --diff example.Caddyfile
-      - name: Check code style
-        run: pnpm run lintPrettier
-      - name: Lint code with ESLint
-        run: pnpm run eslint
       - name: Run codespell
         uses: codespell-project/actions-codespell@v2
         with:
           check_filenames: true
-      - name: Type-check the codebase
-        run: pnpm run typecheck
       - name: Run build
         run: pnpm run build
       - name: Upload pages artifacts
