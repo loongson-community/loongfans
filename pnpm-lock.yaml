@@ -69,6 +69,9 @@ importers:
       globals:
         specifier: ^17.3.0
         version: 17.3.0
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
       ical-expander:
         specifier: ^3.2.0
         version: 3.2.0
@@ -1394,6 +1397,11 @@ packages:
 
   html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
+
+  husky@9.1.7:
+    resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   ical-expander@3.2.0:
     resolution: {integrity: sha512-QhU7l1X7rcbVVekpIHy7Vm7dvFcMl+PoNPhn13oB3RK3YjdZo3+uT/yx9OJopo0anX5cEGUyzsWRvagZk8gOSw==}
@@ -3567,6 +3575,8 @@ snapshots:
   hookable@5.5.3: {}
 
   html-void-elements@3.0.0: {}
+
+  husky@9.1.7: {}
 
   ical-expander@3.2.0:
     dependencies:
