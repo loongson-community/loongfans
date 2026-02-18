@@ -77,6 +77,8 @@ pageSubTitle: 抢救刷入固件后无法开机的硬件
 
 ![](/images/guides/rescue-firmware/asus-connect-flash.webp)
 
+烧录线的另一端根据顺序照常接入编程器。
+
 ## 烧录固件程序
 
 编程器组合并连接好 Flash 芯片后，将编程器连接到电脑，并根据当前的操作系统选择烧录软件：
