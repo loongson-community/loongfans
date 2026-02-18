@@ -2,11 +2,13 @@
   "type": "module",
   "scripts": {
     "build": "vitepress build",
+    "checkAll": "pnpm run '/(lintMarkdown|lintPrettier|eslint|typecheck)/'",
     "dev": "vitepress dev",
     "editBiweeklyEvents": "tsx ./src/node/scripts/editBiweeklyEvents/index.ts",
     "eslint": "eslint",
     "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",
+    "prepare": "husky",
     "prettier": "prettier -w .",
     "preview": "vitepress preview",
     "typecheck": "vue-tsc --noEmit"
