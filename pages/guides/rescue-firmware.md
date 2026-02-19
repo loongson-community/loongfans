@@ -13,11 +13,11 @@ pageSubTitle: 抢救刷入固件后无法开机的硬件
 
 在开始教程之前，请确保你已经购买过且已经拥有了以下硬件工具：
 
-    1. 另一台能够进入系统的电脑
-    2. CH341A USB 编程器
-    3. 烧录夹或探针，若使用探针需自行确认 SPI Flash 规格（大多数为 SOP8-208mil 规格），如果使用的是华硕主板则建议使用华硕专用烧录线
-    4. 1.8V 降压模块（目前大多数龙芯主板使用该电压的 Flash），若确认 Flash 为 3.3V 或 5V 则不需要
-    5. 对于部分在散热器下方的 Flash 芯片，那么你还需要准备硅脂，以便修复固件之后重新安装散热器
+1. 另一台能够进入系统的电脑
+2. CH341A USB 编程器
+3. 烧录夹或探针，若使用探针需自行确认 SPI Flash 规格（大多数为 SOP8-208mil 规格），如果使用的是华硕主板则建议使用华硕专用烧录线
+4. 1.8V 降压模块（目前大多数龙芯主板使用该电压的 Flash），若确认 Flash 为 3.3V 或 5V 则不需要
+5. 对于部分在散热器下方的 Flash 芯片，那么你还需要准备硅脂，以便修复固件之后重新安装散热器
 
 在开始教程之前，请确保你已经安装了以软件工具：
 
@@ -38,9 +38,14 @@ pageSubTitle: 抢救刷入固件后无法开机的硬件
 
 ![](/images/guides/rescue-firmware/verify-with-openhashtab.webp)
 
-若使用 Linux 发行版，可使用 Dolphin 自带的校验功能：
+若使用 macOS 或 Linux 发行版，可使用 `sha256sum` 进行校验：
 
-![](/images/guides/rescue-firmware/verify-with-dolphin.webp)
+```bash
+# 以华硕 XC-LS3A6M 最新版本 1402 为例
+sha256sum XC-LS3A6M-1402.7z
+echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M-1402.7z" | sha256sum -c
+# 此时将会输出：XC-LS3A6M-1402.7z: 成功
+```
 
 ## 组合并连接编程器
 
@@ -48,10 +53,16 @@ pageSubTitle: 抢救刷入固件后无法开机的硬件
 
 | 主板 | Flash 型号 | 厂商 | 电压 |
 | ---- | ---------- | ---- | ---- |
-| XA61200 | GD25LQ64E | 兆易创新 (GigaDevice) | 1.8 V |
-| XC-LS3A6M | W25Q128JW | 华邦电子 (Winbond) | 1.8 V |
+| XA61200 | GD25LQ64E | 兆易创新 (GigaDevice) | 1.8V |
+| XC-LS3A6M | W25Q128JW | 华邦电子 (Winbond) | 1.8V |
 
-之后请根据图示组合编程器，注意引脚位置从起始 1 开始必须一一对应，若 Flash 芯片为 3.3 V 或 5V电压则不需要 1.8V 降压模块（如图所示的绿色模块）：
+之后请根据图示组合编程器，注意引脚位置从起始 1 开始必须一一对应。
+
+:::warning
+请注意：请必须提前查阅 Flash 型号，1.8V 的芯片无法在 3.3V 和 5V 电压档位下进行操作，但部分烧录工具会正常探测，此时可能不会进行提醒，**强行烧录将有可能导致 Flash 芯片损毁！！！**
+
+若确认为 1.8V 芯片，请安装降压模块（如图所示的绿色模块）。
+:::
 
 ![](/images/guides/rescue-firmware/setup-programmer.webp)
 
