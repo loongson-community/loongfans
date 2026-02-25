@@ -11,7 +11,7 @@ pageSubTitle: 用爱发电，也许发财 ( ͡° ͜ʖ ͡°)
 
 ## Eclipse 与 DBeaver 龙架构移植
 
-将 Eclipse ([eclipse.platform.releng.aggregator](eclipse.platform.releng.aggregator)) 与 [DBeaver](https://github.com/dbeaver/dbeaver) 移植到龙架构，实现与上游同步发布（以推动上游支持为优）。龙芯爱好者社区可按需提供设备与上游联络支持。
+将 Eclipse ([eclipse.platform.releng.aggregator](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator)) 与 [DBeaver](https://github.com/dbeaver/dbeaver) 移植到龙架构，实现与上游同步发布（以推动上游支持为优）。龙芯爱好者社区可按需提供设备与上游联络支持。
 
 奖金：5000 元人民币
 
