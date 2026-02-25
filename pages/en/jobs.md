@@ -9,7 +9,7 @@ pageSubTitle: Love Driven, or Maybe Material Driven? ( ͡° ͜ʖ ͡°)
 
 ## LoongArch Port for Eclipse and DBeaver
 
-Port Eclipse ([eclipse.platform.releng.aggregator](eclipse.platform.releng.aggregator)) and [DBeaver](https://github.com/dbeaver/dbeaver) (the former is a prerequisite) to LoongArch, making sure binaries for the newest versions are available, or (preferably) push for upstream support. The Loongson Hobbyists' Community may supply hardware and support for communications with the upstream.
+Port Eclipse ([eclipse.platform.releng.aggregator](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator)) and [DBeaver](https://github.com/dbeaver/dbeaver) (the former is a prerequisite) to LoongArch, making sure binaries for the newest versions are available, or (preferably) push for upstream support. The Loongson Hobbyists' Community may supply hardware and support for communications with the upstream.
 
 Reward: CNY 5,000
 
