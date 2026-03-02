@@ -51,12 +51,13 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 请根据主板使用的 SPI Flash 丝印查找以确认规格，以下是一些常见主板使用的 SPI Flash 型号，由于可能的生产批次换料，仅供参考：
 
-| 主板 | Flash 型号 | 厂商 | 电压 |
-| ---- | ---------- | ---- | ---- |
-| XA61200 | GD25LQ64E | 兆易创新 (GigaDevice) | 1.8V |
-| XC-LS3A6M | W25Q128JW | 华邦电子 (Winbond) | 1.8V |
+| 主板 | Flash 型号 | 厂商 | 电压 | 近似型号（刷入时的临时选项） |
+| ---- | ---------- | ---- | ---- | ---------------------------- |
+| XA61200 / XA61201 | GD25LQ64E | 兆易创新 (GigaDevice) | 1.8V | |
+| XB612B0_V1.1 / XB612B0_V1.2 | GD25LQ64E | 兆易创新 (GigaDevice) | 1.8V | |
+| XC-LS3A6M | W25Q128JW | 华邦电子 (Winbond) | 1.8V | W25Q128FW |
 
-之后请根据图示组合编程器，注意引脚位置从起始 1 开始必须一一对应。
+之后请根据图示组合编程器，注意引脚位置从起始脚位 1 开始必须一一对应，一般情况下，SPI Flash 芯片上的圆圈位置所在的脚位为起始脚位1。
 
 :::warning
 请注意：请必须提前查阅 Flash 型号，1.8V 的芯片无法在 3.3V 和 5V 电压档位下进行操作，但部分烧录工具会正常探测，此时可能不会进行提醒，**强行烧录将有可能导致 Flash 芯片损毁！！！**
@@ -70,13 +71,36 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 ### 使用烧录夹或探针连接 Flash 芯片
 
-<!-- TODO -->
-施工中
+根据图示，将烧录夹或探针引脚一一对应，这些连接器都有标记用于指示起始位置（烧录夹v始脚位 1 为红色线，探针起始脚位 1 为涂黑侧，具体请咨询对应经销商或厂商）
+
+![](/images/guides/rescue-firmware/connect-flash-with-probe-i.webp)
+
+![](/images/guides/rescue-firmware/connect-flash-with-probe-ii.webp)
+
+确认连接稳定后将烧录线的另一端根据顺序接入编程器，**若使用探针连接请确保连接稳固避免因接触不良烧录失败**。
 
 ### 使用测试架连接 Flash 芯片
 
-<!-- TODO -->
-施工中
+若主板为双 BIOS 芯片设计（XA61200 和 XB612B0 等主板均有该设计）且另一个 SPI Flash 芯片为如图所示可拆卸设计，那么可以使用 SOP8 测试架进行烧录。
+
+将 Flash 芯片从插座拆出后，请事先确认起始脚位 1 所处的位置（如图序号 1 所示），以避免安装错误导致无法启动。
+
+![](/images/guides/rescue-firmware/flash-in-socket.webp)
+
+:::warning
+注意：对于双 BIOS 芯片设计的主板，请查看上图序号 2 所示的跳线连接是否正确，**这将会影响最终启动的固件和设定**。
+
+一般情况下，对于 XA61200 和 XB612B0 等主板，跳线定义如下：
+![](/images/guides/rescue-firmware/bios-switch.png)
+
+将跳线帽安装到 1 和 2 针脚将使用板载 SPI Flash 芯片内的固件，安装到 2 和 3 针脚将使用插座的 SPI Flash 芯片内的固件。
+:::
+
+拆出后根据图示安装到测试架上：
+
+![](/images/guides/rescue-firmware/connect-flash-with-test-stand.webp)
+
+确认安装完毕后将测试架根据顺序接入编程器。
 
 ### (仅限华硕主板) 使用专用烧录线连接 Flash 芯片
 
