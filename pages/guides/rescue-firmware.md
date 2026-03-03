@@ -38,7 +38,7 @@ pageSubTitle: 抢救刷入固件后无法开机的硬件
 
 ![](/images/guides/rescue-firmware/verify-with-openhashtab.webp)
 
-若使用 macOS 或 Linux 发行版，可使用 `sha256sum` 进行校验：
+若使用 macOS 或 Linux 发行版，可使用 `sha256sum` 命令进行校验：
 
 ```bash
 # 以华硕 XC-LS3A6M 最新版本 1402 为例
@@ -47,7 +47,7 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 # 此时将会输出：XC-LS3A6M-1402.7z: 成功
 ```
 
-## 组合并连接编程器
+## 组装并连接编程器
 
 请根据主板使用的 SPI Flash 丝印查找以确认规格，以下是一些常见主板使用的 SPI Flash 型号，由于可能的生产批次换料，仅供参考：
 
@@ -118,7 +118,7 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 编程器组合并连接好 Flash 芯片后，将编程器连接到电脑，并根据当前的操作系统选择烧录软件：
 
-### (Windows) 使用 NeoProgrammer 刷写
+### 使用 NeoProgrammer 刷写 (Windows)
 
 在使用 NeoProgrammer 之前，请提前安装好驱动，驱动已随软件提供，位于 `软件目录\Drivers\CH341A` 下，双击 `DRVSETUP64.exe` 后点击 `安装`。
 
@@ -150,9 +150,11 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 5. （可选）点击 `校验`，确认烧录内容是否与固件文件相同。
 
-### (macOS, Linux) 使用 IMSProg 刷写
+### 使用 IMSProg 刷写 (macOS, Linux)
 
-由于 Linux 已经在上游内置了 CH341A 驱动，在这些系统下不需要安装驱动。
+由于 Linux 内核已有主线化 CH341 系列驱动，一般不需要安装驱动。
+
+对于 macOS，请[在此从官网获取驱动](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)，
 
 根据图示的序号按顺序操作：
 
@@ -168,4 +170,4 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 断开所有连接在 Flash 芯片上的工具或烧录线，若拆下了散热器则需要将 CPU 上的残余硅脂清理干净，使用自备的硅脂填充并重新安装散热器。
 
-照常连接电源线，安装内存条、硬盘，接入键鼠和显示器，开机进行初次安装时的操作，若开机后出现龙芯logo即恢复成功。
+照常连接电源线，安装内存条、硬盘，接入键鼠和显示器，开机进行初次安装时的操作，若开机后出现`LOONGSON 龙芯`徽标即恢复成功。
