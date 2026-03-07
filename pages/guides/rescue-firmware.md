@@ -154,9 +154,44 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 由于 Linux 内核已有主线化 CH341 系列驱动，一般不需要安装驱动。
 
-对于 macOS，请[在此从官网获取驱动](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)，
+对于 macOS，请[在此从官网获取驱动](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)。
 
-根据图示的序号按顺序操作：
+由于大多数发行版未提供，如有，请首先尝试从发行版源中获取：
+
+```bash
+# Debian (13/14/sid)
+sudo apt install imsprog
+
+# Ubuntu
+sudo add-apt-repository ppa:bigmdm/imsprog
+sudo apt update
+sudo apt install imsprog 
+
+# Fedora
+sudo dnf install imsprog
+
+# ArchLinux
+yay -S imsprog
+```
+
+如果发行版未提供，则可以从源码编译：
+
+```bash
+# AOSC OS
+sudo oma install cmake gcc libusb qt-5 pkgconf wget zenity
+
+# macOS (Homebrew)
+brew install qt@5 libusb cmake pkgconf wget zenity
+
+# Compiling all
+git clone https://github.com/bigbigmdm/IMSProg.git && cd IMSProg
+chmod +x build_all.sh
+sudo ./build_all.sh # 对于 macOS 请去掉 sudo
+```
+
+之后可以从应用程序菜单中找到它。
+
+启动后根据图示的序号按顺序操作：
 
 ![](/images/guides/rescue-firmware/imsprog.webp)
 
