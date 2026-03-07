@@ -1,7 +1,7 @@
 type: uefi-firmware
 version: "V1.0_V5.0.0344_stable202511_rel"
 size: 8388608
-date: "2025-01-07"
+date: "2026-01-07"
 sha256: "93462a963c6b227bf23a5fef579ed3dcd268d3dcc0c5fa052e5a58b8b73416c1"
 url: "https://file.loongfans.cn/xa61200/EDK2505_XA61200-V1.0_V5.0.0344_stable202511_rel.fd"
 description:
