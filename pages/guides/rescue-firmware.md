@@ -156,7 +156,7 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 对于 macOS，请[在此从官网获取驱动](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html)。
 
-由于大多数发行版未提供，如有，请首先尝试从发行版源中获取：
+由于 IMSProg 在大多数发行版中并未提供，如有，请首先尝试从发行版源中获取：
 
 ```bash
 # Debian (13/14/sid)
@@ -165,12 +165,12 @@ sudo apt install imsprog
 # Ubuntu
 sudo add-apt-repository ppa:bigmdm/imsprog
 sudo apt update
-sudo apt install imsprog 
+sudo apt install imsprog
 
 # Fedora
 sudo dnf install imsprog
 
-# ArchLinux
+# ArchLinux AUR
 yay -S imsprog
 ```
 
