@@ -8,6 +8,10 @@ import { parse as yamlParse } from "yaml"
 import { createGenerator, type Config } from "ts-json-schema-generator"
 import { createMarkdownRenderer } from "vitepress"
 
+// @liyi:requirement(data-integrity)
+// All data transformations must validate input against schemas, preserve type
+// safety, and ensure foreign key references resolve correctly.
+
 import type {
   BiweeklyDB,
   ChipInfoDB,

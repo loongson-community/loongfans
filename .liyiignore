@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+.vitepress/dist/
+
+# Generated files
+*.generated.ts
+*.generated.js
+
+# Lock files
+pnpm-lock.yaml
+
+# Data files (content, not code)
+data/
