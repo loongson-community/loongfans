@@ -1,0 +1,36 @@
+// liyi v0.1 spec file
+{
+  "version": "0.1",
+  "source": "src/node/plugins/loongfans-data/generateDatabase.ts",
+  "specs": [
+    {
+      "requirement": "data-integrity",
+      "source_span": [1, 4],
+      "intent": "All data transformations must validate input against schemas, preserve type safety, and ensure foreign key references resolve correctly."
+    },
+    {
+      "item": "validate",
+      "intent": "Validate parsed YAML data against JSON schema using Ajv. Throw ValidationError with descriptive message including file name and validation errors if schema check fails.",
+      "source_span": [79, 99],
+      "reviewed": false
+    },
+    {
+      "item": "generateChipsDB",
+      "intent": "Transform raw chip YAML data into ChipInfoDB. Validate CPU and chipset entries against schemas, collect into database keyed by unique identifiers. Ensure all references between chips and chipsets are internally consistent.",
+      "source_span": [145, 210],
+      "reviewed": false
+    },
+    {
+      "item": "generateDevicesDB",
+      "intent": "Transform device YAML metadata and markdown content into DeviceInfoDB. Merge per-device markdown with YAML metadata, resolve family configurations, and produce searchable device database with rendered HTML content.",
+      "source_span": [280, 380],
+      "reviewed": false
+    },
+    {
+      "item": "generateDownloadsDB",
+      "intent": "Collect all download resources from YAML files, render markdown descriptions, and organize by resource key for efficient lookup by device pages.",
+      "source_span": [390, 450],
+      "reviewed": false
+    }
+  ]
+}

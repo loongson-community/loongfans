@@ -135,3 +135,74 @@ Every commit must pass the relevant checks below **before** being finalized. Des
 ## Notes on dev server behavior
 
 VitePress HMR is enabled, but dynamic route metadata may not update when data files are added or removed. Restart the dev server if route titles or page lists do not refresh.
+
+---
+
+## 立意 (Lìyì) — Intent Specs
+
+This repository adopts the [立意 (Lìyì)](https://github.com/liyi-run/liyi) convention for making intent explicit, persistent, and reviewable in AI-assisted development.
+
+### What is 立意
+
+For every non-trivial code item (function, class, complex transformation), we maintain a sidecar file (`<filename>.liyi.jsonc`) that documents:
+- **Intent**: What the item SHOULD do (not what it currently does)
+- **Source span**: Line range in the source file
+- **Review status**: Whether a human has reviewed the intent
+
+### When to write intent specs
+
+Write or update a sidecar entry when:
+- Creating new transformation functions in `src/node/`
+- Adding complex validation logic
+- Modifying data pipeline behavior
+- The function's contract is subtle or has edge cases
+
+Skip intent specs for:
+- Simple getters/setters
+- One-line wrappers
+- Obvious boilerplate
+
+### Marker conventions
+
+Use these markers in source code:
+
+- `// @liyi:requirement(<name>)` — Declare a named requirement that multiple items depend on
+- `// @liyi:related <name>` — Mark that a function participates in a requirement
+- `// @liyi:trivial` — Opt out of intent specs for simple items
+- `// @liyi:intent <prose>` — Inline intent (alternative to sidecar)
+
+### Workflow
+
+1. **During development**: Write intent to the sidecar (or use `@liyi:intent` marker)
+2. **Before commit**: Run `liyi check` to verify specs are current
+3. **Review**: Humans set `"reviewed": true` in sidecar after reviewing intent
+4. **Staleness detection**: CI runs `liyi check --fail-on-stale` to catch drift
+
+### File naming
+
+Sidecar files follow the pattern: `<source_filename>.liyi.jsonc`
+
+Examples:
+- `src/node/plugins/loongfans-data/generateDatabase.ts` → `generateDatabase.ts.liyi.jsonc`
+- `src/client/components/devices/DeviceCard.vue` → `DeviceCard.vue.liyi.jsonc`
+
+### Schema
+
+Sidecar files use the 立意 v0.1 schema:
+
+```jsonc
+{
+  "version": "0.1",
+  "source": "relative/path/to/file.ts",
+  "specs": [
+    {
+      "item": "functionName",
+      "intent": "Transform raw YAML chip data into validated ChipInfoDB, ensuring all required fields are present and foreign key references resolve.",
+      "source_span": [45, 89],
+      "reviewed": false
+    }
+  ]
+}
+```
+
+See the [liyi documentation](https://github.com/liyi-run/liyi) for full schema details.
