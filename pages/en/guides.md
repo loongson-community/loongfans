@@ -16,3 +16,7 @@ As many would say, Loongson is a bit quirky. The following guides will help you 
 - [Common Issues: Desktop and Server Platforms](/en/guides/errata-desktop-and-server)
 - [Common Issues: Laptop Platform](/en/guides/errata-laptop)
 - [Common Issues: Development Boards](/en/guides/errata-evb)
+
+## Fix Hardware
+
+- [Rescuing Firmware](/en/guides/rescue-firmware)
