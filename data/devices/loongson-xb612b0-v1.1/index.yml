@@ -4,7 +4,7 @@ name:
 family: 3b6000
 category: board
 image: /images/devices/loongson-xb612b0-v1.1.thumbnail.webp
-spec: "3B6000 @ 2.3GHz, mATX"
+spec: "3B6000 @ 2.1-2.3GHz, mATX"
 tags:
   - 7a2000
   - desktop-mb

@@ -16,7 +16,7 @@ Compared to the [AC612A0_V1.1](/en/devices/loongson-ac612a0-v1.1.md) based on Lo
 | ---- | ---- |
 | Manufacturer | Loongson Technology |
 | Form Factor | mATX (244×244mm) |
-| Processor | 3B6000 @ 2.0/2.3GHz |
+| Processor | 3B6000 (8/12/16 cores) @ 2.3/2.2/2.1GHz |
 | Memory | DDR4 @ 3200MT/s (2 × DIMM), supports RECC |
 | Interfaces (PCIe) | 2 × PCIe 3.0 x16, 1 × PCIe 3.0 x8 |
 | Interfaces (USB) | USB 3.0 (2 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
