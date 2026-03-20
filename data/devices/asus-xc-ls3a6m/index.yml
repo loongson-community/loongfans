@@ -8,3 +8,5 @@ spec: "3A6000-HV @ 2.5GHz, mATX"
 tags:
   - 7a2000
   - desktop-mb
+downloads:
+  - uefi-fw-asus-xc-ls3a6m
