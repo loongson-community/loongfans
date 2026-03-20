@@ -42,7 +42,8 @@ According to user feedback, this motherboard sees few firmware updates and there
 
 <template #image>
 
-![Side and front views of the ASUS XC-LS3A6M, with interfaces annotated](/images/devices/asus-xc-ls3a6m.webp)
-Source: [AliExpress](https://aliexpress.com/item/1005006592333955.html)
+![ASUS XC-LS3A6M-A Front](/images/devices/asus-xc-ls3a6m-a.webp)
+![ASUS XC-LS3A6M-A I/O](/images/devices/asus-xc-ls3a6m-a-back.webp)
+Source: Goofish
 
 </template>
