@@ -1,0 +1,12 @@
+type: uefi-firmware
+version: "TBD"
+size: 0
+date: "2026-02-09"
+sha256: ""
+url: "https://www.asus.com.cn/supportonly/xc-ls3a6m/helpdesk_bios/"
+debug: false
+description:
+  zh: "由于分发许可原因，点击下载按钮将会跳转到华硕官网，请从官网获取固件。"
+  en: |
+    Due to licensing restrictions, clicking "Download" will redirect you to the official ASUS website.  
+    Please download the firmware from the official website.
