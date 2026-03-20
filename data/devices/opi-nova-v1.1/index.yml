@@ -1,0 +1,9 @@
+name:
+  en: OrangePi Nova v1.1
+  zh: 香橙派 Nova v1.1
+family: 2k3000
+category: board
+image: /images/devices/opi-nova-v1.1-front.thumbnail.webp
+spec: "2K3000 @ 2.2GHz, nanoITX"
+tags:
+  - dev-board
