@@ -1,0 +1,12 @@
+type: uefi-firmware
+version: "v0.45_1209a_1"
+size: 8388608
+date: "2026-03-07"
+sha256: "37b8b8ff47b80fbc67280d6fb03b4709fda7eb0cd10c4eee7a8a492240f7703b"
+url: "https://file.loongfans.cn/ctcisz-3b6000m-nuc/uefi-fw-ctcisz-3b6000m-nuc-v0.45_1209a_1.fd"
+debug: true
+description:
+  zh: |
+    提高稳定性.
+  en: |
+    improve stability.
