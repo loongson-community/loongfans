@@ -30,10 +30,10 @@ None noted.
 
 <template #image>
 
-[![Front-side photo of an OrangePi Nova v1.1](/images/devices/opi-nova-v1.1.thumbnail.webp)](/images/devices/opi-nova-v1.1-front.webp)
+[![Front-side photo of an OrangePi Nova v1.1](/images/devices/opi-nova-v1.1-front.thumbnail.webp)](/images/devices/opi-nova-v1.1-front.webp)
 Source: [深圳市迅龙软件有限公司](http://www.orangepi.cn/)
 
-[![Back-side photo of an OrangePi Nova v1.1](/images/devices/opi-nova-v1.1.thumbnail.webp)](/images/devices/opi-nova-v1.1-back.webp)
+[![Back-side photo of an OrangePi Nova v1.1](/images/devices/opi-nova-v1.1-back.thumbnail.webp)](/images/devices/opi-nova-v1.1-back.webp)
 Source: [深圳市迅龙软件有限公司](http://www.orangepi.cn/)
 
 </template>
