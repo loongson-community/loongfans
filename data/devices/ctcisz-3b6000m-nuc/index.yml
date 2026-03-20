@@ -8,3 +8,5 @@ spec: "3B6000M @ 2.5GHz"
 tags:
   - nuc
   - prebuilt
+downloads:
+  - uefi-fw-ctcisz-3b6000m-nuc-v0.45_1209a_1
