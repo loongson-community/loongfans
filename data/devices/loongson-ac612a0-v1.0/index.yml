@@ -4,7 +4,7 @@ name:
 family: 3c6000
 category: board
 image: /images/devices/loongson-ac612a0-v1.0.thumbnail.webp
-spec: "3C6000/S @ 2.3GHz, ATX"
+spec: "3C6000/S @ 2.0-2.2GHz, ATX"
 tags:
   - 7a2000
   - ecc
