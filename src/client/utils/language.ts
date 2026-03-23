@@ -4,7 +4,10 @@ import { SupportedLanguage } from "@src/types/language"
 const SUPPORTED_LANGUAGES = Object.values(SupportedLanguage)
 
 export const LANGUAGE_DISPLAY_NAMES: Record<SupportedLanguage, string> = {
+  [SupportedLanguage.DE]: "Deutsch",
   [SupportedLanguage.EN]: "English",
+  [SupportedLanguage.FR]: "Français",
+  [SupportedLanguage.RU]: "Русский",
   [SupportedLanguage.ZH]: "简体中文",
 }
 
@@ -13,7 +16,10 @@ export const LANGUAGE_DISPLAY_NAMES: Record<SupportedLanguage, string> = {
  * 注意：root locale（中文）的前缀为空字符串
  */
 export const LANGUAGE_PREFIXES: Record<SupportedLanguage, string> = {
+  [SupportedLanguage.DE]: "/de",
   [SupportedLanguage.EN]: "/en",
+  [SupportedLanguage.FR]: "/fr",
+  [SupportedLanguage.RU]: "/ru",
   [SupportedLanguage.ZH]: "",
 }
 
@@ -23,7 +29,10 @@ export const LANGUAGE_PREFIXES: Record<SupportedLanguage, string> = {
  */
 const LOCALE_INDEX_TO_PREFIX: Record<string, string> = {
   root: LANGUAGE_PREFIXES[SupportedLanguage.ZH],
+  de: LANGUAGE_PREFIXES[SupportedLanguage.DE],  
   en: LANGUAGE_PREFIXES[SupportedLanguage.EN],
+  fr: LANGUAGE_PREFIXES[SupportedLanguage.FR],
+  ru: LANGUAGE_PREFIXES[SupportedLanguage.RU],
 }
 
 /**

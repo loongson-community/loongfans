@@ -62,9 +62,30 @@
 - 译文 `.md` 中的 pageSubTitle 使用 sentence case（仅首字母大写），而非 title case（每个单词首字母大写）
 - 使用正确的大小写与标点符号，如 M.2 而不是 m.2，也不是 m2
 
+
 ## 文件结构
 
-- 术语表：[`./glossary.md`](./glossary.md)
-- 中文源文件：`pages/`
-- 英文翻译：`pages/en`
-- 英文版本中的 `returnLink` 路径需添加 `/en/` 前缀
+以下文件包含语言定义及语言选择逻辑:
+
+- /src/types/language.ts
+- /.vitepress/config.mts
+- /src/client/utils/language.ts
+
+## 页面
+
+以下目录包含各语言对应的页面:
+
+- 默认（中文）：/pages
+- 英语： /pages/en
+
+## 图片
+
+ 以下目录包含各语言专属的图片:
+
+- 默认（中文）：/pages/public/images
+- 英语： /pages/public/en
+
+## 重要提示
+
+- 请使用术语表确保翻译的准确性和一致性：/docs/glossary.md
+- 非默认语言（例如英文版）中的 returnLink 路径必须添加前缀（例如 /en/）
