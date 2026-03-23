@@ -45,7 +45,7 @@ export default defineConfig({
       link: "/ru",
       title: "Loongson Hobbyists' Community",
       description: "Loongson Hobbyists' Community Portal",
-    },  
+    },
   },
   ignoreDeadLinks: true,
   srcDir,

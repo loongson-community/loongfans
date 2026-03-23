@@ -29,7 +29,7 @@ export const LANGUAGE_PREFIXES: Record<SupportedLanguage, string> = {
  */
 const LOCALE_INDEX_TO_PREFIX: Record<string, string> = {
   root: LANGUAGE_PREFIXES[SupportedLanguage.ZH],
-  de: LANGUAGE_PREFIXES[SupportedLanguage.DE],  
+  de: LANGUAGE_PREFIXES[SupportedLanguage.DE],
   en: LANGUAGE_PREFIXES[SupportedLanguage.EN],
   fr: LANGUAGE_PREFIXES[SupportedLanguage.FR],
   ru: LANGUAGE_PREFIXES[SupportedLanguage.RU],
