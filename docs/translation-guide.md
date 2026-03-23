@@ -62,14 +62,15 @@
 - 译文 `.md` 中的 pageSubTitle 使用 sentence case（仅首字母大写），而非 title case（每个单词首字母大写）
 - 使用正确的大小写与标点符号，如 M.2 而不是 m.2，也不是 m2
 
-
 ## 文件结构
 
-以下文件包含语言定义及语言选择逻辑:
+以下文件和文件夹包含语言定义和语言选择逻辑:
 
 - /src/types/language.ts
 - /.vitepress/config.mts
 - /src/client/utils/language.ts
+- /src/common/i18n.ts
+- /src/common/locales
 
 ## 页面
 
