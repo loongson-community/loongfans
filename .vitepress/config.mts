@@ -41,6 +41,7 @@ export default defineConfig({
   },
   // 完全禁用主题切换
   appearance: false,
+  head: [["link", { rel: "icon", href: "/favicon.svg" }]],
   vite: {
     plugins: [Inspect(), UnoCSS(), Icons({ scale: 1 }), loongfansData()],
     ssr: {
