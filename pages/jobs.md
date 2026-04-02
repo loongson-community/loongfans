@@ -6,17 +6,37 @@ pageTitle: 悬赏与实习机会
 pageSubTitle: 用爱发电，也许发财 ( ͡° ͜ʖ ͡°)
 ---
 
+# 悬赏与实习机会
 
-# 社区悬赏项目
+## 社区悬赏项目
 
-## Eclipse 与 DBeaver 龙架构移植
+### Eclipse 与 DBeaver 龙架构移植
 
 将 Eclipse ([eclipse.platform.releng.aggregator](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator)) 与 [DBeaver](https://github.com/dbeaver/dbeaver) 移植到龙架构，实现与上游同步发布（以推动上游支持为优）。龙芯爱好者社区可按需提供设备与上游联络支持。
 
 奖金：5000 元人民币
 
-## OrangePi Nova U-Boot 支持
+### OrangePi Nova U-Boot 支持
 
 针对 OrangePi Nova 的 U-Boot 引导器支持有待实现，现悬赏社区开发者推动实现。
 
 奖品：龙芯笔记本一台
+
+## 社区实习机会
+
+### AI 应用生态实习生（2人）
+
+我们在此招募有志于投身龙架构生态建设，愿意为 GPGPU 工具链贡献力量的伙伴。
+如果你擅长异构系统架构工具链维护/调试，异构计算软件栈黑白盒分析，非常规指令集架构的探索，欢迎加入我们。
+在这个岗位，你也许会参与人工智能大模型应用/生态/硬件在龙架构的移植与维护。
+
+*基础技能：*
+
+熟悉 Linux 平台下的开发流程，有 Git 使用经验；具备一定编程/构建/调试基础。
+简单了解 GPGPU 架构，对异构编程模型有使用和理解。
+
+*制度待遇：*
+
+可远程或坐班（湖北省武汉市东湖新技术开发区），需面议确定最终待遇。
+
+发送到 [负责人邮箱](mailto:xinmu@loongfans.cn) 提交简历/手机号以及你期望的工作方式。
