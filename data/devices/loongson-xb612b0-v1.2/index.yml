@@ -9,5 +9,7 @@ tags:
   - 7a2000
   - desktop-mb
 downloads:
+  - uefi-fw-loongson-xb612b0-v1.2-v5.0.0431_stable202602_rel
+  - uefi-fw-loongson-xb612b0-v1.2-v5.0.0431_stable202602_dbg
   - uefi-fw-loongson-xb612b0-v1.2-v5.0.0345_stable202511_rel
   - uefi-fw-loongson-xb612b0-v1.2-v5.0.0345_stable202511_dbg
