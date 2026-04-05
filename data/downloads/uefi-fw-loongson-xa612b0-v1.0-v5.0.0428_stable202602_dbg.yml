@@ -1,0 +1,20 @@
+type: uefi-firmware
+version: "V1.0_V5.0.0428_stable202602_dbg"
+size: 8388608
+date: "2026-04-02"
+sha256: "01fb17a4fd89fc5b5bac21551419c1431db71ac44587bd78561687f34fce6fe3"
+url: "https://file.loongfans.cn/xa612b0-v1.0/EDK2505_XA612B0-V1.0_General_V5.0.0428-Stable202602_dbg.fd"
+debug: true
+description:
+  zh: |
+    本次主要基于 RefCode Stable2602 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2602.md -->
+  en: |
+    Major update based on RefCode Stable2602 baseline; see code release notes for details.
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2602.en.md -->
