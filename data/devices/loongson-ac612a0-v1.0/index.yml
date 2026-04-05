@@ -10,5 +10,7 @@ tags:
   - ecc
   - desktop-mb
 downloads:
+  - uefi-fw-loongson-ac612a0-v1.0-v5.0.0428_stable202602_rel
+  - uefi-fw-loongson-ac612a0-v1.0-v5.0.0428_stable202602_dbg
   - uefi-fw-loongson-ac612a0-v1.0-v5.0.0343_stable202511_rel
   - uefi-fw-loongson-ac612a0-v1.0-v5.0.0343_stable202511_dbg
