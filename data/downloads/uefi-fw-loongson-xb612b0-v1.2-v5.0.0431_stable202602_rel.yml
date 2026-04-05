@@ -1,0 +1,19 @@
+type: uefi-firmware
+version: "V1.2_V5.0.0431_stable202602_rel"
+size: 6291456
+date: "2026-04-02"
+sha256: "41b00efd0d68517fdd0e6a04a5d352174f94ffe1861cc11a8a60a80faf53fc39"
+url: "https://file.loongfans.cn/xb612b0-v1.2/EDK2505_XB612B0-V1.2_General_V5.0.0431-Stable202602_rel.fd"
+description:
+  zh: |
+    本次主要基于 RefCode Stable2602 基线更新，详细更新说明按照流程需要查阅代码发布说明
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2602.md -->
+  en: |
+    Major update based on RefCode Stable2602 baseline; see code release notes for details.
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2602.en.md -->
