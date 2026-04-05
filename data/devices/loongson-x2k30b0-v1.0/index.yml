@@ -1,0 +1,12 @@
+name:
+  en: Loongson X2K30B0 V1.0
+  zh: 龙芯 X2K30B0 V1.0
+family: 2k3000
+category: board
+image: /images/devices/loongson-2k3000-ai-evb.webp # TODO
+spec: "2K3000 series"
+tags:
+  - desktop-mb
+downloads:
+  - uefi-fw-loongson-x2k30b0-v1.0-v5.0.0431_stable202602_rel
+  - uefi-fw-loongson-x2k30b0-v1.0-v5.0.0431_stable202602_dbg
