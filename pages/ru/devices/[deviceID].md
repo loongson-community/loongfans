@@ -1,7 +1,7 @@
 ---
 layout: page
-returnLink: /en/devices
-pageTitle: Product Database
+returnLink: /ru/devices
+pageTitle: База данных продуктов
 # these values are dynamic, so these have to be initialized by transformPageData()
 # pageSubTitle: {{ params.deviceName }}
 ---

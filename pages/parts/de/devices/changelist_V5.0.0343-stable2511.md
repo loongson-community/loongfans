@@ -1,67 +1,67 @@
-## Firmware/System Interface Updates
+## Firmware-/System-Schnittstellen-Updates
 
-- Removed backward compatibility code for legacy (ABI1.0; more precisely, the v3.1 *Loongson CPU Unified System Architecture Specification*) environments, switching all platforms to the v4.0 specification ([Reference Link](https://github.com/tianocore/edk2/)).
-- Switched compiler toolchain from GCC 8.3 to GCC 12/13/14, fully adopting the EDK2 community toolchain.
-- Removed legacy boot mode options from the setup interface, fully adopting 1:1 VA => PA address mapping.
-- Migrated from the dated UDK2018 to EDK2025, with most LoongArch infrastructure APIs now aligning with upstream EDK2 implementations.
+- Der Code für die Abwärtskompatibilität mit älteren Umgebungen (ABI 1.0; genauer gesagt: die „v3.1 *Loongson CPU Unified System Architecture Specification*“) wurde entfernt, wobei alle Plattformen auf die v4.0-Spezifikation umgestellt wurden ([Referenzlink](https://github.com/tianocore/edk2/)).
+- Die Compiler-Toolchain wurde von GCC 8.3 auf GCC 12/13/14 umgestellt, wobei die EDK2-Community-Toolchain vollständig übernommen wurde.
+- Die Optionen für den alten Startmodus wurden aus der Setup-Oberfläche entfernt; es wird nun vollständig die 1:1-Adresszuordnung von VA zu PA verwendet.
+- Migration vom veralteten UDK2018 auf EDK2025, wobei die meisten LoongArch-Infrastruktur-APIs nun mit den Upstream-Implementierungen von EDK2 übereinstimmen.
 
-## Module Updates
+## Modul-Updates
 
-- Added support for platforms based on single- or multi-socket 3B6000, 3C6000/{S,D,Q}, and 2K3000/3B6000M platforms.
-- Updated code for various software/hardware modules, such as PHY, MRC, SMC, IPMI, MultiArch, eMMC, etc.
+- Unterstützung für Plattformen auf Basis von Single- oder Multi-Socket-3B6000-, 3C6000/{S,D,Q}- und 2K3000/3B6000M-Plattformen wurde hinzugefügt.
+- Aktualisierter Code für verschiedene Software-/Hardwaremodule, wie z. B. PHY, MRC, SMC, IPMI, MultiArch, eMMC usw.
 
-## New Features
+## Neue Funktionen
 
-General feature updates:
+Allgemeine Funktionsaktualisierungen:
 
-- Introduced MultiArchUefiPkgs to support x86 Option ROM/EFI emulation and filtering for third-party peripherals (may be enabled/disabled in firmware setup).
-- Introduced option to configure memory frequencies - lowering memory clock speed for enhanced compatibility when necessary (frequencies configurable may vary by model; the firmware setup UI offers options for restoring settings, one may also remove the CMOS battery to reset settings).
-- Added setup options for adjusting interface and console resolutions.
-- Added DSM#5 option to control PCIe resource allocation strategy with the Linux kernel.
-- Added support for Chinese-origin peripherals including HRDT's RAID controllers and BZWX's 25/40GbE NICs.
-- Added multi-GPU options and making it possible to display simultaneously with different GPUs under UEFI.
-- Added TPM and Secure Boot functionality, with support for algorithms such as SHA-384, SHA-512, and SM3 (hardware TPM support required).
-- Separated PCIe, hard drive, and USB information views and added detailed hard drive information display.
-- Updated SRAT to version 6.5, adding support for x2APIC extension.
-- Synchronized code logic regarding LoongArch multi-core wake-up, exception handling, MMU, etc. from EDK2 upstream.
+- Einführung von MultiArchUefiPkgs zur Unterstützung der x86-Option-ROM-/EFI-Emulation und der Filterung für Peripheriegeräte von Drittanbietern (kann im Firmware-Setup aktiviert/deaktiviert werden).
+- Es wurde eine Option zur Konfiguration der Speicherfrequenzen eingeführt – bei Bedarf kann die Speichertaktfrequenz zur Verbesserung der Kompatibilität herabgesetzt werden (die konfigurierbaren Frequenzen können je nach Modell variieren; die Benutzeroberfläche für die Firmware-Einstellungen bietet Optionen zur Wiederherstellung der Einstellungen; alternativ kann man auch die CMOS-Batterie entfernen, um die Einstellungen zurückzusetzen).
+- Es wurden Einstellungsoptionen zum Anpassen der Auflösungen für die Benutzeroberfläche und die Konsole hinzugefügt.
+- Die Option „DSM#5“ wurde hinzugefügt, um die Strategie zur Zuweisung von PCIe-Ressourcen im Linux-Kernel zu steuern.
+- Unterstützung für Peripheriegeräte chinesischer Herkunft hinzugefügt, darunter RAID-Controller von HRDT und 25/40-GbE-Netzwerkkarten von BZWX.
+- Es wurden Multi-GPU-Optionen hinzugefügt, sodass nun unter UEFI die gleichzeitige Anzeige über verschiedene GPUs möglich ist.
+- TPM- und Secure-Boot-Funktionalität hinzugefügt, mit Unterstützung für Algorithmen wie SHA-384, SHA-512 und SM3 (Hardware-TPM-Unterstützung erforderlich).
+- Die Ansichten für PCIe-, Festplatten- und USB-Informationen wurden getrennt, und es wurde eine Anzeige mit detaillierten Festplatteninformationen hinzugefügt.
+- SRAT wurde auf Version 6.5 aktualisiert und unterstützt nun die x2APIC-Erweiterung.
+- Die Codelogik in Bezug auf das Aufwachen von LoongArch-Multicore-Kernen, die Ausnahmebehandlung, die MMU usw. wurde aus dem EDK2-Upstream synchronisiert.
 
-Platform-Specific features:
+Plattformspezifische Funktionen:
 
-- Added PCIe 4.0 device training support for Loongson Coherent Link (LCL) platforms - 3B6000 and 3C6000/{S,D,Q} series.
-- Added 2K3000 eMMC support.
-- Added ACPI Thermal Zone/HWMon monitoring support for 3C6000.
-- Added ACPI EDAC support for server platforms, enabling ECC status query from Linux.
-- Enhanced SMC-based power limiting, "turbo boost", and fan monitoring/control for select models.
-- Supported Security Engine (SE) resource description reporting via DSDT tables on select models.
+- Unterstützung für das Einrichten von PCIe 4.0-Geräten für Loongson Coherent Link (LCL)-Plattformen – Serien 3B6000 und 3C6000/{S,D,Q} – hinzugefügt.
+- Unterstützung für 2K3000 eMMC hinzugefügt.
+- Unterstützung für die Überwachung von ACPI-Temperaturzonen und HWMon für den 3C6000 hinzugefügt.
+- ACPI-EDAC-Unterstützung für Serverplattformen hinzugefügt, wodurch die Abfrage des ECC-Status unter Linux ermöglicht wird.
+- Verbesserte SMC-basierte Leistungsbegrenzung, „Turbo-Boost“ sowie Lüfterüberwachung/-steuerung bei ausgewählten Modellen.
+- Unterstützung für die Berichterstellung zur Ressourcenbeschreibung der Security Engine (SE) über DSDT-Tabellen bei ausgewählten Modellen.
 
-## Fixes and Optimizations
+## Fehlerbehebungen und Optimierungen
 
-General fixes:
+Allgemeine Korrekturen:
 
-- Fixed potential system crashes when selecting "All Video" as the primary display on single-socket server platforms with both discrete and BMC graphics cards installed.
-- Resolved garbled firmware version and build time display on the boot screen.
-- Optimized SMBIOS table support, primarily fixing logic errors with DMI Type 7.
-- Addressed unexpected hangs during RTC LP write operations.
-- Fixed known ACPI table issues.
-- Fixed incorrect sequence on SATA port controller toggles.
-- Fixed several Chinese translation issues.
-- Fixed sporadic logo blanking during boot-up.
+- Es wurden potenzielle Systemabstürze behoben, die auf Serverplattformen mit einem Sockel auftraten, wenn „All Video“ als primäre Anzeige ausgewählt wurde und sowohl eine diskrete Grafikkarte als auch eine BMC-Grafikkarte installiert waren.
+- Das Problem mit der fehlerhaften Anzeige der Firmware-Version und der Erstellungszeit auf dem Startbildschirm wurde behoben.
+- Optimierte Unterstützung für SMBIOS-Tabellen, wobei vor allem logische Fehler bei DMI Typ 7 behoben wurden.
+- Unerwartete Systemabstürze bei RTC-LP-Schreibvorgängen wurden behoben.
+- Bekannte Probleme mit der ACPI-Tabelle wurden behoben.
+- Die falsche Reihenfolge beim Umschalten der SATA-Port-Controller wurde behoben.
+- Es wurden mehrere Probleme bei der chinesischen Übersetzung behoben.
+- Das sporadische Verschwinden des Logos beim Hochfahren wurde behoben.
 
-Platform-specific fixes and adjustments:
+Plattformspezifische Korrekturen und Anpassungen:
 
-- Fixed an issue where information on GMAC NICs may fail to display on certain models.
-- Reduced 7A2000 bridge chip frequency to 750MHz on server platforms.
-- Optimized AST2500 and LS2K0500 BMC command protocol compatibility, fixing IPMI display issues and errors with certain commands.
-- Fixed SMBIOS information de-synchronization in the BMC's Web interface when using LS2K0500 BMC with firmware versions higher than v2.2.2.
-- Fixed issues with SATA P-N reverse wiring and incorrect PCIe LnkCap2 settings on certain platforms.
-- Fixed 2K0500 BMC Serial-over-LAN (SOL) output.
-- Fixed PPTT tables for multiple chips.
-- Disabled the PTW feature to prevent data corruption caused by Linux kernel page table issues (will re-enable once kernel fixes are widely available).
-- Removed ACPI GPIO resource descriptions for some platforms to avoid compatibility issues (will be reinstated once OS support is widely available).
+- Es wurde ein Problem behoben, bei dem Informationen zu GMAC-Netzwerkkarten bei bestimmten Modellen möglicherweise nicht angezeigt wurden.
+- Die Taktfrequenz des 7A2000-Bridge-Chips wurde auf Serverplattformen auf 750 MHz reduziert.
+- Die Kompatibilität mit dem BMC-Befehlsprotokoll der Modelle AST2500 und LS2K0500 wurde optimiert, wodurch Probleme bei der IPMI-Anzeige und Fehler bei bestimmten Befehlen behoben wurden.
+- Die Desynchronisation der SMBIOS-Informationen in der Weboberfläche des BMC wurde behoben, wenn ein LS2K0500-BMC mit Firmware-Versionen höher als v2.2.2 verwendet wird.
+- Probleme mit der verkehrten P-N-Verdrahtung bei SATA und falschen LnkCap2-Einstellungen für PCIe auf bestimmten Plattformen wurden behoben.
+- Fehlerbehebung bei der 2K0500 BMC Serial-over-LAN (SOL)-Ausgabe.
+- PPTT-Tabellen für mehrere Chips wurden korrigiert.
+- Die PTW-Funktion wurde deaktiviert, um Datenbeschädigungen aufgrund von Problemen mit der Seitentabelle des Linux-Kernels zu verhindern (wird wieder aktiviert, sobald entsprechende Kernel-Korrekturen allgemein verfügbar sind).
+- Die Beschreibungen der ACPI-GPIO-Ressourcen wurden für einige Plattformen entfernt, um Kompatibilitätsprobleme zu vermeiden (sie werden wieder hinzugefügt, sobald eine breite Unterstützung durch Betriebssysteme verfügbar ist).
 
-Functional optimizations:
+Funktionale Optimierungen:
 
-- Enhanced various firmware setup interfaces.
-- Enhanced BMC presence detection and setup interface, adding FRU data extensions, USB port interface controls, and more.
+- Verschiedene Schnittstellen zur Firmware-Konfiguration wurden verbessert.
+- Verbesserte BMC-Präsenzerkennung und Konfigurationsoberfläche, ergänzt um FRU-Datenerweiterungen, Steuerelemente für die USB-Anschlüsse und vieles mehr.
 
-The information above is originally supplied by Loongson Technology's [Firmware Release Notes](https://github.com/loongson/Firmware/blob/main/docs/changelist_V5.0.0343-stable2511.md); re-organized and paraphrased at several places for better readability.
+Die oben genannten Informationen stammen ursprünglich von Loongson Technology [Hinweise zur Firmware-Version](https://github.com/loongson/Firmware/blob/main/docs/changelist_V5.0.0343-stable2511.md); an mehreren Stellen neu gegliedert und umformuliert, um die Lesbarkeit zu verbessern.

@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /en/chips
+returnLink: /fr/chips
 # these values are dynamic, so these have to be initialized by transformPageData()
 # pageTitle: {{ params.title }}
 # pageSubTitle: {{ params.subTitle }}
@@ -34,7 +34,7 @@ switch (params!.value!.category) {
 
 <template v-if="params!.hasNotes === 'true'">
 
-## Notices
+## Avis
 
 <!-- @content -->
 

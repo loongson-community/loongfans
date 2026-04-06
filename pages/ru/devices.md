@@ -1,8 +1,8 @@
 ---
 layout: page
-returnLink: /en
-pageTitle: Product Specifications
-pageSubTitle: Overview of specifications, features, and known issues
+returnLink: /ru
+pageTitle: Технические характеристики продукта
+pageSubTitle: Обзор технических характеристик, функций и известных проблем
 ---
 
 
@@ -10,13 +10,13 @@ pageSubTitle: Overview of specifications, features, and known issues
 import DeviceIndex from "@src/client/components/devices/DeviceIndex.vue"
 </script>
 
-Loongson has many processor and board models, but they are generally sold bundled as processor + motherboard (motherboard and CPU bundle). This page documents and presents all known Loongson motherboard and CPU bundles, as well as laptop and pre-built server system information.
+Компания Loongson выпускает множество моделей процессоров и плат, однако, как правило, они продаются в комплекте: процессор + материнская плата (комплект «материнская плата + процессор»). На этой странице представлены все известные комплекты материнских плат и процессоров Loongson, а также информация о ноутбуках и готовых серверных системах.
 
 :::info
-For processor specifications, details, and parameter comparisons, please see:
+Технические характеристики процессоров, подробную информацию и сравнение параметров см. по адресу:
 
-- [Chips Database](/enchips)
-- [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel)
+- [База данных микросхем](/enchips)
+- [Официальный сайт компании Loongson Technology, раздел «Чипы»](https://www.loongson.cn/product/channel)
 
 :::
 

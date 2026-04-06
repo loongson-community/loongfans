@@ -1,8 +1,8 @@
-### Backlight Control May Not be Available with ABI2.0 Distros
+### Die Helligkeitsregelung ist bei Distributionen mit ABI 2.0 möglicherweise nicht verfügbar
 
-Due to a change in upstream kernel API and problematic Loongson PWM driver implementation, as well as the lack of `gpio_base` support, laptop backlight control may not be available with some Linux distros.
+Aufgrund einer Änderung der vorgelagerten Kernel-API und einer problematischen Implementierung des Loongson-PWM-Treibers sowie des Fehlens von `gpio_base` Hinweis: Bei einigen Linux-Distributionen ist die Steuerung der Laptop-Hintergrundbeleuchtung möglicherweise nicht verfügbar.
 
-To fix this issue, the following is needed:
+Um dieses Problem zu beheben, ist Folgendes erforderlich:
 
-- [Additional board-level ACPI initialization routines](https://github.com/AOSC-Tracking/linux/commit/dbb668a14178)and corresponding changes to the LoongGPU kernel driver (as implemented by [AOSC OS](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commit/aaee8cb5d7f879ba4cd2cb268a8591f99735b729) are needed - correctly calling PWM controllers and the functionality to completely turn off backlight via GPIO.
-- A patch to fix PWM controller frequency calculation, see [this kernel patch from AOSC OS](https://github.com/AOSC-Tracking/linux/commit/30b69e76d820) (this patch is now part of Linux 6.18).
+- [Zusätzliche ACPI-Initialisierungsroutinen auf Board-Ebene](https://github.com/AOSC-Tracking/linux/commit/dbb668a14178)and entsprechende Änderungen am LoongGPU-Kernel-Treiber (wie implementiert durch [AOSC-Betriebssystem](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commit/aaee8cb5d7f879ba4cd2cb268a8591f99735b729) sind erforderlich – der korrekte Aufruf der PWM-Controller und die Funktion zum vollständigen Ausschalten der Hintergrundbeleuchtung über GPIO.
+- Ein Patch zur Korrektur der Frequenzberechnung des PWM-Controllers, siehe [dieser Kernel-Patch von AOSC OS](https://github.com/AOSC-Tracking/linux/commit/30b69e76d820) (Dieser Patch ist nun Teil von Linux 6.18).

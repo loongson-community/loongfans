@@ -7,55 +7,55 @@ const pluralRules = new Intl.PluralRules("de", { type: "ordinal" })
 export default {
   comma: ", ",
   // Index.vue
-  beginnerResources: "Loongson 101",
-  introToLoongson: "Meeting Loongson",
-  usageGuides: "FAQ & Guides",
-  devGuides: "Developer's Guide",
-  supportMaterials: "Support Materials",
-  contact: "Contact",
-  chipsData: "Chips Database",
-  operatingSystems: "Operating Systems",
-  productSpecs: "Product Database",
-  compatibilityDb: "Loong 1-2-3",
-  communityResources: "Community Resources",
-  biweeklyMeeting: "LoongArch Biweekly",
-  jobsAndBounties: "Internships & Bounties",
-  devBoardProgram: "Roaming Loongson",
+  beginnerResources: "Grundlegende Infos",
+  introToLoongson: "Lernen Sie Loongson kennen",
+  usageGuides: "FAQ & Anleitungen",
+  devGuides: "Ressourcen für Entwickler",
+  supportMaterials: "Unterstützende Materialien",
+  contact: "Kontakt",
+  chipsData: "Chipdatenbank",
+  operatingSystems: "Betriebssysteme",
+  productSpecs: "Produktdatenbank",
+  compatibilityDb: "Kompatibilitätsdatenbank",
+  communityResources: "Community-Resourcen",
+  biweeklyMeeting: "LoongArch Biweekly Meeting",
+  jobsAndBounties: "Praktika und Prämien",
+  devBoardProgram: "Entwicklerprogramm",
   communityForum: "Community BBS",
   areWeLoongYet: "Are We Loong Yet?",
-  loongsonOfficial: "Official Sites",
+  loongsonOfficial: "Offizielle Webseiten",
   loongsonTech: "Loongson Home",
   loongsonEco: "LoongEco",
   loongApps: "LoongApps",
 
   // ChildFooter.vue
-  language: "Language",
-  siteSource: "Sources",
+  language: "Sprache",
+  siteSource: "Quellcode",
   reportIssue: "Feedback",
-  aboutCommunity: "About",
+  aboutCommunity: "Über",
   copyright: "Copyright",
   communityName: "Loongson Hobbyists' Community",
 
   // ChildHeader.vue
-  goBack: "Go Back",
+  goBack: "Zurück",
 
   // CardGroup.vue (about page)
   aboutGithubName: "GitHub",
-  aboutGithubDescription: "Community projects and discussions",
+  aboutGithubDescription: "Community-Projekte & Diskussion",
   aboutBilibiliName: "Bilibili",
-  aboutBilibiliDescription: "Follow for event videos and more",
+  aboutBilibiliDescription: "Event videos & mehr auf Bilibili",
   aboutWechatName: "WeChat",
-  aboutWechatDescription: "Chat with us!",
+  aboutWechatDescription: "Chatte mit uns via WeChat!",
   aboutQQName: "QQ",
-  aboutQQDescription: "Keep in touch!",
+  aboutQQDescription: "Bleib in Kontakt via QQ!",
   aboutMatrixName: "Matrix",
-  aboutMatrixDescription: "Hang out and chat on Matrix!",
+  aboutMatrixDescription: "Chatte mit uns via Matrix!",
   aboutTelegramName: "Telegram",
-  aboutTelegramDescription: "Telegram with us!",
+  aboutTelegramDescription: "Chatte mit uns via Telegram!",
 
   // Device/Detail.vue
-  deviceTabSpec: "Specifications",
-  deviceTabKnownIssues: "Known Issues",
+  deviceTabSpec: "Spezifikationen",
+  deviceTabKnownIssues: "Bekannte Probleme",
   deviceTabImage: "Images",
   deviceTabDownload: "Downloads",
   deviceDownloadVersion: "Version: {version}",
@@ -63,14 +63,14 @@ export default {
   deviceDownloadDebugVersion: " (Debug)",
   deviceDownloadButton: "Download",
   downloadTypeUefiFirmware: "UEFI Firmware",
-  downloadTypeDatasheet: "Datasheet",
-  downloadTypeReferenceManual: "Reference Manual",
-  downloadTypeUserManual: "User Manual",
-  downloadTypeSchematicDiagram: "Schematic Diagram",
+  downloadTypeDatasheet: "Datenblatt",
+  downloadTypeReferenceManual: "Referenzhandbuch",
+  downloadTypeUserManual: "Benutzerhandbuch",
+  downloadTypeSchematicDiagram: "Schematisches Diagramm",
   downloadTypeSdk: "SDK",
 
   // events/EventsCalendar.vue
-  today: "Today",
+  today: "Heute",
   loongarchBiweekly: "LoongArch Biweekly #{number}",
 
   // sdk/Detail.vue
@@ -87,18 +87,11 @@ export default {
   cirunnerInstall: "CI Runners",
 
   // Utilities
-  ordinalNumber: ({ n }: { n: number }): string => {
+  ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
+    const n = named("n") as number
+    // Chinese has no special morphology for ordinal numbers
     if (n === undefined || n === null) return ""
-    switch (pluralRules.select(n)) {
-      case "one":
-        return n + "st"
-      case "two":
-        return n + "nd" // codespell:ignore nd
-      case "few":
-        return n + "rd"
-      default:
-        return n + "th"
-    }
+    return n.toString()
   },
 
   chips,

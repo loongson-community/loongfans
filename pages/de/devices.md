@@ -1,22 +1,22 @@
 ---
 layout: page
-returnLink: /en
-pageTitle: Product Specifications
-pageSubTitle: Overview of specifications, features, and known issues
+# 返回首页
+returnLink: /
+pageTitle: Produktdatenbank
+pageSubTitle: Übersicht über technische Daten, besondere Ausstattungsmerkmale und bekannte Probleme
 ---
-
 
 <script setup lang="ts">
 import DeviceIndex from "@src/client/components/devices/DeviceIndex.vue"
 </script>
 
-Loongson has many processor and board models, but they are generally sold bundled as processor + motherboard (motherboard and CPU bundle). This page documents and presents all known Loongson motherboard and CPU bundles, as well as laptop and pre-built server system information.
+Loongson bietet eine Vielzahl von Prozessoren und Platinenmodellen an, die jedoch in der Regel als Bundle aus Prozessor und Hauptplatine (Board-U) verkauft werden. Auf dieser Seite werden alle bekannten Loongson-Board-U-Kombinationen sowie Informationen zu Notebooks und kompletten Server-Systemen aufgeführt und dargestellt.
 
-:::info
-For processor specifications, details, and parameter comparisons, please see:
+:::Info
+Informationen zu den Spezifikationen, Details und Vergleichsdaten der Prozessoren finden Sie unter:
 
-- [Chips Database](/enchips)
-- [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel)
+- [Datenbank für Chip-Spezifikationen](/chips)
+- [Bereich „Chip-Produkte“ auf der offiziellen Website von Loongson](https://www.loongson.cn/product/channel)
 
 :::
 

@@ -1,44 +1,44 @@
 ---
 layout: page
-returnLink: /en/guides
-pageTitle: Rescuing Firmware
-pageSubTitle: Rescuing hardware that fails to boot after firmware flashing
+returnLink: /fr/guides
+pageTitle: Récupération du micrologiciel
+pageSubTitle: Récupération d'un matériel qui ne démarre plus après une mise à jour du micrologiciel
 ---
 
-# Recovering corrupted firmware with a programmer
+# Récupération d'un micrologiciel endommagé à l'aide d'un programmateur
 
-## Before you begin
+## Avant de commencer
 
-If you are reading this page, your hardware likely failed to boot due to improper firmware flashing or update. This guide will help you re‑flash the firmware using a programmer.
+Si vous consultez cette page, c'est probablement que votre matériel n'a pas démarré à cause d'une erreur lors de la mise à jour ou de la réécriture du micrologiciel. Ce guide vous aidera à réécrire le micrologiciel à l'aide d'un programmateur.
 
-Before starting, make sure you have the following hardware tools:
+Avant de commencer, assurez-vous de disposer des outils suivants :
 
-1. Another working computer
-2. CH341A USB programmer
-3. SOIC‑8 clip or probe (most SPI Flash chips are SOP8‑208mil). For ASUS motherboards, use the dedicated ASUS flashing cable
-4. 1.8V step‑down module (most Loongson motherboards use 1.8V Flash). Not needed if your Flash is confirmed to be 3.3V or 5V
-5. For Flash chips located under the CPU cooler, you will also need thermal paste to reinstall the cooler after recovery
+1. Un autre ordinateur en état de marche
+2. Logiciel de programmation CH341A USB
+3. Clip ou sonde SOIC-8 (la plupart des puces Flash SPI sont de type SOP8-208mil). Pour les cartes mères ASUS, utilisez le câble de flashage ASUS dédié
+4. Module abaisseur de tension 1,8 V (la plupart des cartes mères Loongson utilisent une mémoire Flash de 1,8 V). Inutile si vous avez vérifié que votre mémoire Flash est bien de 3,3 V ou 5 V
+5. Pour les puces Flash situées sous le dissipateur du processeur, vous aurez également besoin de pâte thermique pour remettre le dissipateur en place après la réparation
 
-Also ensure you have installed the required software:
+Assurez-vous également d'avoir installé les logiciels requis :
 
-1. **Windows**: Install the CH341A driver. We recommend [NeoProgrammer with updated chip database (source: 恩山论坛)](https://www.right.com.cn/FORUM/thread-8289988-1-1.html)
-2. **macOS / Linux**: Use [IMSProg](https://github.com/bigbigmdm/IMSProg)
+1. **Windows** : Installez le pilote CH341A. Nous vous recommandons [NeoProgrammer avec une base de données de puces mise à jour (source : Forum Enshan)](https://www.right.com.cn/FORUM/thread-8289988-1-1.html)
+2. **macOS / Linux** : Utilisez [IMSProg](https://github.com/bigbigmdm/IMSProg)
 
-Before flashing, assemble the programmer as described below. We use the Loongson XA61200 and ASUS XC‑LS3A6M motherboards as examples.
+Avant de procéder à la mise à jour du firmware, assemblez le programmateur comme décrit ci-dessous. Nous prenons comme exemples le processeur Loongson XA61200 et la carte mère ASUS XC-LS3A6M.
 
-## Download the firmware and verify its hash
+## Télécharger le micrologiciel et vérifier son hachage
 
-Most mainstream products can be found in the [product database](https://loongfans.cn/devices). If you cannot locate the firmware for your model, contact your distributor.
+La plupart des produits courants se trouvent dans le [base de données des produits](https://loongfans.cn/devices). Si vous ne trouvez pas le micrologiciel correspondant à votre modèle, veuillez contacter votre distributeur.
 
-**Always verify the hash** after downloading; otherwise the board may fail to boot.
+**Vérifiez toujours la somme de contrôle** après le téléchargement ; sinon, la carte risque de ne pas démarrer.
 
-> Note: If downloading from ASUS, verify the zip file because ASUS provides SHA‑256 hashes for the zip archives. This does not affect the flashing process. After verification, extract the archive because flashing software does not handle compressed files automatically.
+> Remarque : si vous téléchargez depuis le site d'ASUS, vérifiez le fichier ZIP, car ASUS fournit les hachages SHA-256 pour les archives ZIP. Cela n'a aucune incidence sur le processus de flashage. Une fois la vérification effectuée, extrayez l'archive, car le logiciel de flashage ne prend pas automatiquement en charge les fichiers compressés.
 
-On Windows, we recommend OpenHashTab for verification:
+Sous Windows, nous recommandons OpenHashTab pour la vérification :
 
 ![](/images/guides/rescue-firmware/verify-with-openhashtab.webp)
 
-On macOS or Linux distributions, use the `sha256sum` command:
+Sous macOS ou sur les distributions Linux, utilisez la commande `sha256sum` commande :
 
 ```bash
 # Example with ASUS XC‑LS3A6M version 1402
@@ -47,116 +47,116 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 # Output: XC-LS3A6M-1402.7z: OK
 ```
 
-## Assemble and connect the programmer
+## Assembler et brancher le programmateur
 
-Check the SPI Flash marking on your motherboard to confirm its specifications. The following table lists common motherboards and their Flash chips (subject to production batch changes):
+Vérifiez le marquage de la mémoire Flash SPI sur votre carte mère pour confirmer ses caractéristiques techniques. Le tableau suivant répertorie les cartes mères courantes et leurs puces Flash (sous réserve de modifications liées aux lots de production) :
 
-| Motherboard | Flash model | Manufacturer | Voltage | Alternative model (for flashing) |
+| Carte mère | Modèle de flash | Fabricant | Tension | Modèle alternatif (pour le flashage) |
 | ----------- | ----------- | ------------ | ------- | -------------------------------- |
-| XA61200 / XA61201 | GD25LQ64E | GigaDevice | 1.8V | |
-| XB612B0_V1.1 / XB612B0_V1.2 | GD25LQ64E | GigaDevice | 1.8V | |
-| XC‑LS3A6M | W25Q128JW | Winbond | 1.8V | W25Q128FW |
+| XA61200 / XA61201 | GD25LQ64E | GigaDevice | 1,8 V | |
+| XB612B0_V1.1 / XB612B0_V1.2 | GD25LQ64E | GigaDevice | 1,8 V | |
+| XC‑LS3A6M | W25Q128JW | Winbond | 1,8 V | W25Q128FW |
 
-Then assemble the programmer according to the diagram. Pin positions must match exactly, starting from pin 1. Usually, the dot or notch on the SPI Flash chip indicates pin 1.
+Assemblez ensuite le programmateur en suivant le schéma. Les broches doivent correspondre exactement, en commençant par la broche 1. En général, le point ou l'encoche sur la puce Flash SPI indique la broche 1.
 
 :::warning
-**Important**: Check the Flash model beforehand. 1.8V chips cannot operate at 3.3V or 5V. Some flashing tools may detect them normally without warning, but **forcing a write at the wrong voltage can destroy the Flash chip!**
+**Important** : Vérifiez au préalable le modèle de la mémoire Flash. Les puces de 1,8 V ne peuvent pas fonctionner à 3,3 V ou 5 V. Certains outils de programmation peuvent les détecter normalement sans avertissement, mais **forcer une écriture à une tension incorrecte peut détruire la puce Flash !**
 
-If you have a 1.8V chip, install the step‑down module (the green module shown in the picture).
+Si vous disposez d'une puce de 1,8 V, installez le module abaisseur (le module vert illustré sur la photo).
 :::
 
 ![](/images/guides/rescue-firmware/setup-programmer.webp)
 
-## Connect to the Flash chip
+## Connecter la puce Flash
 
-### Using a SOP‑8 clip or probe
+### Utilisation d'un clip ou d'une sonde SOP-8
 
-Align the clip or probe pins according to the diagram. These connectors are marked to indicate the starting position (clip pin 1 is usually red; probe pin 1 is the black side—consult your supplier for details).
+Alignez les broches du clip ou de la sonde conformément au schéma. Ces connecteurs sont marqués pour indiquer la position de départ (la broche n° 1 du clip est généralement rouge ; la broche n° 1 de la sonde correspond au côté noir — consultez votre fournisseur pour plus de détails).
 
 ![](/images/guides/rescue-firmware/connect-flash-with-probe-i.webp)
 
 ![](/images/guides/rescue-firmware/connect-flash-with-probe-ii.webp)
 
-Once the connection is stable, plug the other end of the cable into the programmer in the correct order. **If using a probe, ensure a firm connection to avoid flashing failures due to poor contact.**
+Une fois la connexion établie, branchez l'autre extrémité du câble sur le programmateur en respectant l'ordre indiqué. **Si vous utilisez une sonde, assurez-vous que la connexion est bien serrée afin d'éviter tout échec de la programmation dû à un mauvais contact.**
 
-### Using a test socket
+### Utilisation d'une prise de test
 
-If your motherboard has a dual‑BIOS design (such as XA61200 and XB612B0) and the secondary SPI Flash chip is removable as shown below, you can use an SOP8 test socket for flashing.
+Si votre carte mère est équipée d'un double BIOS (comme les modèles XA61200 et XB612B0) et que la puce Flash SPI secondaire est amovible, comme illustré ci-dessous, vous pouvez utiliser un socle de test SOP8 pour la mise à jour du BIOS.
 
-After removing the Flash chip from its socket, verify the position of pin 1 (marked as ① in the picture) to avoid incorrect installation that would prevent booting.
+Après avoir retiré la puce Flash de son emplacement, vérifiez la position de la broche 1 (marquée d'un ① sur l'image) afin d'éviter toute installation incorrecte qui empêcherait le démarrage.
 
 ![](/images/guides/rescue-firmware/flash-in-socket.webp)
 
 :::warning
-**Note**: For motherboards with dual‑BIOS design, check whether the jumper shown as ② in the picture above is set correctly. **This affects which firmware and settings will be used at boot.**
+**Remarque** : pour les cartes mères dotées d'un double BIOS, vérifiez que le cavalier indiqué par le numéro ② sur l'image ci-dessus est correctement positionné. **Ce réglage détermine le firmware et les paramètres qui seront utilisés au démarrage.**
 
-Typically, for XA61200 and XB612B0 motherboards, the jumper works as follows:
+En règle générale, sur les cartes mères XA61200 et XB612B0, le cavalier fonctionne comme suit :
 ![](/images/guides/rescue-firmware/bios-switch.png)
 
-Placing the jumper on pins 1‑2 boots from the onboard SPI Flash chip; placing it on pins 2‑3 boots from the socketed SPI Flash chip.
+Si le cavalier est placé sur les broches 1 et 2, le démarrage s'effectue à partir de la puce SPI Flash intégrée ; s'il est placé sur les broches 2 et 3, le démarrage s'effectue à partir de la puce SPI Flash enfichable.
 :::
 
-After removal, install the chip into the test socket as shown:
+Une fois retiré, installez le circuit intégré dans le socle de test comme indiqué :
 
 ![](/images/guides/rescue-firmware/connect-flash-with-test-stand.webp)
 
-Once installed, connect the test socket to the programmer in the correct order.
+Une fois installé, connectez la prise de test au programmateur dans le bon ordre.
 
-### (ASUS motherboards only) Using the dedicated flashing cable
+### (Cartes mères ASUS uniquement) Utilisation du câble de mise à jour dédié
 
-On ASUS motherboards, the SPI Flash chip that stores the BIOS firmware is located near the CPU, under the cooler. You must remove the cooler; the chip position is shown below:
+Sur les cartes mères ASUS, la puce Flash SPI qui contient le micrologiciel du BIOS se trouve près du processeur, sous le dissipateur thermique. Vous devez retirer le dissipateur thermique ; l'emplacement de la puce est indiqué ci-dessous :
 
 ![](/images/guides/rescue-firmware/asus-spi-flash.webp)
 
-Insert the dedicated flashing cable into the connector above the SPI Flash. **Make sure the white‑marked side of the connector aligns with the white mark at the bottom‑left corner of the motherboard (this indicates the starting position):**
+Insérez le câble de programmation dédié dans le connecteur situé au-dessus de la mémoire SPI Flash. **Veillez à ce que le côté du connecteur marqué en blanc soit aligné avec le repère blanc situé dans le coin inférieur gauche de la carte mère (ceci indique la position de départ) :**
 
 ![](/images/guides/rescue-firmware/asus-connect-flash.webp)
 
-Connect the other end of the cable to the programmer as usual.
+Branchez l'autre extrémité du câble au programmateur comme d'habitude.
 
-## Flash the firmware
+## Mettre à jour le micrologiciel
 
-After assembling the programmer and connecting it to the Flash chip, plug the programmer into your computer and choose the flashing software according to your operating system.
+Une fois le programmateur assemblé et connecté à la puce Flash, branchez-le à votre ordinateur et sélectionnez le logiciel de programmation adapté à votre système d'exploitation.
 
-### Using NeoProgrammer (Windows)
+### Utilisation de NeoProgrammer (Windows)
 
-Before using NeoProgrammer, install the driver provided with the software (located in `软件目录\Drivers\CH341A`). Run `DRVSETUP64.exe` and click `安装`.
+Avant d'utiliser NeoProgrammer, installez le pilote fourni avec le logiciel (situé dans `软件目录\Drivers\CH341A`). Exécuter `DRVSETUP64.exe` et cliquez sur `安装`.
 
 ![](/images/guides/rescue-firmware/install-driver-windows.png)
 
-Then verify in Device Manager that the following device appears, indicating successful installation:
+Vérifiez ensuite dans le Gestionnaire de périphériques que le périphérique suivant apparaît, ce qui indique que l'installation s'est déroulée correctement :
 
 ![](/images/guides/rescue-firmware/check-ch341a-windows.png)
 
-Next, identify your CH341A programmer model and select it from the `切换编程器` menu. Most commonly sold units are `CH341 双电压黑色版`:
+Ensuite, identifiez le modèle de votre programmateur CH341A et sélectionnez-le dans la `切换编程器` menu. Les modèles les plus vendus sont `CH341 双电压黑色版`:
 
 ![](/images/guides/rescue-firmware/select-programmer.png)
 
-Follow the numbered steps in the diagram:
+Suivez les étapes numérotées indiquées sur le schéma :
 
 ![](/images/guides/rescue-firmware/neoprogrammer.webp)
 
-1. Click `打开文件` and select the firmware file for your motherboard (**note: rename the extension to `.bin`**)
+1. Cliquez sur `打开文件` et sélectionnez le fichier du micrologiciel correspondant à votre carte mère (**remarque : renommez l'extension en `.bin`**)
    ![](/images/guides/rescue-firmware/select-firmware-windows.png)
 
-2. Click `检测` to detect the connected Flash chip model. If the exact model is not in the database, you can use a similar one (e.g., `W25Q128JW` can be replaced with `W25Q128FW`). These are usually just different revisions with identical parameters.
+2. Cliquez sur `检测` pour identifier le modèle de la puce Flash connectée. Si le modèle exact ne figure pas dans la base de données, vous pouvez en choisir un similaire (par exemple, `W25Q128JW` peut être remplacé par `W25Q128FW`). Il s'agit généralement simplement de différentes versions présentant des paramètres identiques.
    ![](/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
 
-3. Click `擦除` to completely erase the corrupted firmware. After erasing, you can optionally click `查空` to verify the Flash chip is empty.
+3. Cliquez sur `擦除` pour effacer complètement le micrologiciel endommagé. Une fois l'effacement terminé, vous pouvez, si vous le souhaitez, cliquer sur `查空` pour vérifier que la puce Flash est vide.
    ![](/images/guides/rescue-firmware/erase-and-erasure.png)
 
-4. Click `写入` to write the opened firmware file to the Flash chip. By default, the software performs writing and verification sequentially. **Keep the connection stable throughout; otherwise unexpected results may occur.**
+4. Cliquez sur `写入` pour enregistrer le fichier de micrologiciel ouvert sur la puce Flash. Par défaut, le logiciel effectue l'écriture et la vérification de manière séquentielle. **Veillez à ce que la connexion reste stable pendant toute la durée de l'opération ; sinon, des résultats inattendus pourraient se produire.**
    ![](/images/guides/rescue-firmware/write-and-verify.png)
 
-5. (Optional) Click `校验` to confirm the written content matches the firmware file.
+5. (Facultatif) Cliquez sur `校验` pour vérifier que le contenu écrit correspond bien au fichier du micrologiciel.
 
-### Using IMSProg (macOS, Linux)
+### Utilisation d'IMSProg (macOS, Linux)
 
-Linux kernels already have mainline CH341 drivers, so no extra driver is usually needed.
+Les noyaux Linux intègrent déjà des pilotes CH341 dans leur branche principale ; il n'est donc généralement pas nécessaire d'installer un pilote supplémentaire.
 
-For macOS, [download the driver from the official site](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html).
+Pour macOS, [télécharger le pilote depuis le site officiel](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html).
 
-IMSProg is not packaged in most distributions. If available, try installing it from your distribution's repository first:
+IMSProg n'est pas inclus dans la plupart des distributions. S'il est disponible, essayez d'abord de l'installer à partir du dépôt de votre distribution :
 
 ```bash
 # Debian (13/14/sid)
@@ -174,7 +174,7 @@ sudo dnf install imsprog
 yay -S imsprog
 ```
 
-If your distribution does not provide it, compile from source:
+Si votre distribution ne le fournit pas, compilez-le à partir du code source :
 
 ```bash
 # AOSC OS
@@ -189,20 +189,20 @@ chmod +x build_all.sh
 sudo ./build_all.sh # omit sudo on macOS
 ```
 
-After installation, you can launch IMSProg from your application menu.
+Une fois l'installation terminée, vous pouvez lancer IMSProg depuis le menu de vos applications.
 
-Once started, follow the numbered steps in the diagram:
+Une fois que vous avez commencé, suivez les étapes numérotées indiquées sur le schéma :
 
 ![](/en/images/guides/rescue-firmware/imsprog.webp)
 
-1. Click `Open` and select the firmware file for your motherboard (**note: as with NeoProgrammer, rename the extension to `.bin`**)
+1. Cliquez sur `Open` et sélectionnez le fichier du micrologiciel correspondant à votre carte mère (**remarque : comme avec NeoProgrammer, renommez l'extension en `.bin`**)
 
-2. Click `Detect` to detect the connected Flash chip model. If the exact model is not in the database, use a similar one as described above.
+2. Cliquez sur `Detect` pour identifier le modèle de la puce Flash connectée. Si le modèle exact ne figure pas dans la base de données, utilisez un modèle similaire, comme indiqué ci-dessus.
 
-3. Check all three boxes on the left, then click `Go!` to begin flashing the firmware to the Flash chip. **Keep the connection stable throughout; otherwise unexpected results may occur.**
+3. Cochez les trois cases à gauche, puis cliquez sur `Go!` pour commencer à flasher le micrologiciel sur la puce Flash. **Veillez à ce que la connexion reste stable tout au long du processus ; sinon, des résultats inattendus pourraient se produire.**
 
-## Verify the recovery
+## Vérifier la restauration
 
-Disconnect all tools or cables from the Flash chip. If you removed the cooler, clean the residual thermal paste from the CPU, apply fresh paste, and reinstall the cooler.
+Débranchez tous les outils ou câbles de la puce Flash. Si vous avez retiré le dissipateur thermique, nettoyez les résidus de pâte thermique sur le processeur, appliquez de la pâte neuve, puis remettez le dissipateur en place.
 
-Connect the power cable as usual, install RAM modules and storage, attach keyboard, mouse, and monitor, then power on. If the `LOONGSON 龙芯` logo appears, the recovery was successful.
+Branchez le câble d'alimentation comme d'habitude, installez les modules de mémoire vive et le périphérique de stockage, connectez le clavier, la souris et l'écran, puis mettez l'appareil sous tension. Si le `LOONGSON 龙芯` Lorsque le logo s'affiche, cela signifie que la restauration a réussi.

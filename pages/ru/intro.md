@@ -1,116 +1,116 @@
 ---
 layout: page
-returnLink: /en
-pageTitle: Towards the New World!
-pageSubTitle: Welcome to Loongson's World Beyond x86 and ARM
+returnLink: /ru
+pageTitle: Вперед, в Новый Свет!
+pageSubTitle: Добро пожаловать в мир Loongson за пределами архитектур x86 и ARM
 ---
 
-Loongson is a rising star in China's domestic chip industry.
+Loongson — восходящая звезда отечественной микроэлектронной промышленности Китая.
 
-Since its birth at Institute of Computing Technology, Chinese Academy of Sciences in 2001, Loongson has undergone numerous iterations and has evolved to be competitive with international players.
+С момента своего создания в Институте вычислительной техники Китайской академии наук в 2001 году компания Loongson прошла через множество этапов развития и превратилась в конкурентоспособного игрока на международном рынке.
 
-In 2021, Loongson launched the independently developed LoongArch instruction set architecture, aiming to build a "third software and hardware ecosystem" after x86 and ARM. Today, Loongson has entered the open market and various Loongson desktops, laptops, servers, and development boards are becoming readily available and have since become prized possessions of community hobbyists and developers alike. Some of our friends at the community have even started using Loongson as their main workhorses.
+В 2021 году компания Loongson представила разработанную собственными силами архитектуру набора команд LoongArch, поставив перед собой цель создать «третью экосистему программного и аппаратного обеспечения» вслед за x86 и ARM. Сегодня продукция Loongson доступна на открытом рынке: различные настольные компьютеры, ноутбуки, серверы и платы для разработчиков Loongson становятся все более доступными и уже завоевали популярность как среди энтузиастов, так и среди разработчиков сообщества. Некоторые из наших друзей в сообществе даже начали использовать Loongson в качестве основных рабочих инструментов.
 
-So, what Loongson products are out there and how do we get to purchase and enjoy them?
+Итак, какие продукты Loongson доступны на рынке и как их приобрести и пользоваться ими?
 
-## Meeting the Loongson Family
+## Знакомство с семейством Loongson
 
-Loongson's processor product line comprises MCUs, embedded SoCs, as well as desktop, workstation, and server-class processors - they are found in a wide range of hardware products. The current product line consist of three families of processors, comprising over ten products.
+Линейка процессоров Loongson включает в себя микроконтроллеры, встроенные SoC, а также процессоры для настольных компьютеров, рабочих станций и серверов — они используются в широком спектре аппаратных продуктов. Текущая линейка состоит из трёх семейств процессоров, включающих более десяти моделей.
 
-### Product Familiess
+### Серии продуктов
 
-Loongson's processors are divided into three families:
+Процессоры Loongson подразделяются на три семейства:
 
-- Loongson 3: Processors for desktops, workstations, and servers, Loongson's performance flagship.
-- Loongson 2: SoCs for embedded and industrial computers/controllers, as well as solutions for mobile devices.
-- Loongson 1: SoCs/MCUs for edge devices and smaller embedded devices.
+- Loongson 3: процессоры для настольных компьютеров, рабочих станций и серверов — флагманская линейка Loongson по производительности.
+- Loongson 2: SoC для встраиваемых и промышленных компьютеров/контроллеров, а также решения для мобильных устройств.
+- Loongson 1: SoC и микроконтроллеры для периферийных устройств и небольших встраиваемых систем.
 
-Considering that the Loongson 3 and 2 families of chips receive significantly more attention amongst the hobbyists, we will focus on these two families here.
+Учитывая, что чипсеты семейств Loongson 3 и 2 пользуются значительно большей популярностью среди энтузиастов, в данной статье мы сосредоточимся именно на этих двух семействах.
 
-### Current Products
+### Актуальные продукты
 
-In 2025, Loongson's current embedded and desktop chip products includes follows:
+В 2025 году ассортимент встраиваемых и настольных чипов компании Loongson включает следующие продукты:
 
-- Loongson 3C6000 family: 16, 32, 64-core processors with mult-socket support, targeting workstations and servers, all models support SMT2 "hyperthreading".
-- Loongson 3B6000 family: 8, 12, 16-core processors for high-end desktops and workstations, all models support SMT2 "hyperthreading".
-- Loongson 3A6000: 4-core processor for desktop and mobile devices, with SMT2 "hyperthreading".
-- Loongson 3B6000M, 2K3000: 8-core low-power processors for industrial computers, embedded devices, desktops, and mobile devices.
-- Loongson 2K0300: Single-core embedded SoC for embedded devices and for educational purposes.
+- Семейство Loongson 3C6000: 16-, 32- и 64-ядерные процессоры с поддержкой многопроцессорных систем, предназначенные для рабочих станций и серверов; все модели поддерживают технологию SMT2 («гиперпоточность»).
+- Серия Loongson 3B6000: 8-, 12- и 16-ядерные процессоры для высокопроизводительных настольных компьютеров и рабочих станций; все модели поддерживают технологию SMT2 («гиперпоточность»).
+- Loongson 3A6000: 4-ядерный процессор для настольных компьютеров и мобильных устройств с технологией SMT2 («гиперпоточность»).
+- Loongson 3B6000M, 2K3000: 8-ядерные процессоры с низким энергопотреблением для промышленных компьютеров, встраиваемых устройств, настольных компьютеров и мобильных устройств.
+- Loongson 2K0300: одноядерная встраиваемая система на кристалле (SoC) для встраиваемых устройств и образовательных целей.
 
 :::tip
-Loongson 3B6000M is the sister model of 2K3000, clocked slightly higher than the latter (3B6000M is clocked at 2.5GHz, 2K3000 at 2.2GHz).
+Loongson 3B6000M — это родственная модель процессора 2K3000, тактовая частота которой немного выше (у 3B6000M — 2,5 ГГц, у 2K3000 — 2,2 ГГц).
 :::
 
-### Feature Overview
+### Обзор функций
 
-The following table summarizes key feature differences across current products (from highest to lowest performance):
+В приведенной ниже таблице представлены основные различия в характеристиках текущих продуктов (в порядке убывания производительности):
 
-| Model | Core Count | Thread Count | Clock Speed | Memory Channels | PCIe Speeds | PCIe Lanes |
+| Модель | Количество ядер | Количество потоков | Тактовая частота | Количество каналов памяти | Скорость PCIe | Количество линий PCIe |
 | ----- | ---------- | ------------ | ----------- | --------------- | ----------- | ---------- |
-| 3C6000/Q | 64 | 128 | 2.0 - 2.1GHz | 8 | 3.0/4.0† | 64 |
-| 3C6000/D | 32 | 64 | 2.1GHz | 8 | 3.0/4.0† | 64 |
-| 3C6000/S | 16 | 32 | 2.2GHz | 4 | 3.0/4.0† | 64 |
-| 3B6000 | 8-16 | 16-32 | 2.3GHz | 2 | 3.0/4.0† | 32 |
-| 3A6000 | 4 | 8 | 2.0 - 2.5GHz | 2 | 3.0 | 32‡ |
-| 3B6000M | 8 | 8 | ~2.5GHz | 1 | 3.0 | 8 |
-| 2K3000 | 8 | 8 | ~2.2GHz | 1 | 3.0 | 8 |
-| 2K0300 | 1 | 1 | 1GHz | 1 | None | None |
+| 3C6000/Q | 64 | 128 | 2,0–2,1 ГГц | 8 | 3,0/4,0† | 64 |
+| 3C6000/D | 32 | 64 | 2,1 ГГц | 8 | 3,0/4,0† | 64 |
+| 3C6000/S | 16 | 32 | 2,2 ГГц | 4 | 3,0/4,0† | 64 |
+| 3B6000 | 8–16 | 16–32 | 2,3 ГГц | 2 | 3,0/4,0† | 32 |
+| 3A6000 | 4 | 8 | 2,0–2,5 ГГц | 2 | 3,0 | 32‡ |
+| 3B6000M | 8 | 8 | ~2,5 ГГц | 1 | 3,0 | 8 |
+| 2K3000 | 8 | 8 | ~2,2 ГГц | 1 | 3,0 | 8 |
+| 2K0300 | 1 | 1 | 1 ГГц | 1 | Нет | Нет |
 
-- †: Only some models support PCIe 4.0, please refer to the board models and suppliers' specifications.
-- ‡: PCIe is provided by the 7A2000 bridge chip.
+- †: PCIe 4.0 поддерживается только некоторыми моделями; подробности см. в спецификациях моделей плат и у поставщиков.
+- ‡: Интерфейс PCIe обеспечивается мостом 7A2000.
 
-In addition to current products, the following commonly found chips are also based on LoongArch:
+Помимо существующих продуктов, на архитектуре LoongArch также основаны следующие широко распространенные микросхемы:
 
-- Loongson 3A5000 (4 cores, 4 threads), 2.0 - 2.5GHz
+- Loongson 3A5000 (4 ядра, 4 потока), 2,0–2,5 ГГц
 
 :::info
-For processor specifications, details, and comparisons, please see:
+Технические характеристики, подробную информацию и сравнения процессоров см. по адресу:
 
-- [Chip Specification Database](/en/chips)
-- [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel).
+- [База данных технических характеристик микросхем](/en/chips)
+- [Официальный сайт компании Loongson Technology, раздел «Чипы»](https://www.loongson.cn/product/channel).
 
 :::
 
-### Common Board Models
+### Распространенные модели плат
 
-The following are some of the common board models currently available. For board specifications, please see the [Product Database](/en/devices):
+Ниже приведены некоторые из наиболее распространенных моделей плат, доступных в настоящее время. Технические характеристики плат см. в [База данных продуктов](/en/devices):
 
 - Loongson 3C6000/S: AC612A0_V1.1
 - Loongson 3B6000: XB612B0_V1.1
 - Loongson 3A6000: XA61200, XA61201, XA612A0
 - Loongson 3B6000M: CTCISZ 3B6000M NUC
-- Loongson 2K3000: OrangePi Nova, 2K3000 AI Evaluation Board
-- Loongson 2K0300: 2K0300 "Hummingbird", ALIENTEK 2K0300 Development Board, CTCISZ ForeverPi
+- Loongson 2K3000: OrangePi Nova, плата для оценки возможностей 2K3000 в области искусственного интеллекта
+- Loongson 2K0300: 2K0300 «Hummingbird», плата разработчика ALIENTEK 2K0300, CTCISZ ForeverPi
 
-## What Operating Systems Can They Run?
+## На каких операционных системах они могут работать?
 
-Numerous general-purpose Linux distributions for desktops and servers (commercial and community), specialized Linux distributions (such as OpenWrt), OpenHarmony, and specialized operating systems (such as LoongWorks based on VxWorks, RTOS, etc.) supports LoongArch hardware.
+Аппаратное обеспечение LoongArch поддерживается множеством универсальных дистрибутивов Linux для настольных компьютеров и серверов (как коммерческих, так и разработанных сообществом), специализированными дистрибутивами Linux (такими как OpenWrt), OpenHarmony, а также специализированными операционными системами (такими как LoongWorks на базе VxWorks, RTOS и т. д.).
 
-For operating systems, Linux distributions, and common software that supports LoongArch, please see [*AREWELOONGYET?*](https://areweloongyet.com/en/).
+Информацию об операционных системах, дистрибутивах Linux и распространенном программном обеспечении, поддерживающем LoongArch, см. [*А мы уже готовы?*](https://areweloongyet.com/en/).
 
-## I'm Sold, Where Can I Buy One?
+## Я убедился, где можно купить?
 
-In China Loongson boards can generally be purchased via Taobao or JD.com. Goofish also has a large number of second-hand motherboards and pre-built systems available for purchase, offering better value for money.
+В Китае платы Loongson, как правило, можно приобрести на сайтах Taobao или JD.com. На сайте Goofish также представлено большое количество подержанных материнских плат и готовых систем, которые позволяют сэкономить.
 
-Outside of China, though, things get a bit more complex. Outside of using a shopping agent or forwarding service, Mingcong Bai, a staff at our community can help you obtain Loongson hardware:
+Однако за пределами Китая ситуация немного сложнее. Помимо обращения к посреднику по покупкам или службе экспедирования, сотрудник нашего сообщества Минкон Бай может помочь вам приобрести оборудование Loongson:
 
 - Telegram: @JeffBai
-- WeChat: mingcongbai
-- E-Mail: baimingcong@loongfans.cn
+WeChat: mingcongbai
+- Электронная почта: baimingcong@loongfans.cn
 
-If you are a student or community developer and are interested in porting, optimizing, and improving various software or applications to or for LoongArch, or need more computational power for your current project, you can also contact the [Roaming Loongson Project](https://github.com/loongson-community/1024) to borrow Loongson hardware (or have us donate it for your project).
+Если вы являетесь студентом или разработчиком из местного сообщества и заинтересованы в портировании, оптимизации и усовершенствовании различного программного обеспечения или приложений для LoongArch, либо вам требуется дополнительная вычислительная мощность для вашего текущего проекта, вы также можете обратиться в [Проект «Roaming Loongson»](https://github.com/loongson-community/1024) возьмите в аренду оборудование Loongson (или попросите нас предоставить его для вашего проекта).
 
-## References
+## Ссылки
 
-At this point, you already have some basic understandings on Loongson. The following is a series of reading materials from our friends in the community, offering reference materials from user guides to troubleshooting guides, as well as processor specifications, ABI specifications, firmware implementation details, and the "new and old world problem" that you may have heard of:
+На данный момент вы уже имеете базовые представления о Loongson. Ниже представлена подборка материалов от наших друзей из сообщества, включающая справочные материалы — от руководств пользователя до инструкций по устранению неполадок, а также технические характеристики процессора, спецификации ABI, подробности реализации прошивки и «проблему нового и старого миров», о которой вы, возможно, слышали:
 
-- [FAQ & Troubleshooting](/en/guides)
-- [Loongson Motherboard and CPU Database](/en/devices)
-- [*AREWELOONGYET?*: LoongArch Ecosystem Construction Information Site](https://areweloongyet.com/)
-- [Loong 1-2-3: Compatibility Database for LoongArch](https://loong123.cn/)
+- [Часто задаваемые вопросы и устранение неполадок](/en/guides)
+- [База данных материнских плат и процессоров Loongson](/en/devices)
+- [*AREWELOONGYET?*: Информационный сайт по созданию экосистемы LoongArch](https://areweloongyet.com/)
+- [Loong 1-2-3: База данных совместимости для LoongArch](https://loong123.cn/)
 
-Collected reading materials:
+Собранные материалы для чтения:
 
-- [Chip Specification Database](/en/chips)
-- [*AREWELOONGYET?*: Reading Material "New World and Old World"](https://areweloongyet.com/docs/intro)
-- [Loongson Technology Official Website "Chip Products" Section](https://www.loongson.cn/product/channel)
+- [База данных технических характеристик микросхем](/en/chips)
+- [*А МЫ УЖЕ ДОШЛИ?*: Материал для чтения «Новый мир и Старый мир»](https://areweloongyet.com/docs/intro)
+- [Официальный сайт компании Loongson Technology, раздел «Чипы»](https://www.loongson.cn/product/channel)

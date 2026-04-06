@@ -7,8 +7,8 @@
    viewBox="0 0 270.93334 135.46667"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.2 (unknown)"
-   sodipodi:docname="logo.en.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="logo.svg"
    inkscape:export-filename="logo.en.webp"
    inkscape:export-xdpi="135"
    inkscape:export-ydpi="135"
@@ -28,13 +28,13 @@
      inkscape:document-units="mm"
      inkscape:zoom="0.41374125"
      inkscape:cx="247.73938"
-     inkscape:cy="205.44241"
-     inkscape:window-width="1707"
-     inkscape:window-height="995"
+     inkscape:cy="206.6509"
+     inkscape:window-width="1920"
+     inkscape:window-height="1006"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer2" />
   <defs
      id="defs1">
     <clipPath
@@ -168,83 +168,151 @@
          d="m 144.24976,22.577919 -11.63108,25.120304 69.04407,0.246278 V 21.839087 Z"
          id="path9" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath169">
+      <rect
+         style="display:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.35494;stroke-linecap:round"
+         id="rect169"
+         width="190.5"
+         height="48.646103"
+         x="34.891644"
+         y="47.184792"
+         d="M 34.891644,47.184792 H 225.39164 V 95.830894 H 34.891644 Z" />
+      <path
+         id="lpe_path-effect169"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.35494;stroke-linecap:round"
+         class="powerclip"
+         d="m 104.90661,18.070473 h 102.1941 V 92.176529 H 104.90661 Z M 34.891644,47.184792 V 95.830894 H 225.39164 V 47.184792 Z" />
+    </clipPath>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask131-2">
+      <g
+         id="g143-5">
+        <path
+           style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5875;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+           d="M 202.10071,-30.425181 174.44783,30.415732"
+           id="path131-4"
+           sodipodi:nodetypes="cc" />
+        <g
+           id="g142-0"
+           transform="translate(-3.0114069,-44.418251)">
+          <path
+             style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5875;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+             d="M 136.62383,77.873313 112.91802,130.03"
+             id="path132-5"
+             sodipodi:nodetypes="cc" />
+          <g
+             id="g134-9"
+             transform="translate(45.076841,-61.335711)"
+             style="stroke:#ffffff;stroke-opacity:1">
+            <path
+               style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5875;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+               d="m 132.11278,101.14811 -25.02647,55.06238 12.46495,33.23684"
+               id="path133-4" />
+            <path
+               style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5875;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+               d="m 139.52114,101.14811 -25.02648,55.06238 12.46496,33.23684"
+               id="path134-6" />
+          </g>
+          <path
+             style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5875;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+             d="m 162.37299,39.812393 -25.02647,55.0624 12.46495,33.236837"
+             id="path135-9" />
+          <path
+             style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5875;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+             d="m 169.78135,39.812393 -25.02648,55.0624 12.46496,33.236837"
+             id="path136-2" />
+          <path
+             id="path137-2"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.82562;stroke-linecap:square"
+             d="m 141.61622,76.475493 a 4.5914888,4.5914888 0 0 1 -4.59149,4.59149 4.5914888,4.5914888 0 0 1 -4.59149,-4.59149 4.5914888,4.5914888 0 0 1 4.59149,-4.59149 4.5914888,4.5914888 0 0 1 4.59149,4.59149 z" />
+          <path
+             id="path138-4"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.82562;stroke-linecap:square"
+             d="m 195.17796,88.986283 a 4.5914888,4.5914888 0 0 1 -4.59149,4.59149 4.5914888,4.5914888 0 0 1 -4.59149,-4.59149 4.5914888,4.5914888 0 0 1 4.59149,-4.59149 4.5914888,4.5914888 0 0 1 4.59149,4.59149 z" />
+          <path
+             id="path139-7"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.82562;stroke-linecap:square"
+             d="m 182.64329,74.541283 a 4.5914888,4.5914888 0 0 1 -4.59149,4.59148 4.5914888,4.5914888 0 0 1 -4.59149,-4.59148 4.5914888,4.5914888 0 0 1 4.59149,-4.59149 4.5914888,4.5914888 0 0 1 4.59149,4.59149 z" />
+          <path
+             id="path140-7"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.82562;stroke-linecap:square"
+             d="m 176.0897,88.087813 a 4.5914888,4.5914888 0 0 1 -4.59149,4.59149 4.5914888,4.5914888 0 0 1 -4.59149,-4.59149 4.5914888,4.5914888 0 0 1 4.59149,-4.59148 4.5914888,4.5914888 0 0 1 4.59149,4.59148 z" />
+          <path
+             id="path141-5"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:1.82562;stroke-linecap:square"
+             d="m 202.51865,74.611224 a 4.5914888,4.5914888 0 0 1 -4.59148,4.59149 4.5914888,4.5914888 0 0 1 -4.59149,-4.59149 4.5914888,4.5914888 0 0 1 4.59149,-4.59148 4.5914888,4.5914888 0 0 1 4.59148,4.59148 z" />
+          <path
+             style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5875;stroke-linecap:square;stroke-dasharray:none;stroke-opacity:1"
+             d="m 196.69157,74.879564 -11.0355,5.22082 -23.40479,51.494396"
+             id="path142-4"
+             sodipodi:nodetypes="ccc" />
+        </g>
+      </g>
+    </mask>
+    <inkscape:path-effect
+       effect="powerclip"
+       message=""
+       id="path-effect169"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false" />
   </defs>
   <g
-     inkscape:label="图层 1"
      inkscape:groupmode="layer"
-     id="layer1">
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:23.7223px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
-       x="-1.6255319"
-       y="18.598248"
-       id="text2"><tspan
-         sodipodi:role="line"
-         style="letter-spacing:0.280698px;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
-         x="-1.6255319"
-         y="18.598248"
-         id="tspan5">LOONGSON</tspan><tspan
-         sodipodi:role="line"
-         style="fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
-         x="-1.6255319"
-         y="42.320549"
-         id="tspan8">HOBBYISTS</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:39.6914px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke:#e60013;stroke-width:2.33204;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-       x="-1.6671528"
-       y="79.705231"
-       id="text2-3"><tspan
-         sodipodi:role="line"
-         style="fill:#e60013;fill-opacity:1;stroke:none;stroke-width:2.33205"
-         x="-1.6671528"
-         y="79.705231"
-         id="tspan7">COMMUNITY</tspan></text>
-    <path
-       id="rect1-2"
-       transform="matrix(1.7194647,0,0,1.7277887,-75.818647,-39.702609)"
-       clip-path="url(#clipPath8)"
-       mask="url(#mask131-2-4)"
-       d="M 11.777716,23.070473 H 223.44439 V 95.830887 H 11.777716 Z"
-       style="display:inline;fill:#e60012;fill-opacity:1;stroke:none;stroke-width:1.74672;stroke-linecap:round"
-       sodipodi:nodetypes="ccccc" />
+     id="layer2"
+     inkscape:label="图层 2"
+     style="display:inline">
     <g
-       id="g9"
-       transform="translate(0,0.44547022)">
+       id="g6-3"
+       transform="matrix(1.4539089,0,0,1.4539089,-59.935395,-68.131263)"
+       style="fill:#e60013;fill-opacity:1">
       <text
          xml:space="preserve"
-         style="font-size:18.4333px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:1.08304;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         x="-0.39387402"
-         y="103.63311"
-         id="text4"><tspan
+         style="font-size:25.5926px;line-height:0;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke:#e60012;stroke-width:11.3354;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         x="221.61009"
+         y="91.502808"
+         id="text60-5"><tspan
            sodipodi:role="line"
-           id="tspan4"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'misans vf';-inkscape-font-specification:'misans vf';fill:#2f2f2f;fill-opacity:1;stroke-width:1.08304"
-           x="-0.39387402"
-           y="103.63311">Your New World Starts Here</tspan></text>
-      <g
-         id="g1"
-         transform="matrix(1.4056165,-0.37663382,0.37663382,1.4056165,-151.70558,-14.716267)"
-         style="filter:url(#filter7)">
-        <rect
-           style="fill:#e60013;fill-opacity:1;stroke-width:4.52938;stroke-linecap:square;paint-order:fill markers stroke"
-           id="rect1"
-           width="50.799999"
-           height="21.166666"
-           x="202.14166"
-           y="136.52499" />
-        <text
-           xml:space="preserve"
-           style="font-size:20.2746px;line-height:1.2;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke-width:4.48993;stroke-linecap:square;paint-order:fill markers stroke"
-           x="204.18533"
-           y="154.47813"
-           id="text1"><tspan
-             sodipodi:role="line"
-             id="tspan1"
-             style="font-style:normal;font-variant:normal;font-weight:520;font-stretch:normal;font-family:misans;-inkscape-font-specification:'misans weight=520';fill:#ffffff;fill-opacity:1;stroke-width:4.48994"
-             x="204.18533"
-             y="154.47813">Beta</tspan></text>
-      </g>
+           style="font-style:normal;font-variant:normal;font-weight:630;font-stretch:normal;font-size:25.5483px;line-height:1;font-family:'MiSans VF';-inkscape-font-specification:'MiSans VF weight=630';text-align:end;text-anchor:end;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:11.3354"
+           x="221.61009"
+           y="91.502808"
+           id="tspan4-6">Сообщество</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:630;font-stretch:normal;font-size:14.1464px;line-height:1;font-family:'MiSans VF';-inkscape-font-specification:'MiSans VF weight=630';text-align:end;text-anchor:end;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:11.3354"
+           x="222.22418"
+           y="108.38834"
+           id="tspan5-2">энтузиастов Loongson<tspan
+   style="font-size:1.76389px;fill:#e60013;fill-opacity:1"
+   id="tspan6-9">  </tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:630;font-stretch:normal;font-size:8.46667px;font-family:'MiSans VF';-inkscape-font-specification:'MiSans VF weight=630';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:0.8;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:3.32839;stroke-linecap:round"
+         x="82.404533"
+         y="118.39835"
+         id="text1-1"><tspan
+           sodipodi:role="line"
+           id="tspan1-2"
+           style="font-style:normal;font-variant:normal;font-weight:460;font-stretch:normal;font-size:8.46667px;font-family:'MiSans VF';-inkscape-font-specification:'MiSans VF weight=460';fill:#e60013;fill-opacity:1;stroke-width:3.32839"
+           x="82.404533"
+           y="118.39835">Сотрудничаем, строим - вперёд!</tspan></text>
     </g>
+    <path
+       style="fill:#e60012;fill-opacity:1;stroke:none;stroke-width:1.74672;stroke-linecap:round"
+       id="rect1-2-9"
+       width="211.66667"
+       height="72.760414"
+       x="11.777716"
+       y="23.070473"
+       mask="url(#mask131-2)"
+       transform="matrix(1.4539089,0,0,1.4539089,-54.330269,-33.19184)"
+       clip-path="url(#clipPath169)"
+       inkscape:path-effect="#path-effect169"
+       sodipodi:type="rect"
+       d="M 11.777716,23.070473 H 223.44439 V 95.830887 H 11.777716 Z" />
   </g>
 </svg>

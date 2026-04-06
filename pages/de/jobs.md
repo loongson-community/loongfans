@@ -1,20 +1,20 @@
 ---
 layout: page
-returnLink: /en
-pageTitle: Internships and Bounties
-pageSubTitle: Love Driven, or Maybe Material Driven? ( ͡° ͜ʖ ͡°)
+returnLink: /de
+pageTitle: Praktika und Prämien
+pageSubTitle: Von der Liebe getrieben oder vielleicht doch vom Geld? ( ͡° ͜ʖ ͡°)
 ---
 
-# Community Bounties
+# Community-Prämien
 
-## LoongArch Port for Eclipse and DBeaver
+## LoongArch-Portierung für Eclipse und DBeaver
 
-Port Eclipse ([eclipse.platform.releng.aggregator](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator)) and [DBeaver](https://github.com/dbeaver/dbeaver) (the former is a prerequisite) to LoongArch, making sure binaries for the newest versions are available, or (preferably) push for upstream support. The Loongson Hobbyists' Community may supply hardware and support for communications with the upstream.
+Port Eclipse ([eclipse.platform.releng.aggregator](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator)) und [DBeaver](https://github.com/dbeaver/dbeaver) (Ersteres ist eine Voraussetzung) für LoongArch, um sicherzustellen, dass Binärdateien für die neuesten Versionen verfügbar sind, oder (vorzugsweise) auf Unterstützung durch den Upstream-Entwickler hinwirken. Die Loongson-Hobbyisten-Community kann Hardware und Unterstützung für die Kommunikation mit dem Upstream-Entwickler bereitstellen.
 
-Reward: CNY 5,000
+Prämie: 5.000 CNY
 
-## U-Boot Support for OrangePi Nova
+## U-Boot-Unterstützung für OrangePi Nova
 
-U-Boot bootloader support for OrangePi Nova is yet to be implemented. We are offering a bounty for community developers to push this implementation forward.
+Die Unterstützung des U-Boot-Bootloaders für OrangePi Nova muss noch implementiert werden. Wir bieten eine Prämie für Entwickler aus der Community an, um diese Implementierung voranzutreiben.
 
-Reward: Loongson laptop.
+Belohnung: Loongson-Laptop.

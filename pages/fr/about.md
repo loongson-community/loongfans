@@ -1,16 +1,16 @@
 ---
 layout: page
-returnLink: /en
-pageTitle: About Our Community
-pageSubTitle: That Mysterious Community for Mysterious Processors
+returnLink: /fr
+pageTitle: À propos de notre communauté
+pageSubTitle: Cette mystérieuse communauté dédiée aux processeurs mystérieux
 ---
 
 <script setup lang="ts">
 import AboutSocialLinks from "@src/client/components/about/AboutSocialLinks.vue"
 </script>
 
-![Logo of the Loongson Hobbyists' Community](/en/images/logo_about.webp)
+![Logo de la communauté des amateurs de Loongson](/en/images/logo_about.webp)
 
-The Loongson Hobbyists' Community was founded on October 24, 2024 (Programmers' Day). We are an Internet-based community of Loongson hobbyists, industry workers, and students, dedicated to the construction of Loongson's (LoongArch) software and hardware ecosystem.
+La communauté des passionnés de Loongson a été fondée le 24 octobre 2024 (Journée des programmeurs). Nous sommes une communauté en ligne regroupant des passionnés, des professionnels du secteur et des étudiants, qui se consacre au développement de l'écosystème logiciel et matériel de Loongson (LoongArch).
 
 <AboutSocialLinks />

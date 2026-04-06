@@ -1,8 +1,8 @@
-### Backlight Control May Not be Available with ABI2.0 Distros
+### Управление подсветкой может быть недоступно в дистрибутивах на базе ABI 2.0
 
-Due to a change in upstream kernel API and problematic Loongson PWM driver implementation, as well as the lack of `gpio_base` support, laptop backlight control may not be available with some Linux distros.
+В связи с изменениями в API ядра на верхнем уровне и проблемами в реализации драйвера PWM для Loongson, а также из-за отсутствия `gpio_base` Примечание: в некоторых дистрибутивах Linux функция управления подсветкой ноутбука может быть недоступна.
 
-To fix this issue, the following is needed:
+Чтобы устранить эту проблему, необходимо выполнить следующее:
 
-- [Additional board-level ACPI initialization routines](https://github.com/AOSC-Tracking/linux/commit/dbb668a14178)and corresponding changes to the LoongGPU kernel driver (as implemented by [AOSC OS](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commit/aaee8cb5d7f879ba4cd2cb268a8591f99735b729) are needed - correctly calling PWM controllers and the functionality to completely turn off backlight via GPIO.
-- A patch to fix PWM controller frequency calculation, see [this kernel patch from AOSC OS](https://github.com/AOSC-Tracking/linux/commit/30b69e76d820) (this patch is now part of Linux 6.18).
+- [Дополнительные процедуры инициализации ACPI на уровне платы](https://github.com/AOSC-Tracking/linux/commit/dbb668a14178)and соответствующие изменения в драйвере ядра LoongGPU (реализованные в [Операционная система AOSC](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commit/aaee8cb5d7f879ba4cd2cb268a8591f99735b729) необходимы: правильный вызов контроллеров ШИМ и функция полного отключения подсветки через GPIO.
+- Патч для исправления расчета частоты контроллера ШИМ, см. [этот патч ядра из ОС AOSC](https://github.com/AOSC-Tracking/linux/commit/30b69e76d820) (этот патч теперь входит в состав Linux 6.18).

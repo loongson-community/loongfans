@@ -1,9 +1,9 @@
 ---
 layout: page
 # 返回首页
-returnLink: /en
-pageTitle: Operating System
-pageSubTitle: Operating Systems for LoongArch
+returnLink: /de
+pageTitle: Betriebssystem
+pageSubTitle: Betriebssysteme für LoongArch
 ---
 
 <script setup lang="ts">
