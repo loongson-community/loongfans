@@ -1,7 +1,7 @@
 ---
 layout: page
 returnLink: /ru
-pageTitle: LoongArch: двухнедельный бюллетень
+pageTitle: "LoongArch: двухнедельный бюллетень"
 pageSubTitle: Встречи раз в две недели для разработчиков сообщества и энтузиастов
 ---
 
