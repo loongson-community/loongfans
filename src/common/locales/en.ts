@@ -87,7 +87,8 @@ export default {
   cirunnerInstall: "CI Runners",
 
   // Utilities
-  ordinalNumber: ({ n }: { n: number }): string => {
+  ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
+    const n = named("n") as number
     if (n === undefined || n === null) return ""
     switch (pluralRules.select(n)) {
       case "one":

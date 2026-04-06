@@ -9,5 +9,7 @@ tags:
   - 7a2000
   - desktop-mb
 downloads:
+  - uefi-fw-loongson-xa61201-v1.0-v5.0.0428_stable202602_rel
+  - uefi-fw-loongson-xa61201-v1.0-v5.0.0428_stable202602_dbg
   - uefi-fw-loongson-xa61201-v1.0-v5.0.0344_stable202511_rel
   - uefi-fw-loongson-xa61201-v1.0-v5.0.0344_stable202511_dbg

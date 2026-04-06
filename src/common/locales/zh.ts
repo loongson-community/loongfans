@@ -85,7 +85,8 @@ export default {
   cirunnerInstall: "CI 代理 (Runner)",
 
   // Utilities
-  ordinalNumber: ({ n }: { n: number }): string => {
+  ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
+    const n = named("n") as number
     // Chinese has no special morphology for ordinal numbers
     if (n === undefined || n === null) return ""
     return n.toString()

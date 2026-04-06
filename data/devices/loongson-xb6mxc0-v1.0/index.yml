@@ -1,0 +1,12 @@
+name:
+  en: Loongson XB6MXC0 V1.0
+  zh: 龙芯 XB6MXC0 V1.0
+family: 2k3000
+category: board
+image: /images/devices/loongson-2k3000-ai-evb.webp # TODO
+spec: "2K3000/3B6000M series"
+tags:
+  - desktop-mb
+downloads:
+  - uefi-fw-loongson-xb6mxc0-v1.0-v5.0.0431_stable202602_rel
+  - uefi-fw-loongson-xb6mxc0-v1.0-v5.0.0431_stable202602_dbg
