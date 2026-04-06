@@ -1,5 +1,5 @@
-### Touchpads May Not Work with ABI2.0 Distros
+### Тачпады могут не работать в дистрибутивах ABI 2.0
 
-Some laptops come with touchpads that are wired using an HID-over-I2C bus, which requires a GPIO pin to supply interrupts.
+В некоторых ноутбуках установлены тачпады, подключенные по шине HID-over-I2C, для которых требуется вывод GPIO для подачи прерываний.
 
-To resolve this issue, a patch to [add interrupt support for 7A2000 GPIO](https://git.kernel.org/torvalds/c/44fe79020b91) is required (now part of Linux 6.15 and above, most commercial distros using Linux 6.6 also includes a fix). Additionally, as the upstream kernel no longer supports the deprecated `gsi_idx_map` property, a workaround is needed - see this [kernel patch](https://github.com/AOSC-Tracking/linux/commit/e29193f3f1a3) from AOSC OS.
+Чтобы решить эту проблему, необходимо установить исправление для [добавить поддержку прерываний для GPIO 7A2000](https://git.kernel.org/torvalds/c/44fe79020b91) требуется (в настоящее время входит в состав ядра Linux 6.15 и выше; большинство коммерческих дистрибутивов, использующих Linux 6.6, также включают исправление). Кроме того, поскольку исходное ядро больше не поддерживает устаревшую `gsi_idx_map` для данного свойства требуется обходной путь — см. здесь [патч ядра](https://github.com/AOSC-Tracking/linux/commit/e29193f3f1a3) из ОС AOSC.

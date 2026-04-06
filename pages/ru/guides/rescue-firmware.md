@@ -1,44 +1,44 @@
 ---
 layout: page
-returnLink: /en/guides
-pageTitle: Rescuing Firmware
-pageSubTitle: Rescuing hardware that fails to boot after firmware flashing
+returnLink: /ru/guides
+pageTitle: Восстановление прошивки
+pageSubTitle: Восстановление оборудования, которое не загружается после обновления прошивки
 ---
 
-# Recovering corrupted firmware with a programmer
+# Восстановление поврежденной прошивки с помощью программатора
 
-## Before you begin
+## Перед началом
 
-If you are reading this page, your hardware likely failed to boot due to improper firmware flashing or update. This guide will help you re‑flash the firmware using a programmer.
+Если вы читаете эту страницу, скорее всего, ваше оборудование не смогло загрузиться из-за некорректной перепрошивки или обновления прошивки. Это руководство поможет вам перепрошить прошивку с помощью программатора.
 
-Before starting, make sure you have the following hardware tools:
+Перед началом работы убедитесь, что у вас есть следующие инструменты:
 
-1. Another working computer
-2. CH341A USB programmer
-3. SOIC‑8 clip or probe (most SPI Flash chips are SOP8‑208mil). For ASUS motherboards, use the dedicated ASUS flashing cable
-4. 1.8V step‑down module (most Loongson motherboards use 1.8V Flash). Not needed if your Flash is confirmed to be 3.3V or 5V
-5. For Flash chips located under the CPU cooler, you will also need thermal paste to reinstall the cooler after recovery
+1. Еще один исправный компьютер
+2. Программы CH341A USB
+3. Зажим или щуп SOIC-8 (большинство микросхем SPI Flash имеют корпус SOP8-208mil). Для материнских плат ASUS используйте специальный кабель для перепрошивки ASUS
+4. Понижающий модуль на 1,8 В (на большинстве материнских плат Loongson используется флэш-память на 1,8 В). Не требуется, если подтверждено, что ваша флэш-память работает на напряжении 3,3 В или 5 В
+5. Если чипы Flash расположены под радиатором процессора, вам также понадобится термопаста для повторной установки радиатора после восстановления
 
-Also ensure you have installed the required software:
+Также убедитесь, что у вас установлено необходимое программное обеспечение:
 
-1. **Windows**: Install the CH341A driver. We recommend [NeoProgrammer with updated chip database (source: 恩山论坛)](https://www.right.com.cn/FORUM/thread-8289988-1-1.html)
-2. **macOS / Linux**: Use [IMSProg](https://github.com/bigbigmdm/IMSProg)
+1. **Windows**: Установите драйвер CH341A. Мы рекомендуем [NeoProgrammer с обновленной базой данных микросхем (источник: форум Enshan)](https://www.right.com.cn/FORUM/thread-8289988-1-1.html)
+2. **macOS / Linux**: Используйте [IMSProg](https://github.com/bigbigmdm/IMSProg)
 
-Before flashing, assemble the programmer as described below. We use the Loongson XA61200 and ASUS XC‑LS3A6M motherboards as examples.
+Перед началом записи прошивки соберите программатор в соответствии с приведенными ниже инструкциями. В качестве примера мы используем процессор Loongson XA61200 и материнскую плату ASUS XC‑LS3A6M.
 
-## Download the firmware and verify its hash
+## Загрузите прошивку и проверьте её хэш
 
-Most mainstream products can be found in the [product database](https://loongfans.cn/devices). If you cannot locate the firmware for your model, contact your distributor.
+Большинство популярных товаров можно найти в [база данных товаров](https://loongfans.cn/devices). Если вы не можете найти прошивку для вашей модели, обратитесь к вашему дистрибьютору.
 
-**Always verify the hash** after downloading; otherwise the board may fail to boot.
+**Обязательно проверяйте хэш** после загрузки; в противном случае плата может не загрузиться.
 
-> Note: If downloading from ASUS, verify the zip file because ASUS provides SHA‑256 hashes for the zip archives. This does not affect the flashing process. After verification, extract the archive because flashing software does not handle compressed files automatically.
+> Примечание: при загрузке с сайта ASUS проверьте файл ZIP, так как ASUS предоставляет хэши SHA-256 для ZIP-архивов. Это не влияет на процесс прошивки. После проверки распакуйте архив, поскольку программа для прошивки не обрабатывает сжатые файлы автоматически.
 
-On Windows, we recommend OpenHashTab for verification:
+В Windows для проверки мы рекомендуем использовать OpenHashTab:
 
 ![](/images/guides/rescue-firmware/verify-with-openhashtab.webp)
 
-On macOS or Linux distributions, use the `sha256sum` command:
+В macOS или дистрибутивах Linux используйте `sha256sum` команда:
 
 ```bash
 # Example with ASUS XC‑LS3A6M version 1402
@@ -47,116 +47,116 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 # Output: XC-LS3A6M-1402.7z: OK
 ```
 
-## Assemble and connect the programmer
+## Сборка и подключение программатора
 
-Check the SPI Flash marking on your motherboard to confirm its specifications. The following table lists common motherboards and their Flash chips (subject to production batch changes):
+Проверьте маркировку SPI-флеш-памяти на материнской плате, чтобы убедиться в ее технических характеристиках. В приведенной ниже таблице перечислены распространенные модели материнских плат и установленные на них микросхемы флеш-памяти (с учетом возможных изменений в производственных партиях):
 
-| Motherboard | Flash model | Manufacturer | Voltage | Alternative model (for flashing) |
+| Материнская плата | Модель для перепрошивки | Производитель | Напряжение | Альтернативная модель (для перепрошивки) |
 | ----------- | ----------- | ------------ | ------- | -------------------------------- |
-| XA61200 / XA61201 | GD25LQ64E | GigaDevice | 1.8V | |
-| XB612B0_V1.1 / XB612B0_V1.2 | GD25LQ64E | GigaDevice | 1.8V | |
-| XC‑LS3A6M | W25Q128JW | Winbond | 1.8V | W25Q128FW |
+| XA61200 / XA61201 | GD25LQ64E | GigaDevice | 1,8 В | |
+| XB612B0_V1.1 / XB612B0_V1.2 | GD25LQ64E | GigaDevice | 1,8 В | |
+| XC‑LS3A6M | W25Q128JW | Winbond | 1,8 В | W25Q128FW |
 
-Then assemble the programmer according to the diagram. Pin positions must match exactly, starting from pin 1. Usually, the dot or notch on the SPI Flash chip indicates pin 1.
+Затем соберите программатор в соответствии со схемой. Расположение выводов должно точно совпадать, начиная с вывода 1. Обычно точка или выемка на микросхеме SPI Flash указывает на вывод 1.
 
 :::warning
-**Important**: Check the Flash model beforehand. 1.8V chips cannot operate at 3.3V or 5V. Some flashing tools may detect them normally without warning, but **forcing a write at the wrong voltage can destroy the Flash chip!**
+**Важно**: заранее проверьте модель флеш-памяти. Чипы, рассчитанные на напряжение 1,8 В, не могут работать при напряжении 3,3 В или 5 В. Некоторые утилиты для записи могут распознавать их без предупреждения, но **принудительная запись при несоответствующем напряжении может привести к выходу чипа из строя!**
 
-If you have a 1.8V chip, install the step‑down module (the green module shown in the picture).
+Если у вас установлен чип на 1,8 В, установите понижающий модуль (зеленый модуль, показанный на рисунке).
 :::
 
 ![](/images/guides/rescue-firmware/setup-programmer.webp)
 
-## Connect to the Flash chip
+## Подключение к микросхеме Flash
 
-### Using a SOP‑8 clip or probe
+### Использование зажима или щупа SOP‑8
 
-Align the clip or probe pins according to the diagram. These connectors are marked to indicate the starting position (clip pin 1 is usually red; probe pin 1 is the black side—consult your supplier for details).
+Совместите штырьки зажима или щупа в соответствии со схемой. На этих разъемах имеются маркировки, указывающие начальное положение (1-й штырь зажима обычно обозначен красным цветом; 1-й штырь щупа — черным; подробности уточняйте у поставщика).
 
 ![](/images/guides/rescue-firmware/connect-flash-with-probe-i.webp)
 
 ![](/images/guides/rescue-firmware/connect-flash-with-probe-ii.webp)
 
-Once the connection is stable, plug the other end of the cable into the programmer in the correct order. **If using a probe, ensure a firm connection to avoid flashing failures due to poor contact.**
+Как только соединение станет стабильным, подключите другой конец кабеля к программатору в правильном порядке. **При использовании щупа убедитесь в надежности соединения, чтобы избежать сбоев при перепрошивке из-за плохого контакта.**
 
-### Using a test socket
+### Использование тестового разъема
 
-If your motherboard has a dual‑BIOS design (such as XA61200 and XB612B0) and the secondary SPI Flash chip is removable as shown below, you can use an SOP8 test socket for flashing.
+Если ваша материнская плата имеет конструкцию с двумя BIOS-памятями (например, модели XA61200 и XB612B0) и дополнительный чип SPI Flash можно извлечь, как показано ниже, для перепрошивки можно использовать тестовый разъем SOP8.
 
-After removing the Flash chip from its socket, verify the position of pin 1 (marked as ① in the picture) to avoid incorrect installation that would prevent booting.
+После извлечения микросхемы Flash из разъема проверьте расположение вывода 1 (обозначенного на рисунке цифрой ①), чтобы избежать неправильной установки, которая может привести к сбою при загрузке.
 
 ![](/images/guides/rescue-firmware/flash-in-socket.webp)
 
 :::warning
-**Note**: For motherboards with dual‑BIOS design, check whether the jumper shown as ② in the picture above is set correctly. **This affects which firmware and settings will be used at boot.**
+**Примечание**: Для материнских плат с двумя BIOS-модулями необходимо проверить, правильно ли установлен перемычка, обозначенная на рисунке выше цифрой ②. **Это влияет на то, какая прошивка и какие настройки будут использоваться при загрузке.**
 
-Typically, for XA61200 and XB612B0 motherboards, the jumper works as follows:
+Как правило, на материнских платах XA61200 и XB612B0 перемычка работает следующим образом:
 ![](/images/guides/rescue-firmware/bios-switch.png)
 
-Placing the jumper on pins 1‑2 boots from the onboard SPI Flash chip; placing it on pins 2‑3 boots from the socketed SPI Flash chip.
+При установке перемычки на контакты 1–2 система загружается с встроенного микросхемы SPI Flash; при установке на контакты 2–3 — с микросхемы SPI Flash, установленной в разъем.
 :::
 
-After removal, install the chip into the test socket as shown:
+После извлечения установите микросхему в тестовый разъем, как показано на рисунке:
 
 ![](/images/guides/rescue-firmware/connect-flash-with-test-stand.webp)
 
-Once installed, connect the test socket to the programmer in the correct order.
+После установки подключите тестовое гнездо к программатору в правильном порядке.
 
-### (ASUS motherboards only) Using the dedicated flashing cable
+### (Только для материнских плат ASUS) Использование специального кабеля для прошивки
 
-On ASUS motherboards, the SPI Flash chip that stores the BIOS firmware is located near the CPU, under the cooler. You must remove the cooler; the chip position is shown below:
+На материнских платах ASUS микросхема SPI Flash, на которой хранится прошивка BIOS, расположена рядом с процессором, под радиатором. Необходимо снять радиатор; расположение микросхемы показано ниже:
 
 ![](/images/guides/rescue-firmware/asus-spi-flash.webp)
 
-Insert the dedicated flashing cable into the connector above the SPI Flash. **Make sure the white‑marked side of the connector aligns with the white mark at the bottom‑left corner of the motherboard (this indicates the starting position):**
+Вставьте специальный кабель для записи в разъем над модулем SPI Flash. **Убедитесь, что сторона разъема с белой отметкой совпадает с белой отметкой в левом нижнем углу материнской платы (это указывает на начальную позицию):**
 
 ![](/images/guides/rescue-firmware/asus-connect-flash.webp)
 
-Connect the other end of the cable to the programmer as usual.
+Подключите другой конец кабеля к программатору, как обычно.
 
-## Flash the firmware
+## Прошить прошивку
 
-After assembling the programmer and connecting it to the Flash chip, plug the programmer into your computer and choose the flashing software according to your operating system.
+После сборки программатора и подключения его к микросхеме Flash подключите программатор к компьютеру и выберите программу для прошивки, соответствующую вашей операционной системе.
 
-### Using NeoProgrammer (Windows)
+### Использование NeoProgrammer (Windows)
 
-Before using NeoProgrammer, install the driver provided with the software (located in `软件目录\Drivers\CH341A`). Run `DRVSETUP64.exe` and click `安装`.
+Перед использованием NeoProgrammer установите драйвер, поставляемый в комплекте с программой (он находится в папке `软件目录\Drivers\CH341A`). Запустить `DRVSETUP64.exe` и нажмите `安装`.
 
 ![](/images/guides/rescue-firmware/install-driver-windows.png)
 
-Then verify in Device Manager that the following device appears, indicating successful installation:
+Затем проверьте в «Диспетчере устройств», отображается ли следующее устройство, что свидетельствует об успешной установке:
 
 ![](/images/guides/rescue-firmware/check-ch341a-windows.png)
 
-Next, identify your CH341A programmer model and select it from the `切换编程器` menu. Most commonly sold units are `CH341 双电压黑色版`:
+Затем определите модель вашего программатора CH341A и выберите её из списка `切换编程器` меню. Наиболее популярные модели — это `CH341 双电压黑色版`:
 
 ![](/images/guides/rescue-firmware/select-programmer.png)
 
-Follow the numbered steps in the diagram:
+Выполните действия, обозначенные номерами на схеме:
 
 ![](/images/guides/rescue-firmware/neoprogrammer.webp)
 
-1. Click `打开文件` and select the firmware file for your motherboard (**note: rename the extension to `.bin`**)
+1. Нажмите `打开文件` и выберите файл прошивки для вашей материнской платы (**Примечание: переименуйте расширение в `.bin`**)
    ![](/images/guides/rescue-firmware/select-firmware-windows.png)
 
-2. Click `检测` to detect the connected Flash chip model. If the exact model is not in the database, you can use a similar one (e.g., `W25Q128JW` can be replaced with `W25Q128FW`). These are usually just different revisions with identical parameters.
+2. Нажмите `检测` для определения модели подключенного чипа Flash. Если точной модели нет в базе данных, можно использовать похожую (например, `W25Q128JW` можно заменить на `W25Q128FW`). Как правило, это просто разные версии с одинаковыми параметрами.
    ![](/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
 
-3. Click `擦除` to completely erase the corrupted firmware. After erasing, you can optionally click `查空` to verify the Flash chip is empty.
+3. Нажмите `擦除` чтобы полностью удалить поврежденную прошивку. После удаления вы можете, при желании, нажать `查空` чтобы убедиться, что микросхема Flash пуста.
    ![](/images/guides/rescue-firmware/erase-and-erasure.png)
 
-4. Click `写入` to write the opened firmware file to the Flash chip. By default, the software performs writing and verification sequentially. **Keep the connection stable throughout; otherwise unexpected results may occur.**
+4. Нажмите `写入` чтобы записать открытый файл прошивки на микросхему Flash. По умолчанию программа выполняет запись и проверку последовательно. **Обеспечьте стабильность соединения на протяжении всего процесса; в противном случае возможны непредвиденные результаты.**
    ![](/images/guides/rescue-firmware/write-and-verify.png)
 
-5. (Optional) Click `校验` to confirm the written content matches the firmware file.
+5. (Необязательно) Нажмите `校验` чтобы убедиться, что текст соответствует файлу прошивки.
 
-### Using IMSProg (macOS, Linux)
+### Использование IMSProg (macOS, Linux)
 
-Linux kernels already have mainline CH341 drivers, so no extra driver is usually needed.
+В ядрах Linux уже есть драйверы CH341, входящие в основную ветку, поэтому дополнительный драйвер, как правило, не требуется.
 
-For macOS, [download the driver from the official site](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html).
+Для macOS, [скачайте драйвер с официального сайта](https://www.wch.cn/downloads/CH34XSER_MAC_ZIP.html).
 
-IMSProg is not packaged in most distributions. If available, try installing it from your distribution's repository first:
+IMSProg не входит в состав большинства дистрибутивов. Если он доступен, попробуйте сначала установить его из репозитория вашего дистрибутива:
 
 ```bash
 # Debian (13/14/sid)
@@ -174,7 +174,7 @@ sudo dnf install imsprog
 yay -S imsprog
 ```
 
-If your distribution does not provide it, compile from source:
+Если ваш дистрибутив не содержит эту программу, скомпилируйте её из исходного кода:
 
 ```bash
 # AOSC OS
@@ -189,20 +189,20 @@ chmod +x build_all.sh
 sudo ./build_all.sh # omit sudo on macOS
 ```
 
-After installation, you can launch IMSProg from your application menu.
+После установки вы можете запустить IMSProg из меню приложений.
 
-Once started, follow the numbered steps in the diagram:
+После запуска следуйте инструкциям, обозначенным номерами на схеме:
 
 ![](/en/images/guides/rescue-firmware/imsprog.webp)
 
-1. Click `Open` and select the firmware file for your motherboard (**note: as with NeoProgrammer, rename the extension to `.bin`**)
+1. Нажмите `Open` и выберите файл прошивки для вашей материнской платы (**Примечание: как и в случае с NeoProgrammer, переименуйте расширение в `.bin`**)
 
-2. Click `Detect` to detect the connected Flash chip model. If the exact model is not in the database, use a similar one as described above.
+2. Нажмите `Detect` чтобы определить модель подключенного чипа Flash. Если точной модели нет в базе данных, воспользуйтесь похожей моделью, как описано выше.
 
-3. Check all three boxes on the left, then click `Go!` to begin flashing the firmware to the Flash chip. **Keep the connection stable throughout; otherwise unexpected results may occur.**
+3. Установите флажки во всех трёх полях слева, затем нажмите `Go!` чтобы начать запись прошивки на микросхему Flash. **Обеспечьте стабильность соединения на протяжении всего процесса; в противном случае возможны непредвиденные последствия.**
 
-## Verify the recovery
+## Проверить восстановление
 
-Disconnect all tools or cables from the Flash chip. If you removed the cooler, clean the residual thermal paste from the CPU, apply fresh paste, and reinstall the cooler.
+Отсоедините все инструменты и кабели от микросхемы Flash. Если вы сняли кулер, удалите остатки термопасты с процессора, нанесите новую термопасту и установите кулер на место.
 
-Connect the power cable as usual, install RAM modules and storage, attach keyboard, mouse, and monitor, then power on. If the `LOONGSON 龙芯` logo appears, the recovery was successful.
+Подключите кабель питания, как обычно, установите модули оперативной памяти и накопители, подсоедините клавиатуру, мышь и монитор, а затем включите питание. Если `LOONGSON 龙芯` появится логотип, значит восстановление прошло успешно.

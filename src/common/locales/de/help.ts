@@ -1,63 +1,63 @@
 export default {
   basic: {
     series:
-      "Product Series refers to the family to which this product belongs.",
+      "Die Produktreihe bezeichnet die Produktfamilie, zu der dieses Produkt gehört.",
     market:
-      "Market Segment refers to the cost and applications as recommended by Loongson Technology. Please note that it does not reflect the actual applications and scenarios where products based on this chip is used.",
+      "Der Begriff „Marktsegment“ bezieht sich auf die von Loongson Technology empfohlenen Kosten und Anwendungsbereiche. Bitte beachten Sie, dass dies nicht die tatsächlichen Anwendungsbereiche und Szenarien widerspiegelt, in denen Produkte auf Basis dieses Chips eingesetzt werden.",
   },
   cpu: {
     voltage:
-      "Typical Voltage refers to the typical core voltage as required for stable operation at the rated frequency.",
-    tpc: `Typical Power Consumption refers to the normative power consumption under normal workload.
+      "Die typische Spannung bezieht sich auf die typische Kernspannung, die für einen stabilen Betrieb bei der Nennfrequenz erforderlich ist.",
+    tpc: `Der typische Stromverbrauch bezieht sich auf den normativen Stromverbrauch bei normaler Auslastung.
 
-        Note: Typical Power Consumption does not reflect the power consumption for each specific use case.`,
-    tdp: `Thermal Design Power refers to the maximal heat output under extreme load.
+        Hinweis: Der typische Stromverbrauch gibt nicht den Stromverbrauch für jeden einzelnen Anwendungsfall wieder.`,
+    tdp: `Die thermische Auslegungsleistung bezeichnet die maximale Wärmeabgabe unter extremer Belastung.
 
-        Note: Thermal Design Power does not reflect the actual power consumption of this chip.`,
+        Hinweis: Die thermische Auslegungsleistung gibt nicht den tatsächlichen Stromverbrauch dieses Chips wieder.`,
   },
   memory: {
-    ecc: `ECC memory modules are capable to detecting and correcting internal data corruption and are known to be effective in enhancing system stability and reliability. ECC takes extra 8 bits to store checksums on each 64 bits of data stored and, when said data were read, they were verified against the aforementioned checksum to detect and repair corrupted data, preventing bad data from reaching the processor.
+    ecc: `ECC-Speichermodule sind in der Lage, interne Datenfehler zu erkennen und zu korrigieren, und tragen nachweislich zur Verbesserung der Systemstabilität und -zuverlässigkeit bei. ECC benötigt zusätzliche 8 Bit, um Prüfsummen für jeweils 64 gespeicherte Datenbits zu speichern. Beim Auslesen der Daten werden diese anhand der genannten Prüfsumme überprüft, um fehlerhafte Daten zu erkennen und zu reparieren, wodurch verhindert wird, dass fehlerhafte Daten den Prozessor erreichen.
         
-        Note: ECC memory support is implemented on the motherboard and firmware level. Please contact your device manufacturer for details.`,
+        Hinweis: Die ECC-Speicherunterstützung wird auf Motherboard- und Firmware-Ebene implementiert. Bitte wenden Sie sich für weitere Informationen an den Hersteller Ihres Geräts.`,
   },
   exp: {
     io_name:
-      "I/O Interface refer to the channel through which the processor exchanges data with peripherals.",
-    io_rev: `I/O Interface Revision refers to the version at which the main I/O interface operates at.
+      "Unter I/O-Schnittstelle versteht man den Kanal, über den der Prozessor Daten mit Peripheriegeräten austauscht.",
+    io_rev: `Die I/O-Schnittstellenversion gibt an, mit welcher Version die primäre I/O-Schnittstelle arbeitet.
                 
-        Note: PCI Express 4.0 support is implemented on the motherboard and firmware level. PLease contact your device manufacturer for details.`,
-    d2d_name: `Die-to-Die Connection refers to the technology with which multiple processor dies interconnect.
+        Hinweis: Die Unterstützung für PCI Express 4.0 ist auf Motherboard- und Firmware-Ebene implementiert. Weitere Informationen erhalten Sie vom Hersteller Ihres Geräts.`,
+    d2d_name: `Unter „Die-to-Die-Verbindung“ versteht man die Technologie, mit der mehrere Prozessorchips miteinander verbunden werden.
 
-        Loongson Coherent Link is an in-house die-to-die connection, bringing lower latency and higher bandwidth than HyperTransport 3.0.
-        HyperTransport is a high-speed, low-latency, and point-to-point serial/parallel bus, usually used to form connections between processors, chipsets, memory controllers, and I/O peripherals.`,
+        Loongson Coherent Link ist eine firmeneigene Die-to-Die-Verbindung, die eine geringere Latenz und eine höhere Bandbreite als HyperTransport 3.0 bietet.
+HyperTransport ist ein serieller/paralleler Punkt-zu-Punkt-Bus mit hoher Geschwindigkeit und geringer Latenz, der üblicherweise zur Herstellung von Verbindungen zwischen Prozessoren, Chipsätzen, Speichercontrollern und E/A-Peripheriegeräten verwendet wird.`,
   },
   package: {
     temperature:
-      "Temperature range refers to the range of temperature the surface of the chip package is allowed to reach.",
+      "Der Temperaturbereich bezeichnet den Bereich der Temperaturen, die die Oberfläche des Chipgehäuses erreichen darf.",
     t_case:
-      " (Case Temperature) refers to the maximal temperature the surface of the chip temperature is allowed to reach.\n\nNote: ",
+      " (Gehäusetemperatur) bezeichnet die maximale Temperatur, die die Oberfläche des Chips erreichen darf.\n\nHinweis: ",
     t_junction:
-      "(Junction Temperature) refers to the maximal temperature the internals of the chip (and transistors) are allowed to operate under.\n\nNote: ",
+      "(Sperrschichttemperatur) bezeichnet die maximale Temperatur, bei der die inneren Bauteile des Chips (und die Transistoren) betrieben werden dürfen.\n\nHinweis: ",
     t_notice:
-      "dictates the performance requirements for the cooling devices and ambient requirements required for this chip.",
+      "legt die Leistungsanforderungen an die Kühlvorrichtungen sowie die Umgebungsbedingungen fest, die für diesen Chip erforderlich sind.",
   },
   power: {
     clock_gating:
-      "Clock Gating is a form of power conservation technology which disables clock signals to idle circuitries to minimise unnecessary dynamic power consumption.",
+      "Clock Gating ist eine Technologie zur Energieeinsparung, bei der die Taktsignale für nicht aktive Schaltkreise deaktiviert werden, um unnötigen dynamischen Stromverbrauch zu minimieren.",
     frequency_scaling:
-      "Dynamic Frequency Scaling is the ability for the processor to adjust its clock frequency based on real-time load and power requirements.",
+      "Dynamische Frequenzskalierung bezeichnet die Fähigkeit des Prozessors, seine Taktfrequenz entsprechend der aktuellen Auslastung und dem Strombedarf anzupassen.",
     voltage_scaling:
-      "Adaptive Voltage Scaling is the ability for the processor to adjust its core voltage (within rated range) based on current clock frequency and load.",
+      "Adaptive Spannungsskalierung bezeichnet die Fähigkeit des Prozessors, seine Kernspannung (innerhalb des Nennbereichs) entsprechend der aktuellen Taktfrequenz und Auslastung anzupassen.",
   },
   tech: {
     isa: {
-      info: "Instruction Set refers to the baseline set of commands and instructions that the processor can understand and execute.",
+      info: "Der Begriff „Befehlssatz“ bezeichnet die Grundausstattung an Befehlen und Anweisungen, die der Prozessor verstehen und ausführen kann.",
       extensions:
-        "ISA Extensions refer to the additional instructions implemented on top of the baseline instruction set.",
-      LBT: "Loongson Binary Translation\n\nA set of extended instructions to improve execution performance of foreign-architecture code. The LBT extension implements non-privileged and privileged instructions.",
-      LVZ: "Loongson VirtualiZation\n\nA set of extended instructions to implement hardware acceleration for system-level virtualization. The LVZ extension implements mostly privileged instructions, useful for controlling status registers, as well as implementing additional functions for exceptions, interrupts, and storage management.",
-      LSX: "Loongson SIMD eXtension\n\nA set of extended instructions to implement single-instruction, multiple-data. The LSX extension is implemented on special registers to accelerate computational intensive tasks. The LSX extension operates at 128-bit vector width.",
-      LASX: "Loongson Advanced SIMD eXtension\n\nSimilar to LSX, but operates at 256-bit vector width.",
+        "ISA-Erweiterungen bezeichnen die zusätzlichen Befehle, die zusätzlich zum Basisbefehlssatz implementiert wurden.",
+      LBT: "Loongson Binary Translation\n\nEin Satz erweiterter Befehle zur Verbesserung der Ausführungsleistung von Code, der auf einer fremden Architektur basiert. Die LBT-Erweiterung implementiert sowohl nicht privilegierte als auch privilegierte Befehle.",
+      LVZ: "Loongson-Virtualisierung\n\nEin Satz erweiterter Befehle zur Implementierung von Hardwarebeschleunigung für die Virtualisierung auf Systemebene. Die LVZ-Erweiterung umfasst vor allem privilegierte Befehle, die zur Steuerung von Statusregistern sowie zur Implementierung zusätzlicher Funktionen für Ausnahmen, Interrupts und Speicherverwaltung dienen.",
+      LSX: "Loongson SIMD-Erweiterung\n\nEin Satz erweiterter Befehle zur Umsetzung von „Single-Instruction, Multiple-Data“ (SIMD). Die LSX-Erweiterung wird auf speziellen Registern implementiert, um rechenintensive Aufgaben zu beschleunigen. Die LSX-Erweiterung arbeitet mit einer Vektorbreite von 128 Bit.",
+      LASX: "Loongson Advanced SIMD eXtension\n\nÄhnlich wie LSX, arbeitet jedoch mit einer Vektorbreite von 256 Bit.",
     },
   },
 }

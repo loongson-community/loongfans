@@ -1,3 +1,3 @@
-### High Energy Consumption
+### Высокое энергопотребление
 
-Laptops that uses AVS (Adaptive Voltage Scaling) and not the full DVFS (Dynamic Voltage and Frequency Scaling) are known to have higher energy consumptions. Laptops that offers a limited range of core voltage modulation is especially prone to higher power consumption and less-than-ideal battery runtime.
+Известно, что ноутбуки, в которых используется технология AVS (адаптивное регулирование напряжения), а не полная система DVFS (динамическое регулирование напряжения и частоты), потребляют больше энергии. Ноутбуки с ограниченным диапазоном регулирования напряжения ядра особенно подвержены повышенному энергопотреблению и неидеальному времени автономной работы.

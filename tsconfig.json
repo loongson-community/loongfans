@@ -1,6 +1,7 @@
 {
   "extends": ["@vue/tsconfig"],
   "compilerOptions": {
+    "ignoreDeprecations": "6.0", // as e.g. currently below "baseUrl": "." is still used...
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "bundler",

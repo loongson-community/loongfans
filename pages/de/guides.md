@@ -1,22 +1,22 @@
 ---
 layout: page
-returnLink: /en
-pageTitle: User Guide and Troubleshooting
-pageSubTitle: Taming the Quirky Loongson...
+returnLink: /de
+pageTitle: Benutzerhandbuch und Fehlerbehebung
+pageSubTitle: Den eigenwilligen Loongson zähmen...
 ---
 
-As many would say, Loongson is a bit quirky. The following guides will help you started.
+Wie viele sagen würden, ist Loongson ein bisschen eigenwillig. Die folgenden Anleitungen helfen dir beim Einstieg.
 
-## Getting Started
+## Erste Schritte
 
-- [Getting Started: Your Guide from Unboxing to a Happy User](/en/guides/out-of-the-box)
+- [Erste Schritte: Ihr Leitfaden vom Auspacken bis zur Zufriedenheit](/en/guides/out-of-the-box)
 
-## FAQ
+Häufig gestellte Fragen
 
-- [Common Issues: Desktop and Server Platforms](/en/guides/errata-desktop-and-server)
-- [Common Issues: Laptop Platform](/en/guides/errata-laptop)
-- [Common Issues: Development Boards](/en/guides/errata-evb)
+- [Häufige Probleme: Desktop- und Serverplattformen](/en/guides/errata-desktop-and-server)
+- [Häufige Probleme: Laptop-Plattform](/en/guides/errata-laptop)
+- [Häufige Probleme: Entwicklungsboards](/en/guides/errata-evb)
 
-## Fix Hardware
+## Hardware reparieren
 
-- [Rescuing Firmware](/en/guides/rescue-firmware)
+- [Firmware retten](/en/guides/rescue-firmware)

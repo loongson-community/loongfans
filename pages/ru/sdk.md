@@ -1,27 +1,27 @@
 ---
 layout: page
 # 返回首页
-returnLink: /en
-pageTitle: Developer's Guide
-pageSubTitle: Guides and Notes on Developing for LoongArch
+returnLink: /ru
+pageTitle: Руководство для разработчиков
+pageSubTitle: Руководства и рекомендации по разработке для LoongArch
 ---
 
 <script setup lang="ts">
 import SdkIndex from "@src/client/components/sdk/SdkIndex.vue"
 </script>
 
-When developing for non-x86 systems, many may find themselves asking:
+При разработке для систем, отличных от x86, у многих может возникнуть вопрос:
 
-> Where's the SDK of this device?
+> Где можно найти SDK для этого устройства?
 
-Thanks to the efforts of community contributors and Loongson engineers since 2021, most toolchains now have upstream support.
+Благодаря усилиям участников сообщества и инженеров Loongson, предпринимаемым с 2021 года, большинство наборов инструментов теперь поддерживаются в основных репозиториях.
 
-> What does this mean?
+> Что это значит?
 
-This means that the process to install various programming toolchains is now similar, if not identical, to the x86 platform - this means installing them is as easy as installing from distro repositories and with single-line command pastes!
+Это означает, что процесс установки различных наборов инструментов для программирования теперь аналогичен, если не идентичен, процессу на платформе x86 — то есть их установка стала такой же простой, как установка из репозиториев дистрибутива, и для этого достаточно ввести всего одну команду!
 
 :::tip
-Given that ABI2.0 (“New World”) is used by most community users and developers, this guide focuses solely on introducing installation and configuration procedures for ABI2.0 systems. ABI1.0 (“Old World”) is not covered here. If you are in a scenario where you have to develop for ABI1.0, we recommend reconsidering and confirming that criterion. Should that necessity arise, please refer to the documentation from [Loongson Open Source Community (loongnix.cn)](https://www.loongnix.cn/).
+Учитывая, что ABI 2.0 («New World») используется большинством пользователей и разработчиков сообщества, данное руководство посвящено исключительно описанию процедур установки и настройки систем ABI 2.0. ABI 1.0 («Old World») в данном документе не рассматривается. Если вам приходится вести разработку для ABI 1.0, мы рекомендуем пересмотреть это решение и убедиться в его обоснованности. В случае возникновения такой необходимости, пожалуйста, обратитесь к документации по адресу [Сообщество открытого исходного кода Loongson (loongnix.cn)](https://www.loongnix.cn/).
 :::
 
 ---
@@ -29,150 +29,150 @@ Given that ABI2.0 (“New World”) is used by most community users and develope
 <SdkIndex>
 <template #gnu>
 
-GCC and Binutils officially support LoongArch. They are available directly from your distro's repository, as binaries, or may be built through cross-compilation.
+GCC и Binutils официально поддерживают LoongArch. Их можно получить напрямую из репозитория вашего дистрибутива в виде бинарных файлов или скомпилировать с помощью кросс-компиляции.
 
 :::tip
-Note: Later versions of GCC and Binutils introduces enhanced support for LoongArch. Notably, GCC 14 introduced support for LoongArch vector extensions, whereas Binutils 2.41 introduced support for linker relaxation and, later with GCC 16, medium code model (significantly improving compatibility with larger source projects). All these represent critical functional enhancements. As such, please update them to at least the aforementioned versions.
+Примечание: В более поздних версиях GCC и Binutils реализована расширенная поддержка LoongArch. В частности, в GCC 14 появилась поддержка векторных расширений LoongArch, а в Binutils 2.41 — поддержка смягчения ограничений компоновщика, а позже, начиная с GCC 16, — поддержка модели кода среднего уровня (что значительно улучшило совместимость с крупными проектами исходного кода). Все эти изменения представляют собой важные функциональные усовершенствования. В связи с этим рекомендуется обновить их как минимум до указанных выше версий.
 
-If you intend to release universal binaries for projects or maintain a Linux distribution, please carefully review the relevant specifications and constraints outlined in the [*Software Development and Build Convention for LoongArch Architectures*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
+Если вы планируете выпускать универсальные бинарные файлы для проектов или заниматься поддержкой дистрибутива Linux, пожалуйста, внимательно ознакомьтесь с соответствующими требованиями и ограничениями, изложенными в [*Правила разработки и сборки программного обеспечения для архитектур LoongArch*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
 :::
 
-To install GNU toolchain on common Linux distributions and operating systems:
+Чтобы установить набор инструментов GNU в распространенных дистрибутивах Linux и операционных системах:
 
-| Operating System | Installation Procedure |
+| Операционная система | Порядок установки |
 | -------- | -------- |
-| AOSC OS | `oma install binutils gcc` |
+| ОС AOSC | `oma install binutils gcc` |
 | Arch Linux | `sudo pacman -S binutils gcc` |
-| Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install build-essential` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install binutils gcc` |
+| Debian и его производные, такие как Deepin, openKylin и Loongnix 25 | `sudo apt install build-essential` |
+| Дистрибутивы, созданные на базе Red Hat, такие как Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install binutils gcc` |
 
-If you do not have a LoongArch device or wish to cross-compile:
+Если у вас нет устройства LoongArch или вы хотите выполнить кросс-компиляцию:
 
-| Operating System | Installation Procedure |
+| Операционная система | Порядок установки |
 | -------- | -------- |
-| AOSC OS | `oma install gcc+cross-loongarch64` |
-| Debian 13 and later, Ubuntu 24.04 and later, and their respective derivatives | `sudo apt install gcc-loongarch64-linux-gnu` |
-| Windows and other Linux distributions | Please install from GitHub repository [loongson/build-tools](https://github.com/loongson/build-tools) |
+| ОС AOSC | `oma install gcc+cross-loongarch64` |
+| Debian 13 и более поздние версии, Ubuntu 24.04 и более поздние версии, а также их соответствующие производные | `sudo apt install gcc-loongarch64-linux-gnu` |
+| Windows и другие дистрибутивы Linux | Пожалуйста, установите из репозитория GitHub [loongson/инструменты сборки](https://github.com/loongson/build-tools) |
 
 </template>
 
 <template #llvm>
 
-LLVM officially supports LoongArch. It is available directly from your distro's repository, as binaries, or may be built through cross-compilation.
+LLVM официально поддерживает LoongArch. Его можно установить напрямую из репозитория вашего дистрибутива в виде бинарных файлов или скомпилировать с помощью кросс-компиляции.
 
 :::tip
-Note: Later versions of LLVM have introduces enhanced support for LoongArch. LLVM 18 introduced support for LoongArch vector extensions. When available, please update to this version or later.
+Примечание: В более поздних версиях LLVM реализована расширенная поддержка LoongArch. В LLVM 18 добавлена поддержка векторных расширений LoongArch. Если такая версия доступна, рекомендуется обновиться до неё или более поздней версии.
 
-If you intend to release universal binaries for projects or maintain a Linux distribution, please carefully review the relevant specifications and constraints outlined in the [*Software Development and Build Convention for LoongArch Architectures*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
+Если вы планируете выпускать универсальные бинарные файлы для проектов или заниматься поддержкой дистрибутива Linux, пожалуйста, внимательно ознакомьтесь с соответствующими требованиями и ограничениями, изложенными в [*Правила разработки и сборки программного обеспечения для архитектур LoongArch*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
 :::
 
-To install LLVM (including Clang) on common Linux distributions and operating systems:
+Чтобы установить LLVM (включая Clang) в распространенных дистрибутивах Linux и операционных системах:
 
-| Operating Systems | Installation Procedure |
+| Операционные системы | Порядок установки |
 | -------- | -------- |
-| AOSC OS | `oma install llvm` |
+| ОС AOSC | `oma install llvm` |
 | Arch Linux | `sudo pacman -S clang llvm` |
-| Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install clang llvm` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install clang llvm` |
+| Debian и его производные, такие как Deepin, openKylin и Loongnix 25 | `sudo apt install clang llvm` |
+| Дистрибутивы, созданные на базе Red Hat, такие как Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install clang llvm` |
 
-The LLVM toolchain (particularly the Clang compiler) natively supports cross compilation. To cross-compile this toolchain for LoongArch, use LLVM version 17 or later and refer to [this article](https://clang.llvm.org/docs/CrossCompilation.html) and specify the LoongArch target (e.g., `loongarch64-unknown-linux-gnu`).
+Набор инструментов LLVM (в частности, компилятор Clang) изначально поддерживает кросс-компиляцию. Для кросс-компиляции этого набора инструментов под LoongArch используйте LLVM версии 17 или более поздней и ознакомьтесь с [эта статья](https://clang.llvm.org/docs/CrossCompilation.html) и укажите целевую платформу LoongArch (например, `loongarch64-unknown-linux-gnu`).
 
 </template>
 
 <template #rust>
 
-Rust officially supports LoongArch. It is available directly from your distro's repository, as binaries, or may be built through cross-compilation.
+Rust официально поддерживает LoongArch. Его можно установить напрямую из репозитория вашего дистрибутива в виде бинарных файлов или скомпилировать с помощью кросс-компиляции.
 
-Rust recommends using [rustup](https://rustup.rs/) to install the Rust toolchain:
+Rust рекомендует использовать [заржаветь](https://rustup.rs/) Чтобы установить инструментарий Rust:
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-To install Rust (rustc) and the Cargo package manager on common Linux distributions and operating systems:
+Чтобы установить Rust (rustc) и менеджер пакетов Cargo в распространенных дистрибутивах Linux и операционных системах:
 
-| Operating System | Installation Procedure |
+| Операционная система | Порядок установки |
 | -------- | -------- |
-| AOSC OS | `oma install rustc` |
+| ОС AOSC | `oma install rustc` |
 | Arch Linux | `sudo pacman -S rustc` |
-| Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install rust-all` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install rust cargo` |
+| Debian и его производные, такие как Deepin, openKylin и Loongnix 25 | `sudo apt install rust-all` |
+| Дистрибутивы, созданные на базе Red Hat, такие как Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install rust cargo` |
 
 </template>
 
 <template #nodejs>
 
-Node.js officially supports LoongArch. It is available directly from your distro's repository, as binaries, or may be built through cross-compilation. Node.js ships LoongArch binaries through the [Unofficial Builds](https://unofficial-builds.nodejs.org/) project (tagged as the `loong64` architecture).
+Node.js официально поддерживает LoongArch. Его можно установить напрямую из репозитория вашего дистрибутива в виде бинарных файлов или скомпилировать с помощью кросс-компиляции. Бинарные файлы Node.js для LoongArch распространяются через [Неофициальные сборки](https://unofficial-builds.nodejs.org/) проект (отмеченный как `loong64` архитектура).
 
-To install Node.js on common Linux distributions and operating systems:
+Чтобы установить Node.js в популярных дистрибутивах Linux и операционных системах:
 
-| Operating System | Installation Procedure |
+| Операционная система | Порядок установки |
 | -------- | -------- |
-| AOSC OS | `oma install nodejs` |
+| ОС AOSC | `oma install nodejs` |
 | Arch Linux | `sudo pacman -S nodejs` |
-| Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install nodejs` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install nodejs` |
+| Debian и его производные, такие как Deepin, openKylin и Loongnix 25 | `sudo apt install nodejs` |
+| Дистрибутивы, созданные на базе Red Hat, такие как Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install nodejs` |
 
 :::tip
-Many Linux distributions provide multiple versions of Node.js to suit the needs of different applications and projects. Please consult distro documentation and install alternative Node.js versions as needed.
+Многие дистрибутивы Linux предоставляют несколько версий Node.js, чтобы удовлетворить потребности различных приложений и проектов. Ознакомьтесь с документацией по дистрибутиву и установите альтернативные версии Node.js по мере необходимости.
 :::
 
 </template>
 
 <template #golang>
 
-Go officially supports LoongArch. It is available directly from your distro's repository, as binaries, or may be built through cross-compilation. The Go upstream builds LoongArch binaries, which are available from their [download page](https://go.dev/dl/).
+Go официально поддерживает LoongArch. Его можно получить напрямую из репозитория вашего дистрибутива в виде бинарных файлов или скомпилировать с помощью кросс-компиляции. Разработчики Go создают бинарные файлы для LoongArch, которые доступны на их [Скачать страницу](https://go.dev/dl/).
 
-To install Go on common Linux distributions and operating systems:
+Чтобы установить Go в популярных дистрибутивах Linux и операционных системах:
 
-| Operating System | Installation Procedure |
+| Операционная система | Порядок установки |
 | -------- | -------- |
-| AOSC OS | `oma install go` |
+| ОС AOSC | `oma install go` |
 | Arch Linux | `sudo pacman -S go` |
-| Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install golang` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install golang` |
+| Debian и его производные, такие как Deepin, openKylin и Loongnix 25 | `sudo apt install golang` |
+| Дистрибутивы, основанные на Red Hat, такие как Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install golang` |
 
-Go natively supports cross-compilation. With Go 1.21 or later, follow the instructions outlined in [this article](https://go.dev/doc/install/source) and specify the LoongArch target (i.e., `GOARCH=loong64`) to cross-compile for LoongArch.
+Go изначально поддерживает кросс-компиляцию. Начиная с версии Go 1.21, следуйте инструкциям, изложенным в [эта статья](https://go.dev/doc/install/source) и указать целевую платформу LoongArch (т. е., `GOARCH=loong64`) для кросс-компиляции под LoongArch.
 
 </template>
 
 <template #python>
 
-Python officially supports LoongArch. It is available directly from your distro's repository, as binaries, or may be built through cross-compilation.
+Python официально поддерживает LoongArch. Его можно установить напрямую из репозитория вашего дистрибутива в виде бинарных файлов или скомпилировать с помощью кросс-компиляции.
 
-To install Python on common Linux distributions and operating systems:
+Чтобы установить Python в распространенных дистрибутивах Linux и операционных системах:
 
-| Operating System | Installation Procedure |
+| Операционная система | Порядок установки |
 | -------- | -------- |
-| AOSC OS | `oma install python-3` |
+| ОС AOSC | `oma install python-3` |
 | Arch Linux | `sudo pacman -S python` |
-| Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install python3` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install python3` |
+| Debian и его производные, такие как Deepin, openKylin и Loongnix 25 | `sudo apt install python3` |
+| Дистрибутивы, созданные на базе Red Hat, такие как Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install python3` |
 
 :::tip
-Since LoongArch still lacks definition for a "manylinux" baseline, the official PyPI repository does not host binaries for LoongArch. This means that when installing PyPI modules using `pip`, the respective modules will be compiled from source and you may need to install C/C++/Rust toolchains as needed.
+Поскольку для LoongArch пока не определена базовая конфигурация «manylinux», в официальном репозитории PyPI нет бинарных файлов для LoongArch. Это означает, что при установке модулей PyPI с помощью `pip`... соответствующие модули будут скомпилированы из исходного кода, и вам, возможно, понадобится установить инструментальные средства C/C++/Rust по мере необходимости.
 
-Loongson Technology hosts a PyPI binary repository for ABI2.0 systems at [lpypi.loongnix.cn](http://lpypi.loongnix.cn/). You may edit `/etc/pip.conf` to and specify this as the default repository. alternatively, the [loong64](https://github.com/loong64) organization on GitHub maintains an independent PyPI binary repository. For configuration procedures, please refer to [the organization's README](https://github.com/loong64#pypi-repository).
+Компания Loongson Technology ведёт репозиторий бинарных файлов PyPI для систем ABI 2.0 по адресу [lpypi.loongnix.cn](http://lpypi.loongnix.cn/). Вы можете отредактировать `/etc/pip.conf` и установить его в качестве репозитория по умолчанию. В качестве альтернативы можно [длинный 64-разрядный](https://github.com/loong64) Организация на GitHub ведет независимый репозиторий бинарных файлов PyPI. Инструкции по настройке см. в [файл README организации](https://github.com/loong64#pypi-repository).
 :::
 
 </template>
 
 <template #dotnet>
 
-.NET officially supports LoongArch. However, as LoongArch is classified as a “community-supported architecture” within .NET, Microsoft does not ship binary toolchains for LoongArch.
+.NET официально поддерживает LoongArch. Однако, поскольку LoongArch в рамках .NET относится к категории «архитектур, поддерживаемых сообществом», Microsoft не поставляет бинарных инструментальных средств для LoongArch.
 
-However, .NET toolchain binaries may be obtained through the following channels:
+Однако бинарные файлы инструментария .NET можно получить следующими способами:
 
-- [.NET 10 (from Loongson Technology)](https://github.com/loongson/dotnet/releases)
-- [.NET 9 (from the loongson-community organization)](http://github.com/loongson-community/dotnet-unofficial-build/releases)
+- [.NET 10 (от Loongson Technology)](https://github.com/loongson/dotnet/releases)
+- [.NET 9 (от организации loongson-community)](http://github.com/loongson-community/dotnet-unofficial-build/releases)
 
-For common Linux distributions, simply download the SDK package with the RID (.NET Runtime Identifier) `linux-loongarch64` to obtain the full toolchain (i.e., `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`). For instructions on installing the .NET SDK using tar packages, refer to the [official .NET documentation](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install).
+Для распространенных дистрибутивов Linux достаточно просто загрузить пакет SDK с RID (идентификатор среды выполнения .NET) `linux-loongarch64` чтобы получить полный набор инструментов (т. е., `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`). Инструкции по установке .NET SDK с помощью пакетов tar см. в [официальная документация по .NET](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install).
 
-### Cross-Compiling .NET Applications for LoongArch
+### Кросс-компиляция приложений .NET для LoongArch
 
-.NET natively supports cross-compilation and cross-platform publishing. With .NET 9 or later, refer to [this article](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) and specify the target RID to publish .NET applications for LoongArch. However, since LoongArch is classified as a “community-supported architecture” for .NET, NuGet.org does not host .NET runtime packages targeting LoongArch, which may cause build failures.
+.NET изначально поддерживает кросс-компиляцию и кроссплатформенную публикацию. В .NET 9 и более поздних версиях см. [эта статья](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) и укажите целевой RID для публикации приложений .NET для LoongArch. Однако, поскольку LoongArch относится к категории «архитектур, поддерживаемых сообществом» для .NET, на NuGet.org не размещаются пакеты среды выполнения .NET, предназначенные для LoongArch, что может привести к сбоям при сборке.
 
-To workaround this issue, you may obtain and deploy all necessary NuGet packages locally. To do so, simply obtain the following files from the toolchain release pages mentioned above (* denotes specific version numbers):
+Чтобы обойти эту проблему, вы можете загрузить и установить все необходимые пакеты NuGet локально. Для этого просто загрузите следующие файлы со страниц релизов инструментария, указанных выше (* обозначает конкретные номера версий):
 
 - Microsoft.AspNetCore.App.Runtime.linux-loongarch64.*.nupkg
 - Microsoft.NETCore.App.Crossgen2.linux-loongarch64.*.nupkg
@@ -181,10 +181,10 @@ To workaround this issue, you may obtain and deploy all necessary NuGet packages
 - runtime.linux-loongarch64.Microsoft.DotNet.ILCompiler.*.nupkg
 
 :::tip
-The distribution provided by loongson-community/dotnet-unofficial-build categorizes the aforementioned files as "release artifacts." Please download this package to obtain the components listed above.
+В дистрибутиве, предоставляемом loongson-community/dotnet-unofficial-build, вышеупомянутые файлы относятся к категории «артефакты выпуска». Чтобы получить перечисленные выше компоненты, загрузите этот пакет.
 :::
 
-Place the above files in a path that suits your needs (e.g., `/data/loongarch64-nupkgs`) and follow the instructions in [this article](https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file#packagesources) to add this directory to your NuGet source list, as shown below:
+Поместите указанные выше файлы в папку, удобную для вас (например, `/data/loongarch64-nupkgs`) и следуйте инструкциям в [эта статья](https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file#packagesources) чтобы добавить этот каталог в список источников NuGet, как показано ниже:
 
 ```xml
 <packageSources>
@@ -192,123 +192,123 @@ Place the above files in a path that suits your needs (e.g., `/data/loongarch64-
 </packageSources>
 ```
 
-You should now be able to cross-compile .NET applications for LoongArch.
+Теперь у вас должна появиться возможность выполнять кросс-компиляцию приложений .NET для LoongArch.
 
-### Compiling the .NET Toolchain
+### Сборка инструментария .NET
 
-Compiling the .NET toolchain itself is a relatively involved process. To ease the learning curve, please refer to the [CI build scripts used by Loongson Technology](https://github.com/loongson/dotnet/blob/build/.github/workflows/build-sdk10.yml). This method utilizes the VMR source distribution package officially recommended by .NET for compilation.
+Сборка самой среды разработки .NET — это довольно сложный процесс. Чтобы упростить освоение, ознакомьтесь с [Скрипты сборки CI, используемые компанией Loongson Technology](https://github.com/loongson/dotnet/blob/build/.github/workflows/build-sdk10.yml). В этом методе для компиляции используется пакет распространения исходных кодов VMR, официально рекомендованный платформой .NET.
 
 </template>
 
 <template #java>
 
-Due to non-technical reasons, Oracle OpenJDK does not currently support LoongArch JIT. To install Java, it is recommended to download binary packages compatible with the "Linux 5.10.0 kernel UAPI" on the [Loongson Open Source Community (loongnix.cn)](https://www.loongnix.cn/zh/api/java/) or through your distro's repository.
+По нетехническим причинам Oracle OpenJDK в настоящее время не поддерживает LoongArch JIT. Для установки Java рекомендуется загрузить бинарные пакеты, совместимые с «ядром Linux 5.10.0 UAPI», на сайте [Сообщество открытого исходного кода Loongson (loongnix.cn)](https://www.loongnix.cn/zh/api/java/) или через репозиторий вашего дистрибутива.
 
-To install Java on common Linux distributions and operating systems:
+Чтобы установить Java в распространенных дистрибутивах Linux и операционных системах:
 
-| Operating System | Installation Procedures |
+| Операционная система | Порядок установки |
 | -------- | -------- |
-| AOSC OS | `oma install openjdk` |
+| ОС AOSC | `oma install openjdk` |
 | Arch Linux | `sudo pacman -S java-openjdk` |
-| Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install default-jdk` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install java-latest-openjdk` |
+| Debian и его производные, такие как Deepin, openKylin и Loongnix 25 | `sudo apt install default-jdk` |
+| Дистрибутивы, созданные на базе Red Hat, такие как Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install java-latest-openjdk` |
 
 :::tip
-Many Linux distributions provide multiple versions of OpenJDK to suit the needs of different applications and projects. Please consult distro documentation and install alternative OpenJDK versions as needed.
+Многие дистрибутивы Linux предоставляют несколько версий OpenJDK, чтобы удовлетворить потребности различных приложений и проектов. Ознакомьтесь с документацией по дистрибутиву и установите альтернативные версии OpenJDK по мере необходимости.
 :::
 
 </template>
 
 <template #kernel>
 
-The Linux Kernel officially supports LoongArch. Generally, Linux distributions based on ABI2.0 utilize the upstream kernel (along with platform-specific workarounds and other patches, see below). However, some commercial distributions ship the 6.6 "longterm" kernel with an extensive set of platform-specific patches.
+Ядро Linux официально поддерживает LoongArch. Как правило, дистрибутивы Linux, основанные на ABI 2.0, используют исходное ядро (вместе с платформозависимыми обходными решениями и другими исправлениями, см. ниже). Однако некоторые коммерческие дистрибутивы поставляются с ядром версии 6.6 «longterm», содержащим обширный набор платформозависимых исправлений.
 
 :::tip
-The Linux Kernel introduced LoongArch support since version 5.19. However, to fully leverage the hardware capabilities and performance of LoongArch, please use the latest mainline kernel.
+Поддержка LoongArch была добавлена в ядро Linux начиная с версии 5.19. Однако для полного использования аппаратных возможностей и производительности LoongArch рекомендуется использовать последнюю версию основного ядра.
 :::
 
-### Kernel Maintenance Reference
+### Справочник по обслуживанию ядра
 
-As noted above, newer Linux kernels are generally preferable due to their better support for LoongArch devices. However, as distros may have their own set of rules when it comes to kernel updates, we have assembled the guide below for your reference.
+Как отмечалось выше, более новые версии ядра Linux, как правило, предпочтительнее благодаря лучшей поддержке устройств LoongArch. Однако, поскольку дистрибутивы могут иметь свои собственные правила в отношении обновления ядра, мы подготовили приведенное ниже руководство для вашей справки.
 
-| Linux Version | Key Feature Introduced |
+| Версия Linux | Внедренные ключевые функции |
 | ------------- | ---------------------------- |
-| 6.18 | 2K2000/2K3000/3B6000M GPIO fixes |
-| 6.17 | 2K3000/3B6000M On-Chip NIC DWMAC Support; PWM Frequency Modulation Fix |
-| 6.16 | 2K2000/2K3000/3B6000M SDIO Support |
-| 6.14 | 3C6000 Family Multiplexing Support |
-| 6.12 | 3B6000/3C6000 family support (Advanced Extended IRQ model) |
-| 6.7 | Virtualization support |
-| 6.4 | Simultaneous Multi-Threading (SMT) support |
+| 6.18 | Исправления для GPIO в 2K2000/2K3000/3B6000M |
+| 6.17 | Поддержка DWMAC для встроенного сетевого адаптера 2K3000/3B6000M; исправление модуляции частоты PWM |
+| 6.16 | Поддержка SDIO для 2K2000/2K3000/3B6000M |
+| 6.14 | Поддержка мультиплексирования семейства 3C6000 |
+| 6.12 | Поддержка семейства 3B6000/3C6000 (расширенная модель IRQ) |
+| 6.7 | Поддержка виртуализации |
+| 6.4 | Поддержка технологии одновременного многопоточного выполнения (SMT) |
 
-### Unmerged Patches
+### Необъединенные патчи
 
-Generally, engineers at Loongson Technology and community developers pushes hardware enablement, optimizations, and fixes to the upstream (mainline) kernel. However, due to technical and non-technical reasons, some patches remain unmerged.
+Как правило, инженеры компании Loongson Technology и разработчики из сообщества отправляют патчи по поддержке оборудования, оптимизации и исправлениям в основную ветку ядра. Однако по техническим и нетехническим причинам некоторые патчи остаются не включенными в ядро.
 
-The following table lists all known and essential patches maintained by various downstream parties (developers, distribution communities, etc.), for your reference (the patch list below are based on `v6.19-rc1` and do not include patches already submitted to the upstream [loongarch](https://lore.kernel.org/loongarch) mailing list):
+В приведенной ниже таблице перечислены все известные и важные патчи, поддерживаемые различными последующими разработчиками (разработчиками, сообществами дистрибутивов и т. д.), для справки (приведенный ниже список патчей основан на `v6.19-rc1` и не включайте патчи, которые уже были отправлены в основной проект [длинная арка](https://lore.kernel.org/loongarch) (список рассылки):
 
-| Description | Type | Kconfig Entry | Link | Notes |
+| Описание | Тип | Запись в Kconfig | Ссылка | Примечания |
 | ----------- | ---- | ------------- | ---- | ----- |
-| PixArt PS/2 Devices | Feature | `MOUSE_PS2_PIXART` (bool: y/n) | [1](https://lore.kernel.org/loongarch/20251127080203.3218018-1-zhoubinbin@loongson.cn/) | For laptops such as the Tongfang Chaorui L860-T2 and EA EXCELSIOR L71 based on 3A5000 and 3A6000, this patch fixes an issue where the touchpads were misidentified as PS/2 mice, breaking support for gestures and palm detection. |
-| HWMon support (thermal and other forms of hardware monitoring), providing CPU thermal control for the Loongson 3 family | Feature | `CPU_HWMON` (bool: y/n) | [1](https://github.com/chenhuacai/linux/commit/2a6c1c74d93a21613a523aebc6494d654f35cf1a) | Does not include support for thermal monitoring of the 7A bridge chip; this patch may cause `sensors(1)` to read incorrect temperature sensors and data on SoC platforms such as 2K3000/3B6000M. |
-| Multi-channel DMA Controller | Feature | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
-| 2K3000/3B6000M SoC CAN-FD Bus | Feature | `CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/905bf46bcebfb) | Must be used together with the patch for multi-channel DMA controller |
-| BPI1000/1001 (“Old World”) firmware support | Feature | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/06e031656e659), [2](https://github.com/AOSC-Tracking/linux/commit/6a2eb415543d7), [3](https://github.com/AOSC-Tracking/linux/commit/56209fafa1832), [4](https://github.com/AOSC-Tracking/linux/commit/85a8b0edaf388), [5](https://github.com/AOSC-Tracking/linux/commit/16f5059f8b43d), [6](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/ecd26b294d80e), [8](https://github.com/AOSC-Tracking/linux/commit/1c92272af179f) | Essential for booting ABI2.0 systems on Lenovo Kaitian M540z, Gooxi 3C5000L quad-socket servers, and certain platforms shipping Kunlun firmware from 2020 to 2022. |
-| PCIe bus speed detection quirk for some 3B6000 and 3C6000 family processors, where PCIe speeds were incorrectly limited to PCIe 1.0 | Workaround | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/ae2697f19a371) | The scope of impact processor steppings/batches is unclear. For details, see [the explanation here](@/guides/errata-desktop-and-server.html#pcie-speed-negotiation-issue-with-early-3b6000-3c6000-steppings) |
-| Workaround for inoperaable GPIO due to device descriptions that does not comply with the *Loongson CPU Unified System Architecture Specification*, where GPIO devices were described within `gsi_idx_map` | Workaround | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/71068c266d426) | Should not affect 2K3000/3B6000M and later products |
-| Workaround for intermittent driver crashes, resets, and lockups with AMD GCN 1.0–4.0 GPUs on LoongArch platforms | Workaround | N/A | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | The mechanism behind this fix is unclear (empirical patch); commercial 6.6 kernels like deepin include a more aggressive (yet similarly unexplained) patchset. See [this deepin pull request](https://github.com/deepin-community/kernel/pull/1215). |
-| Workaround for data errors that on 7A platforms when using AMD “Radeon” graphics drivers (for TeraScale 2 and earlier graphics cards) | Workaround | N/A | [1](https://github.com/chenhuacai/linux/commit/6266d0082b020ad68a3b3c6f314ba299b9d06d3d), [2](https://lore.kernel.org/all/20240220074958.3288170-1-chenhuacai@loongson.cn/), [3](https://github.com/AOSC-Tracking/linux/commit/3b730340dee61) | Mechanism unknown but effective; patch 3 limits this workaround to MIPS and LoongArch64 platforms (`MACH_LOONGSON64`) |
-| Register the third PWM controller `LOON0006:03` on the 7A2000 bridge as `gsgpu_backlight` in board-level ACPI initialization code to support LoongGPU backlight control | Workaround | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/6a22acfd684e4) | Prerequisite patch for LoongGPU backlight support. For LoongGPU driver-related patches, please refer to [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/). |
-| Enable "Remote Wake" support for USB root hubs (such as USB keyboards, mice, and other input devices) | Workaround | N/A | [1](https://lore.kernel.org/all/20250131100630.342995-1-chenhuacai@loongson.cn/), [2](https://github.com/AOSC-Tracking/linux/commit/a683c47758586) | Applying this patch enables keyboard wake-up for LoongArch devices in ACPI S3 (suspend-to-RAM), but it is known to prevent some x86 laptops from entering sleep mode. Patch 2 limits this wrokaroun to MIPS and LoongArch64 platforms (`MACH_LOONGSON64`). |
+| Устройства PixArt PS/2 | Особенности | `MOUSE_PS2_PIXART` (bool: да/нет) | [1](https://lore.kernel.org/loongarch/20251127080203.3218018-1-zhoubinbin@loongson.cn/) | Для ноутбуков, таких как Tongfang Chaorui L860-T2 и EA EXCELSIOR L71 на базе чипсетов 3A5000 и 3A6000, этот патч устраняет проблему, из-за которой тачпады ошибочно распознавались как мыши PS/2, что приводило к сбою поддержки жестов и функции распознавания ладони. |
+| Поддержка HWMon (мониторинг температуры и других параметров оборудования), обеспечивающая управление температурой процессора для семейства Loongson 3 | Функция | `CPU_HWMON` (bool: да/нет) | [1](https://github.com/chenhuacai/linux/commit/2a6c1c74d93a21613a523aebc6494d654f35cf1a) | Не включает поддержку мониторинга температуры микросхемы моста 7A; этот патч может привести к `sensors(1)` для считывания данных с неисправных датчиков температуры на платформах SoC, таких как 2K3000/3B6000M. |
+| Многоканальный контроллер DMA | Характеристика | Н/Д | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
+| SoC 2K3000/3B6000M с шиной CAN-FD | Характеристика | `CAN_LSCANFD` (bool: да/нет), `CAN_LSCANFD_PLATFORM` (tristate: м/ж/н) | [1](https://github.com/AOSC-Tracking/linux/commit/905bf46bcebfb) | Необходимо использовать вместе с патчем для многоканального контроллера DMA |
+| Поддержка прошивки BPI1000/1001 («Old World») | Функция | Не применимо | [1](https://github.com/AOSC-Tracking/linux/commit/06e031656e659), [2](https://github.com/AOSC-Tracking/linux/commit/6a2eb415543d7), [3](https://github.com/AOSC-Tracking/linux/commit/56209fafa1832), [4](https://github.com/AOSC-Tracking/linux/commit/85a8b0edaf388), [5](https://github.com/AOSC-Tracking/linux/commit/16f5059f8b43d), [6](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/ecd26b294d80e), [8](https://github.com/AOSC-Tracking/linux/commit/1c92272af179f) | Необходимо для загрузки систем ABI 2.0 на серверах Lenovo Kaitian M540z, Gooxi 3C5000L с четырьмя сокетами, а также на некоторых платформах с прошивкой Kunlun, выпускавшихся в период с 2020 по 2022 год. |
+| Ошибка определения скорости шины PCIe в некоторых процессорах семейств 3B6000 и 3C6000, при которой скорость PCIe неверно ограничивалась до уровня PCIe 1.0 | Способ обхода | Не применимо | [1](https://github.com/AOSC-Tracking/linux/commit/ae2697f19a371) | Масштаб воздействия различных версий/партий процессоров остается неясным. Подробности см. [объяснение здесь](@/guides/errata-desktop-and-server.html#pcie-speed-negotiation-issue-with-early-3b6000-3c6000-steppings) |
+| Способ обхода проблемы с неработающими GPIO, вызванной несоответствием описаний устройств спецификации *Loongson CPU Unified System Architecture Specification*, в которой устройства GPIO описывались в рамках `gsi_idx_map` | Обходной путь | Не применимо | [1](https://github.com/AOSC-Tracking/linux/commit/71068c266d426) | Не должно влиять на модели 2K3000/3B6000M и более поздние версии |
+| Способ устранения периодических сбоев, перезапусков и зависаний драйвера при использовании графических процессоров AMD GCN версий 1.0–4.0 на платформах LoongArch | Способ устранения | Н/Д | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | Механизм, лежащий в основе этого исправления, неясен (эмпирический патч); коммерческие ядра версии 6.6, такие как deepin, включают более агрессивный (хотя и столь же необъяснимый) набор патчей. См. [этот пул-реквест для Deepin](https://github.com/deepin-community/kernel/pull/1215). |
+| Способ устранения ошибок с данными, возникающих на платформах 7A при использовании графических драйверов AMD «Radeon» (для видеокарт TeraScale 2 и более ранних моделей) | Способ устранения | Не применимо | [1](https://github.com/chenhuacai/linux/commit/6266d0082b020ad68a3b3c6f314ba299b9d06d3d), [2](https://lore.kernel.org/all/20240220074958.3288170-1-chenhuacai@loongson.cn/), [3](https://github.com/AOSC-Tracking/linux/commit/3b730340dee61) | Механизм неизвестен, но эффективен; патч 3 ограничивает применение этого обходного решения платформами MIPS и LoongArch64 (`MACH_LOONGSON64`) |
+| Зарегистрировать третий ШИМ-контроллер `LOON0006:03` на мосту 7A2000 в качестве `gsgpu_backlight` в коде инициализации ACPI на уровне платы для поддержки управления подсветкой LoongGPU | Обходной путь | Н/Д | [1](https://github.com/AOSC-Tracking/linux/commit/6a22acfd684e4) | Патч, необходимый для поддержки подсветки LoongGPU. Информацию о патчах, связанных с драйвером LoongGPU, см. в [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/). |
+| Включить поддержку функции «Удаленное пробуждение» для корневых концентраторов USB (таких как USB-клавиатуры, мыши и другие устройства ввода) | Временное решение | Не применимо | [1](https://lore.kernel.org/all/20250131100630.342995-1-chenhuacai@loongson.cn/), [2](https://github.com/AOSC-Tracking/linux/commit/a683c47758586) | Установка этого патча включает функцию пробуждения с клавиатуры для устройств LoongArch в режиме ACPI S3 (переход в режим ожидания с сохранением данных в ОЗУ), однако известно, что это мешает некоторым ноутбукам на базе x86 переходить в режим сна. Патч 2 ограничивает действие этого обходного решения платформами MIPS и LoongArch64 (`MACH_LOONGSON64`). |
 
 </template>
 
 <template #docker>
 
-Docker (utility) now officially supports LoongArch, usually available from your distro's repository.
+Утилита Docker теперь официально поддерживает LoongArch; как правило, её можно найти в репозитории вашего дистрибутива.
 
-To install Docker on common Linux distributions and operating systems:
+Чтобы установить Docker в популярных дистрибутивах Linux и операционных системах:
 
-| Operating System | Installation Method |
+| Операционная система | Способ установки |
 | -------- | -------- |
-| AOSC OS | `oma install docker` |
+| ОС AOSC | `oma install docker` |
 | Arch Linux | `sudo pacman -S docker` |
-| Debian and derivatives such as deepin, openKylin and Loongnix 25 | `sudo apt install docker.io` |
-| Red Hat-derived distributions such as Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install docker` |
+| Debian и его производные, такие как Deepin, openKylin и Loongnix 25 | `sudo apt install docker.io` |
+| Дистрибутивы, созданные на базе Red Hat, такие как Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install docker` |
 
 :::tip
-There are only few LoongArch containers available in the official Docker registry. Loongson Technology maintains a [Docker image repository targeting LoongArch ABI2.0](https://lcr.loongnix.cn/). You can [modify your Docker configuration](https://docs.docker.com/docker-hub/image-library/mirror/) to utilize this registry as needed.
+В официальном реестре Docker доступно лишь несколько контейнеров LoongArch. Компания Loongson Technology ведет [Репозиторий образов Docker, ориентированный на LoongArch ABI 2.0](https://lcr.loongnix.cn/). Вы можете [изменить настройки Docker](https://docs.docker.com/docker-hub/image-library/mirror/) использовать этот реестр по мере необходимости.
 :::
 
 </template>
 
 <template #cirunner>
 
-Many code hosting platforms offer CI runner support and some already supports LoongArch natively
+Многие платформы для хостинга кода предлагают поддержку CI-раннеров, а некоторые из них уже изначально поддерживают LoongArch
 
 ### GitHub Actions
 
-GitHub Actions Runner could not produce binary releases due to [NuGet lacking LoongArch support](https://github.com/dotnet/sdk/issues/42248). If you wish to compile and deploy this CI agent yourself, please refer to this [pull request](https://github.com/actions/runner/pull/3928).
+GitHub Actions Runner не смог создать бинарные сборки из-за [В NuGet отсутствует поддержка LoongArch](https://github.com/dotnet/sdk/issues/42248). Если вы хотите самостоятельно скомпилировать и развернуть этот агент CI, ознакомьтесь с этим [запрос на слияние](https://github.com/actions/runner/pull/3928).
 
 ### GitLab Runner
 
-GitLab Runner officially supports LoongArch. To deploy, simply download and install packages or compressed archives tagged `loong64` from its [release page](https://gitlab.com/gitlab-org/gitlab-runner/-/releases).
+GitLab Runner официально поддерживает LoongArch. Для развертывания достаточно загрузить и установить пакеты или сжатые архивы с тегом `loong64` из его [страница выпуска](https://gitlab.com/gitlab-org/gitlab-runner/-/releases).
 
 ### Gitea act\_runner
 
-Gitea act_runner officially supports LoongArch, though LoongArch binaries are not yet available. For now, you may clone the [source code](https://gitea.com/gitea/act_runner) to compile and deploy this runner.
+Gitea act_runner официально поддерживает LoongArch, хотя бинарные файлы для LoongArch пока недоступны. На данный момент вы можете клонировать [исходный код](https://gitea.com/gitea/act_runner) чтобы скомпилировать и развернуть этот запускающий модуль.
 
 ### Forgejo Runner
 
-Forgejo Runner has not yet merged LoongArch support. If you wish to compile and deploy this runner yourself, please refer to this [pull request](https://code.forgejo.org/forgejo/runner/pulls/1144).
+В Forgejo Runner пока не реализована поддержка LoongArch. Если вы хотите самостоятельно скомпилировать и развернуть этот раннер, ознакомьтесь с этой [запрос на слияние](https://code.forgejo.org/forgejo/runner/pulls/1144).
 
 ### Sourcehut
 
-Sourcehut's CI proxy [builds.sr.ht](https://git.sr.ht/~sircmpwn/builds.sr.ht/) officially supports LoongArch. As this CI runner does not distribute binaries, you would need to build and deploy this runner from source.
+Прокси-сервер Sourcehut [builds.sr.ht](https://git.sr.ht/~sircmpwn/builds.sr.ht/) официально поддерживает LoongArch. Поскольку этот CI-раннер не распространяет бинарные файлы, вам потребуется скомпилировать и развернуть этот раннер из исходного кода.
 
-### Gitee
+GitHub
 
-Gitee has not yet merged LoongArch support. If you wish to compile and deploy this runner yourself, please refer to the following pull requests:
+В Gitee поддержка LoongArch пока не включена. Если вы хотите самостоятельно скомпилировать и развернуть этот раннер, ознакомьтесь со следующими пулл-реквестами:
 
 - [gitee-go/utils#1](https://gitee.com/gitee-go/utils/pulls/1)
 - [gitee-go/core#1](https://gitee.com/gitee-go/core/pulls/1)
@@ -317,7 +317,7 @@ Gitee has not yet merged LoongArch support. If you wish to compile and deploy th
 
 ### GitCode
 
-As inquired by community members, GitCode currently does not support self-hosted CI proxies and thus it is not possible to support LoongArch, at least for now.
+Как уточняли участники сообщества, GitCode в настоящее время не поддерживает самостоятельно развернутые прокси-серверы CI, поэтому поддержка LoongArch, по крайней мере на данный момент, невозможна.
 
 </template>
 </SdkIndex>

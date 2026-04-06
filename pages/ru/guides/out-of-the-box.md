@@ -1,59 +1,59 @@
 ---
 layout: page
-returnLink: /en/guides
-pageTitle: Getting Started
-pageSubTitle: Your Guide from Unboxing to a Happy User
+returnLink: /ru/guides
+pageTitle: Начало работы
+pageSubTitle: Ваш путеводитель от распаковки до удовлетворенного пользователя
 ---
 
-# Before Powering On: What Else Do I Need to Buy?
+# Перед включением: что ещё нужно купить?
 
-Loongson devices are typically sold as "motherboard and CPU bundles" (i.e., motherboard and processor sold together). Besides purchasing a pre-built system, you will need to buy some accessories based on the board specifications and your own needs.
-
-:::info
-For specifications and known issues of various boards and pre-built systems, please refer to the [Hardware Specification Database](/en/devices).
-:::
-
-For instance, to build a Loongson desktop computer, there are some common tips to follow:
-
-- Loongson motherboards are generally sold with CPU and cooler aseemblies in the same package, so you won't have to purchase a cooler separately.
-- Desktop-class Loongson processors generally consume less than 150 watts, when choosing a power supply, your main point of concern would be the power requirement of peripherals such as graphics cards.
-- All LoongArch-based motherboards all come with NVMe interfaces, using NVMe drives should provide good day-to-day experience.
-- Loongson processors, especially high-end models such as 3C6000/S, depends on high performance RAM modules and sufficient channels to perform at their fullest potential. It it generally recommended to purchase the appropriate amount of RAM at appropriate specifications.
-- Since the Loongson onboard/bridge chip graphics (such as LoongGPU LG110 integrated on the 7A2000 bridge chip) are known to be slow, we recommend purchasing a discrete graphics card to ensure a good desktop experience.
-  - AMD graphics cards are generally well supported (Intel cards may also be good options). NVIDIA graphics cards are not supported.
-
-## The RAM Question
-
-Memory compatibility has always been a challenge on Loongson platforms. If you use incompatible or unverified RAM modules, operating systems and applications may not run reliably.
+Устройства Loongson обычно продаются в виде «комплектов из материнской платы и процессора» (то есть материнская плата и процессор продаются вместе). Помимо покупки готовой системы, вам потребуется приобрести некоторые аксессуары в соответствии с техническими характеристиками платы и вашими собственными потребностями.
 
 :::info
+Технические характеристики и известные проблемы различных плат и готовых систем см. в [База данных технических характеристик оборудования](/en/devices).
+:::
 
-- For a list of RAM modules known to be compatible on Loongson platforms, please see [Loong 1-2-3's Memory Compatibility List](https://loong123.cn/list-hardwares.html).
-- Generally speaking, RAM modules with Hynix chips are well supported.
-- If supported by the particular chip and motherboard, we recommend purchasing Registered ECC RAM modules.
+Например, при сборке настольного компьютера на базе Loongson следует руководствоваться следующими общими рекомендациями:
+
+- Материнские платы Loongson, как правило, продаются в комплекте с процессором и кулером, поэтому вам не придется покупать кулер отдельно.
+- Процессоры Loongson класса настольных компьютеров обычно потребляют менее 150 Вт; при выборе блока питания следует в первую очередь учитывать энергопотребление периферийных устройств, таких как видеокарты.
+- Все материнские платы на базе LoongArch оснащены интерфейсами NVMe, поэтому использование накопителей NVMe должно обеспечить высокое качество повседневной работы.
+- Процессоры Loongson, особенно модели высшего класса, такие как 3C6000/S, требуют высокопроизводительных модулей оперативной памяти и достаточного количества каналов для полного раскрытия своего потенциала. Как правило, рекомендуется приобретать оперативную память в необходимом объеме и с соответствующими техническими характеристиками.
+- Поскольку известно, что встроенные графические чипы Loongson (такие как LoongGPU LG110, интегрированный в мост 7A2000) работают медленно, мы рекомендуем приобрести дискретную видеокарту, чтобы обеспечить комфортную работу на рабочем столе.
+  - Видеокарты AMD, как правило, хорошо поддерживаются (видеокарты Intel также могут быть хорошим выбором). Видеокарты NVIDIA не поддерживаются.
+
+## Вопрос об оперативной памяти
+
+Совместимость памяти всегда была проблемой на платформах Loongson. При использовании несовместимых или непроверенных модулей оперативной памяти операционные системы и приложения могут работать нестабильно.
+
+:::info
+
+- Список модулей оперативной памяти, совместимых с платформами Loongson, см. [Список совместимых модулей памяти для Loong 1-2-3](https://loong123.cn/list-hardwares.html).
+- В целом, модули оперативной памяти с чипами Hynix хорошо поддерживаются.
+- Если это поддерживается конкретным чипом и материнской платой, мы рекомендуем приобрести модули оперативной памяти ECC с регистрацией.
 
 :::
 
-## The GPU Question
+## Вопрос о графическом процессоре
 
-As mentioned above, Loongson generally pairs best with AMD graphics cards. Considering that current Loongson products can already handle desktop multimedia and productivity performance needs, we recommend purchasing graphics cards with decent performance and multimedia encoding/decoding functionalities to fully utilize your device's capabilities.
+Как уже упоминалось выше, процессоры Loongson, как правило, лучше всего сочетаются с видеокартами AMD. Учитывая, что современные продукты на базе Loongson уже способны удовлетворить потребности пользователей в мультимедиа и производительности на настольных компьютерах, мы рекомендуем приобретать видеокарты с достойной производительностью и функциями кодирования/декодирования мультимедиа, чтобы в полной мере использовать возможности вашего устройства.
 
-The following are graphics cards we recommend purchasing that meet the suggestions above:
+Ниже представлены видеокарты, которые мы рекомендуем приобрести и которые соответствуют приведенным выше рекомендациям:
 
-- High-end: AMD Radeon RX 7600 or higher models
-- Mid-range: AMD Radeon RX 550, Radeon Pro WX 3100 or higher models
+- Высокий уровень: AMD Radeon RX 7600 или более мощные модели
+- Средний ценовой диапазон: AMD Radeon RX 550, Radeon Pro WX 3100 или более мощные модели
 
-If your budget is limited, you may consider the following models. However, please note that these graphics cards may not be able to output 4K video signals at 60Hz refresh rate, H.265 and AV1 encoding or decoding may also not be available:
+Если ваш бюджет ограничен, вы можете рассмотреть следующие модели. Однако обратите внимание, что эти видеокарты могут не поддерживать вывод видеосигнала 4K с частотой обновления 60 Гц, а также могут отсутствовать функции кодирования и декодирования в форматах H.265 и AV1:
 
-- Low-end: AMD Radeon R7 240 and other entry-level graphics cards (not recommended)
+- Низкий уровень: AMD Radeon R7 240 и другие видеокарты начального уровня (не рекомендуется)
 
-## The OS Question
+## Вопрос об ОС
 
-Thanks to the efforts of many communities and developers, many Linux distros support current Loongson (LoongArch) platforms. We recommend the following distros for use with Loongson computers:
+Благодаря усилиям многих сообществ и разработчиков, многие дистрибутивы Linux поддерживают современные платформы Loongson (LoongArch). Для использования на компьютерах Loongson мы рекомендуем следующие дистрибутивы:
 
-- Beginner: AOSC OS, deepin 23
-- Intermediate and Advanced: Arch Linux for Loong64, Debian, Gentoo, NixOS, Slackwareloong
-- Specialized: Alpine, OpenWrt, Proxmox VE
-- Featured: Linux from Scratch, Yongbao
+- Начинающий: AOSC OS, deepin 23
+- Средний и продвинутый уровень: Arch Linux для Loong64, Debian, Gentoo, NixOS, Slackwareloong
+- Специализация: Alpine, OpenWrt, Proxmox VE
+- В центре внимания: Linux from Scratch, Yongbao
 
-There are also commercial systems from China and Russia, such as UOS, KylinOS, NFSCNS, openEuler, ALT Linux, and OpenHarmony available.
+Также доступны коммерческие системы из Китая и России, такие как UOS, KylinOS, NFSCNS, openEuler, ALT Linux и OpenHarmony.

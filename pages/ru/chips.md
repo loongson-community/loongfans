@@ -1,8 +1,8 @@
 ---
 layout: doc
-returnLink: /en
-pageTitle: Chip Database
-pageSubTitle: Learn About and Compare Features and Performance of Loongson Processors and Chips
+returnLink: /ru
+pageTitle: База данных микросхем
+pageSubTitle: Узнайте о характеристиках и производительности процессоров и чипов Loongson и сравните их
 ---
 
 <script setup lang="ts">

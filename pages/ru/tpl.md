@@ -1,38 +1,38 @@
 ---
 layout: page
-returnLink: /en
-pageTitle:  # Main title
-pageSubTitle: # Subtitle
+returnLink: /ru
+pageTitle:  # Главный заголовок
+pageSubTitle: # Субтитры
 ---
 
 
-# This is a heading
+# Это заголовок
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable MD060 -->
 
-| Tables        |      Are      |  Cool |
+| Таблицы        |      Есть      |  Круто |
 | ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
+| столбец 3 | выравнивание по правому краю | $1600 |
+| столбец 2      |   по центру    |   12 долларов |
+| полоски зебры |   выглядят аккуратно    |    $1 |
 
 <!-- markdownlint-restore -->
 
-The above is for illustrative purposes only. Please adhere to markdownlint's
-"compact" style while authoring tables, like below:
+Приведенное выше служит исключительно для наглядной демонстрации. Пожалуйста, следуйте рекомендациям markdownlint
+стиль «compact» при создании таблиц, как показано ниже:
 
-| Tables | Are | Cool |
+| Таблицы | — это | круто |
 | --- | :-: | --: |
-| col 3 is | right-aligned | $1600 |
-| col 2 is | centered | $12 |
-| zebra stripes | are neat | $1 |
+| столбец 3 | выравнивание по правому краю | $1600 |
+| столбец 2 | по центру | $12 |
+| полоски зебры | выглядят стильно | 1 доллар |
 
-The two tables should render identically.
+Эти две таблицы должны отображаться одинаково.
 
-## Markdown Content
+## Текст в формате Markdown
 
-### H3 heading
+### Заголовок H3
 
 ```sh
 npm init
@@ -40,21 +40,21 @@ npx vitepress init
 ```
 
 :::info
-This is an info box.
+Это информационное поле.
 :::
 
 :::tip
-This is a tip.
+Это совет.
 :::
 
 :::warning
-This is a warning.
+Это предупреждение.
 :::
 
 :::danger
-This is a dangerous warning.
+Это серьезное предупреждение.
 :::
 
 :::details
-This is a details block.
+Это блок с подробной информацией.
 :::

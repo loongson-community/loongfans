@@ -7,71 +7,71 @@ const pluralRules = new Intl.PluralRules("ru", { type: "ordinal" })
 export default {
   comma: ", ",
   // Index.vue
-  beginnerResources: "Loongson 101",
-  introToLoongson: "Meeting Loongson",
-  usageGuides: "FAQ & Guides",
-  devGuides: "Developer's Guide",
-  supportMaterials: "Support Materials",
-  contact: "Contact",
-  chipsData: "Chips Database",
-  operatingSystems: "Operating Systems",
-  productSpecs: "Product Database",
-  compatibilityDb: "Loong 1-2-3",
-  communityResources: "Community Resources",
-  biweeklyMeeting: "LoongArch Biweekly",
-  jobsAndBounties: "Internships & Bounties",
-  devBoardProgram: "Roaming Loongson",
+  beginnerResources: "Основная информация",
+  introToLoongson: "Познакомьтесь с Loongson",
+  usageGuides: "Часто задаваемые вопросы и инструкции",
+  devGuides: "Руководство для разработчиков",
+  supportMaterials: "Вспомогательные материалы",
+  contact: "Контакты",
+  chipsData: "База данных микросхем",
+  operatingSystems: "Операционные системы",
+  productSpecs: "База данных продуктов",
+  compatibilityDb: "База данных совместимости",
+  communityResources: "Ресурсы сообщества",
+  biweeklyMeeting: "Заседание, проводимое раз в две недели",
+  jobsAndBounties: "Стажировки и вознаграждения",
+  devBoardProgram: "Программа для разработчиков",
   communityForum: "Community BBS",
   areWeLoongYet: "Are We Loong Yet?",
-  loongsonOfficial: "Official Sites",
+  loongsonOfficial: "Официальные сайты",
   loongsonTech: "Loongson Home",
   loongsonEco: "LoongEco",
   loongApps: "LoongApps",
 
   // ChildFooter.vue
-  language: "Language",
-  siteSource: "Sources",
-  reportIssue: "Feedback",
-  aboutCommunity: "About",
-  copyright: "Copyright",
-  communityName: "Loongson Hobbyists' Community",
+  language: "Язык",
+  siteSource: "исходный код",
+  reportIssue: "Отзывы",
+  aboutCommunity: "О нас",
+  copyright: "Авторские права",
+  communityName: "Сообщество энтузиястов Loongson",
 
   // ChildHeader.vue
-  goBack: "Go Back",
+  goBack: "Вернуться",
 
   // CardGroup.vue (about page)
   aboutGithubName: "GitHub",
-  aboutGithubDescription: "Community projects and discussions",
+  aboutGithubDescription: "Общественные проекты и дискуссии",
   aboutBilibiliName: "Bilibili",
-  aboutBilibiliDescription: "Follow for event videos and more",
+  aboutBilibiliDescription: "Подписывайтесь, чтобы смотреть видео с мероприятий и многое другое",
   aboutWechatName: "WeChat",
-  aboutWechatDescription: "Chat with us!",
+  aboutWechatDescription: "Напишите нам!",
   aboutQQName: "QQ",
-  aboutQQDescription: "Keep in touch!",
+  aboutQQDescription: "Оставайтесь на связи!",
   aboutMatrixName: "Matrix",
-  aboutMatrixDescription: "Hang out and chat on Matrix!",
+  aboutMatrixDescription: "Напишите нам!",
   aboutTelegramName: "Telegram",
-  aboutTelegramDescription: "Telegram with us!",
+  aboutTelegramDescription: "Напишите нам!",
 
   // Device/Detail.vue
-  deviceTabSpec: "Specifications",
-  deviceTabKnownIssues: "Known Issues",
+  deviceTabSpec: "Технические характеристики",
+  deviceTabKnownIssues: "Известные проблемы",
   deviceTabImage: "Images",
-  deviceTabDownload: "Downloads",
-  deviceDownloadVersion: "Version: {version}",
-  deviceDownloadChangelog: "Changelog",
+  deviceTabDownload: "Загрузки",
+  deviceDownloadVersion: "Версия: {version}",
+  deviceDownloadChangelog: "Журнал изменений",
   deviceDownloadDebugVersion: " (Debug)",
-  deviceDownloadButton: "Download",
+  deviceDownloadButton: "Скачать",
   downloadTypeUefiFirmware: "UEFI Firmware",
-  downloadTypeDatasheet: "Datasheet",
-  downloadTypeReferenceManual: "Reference Manual",
-  downloadTypeUserManual: "User Manual",
-  downloadTypeSchematicDiagram: "Schematic Diagram",
-  downloadTypeSdk: "SDK",
+  downloadTypeDatasheet: "Технические характеристики",
+  downloadTypeReferenceManual: "Справочное руководство",
+  downloadTypeUserManual: "Руководство пользователя",
+  downloadTypeSchematicDiagram: "Схематическое изображение",
+  downloadTypeSdk: "Набор средств разработки программного обеспечения (SDK)",
 
   // events/EventsCalendar.vue
-  today: "Today",
-  loongarchBiweekly: "LoongArch Biweekly #{number}",
+  today: "Сегодня",
+  loongarchBiweekly: "Заседание #{number}",
 
   // sdk/Detail.vue
   gnuInstall: "GNU Toolchain",
@@ -87,20 +87,12 @@ export default {
   cirunnerInstall: "CI Runners",
 
   // Utilities
-  ordinalNumber: ({ n }: { n: number }): string => {
+  ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
+    const n = named("n") as number
+    // Chinese has no special morphology for ordinal numbers
     if (n === undefined || n === null) return ""
-    switch (pluralRules.select(n)) {
-      case "one":
-        return n + "st"
-      case "two":
-        return n + "nd" // codespell:ignore nd
-      case "few":
-        return n + "rd"
-      default:
-        return n + "th"
-    }
+    return n.toString()
   },
-
   chips,
   help,
   os,

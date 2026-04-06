@@ -1,60 +1,60 @@
 ---
 layout: page
-returnLink: /en
-pageTitle:  # Main title
-pageSubTitle: # Subtitle
+returnLink: /de
+pageTitle:  # Haupttitel
+pageSubTitle: # Untertitel
 ---
 
 
-# This is a heading
+# Dies ist eine Überschrift
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable MD060 -->
 
-| Tables        |      Are      |  Cool |
+| Tabellen        |      Sind      |  Cool |
 | ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
+| Spalte 3 ist      | rechtsbündig | 1600 $ |
+| Spalte 2 ist      |   zentriert    |   12 $ |
+| Zebrastreifen |   sind toll    |    1 $ |
 
 <!-- markdownlint-restore -->
 
-The above is for illustrative purposes only. Please adhere to markdownlint's
-"compact" style while authoring tables, like below:
+Das Obige dient lediglich der Veranschaulichung. Bitte halten Sie sich an die Vorgaben von Markdownlint.
+„kompakter“ Stil beim Erstellen von Tabellen, wie unten gezeigt:
 
-| Tables | Are | Cool |
+| Tische | sind | cool |
 | --- | :-: | --: |
-| col 3 is | right-aligned | $1600 |
-| col 2 is | centered | $12 |
-| zebra stripes | are neat | $1 |
+| Spalte 3 ist | rechtsbündig | 1600 $ |
+| Spalte 2 ist | zentriert | 12 $ |
+| Zebrastreifen | sind toll | 1 $ |
 
-The two tables should render identically.
+Die beiden Tabellen sollten identisch dargestellt werden.
 
-## Markdown Content
+## Markdown-Inhalt
 
-### H3 heading
+### Überschrift der Stufe 3
 
 ```sh
 npm init
 npx vitepress init
 ```
 
-:::info
-This is an info box.
+:::Info
+Dies ist eine Infobox.
 :::
 
-:::tip
-This is a tip.
+:::Typ
+Das ist ein Tipp.
 :::
 
-:::warning
-This is a warning.
+:::Warnung
+Dies ist eine Warnung.
 :::
 
-:::danger
-This is a dangerous warning.
+:::Gefahr
+Das ist eine ernste Warnung.
 :::
 
-:::details
-This is a details block.
+:::Details
+Dies ist ein Detailblock.
 :::

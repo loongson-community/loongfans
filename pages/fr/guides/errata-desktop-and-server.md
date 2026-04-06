@@ -1,8 +1,8 @@
 ---
 layout: page
-returnLink: /en/guides
-pageTitle: Common Issues
-pageSubTitle: Common Issues Found on Desktop and Server Platforms
+returnLink: /fr/guides
+pageTitle: Problèmes courants
+pageSubTitle: Problèmes courants rencontrés sur les plateformes de bureau et de serveur
 ---
 
 <!--@include: @parts/en/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->

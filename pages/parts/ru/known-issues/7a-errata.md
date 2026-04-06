@@ -1,7 +1,7 @@
-### 7A Bridge Instability
+### Нестабильность моста 7A
 
-Motherboards that uses the 7A2000 bridge chip to provide PCIe interface are known to be unstable with certain peripherals (especially AMD graphics cards based on the GCN 1.0 - 4.0 architectures). Users of these graphics cards may see driver instabilities, graphical glitches, application crashes, or even lock ups. The cause behind this issue is yet to be confirmed.
+Известно, что материнские платы, в которых для обеспечения интерфейса PCIe используется чип-мост 7A2000, демонстрируют нестабильную работу с некоторыми периферийными устройствами (особенно с видеокартами AMD, основанными на архитектурах GCN 1.0–4.0). Пользователи таких видеокарт могут сталкиваться с нестабильной работой драйверов, графическими сбоями, сбоями приложений или даже зависанием системы. Причина этой проблемы пока не установлена.
 
-At present, some Linux distros includes workarounds for this issue, which improves the situation significantly, but we still see occasional user complaints.
+В настоящее время в некоторых дистрибутивах Linux предусмотрены обходные пути для решения этой проблемы, что значительно улучшает ситуацию, однако мы по-прежнему получаем отдельные жалобы от пользователей.
 
-If you have ran into situations like this, improving cooling on the bridge chip is also known to lessen the symptom.
+Если вы сталкивались с подобными ситуациями, следует знать, что улучшение охлаждения чипа моста также помогает уменьшить эту проблему.

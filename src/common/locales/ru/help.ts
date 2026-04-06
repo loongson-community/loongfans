@@ -1,63 +1,63 @@
 export default {
   basic: {
     series:
-      "Product Series refers to the family to which this product belongs.",
+      "«Серия продуктов» — это группа, к которой относится данный продукт.",
     market:
-      "Market Segment refers to the cost and applications as recommended by Loongson Technology. Please note that it does not reflect the actual applications and scenarios where products based on this chip is used.",
+      "Под «сегментом рынка» понимаются стоимость и области применения, рекомендованные компанией Loongson Technology. Обратите внимание, что это не отражает реальные области применения и сценарии использования продуктов на базе данного чипа.",
   },
   cpu: {
     voltage:
-      "Typical Voltage refers to the typical core voltage as required for stable operation at the rated frequency.",
-    tpc: `Typical Power Consumption refers to the normative power consumption under normal workload.
+      "Под типичным напряжением понимается типичное напряжение в сердечнике, необходимое для стабильной работы на номинальной частоте.",
+    tpc: `Типичное энергопотребление означает нормативное энергопотребление при обычной нагрузке.
 
-        Note: Typical Power Consumption does not reflect the power consumption for each specific use case.`,
-    tdp: `Thermal Design Power refers to the maximal heat output under extreme load.
+        Примечание: Типичное энергопотребление не отражает энергопотребление в каждом конкретном случае использования.`,
+    tdp: `Номинальная тепловая мощность — это максимальная тепловая мощность при экстремальной нагрузке.
 
-        Note: Thermal Design Power does not reflect the actual power consumption of this chip.`,
+        Примечание: Номинальная тепловая мощность не отражает фактическое энергопотребление данного чипа.`,
   },
   memory: {
-    ecc: `ECC memory modules are capable to detecting and correcting internal data corruption and are known to be effective in enhancing system stability and reliability. ECC takes extra 8 bits to store checksums on each 64 bits of data stored and, when said data were read, they were verified against the aforementioned checksum to detect and repair corrupted data, preventing bad data from reaching the processor.
+    ecc: `Модули памяти ECC способны обнаруживать и исправлять внутренние повреждения данных и, как известно, эффективно повышают стабильность и надежность системы. Технология ECC использует дополнительные 8 бит для хранения контрольных сумм на каждые 64 бита данных; при чтении данных они сверяются с указанной контрольной суммой с целью обнаружения и исправления поврежденных данных, что предотвращает поступление некорректных данных в процессор.
         
-        Note: ECC memory support is implemented on the motherboard and firmware level. Please contact your device manufacturer for details.`,
+        Примечание: Поддержка памяти ECC реализована на уровне материнской платы и микропрограммы. Для получения подробной информации обратитесь к производителю вашего устройства.`,
   },
   exp: {
     io_name:
-      "I/O Interface refer to the channel through which the processor exchanges data with peripherals.",
-    io_rev: `I/O Interface Revision refers to the version at which the main I/O interface operates at.
+      "Под интерфейсом ввода-вывода понимается канал, по которому процессор обменивается данными с периферийными устройствами.",
+    io_rev: `Под «версией интерфейса ввода-вывода» понимается версия, в которой работает основной интерфейс ввода-вывода.
                 
-        Note: PCI Express 4.0 support is implemented on the motherboard and firmware level. PLease contact your device manufacturer for details.`,
-    d2d_name: `Die-to-Die Connection refers to the technology with which multiple processor dies interconnect.
+        Примечание: Поддержка PCI Express 4.0 реализована на уровне материнской платы и микропрограммы. За подробностями обращайтесь к производителю устройства.`,
+    d2d_name: `Под «межкристальным соединением» понимается технология, с помощью которой соединяются несколько процессорных кристаллов.
 
-        Loongson Coherent Link is an in-house die-to-die connection, bringing lower latency and higher bandwidth than HyperTransport 3.0.
-        HyperTransport is a high-speed, low-latency, and point-to-point serial/parallel bus, usually used to form connections between processors, chipsets, memory controllers, and I/O peripherals.`,
+        Loongson Coherent Link — это собственная технология соединения «die-to-die», обеспечивающая меньшую задержку и более высокую пропускную способность по сравнению с HyperTransport 3.0.
+        HyperTransport — это высокоскоростная последовательно-параллельная шина с низкой задержкой и точка-точка, обычно используемая для соединения процессоров, чипсетов, контроллеров памяти и периферийных устройств ввода-вывода.`,
   },
   package: {
     temperature:
-      "Temperature range refers to the range of temperature the surface of the chip package is allowed to reach.",
+      "Диапазон температур — это диапазон значений температуры, до которых может нагреваться поверхность корпуса микросхемы.",
     t_case:
-      " (Case Temperature) refers to the maximal temperature the surface of the chip temperature is allowed to reach.\n\nNote: ",
+      " (Температура корпуса) — это максимальная допустимая температура поверхности микросхемы.\n\nПримечание: ",
     t_junction:
-      "(Junction Temperature) refers to the maximal temperature the internals of the chip (and transistors) are allowed to operate under.\n\nNote: ",
+      "(Температура перехода) — это максимальная температура, при которой допускается работа внутренних элементов микросхемы (и транзисторов).\n\nПримечание: ",
     t_notice:
-      "dictates the performance requirements for the cooling devices and ambient requirements required for this chip.",
+      "определяет требования к характеристикам охлаждающих устройств и к условиям окружающей среды, необходимые для данного чипа.",
   },
   power: {
     clock_gating:
-      "Clock Gating is a form of power conservation technology which disables clock signals to idle circuitries to minimise unnecessary dynamic power consumption.",
+      "«Синхронизация по тактовой частоте» — это технология энергосбережения, которая отключает тактовые сигналы в неактивных цепях с целью минимизации ненужного динамического энергопотребления.",
     frequency_scaling:
-      "Dynamic Frequency Scaling is the ability for the processor to adjust its clock frequency based on real-time load and power requirements.",
+      "Динамическое регулирование тактовой частоты — это способность процессора изменять свою тактовую частоту в зависимости от нагрузки в режиме реального времени и потребностей в энергопотреблении.",
     voltage_scaling:
-      "Adaptive Voltage Scaling is the ability for the processor to adjust its core voltage (within rated range) based on current clock frequency and load.",
+      "Адаптивное регулирование напряжения — это способность процессора регулировать напряжение ядра (в пределах номинального диапазона) в зависимости от текущей тактовой частоты и нагрузки.",
   },
   tech: {
     isa: {
-      info: "Instruction Set refers to the baseline set of commands and instructions that the processor can understand and execute.",
+      info: "Под набором команд понимается базовый набор команд и инструкций, которые процессор может распознавать и выполнять.",
       extensions:
-        "ISA Extensions refer to the additional instructions implemented on top of the baseline instruction set.",
-      LBT: "Loongson Binary Translation\n\nA set of extended instructions to improve execution performance of foreign-architecture code. The LBT extension implements non-privileged and privileged instructions.",
-      LVZ: "Loongson VirtualiZation\n\nA set of extended instructions to implement hardware acceleration for system-level virtualization. The LVZ extension implements mostly privileged instructions, useful for controlling status registers, as well as implementing additional functions for exceptions, interrupts, and storage management.",
-      LSX: "Loongson SIMD eXtension\n\nA set of extended instructions to implement single-instruction, multiple-data. The LSX extension is implemented on special registers to accelerate computational intensive tasks. The LSX extension operates at 128-bit vector width.",
-      LASX: "Loongson Advanced SIMD eXtension\n\nSimilar to LSX, but operates at 256-bit vector width.",
+        "Расширения набора инструкций ISA — это дополнительные инструкции, реализованные в дополнение к базовому набору инструкций.",
+      LBT: "Бинарный перевод Loongson\n\nНабор расширенных инструкций, предназначенный для повышения производительности выполнения кода, написанного для другой архитектуры. Расширение LBT реализует как непривилегированные, так и привилегированные инструкции.",
+      LVZ: "Виртуализация Loongson\n\nНабор расширенных инструкций для реализации аппаратного ускорения виртуализации на системном уровне. Расширение LVZ включает в себя преимущественно привилегированные инструкции, необходимые для управления регистрами состояния, а также для реализации дополнительных функций, связанных с исключениями, прерываниями и управлением хранением данных.",
+      LSX: "Расширение Loongson SIMD\n\nНабор расширенных инструкций для реализации архитектуры «одна инструкция — несколько данных». Расширение LSX реализовано с использованием специальных регистров для ускорения вычислительно-интенсивных задач. Расширение LSX работает с векторной шириной 128 бит.",
+      LASX: "Расширение Loongson Advanced SIMD\n\nАналогично LSX, но работает с векторной шириной 256 бит.",
     },
   },
 }

@@ -1,8 +1,8 @@
 ---
 layout: page
-returnLink: /en
-pageTitle: LoongArch Biweekly
-pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
+returnLink: /ru
+pageTitle: LoongArch: двухнедельный бюллетень
+pageSubTitle: Встречи раз в две недели для разработчиков сообщества и энтузиастов
 ---
 
 <style scoped>
@@ -50,24 +50,24 @@ const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
 }
 </script>
 
-The LoongArch Biweekly is a regular community meeting organized by Loongson
-hobbyists. The meeting agenda comprises updates on upstream projects, Linux
-distro (and other OS projects), and community affairs.
-The reports are generally followed by contributor discussions and Q&A sessions.
+«LoongArch Biweekly» — это регулярные встречи сообщества, организуемые компанией Loongson
+любители. Повестка дня встречи включает в себя обновления по проектам в сфере разработки, Linux
+дистрибутив (и другие проекты по разработке ОС), а также вопросы взаимодействия с сообществом.
+За докладами обычно следуют дискуссии с участием докладчиков и сессии вопросов и ответов.
 
-The LoongArch Biweekly is held every other Sunday at 2:00 PM (UTC+8) on Tencent
-Meeting, generally avoiding Chinese mainland state holidays with significant
-travel expected (e.g. Spring Festival and National Day) and workdays in lieu.
+Выпуск «LoongArch Biweekly» выходит каждое второе воскресенье в 14:00 (UTC+8) на платформе Tencent
+Встреча, как правило, проводится в дни, когда не совпадают с государственными праздниками материкового Китая, имеющими важное значение
+ожидаемые поездки (например, на Праздник Весны и Национальный день) и компенсационные рабочие дни.
 
-The meeting is simultaneously livestreamed on Bilibili page
-[@龙芯爱好者社区](https://space.bilibili.com/70360929).
-Offline meetings are also arranged from time to time.
+Встреча транслируется в прямом эфире на странице Bilibili
+[@Сообщество поклонников Loongson](https://space.bilibili.com/70360929).
+Время от времени также организуются очные встречи.
 
 :::tip
-The LoongArch Biweekly currently uses Standard Chinese (Putonghua / Mandarin)
-as the default language, but we welcome users of other languages - many of us
-also speak English (some even speak Russian, and more).
-If you'd like to hold a session in another language, please feel free to get in touch!
+В настоящее время в журнале «LoongArch Biweekly» используется стандартный китайский язык (путунхуа / мандаринский)
+в качестве языка по умолчанию, но мы рады приветствовать пользователей, говорящих на других языках — многие из нас
+также говорят по-английски (некоторые даже по-русски и на других языках).
+Если вы хотите провести сессию на другом языке, пожалуйста, свяжитесь с нами!
 :::
 
 <div class="flex flex-col md:flex-row md:gap-6">
@@ -81,25 +81,25 @@ If you'd like to hold a session in another language, please feel free to get in 
     <div class="w-full announcement-container" v-if="thisEvent !== null">
         <div v-if="thisEvent.isFuture">
 
-### The {{ t("ordinalNumber", { n: thisEvent.issueNumber }) }} "LoongArch Biweekly" Meeting Announcement {#biweekly-announcement}
+### {{ t("ordinalNumber", { n: thisEvent.issueNumber }) }} Объявление о встрече «LoongArch Biweekly» {#biweekly-announcement}
 
-Meeting Time: {{ d(thisEvent.start, "long") }} (meeting expected to last an hour)
+Время встречи: {{ d(thisEvent.start, "long") }} (встреча, как ожидается, продлится около часа)
 
-<a :href="ei.wemeetLink" target="_blank" rel="noreferrer">Meeting Link</a>｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">Biweekly Slides</a><span v-else>Biweekly Slides (to be uploaded)</span>｜<a :href="ei.bilibiliLiveLink" target="_blank" rel="noreferrer">Livestream Link</a>｜Meeting ID: **{{ ei.wemeetNumber }}**
+<a :href="ei.wemeetLink" target="_blank" rel="noreferrer">Ссылка на встречу</a>｜<a :href="thisSlideLink" target="_blank" rel="noreferrer" v-if="thisSlideLink !== null">Презентации, выходящие раз в две недели</a><span v-else>Презентации, выходящие раз в две недели (будут загружены)</span>｜<a :href="ei.bilibiliLiveLink" target="_blank" rel="noreferrer">Ссылка на прямую трансляцию</a>｜Идентификатор встречи: **{{ ei.wemeetNumber }}**
 
-Biweekly slides may be edited **until the beginning of the meeting**.
-Those who wish to speak or ask questions at the biweekly should finish editing
-before this time (if you need editing permissions, please apply via Kingsoft Docs).
+Слайды для заседаний, проводимых раз в две недели, можно редактировать **до начала заседания**.
+Те, кто хочет выступить или задать вопросы на заседании, которое проходит раз в две недели, должны завершить редактирование
+до этого момента (если вам нужны права на редактирование, подайте заявку через Kingsoft Docs).
 
 </div>
 
 <div v-else>
 
-### The {{ t("ordinalNumber", { n: thisEvent.issueNumber }) }} "LoongArch Biweekly" Meeting Archives
+### {{ t("ordinalNumber", { n: thisEvent.issueNumber }) }} Архив заседаний «LoongArch Biweekly»
 
-Meeting Time: {{ d(thisEvent.start, "long") }}
+Время встречи: {{ d(thisEvent.start, "long") }}
 
-The meeting has ended, but you can still view materials from the event:
+Встреча завершилась, но вы по-прежнему можете ознакомиться с материалами мероприятия:
 
 <ul>
     <li v-if="thisSlideLink !== null">

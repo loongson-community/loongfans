@@ -1,38 +1,38 @@
 ---
 layout: page
-returnLink: /en
-pageTitle:  # Main title
-pageSubTitle: # Subtitle
+returnLink: /fr
+pageTitle:  # Titre principal
+pageSubTitle: # Sous-titres
 ---
 
 
-# This is a heading
+# Il s'agit d'un titre
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable MD060 -->
 
-| Tables        |      Are      |  Cool |
+| Tables        |      Sont      |  Cool |
 | ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
+| col. 3 est      | alignée à droite | 1 600 $ |
+| col. 2 est      |   centrée    |   12 $ |
+| rayures zébrées |   c'est sympa    |    1 $ |
 
 <!-- markdownlint-restore -->
 
-The above is for illustrative purposes only. Please adhere to markdownlint's
-"compact" style while authoring tables, like below:
+Ce qui précède est donné à titre indicatif uniquement. Veuillez respecter les directives de markdownlint.
+le style « compact » lors de la création de tableaux, comme ci-dessous :
 
-| Tables | Are | Cool |
+| Les tables | sont | sympas |
 | --- | :-: | --: |
-| col 3 is | right-aligned | $1600 |
-| col 2 is | centered | $12 |
-| zebra stripes | are neat | $1 |
+| la colonne 3 est | alignée à droite | 1 600 $ |
+| la colonne 2 est | centrée | 12 $ |
+| rayures zébrées | c'est sympa | 1 $ |
 
-The two tables should render identically.
+Les deux tableaux devraient s'afficher de la même manière.
 
-## Markdown Content
+## Contenu au format Markdown
 
-### H3 heading
+### Titre H3
 
 ```sh
 npm init
@@ -40,21 +40,21 @@ npx vitepress init
 ```
 
 :::info
-This is an info box.
+Il s'agit d'un encadré d'information.
 :::
 
 :::tip
-This is a tip.
+Voici une astuce.
 :::
 
 :::warning
-This is a warning.
+Ceci est un avertissement.
 :::
 
 :::danger
-This is a dangerous warning.
+C'est un avertissement grave.
 :::
 
 :::details
-This is a details block.
+Il s'agit d'un bloc de détails.
 :::

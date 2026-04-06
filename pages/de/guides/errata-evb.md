@@ -1,8 +1,8 @@
 ---
 layout: page
-returnLink: /en/guides
-pageTitle: Common Issues
-pageSubTitle: Common Issues Found on Various Development Boards
+returnLink: /de/guides
+pageTitle: Häufige Probleme
+pageSubTitle: Häufige Probleme bei verschiedenen Entwicklungsboards
 ---
 
-None noted.
+Keine Angaben.
