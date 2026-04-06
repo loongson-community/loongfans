@@ -1,3 +1,20 @@
 [codespell]
 ignore-words-list = HDA
-skip = ./node_modules,./pages/public,package-lock.json,pnpm-lock.yaml,./data/os/linux/uos.yml
+skip =
+	./node_modules,
+	./pages/public,
+	./pages/de,
+	./pages/fr,
+	./pages/ru,
+	./pages/parts/de,
+	./pages/parts/fr,
+	./pages/parts/ru,
+	./src/common/locales/de,
+	./src/common/locales/fr,
+	./src/common/locales/ru,
+	./src/common/locales/de.ts,
+	./src/common/locales/fr.ts,
+	./src/common/locales/ru.ts,
+	package-lock.json,
+	pnpm-lock.yaml,
+	./data/os/linux/uos.yml
