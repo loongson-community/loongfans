@@ -96,8 +96,7 @@ export default {
   },
   non_product:
     "Veuillez sélectionner des produits à base de puces dans l'index ou sur leurs pages détaillées, puis ajoutez-les à votre comparatif.",
-  up_to_four_chips:
-    "On ne peut comparer que quatre (4) jetons à la fois.",
+  up_to_four_chips: "On ne peut comparer que quatre (4) jetons à la fois.",
   notice: "Avis",
   status: {
     yes: "Oui",

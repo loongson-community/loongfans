@@ -2,8 +2,6 @@ import chips from "./de/chips"
 import help from "./de/help"
 import os from "./de/os"
 
-const pluralRules = new Intl.PluralRules("de", { type: "ordinal" })
-
 export default {
   comma: ", ",
   // Index.vue
