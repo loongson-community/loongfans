@@ -62,7 +62,7 @@
           />
         </LinkGroup>
 
-        <LinkGroup :title="$t('communityResources')">
+        <LinkGroup :title="$t('loongsonOfficial')">
           <HomePageLink
             href="https://www.loongson.cn/"
             :name="t('loongsonTech')"
