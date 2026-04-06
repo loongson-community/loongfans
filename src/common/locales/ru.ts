@@ -2,8 +2,6 @@ import chips from "./ru/chips"
 import help from "./ru/help"
 import os from "./ru/os"
 
-const pluralRules = new Intl.PluralRules("ru", { type: "ordinal" })
-
 export default {
   comma: ", ",
   // Index.vue
@@ -43,7 +41,8 @@ export default {
   aboutGithubName: "GitHub",
   aboutGithubDescription: "Общественные проекты и дискуссии",
   aboutBilibiliName: "Bilibili",
-  aboutBilibiliDescription: "Подписывайтесь, чтобы смотреть видео с мероприятий и многое другое",
+  aboutBilibiliDescription:
+    "Подписывайтесь, чтобы смотреть видео с мероприятий и многое другое",
   aboutWechatName: "WeChat",
   aboutWechatDescription: "Напишите нам!",
   aboutQQName: "QQ",
