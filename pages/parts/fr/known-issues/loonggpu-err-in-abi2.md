@@ -1,8 +1,8 @@
-### Backlight Control May Not be Available with ABI2.0 Distros
+### La gestion de la rétroéclairage peut ne pas être disponible avec les distributions ABI 2.0
 
-Due to a change in upstream kernel API and problematic Loongson PWM driver implementation, as well as the lack of `gpio_base` support, laptop backlight control may not be available with some Linux distros.
+En raison d'une modification de l'API du noyau en amont et d'une implémentation problématique du pilote PWM Loongson, ainsi que de l'absence de `gpio_base` Remarque : la gestion du rétroéclairage de l'ordinateur portable peut ne pas être disponible sur certaines distributions Linux.
 
-To fix this issue, the following is needed:
+Pour résoudre ce problème, il faut procéder comme suit :
 
-- [Additional board-level ACPI initialization routines](https://github.com/AOSC-Tracking/linux/commit/dbb668a14178)and corresponding changes to the LoongGPU kernel driver (as implemented by [AOSC OS](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commit/aaee8cb5d7f879ba4cd2cb268a8591f99735b729) are needed - correctly calling PWM controllers and the functionality to completely turn off backlight via GPIO.
-- A patch to fix PWM controller frequency calculation, see [this kernel patch from AOSC OS](https://github.com/AOSC-Tracking/linux/commit/30b69e76d820) (this patch is now part of Linux 6.18).
+- [Routines supplémentaires d'initialisation ACPI au niveau de la carte](https://github.com/AOSC-Tracking/linux/commit/dbb668a14178)and les modifications correspondantes apportées au pilote du noyau LoongGPU (telles qu'implémentées par [Système d'exploitation AOSC](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commit/aaee8cb5d7f879ba4cd2cb268a8591f99735b729) sont nécessaires : l'appel correct des contrôleurs PWM et la fonctionnalité permettant de désactiver complètement le rétroéclairage via GPIO.
+- Un correctif pour corriger le calcul de la fréquence du contrôleur PWM, voir [ce correctif du noyau provenant d'AOSC OS](https://github.com/AOSC-Tracking/linux/commit/30b69e76d820) (Ce correctif fait désormais partie de Linux 6.18).
