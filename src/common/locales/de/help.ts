@@ -33,7 +33,7 @@ HyperTransport ist ein serieller/paralleler Punkt-zu-Punkt-Bus mit hoher Geschwi
   },
   package: {
     temperature:
-      "Der Temperaturbereich bezeichnet den Bereich der Temperaturen, die die Oberfläche des Chipgehäuses erreichen darf.",
+      "Der Temperaturbereich bezeichnet den Bereich, den die Oberfläche des Chipgehäuses erreichen darf.",
     t_case:
       " (Gehäusetemperatur) bezeichnet die maximale Temperatur, die die Oberfläche des Chips erreichen darf.\n\nHinweis: ",
     t_junction:

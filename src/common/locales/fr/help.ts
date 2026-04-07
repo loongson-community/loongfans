@@ -56,7 +56,7 @@ export default {
         "Les extensions ISA désignent les instructions supplémentaires mises en œuvre en plus du jeu d'instructions de base.",
       LBT: "Traduction binaire Loongson\n\nUn ensemble d'instructions étendues visant à améliorer les performances d'exécution du code provenant d'architectures étrangères. L'extension LBT met en œuvre des instructions non privilégiées et privilégiées.",
       LVZ: "Virtualisation Loongson\n\nUn ensemble d'instructions étendues permettant de mettre en œuvre l'accélération matérielle pour la virtualisation au niveau du système. L'extension LVZ met principalement en œuvre des instructions privilégiées, utiles pour contrôler les registres d'état, ainsi que pour implémenter des fonctions supplémentaires liées aux exceptions, aux interruptions et à la gestion du stockage.",
-      LSX: "Extension SIMD Loongson\n\nEnsemble d'instructions étendues permettant de mettre en œuvre le traitement « une instruction, plusieurs données ». L'extension LSX est implémentée sur des registres spéciaux afin d'accélérer les tâches nécessitant une puissance de calcul importante. L'extension LSX fonctionne avec une largeur de vecteur de 128 bits.",
+      LSX: "Extension SIMD Loongson\n\nEnsemble d'instructions étendues permettant la mise en œuvre du traitement « une instruction, plusieurs données ». L'extension LSX est implémentée sur des registres spéciaux afin d'accélérer les tâches nécessitant une puissance de calcul importante. L'extension LSX fonctionne avec une largeur de vecteur de 128 bits.",
       LASX: "Extension SIMD avancée Loongson\n\nSemblable à LSX, mais fonctionne avec une largeur de vecteur de 256 bits.",
     },
   },
