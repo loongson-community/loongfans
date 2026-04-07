@@ -1,5 +1,5 @@
-### Touchpads May Not Work with ABI2.0 Distros
+### Les pavés tactiles peuvent ne pas fonctionner avec les distributions ABI 2.0
 
-Some laptops come with touchpads that are wired using an HID-over-I2C bus, which requires a GPIO pin to supply interrupts.
+Certains ordinateurs portables sont équipés de pavés tactiles connectés via un bus HID-over-I2C, ce qui nécessite une broche GPIO pour gérer les interruptions.
 
-To resolve this issue, a patch to [add interrupt support for 7A2000 GPIO](https://git.kernel.org/torvalds/c/44fe79020b91) is required (now part of Linux 6.15 and above, most commercial distros using Linux 6.6 also includes a fix). Additionally, as the upstream kernel no longer supports the deprecated `gsi_idx_map` property, a workaround is needed - see this [kernel patch](https://github.com/AOSC-Tracking/linux/commit/e29193f3f1a3) from AOSC OS.
+Pour résoudre ce problème, un correctif pour [ajouter la prise en charge des interruptions pour le GPIO 7A2000](https://git.kernel.org/torvalds/c/44fe79020b91) est nécessaire (désormais intégré à Linux 6.15 et versions ultérieures ; la plupart des distributions commerciales utilisant Linux 6.6 incluent également un correctif). De plus, comme le noyau en amont ne prend plus en charge la fonctionnalité obsolète `gsi_idx_map` propriété, une solution de contournement est nécessaire – voir ici [correctif du noyau](https://github.com/AOSC-Tracking/linux/commit/e29193f3f1a3) provenant du système d'exploitation AOSC.

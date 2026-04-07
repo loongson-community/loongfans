@@ -1,3 +1,3 @@
-### CPU Frequency Scaling May Not Work with Some ABI2.0 Distros
+### La régulation de la fréquence du processeur peut ne pas fonctionner avec certaines distributions ABI 2.0
 
-ABI2.0 ("New World") distros using upstream Linux kernels do not have functional CPU frequency scaling. This is due a lack of SMCv1 interface implementation in the upstream Linux kernel. [ziyao233](https://github.com/ziyao233) has submitted a [preliminary patch](https://lore.kernel.org/loongarch/20250623123321.5622-1-ziyao@disroot.org/), but instability was observed during testing.
+Les distributions ABI2.0 (« New World ») utilisant les noyaux Linux en amont ne disposent pas d'une gestion de la fréquence du processeur opérationnelle. Cela est dû à l'absence d'implémentation de l'interface SMCv1 dans le noyau Linux en amont. [Ils seront](https://github.com/ziyao233) a déposé une [correctif provisoire](https://lore.kernel.org/loongarch/20250623123321.5622-1-ziyao@disroot.org/), mais une instabilité a été constatée lors des essais.
