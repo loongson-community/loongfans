@@ -72,7 +72,7 @@ export default {
     avs: "AVS",
     gpio: "GPIO",
     d2d: "Prise en charge de plusieurs puces",
-    d2d_name: "Une connexion à vie",
+    d2d_name: "Une connexion indestructible",
     d2d_lcl: "Liaison cohérente Loongson",
     num: "Numéro",
     other: "Autres interfaces",
@@ -96,7 +96,8 @@ export default {
   },
   non_product:
     "Veuillez sélectionner des produits à base de puces dans l'index ou sur leurs pages détaillées, puis ajoutez-les à votre comparatif.",
-  up_to_four_chips: "On ne peut comparer que quatre (4) jetons à la fois.",
+  up_to_four_chips:
+    "On ne peut comparer que quatre (4) jetons à la fois.",
   notice: "Avis",
   status: {
     yes: "Oui",

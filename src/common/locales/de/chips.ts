@@ -86,7 +86,7 @@ export default {
   power: {
     title: "Energieverwaltung",
     clock_gating: "Taktgating",
-    frequency_scaling: "Dynamische Frequenzanpassung",
+    frequency_scaling: "Dynamische Frequenzskalierung",
     voltage_scaling: "Adaptive Spannungsskalierung",
   },
   tech: {
@@ -95,7 +95,7 @@ export default {
     isa_extensions: "ISA-Erweiterungen",
   },
   non_product:
-    "Bitte wählen Sie Chip-Produkte aus dem Verzeichnis oder auf deren Detailseiten aus und fügen Sie sie zum Vergleich hinzu.",
+    "Bitte wählen Sie Chip-Produkte aus dem Verzeichnis oder deren Detailseiten aus und fügen Sie sie zum Vergleich hinzu.",
   up_to_four_chips:
     "Es können jeweils höchstens vier (4) Chips gleichzeitig verglichen werden.",
   notice: "Hinweis",
