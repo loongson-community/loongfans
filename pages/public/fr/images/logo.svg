@@ -7,8 +7,8 @@
    viewBox="0 0 270.93334 135.46667"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.2 (unknown)"
-   sodipodi:docname="logo.en.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="logo.svg"
    inkscape:export-filename="logo.en.webp"
    inkscape:export-xdpi="135"
    inkscape:export-ydpi="135"
@@ -27,16 +27,22 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.41374125"
-     inkscape:cx="247.73938"
-     inkscape:cy="205.44241"
-     inkscape:window-width="1707"
-     inkscape:window-height="995"
+     inkscape:cx="248.94786"
+     inkscape:cy="206.6509"
+     inkscape:window-width="1920"
+     inkscape:window-height="1006"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
+    <rect
+       x="9.6678782"
+       y="21.752726"
+       width="638.07996"
+       height="128.09939"
+       id="rect6" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipath_lpe_path-effect169-5">
@@ -175,34 +181,28 @@
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-weight:bold;font-size:23.7223px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
-       x="-1.6255319"
-       y="18.598248"
+       style="font-weight:bold;font-size:19.7556px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
+       x="0.29293767"
+       y="19.23774"
        id="text2"><tspan
          sodipodi:role="line"
-         style="letter-spacing:0.280698px;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
-         x="-1.6255319"
-         y="18.598248"
-         id="tspan5">LOONGSON</tspan><tspan
+         style="font-size:19.7556px;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
+         x="0.29293767"
+         y="19.23774"
+         id="tspan5"> </tspan><tspan
          sodipodi:role="line"
-         style="fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
-         x="-1.6255319"
-         y="42.320549"
-         id="tspan8">HOBBYISTS</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:39.6914px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke:#e60013;stroke-width:2.33204;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-       x="-1.6671528"
-       y="79.705231"
-       id="text2-3"><tspan
+         style="font-size:19.7556px;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
+         x="0.29293767"
+         y="38.99334"
+         id="tspan7">des amateurs </tspan><tspan
          sodipodi:role="line"
-         style="fill:#e60013;fill-opacity:1;stroke:none;stroke-width:2.33205"
-         x="-1.6671528"
-         y="79.705231"
-         id="tspan7">COMMUNITY</tspan></text>
+         style="font-size:19.7556px;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
+         x="0.29293767"
+         y="58.74894"
+         id="tspan8">de Loongson</tspan></text>
     <path
        id="rect1-2"
-       transform="matrix(1.7194647,0,0,1.7277887,-75.818647,-39.702609)"
+       transform="matrix(1.7194647,0,0,1.7277887,-72.621198,-38.423629)"
        clip-path="url(#clipPath8)"
        mask="url(#mask131-2-4)"
        d="M 11.777716,23.070473 H 223.44439 V 95.830887 H 11.777716 Z"
@@ -210,41 +210,29 @@
        sodipodi:nodetypes="ccccc" />
     <g
        id="g9"
-       transform="translate(0,0.44547022)">
+       transform="translate(0,-22.576165)"
+       style="display:inline">
       <text
          xml:space="preserve"
-         style="font-size:18.4333px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:1.08304;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         style="font-size:16.9333px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:1.08304;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
          x="-0.39387402"
          y="103.63311"
          id="text4"><tspan
            sodipodi:role="line"
            id="tspan4"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'misans vf';-inkscape-font-specification:'misans vf';fill:#2f2f2f;fill-opacity:1;stroke-width:1.08304"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;font-family:MiSans;-inkscape-font-specification:MiSans;display:inline;fill:#2f2f2f;fill-opacity:1;stroke-width:1.08304"
            x="-0.39387402"
-           y="103.63311">Your New World Starts Here</tspan></text>
-      <g
-         id="g1"
-         transform="matrix(1.4056165,-0.37663382,0.37663382,1.4056165,-151.70558,-14.716267)"
-         style="filter:url(#filter7)">
-        <rect
-           style="fill:#e60013;fill-opacity:1;stroke-width:4.52938;stroke-linecap:square;paint-order:fill markers stroke"
-           id="rect1"
-           width="50.799999"
-           height="21.166666"
-           x="202.14166"
-           y="136.52499" />
-        <text
-           xml:space="preserve"
-           style="font-size:20.2746px;line-height:1.2;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke-width:4.48993;stroke-linecap:square;paint-order:fill markers stroke"
-           x="204.18533"
-           y="154.47813"
-           id="text1"><tspan
-             sodipodi:role="line"
-             id="tspan1"
-             style="font-style:normal;font-variant:normal;font-weight:520;font-stretch:normal;font-family:misans;-inkscape-font-specification:'misans weight=520';fill:#ffffff;fill-opacity:1;stroke-width:4.48994"
-             x="204.18533"
-             y="154.47813">Beta</tspan></text>
-      </g>
+           y="103.63311">Collaborer, innover, aller de l'avant</tspan></text>
     </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-1.9184696,-7.0343884)"
+       id="text6"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:MiSans;-inkscape-font-specification:MiSans;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect6);fill:#e60013;fill-opacity:1"><tspan
+         x="9.6679688"
+         y="108.36525"
+         id="tspan2"><tspan
+           style="font-weight:bold;-inkscape-font-specification:'MiSans Bold'"
+           id="tspan1">Communauté</tspan></tspan></text>
   </g>
 </svg>
