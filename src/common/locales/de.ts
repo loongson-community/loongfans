@@ -87,7 +87,7 @@ export default {
   // Utilities
   ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
     const n = named("n") as number
-    // Chinese has no special morphology for ordinal numbers
+    // similar to Chinese the German language does not require a special morphology for ordinal numbers
     if (n === undefined || n === null) return ""
     return n.toString()
   },
