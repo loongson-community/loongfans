@@ -19,3 +19,8 @@
   overflow: hidden;
   background-color: #e60013;
 }
+
+/* Revert margin to images in vp-doc since vitepress 2.0.0-alpha.17 */
+.vp-doc img {
+  margin: 0 !important;
+}
