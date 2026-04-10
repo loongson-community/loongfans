@@ -25,7 +25,7 @@
     "@popperjs/core": "^2.11.8",
     "@primeuix/themes": "^2.0.3",
     "@types/lodash": "^4.17.24",
-    "@types/node": "^25.5.2",
+    "@types/node": "^25.6.0",
     "@unocss/preset-wind4": "^66.6.8",
     "@vue/tsconfig": "^0.8.1",
     "ajv": "^8.18.0",
@@ -42,7 +42,7 @@
     "markdownlint": "^0.40.0",
     "markdownlint-cli2": "^0.21.0",
     "pinia": "^3.0.4",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.2",
     "primevue": "^4.5.5",
     "ts-json-schema-generator": "^2.9.0",
     "tsx": "^4.21.0",
@@ -61,4 +61,3 @@
   },
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }
-
