@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@oxc-parser/binding-wasm32-wasi':
+        specifier: ^0.115.0
+        version: 0.115.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
       vite:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@25.5.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)(yaml@2.8.3)
@@ -2461,17 +2464,14 @@ snapshots:
     dependencies:
       '@emnapi/wasi-threads': 1.2.1
       tslib: 2.8.1
-    optional: true
 
   '@emnapi/runtime@1.9.2':
     dependencies:
       tslib: 2.8.1
-    optional: true
 
   '@emnapi/wasi-threads@1.2.1':
     dependencies:
       tslib: 2.8.1
-    optional: true
 
   '@esbuild/aix-ppc64@0.27.7':
     optional: true
@@ -2666,7 +2666,6 @@ snapshots:
       '@emnapi/core': 1.9.2
       '@emnapi/runtime': 1.9.2
       '@tybys/wasm-util': 0.10.1
-    optional: true
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -2734,7 +2733,6 @@ snapshots:
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
-    optional: true
 
   '@oxc-parser/binding-win32-arm64-msvc@0.115.0':
     optional: true
@@ -2902,7 +2900,6 @@ snapshots:
   '@tybys/wasm-util@0.10.1':
     dependencies:
       tslib: 2.8.1
-    optional: true
 
   '@types/debug@4.1.13':
     dependencies:

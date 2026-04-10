@@ -1,16 +1,16 @@
 {
   "type": "module",
   "scripts": {
-    "build": "vitepress build",
+    "build": "./scripts/pnpm-exec-wrapper.sh vitepress build",
     "checkAll": "pnpm run '/(lintMarkdown|lintPrettier|eslint|typecheck)/'",
-    "dev": "vitepress dev",
+    "dev": "./scripts/pnpm-exec-wrapper.sh vitepress dev",
     "editBiweeklyEvents": "tsx ./src/node/scripts/editBiweeklyEvents/index.ts",
     "eslint": "eslint",
     "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",
     "prepare": "husky",
     "prettier": "prettier -w .",
-    "preview": "vitepress preview",
+    "preview": "./scripts/pnpm-exec-wrapper.sh vitepress preview",
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
@@ -55,6 +55,9 @@
     "vue-i18n": "^11.3.0",
     "vue-tsc": "^3.2.6",
     "yaml": "^2.8.3"
+  },
+  "peerDependencies": {
+    "@oxc-parser/binding-wasm32-wasi": "^0.115.0"
   },
   "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }
