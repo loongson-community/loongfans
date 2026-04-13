@@ -1,36 +1,36 @@
 {
   "type": "module",
   "scripts": {
-    "build": "vitepress build",
+    "build": "./scripts/pnpm-exec-wrapper.sh vitepress build",
     "checkAll": "pnpm run '/(lintMarkdown|lintPrettier|eslint|typecheck)/'",
-    "dev": "vitepress dev",
+    "dev": "./scripts/pnpm-exec-wrapper.sh vitepress dev",
     "editBiweeklyEvents": "tsx ./src/node/scripts/editBiweeklyEvents/index.ts",
     "eslint": "eslint",
     "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",
     "prepare": "husky",
     "prettier": "prettier -w .",
-    "preview": "vitepress preview",
+    "preview": "./scripts/pnpm-exec-wrapper.sh vitepress preview",
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "vite": "^7.3.1",
-    "vitepress": "2.0.0-alpha.16"
+    "vite": "^7.3.2",
+    "vitepress": "2.0.0-alpha.17"
   },
   "devDependencies": {
     "@commander-js/extra-typings": "^14.0.0",
     "@eslint/js": "^9.39.4",
-    "@iconify-json/material-symbols": "^1.2.64",
-    "@iconify-json/simple-icons": "^1.2.76",
+    "@iconify-json/material-symbols": "^1.2.65",
+    "@iconify-json/simple-icons": "^1.2.77",
     "@popperjs/core": "^2.11.8",
     "@primeuix/themes": "^2.0.3",
     "@types/lodash": "^4.17.24",
-    "@types/node": "^25.5.1",
-    "@unocss/preset-wind4": "^66.6.7",
+    "@types/node": "^25.6.0",
+    "@unocss/preset-wind4": "^66.6.8",
     "@vue/tsconfig": "^0.8.1",
     "ajv": "^8.18.0",
     "commander": "^14.0.3",
-    "devalue": "^5.6.4",
+    "devalue": "^5.7.1",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.8.0",
@@ -42,19 +42,22 @@
     "markdownlint": "^0.40.0",
     "markdownlint-cli2": "^0.21.0",
     "pinia": "^3.0.4",
-    "prettier": "^3.8.1",
-    "primevue": "^4.5.4",
+    "prettier": "^3.8.2",
+    "primevue": "^4.5.5",
     "ts-json-schema-generator": "^2.9.0",
     "tsx": "^4.21.0",
-    "typescript-eslint": "^8.58.0",
-    "unocss": "^66.6.7",
+    "typescript-eslint": "^8.58.1",
+    "unocss": "^66.6.8",
     "unplugin-icons": "^23.0.1",
     "v-calendar": "^3.1.2",
     "vite-plugin-inspect": "^11.3.3",
     "vue": "^3.5.32",
-    "vue-i18n": "^11.3.0",
+    "vue-i18n": "^11.3.2",
     "vue-tsc": "^3.2.6",
     "yaml": "^2.8.3"
   },
-  "packageManager": "pnpm@10.29.3+sha512.498e1fb4cca5aa06c1dcf2611e6fafc50972ffe7189998c409e90de74566444298ffe43e6cd2acdc775ba1aa7cc5e092a8b7054c811ba8c5770f84693d33d2dc"
+  "peerDependencies": {
+    "@oxc-parser/binding-wasm32-wasi": "^0.124.0"
+  },
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }

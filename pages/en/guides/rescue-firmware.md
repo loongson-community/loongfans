@@ -21,7 +21,7 @@ Before starting, make sure you have the following hardware tools:
 
 Also ensure you have installed the required software:
 
-1. **Windows**: Install the CH341A driver. We recommend [NeoProgrammer with updated chip database (source: 恩山论坛)](https://www.right.com.cn/FORUM/thread-8289988-1-1.html)
+1. **Windows**: Install the CH341A driver. We recommend [NeoProgrammer with updated chip database (source: Enshan Wireless Forum)](https://www.right.com.cn/FORUM/thread-8289988-1-1.html)
 2. **macOS / Linux**: Use [IMSProg](https://github.com/bigbigmdm/IMSProg)
 
 Before flashing, assemble the programmer as described below. We use the Loongson XA61200 and ASUS XC‑LS3A6M motherboards as examples.
@@ -120,7 +120,7 @@ After assembling the programmer and connecting it to the Flash chip, plug the pr
 
 ### Using NeoProgrammer (Windows)
 
-Before using NeoProgrammer, install the driver provided with the software (located in `软件目录\Drivers\CH341A`). Run `DRVSETUP64.exe` and click `安装`.
+Before using NeoProgrammer, install the driver provided with the software (located in `(software root)\Drivers\CH341A`). Run `DRVSETUP64.exe` and click `安装`.
 
 ![](/images/guides/rescue-firmware/install-driver-windows.png)
 
@@ -128,27 +128,31 @@ Then verify in Device Manager that the following device appears, indicating succ
 
 ![](/images/guides/rescue-firmware/check-ch341a-windows.png)
 
-Next, identify your CH341A programmer model and select it from the `切换编程器` menu. Most commonly sold units are `CH341 双电压黑色版`:
+Next, identify your CH341A programmer model and select it from the `Hardware` menu. Most commonly sold units are `CH341 Black`:
 
-![](/images/guides/rescue-firmware/select-programmer.png)
+![](/en/images/guides/rescue-firmware/select-programmer.png)
+
+::: tip
+Since the default settings for NeoProgrammer provided by the Enshan Wireless Forum are set to Chinese, and NeoProgrammer supports multiple languages, you can find this option in the `语言设置`.
+
+![](/en/images/guides/rescue-firmware/change-language.webp)
+:::
 
 Follow the numbered steps in the diagram:
 
-![](/images/guides/rescue-firmware/neoprogrammer.webp)
+![](/en/images/guides/rescue-firmware/neoprogrammer.webp)
 
-1. Click `打开文件` and select the firmware file for your motherboard (**note: rename the extension to `.bin`**)
+1. Click `Open File` and select the firmware file for your motherboard (**note: rename the extension to `.bin`**)
    ![](/images/guides/rescue-firmware/select-firmware-windows.png)
 
-2. Click `检测` to detect the connected Flash chip model. If the exact model is not in the database, you can use a similar one (e.g., `W25Q128JW` can be replaced with `W25Q128FW`). These are usually just different revisions with identical parameters.
-   ![](/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
+2. Click `Detect` to detect the connected Flash chip model. If the exact model is not in the database, you can use a similar one (e.g., `W25Q128JW` can be replaced with `W25Q128FW`). These are usually just different revisions with identical parameters.
+   ![](/en/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
 
-3. Click `擦除` to completely erase the corrupted firmware. After erasing, you can optionally click `查空` to verify the Flash chip is empty.
-   ![](/images/guides/rescue-firmware/erase-and-erasure.png)
+3. Click `Erase` to completely erase the corrupted firmware. After erasing, you can optionally click `BlankCheck` to verify the Flash chip is empty. If both return `Success`, you can proceed to the next step.
 
-4. Click `写入` to write the opened firmware file to the Flash chip. By default, the software performs writing and verification sequentially. **Keep the connection stable throughout; otherwise unexpected results may occur.**
-   ![](/images/guides/rescue-firmware/write-and-verify.png)
+4. Click `Write` to write the opened firmware file to the Flash chip. By default, the software performs writing and verification sequentially until `Success` is returned. **Keep the connection stable throughout; otherwise unexpected results may occur.**
 
-5. (Optional) Click `校验` to confirm the written content matches the firmware file.
+5. (Optional) Click `Verify` to confirm the written content matches the firmware file.
 
 ### Using IMSProg (macOS, Linux)
 
