@@ -21,7 +21,7 @@ Bevor Sie beginnen, vergewissern Sie sich, dass Sie über folgende Werkzeuge ver
 
 Stellen Sie außerdem sicher, dass Sie die erforderliche Software installiert haben:
 
-1. **Windows**: Installieren Sie den CH341A-Treiber. Wir empfehlen [NeoProgrammer mit aktualisierter Chip-Datenbank (Quelle: 恩山论坛)](https://www.right.com.cn/FORUM/thread-8289988-1-1.html)
+1. **Windows**: Installieren Sie den CH341A-Treiber. Wir empfehlen [NeoProgrammer mit aktualisierter Chip-Datenbank (Quelle: Enshan Wireless Forum)](https://www.right.com.cn/FORUM/thread-8289988-1-1.html)
 2. **macOS / Linux**: Verwenden Sie [IMSProg](https://github.com/bigbigmdm/IMSProg)
 
 Bauen Sie das Programmiergerät vor dem Flashen wie unten beschrieben zusammen. Als Beispiele dienen hier der Loongson XA61200 und das ASUS XC‑LS3A6M-Motherboard.
@@ -32,7 +32,7 @@ Die meisten gängigen Produkte findet man im [Produktdatenbank](https://loongfan
 
 **Überprüfen Sie nach dem Herunterladen immer den Hash**; andernfalls startet das Board möglicherweise nicht.
 
-&gt; Hinweis: Wenn Sie die Datei von der ASUS-Website herunterladen, überprüfen Sie die ZIP-Datei, da ASUS SHA-256-Hashwerte für die ZIP-Archive bereitstellt. Dies hat keinen Einfluss auf den Flash-Vorgang. Entpacken Sie das Archiv nach der Überprüfung, da die Flash-Software komprimierte Dateien nicht automatisch verarbeitet.
+> Hinweis: Wenn Sie die Datei von der ASUS-Website herunterladen, überprüfen Sie die ZIP-Datei, da ASUS SHA-256-Hashwerte für die ZIP-Archive bereitstellt. Dies hat keinen Einfluss auf den Flash-Vorgang. Entpacken Sie das Archiv nach der Überprüfung, da die Flash-Software komprimierte Dateien nicht automatisch verarbeitet.
 
 Unter Windows empfehlen wir OpenHashTab zur Überprüfung:
 
@@ -59,7 +59,7 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 Bauen Sie den Programmierer dann gemäß der Abbildung zusammen. Die Pin-Positionen müssen genau übereinstimmen, beginnend mit Pin 1. In der Regel kennzeichnet ein Punkt oder eine Kerbe auf dem SPI-Flash-Chip Pin 1.
 
-:::Warnung
+:::warning
 **Wichtig**: Überprüfen Sie vorab das Flash-Modell. 1,8-V-Chips können nicht mit 3,3 V oder 5 V betrieben werden. Manche Flash-Tools erkennen sie zwar ohne Warnung, aber **ein erzwungenes Beschreiben mit der falschen Spannung kann den Flash-Chip zerstören!**
 
 Wenn Sie einen 1,8-V-Chip haben, installieren Sie das Abwärtswandlermodul (das grüne Modul auf dem Bild).
@@ -87,7 +87,7 @@ Nachdem Sie den Flash-Chip aus seinem Sockel entfernt haben, überprüfen Sie di
 
 ![](/images/guides/rescue-firmware/flash-in-socket.webp)
 
-:::Warnung
+:::warning
 **Hinweis**: Bei Motherboards mit Dual-BIOS-Design sollten Sie überprüfen, ob der in der Abbildung oben mit ② gekennzeichnete Jumper richtig eingestellt ist. **Dies hat Einfluss darauf, welche Firmware und welche Einstellungen beim Systemstart verwendet werden.**
 
 Bei den Motherboards XA61200 und XB612B0 funktioniert der Jumper in der Regel wie folgt:
@@ -120,7 +120,7 @@ Nachdem Sie den Programmierer zusammengebaut und an den Flash-Chip angeschlossen
 
 ### Verwendung von NeoProgrammer (Windows)
 
-Installieren Sie vor der Verwendung von NeoProgrammer den mit der Software mitgelieferten Treiber (zu finden unter `软件目录\Drivers\CH341A`). Ausführen `DRVSETUP64.exe` und klicken Sie auf `安装`.
+Installieren Sie vor der Verwendung von NeoProgrammer den mit der Software mitgelieferten Treiber (zu finden unter `(software root)\Drivers\CH341A`). Ausführen `DRVSETUP64.exe` und klicken Sie auf `安装`.
 
 ![](/images/guides/rescue-firmware/install-driver-windows.png)
 
@@ -128,27 +128,31 @@ Installieren Sie vor der Verwendung von NeoProgrammer den mit der Software mitge
 
 ![](/images/guides/rescue-firmware/check-ch341a-windows.png)
 
-Bestimmen Sie als Nächstes das Modell Ihres CH341A-Programmiergeräts und wählen Sie es aus der `切换编程器` Menü. Die am häufigsten verkauften Geräte sind `CH341 双电压黑色版`:
+Bestimmen Sie als Nächstes das Modell Ihres CH341A-Programmiergeräts und wählen Sie es aus der `Hardware` Menü. Die am häufigsten verkauften Geräte sind `CH341 Black`:
 
-![](/images/guides/rescue-firmware/select-programmer.png)
+![](/en/images/guides/rescue-firmware/select-programmer.png)
+
+::: tip
+Da die Standardeinstellungen für NeoProgrammer, die vom Enshan Wireless Forum bereitgestellt werden, auf Chinesisch voreingestellt sind und NeoProgrammer mehrere Sprachen unterstützt, finden Sie diese Option im `语言设置`.
+
+![](/en/images/guides/rescue-firmware/change-language.webp)
+:::
 
 Befolgen Sie die nummerierten Schritte in der Abbildung:
 
-![](/images/guides/rescue-firmware/neoprogrammer.webp)
+![](/en/images/guides/rescue-firmware/neoprogrammer.webp)
 
-1. Klicken Sie auf `打开文件` und wählen Sie die Firmware-Datei für Ihr Motherboard aus (**Hinweis: Ändern Sie die Dateiendung in `.bin`**)
+1. Klicken Sie auf `Open File` und wählen Sie die Firmware-Datei für Ihr Motherboard aus (**Hinweis: Ändern Sie die Dateiendung in `.bin`**)
    ![](/images/guides/rescue-firmware/select-firmware-windows.png)
 
-2. Klicken Sie auf `检测` um das Modell des angeschlossenen Flash-Chips zu ermitteln. Falls das genaue Modell nicht in der Datenbank enthalten ist, können Sie ein ähnliches Modell verwenden (z. B. `W25Q128JW` kann ersetzt werden durch `W25Q128FW`). Dabei handelt es sich in der Regel lediglich um verschiedene Versionen mit identischen Parametern.
-   ![](/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
+2. Klicken Sie auf `Detect` um das Modell des angeschlossenen Flash-Chips zu ermitteln. Falls das genaue Modell nicht in der Datenbank enthalten ist, können Sie ein ähnliches Modell verwenden (z. B. `W25Q128JW` kann ersetzt werden durch `W25Q128FW`). Dabei handelt es sich in der Regel lediglich um verschiedene Versionen mit identischen Parametern.
+   ![](/en/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
 
-3. Klicken Sie auf `擦除` um die beschädigte Firmware vollständig zu löschen. Nach dem Löschen können Sie optional auf `查空` um zu überprüfen, ob der Flash-Chip leer ist.
-   ![](/images/guides/rescue-firmware/erase-and-erasure.png)
+3. Klicken Sie auf `Erase` um die beschädigte Firmware vollständig zu löschen. Nach dem Löschen können Sie optional auf `BlankCheck` um zu überprüfen, ob der Flash-Chip leer ist. Wenn beide `Success`, können Sie mit dem nächsten Schritt fortfahren.
 
-4. Klicken Sie auf `写入` um die geöffnete Firmware-Datei auf den Flash-Chip zu schreiben. Standardmäßig führt die Software das Schreiben und die Überprüfung nacheinander durch. **Achten Sie darauf, dass die Verbindung während des gesamten Vorgangs stabil bleibt; andernfalls kann es zu unerwarteten Ergebnissen kommen.**
-   ![](/images/guides/rescue-firmware/write-and-verify.png)
+4. Klicken Sie auf `Write` um die geöffnete Firmware-Datei auf den Flash-Chip zu schreiben. Standardmäßig führt die Software das Schreiben und die Überprüfung nacheinander durch, bis `Success` wird zurückgegeben. **Halten Sie die Verbindung während des gesamten Vorgangs stabil; andernfalls kann es zu unerwarteten Ergebnissen kommen.**
 
-5. (Optional) Klicken Sie auf `校验` um zu überprüfen, ob der geschriebene Inhalt mit der Firmware-Datei übereinstimmt.
+5. (Optional) Klicken Sie auf `Verify` um zu überprüfen, ob der geschriebene Inhalt mit der Firmware-Datei übereinstimmt.
 
 ### Verwendung von IMSProg (macOS, Linux)
 
@@ -197,7 +201,7 @@ Befolgen Sie nach dem Start die nummerierten Schritte in der Abbildung:
 
 1. Klicken Sie auf `Open` und wählen Sie die Firmware-Datei für Ihr Motherboard aus (**Hinweis: Wie bei NeoProgrammer benennen Sie die Dateiendung um in `.bin`**)
 
-2. Klicken Sie auf `Detect` um das Modell des angeschlossenen Flash-Chips zu ermitteln. Falls das genaue Modell nicht in der Datenbank enthalten ist, verwenden Sie ein ähnliches Modell, wie oben beschrieben.
+2. Klicken Sie auf `Detect` um das Modell des angeschlossenen Flash-Chips zu ermitteln. Sollte das genaue Modell nicht in der Datenbank enthalten sein, verwenden Sie ein ähnliches Modell, wie oben beschrieben.
 
 3. Aktivieren Sie alle drei Kontrollkästchen auf der linken Seite und klicken Sie dann auf `Go!` um mit dem Flashen der Firmware auf den Flash-Chip zu beginnen. **Achten Sie darauf, dass die Verbindung während des gesamten Vorgangs stabil bleibt; andernfalls kann es zu unerwarteten Ergebnissen kommen.**
 
