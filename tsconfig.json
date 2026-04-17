@@ -10,7 +10,6 @@
     "skipLibCheck": true,
     "noEmit": true,
     "types": ["unplugin-icons/types/vue"],
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./pages/*"],
       "@data/*": ["./data/*"],
