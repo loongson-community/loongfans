@@ -15,7 +15,7 @@ Loongson propose de nombreux modèles de processeurs et de cartes mères, mais c
 :::info
 Pour connaître les caractéristiques techniques des processeurs, obtenir plus de détails et comparer leurs paramètres, veuillez consulter :
 
-- [Base de données des puces](/enchips)
+- [Base de données des puces](/fr/chips)
 - [Site officiel de Loongson Technology, rubrique « Produits semi-conducteurs »](https://www.loongson.cn/product/channel)
 
 :::

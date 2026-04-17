@@ -66,14 +66,14 @@ Outre les produits actuels, les puces suivantes, que l'on trouve couramment, son
 :::info
 Pour connaître les caractéristiques techniques, les détails et les comparaisons des processeurs, veuillez consulter :
 
-- [Base de données des spécifications des puces](/en/chips)
+- [Base de données des spécifications des puces](/fr/chips)
 - [Site officiel de Loongson Technology, rubrique « Produits semi-conducteurs »](https://www.loongson.cn/product/channel).
 
 :::
 
 ### Modèles courants de cartes électroniques
 
-Voici quelques-uns des modèles de cartes les plus courants actuellement disponibles. Pour connaître les caractéristiques techniques des cartes, veuillez consulter le [Base de données des produits](/en/devices):
+Voici quelques-uns des modèles de cartes les plus courants actuellement disponibles. Pour connaître les caractéristiques techniques des cartes, veuillez consulter le [Base de données des produits](/fr/devices):
 
 - Loongson 3C6000/S : AC612A0_V1.1
 - Loongson 3B6000 : XB612B0_V1.1
@@ -104,13 +104,13 @@ Si vous êtes étudiant ou développeur communautaire et que vous souhaitez port
 
 À ce stade, vous disposez déjà de quelques connaissances de base sur Loongson. Vous trouverez ci-dessous une série de documents rédigés par nos amis de la communauté, comprenant des ressources allant des guides d'utilisation aux guides de dépannage, ainsi que les spécifications du processeur, les spécifications de l'ABI, des détails sur la mise en œuvre du micrologiciel et le « problème du nouveau et de l'ancien monde » dont vous avez peut-être déjà entendu parler :
 
-- [FAQ et dépannage](/en/guides)
-- [Base de données des cartes mères et des processeurs Loongson](/en/devices)
+- [FAQ et dépannage](/fr/guides)
+- [Base de données des cartes mères et des processeurs Loongson](/fr/devices)
 - [*AREWELOONGYET?* : Site d'information sur la mise en place de l'écosystème LoongArch](https://areweloongyet.com/)
 - [Loong 1-2-3 : Base de données de compatibilité pour LoongArch](https://loong123.cn/)
 
 Documents de lecture rassemblés :
 
-- [Base de données des spécifications des puces](/en/chips)
+- [Base de données des spécifications des puces](/fr/chips)
 - [*AREWELOONGYET?* : Lecture : « Le Nouveau Monde et l'Ancien Monde »](https://areweloongyet.com/docs/intro)
 - [Site officiel de Loongson Technology, rubrique « Produits électroniques »](https://www.loongson.cn/product/channel)

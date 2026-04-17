@@ -66,14 +66,14 @@ Neben den aktuellen Produkten basieren auch die folgenden gängigen Chips auf Lo
 :::info
 Informationen zu Prozessorspezifikationen, Details und Vergleichen finden Sie unter:
 
-- [Datenbank für Chip-Spezifikationen](/en/chips)
+- [Datenbank für Chip-Spezifikationen](/de/chips)
 - [Offizielle Website von Loongson Technology, Rubrik „Chip-Produkte“](https://www.loongson.cn/product/channel).
 
 :::
 
 ### Gängige Platinenmodelle
 
-Im Folgenden finden Sie einige der gängigen Board-Modelle, die derzeit erhältlich sind. Die technischen Daten der Boards finden Sie unter [Produktdatenbank](/en/devices):
+Im Folgenden finden Sie einige der gängigen Board-Modelle, die derzeit erhältlich sind. Die technischen Daten der Boards finden Sie unter [Produktdatenbank](/de/devices):
 
 - Loongson 3C6000/S: AC612A0_V1.1
 - Loongson 3B6000: XB612B0_V1.1
@@ -104,13 +104,13 @@ Wenn Sie Student oder Community-Entwickler sind und Interesse daran haben, versc
 
 Zu diesem Zeitpunkt verfügen Sie bereits über einige grundlegende Kenntnisse zu Loongson. Im Folgenden finden Sie eine Reihe von Lesematerialien unserer Freunde aus der Community, die Referenzmaterialien von Benutzerhandbüchern bis hin zu Anleitungen zur Fehlerbehebung sowie Prozessorspezifikationen, ABI-Spezifikationen, Details zur Firmware-Implementierung und das „New-and-Old-World-Problem“ bieten, von dem Sie vielleicht schon gehört haben:
 
-- [Häufig gestellte Fragen & Fehlerbehebung](/en/guides)
-- [Loongson-Datenbank für Motherboards und CPUs](/en/devices)
+- [Häufig gestellte Fragen & Fehlerbehebung](/de/guides)
+- [Loongson-Datenbank für Motherboards und CPUs](/de/devices)
 - [*AREWELOONGYET?*: Informationsseite zum Aufbau des LoongArch-Ökosystems](https://areweloongyet.com/)
 - [Loong 1-2-3: Kompatibilitätsdatenbank für LoongArch](https://loong123.cn/)
 
 Gesammelte Lesematerialien:
 
-- [Datenbank für Chip-Spezifikationen](/en/chips)
+- [Datenbank für Chip-Spezifikationen](/de/chips)
 - [*AREWELOONGYET?*: Lesestoff „Neue Welt und Alte Welt“](https://areweloongyet.com/docs/intro)
 - [Offizielle Website von Loongson Technology, Rubrik „Chip-Produkte“](https://www.loongson.cn/product/channel)

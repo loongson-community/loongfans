@@ -9,7 +9,7 @@ pageSubTitle: Ihr Leitfaden vom Auspacken bis zur Zufriedenheit
 
 Loongson-Geräte werden in der Regel als „Motherboard- und CPU-Bundles“ verkauft (d. h., Motherboard und Prozessor werden zusammen angeboten). Neben dem Kauf eines vorgefertigten Systems müssen Sie je nach den Spezifikationen des Motherboards und Ihren eigenen Anforderungen noch weiteres Zubehör erwerben.
 
-:::Info
+:::info
 Informationen zu technischen Daten und bekannten Problemen verschiedener Platinen und vorgefertigter Systeme finden Sie unter [Datenbank für Hardware-Spezifikationen](/en/devices).
 :::
 
@@ -26,7 +26,7 @@ Wenn man beispielsweise einen Loongson-Desktop-Computer zusammenbauen möchte, g
 
 Die Speicherkompatibilität war auf Loongson-Plattformen schon immer eine Herausforderung. Wenn Sie inkompatible oder nicht geprüfte RAM-Module verwenden, laufen Betriebssysteme und Anwendungen möglicherweise nicht zuverlässig.
 
-:::Info
+:::info
 
 - Eine Liste der RAM-Module, die bekanntermaßen mit Loongson-Plattformen kompatibel sind, finden Sie unter [Kompatibilitätsliste für Speicher von Loong 1-2-3](https://loong123.cn/list-hardwares.html).
 - Generell werden RAM-Module mit Hynix-Chips gut unterstützt.

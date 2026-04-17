@@ -9,14 +9,14 @@ Wie viele sagen würden, ist Loongson ein bisschen eigenwillig. Die folgenden An
 
 ## Erste Schritte
 
-- [Erste Schritte: Ihr Leitfaden vom Auspacken bis zur Zufriedenheit](/en/guides/out-of-the-box)
+- [Erste Schritte: Ihr Leitfaden vom Auspacken bis zur Zufriedenheit](/de/guides/out-of-the-box)
 
 Häufig gestellte Fragen
 
-- [Häufige Probleme: Desktop- und Serverplattformen](/en/guides/errata-desktop-and-server)
-- [Häufige Probleme: Laptop-Plattform](/en/guides/errata-laptop)
-- [Häufige Probleme: Entwicklungsboards](/en/guides/errata-evb)
+- [Häufige Probleme: Desktop- und Serverplattformen](/de/guides/errata-desktop-and-server)
+- [Häufige Probleme: Laptop-Plattform](/de/guides/errata-laptop)
+- [Häufige Probleme: Entwicklungsboards](/de/guides/errata-evb)
 
 ## Hardware reparieren
 
-- [Firmware retten](/en/guides/rescue-firmware)
+- [Firmware retten](/de/guides/rescue-firmware)

@@ -15,7 +15,7 @@ import DeviceIndex from "@src/client/components/devices/DeviceIndex.vue"
 :::info
 Технические характеристики процессоров, подробную информацию и сравнение параметров см. по адресу:
 
-- [База данных микросхем](/enchips)
+- [База данных микросхем](/ru/chips)
 - [Официальный сайт компании Loongson Technology, раздел «Чипы»](https://www.loongson.cn/product/channel)
 
 :::

@@ -39,22 +39,22 @@ npm init
 npx vitepress init
 ```
 
-:::Info
+:::info
 Dies ist eine Infobox.
 :::
 
-:::Typ
+:::tip
 Das ist ein Tipp.
 :::
 
-:::Warnung
+:::warning
 Dies ist eine Warnung.
 :::
 
-:::Gefahr
+:::danger
 Das ist eine ernste Warnung.
 :::
 
-:::Details
+:::details
 Dies ist ein Detailblock.
 :::

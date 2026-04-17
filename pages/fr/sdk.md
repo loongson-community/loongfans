@@ -102,7 +102,7 @@ Pour installer Rust (rustc) et le gestionnaire de paquets Cargo sur les distribu
 
 <template #nodejs>
 
-Node.js prend officiellement en charge LoongArch. Il est disponible directement depuis le dépôt de votre distribution, sous forme de binaires, ou peut être compilé par compilation croisée. Node.js fournit des binaires LoongArch via le [Versions non officielles](https://unofficial-builds.nodejs.org/) projet (étiqueté comme le `loong64` (architecture).
+Node.js prend officiellement en charge LoongArch. Il est disponible directement depuis le dépôt de votre distribution, sous forme de binaires, ou peut être compilé par compilation croisée. Node.js fournit des binaires LoongArch via le [Versions non officielles](https://unofficial-builds.nodejs.org/) projet (étiqueté comme le `loong64` (architecture)).
 
 Pour installer Node.js sur les distributions Linux et les systèmes d'exploitation courants :
 
@@ -245,7 +245,7 @@ Comme indiqué plus haut, les versions récentes du noyau Linux sont généralem
 
 En règle générale, les ingénieurs de Loongson Technology et les développeurs de la communauté soumettent au noyau en amont (branche principale) des correctifs visant à assurer la prise en charge matérielle, des optimisations et des corrections. Cependant, pour des raisons techniques ou non techniques, certains correctifs ne sont pas intégrés.
 
-Le tableau suivant répertorie tous les correctifs connus et indispensables gérés par divers acteurs en aval (développeurs, communautés de distribution, etc.), à titre de référence (la liste de correctifs ci-dessous est basée sur `v6.19-rc1` et n'incluez pas les correctifs déjà soumis à l'amont [longue voûte](https://lore.kernel.org/loongarch) (liste de diffusion) :
+Le tableau suivant répertorie tous les correctifs connus et indispensables gérés par divers acteurs en aval (développeurs, communautés de distribution, etc.), à titre de référence (la liste de correctifs ci-dessous est basée sur `v6.19-rc1` et n'incluez pas les correctifs déjà soumis à l'amont [longue voûte](https://lore.kernel.org/loongarch) (liste de diffusion)):
 
 | Description | Type | Entrée Kconfig | Lien | Remarques |
 | ----------- | ---- | ------------- | ---- | ----- |

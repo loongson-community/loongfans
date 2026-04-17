@@ -10,7 +10,7 @@ pageSubTitle: Votre guide, du déballage jusqu'à votre satisfaction
 Les appareils Loongson sont généralement vendus sous forme d'« ensembles carte mère et processeur » (c'est-à-dire que la carte mère et le processeur sont vendus ensemble). Outre l'achat d'un système pré-assemblé, vous devrez vous procurer certains accessoires en fonction des spécifications de la carte mère et de vos propres besoins.
 
 :::info
-Pour connaître les caractéristiques techniques et les problèmes connus des différentes cartes et des systèmes préassemblés, veuillez consulter le [Base de données des spécifications matérielles](/en/devices).
+Pour connaître les caractéristiques techniques et les problèmes connus des différentes cartes et des systèmes préassemblés, veuillez consulter le [Base de données des spécifications matérielles](/fr/devices).
 :::
 
 Par exemple, pour assembler un ordinateur de bureau Loongson, voici quelques conseils généraux à suivre :

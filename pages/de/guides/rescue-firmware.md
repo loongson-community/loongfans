@@ -28,7 +28,7 @@ Bauen Sie das Programmiergerät vor dem Flashen wie unten beschrieben zusammen. 
 
 ## Laden Sie die Firmware herunter und überprüfen Sie ihren Hashwert
 
-Die meisten gängigen Produkte findet man im [Produktdatenbank](https://loongfans.cn/devices). Wenn Sie die Firmware für Ihr Modell nicht finden können, wenden Sie sich bitte an Ihren Händler.
+Die meisten gängigen Produkte findet man im [Produktdatenbank](/de/devices). Wenn Sie die Firmware für Ihr Modell nicht finden können, wenden Sie sich bitte an Ihren Händler.
 
 **Überprüfen Sie nach dem Herunterladen immer den Hash**; andernfalls startet das Board möglicherweise nicht.
 
@@ -130,23 +130,23 @@ Installieren Sie vor der Verwendung von NeoProgrammer den mit der Software mitge
 
 Bestimmen Sie als Nächstes das Modell Ihres CH341A-Programmiergeräts und wählen Sie es aus der `Hardware` Menü. Die am häufigsten verkauften Geräte sind `CH341 Black`:
 
-![](/en/images/guides/rescue-firmware/select-programmer.png)
+![](/de/images/guides/rescue-firmware/select-programmer.png)
 
 ::: tip
 Da die Standardeinstellungen für NeoProgrammer, die vom Enshan Wireless Forum bereitgestellt werden, auf Chinesisch voreingestellt sind und NeoProgrammer mehrere Sprachen unterstützt, finden Sie diese Option im `语言设置`.
 
-![](/en/images/guides/rescue-firmware/change-language.webp)
+![](/de/images/guides/rescue-firmware/change-language.webp)
 :::
 
 Befolgen Sie die nummerierten Schritte in der Abbildung:
 
-![](/en/images/guides/rescue-firmware/neoprogrammer.webp)
+![](/de/images/guides/rescue-firmware/neoprogrammer.webp)
 
 1. Klicken Sie auf `Open File` und wählen Sie die Firmware-Datei für Ihr Motherboard aus (**Hinweis: Ändern Sie die Dateiendung in `.bin`**)
    ![](/images/guides/rescue-firmware/select-firmware-windows.png)
 
 2. Klicken Sie auf `Detect` um das Modell des angeschlossenen Flash-Chips zu ermitteln. Falls das genaue Modell nicht in der Datenbank enthalten ist, können Sie ein ähnliches Modell verwenden (z. B. `W25Q128JW` kann ersetzt werden durch `W25Q128FW`). Dabei handelt es sich in der Regel lediglich um verschiedene Versionen mit identischen Parametern.
-   ![](/en/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
+   ![](/de/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
 
 3. Klicken Sie auf `Erase` um die beschädigte Firmware vollständig zu löschen. Nach dem Löschen können Sie optional auf `BlankCheck` um zu überprüfen, ob der Flash-Chip leer ist. Wenn beide `Success`, können Sie mit dem nächsten Schritt fortfahren.
 
@@ -197,7 +197,7 @@ Nach der Installation können Sie IMSProg über Ihr Anwendungsmenü starten.
 
 Befolgen Sie nach dem Start die nummerierten Schritte in der Abbildung:
 
-![](/en/images/guides/rescue-firmware/imsprog.webp)
+![](/de/images/guides/rescue-firmware/imsprog.webp)
 
 1. Klicken Sie auf `Open` und wählen Sie die Firmware-Datei für Ihr Motherboard aus (**Hinweis: Wie bei NeoProgrammer benennen Sie die Dateiendung um in `.bin`**)
 
