@@ -20,7 +20,7 @@ Dank des Engagements von Community-Mitwirkenden und Loongson-Ingenieuren seit 20
 
 Das bedeutet, dass der Installationsprozess für verschiedene Programmier-Toolchains nun ähnlich, wenn nicht sogar identisch mit dem auf der x86-Plattform ist – das heißt, die Installation ist so einfach wie das Herunterladen aus den Repositories der Distribution und erfolgt mit einzeiligen Befehlen!
 
-:::Typ
+:::tip
 Da ABI 2.0 („New World“) von den meisten Community-Nutzern und Entwicklern verwendet wird, konzentriert sich dieser Leitfaden ausschließlich auf die Vorstellung der Installations- und Konfigurationsverfahren für ABI 2.0-Systeme. ABI 1.0 („Old World“) wird hier nicht behandelt. Sollten Sie in einer Situation sein, in der Sie für ABI 1.0 entwickeln müssen, empfehlen wir Ihnen, diese Entscheidung zu überdenken und die Notwendigkeit zu überprüfen. Sollte dies dennoch erforderlich sein, lesen Sie bitte die Dokumentation unter [Loongson Open-Source-Community (loongnix.cn)](https://www.loongnix.cn/).
 :::
 
@@ -31,7 +31,7 @@ Da ABI 2.0 („New World“) von den meisten Community-Nutzern und Entwicklern v
 
 GCC und Binutils unterstützen LoongArch offiziell. Sie sind direkt über das Repository Ihrer Distribution als Binärdateien verfügbar oder können mittels Cross-Kompilierung erstellt werden.
 
-:::Typ
+:::tip
 Hinweis: Neuere Versionen von GCC und Binutils bieten eine verbesserte Unterstützung für LoongArch. Insbesondere bietet GCC 14 Unterstützung für LoongArch-Vektorerweiterungen, während Binutils 2.41 Unterstützung für Linker-Relaxation und – später mit GCC 16 – für das Medium-Code-Modell einführte (was die Kompatibilität mit größeren Quellcode-Projekten erheblich verbessert). All dies sind wesentliche Funktionserweiterungen. Bitte aktualisieren Sie die Software daher mindestens auf die oben genannten Versionen.
 
 Wenn Sie beabsichtigen, universelle Binärdateien für Projekte zu veröffentlichen oder eine Linux-Distribution zu betreuen, lesen Sie bitte die entsprechenden Spezifikationen und Einschränkungen, die in der [*Softwareentwicklung und Build-Konventionen für LoongArch-Architekturen*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
@@ -60,7 +60,7 @@ Falls Sie kein LoongArch-Gerät besitzen oder eine Cross-Kompilierung durchführ
 
 LLVM unterstützt LoongArch offiziell. Es ist direkt über das Repository Ihrer Distribution als Binärdateien verfügbar oder kann mittels Cross-Kompilierung erstellt werden.
 
-:::Typ
+:::tip
 Hinweis: Neuere Versionen von LLVM bieten eine verbesserte Unterstützung für LoongArch. Mit LLVM 18 wurde die Unterstützung für LoongArch-Vektorerweiterungen eingeführt. Falls verfügbar, aktualisieren Sie bitte auf diese Version oder eine neuere.
 
 Wenn Sie beabsichtigen, universelle Binärdateien für Projekte zu veröffentlichen oder eine Linux-Distribution zu betreuen, lesen Sie bitte die entsprechenden Spezifikationen und Einschränkungen, die in der [*Softwareentwicklung und Build-Konventionen für LoongArch-Architekturen*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
@@ -102,7 +102,7 @@ So installieren Sie Rust (rustc) und den Paketmanager Cargo auf gängigen Linux-
 
 <template #nodejs>
 
-Node.js unterstützt LoongArch offiziell. Es ist direkt über das Repository Ihrer Distribution als Binärdateien verfügbar oder kann mittels Cross-Kompilierung erstellt werden. Node.js stellt LoongArch-Binärdateien über das [Inoffizielle Versionen](https://unofficial-builds.nodejs.org/) Projekt (mit dem Tag `loong64` (Architektur).
+Node.js unterstützt LoongArch offiziell. Es ist direkt über das Repository Ihrer Distribution als Binärdateien verfügbar oder kann mittels Cross-Kompilierung erstellt werden. Node.js stellt LoongArch-Binärdateien über das [Inoffizielle Versionen](https://unofficial-builds.nodejs.org/) Projekt (mit dem Tag `loong64` (Architektur)).
 
 So installieren Sie Node.js auf gängigen Linux-Distributionen und Betriebssystemen:
 
@@ -113,7 +113,7 @@ So installieren Sie Node.js auf gängigen Linux-Distributionen und Betriebssyste
 | Debian und Derivate wie Deepin, openKylin und Loongnix 25 | `sudo apt install nodejs` |
 | Von Red Hat abgeleitete Distributionen wie Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install nodejs` |
 
-:::Typ
+:::tip
 Viele Linux-Distributionen bieten mehrere Versionen von Node.js an, um den Anforderungen verschiedener Anwendungen und Projekte gerecht zu werden. Bitte lesen Sie die Dokumentation Ihrer Distribution und installieren Sie bei Bedarf alternative Node.js-Versionen.
 :::
 
@@ -149,7 +149,7 @@ So installieren Sie Python auf gängigen Linux-Distributionen und Betriebssystem
 | Debian und Derivate wie Deepin, openKylin und Loongnix 25 | `sudo apt install python3` |
 | Von Red Hat abgeleitete Distributionen wie Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install python3` |
 
-:::Typ
+:::tip
 Da für LoongArch noch keine Definition für eine „manylinux“-Baseline vorliegt, werden im offiziellen PyPI-Repository keine Binärdateien für LoongArch bereitgestellt. Das bedeutet, dass bei der Installation von PyPI-Modulen mithilfe von `pip`Die entsprechenden Module werden aus dem Quellcode kompiliert, und Sie müssen gegebenenfalls C/C++/Rust-Toolchains installieren.
 
 Loongson Technology betreibt ein PyPI-Binär-Repository für ABI 2.0-Systeme unter [lpypi.loongnix.cn](http://lpypi.loongnix.cn/). Sie können bearbeiten `/etc/pip.conf` zu und legen Sie dieses als Standard-Repository fest. Alternativ können Sie das [64-Bit-Lang](https://github.com/loong64) Die Organisation auf GitHub unterhält ein unabhängiges PyPI-Binär-Repository. Informationen zur Konfiguration finden Sie unter [die README-Datei der Organisation](https://github.com/loong64#pypi-repository).
@@ -180,7 +180,7 @@ Um dieses Problem zu umgehen, können Sie alle erforderlichen NuGet-Pakete lokal
 - Microsoft.NETCore.App.Runtime.linux-loongarch64.*.nupkg
 - runtime.linux-loongarch64.Microsoft.DotNet.ILCompiler.*.nupkg
 
-:::Typ
+:::tip
 Die von loongson-community/dotnet-unofficial-build bereitgestellte Distribution stuft die oben genannten Dateien als „Release-Artefakte“ ein. Bitte laden Sie dieses Paket herunter, um die oben aufgeführten Komponenten zu erhalten.
 :::
 
@@ -213,7 +213,7 @@ So installieren Sie Java auf gängigen Linux-Distributionen und Betriebssystemen
 | Debian und Derivate wie Deepin, openKylin und Loongnix 25 | `sudo apt install default-jdk` |
 | Von Red Hat abgeleitete Distributionen wie Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install java-latest-openjdk` |
 
-:::Typ
+:::tip
 Viele Linux-Distributionen bieten mehrere Versionen von OpenJDK an, um den Anforderungen verschiedener Anwendungen und Projekte gerecht zu werden. Bitte lesen Sie die Dokumentation Ihrer Distribution und installieren Sie bei Bedarf alternative OpenJDK-Versionen.
 :::
 
@@ -223,7 +223,7 @@ Viele Linux-Distributionen bieten mehrere Versionen von OpenJDK an, um den Anfor
 
 Der Linux-Kernel unterstützt LoongArch offiziell. Im Allgemeinen verwenden Linux-Distributionen, die auf ABI 2.0 basieren, den Upstream-Kernel (zusammen mit plattformspezifischen Workarounds und anderen Patches, siehe unten). Einige kommerzielle Distributionen liefern jedoch den „Longterm“-Kernel 6.6 mit einem umfangreichen Satz plattformspezifischer Patches aus.
 
-:::Typ
+:::tip
 Der Linux-Kernel unterstützt LoongArch seit Version 5.19. Um die Hardwarefunktionen und die Leistung von LoongArch jedoch voll auszuschöpfen, sollten Sie den neuesten Mainline-Kernel verwenden.
 :::
 
@@ -245,7 +245,7 @@ Wie bereits erwähnt, sind neuere Linux-Kernel aufgrund ihrer besseren Unterstü
 
 In der Regel leiten Ingenieure von Loongson Technology und Entwickler aus der Community Hardware-Unterstützung, Optimierungen und Fehlerbehebungen an den Upstream-Kernel (Mainline) weiter. Aus technischen und nicht-technischen Gründen werden einige Patches jedoch nicht übernommen.
 
-Die folgende Tabelle enthält alle bekannten und wichtigen Patches, die von verschiedenen nachgelagerten Akteuren (Entwickler, Distributions-Communities usw.) gepflegt werden, zu Ihrer Information (die nachstehende Patch-Liste basiert auf `v6.19-rc1` und enthalten keine Patches, die bereits an den Upstream-Entwickler gesendet wurden [langer Bogen](https://lore.kernel.org/loongarch) (Mailingliste):
+Die folgende Tabelle enthält alle bekannten und wichtigen Patches, die von verschiedenen nachgelagerten Akteuren (Entwickler, Distributions-Communities usw.) gepflegt werden, zu Ihrer Information (die nachstehende Patch-Liste basiert auf `v6.19-rc1` und enthalten keine Patches, die bereits an den Upstream-Entwickler gesendet wurden [langer Bogen](https://lore.kernel.org/loongarch) (Mailingliste)):
 
 | Beschreibung | Typ | Kconfig-Eintrag | Link | Anmerkungen |
 | ----------- | ---- | ------------- | ---- | ----- |
@@ -276,7 +276,7 @@ So installieren Sie Docker auf gängigen Linux-Distributionen und Betriebssystem
 | Debian und Derivate wie Deepin, openKylin und Loongnix 25 | `sudo apt install docker.io` |
 | Von Red Hat abgeleitete Distributionen wie Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install docker` |
 
-:::Typ
+:::tip
 In der offiziellen Docker-Registry sind nur wenige LoongArch-Container verfügbar. Loongson Technology unterhält eine [Docker-Image-Repository für LoongArch ABI 2.0](https://lcr.loongnix.cn/). Sie können [Ändern Sie Ihre Docker-Konfiguration](https://docs.docker.com/docker-hub/image-library/mirror/) diese Registrierung nach Bedarf zu nutzen.
 :::
 

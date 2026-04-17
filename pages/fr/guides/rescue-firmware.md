@@ -28,7 +28,7 @@ Avant de procéder à la mise à jour du firmware, assemblez le programmateur co
 
 ## Télécharger le micrologiciel et vérifier son hachage
 
-La plupart des produits courants se trouvent dans le [base de données des produits](https://loongfans.cn/devices). Si vous ne trouvez pas le micrologiciel correspondant à votre modèle, veuillez contacter votre distributeur.
+La plupart des produits courants se trouvent dans le [base de données des produits](/fr/devices). Si vous ne trouvez pas le micrologiciel correspondant à votre modèle, veuillez contacter votre distributeur.
 
 **Vérifiez toujours la somme de contrôle** après le téléchargement ; sinon, la carte risque de ne pas démarrer.
 
@@ -130,23 +130,23 @@ Vérifiez ensuite dans le Gestionnaire de périphériques que le périphérique 
 
 Ensuite, identifiez le modèle de votre programmateur CH341A et sélectionnez-le dans la `Hardware` menu. Les modèles les plus vendus sont `CH341 Black`:
 
-![](/en/images/guides/rescue-firmware/select-programmer.png)
+![](/fr/images/guides/rescue-firmware/select-programmer.png)
 
 ::: tip
 Étant donné que les paramètres par défaut de NeoProgrammer fournis par le forum Enshan Wireless sont configurés en chinois, et que NeoProgrammer prend en charge plusieurs langues, vous trouverez cette option dans le `语言设置`.
 
-![](/en/images/guides/rescue-firmware/change-language.webp)
+![](/fr/images/guides/rescue-firmware/change-language.webp)
 :::
 
 Suivez les étapes numérotées indiquées sur le schéma :
 
-![](/en/images/guides/rescue-firmware/neoprogrammer.webp)
+![](/fr/images/guides/rescue-firmware/neoprogrammer.webp)
 
 1. Cliquez sur `Open File` et sélectionnez le fichier du micrologiciel correspondant à votre carte mère (**remarque : renommez l'extension en `.bin`**)
    ![](/images/guides/rescue-firmware/select-firmware-windows.png)
 
 2. Cliquez sur `Detect` pour identifier le modèle de la puce Flash connectée. Si le modèle exact ne figure pas dans la base de données, vous pouvez en choisir un similaire (par exemple, `W25Q128JW` peut être remplacé par `W25Q128FW`). Il s'agit généralement simplement de différentes versions présentant des paramètres identiques.
-   ![](/en/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
+   ![](/fr/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
 
 3. Cliquez sur `Erase` pour effacer complètement le micrologiciel endommagé. Une fois l'effacement terminé, vous pouvez, si vous le souhaitez, cliquer sur `BlankCheck` pour vérifier que la puce Flash est vide. Si les deux renvoient `Success`, vous pouvez passer à l'étape suivante.
 
@@ -197,7 +197,7 @@ Une fois l'installation terminée, vous pouvez lancer IMSProg depuis le menu de 
 
 Une fois que vous avez commencé, suivez les étapes numérotées indiquées sur le schéma :
 
-![](/en/images/guides/rescue-firmware/imsprog.webp)
+![](/fr/images/guides/rescue-firmware/imsprog.webp)
 
 1. Cliquez sur `Open` et sélectionnez le fichier du micrologiciel correspondant à votre carte mère (**remarque : comme avec NeoProgrammer, renommez l'extension en `.bin`**)
 
