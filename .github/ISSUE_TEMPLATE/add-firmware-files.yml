@@ -1,0 +1,114 @@
+name: Add firmware files
+description: Request adding one or more firmware download entries and device links
+title: "firmware: add <device> <version>"
+labels:
+  - firmware
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to add firmware downloads under `data/downloads/*.yml` and link them from `data/devices/**/index.yml`.
+
+        Maintainers: `file.loongfans.cn` is private. Uploads are handled manually after this issue is submitted.
+
+  - type: checkboxes
+    id: submitter_checks
+    attributes:
+      label: Pre-submit checklist
+      options:
+        - label: I understand uploads to `file.loongfans.cn` are performed manually by maintainers.
+          required: true
+        - label: I can provide firmware binaries (or a temporary external source) to maintainers for manual upload.
+          required: true
+        - label: I can provide SHA256 and file size in bytes for each firmware file.
+          required: true
+
+  - type: dropdown
+    id: firmware_type
+    attributes:
+      label: Firmware type
+      description: Current firmware downloads in this repo use `uefi-firmware`.
+      options:
+        - uefi-firmware
+    validations:
+      required: true
+
+  - type: input
+    id: device_keys
+    attributes:
+      label: Target device key(s)
+      description: Comma-separated keys from `data/devices/<device-key>/index.yml` (for example `loongson-xa612b0-v1.0`).
+      placeholder: "loongson-xa612b0-v1.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: firmware_entries
+    attributes:
+      label: Firmware entries to add
+      description: |
+        One line per firmware file. Use this format:
+        `<download-key> | <version> | <date YYYY-MM-DD> | <size bytes> | <sha256> | <debug true/false> | <target private URL path>`
+
+        Example:
+        `uefi-fw-loongson-xa612b0-v1.0-v5.0.0428_stable202602_rel | V1.0_V5.0.0428_stable202602_rel | 2026-04-02 | 8388608 | 1949...de976 | false | /xa612b0-v1.0/EDK2505_XA612B0-V1.0_General_V5.0.0428-Stable202602_rel.fd`
+      placeholder: |
+        uefi-fw-<vendor>-<board>-<version-tag> | <version> | 2026-04-02 | 8388608 | <64-hex-sha256> | false | /<folder>/<file>.fd
+        uefi-fw-<vendor>-<board>-<version-tag>-dbg | <version> | 2026-04-02 | 8388608 | <64-hex-sha256> | true | /<folder>/<file>-dbg.fd
+    validations:
+      required: true
+
+  - type: textarea
+    id: source_files
+    attributes:
+      label: Firmware source files for maintainer upload
+      description: |
+        Provide one of the following for each entry:
+        - Direct source URL (vendor link, release page, etc.), or
+        - Temporary download link that maintainers can fetch from, or
+        - Note that files will be sent to maintainers out-of-band.
+
+        Include mapping from each `<download-key>` to its source.
+      placeholder: |
+        uefi-fw-...-rel -> https://vendor.example/path/file-rel.fd
+        uefi-fw-...-dbg -> https://vendor.example/path/file-dbg.fd
+    validations:
+      required: true
+
+  - type: textarea
+    id: description_zh
+    attributes:
+      label: Chinese description (`description.zh`)
+      description: |
+        Markdown content for the YAML `description.zh` field.
+        If changelog fragments are needed, include references like:
+        `<!--@include: ./changelogs/<name>.md -->`
+      placeholder: |
+        本次主要基于 ... 基线更新。
+
+        <!--@include: ./changelogs/<name>.md -->
+    validations:
+      required: true
+
+  - type: textarea
+    id: description_en
+    attributes:
+      label: English description (`description.en`)
+      description: |
+        Markdown content for the YAML `description.en` field.
+        If changelog fragments are needed, include references like:
+        `<!--@include: ./changelogs/<name>.en.md -->`
+      placeholder: |
+        Major update based on ... baseline.
+
+        <!--@include: ./changelogs/<name>.en.md -->
+    validations:
+      required: true
+
+  - type: textarea
+    id: related_notes
+    attributes:
+      label: Additional notes
+      description: Include device-specific caveats, licensing constraints, or redirect-only cases.
+      placeholder: |
+        Example: due to licensing restrictions, this entry should redirect to an official vendor page instead of file.loongfans.cn.
