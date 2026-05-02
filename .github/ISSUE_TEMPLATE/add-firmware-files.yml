@@ -1,0 +1,138 @@
+name: Add firmware files / 添加固件下载条目
+description: Request adding one or more firmware download entries / 请求添加一个或多个固件下载条目
+title: "firmware: add <device> <version>"
+labels:
+  - firmware
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to add firmware downloads under `data/downloads/*.yml` and link them from `data/devices/**/index.yml`.
+
+        使用此表单可在 `data/downloads/*.yml` 添加固件下载条目，并在 `data/devices/**/index.yml` 中关联设备。
+
+        Note: `file.loongfans.cn` is private. Uploads are handled manually after this issue is submitted.
+
+        注意：`file.loongfans.cn` 是私有文件服务器，文件将在提交后由维护者手动上传。
+
+  - type: checkboxes
+    id: submitter_checks
+    attributes:
+      label: Pre-submit checklist / 提交前检查
+      options:
+        - label: I understand uploads to `file.loongfans.cn` are performed manually by maintainers. / 我理解 `file.loongfans.cn` 的上传由维护者手动处理。
+          required: true
+        - label: I can provide firmware binaries (or a temporary external source) to maintainers for manual upload. / 我可以向维护者提供固件文件（或可访问的临时来源）供手动上传。
+          required: true
+        - label: I can provide SHA256 and file size in bytes for each firmware file. / 我可以提供每个固件文件的 SHA256 值和精确的文件大小。
+          required: true
+
+  - type: dropdown
+    id: firmware_type
+    attributes:
+      label: Firmware type / 固件类型
+      description: Current firmware downloads in this repo use `uefi-firmware`. / 本仓库当前固件类型为 `uefi-firmware`。
+      options:
+        - uefi-firmware
+    validations:
+      required: true
+
+  - type: input
+    id: device_keys
+    attributes:
+      label: Target device key(s) / 目标设备键
+      description: Comma-separated keys from `data/devices/<device-key>/index.yml` (for example `loongson-xa612b0-v1.0`). / 填写 `data/devices/<device-key>/index.yml` 中的设备键（例如 `loongson-xa612b0-v1.0`），如有多个请用逗号分隔。
+      placeholder: "loongson-xa612b0-v1.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: firmware_entries
+    attributes:
+      label: Firmware entries to add / 需要添加的固件条目
+      description: |
+        One line per firmware file. Use this format:
+        `<download-key> | <version> | <date YYYY-MM-DD> | <size bytes> | <sha256> | <debug true/false> | <target private URL path>`
+
+        每个固件文件一行，使用以下格式：
+        `<download-key> | <version> | <date YYYY-MM-DD> | <size bytes> | <sha256> | <debug true/false> | <target private URL path>`
+
+        Example / 示例：
+        `uefi-fw-loongson-xa612b0-v1.0-v5.0.0428_stable202602_rel | V1.0_V5.0.0428_stable202602_rel | 2026-04-02 | 8388608 | 1949...de976 | false | /xa612b0-v1.0/EDK2505_XA612B0-V1.0_General_V5.0.0428-Stable202602_rel.fd`
+      placeholder: |
+        uefi-fw-<vendor>-<board>-<version-tag> | <version> | 2026-04-02 | 8388608 | <64-hex-sha256> | false | /<folder>/<file>.fd
+        uefi-fw-<vendor>-<board>-<version-tag>-dbg | <version> | 2026-04-02 | 8388608 | <64-hex-sha256> | true | /<folder>/<file>-dbg.fd
+    validations:
+      required: true
+
+  - type: textarea
+    id: source_files
+    attributes:
+      label: Firmware source files for maintainer upload / 维护者上传所需的固件来源
+      description: |
+        Provide one of the following for each entry:
+        - Directly upload `.zip` files here (drag and drop or select). See [Attaching files](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files) if you are not familiar with GitHub.
+        - Direct source URL (vendor link, release page, etc.), or
+        - Temporary download link that maintainers can fetch from, or
+        - Note that files will be sent to maintainers out-of-band.
+
+        每个条目请提供以下任一种来源：
+        - 直接在此处上传 `.zip` 文件（拖放或选择上传）。如果您不熟悉 GitHub，请参阅[附件指南](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files)。
+        - 厂商或发布页等直接来源链接，或
+        - 维护者可访问的临时下载链接，或
+        - 说明文件将通过其他方式发送给维护者。
+
+        Include mapping from each `<download-key>` to its source. / 请标明每个 `<download-key>` 对应的来源。
+      placeholder: |
+        uefi-fw-...-rel -> https://vendor.example/path/file-rel.fd
+        uefi-fw-...-dbg -> https://vendor.example/path/file-dbg.fd
+    validations:
+      required: true
+
+  - type: textarea
+    id: description_en
+    attributes:
+      label: English description (`description.en`) / 英文描述（`description.en`）
+      description: |
+        Markdown content for the YAML `description.en` field.
+        If changelog fragments are needed, include references like:
+        `<!--@include: ./changelogs/<name>.en.md -->`
+
+        YAML 中 `description.en` 字段的 Markdown 内容。
+        如果需要引用更新日志片段，请使用：
+        `<!--@include: ./changelogs/<name>.en.md -->`
+      placeholder: |
+        Major update based on ... baseline.
+
+        <!--@include: ./changelogs/<name>.en.md -->
+    validations:
+      required: true
+
+  - type: textarea
+    id: description_zh
+    attributes:
+      label: Chinese description (`description.zh`) / 中文描述（`description.zh`）
+      description: |
+        Markdown content for the YAML `description.zh` field.
+        If changelog fragments are needed, include references like:
+        `<!--@include: ./changelogs/<name>.md -->`
+
+        YAML 中 `description.zh` 字段的 Markdown 内容。
+        如果需要引用更新日志片段，请使用：
+        `<!--@include: ./changelogs/<name>.md -->`
+      placeholder: |
+        本次主要基于 ... 基线更新。
+
+        <!--@include: ./changelogs/<name>.md -->
+    validations:
+      required: true
+
+  - type: textarea
+    id: related_notes
+    attributes:
+      label: Additional notes / 补充说明
+      description: Include device-specific caveats, licensing constraints, or redirect-only cases. / 可补充设备注意事项、许可限制或仅跳转外部页面的情况。
+      placeholder: |
+        Example: due to licensing restrictions, this entry should redirect to an official vendor page instead of file.loongfans.cn.
+
+        示例：由于许可限制，此条目应跳转到厂商官网页面而不是 file.loongfans.cn。
