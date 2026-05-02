@@ -1,0 +1,5 @@
+### Problem bei der PCIe-Geschwindigkeitsaushandlung bei frühen 3B6000/3C6000-Steppings
+
+Nach Angaben von Early Adopters von 3B6000- und 3C6000-Motherboards erreichten einige AMD-Grafikkarten und RAID-Controller usw. lediglich PCIe-1.0-Übertragungsgeschwindigkeiten, was die Leistung dieser Peripheriegeräte erheblich einschränkte. Mit Hilfe unserer Freunde aus der Community und der Ingenieure bei Loongson Technology haben wir festgestellt, dass in frühen 3B6000- und 3C6000/S-Steppings der Bereich der PCIe-Verbindungsgeschwindigkeiten fälschlicherweise auf nur 2,5 GT/s festgelegt wurde (während er eigentlich 2,5–16 GT/s hätte betragen sollen), was das oben genannte Problem verursachte.
+
+Für dieses Problem gibt es nun eine Abhilfe; siehe AOSC-OS-Kernel-Patches [1](https://github.com/AOSC-Tracking/linux/commit/283358e5b377517ad9f13bd1909b4b931754c196), [2](https://github.com/AOSC-Tracking/linux/commit/874bb3b961fb6bf106b48c61a1671c196976e1f1), und [3](https://github.com/AOSC-Tracking/linux/commit/8d088d7587098ef48e0594bf46c603bb4d7abd52).

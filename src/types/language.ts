@@ -1,5 +1,8 @@
 export enum SupportedLanguage {
+  DE = "de",
   EN = "en",
+  FR = "fr",
+  RU = "ru",
   ZH = "zh",
 }
 

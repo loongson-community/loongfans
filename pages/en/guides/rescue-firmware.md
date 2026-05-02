@@ -28,7 +28,7 @@ Before flashing, assemble the programmer as described below. We use the Loongson
 
 ## Download the firmware and verify its hash
 
-Most mainstream products can be found in the [product database](https://loongfans.cn/devices). If you cannot locate the firmware for your model, contact your distributor.
+Most mainstream products can be found in the [product database](/en/devices). If you cannot locate the firmware for your model, contact your distributor.
 
 **Always verify the hash** after downloading; otherwise the board may fail to boot.
 

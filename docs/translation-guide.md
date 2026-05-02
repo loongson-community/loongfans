@@ -64,7 +64,29 @@
 
 ## 文件结构
 
-- 术语表：[`./glossary.md`](./glossary.md)
-- 中文源文件：`pages/`
-- 英文翻译：`pages/en`
-- 英文版本中的 `returnLink` 路径需添加 `/en/` 前缀
+以下文件和文件夹包含语言定义和语言选择逻辑:
+
+- /src/types/language.ts
+- /.vitepress/config.mts
+- /src/client/utils/language.ts
+- /src/common/i18n.ts
+- /src/common/locales
+
+## 页面
+
+以下目录包含各语言对应的页面:
+
+- 默认（中文）：/pages
+- 英语： /pages/en
+
+## 图片
+
+ 以下目录包含各语言专属的图片:
+
+- 默认（中文）：/pages/public/images
+- 英语： /pages/public/en
+
+## 重要提示
+
+- 请使用术语表确保翻译的准确性和一致性：/docs/glossary.md
+- 非默认语言（例如英文版）中的 returnLink 路径必须添加前缀（例如 /en/）

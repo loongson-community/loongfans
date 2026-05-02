@@ -1,0 +1,5 @@
+### Problème de négociation de vitesse PCIe avec les premières versions des puces 3B6000/3C6000
+
+D'après les premiers utilisateurs des cartes mères 3B6000 et 3C6000, certaines cartes graphiques AMD et certains contrôleurs RAID, entre autres, n'atteignaient que des vitesses de liaison PCIe 1.0, ce qui limitait considérablement les performances de ces périphériques. Avec l'aide de nos amis de la communauté et des ingénieurs de Loongson Technology, nous avons découvert que les premières versions des 3B6000 et 3C6000/S avaient défini par erreur la plage de vitesses de liaison PCIe à seulement 2,5 GT/s (alors qu'elle aurait dû être comprise entre 2,5 et 16 GT/s), ce qui a causé le problème susmentionné.
+
+Une solution de contournement est désormais disponible pour ce problème ; voir les correctifs du noyau AOSC OS [1](https://github.com/AOSC-Tracking/linux/commit/283358e5b377517ad9f13bd1909b4b931754c196), [2](https://github.com/AOSC-Tracking/linux/commit/874bb3b961fb6bf106b48c61a1671c196976e1f1), et [3](https://github.com/AOSC-Tracking/linux/commit/8d088d7587098ef48e0594bf46c603bb4d7abd52).
