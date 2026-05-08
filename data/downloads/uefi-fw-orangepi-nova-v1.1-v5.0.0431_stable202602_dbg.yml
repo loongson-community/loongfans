@@ -1,0 +1,31 @@
+type: uefi-firmware
+version: "V1.1_V5.0.0431-stable202602_dbg"
+size: 8388608
+date: "2026-05-08"
+sha256: "eae9ddc55257a5c8030535427e90dc9440595addf19289f7b5d2e2f13e23d911"
+url: "https://file.loongfans.cn/opi-nova-v1.1/EDK2505_OrangePi-Nova-V1.1_V5.0.0431-stable202602_dbg.fd"
+debug: true
+description:
+  zh: |
+    - 本版包含上游 V5.0.0341-stable202602（即 202602 基线）中包含的所有修复，其中较为重要的有：
+      - 修复在安同 OS 下使用 Firefox 浏览网页时可能导致锁死的问题
+      - 修复 Linux 7.0 无法启动或在启动后很快死机的问题
+    - 删除无用的 SATA 和虚拟化相关（IOMMU 及 SR-IOV）的选项
+    - 删除无效的“网络控制器 1”选项
+    - 改进主板型号格式，删除无用的“Loongson-2K3000-”前缀，现为“OrangePi-Nova-V1.1”
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2602.md -->
+  en: |
+    - This version includes all fixes released with upstream V5.0.0341-stable202602, notably:
+      - Fixed an issue where browsing the Web with Firefox on AOSC OS may cause the system to lock up.
+      - Fixed an issue where Linux 7.0 may fail to boot, or lock up shortly after booting.
+
+    - Removed useless options for SATA and virtualization (IOMMU and SR-IOV).
+    - Removed invalid configuration entry for "Network Controller 1".
+    - Improved board model formatting, removing the useless "Loongson-2K3000-" prefix (now "OrangePi-Nova-V1.1").
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2602.en.md -->
