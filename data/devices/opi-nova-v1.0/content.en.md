@@ -36,3 +36,11 @@ None noted.
 Source: Bai Mingcong, Xi Ruoyao
 
 </template>
+
+<template #download-notes>
+
+:::tip
+Daily firmware updates provided by the community: https://fw.loongfans.cn/opi-nova-v1.0/
+:::
+
+</template>
