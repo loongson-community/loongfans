@@ -36,3 +36,11 @@
 来源：白铭骢、Xi Ruoyao
 
 </template>
+
+<template #download-notes>
+
+:::tip
+社区提供每日构建固件更新：https://fw.loongfans.cn/opi-nova-v1.0/
+:::
+
+</template>

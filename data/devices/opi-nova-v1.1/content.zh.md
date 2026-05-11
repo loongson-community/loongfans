@@ -37,3 +37,11 @@
 来源：[深圳市迅龙软件有限公司](http://www.orangepi.cn/)
 
 </template>
+
+<template #download-notes>
+
+:::tip
+社区提供每日构建固件更新：https://fw.loongfans.cn/opi-nova-v1.1/
+:::
+
+</template>

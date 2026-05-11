@@ -37,3 +37,11 @@ Source: [深圳市迅龙软件有限公司](http://www.orangepi.cn/)
 Source: [深圳市迅龙软件有限公司](http://www.orangepi.cn/)
 
 </template>
+
+<template #download-notes>
+
+:::tip
+Daily firmware updates provided by the community: https://fw.loongfans.cn/opi-nova-v1.1/
+:::
+
+</template>
