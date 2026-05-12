@@ -40,3 +40,10 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 Source: "龙芯 3C6000 单路服务器主板产品规格书 V1.0"
 
 </template>
+<template #download-notes>
+
+:::info
+V1.1 and V1.0 firmware are compatible
+:::
+
+</template>
