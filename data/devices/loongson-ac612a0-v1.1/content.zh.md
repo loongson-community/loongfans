@@ -40,3 +40,11 @@
 来源：《龙芯 3C6000 单路服务器主板产品规格书 V1.0》
 
 </template>
+
+<template #download-notes>
+
+:::info
+V1.1 与 V1.0 固件通用
+:::
+
+</template>
