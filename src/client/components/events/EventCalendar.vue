@@ -12,7 +12,7 @@ import keyBy from "lodash/keyBy"
 import { useI18n } from "vue-i18n"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
-import type { BiweeklyEventItem } from "./dataSource"
+import type { EventItem } from "./dataSource"
 
 // The CalendarDay type is not exported by v-calendar, so we redefine it here
 // with only the fields we need.
@@ -22,11 +22,11 @@ interface CalendarDayForEvent {
 
 const { locale, t } = useI18n()
 const { events, now } = defineProps<{
-  events: BiweeklyEventItem[]
+  events: EventItem[]
   now: Date
 }>()
 const emit = defineEmits<{
-  eventSelected: [BiweeklyEventItem | null]
+  eventSelected: [EventItem | null]
 }>()
 
 const initialPage = {
@@ -48,12 +48,15 @@ const vCalAttrs: (typeof Calendar)["attributes"] = [
 ]
 
 const allEventsForVCal = events.map((be) => ({
-  key: `event-${be.issueNumber}`,
+  key: `event-${be.kind}-${be.issueNumber}`,
   dates: be.start,
   bar: be.isNext ? null : be.isFuture ? "theme-red" : "theme-past",
   highlight: be.isNext ? "theme-red" : null,
   popover: {
-    label: t("loongarchBiweekly", { number: be.issueNumber }),
+    label: t("eventCalendarEvent", {
+      number: t("ordinalNumber", { n: be.issueNumber }),
+      title: be.title,
+    }),
   },
 }))
 vCalAttrs.push(...allEventsForVCal)

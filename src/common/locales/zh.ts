@@ -86,7 +86,7 @@ export default {
 
   // events/EventCalendar.vue
   today: "今天",
-  loongarchBiweekly: "龙架构双周会（第 {number} 次）",
+  eventCalendarEvent: "{title}（第 {number} 次）",
 
   // sdk/Detail.vue
   gnuInstall: "GNU 工具链",

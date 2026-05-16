@@ -90,7 +90,7 @@ export default {
 
   // events/EventCalendar.vue
   today: "Today",
-  loongarchBiweekly: "LoongArch Biweekly #{number}",
+  eventCalendarEvent: "{title} #{number}",
 
   // sdk/Detail.vue
   gnuInstall: "GNU Toolchain",

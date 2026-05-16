@@ -2,22 +2,57 @@ import IcalExpander from "ical-expander"
 
 import biweeklyDB from "virtual:loongfans-data/biweekly"
 
-type EventItem = {
+export const eventKinds = ["zhBiweekly", "enBiweekly"] as const
+
+export type EventKind = (typeof eventKinds)[number]
+
+type ExpandedICSEvent = {
   start: Date
   title: string
 }
 
-export type BiweeklyEventItem = {
+export type EventItem = {
+  kind: EventKind
   issueNumber: number
   isFuture: boolean
   isNext: boolean
+  rawTitle: string
   start: Date
+  title: string
 }
 
-function expandEventsFromICS(ics: string, start: Date, end: Date): EventItem[] {
+export type EventsResult = {
+  events: EventItem[]
+  nextEventIdx: number | null
+}
+
+type TaggedEventTitle = {
+  kind: EventKind
+  title: string
+}
+
+function isEventKind(kind: string): kind is EventKind {
+  return (eventKinds as readonly string[]).includes(kind)
+}
+
+function parseTaggedEventTitle(title: string): TaggedEventTitle | null {
+  const match = /^\[([A-Za-z][A-Za-z0-9_-]*)\]\s*(.+)$/.exec(title)
+  if (!match) return null
+
+  const [, kind, strippedTitle] = match
+  if (!kind || !strippedTitle || !isEventKind(kind)) return null
+  return { kind, title: strippedTitle }
+}
+
+export function expandEventsFromICS(
+  ics: string,
+  start: Date,
+  end: Date,
+  now: Date,
+): EventItem[] {
   const expander = new IcalExpander({ ics, maxIterations: 100 })
   const allExpandedEvents = expander.between(start, end)
-  const simplifiedEvents: EventItem[] = [
+  const simplifiedEvents: ExpandedICSEvent[] = [
     ...allExpandedEvents.events.map((e) => ({
       start: e.startDate.toJSDate(),
       title: e.summary,
@@ -28,18 +63,39 @@ function expandEventsFromICS(ics: string, start: Date, end: Date): EventItem[] {
     })),
   ]
   simplifiedEvents.sort((a, b) => a.start.getTime() - b.start.getTime())
-  return simplifiedEvents
+
+  const issueNumbersByKind = new Map<EventKind, number>()
+  let nextEventIdx: number | null = null
+  const result: EventItem[] = []
+
+  for (const event of simplifiedEvents) {
+    const taggedTitle = parseTaggedEventTitle(event.title)
+    if (!taggedTitle) continue
+
+    const issueNumber = (issueNumbersByKind.get(taggedTitle.kind) ?? 0) + 1
+    issueNumbersByKind.set(taggedTitle.kind, issueNumber)
+
+    const isFuture = event.start.getTime() > now.getTime()
+    const isNext = isFuture && nextEventIdx === null
+    if (isNext) {
+      nextEventIdx = result.length
+    }
+
+    result.push({
+      kind: taggedTitle.kind,
+      issueNumber,
+      isFuture,
+      isNext,
+      rawTitle: event.title,
+      start: event.start,
+      title: taggedTitle.title,
+    })
+  }
+
+  return result
 }
 
-export type BiweeklyEventsResult = {
-  biweeklyEvents: BiweeklyEventItem[]
-  nextEventIdx: number | null
-}
-
-export function getBiweeklyEvents(
-  ics: string,
-  now: Date,
-): BiweeklyEventsResult {
+export function getBiweeklyEvents(ics: string, now: Date): EventsResult {
   const expansionRangeStart = new Date(2024, 11, 8) // date of first biweekly event
   const thisYear = new Date().getFullYear()
   const expansionRangeEnd = new Date(thisYear + 1, 0, 1)
@@ -47,30 +103,14 @@ export function getBiweeklyEvents(
     ics,
     expansionRangeStart,
     expansionRangeEnd,
+    now,
   )
 
-  const allBiweeklyEvents = events.filter((e) => /龙架构双周会/i.test(e.title))
-  const result: BiweeklyEventItem[] = []
-  let nextEventIdx: number | null = null
-  for (const [idx, event] of allBiweeklyEvents.entries()) {
-    const issueNumber = idx + 1
-    const isFuture = event.start.getTime() > now.getTime()
-    const isNext = isFuture && nextEventIdx === null
-    if (isNext) {
-      nextEventIdx = idx
-    }
-
-    result.push({
-      issueNumber,
-      isFuture,
-      isNext,
-      start: event.start,
-    })
-  }
+  const nextEventIdx = events.findIndex((event) => event.isNext)
 
   return {
-    biweeklyEvents: result,
-    nextEventIdx,
+    events,
+    nextEventIdx: nextEventIdx === -1 ? null : nextEventIdx,
   }
 }
 

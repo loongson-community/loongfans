@@ -2,7 +2,7 @@
   <div class="flex flex-col md:flex-row md:gap-6">
     <div class="w-full flex justify-center md:flex-1">
       <EventCalendar
-        :events="biweeklyEvents.biweeklyEvents"
+        :events="biweeklyEvents.events"
         :now="now"
         @event-selected="onEventSelected"
       />
@@ -97,20 +97,36 @@ import {
   getBiweeklyBilibiliLink,
   getBiweeklyEvents,
   getBiweeklySlideLink,
-  type BiweeklyEventItem,
+  type EventsResult,
+  type EventItem,
 } from "@src/client/components/events/dataSource"
 import EventCalendar from "@src/client/components/events/EventCalendar.vue"
 
 const { d, t } = useI18n()
 const now = new Date()
-const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
+const filterZhBiweeklyEvents = (events: EventItem[]): EventsResult => {
+  const filteredEvents = events.filter((event) => event.kind === "zhBiweekly")
+  const nextEventIdx = filteredEvents.findIndex((event) => event.isFuture)
+
+  return {
+    events: filteredEvents.map((event, idx) => ({
+      ...event,
+      isNext: idx === nextEventIdx,
+    })),
+    nextEventIdx: nextEventIdx === -1 ? null : nextEventIdx,
+  }
+}
+
+const biweeklyEvents = filterZhBiweeklyEvents(
+  getBiweeklyEvents(eventsICS, now).events,
+)
 const ei = biweeklyDB.eventInfo
 
-const thisEvent: Ref<BiweeklyEventItem | null> = ref(null)
+const thisEvent: Ref<EventItem | null> = ref(null)
 const thisBiliLink: Ref<string | null> = ref(null)
 const thisSlideLink: Ref<string | null> = ref(null)
 
-const onEventSelected = (be: BiweeklyEventItem | null) => {
+const onEventSelected = (be: EventItem | null) => {
   if (be) {
     thisEvent.value = be
     thisBiliLink.value = getBiweeklyBilibiliLink(be.issueNumber)
