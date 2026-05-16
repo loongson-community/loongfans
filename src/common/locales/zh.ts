@@ -67,7 +67,8 @@ export default {
   downloadTypeSchematicDiagram: "原理图",
   downloadTypeSdk: "SDK",
 
-  // events/EventAnnouncementContainer.vue
+  // events/EventAnnouncement*.vue
+  // zhBiweekly names the Chinese rendition; enBiweekly names the English/Russian rendition.
   zhBiweeklyAnnouncementHeader: "第 {number} 次“龙架构双周会”会议公告",
   zhBiweeklyArchiveHeader: "第 {number} 次“龙架构双周会”会议回看",
   biweeklyTime: "会议时间：{time}{expectedDurationNotice}",
@@ -83,7 +84,7 @@ export default {
   biweeklyArchivalNotice: "本次会议已经结束，您仍可查看本次会议的相关资源：",
   bilibiliLiveArchiveLink: "Bilibili 直播回看",
 
-  // events/EventsCalendar.vue
+  // events/EventCalendar.vue
   today: "今天",
   loongarchBiweekly: "龙架构双周会（第 {number} 次）",
 

@@ -12,7 +12,7 @@ import keyBy from "lodash/keyBy"
 import { useI18n } from "vue-i18n"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
-import type { BiweeklyEventItem, BiweeklyEventsResult } from "./dataSource"
+import type { BiweeklyEventItem } from "./dataSource"
 
 // The CalendarDay type is not exported by v-calendar, so we redefine it here
 // with only the fields we need.
@@ -21,12 +21,12 @@ interface CalendarDayForEvent {
 }
 
 const { locale, t } = useI18n()
-const { data, now } = defineProps<{
-  data: BiweeklyEventsResult
+const { events, now } = defineProps<{
+  events: BiweeklyEventItem[]
   now: Date
 }>()
 const emit = defineEmits<{
-  biweeklySelected: [BiweeklyEventItem | null]
+  eventSelected: [BiweeklyEventItem | null]
 }>()
 
 const initialPage = {
@@ -47,8 +47,8 @@ const vCalAttrs: (typeof Calendar)["attributes"] = [
   },
 ]
 
-const allBiweeklyEventsForVCal = data.biweeklyEvents.map((be) => ({
-  key: `biweekly-${be.issueNumber}`,
+const allEventsForVCal = events.map((be) => ({
+  key: `event-${be.issueNumber}`,
   dates: be.start,
   bar: be.isNext ? null : be.isFuture ? "theme-red" : "theme-past",
   highlight: be.isNext ? "theme-red" : null,
@@ -56,10 +56,10 @@ const allBiweeklyEventsForVCal = data.biweeklyEvents.map((be) => ({
     label: t("loongarchBiweekly", { number: be.issueNumber }),
   },
 }))
-vCalAttrs.push(...allBiweeklyEventsForVCal)
+vCalAttrs.push(...allEventsForVCal)
 
-// make the next biweekly event initially selected
-emit("biweeklySelected", data.biweeklyEvents.find((be) => be.isNext) || null)
+// make the next event initially selected
+emit("eventSelected", events.find((be) => be.isNext) || null)
 
 // no event key is available in v-calendar's dayclick event, so we have to
 // maintain a map between date id and event data
@@ -70,20 +70,20 @@ const formatDateID = (d: Date) => {
   return `${y}-${m}-${day}`
 }
 
-const biweeklyIssueNumberByDateID = keyBy(data.biweeklyEvents, (be) => {
+const eventByDateID = keyBy(events, (be) => {
   return formatDateID(be.start)
 })
 
-// make today point to the next biweekly event if clicked
-const nextEvent = data.biweeklyEvents.find((be) => be.isNext)
+// make today point to the next event if clicked
+const nextEvent = events.find((be) => be.isNext)
 if (nextEvent) {
-  biweeklyIssueNumberByDateID[formatDateID(now)] = nextEvent
+  eventByDateID[formatDateID(now)] = nextEvent
 }
 
 const onDayClick = (d: CalendarDayForEvent) => {
-  const be = biweeklyIssueNumberByDateID[d.id]
+  const be = eventByDateID[d.id]
   if (be) {
-    emit("biweeklySelected", be)
+    emit("eventSelected", be)
   }
 }
 </script>

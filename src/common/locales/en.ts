@@ -69,7 +69,8 @@ export default {
   downloadTypeSchematicDiagram: "Schematic Diagram",
   downloadTypeSdk: "SDK",
 
-  // events/EventAnnouncementContainer.vue
+  // events/EventAnnouncement*.vue
+  // zhBiweekly names the Chinese rendition; enBiweekly names the English/Russian rendition.
   zhBiweeklyAnnouncementHeader:
     'The {number} "LoongArch Biweekly" Meeting Announcement',
   zhBiweeklyArchiveHeader: 'The {number} "LoongArch Biweekly" Meeting Archives',
@@ -87,7 +88,7 @@ export default {
     "The meeting has ended, but you can still view materials from the event:",
   bilibiliLiveArchiveLink: "Bilibili live replay",
 
-  // events/EventsCalendar.vue
+  // events/EventCalendar.vue
   today: "Today",
   loongarchBiweekly: "LoongArch Biweekly #{number}",
 

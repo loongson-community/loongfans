@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col md:flex-row md:gap-6">
     <div class="w-full flex justify-center md:flex-1">
-      <BiweeklyCalendar
-        :data="biweeklyEvents"
+      <EventCalendar
+        :events="biweeklyEvents.biweeklyEvents"
         :now="now"
-        @biweekly-selected="onBiweeklySelected"
+        @event-selected="onEventSelected"
       />
     </div>
     <div v-if="thisEvent !== null" class="w-full announcement-container">
@@ -99,7 +99,7 @@ import {
   getBiweeklySlideLink,
   type BiweeklyEventItem,
 } from "@src/client/components/events/dataSource"
-import BiweeklyCalendar from "@src/client/components/events/BiweeklyCalendar.vue"
+import EventCalendar from "@src/client/components/events/EventCalendar.vue"
 
 const { d, t } = useI18n()
 const now = new Date()
@@ -110,7 +110,7 @@ const thisEvent: Ref<BiweeklyEventItem | null> = ref(null)
 const thisBiliLink: Ref<string | null> = ref(null)
 const thisSlideLink: Ref<string | null> = ref(null)
 
-const onBiweeklySelected = (be: BiweeklyEventItem | null) => {
+const onEventSelected = (be: BiweeklyEventItem | null) => {
   if (be) {
     thisEvent.value = be
     thisBiliLink.value = getBiweeklyBilibiliLink(be.issueNumber)
