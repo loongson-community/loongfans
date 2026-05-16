@@ -1,9 +1,14 @@
-import { parseDocument, Document, Scalar, YAMLMap, Pair } from "yaml"
+import { parseDocument, Document, Pair, Scalar, YAMLMap, YAMLSeq } from "yaml"
 
-type EditRequest = {
-  newBVID?: string
-  newSlidesID?: string
-}
+import type { BiweeklyEventKind, BiweeklyResourceType } from "@src/types/data"
+
+type ResourceFields = Partial<{
+  bvid: string
+  id: string
+  link: string
+  number: string
+  passcode: string
+}>
 
 type EventInfoEditRequest = {
   newBilibiliLiveLink?: string
@@ -16,27 +21,22 @@ type Changes = {
   bvid?: boolean
   livestreamLink?: boolean
   wemeet?: boolean
+  zoom?: boolean
+  zoomChat?: boolean
+  googleDocs?: boolean
+  youtube?: boolean
+  vk?: boolean
 }
 
 type ChangedCallback = (changes: Changes) => void
 
-// NOTE: The implementation is ported to edit YAML data, from a manually crafted
-// Babel AST-based earlier version that worked on the previously TypeScript data
-// source. It is ported by GPT-5.2-Codex, so while it works fine, beware of
-// AI slop bits here and there...
-//
-// What I have fixed in the original AI output:
-//
-// - `Document` instead of `ReturnType<typeof parseDocument>`;
-// - `debugPrintLinksNode` instead of `debugPrintDataNode` (`linksNode`
-//   originally being `dataNode`);
-// - simplified `sortEventInfoProperties` to just sort alphabetically.
 export class BiweeklyLinkEditor {
   debug: boolean = false
+  eventKind: BiweeklyEventKind
   filePath: string
   doc: Document
-  linksNode: YAMLMap
-  eventInfoNode: YAMLMap
+  linksNode: YAMLSeq
+  archivesNode: YAMLMap
 
   // changed status for various parts, used for generating commit messages
   issueNumber: number | null = null
@@ -45,35 +45,45 @@ export class BiweeklyLinkEditor {
     bvid: false,
     livestreamLink: false,
     wemeet: false,
+    zoom: false,
+    zoomChat: false,
+    googleDocs: false,
+    youtube: false,
+    vk: false,
   }
 
-  constructor(code: string, filePath: string, debug: boolean = false) {
+  constructor(
+    code: string,
+    filePath: string,
+    eventKind: BiweeklyEventKind = "zhBiweekly",
+    debug: boolean = false,
+  ) {
     this.debug = debug
+    this.eventKind = eventKind
     this.filePath = filePath
 
     this.doc = parseDocument(code, { keepSourceTokens: true })
-    this.linksNode = findBiweeklyLinkDataNode(this.doc)!
-    this.eventInfoNode = findBiweeklyEventInfoNode(this.doc)!
-    if (!this.linksNode) {
-      throw new Error(
-        "Cannot find biweekly event data in the input, please refactor this script!",
-      )
-    }
+    const eventKindNode = ensureBiweeklyKindDataNode(this.doc, eventKind)
+    this.linksNode = ensureSeqChild(eventKindNode, "links")
+    this.archivesNode = ensureMapChild(eventKindNode, "archives")
 
     if (this.debug) {
-      debugPrintLinksNode(this.linksNode)
+      debugPrintResources("Current resources", this.linksNode)
+      debugPrintArchives(this.archivesNode)
     }
   }
 
   editSlidesID(issueNumber: number, val: string) {
     console.log(
-      `Setting slides ID to ${val} for biweekly issue #${issueNumber}`,
+      `Setting KDocs slides ID to ${val} for ${this.eventKind} #${issueNumber}`,
     )
     this.issueNumber = issueNumber
-    editBiweeklyLinkData(
-      this.linksNode,
+    editArchiveResource(
+      this.archivesNode,
       issueNumber,
-      { newSlidesID: val },
+      "kdocs",
+      { id: val },
+      "slidesID",
       (changes) => {
         this.pendingChanges.slidesID ||= changes.slidesID ?? false
       },
@@ -81,14 +91,50 @@ export class BiweeklyLinkEditor {
   }
 
   editBVID(issueNumber: number, val: string) {
-    console.log(`Setting BVID to ${val} for biweekly issue #${issueNumber}`)
+    console.log(`Setting BVID to ${val} for ${this.eventKind} #${issueNumber}`)
     this.issueNumber = issueNumber
-    editBiweeklyLinkData(
-      this.linksNode,
+    editArchiveResource(
+      this.archivesNode,
       issueNumber,
-      { newBVID: val },
+      "bilibili",
+      { bvid: val },
+      "bvid",
       (changes) => {
         this.pendingChanges.bvid ||= changes.bvid ?? false
+      },
+    )
+  }
+
+  editCurrentResourceLink(type: BiweeklyResourceType, link: string) {
+    console.log(`Setting ${type} current resource link to ${link}`)
+    editResource(
+      this.linksNode,
+      type,
+      { link },
+      changeKeyForResource(type),
+      (changes) => {
+        mergeChanges(this.pendingChanges, changes)
+      },
+    )
+  }
+
+  editArchiveLink(
+    issueNumber: number,
+    type: BiweeklyResourceType,
+    link: string,
+  ) {
+    console.log(
+      `Setting ${type} archive link to ${link} for ${this.eventKind} #${issueNumber}`,
+    )
+    this.issueNumber = issueNumber
+    editArchiveResource(
+      this.archivesNode,
+      issueNumber,
+      type,
+      { link },
+      changeKeyForResource(type),
+      (changes) => {
+        mergeChanges(this.pendingChanges, changes)
       },
     )
   }
@@ -98,23 +144,39 @@ export class BiweeklyLinkEditor {
       console.log(
         `Setting Bilibili live room link to ${edits.newBilibiliLiveLink}`,
       )
+      editResource(
+        this.linksNode,
+        "bilibili",
+        { link: edits.newBilibiliLiveLink },
+        "livestreamLink",
+        (changes) => {
+          this.pendingChanges.livestreamLink ||= changes.livestreamLink ?? false
+        },
+      )
     }
-    if (edits.newWemeetLink) {
-      console.log(`Setting Wemeet link to ${edits.newWemeetLink}`)
+
+    if (edits.newWemeetLink || edits.newWemeetNumber) {
+      if (edits.newWemeetLink) {
+        console.log(`Setting Wemeet link to ${edits.newWemeetLink}`)
+      }
+      if (edits.newWemeetNumber) {
+        console.log(`Setting Wemeet number to ${edits.newWemeetNumber}`)
+      }
+      const fields: ResourceFields = {}
+      if (edits.newWemeetLink) fields.link = edits.newWemeetLink
+      if (edits.newWemeetNumber) fields.number = edits.newWemeetNumber
+      ensureWemeetCanBeEdited(this.linksNode, fields)
+      editResource(this.linksNode, "wemeet", fields, "wemeet", (changes) => {
+        this.pendingChanges.wemeet ||= changes.wemeet ?? false
+      })
     }
-    if (edits.newWemeetNumber) {
-      console.log(`Setting Wemeet number to ${edits.newWemeetNumber}`)
-    }
-    editBiweeklyEventInfo(this.eventInfoNode, edits, (changes) => {
-      this.pendingChanges.livestreamLink ||= changes.livestreamLink ?? false
-      this.pendingChanges.wemeet ||= changes.wemeet ?? false
-    })
   }
 
   async emit() {
     if (this.debug) {
       console.log("After edits:")
-      debugPrintLinksNode(this.linksNode)
+      debugPrintResources("Current resources", this.linksNode)
+      debugPrintArchives(this.archivesNode)
     }
     const output = this.doc.toString()
     if (this.debug) {
@@ -125,230 +187,212 @@ export class BiweeklyLinkEditor {
   }
 
   touched(): boolean {
-    return (
-      this.pendingChanges.bvid! ||
-      this.pendingChanges.slidesID! ||
-      this.pendingChanges.livestreamLink! ||
-      this.pendingChanges.wemeet!
-    )
+    return Object.values(this.pendingChanges).some(Boolean)
   }
 
   makeGitCommitMessage(): string {
-    const isIssueNumberRelevant =
-      this.pendingChanges.bvid || this.pendingChanges.slidesID
     const changedParts: string[] = []
-    if (this.pendingChanges.bvid) {
-      changedParts.push("BVID")
-    }
-    if (this.pendingChanges.slidesID) {
-      changedParts.push("slides ID")
-    }
+    if (this.pendingChanges.bvid) changedParts.push("BVID")
+    if (this.pendingChanges.slidesID) changedParts.push("slides ID")
     if (this.pendingChanges.livestreamLink) {
       changedParts.push("livestream link")
     }
-    if (this.pendingChanges.wemeet) {
-      changedParts.push("Wemeet info")
+    if (this.pendingChanges.wemeet) changedParts.push("Wemeet info")
+    if (this.pendingChanges.zoom) changedParts.push("Zoom link")
+    if (this.pendingChanges.zoomChat) changedParts.push("Zoom chat link")
+    if (this.pendingChanges.googleDocs) changedParts.push("Google Docs link")
+    if (this.pendingChanges.youtube) changedParts.push("YouTube link")
+    if (this.pendingChanges.vk) changedParts.push("VK link")
+
+    if (this.issueNumber != null) {
+      return `feat(biweekly): update ${changedParts.join(" and ")} for ${this.eventKind} ${this.issueNumber}`
     }
-
-    if (isIssueNumberRelevant && this.issueNumber != null) {
-      return `feat(biweekly): update ${changedParts.join(" and ")} for biweekly ${this.issueNumber}`
-    }
-    return `feat(biweekly): update ${changedParts.join(" and ")}`
+    return `feat(biweekly): update ${changedParts.join(" and ")} for ${this.eventKind}`
   }
 }
 
-const findBiweeklyLinkDataNode = (doc: Document): YAMLMap => {
-  const linksNode = doc.getIn(["links"])
-  if (!linksNode) {
-    const empty = new YAMLMap()
-    doc.set("links", empty)
-    return empty
-  }
-
-  if (!(linksNode instanceof YAMLMap)) {
-    throw new Error("unexpected YAML structure for biweekly link data")
-  }
-  return linksNode
+const ensureBiweeklyKindDataNode = (
+  doc: Document,
+  eventKind: BiweeklyEventKind,
+): YAMLMap => {
+  const root = ensureRootMap(doc)
+  const eventsNode = ensureMapChild(root, "events")
+  return ensureMapChild(eventsNode, eventKind)
 }
 
-const findBiweeklyEventInfoNode = (doc: Document): YAMLMap => {
-  const eventInfoNode = doc.getIn(["eventInfo"])
-  if (!eventInfoNode) {
-    const empty = new YAMLMap()
-    doc.set("eventInfo", empty)
-    return empty
+const ensureRootMap = (doc: Document): YAMLMap => {
+  if (!doc.contents) {
+    const root = new YAMLMap()
+    doc.contents = root
+    return root
   }
-  if (!(eventInfoNode instanceof YAMLMap)) {
-    throw new Error("unexpected YAML structure for biweekly event info")
+  if (!(doc.contents instanceof YAMLMap)) {
+    throw new Error("unexpected YAML structure for biweekly data")
   }
-  return eventInfoNode
+  return doc.contents
 }
 
-const debugPrintLinksNode = (linksNode: YAMLMap) => {
-  for (const item of linksNode.items) {
+const ensureMapChild = (map: YAMLMap, key: string): YAMLMap => {
+  const existing = findPair(map, key)
+  if (existing) {
+    if (existing.value instanceof YAMLMap) return existing.value
+    throw new Error(`unexpected YAML structure for ${key}`)
+  }
+
+  const child = new YAMLMap()
+  map.items.push(new Pair(new Scalar(key), child))
+  return child
+}
+
+const ensureSeqChild = (map: YAMLMap, key: string): YAMLSeq => {
+  const existing = findPair(map, key)
+  if (existing) {
+    if (existing.value instanceof YAMLSeq) return existing.value
+    throw new Error(`unexpected YAML structure for ${key}`)
+  }
+
+  const child = new YAMLSeq()
+  map.items.push(new Pair(new Scalar(key), child))
+  return child
+}
+
+const debugPrintArchives = (archivesNode: YAMLMap) => {
+  for (const item of archivesNode.items) {
     if (!(item instanceof Pair)) continue
-    debugPrintIssueData(item)
+    const issueNumber = getNumericKey(item.key)
+    if (issueNumber == null || !(item.value instanceof YAMLSeq)) continue
+    debugPrintResources(`Archive #${issueNumber}`, item.value)
   }
 }
 
-const debugPrintIssueData = (issuePair: Pair) => {
-  const issueNumber = getNumericKey(issuePair.key)
-  const issueMap = issuePair.value
-  let slidesID: string | null = null
-  let bvid: string | null = null
-
-  if (issueMap instanceof YAMLMap) {
-    for (const item of issueMap.items) {
-      if (!(item instanceof Pair)) continue
-      const key = getStringKey(item.key)
-      if (key === "slides") slidesID = getScalarValue(item.value)
-      if (key === "bvid") bvid = getScalarValue(item.value)
-    }
+const debugPrintResources = (label: string, resourcesNode: YAMLSeq) => {
+  console.log(label)
+  for (const item of resourcesNode.items) {
+    if (!(item instanceof YAMLMap)) continue
+    console.log("  Resource:", getResourceType(item) ?? "<unknown>")
   }
-
-  console.log("Issue Number:", issueNumber)
-  console.log("  Slides ID:", slidesID)
-  console.log("  BVID:", bvid)
 }
 
-const editBiweeklyLinkData = (
-  linksNode: YAMLMap,
+const editArchiveResource = (
+  archivesNode: YAMLMap,
   issueNumber: number,
-  edits: EditRequest,
+  type: BiweeklyResourceType,
+  fields: ResourceFields,
+  changeKey: keyof Changes,
   onChanged: ChangedCallback,
 ) => {
-  const issueMap = ensureIssueMap(linksNode, issueNumber)
-  const changes: Changes = { slidesID: false, bvid: false }
+  const resourcesNode = ensureArchiveResourceSeq(archivesNode, issueNumber)
+  editResource(resourcesNode, type, fields, changeKey, onChanged)
+}
 
-  if (edits.newSlidesID) {
-    changes.slidesID = upsertIssueValue(issueMap, "slides", edits.newSlidesID)
-  }
-  if (edits.newBVID) {
-    changes.bvid = upsertIssueValue(issueMap, "bvid", edits.newBVID)
-  }
+const editResource = (
+  resourcesNode: YAMLSeq,
+  type: BiweeklyResourceType,
+  fields: ResourceFields,
+  changeKey: keyof Changes,
+  onChanged: ChangedCallback,
+) => {
+  const resourceMap = ensureResourceMap(resourcesNode, type)
+  let changed = false
 
-  sortIssueProperties(issueMap)
+  for (const [key, value] of Object.entries(fields)) {
+    changed ||= upsertMapValue(resourceMap, key, value)
+  }
+  changed ||= removeMapValue(resourceMap, "status")
+
+  sortResourceProperties(resourceMap)
+  sortResources(resourcesNode)
+
+  const changes: Changes = {}
+  changes[changeKey] = changed
   onChanged(changes)
 }
 
-const editBiweeklyEventInfo = (
-  eventInfoNode: YAMLMap,
-  edits: EventInfoEditRequest,
-  onChanged: ChangedCallback,
+const ensureWemeetCanBeEdited = (
+  resourcesNode: YAMLSeq,
+  fields: ResourceFields,
 ) => {
-  const changes: Changes = {
-    livestreamLink: false,
-    wemeet: false,
+  if (fields.link) return
+  const existing = getResourceMap(resourcesNode, "wemeet")
+  const existingLink = existing ? getMapScalarValue(existing, "link") : null
+  if (!existingLink) {
+    throw new Error("Wemeet link is required when creating Wemeet info")
   }
-
-  if (edits.newBilibiliLiveLink) {
-    changes.livestreamLink = upsertMapValue(
-      eventInfoNode,
-      "bilibiliLiveLink",
-      edits.newBilibiliLiveLink,
-    )
-  }
-  if (edits.newWemeetLink) {
-    changes.wemeet ||= upsertMapValue(
-      eventInfoNode,
-      "wemeetLink",
-      edits.newWemeetLink,
-    )
-  }
-  if (edits.newWemeetNumber) {
-    changes.wemeet ||= upsertMapValue(
-      eventInfoNode,
-      "wemeetNumber",
-      edits.newWemeetNumber,
-    )
-  }
-  sortEventInfoProperties(eventInfoNode)
-  onChanged(changes)
 }
 
-const ensureIssueMap = (linksNode: YAMLMap, issueNumber: number): YAMLMap => {
-  const existing = getIssueMap(linksNode, issueNumber)
+const ensureArchiveResourceSeq = (
+  archivesNode: YAMLMap,
+  issueNumber: number,
+): YAMLSeq => {
+  const existing = getArchiveResourceSeq(archivesNode, issueNumber)
   if (existing) return existing
 
-  const issueMap = new YAMLMap()
-  insertIssueInOrder(linksNode, issueNumber, issueMap)
-  return issueMap
+  const resourcesNode = new YAMLSeq()
+  insertArchiveInOrder(archivesNode, issueNumber, resourcesNode)
+  return resourcesNode
 }
 
-const getIssueMap = (
-  linksNode: YAMLMap,
+const getArchiveResourceSeq = (
+  archivesNode: YAMLMap,
   issueNumber: number,
-): YAMLMap | null => {
-  for (const item of linksNode.items) {
+): YAMLSeq | null => {
+  for (const item of archivesNode.items) {
     if (!(item instanceof Pair)) continue
     const key = getNumericKey(item.key)
     if (key === issueNumber) {
-      if (item.value instanceof YAMLMap) {
-        return item.value
-      }
-      throw new Error("unexpected YAML structure for issue data")
+      if (item.value instanceof YAMLSeq) return item.value
+      throw new Error("unexpected YAML structure for archive resources")
     }
   }
   return null
 }
 
-const insertIssueInOrder = (
-  linksNode: YAMLMap,
+const insertArchiveInOrder = (
+  archivesNode: YAMLMap,
   issueNumber: number,
-  issueMap: YAMLMap,
+  resourcesNode: YAMLSeq,
 ) => {
-  const newPair = new Pair(new Scalar(issueNumber), issueMap)
-  const insertIndex = linksNode.items.findIndex((item) => {
+  const newPair = new Pair(new Scalar(issueNumber), resourcesNode)
+  const insertIndex = archivesNode.items.findIndex((item) => {
     if (!(item instanceof Pair)) return false
     const key = getNumericKey(item.key)
     return key !== null && key > issueNumber
   })
 
   if (insertIndex === -1) {
-    linksNode.items.push(newPair)
+    archivesNode.items.push(newPair)
   } else {
-    linksNode.items.splice(insertIndex, 0, newPair)
+    archivesNode.items.splice(insertIndex, 0, newPair)
   }
 }
 
-const upsertIssueValue = (issueMap: YAMLMap, key: string, value: string) => {
-  const existing = findPair(issueMap, key)
-  if (existing) {
-    if (existing.value instanceof Scalar) {
-      if (existing.value.value === value) return false
-      existing.value.value = value
-      return true
-    }
-    existing.value = createQuotedScalar(value)
-    return true
-  }
+const ensureResourceMap = (
+  resourcesNode: YAMLSeq,
+  type: BiweeklyResourceType,
+): YAMLMap => {
+  const existing = getResourceMap(resourcesNode, type)
+  if (existing) return existing
 
-  issueMap.items.push(new Pair(new Scalar(key), createQuotedScalar(value)))
-  return true
+  const resourceMap = new YAMLMap()
+  resourceMap.items.push(new Pair(new Scalar("type"), createQuotedScalar(type)))
+  resourcesNode.items.push(resourceMap)
+  sortResources(resourcesNode)
+  return resourceMap
 }
 
-const sortIssueProperties = (issueMap: YAMLMap) => {
-  const order = new Map([
-    ["slides", 0],
-    ["bvid", 1],
-  ])
-
-  issueMap.items.sort((a, b) => {
-    if (!(a instanceof Pair) || !(b instanceof Pair)) return 0
-    const aKey = getStringKey(a.key)
-    const bKey = getStringKey(b.key)
-    const aOrder = order.get(aKey ?? "") ?? 99
-    const bOrder = order.get(bKey ?? "") ?? 99
-    return aOrder - bOrder
-  })
-}
-
-const findPair = (map: YAMLMap, key: string): Pair | null => {
-  for (const item of map.items) {
-    if (!(item instanceof Pair)) continue
-    if (getStringKey(item.key) === key) return item
+const getResourceMap = (
+  resourcesNode: YAMLSeq,
+  type: BiweeklyResourceType,
+): YAMLMap | null => {
+  for (const item of resourcesNode.items) {
+    if (!(item instanceof YAMLMap)) continue
+    if (getResourceType(item) === type) return item
   }
   return null
+}
+
+const getResourceType = (resourceMap: YAMLMap): string | null => {
+  return getMapScalarValue(resourceMap, "type")
 }
 
 const upsertMapValue = (map: YAMLMap, key: string, value: string) => {
@@ -366,18 +410,72 @@ const upsertMapValue = (map: YAMLMap, key: string, value: string) => {
   return true
 }
 
-const sortEventInfoProperties = (eventInfoNode: YAMLMap) => {
-  // just alphabetical order is fine
-  eventInfoNode.items.sort((a, b) => {
-    if (!(a instanceof Pair) || !(b instanceof Pair)) return 0
-    const aKey = getStringKey(a.key) ?? ""
-    const bKey = getStringKey(b.key) ?? ""
-    // there is no locale-agnostic codepoint-based comparison in JS yet, so we
-    // can only use localeCompare
-    // hope https://github.com/tc39/proposal-compare-strings-by-codepoint gets
-    // accepted someday...
-    return aKey.localeCompare(bKey)
+const removeMapValue = (map: YAMLMap, key: string) => {
+  const idx = map.items.findIndex((item) => {
+    if (!(item instanceof Pair)) return false
+    return getStringKey(item.key) === key
   })
+  if (idx === -1) return false
+  map.items.splice(idx, 1)
+  return true
+}
+
+const sortResourceProperties = (resourceMap: YAMLMap) => {
+  const order = new Map([
+    ["type", 0],
+    ["id", 1],
+    ["bvid", 2],
+    ["link", 3],
+    ["number", 4],
+    ["passcode", 5],
+    ["status", 6],
+    ["label", 7],
+    ["note", 8],
+  ])
+
+  resourceMap.items.sort((a, b) => {
+    if (!(a instanceof Pair) || !(b instanceof Pair)) return 0
+    const aKey = getStringKey(a.key)
+    const bKey = getStringKey(b.key)
+    const aOrder = order.get(aKey ?? "") ?? 99
+    const bOrder = order.get(bKey ?? "") ?? 99
+    return aOrder - bOrder
+  })
+}
+
+const sortResources = (resourcesNode: YAMLSeq) => {
+  const order = new Map<BiweeklyResourceType, number>([
+    ["wemeet", 0],
+    ["kdocs", 1],
+    ["googledocs", 2],
+    ["zoom", 3],
+    ["zoomChat", 4],
+    ["bilibili", 5],
+    ["youtube", 6],
+    ["vk", 7],
+  ])
+
+  resourcesNode.items.sort((a, b) => {
+    if (!(a instanceof YAMLMap) || !(b instanceof YAMLMap)) return 0
+    const aType = getResourceType(a) as BiweeklyResourceType | null
+    const bType = getResourceType(b) as BiweeklyResourceType | null
+    const aOrder = aType ? (order.get(aType) ?? 99) : 99
+    const bOrder = bType ? (order.get(bType) ?? 99) : 99
+    return aOrder - bOrder
+  })
+}
+
+const findPair = (map: YAMLMap, key: string): Pair | null => {
+  for (const item of map.items) {
+    if (!(item instanceof Pair)) continue
+    if (getStringKey(item.key) === key) return item
+  }
+  return null
+}
+
+const getMapScalarValue = (map: YAMLMap, key: string): string | null => {
+  const pair = findPair(map, key)
+  return pair ? getScalarValue(pair.value) : null
 }
 
 const getNumericKey = (key: unknown): number | null => {
@@ -416,4 +514,32 @@ const createQuotedScalar = (value: string): Scalar => {
   const scalar = new Scalar(value)
   scalar.type = Scalar.QUOTE_DOUBLE
   return scalar
+}
+
+const changeKeyForResource = (type: BiweeklyResourceType): keyof Changes => {
+  switch (type) {
+    case "kdocs":
+      return "slidesID"
+    case "bilibili":
+      return "livestreamLink"
+    case "zoom":
+      return "zoom"
+    case "zoomChat":
+      return "zoomChat"
+    case "googledocs":
+      return "googleDocs"
+    case "youtube":
+      return "youtube"
+    case "vk":
+      return "vk"
+    case "wemeet":
+      return "wemeet"
+  }
+}
+
+const mergeChanges = (target: Changes, source: Changes) => {
+  for (const [key, value] of Object.entries(source)) {
+    const changeKey = key as keyof Changes
+    target[changeKey] ||= value
+  }
 }

@@ -2,16 +2,45 @@
 
 ## 双周会信息与归档
 
-此处存放的 `biweekly.yml` 是龙架构双周会的举办信息与历次活动资料归档，以纯数据形式存储，以便程序化访问与修改。
+此处存放的 `biweekly.yml` 是龙架构双周会各语种场次的举办信息与历次活动资料归档，以纯数据形式存储，以便程序化访问与修改。
 
 它符合 `BiweeklyDB` 这一 TypeScript 类型，在站点构建过程中会受到类型校验，并被转换为等价的
 JSON 模块，以便 Vue 组件 `import`。
+
+`biweekly.yml` 顶层按活动标签分组：
+
+* `zhBiweekly`：中文/普通话场次；
+* `enBiweekly`：英文/俄文场次。
+
+每个活动标签下包含：
+
+* `links`：当前或长期有效的参会、直播、协作文档等资源；
+* `archives`：按期号/场次号索引的归档资源。由于 JSON 对象键本质上是字符串，期号/场次号在类型中也按字符串键处理。
+
+资源统一写成带 `type` 的数组项，例如：
+
+```yaml
+links:
+  - { type: "wemeet", number: "708-1775-8704", link: "https://example.com" }
+  - { type: "kdocs", id: "example" }
+  - { type: "googledocs", link: "https://example.com" }
+```
+
+当前支持的资源类型包括 `wemeet`、`kdocs`、`googledocs`、`zoom`、`zoomChat`、`bilibili`、`youtube` 与 `vk`。如果资源暂不可用或仍在制作中，可以保留资源类型并设置 `status: "unavailable"` 或 `status: "wip"`。
 
 ## iCalendar 日历
 
 此处存放的 iCalendar 文件 `events.ics` 是用于页面展示各种社区活动信息的数据源。目前接入的社区活动有：
 
-* 龙架构双周会
+* `[zhBiweekly] 龙架构双周会`
+* `[enBiweekly] LoongArch Biweekly (EN/RU)`
+
+日历事件的 `SUMMARY` 必须以前缀标签开头，格式为 `[tag] 展示标题`。页面解析日历时会使用标签决定渲染哪一种活动公告组件，并在日历界面中隐藏标签，只展示去掉标签后的标题。当前已约定的标签含义如下：
+
+* `zhBiweekly` 表示中文/普通话场次；
+* `enBiweekly` 表示英文/俄文场次。
+
+未带标签或使用未知标签的事件目前不会显示在双周会页面中。
 
 目前社区运营人员没有适合的地方部署后端服务，因此该日历无法以常规的 CalDAV 服务器形式存在，只能由
 [@xen0n][@xen0n] 在自己的 CalDAV 服务器上编辑好了导出到这里。

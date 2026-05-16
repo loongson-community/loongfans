@@ -3,8 +3,16 @@ name: Edit Biweekly Events
 on:
   workflow_dispatch:
     inputs:
+      kind:
+        description: "Event kind tag to edit"
+        required: false
+        default: "zhBiweekly"
+        type: choice
+        options:
+          - zhBiweekly
+          - enBiweekly
       issue_number:
-        description: "Biweekly issue number to edit"
+        description: "Biweekly issue/session number to edit"
         required: false
         type: integer
       bvid:
@@ -27,6 +35,26 @@ on:
         description: "Set the Wemeet meeting number to (optional, in the typical hyphenated format)"
         required: false
         type: string
+      zoom_link:
+        description: "Set the Zoom meeting link to (optional)"
+        required: false
+        type: string
+      zoom_chat_link:
+        description: "Set the Zoom chat link to (optional)"
+        required: false
+        type: string
+      google_docs_link:
+        description: "Set the Google Docs/Slides link to (optional)"
+        required: false
+        type: string
+      youtube_link:
+        description: "Set the YouTube archive link to (optional)"
+        required: false
+        type: string
+      vk_link:
+        description: "Set the VK archive link to (optional)"
+        required: false
+        type: string
 
 jobs:
   edit-biweekly-events:
@@ -44,6 +72,11 @@ jobs:
           [[ -n "${{ github.event.inputs.bilibili_live_link }}" ]] && _provided_inputs=true
           [[ -n "${{ github.event.inputs.wemeet_link }}" ]] && _provided_inputs=true
           [[ -n "${{ github.event.inputs.wemeet_number }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.zoom_link }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.zoom_chat_link }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.google_docs_link }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.youtube_link }}" ]] && _provided_inputs=true
+          [[ -n "${{ github.event.inputs.vk_link }}" ]] && _provided_inputs=true
           if ! "$_provided_inputs"; then
             echo "At least one edit input must be provided."
             exit 1
@@ -70,6 +103,7 @@ jobs:
       - name: Make the edit
         run: |
           ARGS=()
+          ARGS+=( --kind "${{ github.event.inputs.kind || 'zhBiweekly' }}" )
           if [[ -n "${{ github.event.inputs.issue_number }}" ]]; then
             ARGS+=( -i ${{ github.event.inputs.issue_number }} )
           fi
@@ -88,6 +122,21 @@ jobs:
           if [[ -n "${{ github.event.inputs.wemeet_number }}" ]]; then
             ARGS+=( --set-wemeet-number "${{ github.event.inputs.wemeet_number }}")
           fi
+          if [[ -n "${{ github.event.inputs.zoom_link }}" ]]; then
+            ARGS+=( --set-zoom-link "${{ github.event.inputs.zoom_link }}")
+          fi
+          if [[ -n "${{ github.event.inputs.zoom_chat_link }}" ]]; then
+            ARGS+=( --set-zoom-chat-link "${{ github.event.inputs.zoom_chat_link }}")
+          fi
+          if [[ -n "${{ github.event.inputs.google_docs_link }}" ]]; then
+            ARGS+=( --set-google-docs-link "${{ github.event.inputs.google_docs_link }}")
+          fi
+          if [[ -n "${{ github.event.inputs.youtube_link }}" ]]; then
+            ARGS+=( --set-youtube-link "${{ github.event.inputs.youtube_link }}")
+          fi
+          if [[ -n "${{ github.event.inputs.vk_link }}" ]]; then
+            ARGS+=( --set-vk-link "${{ github.event.inputs.vk_link }}")
+          fi
           ARGS+=( --commit )
           pnpm run editBiweeklyEvents "${ARGS[@]}"
 
@@ -95,16 +144,17 @@ jobs:
         id: pr_title
         run: |
           issue_number="${{ github.event.inputs.issue_number }}"
+          kind="${{ github.event.inputs.kind || 'zhBiweekly' }}"
           if [[ -n ${issue_number} ]]; then
-            echo "PR_TITLE=Update data for LoongArch Biweekly ${issue_number}" >> $GITHUB_OUTPUT
+            echo "PR_TITLE=Update data for ${kind} ${issue_number}" >> $GITHUB_OUTPUT
           else
-            echo "PR_TITLE=Update LoongArch Biweekly event info" >> $GITHUB_OUTPUT
+            echo "PR_TITLE=Update ${kind} event info" >> $GITHUB_OUTPUT
           fi
 
       - name: Create a PR
         uses: peter-evans/create-pull-request@v8
         with:
-          branch: "edit-biweekly-${{ github.event.inputs.issue_number || 'event-info' }}"
+          branch: "edit-biweekly-${{ github.event.inputs.kind || 'zhBiweekly' }}-${{ github.event.inputs.issue_number || 'event-info' }}"
           branch-suffix: timestamp # always create a new branch
           delete-branch: true
           title: ${{ steps.pr_title.outputs.PR_TITLE }}

@@ -2,9 +2,14 @@ import { readFile, writeFile } from "node:fs/promises"
 import { spawn } from "node:child_process"
 import { Command } from "@commander-js/extra-typings"
 import { BiweeklyLinkEditor } from "./editor"
+import type { BiweeklyEventKind, BiweeklyResourceType } from "@src/types/data"
 
 // relative to project root
 const biweeklyLinkDataPath = "./data/events/biweekly.yml"
+const supportedEventKinds = new Set<BiweeklyEventKind>([
+  "zhBiweekly",
+  "enBiweekly",
+])
 
 const asyncCallGit = (args: string[]) => {
   return new Promise<void>((resolve, reject) => {
@@ -54,6 +59,11 @@ async function main() {
   const program = new Command()
     .description("Edit biweekly link data")
     .option(
+      "-k, --kind <kind>",
+      "event kind tag to edit",
+      "zhBiweekly" as BiweeklyEventKind,
+    )
+    .option(
       "-i, --issue <number>",
       "issue number of biweekly event to edit",
       parseInt,
@@ -79,9 +89,33 @@ async function main() {
       "--set-wemeet-number <XXX-XXXX-XXXX>",
       "record this string as the Wemeet meeting number",
     )
+    .option("--set-zoom-link <url>", "record this URL as the Zoom meeting link")
+    .option(
+      "--set-zoom-chat-link <url>",
+      "record this URL as the Zoom chat link",
+    )
+    .option(
+      "--set-google-docs-link <url>",
+      "record this URL as the Google Docs/Slides link",
+    )
+    .option(
+      "--set-youtube-link <url>",
+      "record this URL as the YouTube archive link",
+    )
+    .option("--set-vk-link <url>", "record this URL as the VK archive link")
     .option("--commit", "also commit the changes to Git", false)
     .parse(process.argv)
   const opts = program.opts()
+
+  const eventKind = opts.kind as BiweeklyEventKind
+  if (!supportedEventKinds.has(eventKind)) {
+    console.error(
+      `Unsupported event kind "${opts.kind}". Expected one of: ${[
+        ...supportedEventKinds,
+      ].join(", ")}`,
+    )
+    process.exit(1)
+  }
 
   const issueNumber = opts.issue ?? null
   let bvidToSet: string | undefined = opts.setBvid
@@ -89,24 +123,44 @@ async function main() {
   const liveLinkToSet: string | undefined = opts.setLiveLink
   const wemeetLinkToSet: string | undefined = opts.setWemeetLink
   const wemeetNumberToSet: string | undefined = opts.setWemeetNumber
+  const zoomLinkToSet: string | undefined = opts.setZoomLink
+  const zoomChatLinkToSet: string | undefined = opts.setZoomChatLink
+  const googleDocsLinkToSet: string | undefined = opts.setGoogleDocsLink
+  const youtubeLinkToSet: string | undefined = opts.setYoutubeLink
+  const vkLinkToSet: string | undefined = opts.setVkLink
 
   if (
     !bvidToSet &&
     !slidesIDtoSet &&
     !liveLinkToSet &&
     !wemeetLinkToSet &&
-    !wemeetNumberToSet
+    !wemeetNumberToSet &&
+    !zoomLinkToSet &&
+    !zoomChatLinkToSet &&
+    !googleDocsLinkToSet &&
+    !youtubeLinkToSet &&
+    !vkLinkToSet
   ) {
     console.error("No changes specified, check --help for usage.")
     process.exit(1)
   }
-  if ((bvidToSet || slidesIDtoSet) && issueNumber == null) {
-    console.error("Issue number is required when editing BVID or slides ID.")
+  if (
+    (bvidToSet || slidesIDtoSet || youtubeLinkToSet || vkLinkToSet) &&
+    issueNumber == null
+  ) {
+    console.error(
+      "Issue/session number is required when editing archive-only resources.",
+    )
     process.exit(1)
   }
 
   const code = await readFile(biweeklyLinkDataPath, "utf-8")
-  const editor = new BiweeklyLinkEditor(code, biweeklyLinkDataPath, opts.debug)
+  const editor = new BiweeklyLinkEditor(
+    code,
+    biweeklyLinkDataPath,
+    eventKind,
+    opts.debug,
+  )
 
   if (bvidToSet) {
     if (bvidToSet.startsWith("http")) {
@@ -134,6 +188,34 @@ async function main() {
       }
     }
     editor.editSlidesID(issueNumber!, slidesIDtoSet)
+  }
+
+  const editResourceLink = (
+    type: BiweeklyResourceType,
+    link: string,
+    archiveOnly: boolean = false,
+  ) => {
+    if (archiveOnly || issueNumber != null) {
+      editor.editArchiveLink(issueNumber!, type, link)
+      return
+    }
+    editor.editCurrentResourceLink(type, link)
+  }
+
+  if (zoomLinkToSet) {
+    editResourceLink("zoom", zoomLinkToSet)
+  }
+  if (zoomChatLinkToSet) {
+    editResourceLink("zoomChat", zoomChatLinkToSet)
+  }
+  if (googleDocsLinkToSet) {
+    editResourceLink("googledocs", googleDocsLinkToSet)
+  }
+  if (youtubeLinkToSet) {
+    editResourceLink("youtube", youtubeLinkToSet, true)
+  }
+  if (vkLinkToSet) {
+    editResourceLink("vk", vkLinkToSet, true)
   }
 
   if (liveLinkToSet || wemeetLinkToSet || wemeetNumberToSet) {
