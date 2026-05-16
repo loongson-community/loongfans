@@ -26,9 +26,12 @@
           }}
         </p>
         <p>
-          <a :href="ei.wemeetLink" target="_blank" rel="noreferrer">{{
-            t("zhBiweeklyWemeetLink")
-          }}</a
+          <a
+            v-if="currentWemeet !== null"
+            :href="currentWemeet.link"
+            target="_blank"
+            rel="noreferrer"
+            >{{ t("zhBiweeklyWemeetLink") }}</a
           >｜<a
             v-if="thisSlideLink !== null"
             :href="thisSlideLink"
@@ -36,12 +39,19 @@
             rel="noreferrer"
             >{{ t("biweeklySlideLink") }}</a
           ><span v-else>{{ t("biweeklySlideLinkTBU") }}</span
-          >｜<a :href="ei.bilibiliLiveLink" target="_blank" rel="noreferrer">{{
-            t("biweeklyLiveLink")
-          }}</a
-          >｜<i18n-t keypath="wemeetNumber" tag="span">
+          >｜<a
+            v-if="currentBilibiliLive !== null && currentBilibiliLive.link"
+            :href="currentBilibiliLive.link"
+            target="_blank"
+            rel="noreferrer"
+            >{{ t("biweeklyLiveLink") }}</a
+          >｜<i18n-t
+            v-if="currentWemeet !== null"
+            keypath="wemeetNumber"
+            tag="span"
+          >
             <template #number>
-              <strong>{{ ei.wemeetNumber }}</strong>
+              <strong>{{ currentWemeet.number }}</strong>
             </template>
           </i18n-t>
         </p>
@@ -91,10 +101,10 @@
 import { ref, type Ref } from "vue"
 import { useI18n } from "vue-i18n"
 
-import biweeklyDB from "virtual:loongfans-data/biweekly"
 import eventsICS from "@data/events/events.ics?raw"
 import {
   getBiweeklyBilibiliLink,
+  getBiweeklyCurrentResource,
   getBiweeklyEvents,
   getBiweeklySlideLink,
   type EventsResult,
@@ -120,7 +130,8 @@ const filterZhBiweeklyEvents = (events: EventItem[]): EventsResult => {
 const biweeklyEvents = filterZhBiweeklyEvents(
   getBiweeklyEvents(eventsICS, now).events,
 )
-const ei = biweeklyDB.eventInfo
+const currentWemeet = getBiweeklyCurrentResource("zhBiweekly", "wemeet")
+const currentBilibiliLive = getBiweeklyCurrentResource("zhBiweekly", "bilibili")
 
 const thisEvent: Ref<EventItem | null> = ref(null)
 const thisBiliLink: Ref<string | null> = ref(null)

@@ -145,25 +145,104 @@ export interface ChipInfoDB {
   chipset: { [key: string]: ChipsetInfoItem }
 }
 
-// Biweekly newsletter entries
+// Biweekly event entries
 
-export type BiweeklyLinkInfo = {
-  bvid?: string
-  slides?: string
+export type BiweeklyEventKind = "zhBiweekly" | "enBiweekly"
+
+export type BiweeklyResourceType =
+  | "wemeet"
+  | "kdocs"
+  | "googledocs"
+  | "zoom"
+  | "zoomChat"
+  | "bilibili"
+  | "youtube"
+  | "vk"
+
+export type BiweeklyResourceStatus = "available" | "wip" | "unavailable"
+
+export interface BiweeklyResourceMetadata {
+  label?: LocalizedString
+  note?: LocalizedString
 }
 
-export interface BiweeklyEventInfo {
-  bilibiliLiveLink: string
-  wemeetLink: string
-  wemeetNumber: string
+export interface BiweeklyAvailableResourceBase extends BiweeklyResourceMetadata {
+  status?: "available"
+}
+
+export interface BiweeklyWemeetResource extends BiweeklyAvailableResourceBase {
+  type: "wemeet"
+  link: string
+  number: string
+}
+
+export interface BiweeklyKDocsResource extends BiweeklyAvailableResourceBase {
+  type: "kdocs"
+  id: string
+}
+
+export interface BiweeklyGoogleDocsResource extends BiweeklyAvailableResourceBase {
+  type: "googledocs"
+  link: string
+}
+
+export interface BiweeklyZoomResource extends BiweeklyAvailableResourceBase {
+  type: "zoom"
+  link: string
+  number?: string
+  passcode?: string
+}
+
+export interface BiweeklyZoomChatResource extends BiweeklyAvailableResourceBase {
+  type: "zoomChat"
+  link: string
+}
+
+export interface BiweeklyBilibiliResource extends BiweeklyAvailableResourceBase {
+  type: "bilibili"
+  bvid?: string
+  link?: string
+}
+
+export interface BiweeklyYoutubeResource extends BiweeklyAvailableResourceBase {
+  type: "youtube"
+  link: string
+}
+
+export interface BiweeklyVKResource extends BiweeklyAvailableResourceBase {
+  type: "vk"
+  link: string
+}
+
+export type BiweeklyAvailableResource =
+  | BiweeklyWemeetResource
+  | BiweeklyKDocsResource
+  | BiweeklyGoogleDocsResource
+  | BiweeklyZoomResource
+  | BiweeklyZoomChatResource
+  | BiweeklyBilibiliResource
+  | BiweeklyYoutubeResource
+  | BiweeklyVKResource
+
+export interface BiweeklyPendingResource extends BiweeklyResourceMetadata {
+  type: BiweeklyResourceType
+  status: "wip" | "unavailable"
+}
+
+export type BiweeklyResource =
+  | BiweeklyAvailableResource
+  | BiweeklyPendingResource
+
+export interface BiweeklyEventData {
+  links: BiweeklyResource[]
+
+  // NOTE: in JS and JSON one cannot have numbers as keys, so string is used
+  // here. It is just the issue/session number in decimal.
+  archives: { [key: string]: BiweeklyResource[] }
 }
 
 export interface BiweeklyDB {
-  eventInfo: BiweeklyEventInfo
-
-  // NOTE: in JS and JSON one cannot have numbers as keys, so string is used
-  // here. It is just the issue number in decimal.
-  links: { [key: string]: BiweeklyLinkInfo }
+  events: Record<BiweeklyEventKind, BiweeklyEventData>
 }
 
 // Download database entries

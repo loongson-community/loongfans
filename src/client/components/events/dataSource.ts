@@ -1,10 +1,16 @@
 import IcalExpander from "ical-expander"
 
 import biweeklyDB from "virtual:loongfans-data/biweekly"
+import type {
+  BiweeklyAvailableResource,
+  BiweeklyEventKind,
+  BiweeklyResource,
+  BiweeklyResourceType,
+} from "@src/types/data"
 
 export const eventKinds = ["zhBiweekly", "enBiweekly"] as const
 
-export type EventKind = (typeof eventKinds)[number]
+export type EventKind = BiweeklyEventKind
 
 type ExpandedICSEvent = {
   start: Date
@@ -118,11 +124,49 @@ export function getBiweeklySlideLink(index: number): string | null {
   // www.kdocs.cn is the canonical domain for WPS Docs links
   // bare kdocs.cn links will just 302 to www.kdocs.cn so save our users a
   // round-trip
-  const kdocsID = biweeklyDB.links[index.toString(10)]?.slides
-  return kdocsID ? `https://kdocs.cn/l/${kdocsID}` : null
+  const kdocs = getBiweeklyArchiveResource("zhBiweekly", index, "kdocs")
+  return kdocs ? `https://kdocs.cn/l/${kdocs.id}` : null
 }
 
 export function getBiweeklyBilibiliLink(index: number): string | null {
-  const bvid = biweeklyDB.links[index.toString(10)]?.bvid
-  return bvid ? `https://www.bilibili.com/video/${bvid}/` : null
+  const bilibili = getBiweeklyArchiveResource("zhBiweekly", index, "bilibili")
+  if (!bilibili) return null
+  if (bilibili.link) return bilibili.link
+  return bilibili.bvid
+    ? `https://www.bilibili.com/video/${bilibili.bvid}/`
+    : null
+}
+
+export function isAvailableResource(
+  resource: BiweeklyResource,
+): resource is BiweeklyAvailableResource {
+  return !resource.status || resource.status === "available"
+}
+
+export function getBiweeklyCurrentResource<T extends BiweeklyResourceType>(
+  kind: BiweeklyEventKind,
+  type: T,
+): Extract<BiweeklyAvailableResource, { type: T }> | null {
+  return getBiweeklyResource(biweeklyDB.events[kind].links, type)
+}
+
+export function getBiweeklyArchiveResource<T extends BiweeklyResourceType>(
+  kind: BiweeklyEventKind,
+  index: number,
+  type: T,
+): Extract<BiweeklyAvailableResource, { type: T }> | null {
+  const resources = biweeklyDB.events[kind].archives[index.toString(10)] ?? []
+  return getBiweeklyResource(resources, type)
+}
+
+function getBiweeklyResource<T extends BiweeklyResourceType>(
+  resources: BiweeklyResource[],
+  type: T,
+): Extract<BiweeklyAvailableResource, { type: T }> | null {
+  return (
+    resources.find(
+      (resource): resource is Extract<BiweeklyAvailableResource, { type: T }> =>
+        resource.type === type && isAvailableResource(resource),
+    ) ?? null
+  )
 }
