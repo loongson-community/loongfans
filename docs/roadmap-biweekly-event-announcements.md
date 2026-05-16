@@ -238,91 +238,14 @@ body above this footer as needed.
 
 For this roadmap commit, use this footer with the full prompt context:
 
-`````plain
-Original prompt:
 ````plain
-Now that there's a separate English rendition of the LoongArch Biweekly event (as can be seen in events.ics), and there are mostly separate links and venues for this event (see below), make a refactoring roadmap for inclusion of this event into our events page. Fortunately both are LoongArch Biweekly so the page skeleton can stay mostly intact, but I think we can rename "BiweeklyCalendar" back into "EventCalendar" for future-proofing.
-
-Example announcement for the first EN biweekly event:
+Original prompt:
 
 ```plain
-LoongArch Biweekly (EN/RU), Session #1
+insert original prompt turn by turn
 
-Interested in latest LoongArch development and have questions for upstream developers? We welcome you to join us at LoongArch Biweekly!
-
-Introduction
-
-On May 13th, we will have our first pilot run for our bilingual English/Russian LoongArch Biweekly meeting. The meeting will take place on Zoom. For the first few meetings, we will have a "news sync" for all the latest developments that we have observed both on our own and on the Chinese biweekly (taking place Sunday before each bilingual session), then we will move on to Q&A.
-
-Of course, we would like to encourage you - developers, contributors, and hobbyists to share your latest work related to LoongArch.
-
-Well, let's see how this goes! 😉
-
-Live Stream and Recordings
-
-If all goes well, this session will be livestreamed on YouTube. For our friends who prefer VK, please help us with that!
-
-Recordings for each session will be posted shortly after the meeting.
-
-Participating
-
-Our first meeting will take place this coming Wednesday:
-
-➤ UTC-7: May 13, 2026 @ 6:00
-➤ UTC-4: May 13, 2026 @ 9:00
-➤ UTC: May 13, 2026 @ 13:00
-➤ UTC+3: May 13, 2026 @ 16:00
-➤ UTC+8: May 13, 2026 @ 21:00
-
-If you would like to make your addition to the presentation slide, please @JeffBai so that he could grant you permission.
-
-Slide Deck (https://docs.google.com/presentation/d/1GTCYkdDxxHAa4A8oGZqJIgwvLoR5KxPBRxfj2-_K5fY/edit?usp=sharing) | Zoom Link (Meeting ID: 874 1403 9241, password: loongarch) (https://us05web.zoom.us/j/87414039241?pwd=SjizKNRapsn1P271C3edPjVrCB62lO.1) | Zoom Chat (https://us05web.zoom.us/launch/jc/87414039241)
+this is the second turn if applicable
 ```
 
-And archive text:
-
-```plain
-Replay: LoongArch Biweekly (EN) - Session #1 (May 13, 2026)
-
-Watch on:
-
-➤ Bilibili (https://www.bilibili.com/video/BV12i5e62Erg)
-➤ YouTube (https://youtu.be/dF1LF6QVFeQ)
-➤ VK (Russian slide deck, WIP)
-```
-
----
-
-- Please keep `zhBiweekly` intact as it means just "the zh rendition of the biweekly". Document in a comment somewhere. Refer to the new "en rendition of the biweekly" as "enBiweekly".
-- I think we need a separate `EventAnnouncement*` component for each kind of event, and we should replace the right pane of `EventAnnouncementContainer` with the appropriately constructed component per active event switch.
-- We can add a tag to the event titles in the ICS to explicitly select the component and just strip it from the title before rendering in the calendar component.
-- We probably should also parameterize the links info, from the current flat structure to something like this:
-
-  ```yaml
-  links:
-    - { type: "wemeet", number: "xxx-xxxx-xxxx", link: "xxx" }
-    - { type: "kdocs", id: "xxx" }
-    - { type: "googledocs", link: "xxxx" }
-  ```
-
-  do this similarly for the archive links.
-
----
-
-please include AIGC disclaimer requirements for the commits to be made, ideally as a template block to be copy-pasted to the bottom of each commit message. Specifically please include my prompts in this session.
-
----
-
-hmm, actually, no, please first *commit this roadmap* to the repo with these long prompt paragraphs, then I'll trigger implementation work with a trivial sentence so that commit messages aren't bloated.
-
----
-
-okay, please commit the roadmap now first, I've enabled full agent mode.
-
----
-
-This is throwaway plan so just inserting English docs into the docs/ folder is fine.
+Co-authored-by: <model name e.g. "GPT-5.5" or "DeepSeek V4 Pro">
 ````
-
-Co-authored-by: GitHub Copilot
-`````
