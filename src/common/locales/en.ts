@@ -70,19 +70,22 @@ export default {
   downloadTypeSdk: "SDK",
 
   // events/EventAnnouncementContainer.vue
-  zhBiweeklyAnnouncementHeader: "",
-  zhBiweeklyArchiveHeader: "",
-  biweeklyTime: "",
-  zhBiweeklyExpectedDurationNotice: "",
-  zhBiweeklyWemeetLink: "",
-  wemeetNumber: "",
-  biweeklySlideLink: "",
-  biweeklySlideLinkTBU: "",
-  biweeklyLiveLink: "",
-  zhBiweeklyNotice: "",
-  zhBiweeklyCutoffNotice: "",
-  biweeklyArchivalNotice: "",
-  bilibiliLiveArchiveLink: "",
+  zhBiweeklyAnnouncementHeader:
+    'The {number} "LoongArch Biweekly" Meeting Announcement',
+  zhBiweeklyArchiveHeader: 'The {number} "LoongArch Biweekly" Meeting Archives',
+  biweeklyTime: "Meeting Time: {time}{expectedDurationNotice}",
+  zhBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
+  zhBiweeklyWemeetLink: "Meeting Link",
+  wemeetNumber: "Meeting ID: {number}",
+  biweeklySlideLink: "Biweekly Slides",
+  biweeklySlideLinkTBU: "Biweekly Slides (to be uploaded)",
+  biweeklyLiveLink: "Livestream Link",
+  zhBiweeklyNotice:
+    "Biweekly slides may be edited {cutoff-notice}. Those who wish to speak or ask questions at the biweekly should finish editing before this time (if you need editing permissions, please apply via Kingsoft Docs).",
+  zhBiweeklyCutoffNotice: "until the beginning of the meeting",
+  biweeklyArchivalNotice:
+    "The meeting has ended, but you can still view materials from the event:",
+  bilibiliLiveArchiveLink: "Bilibili live replay",
 
   // events/EventsCalendar.vue
   today: "Today",
