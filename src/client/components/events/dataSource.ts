@@ -159,6 +159,42 @@ export function getBiweeklyArchiveResource<T extends BiweeklyResourceType>(
   return getBiweeklyResource(resources, type)
 }
 
+export function getBiweeklyCurrentResources(
+  kind: BiweeklyEventKind,
+): BiweeklyResource[] {
+  return biweeklyDB.events[kind].links
+}
+
+export function getBiweeklyArchiveResources(
+  kind: BiweeklyEventKind,
+  index: number,
+): BiweeklyResource[] {
+  return biweeklyDB.events[kind].archives[index.toString(10)] ?? []
+}
+
+export function getBiweeklyResourceLink(
+  resource: BiweeklyResource,
+): string | null {
+  if (!isAvailableResource(resource)) return null
+
+  switch (resource.type) {
+    case "wemeet":
+    case "googledocs":
+    case "zoom":
+    case "zoomChat":
+    case "youtube":
+    case "vk":
+      return resource.link
+    case "kdocs":
+      return `https://kdocs.cn/l/${resource.id}`
+    case "bilibili":
+      if (resource.link) return resource.link
+      return resource.bvid
+        ? `https://www.bilibili.com/video/${resource.bvid}/`
+        : null
+  }
+}
+
 function getBiweeklyResource<T extends BiweeklyResourceType>(
   resources: BiweeklyResource[],
   type: T,
