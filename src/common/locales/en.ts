@@ -69,6 +69,21 @@ export default {
   downloadTypeSchematicDiagram: "Schematic Diagram",
   downloadTypeSdk: "SDK",
 
+  // events/EventAnnouncementContainer.vue
+  zhBiweeklyAnnouncementHeader: "",
+  zhBiweeklyArchiveHeader: "",
+  biweeklyTime: "",
+  zhBiweeklyExpectedDurationNotice: "",
+  zhBiweeklyWemeetLink: "",
+  wemeetNumber: "",
+  biweeklySlideLink: "",
+  biweeklySlideLinkTBU: "",
+  biweeklyLiveLink: "",
+  zhBiweeklyNotice: "",
+  zhBiweeklyCutoffNotice: "",
+  biweeklyArchivalNotice: "",
+  bilibiliLiveArchiveLink: "",
+
   // events/EventsCalendar.vue
   today: "Today",
   loongarchBiweekly: "LoongArch Biweekly #{number}",

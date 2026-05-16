@@ -67,6 +67,22 @@ export default {
   downloadTypeSchematicDiagram: "原理图",
   downloadTypeSdk: "SDK",
 
+  // events/EventAnnouncementContainer.vue
+  zhBiweeklyAnnouncementHeader: "第 {number} 次“龙架构双周会”会议公告",
+  zhBiweeklyArchiveHeader: "第 {number} 次“龙架构双周会”会议回看",
+  biweeklyTime: "会议时间：{time}{expectedDurationNotice}",
+  zhBiweeklyExpectedDurationNotice: "（会议预计一小时内结束）",
+  zhBiweeklyWemeetLink: "会议链接",
+  wemeetNumber: "会议号：{number}",
+  biweeklySlideLink: "双周会幻灯片",
+  biweeklySlideLinkTBU: "双周会幻灯片（暂未上传）",
+  biweeklyLiveLink: "直播链接",
+  zhBiweeklyNotice:
+    "双周会幻灯片将在{cutoff-notice}，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。",
+  zhBiweeklyCutoffNotice: "会前停止收集",
+  biweeklyArchivalNotice: "本次会议已经结束，您仍可查看本次会议的相关资源：",
+  bilibiliLiveArchiveLink: "Bilibili 直播回看",
+
   // events/EventsCalendar.vue
   today: "今天",
   loongarchBiweekly: "龙架构双周会（第 {number} 次）",
