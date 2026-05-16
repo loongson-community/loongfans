@@ -18,6 +18,7 @@ import { computed, ref, type Component, type Ref } from "vue"
 
 import eventsICS from "@data/events/events.ics?raw"
 import {
+  type EventsResult,
   getBiweeklyEvents,
   type EventItem,
 } from "@src/client/components/events/dataSource"
@@ -26,8 +27,35 @@ import EventAnnouncementZhBiweekly from "@src/client/components/events/EventAnno
 import EventCalendar from "@src/client/components/events/EventCalendar.vue"
 import type { BiweeklyEventKind } from "@src/types/data"
 
+const props = defineProps<{
+  includeKinds?: BiweeklyEventKind | BiweeklyEventKind[]
+}>()
+
 const now = new Date()
-const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
+const allBiweeklyEvents = getBiweeklyEvents(eventsICS, now)
+
+const filterEventsByKind = (
+  result: EventsResult,
+  includeKinds: BiweeklyEventKind | BiweeklyEventKind[] | undefined,
+): EventsResult => {
+  const includedKinds = includeKinds
+    ? new Set(Array.isArray(includeKinds) ? includeKinds : [includeKinds])
+    : null
+  const filteredEvents = includedKinds
+    ? result.events.filter((event) => includedKinds.has(event.kind))
+    : result.events
+  const nextEventIdx = filteredEvents.findIndex((event) => event.isFuture)
+
+  return {
+    events: filteredEvents.map((event, idx) => ({
+      ...event,
+      isNext: idx === nextEventIdx,
+    })),
+    nextEventIdx: nextEventIdx === -1 ? null : nextEventIdx,
+  }
+}
+
+const biweeklyEvents = filterEventsByKind(allBiweeklyEvents, props.includeKinds)
 
 const announcementComponents: Record<BiweeklyEventKind, Component> = {
   zhBiweekly: EventAnnouncementZhBiweekly,

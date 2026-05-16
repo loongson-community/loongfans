@@ -29,4 +29,4 @@ import EventAnnouncementContainer from "@src/client/components/events/EventAnnou
 龙架构双周会默认使用普通话，但我们同样欢迎其他语言使用者参会——许多与会者也会讲英语（甚至俄语等等）。如果您想用其它语言在会上做分享，请与我们联系！
 :::
 
-<EventAnnouncementContainer />
+<EventAnnouncementContainer include-kinds="zhBiweekly" />

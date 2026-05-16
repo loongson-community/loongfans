@@ -1,32 +1,29 @@
 ---
 layout: page
 returnLink: /en
-pageTitle: LoongArch Biweekly
-pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
+pageTitle: LoongArch Biweekly (EN/RU)
+pageSubTitle: English/Russian Sessions for Community Developers and Hobbyists
 ---
 
 <script setup lang="ts">
 import EventAnnouncementContainer from "@src/client/components/events/EventAnnouncementContainer.vue"
 </script>
 
-The LoongArch Biweekly is a regular community meeting organized by Loongson
-hobbyists. The meeting agenda comprises updates on upstream projects, Linux
-distro (and other OS projects), and community affairs.
-The reports are generally followed by contributor discussions and Q&A sessions.
+LoongArch Biweekly (EN/RU) is a regular online session organized by Loongson
+hobbyists for English- and Russian-speaking community members. The agenda
+focuses on upstream development, Linux distributions and other operating
+systems, community updates, contributor discussions, and Q&A.
 
-The LoongArch Biweekly is held every other Sunday at 2:00 PM (UTC+8) on Tencent
-Meeting, generally avoiding Chinese mainland state holidays with significant
-travel expected (e.g. Spring Festival and National Day) and workdays in lieu.
+The EN/RU session is held every other Wednesday at 9:00 PM (UTC+8) on Zoom.
+Shared materials are prepared with Google Slides, and replay resources are
+archived on Bilibili, YouTube, or VK when available.
 
-The meeting is simultaneously livestreamed on Bilibili page
-[@龙芯爱好者社区](https://space.bilibili.com/70360929).
-Offline meetings are also arranged from time to time.
+The Mandarin Chinese rendition continues to meet separately on Sundays. This
+page tracks the English/Russian Zoom-based rendition.
 
 :::tip
-The LoongArch Biweekly currently uses Standard Chinese (Putonghua / Mandarin)
-as the default language, but we welcome users of other languages - many of us
-also speak English (some even speak Russian, and more).
-If you'd like to hold a session in another language, please feel free to get in touch!
+The working languages for this rendition are English and Russian. You are still
+welcome to bring topics from the broader LoongArch and Loongson ecosystem.
 :::
 
-<EventAnnouncementContainer />
+<EventAnnouncementContainer include-kinds="enBiweekly" />
