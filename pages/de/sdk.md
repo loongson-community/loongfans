@@ -12,11 +12,11 @@ import SdkIndex from "@src/client/components/sdk/SdkIndex.vue"
 
 Bei der Entwicklung für Nicht-x86-Systeme stellen sich viele vielleicht die Frage:
 
-&gt; Wo finde ich das SDK für dieses Gerät?
+> Wo finde ich das SDK für dieses Gerät?
 
 Dank des Engagements von Community-Mitwirkenden und Loongson-Ingenieuren seit 2021 werden die meisten Toolchains nun vom Upstream-Projekt unterstützt.
 
-&gt; Was bedeutet das?
+> Was bedeutet das?
 
 Das bedeutet, dass der Installationsprozess für verschiedene Programmier-Toolchains nun ähnlich, wenn nicht sogar identisch mit dem auf der x86-Plattform ist – das heißt, die Installation ist so einfach wie das Herunterladen aus den Repositories der Distribution und erfolgt mit einzeiligen Befehlen!
 
