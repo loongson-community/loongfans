@@ -7,7 +7,7 @@
    viewBox="0 0 270.93334 135.46667"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   inkscape:version="1.4.3 (unknown)"
    sodipodi:docname="logo.svg"
    inkscape:export-filename="logo.webp"
    inkscape:export-xdpi="135"
@@ -26,22 +26,22 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.41374125"
-     inkscape:cx="247.73938"
-     inkscape:cy="206.6509"
-     inkscape:window-width="1920"
-     inkscape:window-height="1006"
+     inkscape:zoom="0.80165026"
+     inkscape:cx="444.08393"
+     inkscape:cy="203.95428"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g9" />
+     inkscape:current-layer="g1" />
   <defs
      id="defs1">
     <rect
        x="9.6678782"
        y="21.752726"
-       width="638.07996"
-       height="128.09939"
+       width="1315.4327"
+       height="177.99646"
        id="rect6" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
@@ -174,35 +174,20 @@
          d="m 144.24976,22.577919 -11.63108,25.120304 69.04407,0.246278 V 21.839087 Z"
          id="path9" />
     </clipPath>
+    <rect
+       x="9.6678782"
+       y="21.752726"
+       width="1315.4327"
+       height="177.99646"
+       id="rect6-2" />
   </defs>
   <g
      inkscape:label="图层 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:19.7556px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers"
-       x="0.29293767"
-       y="19.23774"
-       id="text2"><tspan
-         sodipodi:role="line"
-         style="font-size:19.7556px;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
-         x="0.29293767"
-         y="19.23774"
-         id="tspan5"> </tspan><tspan
-         sodipodi:role="line"
-         style="font-size:19.7556px;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
-         x="0.29293767"
-         y="38.99334"
-         id="tspan7">des amateurs </tspan><tspan
-         sodipodi:role="line"
-         style="font-size:19.7556px;fill:#e60013;fill-opacity:1;stroke:none;stroke-width:1.39379;stroke-opacity:1"
-         x="0.29293767"
-         y="58.74894"
-         id="tspan8">de Loongson</tspan></text>
     <path
        id="rect1-2"
-       transform="matrix(1.7194647,0,0,1.7277887,-72.621198,-38.423629)"
+       transform="matrix(1.7204174,0,0,1.728746,-76.010771,-39.882988)"
        clip-path="url(#clipPath8)"
        mask="url(#mask131-2-4)"
        d="M 11.777716,23.070473 H 223.44439 V 95.830887 H 11.777716 Z"
@@ -210,29 +195,56 @@
        sodipodi:nodetypes="ccccc" />
     <g
        id="g9"
-       transform="translate(0,-22.576165)"
+       transform="translate(0,-11.992831)"
        style="display:inline">
       <text
          xml:space="preserve"
-         style="font-size:15.875px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:1.08304;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         x="0.24561584"
-         y="103.63311"
+         style="font-size:15.6356px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:1.06671;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+         x="0.24848875"
+         y="106.62424"
          id="text4"><tspan
            sodipodi:role="line"
            id="tspan4"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.875px;font-family:MiSans;-inkscape-font-specification:MiSans;display:inline;fill:#2f2f2f;fill-opacity:1;stroke-width:1.08304"
-           x="0.24561584"
-           y="103.63311">Votre nouveau monde commence ici</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.6356px;font-family:MiSans;-inkscape-font-specification:MiSans;display:inline;fill:#2f2f2f;fill-opacity:1;stroke-width:1.06671"
+           x="0.24848875"
+           y="106.62424">Votre Nouveau Monde Commence Ici</tspan></text>
+    </g>
+    <g
+       id="g1"
+       transform="scale(1.045452)">
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:18.4017px;line-height:1.1;font-family:'Trebuchet MS';-inkscape-font-specification:'Trebuchet MS Bold';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;opacity:1;fill:#000000;stroke-width:4.29811;paint-order:markers stroke fill"
+         x="-0.77286798"
+         y="19.726631"
+         id="text1"><tspan
+           sodipodi:role="line"
+           id="tspan1"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:misans;-inkscape-font-specification:'misans Bold';fill:#e60013;fill-opacity:1;stroke-width:4.29812"
+           x="-0.77286798"
+           y="19.726631">COMMUNAUTÉ</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:17.4214px;line-height:1.1;font-family:'Trebuchet MS';-inkscape-font-specification:'Trebuchet MS Bold';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:4.06913;paint-order:markers stroke fill"
+         x="-1.1149552"
+         y="40.53904"
+         id="text1-2"><tspan
+           sodipodi:role="line"
+           id="tspan1-9"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:misans;-inkscape-font-specification:'misans Bold';fill:#e60013;fill-opacity:1;stroke-width:4.06914"
+           x="-1.1149552"
+           y="40.53904">DES AMATEURS</tspan></text>
     </g>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,-1.9184696,-7.0343884)"
-       id="text6"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:85.3333px;font-family:MiSans;-inkscape-font-specification:MiSans;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect6);display:inline;fill:#e60013;fill-opacity:1"><tspan
-         x="9.6679688"
-         y="108.36525"
-         id="tspan6"><tspan
-           style="font-weight:bold;-inkscape-font-specification:'MiSans Bold'"
-           id="tspan3">Communauté</tspan></tspan></text>
+       style="font-weight:bold;font-size:34.7618px;line-height:1.1;font-family:'Trebuchet MS';-inkscape-font-specification:'Trebuchet MS Bold';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke-width:8.11934;paint-order:markers stroke fill"
+       x="-2.2247982"
+       y="74.912994"
+       id="text1-2-7"><tspan
+         sodipodi:role="line"
+         id="tspan1-9-8"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:misans;-inkscape-font-specification:'misans Bold';fill:#e60013;fill-opacity:1;stroke-width:8.11936"
+         x="-2.2247982"
+         y="74.912994">DE LOONGSON</tspan></text>
   </g>
 </svg>

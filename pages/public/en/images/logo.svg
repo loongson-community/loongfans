@@ -7,9 +7,9 @@
    viewBox="0 0 270.93334 135.46667"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.2 (unknown)"
-   sodipodi:docname="logo.en.svg"
-   inkscape:export-filename="logo.en.webp"
+   inkscape:version="1.4.3 (unknown)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="logo.webp"
    inkscape:export-xdpi="135"
    inkscape:export-ydpi="135"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -26,11 +26,11 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.41374125"
-     inkscape:cx="247.73938"
-     inkscape:cy="205.44241"
-     inkscape:window-width="1707"
-     inkscape:window-height="995"
+     inkscape:zoom="0.54350005"
+     inkscape:cx="371.6651"
+     inkscape:cy="234.59059"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -208,43 +208,16 @@
        d="M 11.777716,23.070473 H 223.44439 V 95.830887 H 11.777716 Z"
        style="display:inline;fill:#e60012;fill-opacity:1;stroke:none;stroke-width:1.74672;stroke-linecap:round"
        sodipodi:nodetypes="ccccc" />
-    <g
-       id="g9"
-       transform="translate(0,0.44547022)">
-      <text
-         xml:space="preserve"
-         style="font-size:18.4333px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:1.08304;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-         x="-0.39387402"
-         y="103.63311"
-         id="text4"><tspan
-           sodipodi:role="line"
-           id="tspan4"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'misans vf';-inkscape-font-specification:'misans vf';fill:#2f2f2f;fill-opacity:1;stroke-width:1.08304"
-           x="-0.39387402"
-           y="103.63311">Your New World Starts Here</tspan></text>
-      <g
-         id="g1"
-         transform="matrix(1.4056165,-0.37663382,0.37663382,1.4056165,-151.70558,-14.716267)"
-         style="filter:url(#filter7)">
-        <rect
-           style="fill:#e60013;fill-opacity:1;stroke-width:4.52938;stroke-linecap:square;paint-order:fill markers stroke"
-           id="rect1"
-           width="50.799999"
-           height="21.166666"
-           x="202.14166"
-           y="136.52499" />
-        <text
-           xml:space="preserve"
-           style="font-size:20.2746px;line-height:1.2;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e60013;fill-opacity:1;stroke-width:4.48993;stroke-linecap:square;paint-order:fill markers stroke"
-           x="204.18533"
-           y="154.47813"
-           id="text1"><tspan
-             sodipodi:role="line"
-             id="tspan1"
-             style="font-style:normal;font-variant:normal;font-weight:520;font-stretch:normal;font-family:misans;-inkscape-font-specification:'misans weight=520';fill:#ffffff;fill-opacity:1;stroke-width:4.48994"
-             x="204.18533"
-             y="154.47813">Beta</tspan></text>
-      </g>
-    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:20.2256px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:1.18835;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       x="-0.4171761"
+       y="105.43902"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'misans vf';-inkscape-font-specification:'misans vf';fill:#2f2f2f;fill-opacity:1;stroke-width:1.18835"
+         x="-0.4171761"
+         y="105.43902">Your New World Starts Here</tspan></text>
   </g>
 </svg>
