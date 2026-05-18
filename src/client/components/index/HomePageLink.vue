@@ -5,14 +5,18 @@
     :target="target"
     class="link"
   >
-    <div v-if="$slots.default" class="icon">
-      <slot />
+    <div class="flex-grow flex">
+      <div v-if="$slots.default" class="icon">
+        <slot />
+      </div>
+      <span class="name">{{ name }}</span>
     </div>
-    <span class="name">{{ name }}</span>
-    <IconOpenInNew v-if="href && target" class="extra-icon" />
-    <div class="extra-icon qr-wrapper">
-      <IconQrCode2 v-if="qrLink" />
-      <img v-if="qrLink" :src="qrLink" class="qrcode" alt="QR Code" />
+    <div class="flex">
+      <IconOpenInNew v-if="href && target" class="extra-icon" />
+      <div v-if="qrLink" class="extra-icon qr-wrapper">
+        <IconQrCode2 />
+        <img :src="qrLink" class="qrcode" alt="QR Code" />
+      </div>
     </div>
   </component>
 </template>
@@ -32,7 +36,7 @@ const target = props.href?.startsWith("http") ? "_blank" : undefined
 <style scoped>
 .link {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   clear: both;
   width: 100%;
