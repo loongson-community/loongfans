@@ -93,7 +93,6 @@ defineProps<{ title: string }>()
 }
 
 .link_type_box > *:hover {
-  font-weight: bold;
   color: #e60013;
 }
 </style>

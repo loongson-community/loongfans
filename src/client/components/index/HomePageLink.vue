@@ -58,7 +58,6 @@ const target = props.href?.startsWith("http") ? "_blank" : undefined
 }
 
 .link:hover {
-  font-weight: bold;
   color: #e60013;
 }
 
