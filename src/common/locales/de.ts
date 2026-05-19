@@ -54,7 +54,7 @@ export default {
   // Device/Detail.vue
   deviceTabSpec: "Spezifikationen",
   deviceTabKnownIssues: "Bekannte Probleme",
-  deviceTabImage: "Images",
+  deviceTabImage: "Bilder",
   deviceTabDownload: "Downloads",
   deviceDownloadVersion: "Version: {version}",
   deviceDownloadChangelog: "Changelog",
