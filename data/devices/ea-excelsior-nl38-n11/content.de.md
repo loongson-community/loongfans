@@ -1,7 +1,7 @@
 <template #introduction>
 
 :::info
-Der EA EXCELSIOR NL38-N11 ist ein 14-Zoll-Laptop, der auf dem Loongson 3A6000 basiert. Mit einem Gewicht von ca. 1,4 kg verfügt der NL38-N11 über ein Display mit einer Auflösung von 2240 × 1400 (2,2K) oder 1920 × 1200 (WUXGA), eine Vielzahl von Anschlüssen und eine Akkulaufzeit von ca. 3–4 Stunden.
+Der EA EXCELSIOR NL38-N11 ist ein 14-Zoll-Laptop, der auf dem Loongson 3A6000 basiert. Mit einem Gewicht von ca. 1,4 kg verfügt der NL38-N11 über ein Display mit einer Auflösung von 2240 × 1400 (2,2K) oder 1920 × 1200 (WUXGA), eine Vielzahl von Anschlüssen und eine Akkulaufzeit von etwa 3–4 Stunden.
 
 Auch andere Hersteller haben auf der Grundlage dieses Designs abgeleitete Modelle auf den Markt gebracht.
 :::
@@ -10,19 +10,19 @@ Auch andere Hersteller haben auf der Grundlage dieses Designs abgeleitete Modell
 
 <template #spec>
 
-| Kategorie | Spezifikation |
+| Kategorie | Technische Daten |
 | ---- | ---- |
-| Hersteller | EA EXCELSIOR |
+| Hersteller | Nach oben |
 | Auch bekannt als | IPASON LL300, GEIT UT6500-LA6 |
 | Prozessor | 3A6000 mit 2,0 GHz |
-| Bildschirm | 14 Zoll, 2240×1400 (2,2K) oder 1920×1200 (WUXGA) |
+| Bildschirm | 14 Zoll, 2240 × 1400 (2,2K) oder 1920 × 1200 (WUXGA) |
 | Gewicht | 1,4 kg |
 | Speicher | DDR4 mit 3200 MT/s (1 × SODIMM), kein integrierter Speicher |
-Anschlüsse (USB) | 2 × USB 3.0, 2 × USB-C†
+| Schnittstellen (USB) | 2 × USB 3.0, 2 × USB-C† |
 | Schnittstellen (Speicher) | 1 × NVMe (PCIe 3.0 x4) |
-| Schnittstellen (Netzwerk) | 1 × GbE |
-| Anschlüsse (Video) | 1 × HDMI |
-| Anschlüsse (Sonstiges) | 1 × 3,5-mm-Kopfhörer-/Mikrofonbuchse, 1 × 720p-Kamera |
+| Schnittstellen (Netzwerk) | Ein Gigabit-Ethernet |
+| Schnittstellen (Video) | ein HDMI-Anschluss |
+| Schnittstellen (Sonstiges) | 1 × 3,5-mm-Kopfhörer-/Mikrofonbuchse, 1 × 720p-Kamera |
 
 †: Zum Laden darf nur eine der beiden USB-C-Schnittstellen verwendet werden.
 

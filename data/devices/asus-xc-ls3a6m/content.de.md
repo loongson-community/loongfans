@@ -10,18 +10,18 @@ Dieses Motherboard wurde von ASUS entwickelt und vertrieben und gehört zu den e
 
 <template #spec>
 
-| Kategorie | Spezifikation |
+| Kategorie | Technische Daten |
 | ---- | ---- |
 | Hersteller | ASUS |
 | Formfaktor | DTX (203 × 244 mm) |
-Prozessor: 3A6000-HV mit 2,5 GHz
+| Prozessor | 3A6000-HV mit 2,5 GHz |
 | Speicher | DDR4 mit 3200 MT/s (2 × DIMM) |
 | Schnittstellen (PCIe) | PCIe 3.0 x16 (8 Lanes), PCIe 3.0 x8 (8 Lanes), PCIe 3.0 x4 (4 Lanes) |
-| Anschlüsse (USB) | USB 3.0 (3 × auf der Hauptplatine, 2 × an der Vorderseite), USB 2.0 (2 × auf der Hauptplatine, 4 × an der Vorderseite) |
+| Schnittstellen (USB) | USB 3.0 (3 × am Backpanel, 2 × an der Vorderseite), USB 2.0 (2 × am Backpanel, 4 × an der Vorderseite) |
 | Schnittstellen (Speicher) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
-| Schnittstellen (Netzwerk) | 2 × GbE |
-| Anschlüsse (Video) | 1 × HDMI, 1 × VGA |
-| Schnittstellen (Sonstige) | 1 × M.2-Key-E-Schnittstelle (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 Satz 3,5-mm-Schnittstellen (Eingang, Ausgang, Line-In) |
+| Schnittstellen (Netzwerk) | 2 × Gigabit-Ethernet |
+| Schnittstellen (Video) | 1 × HDMI, 1 × VGA |
+| Schnittstellen (Sonstiges) | 1 × M.2 Key E-Schnittstelle (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 Satz 3,5-mm-Anschlüsse (Eingang, Ausgang, Line-In) |
 
 </template>
 

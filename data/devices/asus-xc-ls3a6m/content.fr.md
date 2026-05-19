@@ -14,14 +14,14 @@ Cette carte mère a été conçue et commercialisée par ASUS ; il s'agit de l'u
 | ---- | ---- |
 | Fabricant | ASUS |
 | Format | DTX (203 × 244 mm) |
-Processeur : 3A6000-HV à 2,5 GHz
+| Processeur | 3A6000-HV à 2,5 GHz |
 | Mémoire | DDR4 à 3200 MT/s (2 × barrettes DIMM) |
 | Interfaces (PCIe) | PCIe 3.0 x16 (8 voies), PCIe 3.0 x8 (8 voies), PCIe 3.0 x4 (4 voies) |
-| Interfaces (USB) | USB 3.0 (3 × sur la carte mère, 2 × en façade), USB 2.0 (2 × sur la carte mère, 4 × en façade) |
+| Interfaces (USB) | USB 3.0 (3 ports intégrés, 2 ports en façade), USB 2.0 (2 ports intégrés, 4 ports en façade) |
 | Interfaces (stockage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
-| Interfaces (réseau) | 2 × GbE |
+| Interfaces (réseau) | 2 ports Gigabit Ethernet |
 | Interfaces (vidéo) | 1 × HDMI, 1 × VGA |
-| Interfaces (autres) | 1 interface M.2 Key E (PCIe + USB), 1 interface mPCIe (PCIe + USB), 1 jeu d'interfaces 3,5 mm (entrée, sortie, entrée ligne) |
+| Interfaces (Autres) | 1 port M.2 Key E (PCIe + USB), 1 port mPCIe (PCIe + USB), 1 ensemble de ports 3,5 mm (entrée, sortie, entrée ligne) |
 
 </template>
 

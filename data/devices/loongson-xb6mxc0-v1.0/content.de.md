@@ -10,7 +10,7 @@ Die öffentlich zugängliche Dokumentation in der Community ist noch begrenzt; d
 
 <template #spec>
 
-| Kategorie | Spezifikation |
+| Kategorie | Technische Daten |
 | ---- | ---- |
 | Hersteller | Loongson Technology |
 | Formfaktor | Wird noch aktualisiert |

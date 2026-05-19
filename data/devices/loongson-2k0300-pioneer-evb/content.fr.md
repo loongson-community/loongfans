@@ -13,12 +13,12 @@ La Loongson 2K0300 « Pioneer » est une carte de développement lancée sur la 
 | Fabricant | Loongson Technology |
 | Format | 85 × 56 mm |
 | Processeur | 2K0300 à 1,0 GHz |
-| Mémoire | 512 Mo DDR4 (intégrée) |
-Interfaces (USB) | 4 × USB 2.0, 1 × USB-C†
-| Interfaces (stockage) | 1 emplacement pour carte microSD, 8 Go eMMC (intégrée) |
-| Interfaces (réseau) | 1 × GbE, module Wi-Fi intégré |
+| Mémoire | 512 Mo de mémoire DDR4 (intégrée) |
+| Interfaces (USB) | 4 ports USB 2.0, 1 port USB-C† |
+| Interfaces (stockage) | 1 emplacement pour carte microSD, 8 Go eMMC (intégré) |
+| Interfaces (réseau) | 1 port GbE, module Wi-Fi intégré |
 | Interfaces (vidéo) | 1 sortie LCD |
-| Interfaces (autres) | 1 prise jack 3,5 mm pour casque/micro, 1 hub USB, 1 interface de débogage JTAG, 1 interface de débogage ADC/TTL, GPIO 40 broches |
+| Interfaces (Autres) | 1 prise jack 3,5 mm pour casque/micro, 1 hub USB, 1 interface de débogage JTAG, 1 interface de débogage ADC/TTL, GPIO à 40 broches |
 
 † : USB-C pour l'alimentation et la connexion série.
 

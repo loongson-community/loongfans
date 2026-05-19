@@ -8,17 +8,17 @@ Das Loongson 2K0300 „Pioneer“ ist ein auf dem Loongson 2K0300 basierendes En
 
 <template #spec>
 
-| Kategorie | Spezifikation |
+| Kategorie | Technische Daten |
 | ---- | ---- |
 | Hersteller | Loongson Technology |
 | Formfaktor | 85 × 56 mm |
 | Prozessor | 2K0300 mit 1,0 GHz |
-| Arbeitsspeicher | 512 MiB DDR4 (integriert) |
-Anschlüsse (USB) | 4 × USB 2.0, 1 × USB-C†
-| Anschlüsse (Speicher) | 1 × microSD-Kartensteckplatz, 8 GB eMMC (integriert) |
+| Speicher | 512 MiB DDR4 (integriert) |
+| Schnittstellen (USB) | 4 × USB 2.0, 1 × USB-C† |
+| Schnittstellen (Speicher) | 1 × microSD-Kartensteckplatz, 8 GB eMMC (integriert) |
 | Schnittstellen (Netzwerk) | 1 × GbE, integriertes WLAN-Modul |
-| Anschlüsse (Video) | 1 × LCD-Ausgang |
-| Anschlüsse (Sonstiges) | 1 × 3,5-mm-Kopfhörer-/Mikrofonbuchse, 1 × USB-Hub, 1 × JTAG-Debug-Schnittstelle, 1 × ADC/TTL-Debug-Schnittstelle, 40-poliger GPIO |
+| Schnittstellen (Video) | 1 × LCD-Ausgang |
+| Schnittstellen (Sonstiges) | 1 × 3,5-mm-Kopfhörer-/Mikrofonbuchse, 1 × USB-Hub, 1 × JTAG-Debug-Schnittstelle, 1 × ADC/TTL-Debug-Schnittstelle, 40-poliger GPIO |
 
 †: USB-C für Stromversorgung und serielle Schnittstelle.
 
