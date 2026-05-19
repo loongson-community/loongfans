@@ -8,17 +8,17 @@ Das Loongson 2K0300 „Hummingbird“ ist ein Entwicklungsboard, das auf dem Loo
 
 <template #spec>
 
-| Kategorie | Spezifikation |
+| Kategorie | Technische Daten |
 | ---- | ---- |
 | Hersteller | Loongson Technology |
-| Formfaktor | 93 × 63 mm |
+| Formfaktor | 93 mal 63 Millimeter |
 | Prozessor | 2K0300 mit 1,0 GHz |
-| Arbeitsspeicher | 512 MiB DDR4 (integriert) |
-Anschlüsse (USB) | 2 × USB 2.0, 1 × USB-C†
+| Speicher | 512 MiB DDR4 (integriert) |
+| Schnittstellen (USB) | 2 × USB 2.0, 1 × USB-C† |
 | Schnittstellen (Speicher) | 8 GB eMMC (integriert) |
-| Schnittstellen (Netzwerk) | 1 × GbE |
-| Anschlüsse (Video) | 1 × LCD-Ausgang |
-| Schnittstellen (Sonstige) | 2 × SPI, 4 × PWM, 4 × CAN-FD, 40-poliger GPIO |
+| Schnittstellen (Netzwerk) | Ein Gigabit-Ethernet |
+| Schnittstellen (Video) | 1 × LCD-Ausgang |
+| Schnittstellen (Sonstiges) | 2 × SPI, 4 × PWM, 4 × CAN-FD, 40-poliger GPIO |
 
 †: Die USB-C-Schnittstelle kann nur zur Stromversorgung und für serielle Verbindungen genutzt werden.
 

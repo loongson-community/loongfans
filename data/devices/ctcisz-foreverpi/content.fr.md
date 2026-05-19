@@ -17,12 +17,12 @@ La ForeverPi est disponible en versions « TF Card » et « Wi-Fi » : comme le 
 | Fabricant | CTCISZ |
 | Format | 88 × 56 mm |
 | Processeur | 2K0300 à 1,0 GHz |
-| Mémoire | 512 Mo DDR4 à 2666 MT/s (intégrée) |
-| Interfaces (USB) | 2 × USB 2.0 |
-| Interfaces (stockage) | eMMC de 4 Go (intégrée), mémoire Flash NOR de 8 Mbits |
-| Interfaces (réseau) | 1 × GbE, module Wi-Fi + Bluetooth intégré (antenne unique) |
+| Mémoire | 512 Mo de DDR4 à 2666 MHz (intégrée) |
+| Interfaces (USB) | 2 ports USB 2.0 |
+| Interfaces (stockage) | 4 Go eMMC (intégrée), 8 Mbits de mémoire Flash NOR |
+| Interfaces (réseau) | 1 port GbE, module Wi-Fi + Bluetooth intégré (antenne unique) |
 | Interfaces (vidéo) | 1 sortie LCD |
-| Interfaces (autres) | 8 convertisseurs analogiques-numériques 12 bits, 1 port JTAG, GPIO 40 broches |
+| Interfaces (Autres) | 8 convertisseurs analogiques-numériques (ADC) 12 bits, 1 port JTAG, 40 broches GPIO |
 
 ### Version carte TF
 
@@ -31,12 +31,12 @@ La ForeverPi est disponible en versions « TF Card » et « Wi-Fi » : comme le 
 | Fabricant | CTCISZ |
 | Format | 88 × 56 mm |
 | Processeur | 2K0300 à 1,0 GHz |
-| Mémoire | 512 Mo DDR4 à 2666 MHz (intégrée) |
-| Interfaces (USB) | 2 × USB 2.0 |
+| Mémoire | 512 Mo de DDR4 à 2666 MHz (intégrée) |
+| Interfaces (USB) | 2 ports USB 2.0 |
 | Interfaces (stockage) | Mémoire Flash NOR de 256 Mbits |
-| Interfaces (réseau) | 1 × GbE |
-| Interfaces (vidéo) | Aucune |
-| Interfaces (autres) | 8 convertisseurs analogiques-numériques 12 bits, 1 port JTAG, GPIO 40 broches |
+| Interfaces (réseau) | Un port Gigabit Ethernet |
+| Interfaces (vidéo) | Aucun |
+| Interfaces (Autres) | 8 convertisseurs analogiques-numériques (ADC) 12 bits, 1 port JTAG, 40 broches GPIO |
 
 </template>
 

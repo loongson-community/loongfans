@@ -14,14 +14,14 @@ Cette carte mère est la première carte mère 3A6000 commercialisée par Loongs
 | ---- | ---- |
 | Fabricant | Loongson Technology |
 | Format | ATX (244 × 305 mm) |
-Processeur : 3A6000-HV à 2,5 GHz
+| Processeur | 3A6000-HV à 2,5 GHz |
 | Mémoire | DDR4 à 3200 MT/s (2 × barrettes DIMM), compatible ECC† |
 | Interfaces (PCIe) | 2 × PCIe 3.0 x16 (8 voies), 1 × PCIe 3.0 x4 (4 voies) |
-| Interfaces (USB) | USB 3.0 (2 × sur la carte mère, 2 × en façade), USB 2.0 (2 × sur la carte mère, 4 × en façade) |
+| Interfaces (USB) | USB 3.0 (2 ports intégrés, 2 ports en façade), USB 2.0 (2 ports intégrés, 4 ports en façade) |
 | Interfaces (stockage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
-| Interfaces (réseau) | 1 × GbE |
+| Interfaces (réseau) | Un port Gigabit Ethernet |
 | Interfaces (vidéo) | 1 × HDMI, 1 × VGA |
-| Interfaces (autres) | 1 jeu d'interfaces 3,5 mm (entrée, sortie, entrée ligne), 1 port série RS-232 (DB-9) |
+| Interfaces (Autres) | 1 jeu d'interfaces 3,5 mm (entrée, sortie, entrée ligne), 1 port série RS-232 (DB-9) |
 
 † : La prise en charge de la mémoire ECC par cette carte mère n'est pas clairement établie à l'heure actuelle. On ignore également si elle prend en charge la mémoire ECC enregistrée. Les informations DMI ne mentionnent pas non plus d'interface mémoire de 72 bits.
 

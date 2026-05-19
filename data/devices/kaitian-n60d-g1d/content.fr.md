@@ -15,11 +15,11 @@ Le Lenovo Kaitian N60d-G1d est un ordinateur portable de 14 pouces équipé d'un
 | Mémoire | DDR4 à 3200 MT/s (1 × SODIMM), pas de mémoire intégrée |
 | Écran | 14 pouces, 2240 × 1400 (2,2K) ou 1920 × 1200 (WUXGA) |
 | Poids | 1,5 kg |
-Interfaces (USB) | 2 × USB 3.0, 2 × USB-C†
+| Interfaces (USB) | 2 × USB 3.0, 2 × USB-C† |
 | Interfaces (stockage) | 1 × NVMe (PCIe 3.0 x4) |
-| Interfaces (réseau) | 1 × GbE |
-| Interfaces (vidéo) | 1 × HDMI |
-| Interfaces (autres) | 1 prise jack 3,5 mm pour casque/micro, 1 caméra |
+| Interfaces (réseau) | Un port Gigabit Ethernet |
+| Interfaces (vidéo) | une sortie HDMI |
+| Interfaces (Autres) | 1 prise jack 3,5 mm pour casque/micro, 1 caméra |
 
 † : L'une des interfaces USB-C peut être utilisée pour la recharge.
 

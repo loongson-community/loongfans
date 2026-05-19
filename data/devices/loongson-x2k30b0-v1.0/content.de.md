@@ -10,11 +10,11 @@ Die öffentlich zugängliche Dokumentation in der Community ist noch begrenzt; d
 
 <template #spec>
 
-| Kategorie | Spezifikation |
+| Kategorie | Technische Daten |
 | ---- | ---- |
 | Hersteller | Loongson Technology |
 | Formfaktor | Wird noch aktualisiert |
-| Prozessorplattform | 2K3000-Serie |
+| Prozessorplattform | Serie 2K3000 |
 | Sonstige Angaben | Wird noch aktualisiert |
 
 </template>

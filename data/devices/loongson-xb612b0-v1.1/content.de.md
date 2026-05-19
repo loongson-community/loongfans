@@ -12,18 +12,18 @@ Im Vergleich zu dem [AC612A0_V1.1](/en/devices/loongson-ac612a0-v1.1.md) Das auf
 
 <template #spec>
 
-| Kategorie | Spezifikation |
+| Kategorie | Technische Daten |
 | ---- | ---- |
 | Hersteller | Loongson Technology |
-Formfaktor: mATX (244 × 244 mm)
-| Prozessor | 3B6000 (8/12/16 Kerne) mit 2,3/2,2/2,1 GHz |
+| Formfaktor | mATX (244 × 244 mm) |
+| Prozessor | 3B6000 (8/12/16 Farben) mit 2,3/2,2/2,1 GHz |
 | Speicher | DDR4 mit 3200 MT/s (2 × DIMM), unterstützt ECC |
 | Schnittstellen (PCIe) | 2 × PCIe 3.0 x16, 1 × PCIe 3.0 x8 |
-| Anschlüsse (USB) | USB 3.0 (2 × auf der Rückseite, 2 × an der Vorderseite), USB 2.0 (2 × auf der Rückseite, 4 × an der Vorderseite) |
+| Schnittstellen (USB) | USB 3.0 (2 × auf der Hauptplatine, 2 × an der Vorderseite), USB 2.0 (2 × auf der Hauptplatine, 4 × an der Vorderseite) |
 | Schnittstellen (Speicher) | 2 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
-| Schnittstellen (Netzwerk) | 2 × GbE |
-| Anschlüsse (Video) | 1 × HDMI, 1 × VGA |
-| Anschlüsse (Sonstige) | 1 × M.2-Key-E-Anschluss (PCIe + USB), 1 Satz 3,5-mm-Anschlüsse (Eingang, Ausgang, Line-In), 1 × serielle RS-232-Schnittstelle (DB-9) |
+| Schnittstellen (Netzwerk) | 2 × Gigabit-Ethernet |
+| Schnittstellen (Video) | 1 × HDMI, 1 × VGA |
+| Schnittstellen (Sonstiges) | 1 × M.2-Key-E-Schnittstelle (PCIe + USB), 1 Satz 3,5-mm-Anschlüsse (Eingang, Ausgang, Line-In), 1 × serielle RS-232-Schnittstelle (DB-9) |
 
 </template>
 
