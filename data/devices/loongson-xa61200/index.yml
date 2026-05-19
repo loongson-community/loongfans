@@ -1,6 +1,9 @@
 name:
   en: Loongson XA61200
   zh: 龙芯 XA61200
+  de: Loongson XA61200
+  fr: Loongson XA61200
+  ru: Loongson XA61200
 family: 3a6000
 category: board
 image: /images/devices/loongson-xa61200.thumbnail.webp

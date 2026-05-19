@@ -1,6 +1,9 @@
 name:
   en: Loongson XA612A0_v1.0
   zh: 龙芯 XA612A0_v1.0
+  de: Loongson XA612A0_v1.0
+  fr: Loongson XA612A0_v1.0
+  ru: Loongson XA612A0_v1.0
 family: 3a6000
 category: board
 image: /images/devices/loongson-xa612a0-v1.0.thumbnail.webp

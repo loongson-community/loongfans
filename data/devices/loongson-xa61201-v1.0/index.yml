@@ -1,6 +1,9 @@
 name:
   en: Loongson XA61201_v1.0
   zh: 龙芯 XA61201_v1.0
+  de: Loongson XA61201_v1.0
+  fr: Loongson XA61201_v1.0
+  ru: Loongson XA61201_v1.0
 family: 3a6000
 category: board
 image: /images/devices/loongson-xa61201-v1.0.thumbnail.webp
