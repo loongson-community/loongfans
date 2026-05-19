@@ -4,63 +4,108 @@ families:
     title:
       en: 3C6000
       zh: 3C6000
+      de: 3C6000
+      fr: 3C6000
+      ru: 3C6000
   3b6000:
     title:
       en: 3B6000
       zh: 3B6000
+      de: 3B6000
+      fr: 3B6000
+      ru: 3B6000
   3a6000:
     title:
       en: 3A6000
       zh: 3A6000
+      de: 3A6000
+      fr: 3A6000
+      ru: 3A6000
   2k3000:
     title:
       en: 2K3000/3B6000M
       zh: 2K3000/3B6000M
+      de: 2K3000/3B6000M
+      fr: 2K3000/3B6000M
+      ru: 2K3000/3B6000M
   2k0300:
     title:
       en: 2K0300
       zh: 2K0300
+      de: 2K0300
+      fr: 2K0300
+      ru: 2K0300
 
 categories:
   board:
     title:
       en: Motherboards and Development Boards
       zh: 主板及开发板
+      de: Motherboards und Entwicklungsboards
+      fr: Cartes mères et cartes de développement
+      ru: Материнские платы и платы для разработки
   laptop:
     title:
       en: Laptops
       zh: 笔记本电脑
+      de: Laptops
+      fr: Ordinateurs portables
+      ru: Ноутбуки
   prebuilt:
     title:
       en: Pre-built Systems
       zh: 整机产品
+      de: Fertigkonfigurierte Systeme
+      fr: Systèmes préconfigurés
+      ru: Готовые системы
 
 tags:
   7a2000:
     title:
       en: 7A2000
       zh: 7A2000
+      de: 7A2000
+      fr: 7A2000
+      ru: 7A2000
   desktop-mb:
     title:
       en: Desktop Motherboard
       zh: 台式机主板
+      de: Desktop-Hauptplatine
+      fr: Carte mère pour ordinateur de bureau
+      ru: Материнская плата для настольного компьютера
   dev-board:
     title:
       en: Development Board
       zh: 开发板
+      de: Entwicklungsboard
+      fr: Carte de développement
+      ru: материнская плата для разработчиков
   ecc:
     title:
       en: ECC memory support
       zh: 支持 ECC 内存
+      de: ECC-Speicherunterstützung
+      fr: Support de la mémoire ECC
+      ru: Поддержка памяти ECC
   laptop:
     title:
       en: Laptop
       zh: 笔记本电脑
+      de: Laptop
+      fr: Ordinateur portable
+      ru: Ноутбук
   nuc:
     title:
       en: NUC
       zh: 小主机
+      de: NUC (Mini-PC)
+      fr: NUC (Mini-PC)
+      ru: NUC (Мини-ПК)
   prebuilt:
     title:
       en: Pre-built
       zh: 整机
+      de: Fertigsystem
+      fr: Système prêt à l'emploi
+      ru: Готовые решения
