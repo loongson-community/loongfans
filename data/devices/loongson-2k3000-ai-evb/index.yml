@@ -1,6 +1,9 @@
 name:
   en: Loongson 2K3000 AI Evaluation Board
   zh: 龙芯 2K3000 AI 评估板
+  de: Loongson 2K3000 AI Evaluierungsboard
+  fr: Carte d'évaluation IA Loongson 2K3000
+  ru: Оценочная плата Loongson 2K3000 для искусственного интеллекта
 family: 2k3000
 category: board
 image: /images/devices/loongson-2k3000-ai-evb.thumbnail.webp

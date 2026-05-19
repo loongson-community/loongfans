@@ -1,6 +1,9 @@
 name:
   en: Loongson AC612A0_V1.0
   zh: 龙芯 AC612A0_V1.0
+  de: Loongson AC612A0_V1.0
+  fr: Loongson AC612A0_V1.0
+  ru: Loongson AC612A0_V1.0
 family: 3c6000
 category: board
 image: /images/devices/loongson-ac612a0-v1.0.thumbnail.webp
