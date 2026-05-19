@@ -6,7 +6,7 @@
         <Tab value="spec">{{ t("deviceTabSpec") }}</Tab>
         <Tab value="known-issues">{{ t("deviceTabKnownIssues") }}</Tab>
         <Tab value="image">{{ t("deviceTabImage") }}</Tab>
-        <Tab v-if="hasDownloads" value="download">
+        <Tab v-if="hasDownloads || $slots['download-notes']" value="download">
           {{ t("deviceTabDownload") }}
         </Tab>
       </TabList>
@@ -20,7 +20,11 @@
         <TabPanel value="image">
           <slot name="image" />
         </TabPanel>
-        <TabPanel v-if="hasDownloads" value="download">
+        <TabPanel
+          v-if="hasDownloads || $slots['download-notes']"
+          value="download"
+        >
+          <slot name="download-notes" />
           <DownloadList :keys="downloadKeys" />
         </TabPanel>
       </TabPanels>

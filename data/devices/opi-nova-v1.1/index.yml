@@ -7,3 +7,6 @@ image: /images/devices/opi-nova-v1.1-front.thumbnail.webp
 spec: "2K3000 @ 2.2GHz, nanoITX"
 tags:
   - dev-board
+downloads:
+  - uefi-fw-orangepi-nova-v1.1-v5.0.0431_stable202602_rel
+  - uefi-fw-orangepi-nova-v1.1-v5.0.0431_stable202602_dbg

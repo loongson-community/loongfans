@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  workerd: true  # for CFP's wrangler
+onlyBuiltDependencies:
+  - esbuild
+  - workerd
