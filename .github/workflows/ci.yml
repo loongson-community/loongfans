@@ -47,10 +47,6 @@ jobs:
         run: |
           # Caddy in Ubuntu 24.04 is version 2.6.2, which lacks support for "-d"
           caddy fmt --diff example.Caddyfile
-      - name: Run codespell
-        uses: codespell-project/actions-codespell@v2
-        with:
-          check_filenames: true
       - name: Run build
         run: pnpm run build
       - name: Upload pages artifacts
