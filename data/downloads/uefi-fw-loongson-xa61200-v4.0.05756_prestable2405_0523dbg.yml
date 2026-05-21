@@ -37,7 +37,7 @@ description:
     20. Add Smbios 32/64bit tables.
     21. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
     22. Transfer frequency points to the kernel based on different chip models.
-    23. some bug fixs.
+    23. some bug fixes.
   en: |
     Introduces firmware-level driver for YT6801 NIC, support for custom fan curves, fast boot, and TPM. Fixes cache synchronization on S3 suspend, improving stability.
 
@@ -69,4 +69,4 @@ description:
     20. Add Smbios 32/64bit tables.
     21. Optimize Cpu Interface and update the Ls7a2000Ppi.efi to v1.6.2.
     22. Transfer frequency points to the kernel based on different chip models.
-    23. some bug fixs.
+    23. some bug fixes.

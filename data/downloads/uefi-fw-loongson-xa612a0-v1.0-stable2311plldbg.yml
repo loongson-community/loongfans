@@ -17,4 +17,4 @@ description:
 
     <!-- truncate -->
 
-    Please disable GPU Emulation if you are using AMD RNDA-based GPUs, this will allow the firmware to bypass emulation routines and only enable the 7A display controller.
+    Please disable GPU Emulation if you are using AMD RDNA-based GPUs, this will allow the firmware to bypass emulation routines and only enable the 7A display controller.

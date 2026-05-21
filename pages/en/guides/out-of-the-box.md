@@ -15,7 +15,7 @@ For specifications and known issues of various boards and pre-built systems, ple
 
 For instance, to build a Loongson desktop computer, there are some common tips to follow:
 
-- Loongson motherboards are generally sold with CPU and cooler aseemblies in the same package, so you won't have to purchase a cooler separately.
+- Loongson motherboards are generally sold with CPU and cooler assemblies in the same package, so you won't have to purchase a cooler separately.
 - Desktop-class Loongson processors generally consume less than 150 watts, when choosing a power supply, your main point of concern would be the power requirement of peripherals such as graphics cards.
 - All LoongArch-based motherboards all come with NVMe interfaces, using NVMe drives should provide good day-to-day experience.
 - Loongson processors, especially high-end models such as 3C6000/S, depends on high performance RAM modules and sufficient channels to perform at their fullest potential. It it generally recommended to purchase the appropriate amount of RAM at appropriate specifications.
