@@ -1,0 +1,7 @@
+debounce
+debouncer
+GOARCH
+Kconfig
+Putonghua
+smcv1
+smcv2

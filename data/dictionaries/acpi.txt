@@ -1,0 +1,8 @@
+APIC
+BGRT
+DSDT
+iasl
+IASL
+IVRS
+PPTT
+SRAT
