@@ -1,0 +1,9 @@
+gsgpu
+GSGPU
+loong
+Loong
+loonggpu
+Loongnix
+loongson
+Loongson
+lpypi

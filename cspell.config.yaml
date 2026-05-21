@@ -3,7 +3,6 @@ language: en-US,en-GB
 useGitignore: true
 allowCompoundWords: true
 dictionaries:
-  - loongfans
   - companies
   - softwareTerms
   - misc
@@ -15,12 +14,44 @@ dictionaries:
   - css
   - bash
   - cpp
+  - loongfansAbbreviations
+  - loongfansACPI
+  - loongfansCompanies
+  - loongfansFirmware
+  - loongfansLoongArch
+  - loongfansLoongfans
+  - loongfansLoongson
+  - loongfansNoise
+  - loongfansPeople
+  - loongfansSoftware
+  - loongfansTerms
 words:
   - HDA
 dictionaryDefinitions:
-  - name: loongfans
-    path: ./cspell.words.txt
+  - name: loongfansAbbreviations
+    path: ./data/dictionaries/abbreviations.txt
+  - name: loongfansACPI
+    path: ./data/dictionaries/acpi.txt
+  - name: loongfansCompanies
+    path: ./data/dictionaries/companies.txt
+  - name: loongfansFirmware
+    path: ./data/dictionaries/firmware.txt
+  - name: loongfansLoongArch
+    path: ./data/dictionaries/loongarch.txt
+  - name: loongfansLoongfans
+    path: ./data/dictionaries/loongfans.txt
+  - name: loongfansLoongson
+    path: ./data/dictionaries/loongson.txt
+  - name: loongfansNoise
+    path: ./data/dictionaries/noise.txt
+  - name: loongfansPeople
+    path: ./data/dictionaries/people.txt
+  - name: loongfansSoftware
+    path: ./data/dictionaries/software.txt
+  - name: loongfansTerms
+    path: ./data/dictionaries/terms.txt
 ignorePaths:
+  - "example.Caddyfile"
   - node_modules
   - pages/public
   - pages/de
@@ -29,6 +60,9 @@ ignorePaths:
   - pages/parts/de
   - pages/parts/fr
   - pages/parts/ru
+  - data/dictionaries
+  - data/events/*.yml
+  - data/events/*.ics
   - data/**/*.de.md
   - data/**/*.fr.md
   - data/**/*.ru.md
@@ -40,4 +74,3 @@ ignorePaths:
   - src/common/locales/ru.ts
   - package-lock.json
   - pnpm-lock.yaml
-  - data/os/linux/uos.yml
