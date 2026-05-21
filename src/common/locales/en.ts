@@ -94,7 +94,7 @@ export default {
       case "one":
         return n + "st"
       case "two":
-        return n + "nd" // codespell:ignore nd
+        return n + "nd" // cspell:ignore nd
       case "few":
         return n + "rd"
       default:
