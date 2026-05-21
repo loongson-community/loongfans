@@ -17,7 +17,7 @@ So, what Loongson products are out there and how do we get to purchase and enjoy
 
 Loongson's processor product line comprises MCUs, embedded SoCs, as well as desktop, workstation, and server-class processors - they are found in a wide range of hardware products. The current product line consist of three families of processors, comprising over ten products.
 
-### Product Familiess
+### Product Families
 
 Loongson's processors are divided into three families:
 
