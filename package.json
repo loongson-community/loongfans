@@ -14,6 +14,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "cspell": "^10.0.0",
     "vite": "^7.3.3",
     "vitepress": "2.0.0-alpha.17"
   },
