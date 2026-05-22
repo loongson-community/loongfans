@@ -74,7 +74,7 @@ version: "V1.0_V5.0.0343_stable202511_rel"
 size: 6291456                          # 字节
 date: "2026-01-07"                     # YYYY-MM-DD
 sha256: "021a22173dcea9f001de5fa876b3e32897d119743dcdaea8d776822fc27678d5"
-url: "https://file.loongfans.cn/..."
+url: "https://fw.loongfans.cn/..."
 debug: false
 description:
   zh: |

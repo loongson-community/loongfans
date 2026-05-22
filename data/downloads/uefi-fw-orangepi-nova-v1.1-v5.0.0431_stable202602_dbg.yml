@@ -3,7 +3,7 @@ version: "V1.1_V5.0.0431-stable202602_dbg"
 size: 8388608
 date: "2026-05-08"
 sha256: "eae9ddc55257a5c8030535427e90dc9440595addf19289f7b5d2e2f13e23d911"
-url: "https://file.loongfans.cn/opi-nova-v1.1/EDK2505_OrangePi-Nova-V1.1_V5.0.0431-stable202602_dbg.fd"
+url: "https://fw.loongfans.cn/opi-nova-v1.1/EDK2505_OrangePi-Nova-V1.1_V5.0.0431-stable202602_dbg.fd"
 debug: true
 description:
   zh: |
