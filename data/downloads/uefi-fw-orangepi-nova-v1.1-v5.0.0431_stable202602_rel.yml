@@ -3,7 +3,7 @@ version: "V1.1_V5.0.0431-stable202602_rel"
 size: 8388608
 date: "2026-05-08"
 sha256: "01eee99685951c33d890769a91d00b775e4df410917bf409856f5c51052bf275"
-url: "https://file.loongfans.cn/opi-nova-v1.1/EDK2505_OrangePi-Nova-V1.1_V5.0.0431-stable202602_rel.fd"
+url: "https://fw.loongfans.cn/opi-nova-v1.1/EDK2505_OrangePi-Nova-V1.1_V5.0.0431-stable202602_rel.fd"
 description:
   zh: |
     - 本版包含上游 V5.0.0341-stable202602（即 202602 基线）中包含的所有修复，其中较为重要的有：

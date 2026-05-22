@@ -3,7 +3,7 @@ version: "V4.0.05756_prestable2405_0523rel"
 size: 8388608
 date: "2024-05-23"
 sha256: "e7fac091127d5a759d4c043472f1d6f0838acba7f6efb8da72cccaacedad7e5d"
-url: "https://file.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523rel.fd"
+url: "https://fw.loongfans.cn/xa61200/UDK2018-3A6000-7A2000_EVB_V4.0.05756_prestable2405_0523rel.fd"
 description:
   zh: |
     新增 YT6801 网卡固件驱动、自定义风扇曲线、快速启动及 TPM 支持等新功能，并修复睡眠时的缓存同步问题，提高可靠性。
