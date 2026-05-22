@@ -27,7 +27,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.7751956"
-     inkscape:cx="430.859"
+     inkscape:cx="431.504"
      inkscape:cy="213.4945"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
@@ -200,24 +200,24 @@
     <text
        xml:space="preserve"
        style="font-size:19.7762px;line-height:1;font-family:misans;-inkscape-font-specification:misans;text-align:start;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2f2f2f;fill-opacity:1;stroke:none;stroke-width:1.16194;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-       x="-1.5626434"
-       y="105.63203"
+       x="-1.5623169"
+       y="106.69032"
        id="text4"><tspan
          sodipodi:role="line"
          id="tspan4"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'misans vf';-inkscape-font-specification:'misans vf';fill:#2f2f2f;fill-opacity:1;stroke-width:1.16194"
-         x="-1.5626434"
-         y="105.63203">Прямо впереди - новый мир!</tspan></text>
+         x="-1.5623169"
+         y="106.69032">Прямо впереди - новый мир!</tspan></text>
     <text
        xml:space="preserve"
-       style="font-weight:450;font-size:39.4486px;line-height:1;font-family:misans;-inkscape-font-specification:'misans weight=450';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e60013;stroke-width:20.8155;paint-order:markers stroke fill"
-       x="-2.5245426"
-       y="81.894493"
+       style="font-weight:450;font-size:44.8862px;line-height:1;font-family:misans;-inkscape-font-specification:'misans weight=450';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e60013;stroke-width:23.6847;paint-order:markers stroke fill"
+       x="-2.8725462"
+       y="86.157593"
        id="text3"><tspan
          sodipodi:role="line"
          id="tspan2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:misans;-inkscape-font-specification:'misans Bold';stroke-width:20.8155"
-         x="-2.5245426"
-         y="81.894493">LOOONGSON</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:misans;-inkscape-font-specification:'misans Bold';stroke-width:23.6847"
+         x="-2.8725462"
+         y="86.157593">LOONGSON</tspan></text>
   </g>
 </svg>
