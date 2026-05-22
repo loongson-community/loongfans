@@ -32,7 +32,7 @@ export default {
   reportIssue: "Отзывы",
   aboutCommunity: "О нас",
   copyright: "Авторские права",
-  communityName: "Сообщество энтузиястов Loongson",
+  communityName: "Сообщество энтузиастов Loongson",
 
   // ChildHeader.vue
   goBack: "Вернуться",
