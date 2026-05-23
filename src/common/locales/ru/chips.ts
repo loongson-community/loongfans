@@ -1,8 +1,9 @@
 export default {
   pageTitle: "Loongson {name}",
   cpuPageSubTitle: {
-    cores: "{cores} Ядро |{cores}  Ядра",
-    threads: "{threads} Тема |{threads}  Темы",
+    cores: "{cores} ядер | {cores} ядро | {cores} ядра | {cores} ядер",
+    threads:
+      "{threads} потоков | {threads} поток | {threads} потока | {threads} потоков",
     format: "{cores} / {threads}, {freq}",
   },
 
@@ -28,17 +29,17 @@ export default {
   cpu: {
     name: "ЦП",
     title: "Технические характеристики процессора/SoC",
-    cores: "Сердечники",
-    threads: "Темы",
+    cores: "Количество ядер",
+    threads: "Количество потоков",
     arch: "Микроархитектура",
     freq: "Максимальная частота",
     l1_inst_cache: "Кэш команд L1",
     l1_data_cache: "Кэш данных L1",
     l2_cache: "Кэш второго уровня (всего)",
     l3_cache: "Кэш L3 (общий)",
-    voltage: "Типильное напряжение",
-    tpc: "Типичное энергопотребление",
-    tdp: "Номинальная тепловая мощность (TDP)",
+    voltage: "Номинальное напряжение",
+    tpc: "Номинальное энергопотребление",
+    tdp: "Тепловыделение (TDP)",
   },
   chipset: {
     name: "Чипсет",
@@ -78,10 +79,10 @@ export default {
     other: "Другие интерфейсы",
   },
   package: {
-    title: "Характеристики упаковки",
-    socket: "Розетка",
+    title: "Характеристики корпуса",
+    socket: "Сокет",
     temperature: "Диапазон температур",
-    size: "Размер упаковки",
+    size: "Размер корпуса",
   },
   power: {
     title: "Управление питанием",
