@@ -16,7 +16,7 @@
 General features:
 
 - Enhanced support for the 6000 series platform to enable `ACPI.EDAC` reporting of `ECC` status to the kernel
-- Continued optimization of the emulator’s `MultiArch` support for third-party `x86` peripheral cards. The simulation option can be temporarily disabled via the interface if certain high-end network cards experience 概率性重启模拟异常
+- Continued optimization of the emulator’s `MultiArch` support for third-party `x86` peripheral cards. The simulation option can be temporarily disabled via the interface if certain high-end network cards experience occasional unexpected reboots
 - Added and enhanced `SE` capabilities, including support for `DeviceMode` and the new `SE RNG API`
 - Enhanced parsing support for older `EDID` versions
 - Added paging support for the `gopinfo` subcommand
