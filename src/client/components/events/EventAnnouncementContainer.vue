@@ -7,14 +7,19 @@
         @event-selected="onEventSelected"
       />
     </div>
-    <div v-if="thisEvent !== null" class="w-full announcement-container">
-      <component :is="announcementComponent" :event="thisEvent" />
+    <div v-if="thisEvent.length > 0" class="w-full announcement-container">
+      <component
+        :is="announcementComponents[event.kind]"
+        v-for="event in thisEvent"
+        :key="`${event.kind}-${event.issueNumber}`"
+        :event="event"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, type Component, type Ref } from "vue"
+import { ref, type Component, type Ref } from "vue"
 
 import eventsICS from "@data/events/events.ics?raw"
 import {
@@ -48,13 +53,10 @@ const announcementComponents: Record<BiweeklyEventKind, Component> = {
   enBiweekly: EventAnnouncementEnBiweekly,
 }
 
-const thisEvent: Ref<EventItem | null> = ref(null)
-const announcementComponent = computed(() => {
-  return thisEvent.value ? announcementComponents[thisEvent.value.kind] : null
-})
+const thisEvent: Ref<EventItem[]> = ref([])
 
 const onEventSelected = (items: EventItem[]) => {
-  thisEvent.value = items[0] ?? null
+  thisEvent.value = items
 }
 </script>
 
