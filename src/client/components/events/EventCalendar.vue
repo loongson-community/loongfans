@@ -8,7 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import keyBy from "lodash/keyBy"
 import { useI18n } from "vue-i18n"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
@@ -73,20 +72,23 @@ const formatDateID = (d: Date) => {
   return `${y}-${m}-${day}`
 }
 
-const eventByDateID = keyBy(events, (be) => {
-  return formatDateID(be.start)
-})
+const eventByDateID: Record<string, EventItem[]> = {}
+for (const event of events) {
+  const id = formatDateID(event.start)
+  if (!eventByDateID[id]) eventByDateID[id] = []
+  eventByDateID[id].push(event)
+}
 
 // make today point to the next event if clicked
 const nextEvent = events.find((be) => be.isNext)
 if (nextEvent) {
-  eventByDateID[formatDateID(now)] = nextEvent
+  eventByDateID[formatDateID(now)] = [nextEvent]
 }
 
 const onDayClick = (d: CalendarDayForEvent) => {
-  const be = eventByDateID[d.id]
-  if (be) {
-    emit("eventSelected", be)
+  const list = eventByDateID[d.id]
+  if (list && list.length > 0) {
+    emit("eventSelected", list[0]!)
   }
 }
 </script>
