@@ -181,7 +181,6 @@ export function getBiweeklyResourceLink(
     case "wemeet":
     case "zoom":
     case "zoomChat":
-    case "vk":
       return resource.link
 
     case "bilibili":
@@ -193,6 +192,8 @@ export function getBiweeklyResourceLink(
       return `https://docs.google.com/${resource.kind}/d/${resource.id}/edit?usp=sharing`
     case "kdocs":
       return `https://kdocs.cn/l/${resource.id}`
+    case "vk":
+      return `https://vkvideo.ru/video-${resource.id}`
     case "youtube":
       return `https://www.youtube.com/watch?v=${resource.id}`
   }
