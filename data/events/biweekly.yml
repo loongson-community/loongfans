@@ -105,17 +105,54 @@ events:
       33:
         - { type: "kdocs", id: "ctdmqP54aIhN" }
         - { type: "bilibili", bvid: "BV1WgXSB5Epi" }
+      34:
+        - { type: "kdocs", id: "cc0qidGGKJGU" }
+        - { type: "bilibili", bvid: "BV1NERwBnE7T" }
       35:
         - { type: "kdocs", id: "ctkrVtbBePxM" }
+        - { type: "bilibili", bvid: "BV1vLRcBYEvm" }
+      36:
+        - { type: "kdocs", id: "cnIi0k0ujHuc" }
+        - { type: "bilibili", bvid: "BV1Zu5n6oETK" }
+      37:
+        - { type: "kdocs", id: "ci6wWnlgXv3q" }
+        - { type: "bilibili", bvid: "BV1xaG76tEpr" }
+      38:
+        - { type: "kdocs", id: "cdOek5ijwFga" }
+        - { type: "bilibili", bvid: "BV1FuE46oEPQ" }
   enBiweekly:
     links:
-      - { type: "zoom", status: "unavailable" }
-      - { type: "zoomChat", status: "unavailable" }
-      - { type: "googledocs", status: "unavailable" }
+      - type: "zoom"
+        link: "https://us05web.zoom.us/j/87414039241?pwd=SjizKNRapsn1P271C3edPjVrCB62lO.1"
+        number: "874 1403 9241"
+        passcode: "loongarch"
+      - type: "zoomChat"
+        link: "https://us05web.zoom.us/launch/jc/87414039241"
     archives:
       1:
-        - { type: "googledocs", status: "unavailable" }
-        - { type: "zoomChat", status: "unavailable" }
-        - { type: "bilibili", status: "unavailable" }
-        - { type: "youtube", status: "unavailable" }
-        - { type: "vk", status: "wip" }
+        - {
+            type: "googledocs",
+            link: "https://docs.google.com/presentation/d/1GTCYkdDxxHAa4A8oGZqJIgwvLoR5KxPBRxfj2-_K5fY/edit?usp=sharing",
+          }
+        - { type: "bilibili", bvid: "BV12i5e62Erg" }
+        - { type: "vk", link: "https://vkvideo.ru/video-239187759_456239017" }
+        - {
+            type: "youtube",
+            link: "https://www.youtube.com/watch?v=dF1LF6QVFeQ",
+          }
+      2:
+        - {
+            type: "googledocs",
+            link: "https://docs.google.com/presentation/d/1R_Ua_1zzus1jNiQj9_l35vXUJRBJieCbf8FPwD8MzKE/edit?usp=sharing",
+          }
+        - { type: "bilibili", bvid: "BV1dnVE6mEhz" }
+        - { type: "vk", link: "https://vkvideo.ru/video-239187759_456239018" }
+        - {
+            type: "youtube",
+            link: "https://www.youtube.com/watch?v=25Lvr_5lg9g",
+          }
+      3:
+        - {
+            type: "googledocs",
+            link: "https://docs.google.com/presentation/d/1aMpDOqZynHhR9He77Vvhu96CSq61azd105pbcr9aWIo/edit?usp=sharing",
+          }
