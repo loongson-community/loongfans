@@ -183,7 +183,8 @@ export interface BiweeklyKDocsResource extends BiweeklyAvailableResourceBase {
 
 export interface BiweeklyGoogleDocsResource extends BiweeklyAvailableResourceBase {
   type: "googledocs"
-  link: string
+  kind: string
+  id: string
 }
 
 export interface BiweeklyZoomResource extends BiweeklyAvailableResourceBase {

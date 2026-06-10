@@ -130,10 +130,9 @@ events:
         link: "https://us05web.zoom.us/launch/jc/87414039241"
     archives:
       1:
-        - {
-            type: "googledocs",
-            link: "https://docs.google.com/presentation/d/1GTCYkdDxxHAa4A8oGZqJIgwvLoR5KxPBRxfj2-_K5fY/edit?usp=sharing",
-          }
+        - type: "googledocs"
+          kind: "presentation"
+          id: "1GTCYkdDxxHAa4A8oGZqJIgwvLoR5KxPBRxfj2-_K5fY"
         - { type: "bilibili", bvid: "BV12i5e62Erg" }
         - { type: "vk", link: "https://vkvideo.ru/video-239187759_456239017" }
         - {
@@ -141,10 +140,9 @@ events:
             link: "https://www.youtube.com/watch?v=dF1LF6QVFeQ",
           }
       2:
-        - {
-            type: "googledocs",
-            link: "https://docs.google.com/presentation/d/1R_Ua_1zzus1jNiQj9_l35vXUJRBJieCbf8FPwD8MzKE/edit?usp=sharing",
-          }
+        - type: "googledocs"
+          kind: "presentation"
+          id: "1R_Ua_1zzus1jNiQj9_l35vXUJRBJieCbf8FPwD8MzKE"
         - { type: "bilibili", bvid: "BV1dnVE6mEhz" }
         - { type: "vk", link: "https://vkvideo.ru/video-239187759_456239018" }
         - {
@@ -152,7 +150,6 @@ events:
             link: "https://www.youtube.com/watch?v=25Lvr_5lg9g",
           }
       3:
-        - {
-            type: "googledocs",
-            link: "https://docs.google.com/presentation/d/1aMpDOqZynHhR9He77Vvhu96CSq61azd105pbcr9aWIo/edit?usp=sharing",
-          }
+        - type: "googledocs"
+          kind: "presentation"
+          id: "1aMpDOqZynHhR9He77Vvhu96CSq61azd105pbcr9aWIo"

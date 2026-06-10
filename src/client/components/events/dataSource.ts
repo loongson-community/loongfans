@@ -179,12 +179,13 @@ export function getBiweeklyResourceLink(
 
   switch (resource.type) {
     case "wemeet":
-    case "googledocs":
     case "zoom":
     case "zoomChat":
     case "youtube":
     case "vk":
       return resource.link
+    case "googledocs":
+      return `https://docs.google.com/${resource.kind}/d/${resource.id}/edit?usp=sharing`
     case "kdocs":
       return `https://kdocs.cn/l/${resource.id}`
     case "bilibili":
