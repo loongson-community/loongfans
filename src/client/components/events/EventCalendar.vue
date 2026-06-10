@@ -11,6 +11,7 @@
 import { useI18n } from "vue-i18n"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
+import type { BiweeklyEventKind } from "@src/types/data"
 import type { EventItem } from "./dataSource"
 
 // The CalendarDay type is not exported by v-calendar, so we redefine it here
@@ -46,18 +47,26 @@ const vCalAttrs: (typeof Calendar)["attributes"] = [
   },
 ]
 
-const allEventsForVCal = events.map((be) => ({
-  key: `event-${be.kind}-${be.issueNumber}`,
-  dates: be.start,
-  bar: be.isNext ? null : be.isFuture ? "theme-red" : "theme-past",
-  highlight: be.isNext ? "theme-red" : null,
-  popover: {
-    label: t("eventCalendarEvent", {
-      number: t("ordinalNumber", { n: be.issueNumber }),
-      title: be.title,
-    }),
-  },
-}))
+const kindColors: Record<BiweeklyEventKind, string> = {
+  zhBiweekly: "theme-red",
+  enBiweekly: "theme-blue",
+}
+
+const allEventsForVCal = events.map((be) => {
+  const color = kindColors[be.kind]
+  return {
+    key: `event-${be.kind}-${be.issueNumber}`,
+    dates: be.start,
+    bar: be.isNext ? null : be.isFuture ? color : "theme-past",
+    highlight: be.isNext ? color : null,
+    popover: {
+      label: t("eventCalendarEvent", {
+        number: t("ordinalNumber", { n: be.issueNumber }),
+        title: be.title,
+      }),
+    },
+  }
+})
 vCalAttrs.push(...allEventsForVCal)
 
 // make the next event initially selected
@@ -102,6 +111,14 @@ const onDayClick = (d: CalendarDayForEvent) => {
   --vc-highlight-solid-bg: #e60013 !important;
   --vc-highlight-outline-border: #e60013 !important;
   --vc-highlight-outline-content-color: #e60013 !important;
+}
+
+.vc-theme-blue {
+  --vc-bar-bg: #1d4ed8 !important;
+  --vc-dot-bg: #1d4ed8 !important;
+  --vc-highlight-solid-bg: #1d4ed8 !important;
+  --vc-highlight-outline-border: #1d4ed8 !important;
+  --vc-highlight-outline-content-color: #1d4ed8 !important;
 }
 
 .vc-theme-past {
