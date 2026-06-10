@@ -33,6 +33,11 @@ La réunion est diffusée en direct sur la page Bilibili
 [@Communauté des passionnés de Loongson](https://space.bilibili.com/70360929).
 Des réunions en présentiel sont également organisées de temps à autre.
 
+Il existe également une session internationale pour les anglophones et
+russophones (LoongArch Biweekly EN/RU), qui se tient un mercredi sur deux à
+21 h (UTC+8) via Zoom. Les documents sont préparés avec Google Slides et les
+rediffusions sont archivées sur Bilibili, YouTube ou VK.
+
 :::tip
 Le LoongArch Biweekly est actuellement rédigé en chinois standard (putonghua / mandarin)
 comme langue par défaut, mais nous accueillons volontiers les utilisateurs d'autres
