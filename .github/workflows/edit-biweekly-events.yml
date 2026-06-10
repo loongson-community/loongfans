@@ -14,7 +14,7 @@ on:
       issue_number:
         description: "Biweekly issue/session number to edit"
         required: false
-        type: integer
+        type: number
       bvid:
         description: "Set BVID of the biweekly event to (optional)"
         required: false
