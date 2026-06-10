@@ -12,7 +12,7 @@ import { useI18n } from "vue-i18n"
 import { Calendar } from "v-calendar"
 import "v-calendar/style.css"
 import type { BiweeklyEventKind } from "@src/types/data"
-import { eventKinds, type EventItem } from "./dataSource"
+import type { EventItem } from "./dataSource"
 
 // The CalendarDay type is not exported by v-calendar, so we redefine it here
 // with only the fields we need.
@@ -70,11 +70,9 @@ const allEventsForVCal = events.map((be) => {
 vCalAttrs.push(...allEventsForVCal)
 
 // make the next event initially selected
-const nextEvents = eventKinds
-  .map((kind) => events.find((be) => be.kind === kind && be.isNext))
-  .filter((be): be is EventItem => be !== undefined)
-if (nextEvents.length > 0) {
-  emit("eventSelected", nextEvents)
+const nextEvent = events.find((be) => be.isNext)
+if (nextEvent) {
+  emit("eventSelected", [nextEvent])
 }
 
 // no event key is available in v-calendar's dayclick event, so we have to
@@ -94,14 +92,21 @@ for (const event of events) {
 }
 
 // make today point to the next event if clicked
-if (nextEvents.length > 0) {
-  eventByDateID[formatDateID(now)] = nextEvents
+if (nextEvent) {
+  eventByDateID[formatDateID(now)] = [nextEvent]
 }
 
 const onDayClick = (d: CalendarDayForEvent) => {
   const list = eventByDateID[d.id]
   if (list && list.length > 0) {
     emit("eventSelected", list)
+    return
+  }
+  // find nearest future event after the clicked date
+  const clicked = d.id
+  const nearest = events.find((be) => formatDateID(be.start) > clicked)
+  if (nearest) {
+    emit("eventSelected", [nearest])
   }
 }
 </script>

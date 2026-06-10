@@ -32,21 +32,7 @@ import EventCalendar from "@src/client/components/events/EventCalendar.vue"
 import type { BiweeklyEventKind } from "@src/types/data"
 
 const now = new Date()
-const allBiweeklyEvents = getBiweeklyEvents(eventsICS, now)
-
-const biweeklyEvents = (() => {
-  const nextFound: Record<string, boolean> = {}
-  const events = allBiweeklyEvents.events.map((event) => {
-    if (nextFound[event.kind] === undefined) nextFound[event.kind] = false
-    if (!nextFound[event.kind] && event.isFuture) {
-      nextFound[event.kind] = true
-      return { ...event, isNext: true }
-    }
-    return { ...event, isNext: false }
-  })
-  const nextEventIdx = events.findIndex((event) => event.isNext)
-  return { events, nextEventIdx: nextEventIdx === -1 ? null : nextEventIdx }
-})()
+const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
 
 const announcementComponents: Record<BiweeklyEventKind, Component> = {
   zhBiweekly: EventAnnouncementZhBiweekly,
