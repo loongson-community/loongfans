@@ -207,7 +207,7 @@ export interface BiweeklyBilibiliResource extends BiweeklyAvailableResourceBase 
 
 export interface BiweeklyYoutubeResource extends BiweeklyAvailableResourceBase {
   type: "youtube"
-  link: string
+  id: string
 }
 
 export interface BiweeklyVKResource extends BiweeklyAvailableResourceBase {

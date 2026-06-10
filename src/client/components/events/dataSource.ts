@@ -181,18 +181,20 @@ export function getBiweeklyResourceLink(
     case "wemeet":
     case "zoom":
     case "zoomChat":
-    case "youtube":
     case "vk":
       return resource.link
-    case "googledocs":
-      return `https://docs.google.com/${resource.kind}/d/${resource.id}/edit?usp=sharing`
-    case "kdocs":
-      return `https://kdocs.cn/l/${resource.id}`
+
     case "bilibili":
       if (resource.link) return resource.link
       return resource.bvid
         ? `https://www.bilibili.com/video/${resource.bvid}/`
         : null
+    case "googledocs":
+      return `https://docs.google.com/${resource.kind}/d/${resource.id}/edit?usp=sharing`
+    case "kdocs":
+      return `https://kdocs.cn/l/${resource.id}`
+    case "youtube":
+      return `https://www.youtube.com/watch?v=${resource.id}`
   }
 }
 
