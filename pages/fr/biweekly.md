@@ -41,4 +41,4 @@ d'autres langues encore). Si vous souhaitez organiser une session dans une autre
 n'hésitez pas à nous contacter !
 :::
 
-<EventAnnouncementContainer include-kinds="zhBiweekly" />
+<EventAnnouncementContainer />

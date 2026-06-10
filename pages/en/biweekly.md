@@ -26,4 +26,4 @@ The working languages for this rendition are English and Russian. You are still
 welcome to bring topics from the broader LoongArch and Loongson ecosystem.
 :::
 
-<EventAnnouncementContainer include-kinds="enBiweekly" />
+<EventAnnouncementContainer />

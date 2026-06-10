@@ -41,4 +41,4 @@ Meeting, как правило, в дни, не совпадающие с гос
 провести сессию на другом языке, пожалуйста, свяжитесь с нами!
 :::
 
-<EventAnnouncementContainer include-kinds="zhBiweekly" />
+<EventAnnouncementContainer />

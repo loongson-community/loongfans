@@ -41,4 +41,4 @@ Wenn Sie eine Sitzung in einer anderen Sprache abhalten möchten, können Sie si
 bei uns melden!
 :::
 
-<EventAnnouncementContainer include-kinds="zhBiweekly" />
+<EventAnnouncementContainer />
