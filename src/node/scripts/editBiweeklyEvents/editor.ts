@@ -25,7 +25,7 @@ type Changes = {
   zoomChat?: boolean
   googleDocs?: boolean
   youtube?: boolean
-  vk?: boolean
+  vkVideo?: boolean
 }
 
 type ChangedCallback = (changes: Changes) => void
@@ -49,7 +49,7 @@ export class BiweeklyLinkEditor {
     zoomChat: false,
     googleDocs: false,
     youtube: false,
-    vk: false,
+    vkVideo: false,
   }
 
   constructor(
@@ -202,7 +202,7 @@ export class BiweeklyLinkEditor {
     if (this.pendingChanges.zoomChat) changedParts.push("Zoom chat link")
     if (this.pendingChanges.googleDocs) changedParts.push("Google Docs link")
     if (this.pendingChanges.youtube) changedParts.push("YouTube link")
-    if (this.pendingChanges.vk) changedParts.push("VK link")
+    if (this.pendingChanges.vkVideo) changedParts.push("VK Video link")
 
     if (this.issueNumber != null) {
       return `feat(biweekly): update ${changedParts.join(" and ")} for ${this.eventKind} ${this.issueNumber}`
@@ -452,7 +452,7 @@ const sortResources = (resourcesNode: YAMLSeq) => {
     ["zoomChat", 4],
     ["bilibili", 5],
     ["youtube", 6],
-    ["vk", 7],
+    ["vkvideo", 7],
   ])
 
   resourcesNode.items.sort((a, b) => {
@@ -530,8 +530,8 @@ const changeKeyForResource = (type: BiweeklyResourceType): keyof Changes => {
       return "googleDocs"
     case "youtube":
       return "youtube"
-    case "vk":
-      return "vk"
+    case "vkvideo":
+      return "vkVideo"
     case "wemeet":
       return "wemeet"
   }

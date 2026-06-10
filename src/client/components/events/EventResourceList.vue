@@ -42,8 +42,8 @@ const defaultResourceLabel = (type: BiweeklyResourceType) => {
       return t("bilibiliLiveArchiveLink")
     case "youtube":
       return t("youtubeArchiveLink")
-    case "vk":
-      return t("vkArchiveLink")
+    case "vkvideo":
+      return t("vkVideoArchiveLink")
   }
 }
 

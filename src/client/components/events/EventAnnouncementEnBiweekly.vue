@@ -84,7 +84,7 @@ const archiveLabels = computed<Partial<Record<BiweeklyResourceType, string>>>(
     zoomChat: t("zoomChatArchiveLink"),
     bilibili: t("bilibiliLiveArchiveLink"),
     youtube: t("youtubeArchiveLink"),
-    vk: t("vkArchiveLink"),
+    vkvideo: t("vkVideoArchiveLink"),
   }),
 )
 

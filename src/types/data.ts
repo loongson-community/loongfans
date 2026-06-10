@@ -157,7 +157,7 @@ export type BiweeklyResourceType =
   | "zoomChat"
   | "bilibili"
   | "youtube"
-  | "vk"
+  | "vkvideo"
 
 export type BiweeklyResourceStatus = "available" | "wip" | "unavailable"
 
@@ -210,8 +210,8 @@ export interface BiweeklyYoutubeResource extends BiweeklyAvailableResourceBase {
   id: string
 }
 
-export interface BiweeklyVKResource extends BiweeklyAvailableResourceBase {
-  type: "vk"
+export interface BiweeklyVKVideoResource extends BiweeklyAvailableResourceBase {
+  type: "vkvideo"
   id: string
 }
 
@@ -223,7 +223,7 @@ export type BiweeklyAvailableResource =
   | BiweeklyZoomChatResource
   | BiweeklyBilibiliResource
   | BiweeklyYoutubeResource
-  | BiweeklyVKResource
+  | BiweeklyVKVideoResource
 
 export interface BiweeklyPendingResource extends BiweeklyResourceMetadata {
   type: BiweeklyResourceType

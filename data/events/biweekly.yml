@@ -134,14 +134,14 @@ events:
           kind: "presentation"
           id: "1GTCYkdDxxHAa4A8oGZqJIgwvLoR5KxPBRxfj2-_K5fY"
         - { type: "bilibili", bvid: "BV12i5e62Erg" }
-        - { type: "vk", id: "239187759_456239017" }
+        - { type: "vkvideo", id: "239187759_456239017" }
         - { type: "youtube", id: "dF1LF6QVFeQ" }
       2:
         - type: "googledocs"
           kind: "presentation"
           id: "1R_Ua_1zzus1jNiQj9_l35vXUJRBJieCbf8FPwD8MzKE"
         - { type: "bilibili", bvid: "BV1dnVE6mEhz" }
-        - { type: "vk", id: "239187759_456239018" }
+        - { type: "vkvideo", id: "239187759_456239018" }
         - { type: "youtube", id: "25Lvr_5lg9g" }
       3:
         - type: "googledocs"

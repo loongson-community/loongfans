@@ -100,7 +100,7 @@ export default {
   zoomChatLink: "Zoom chat",
   zoomChatArchiveLink: "Zoom chat archive",
   youtubeArchiveLink: "YouTube replay",
-  vkArchiveLink: "VK replay",
+  vkVideoArchiveLink: "VK Video replay",
   eventResourceUnavailable: "{label} (to be announced)",
   eventResourceWip: "{label} (work in progress)",
   enBiweeklyTimezoneShanghai: "China",

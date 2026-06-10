@@ -94,7 +94,7 @@ export default {
   zoomChatLink: "Zoom 聊天",
   zoomChatArchiveLink: "Zoom 聊天记录",
   youtubeArchiveLink: "YouTube 回放",
-  vkArchiveLink: "VK 回放",
+  vkVideoArchiveLink: "VK 视频回放",
   eventResourceUnavailable: "{label}（暂未提供）",
   eventResourceWip: "{label}（制作中）",
   enBiweeklyTimezoneShanghai: "中国",

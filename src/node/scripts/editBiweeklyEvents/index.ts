@@ -102,7 +102,10 @@ async function main() {
       "--set-youtube-link <url>",
       "record this URL as the YouTube archive link",
     )
-    .option("--set-vk-link <url>", "record this URL as the VK archive link")
+    .option(
+      "--set-vk-video-link <url>",
+      "record this URL as the VK Video archive link",
+    )
     .option("--commit", "also commit the changes to Git", false)
     .parse(process.argv)
   const opts = program.opts()
@@ -127,7 +130,7 @@ async function main() {
   const zoomChatLinkToSet: string | undefined = opts.setZoomChatLink
   const googleDocsLinkToSet: string | undefined = opts.setGoogleDocsLink
   const youtubeLinkToSet: string | undefined = opts.setYoutubeLink
-  const vkLinkToSet: string | undefined = opts.setVkLink
+  const vkVideoLinkToSet: string | undefined = opts.setVkVideoLink
 
   if (
     !bvidToSet &&
@@ -139,13 +142,13 @@ async function main() {
     !zoomChatLinkToSet &&
     !googleDocsLinkToSet &&
     !youtubeLinkToSet &&
-    !vkLinkToSet
+    !vkVideoLinkToSet
   ) {
     console.error("No changes specified, check --help for usage.")
     process.exit(1)
   }
   if (
-    (bvidToSet || slidesIDtoSet || youtubeLinkToSet || vkLinkToSet) &&
+    (bvidToSet || slidesIDtoSet || youtubeLinkToSet || vkVideoLinkToSet) &&
     issueNumber == null
   ) {
     console.error(
@@ -214,8 +217,8 @@ async function main() {
   if (youtubeLinkToSet) {
     editResourceLink("youtube", youtubeLinkToSet, true)
   }
-  if (vkLinkToSet) {
-    editResourceLink("vk", vkLinkToSet, true)
+  if (vkVideoLinkToSet) {
+    editResourceLink("vkvideo", vkVideoLinkToSet, true)
   }
 
   if (liveLinkToSet || wemeetLinkToSet || wemeetNumberToSet) {

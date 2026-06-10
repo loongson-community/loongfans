@@ -20,4 +20,5 @@ Radxa
 Realtek
 Taobao
 Vivante
+vkvideo
 Xunlong
