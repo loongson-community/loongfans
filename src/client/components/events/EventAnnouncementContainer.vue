@@ -67,8 +67,8 @@ const announcementComponent = computed(() => {
   return thisEvent.value ? announcementComponents[thisEvent.value.kind] : null
 })
 
-const onEventSelected = (be: EventItem | null) => {
-  thisEvent.value = be
+const onEventSelected = (items: EventItem[]) => {
+  thisEvent.value = items[0] ?? null
 }
 </script>
 

@@ -25,7 +25,7 @@ const { events, now } = defineProps<{
   now: Date
 }>()
 const emit = defineEmits<{
-  eventSelected: [EventItem | null]
+  eventSelected: [EventItem[]]
 }>()
 
 const initialPage = {
@@ -61,7 +61,10 @@ const allEventsForVCal = events.map((be) => ({
 vCalAttrs.push(...allEventsForVCal)
 
 // make the next event initially selected
-emit("eventSelected", events.find((be) => be.isNext) || null)
+const nextEvent = events.find((be) => be.isNext)
+if (nextEvent) {
+  emit("eventSelected", [nextEvent])
+}
 
 // no event key is available in v-calendar's dayclick event, so we have to
 // maintain a map between date id and event data
@@ -80,7 +83,6 @@ for (const event of events) {
 }
 
 // make today point to the next event if clicked
-const nextEvent = events.find((be) => be.isNext)
 if (nextEvent) {
   eventByDateID[formatDateID(now)] = [nextEvent]
 }
@@ -88,7 +90,7 @@ if (nextEvent) {
 const onDayClick = (d: CalendarDayForEvent) => {
   const list = eventByDateID[d.id]
   if (list && list.length > 0) {
-    emit("eventSelected", list[0]!)
+    emit("eventSelected", list)
   }
 }
 </script>
