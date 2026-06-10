@@ -15,3 +15,6 @@ indent_size = 4
 
 [*Caddyfile]
 indent_style = tab
+
+[*.ics]
+end_of_line = crlf

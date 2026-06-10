@@ -1,0 +1,2 @@
+# iCalendar (RFC 5545) defines the canonical line ending as CRLF
+*.ics text eol=crlf
