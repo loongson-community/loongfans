@@ -92,27 +92,16 @@ const archiveLabels = computed<Partial<Record<BiweeklyResourceType, string>>>(
   }),
 )
 
-const timeZones = computed(() => [
-  {
-    label: t("intlBiweeklyTimezoneShanghai"),
-    timeZone: "Asia/Shanghai",
-  },
-  {
-    label: t("intlBiweeklyTimezoneMoscow"),
-    timeZone: "Europe/Moscow",
-  },
-  {
-    label: t("intlBiweeklyTimezoneUSEastern"),
-    timeZone: "America/New_York",
-  },
-  {
-    label: t("intlBiweeklyTimezoneUSPacific"),
-    timeZone: "America/Los_Angeles",
-  },
-])
+const timeZones = [
+  { label: "UTC-7", timeZone: "Etc/GMT+7" },
+  { label: "UTC-4", timeZone: "Etc/GMT+4" },
+  { label: "UTC", timeZone: "Etc/UTC" },
+  { label: "UTC+3", timeZone: "Etc/GMT-3" },
+  { label: "UTC+8", timeZone: "Etc/GMT-8" },
+]
 
 const timezoneRows = computed(() =>
-  timeZones.value.map((zone) => ({
+  timeZones.map((zone) => ({
     ...zone,
     time: new Intl.DateTimeFormat(locale.value, {
       dateStyle: "medium",

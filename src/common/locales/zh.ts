@@ -146,10 +146,6 @@ export default {
   eventResourceUnavailable: "{label}（暂未提供）",
   eventResourceWip: "{label}（制作中）",
   intlBiweeklyTimezoneSystem: "系统时区",
-  intlBiweeklyTimezoneShanghai: "中国",
-  intlBiweeklyTimezoneMoscow: "莫斯科",
-  intlBiweeklyTimezoneUSEastern: "美国东部",
-  intlBiweeklyTimezoneUSPacific: "美国太平洋",
 
   // events/EventCalendar.vue
   today: "今天",

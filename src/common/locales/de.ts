@@ -152,10 +152,6 @@ export default {
   eventResourceUnavailable: "{label} (wird noch angekündigt)",
   eventResourceWip: "{label} (in Arbeit)",
   intlBiweeklyTimezoneSystem: "Systemzeitzone",
-  intlBiweeklyTimezoneShanghai: "China",
-  intlBiweeklyTimezoneMoscow: "Moskau",
-  intlBiweeklyTimezoneUSEastern: "US-Ostküste",
-  intlBiweeklyTimezoneUSPacific: "US-Westküste",
 
   // events/EventCalendar.vue
   today: "Heute",
