@@ -17,6 +17,7 @@ export default {
   devGuides: "开发者指南",
   supportMaterials: "支持材料",
   contact: "联系我们",
+  news: "新闻",
   chipsData: "芯片规格数据库",
   productSpecs: "产品规格数据库",
   operatingSystems: "操作系统",
