@@ -76,9 +76,9 @@ export default {
   zhBiweeklyArchiveHeader:
     'The {number} "LoongArch Biweekly (Chinese session)" Meeting Archives',
   enBiweeklyAnnouncementHeader:
-    'The {number} "LoongArch Biweekly (Int\'l session)" Session Announcement',
+    'The {number} "LoongArch Biweekly (Int\'l session)" Meeting Announcement',
   enBiweeklyArchiveHeader:
-    'The {number} "LoongArch Biweekly (Int\'l session)" Session Archives',
+    'The {number} "LoongArch Biweekly (Int\'l session)" Meeting Archives',
   biweeklyTime: "Meeting Time: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
   enBiweeklyExpectedDurationNotice: " (session expected to last an hour)",

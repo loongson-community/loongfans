@@ -74,9 +74,9 @@ export default {
   zhBiweeklyArchiveHeader:
     "Archiv des {number}. Treffens „LoongArch Biweekly (chinesische Sitzung)“",
   enBiweeklyAnnouncementHeader:
-    "Ankündigung der {number}. Sitzung „LoongArch Biweekly (internationale Sitzung)“",
+    "Ankündigung des {number}. Treffens „LoongArch Biweekly (internationale Sitzung)“",
   enBiweeklyArchiveHeader:
-    "Archiv der {number}. Sitzung „LoongArch Biweekly (internationale Sitzung)“",
+    "Archiv des {number}. Treffens „LoongArch Biweekly (internationale Sitzung)“",
   biweeklyTime: "Termin: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice:
     " (das Meeting dauert voraussichtlich eine Stunde)",
