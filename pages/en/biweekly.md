@@ -26,10 +26,11 @@ distributions and other operating system projects, community updates,
 contributor discussions, and Q&A.
 
 :::tip
-The working language for the Chinese session is Mandarin; for the Int'l session
-it is English and Russian. All language backgrounds are welcome in both sessions
-— many attendees speak multiple languages. If you would like to present in
-another language, please reach out!
+The working language for the Chinese session is Standard Chinese (Putonghua / Mandarin);
+for the Int'l session it is English by default, with Russian also available.
+All language backgrounds are welcome in both sessions -- many attendees speak
+multiple languages. If you would like to present in another language, please
+reach out!
 :::
 
 <EventAnnouncementContainer />

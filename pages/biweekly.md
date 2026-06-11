@@ -28,7 +28,7 @@ import EventAnnouncementContainer from "@src/client/components/events/EventAnnou
 此外，亦有面向英语及俄语使用者的国际龙架构双周会，一般于每两周周三 13:00（UTC）通过 Zoom 举办。协作材料以 Google Slides 准备，回放资源归档于 Bilibili、YouTube 或 VK 等平台。
 
 :::tip
-龙架构双周会默认使用普通话，但我们同样欢迎其他语言使用者参会——许多与会者也会讲英语（甚至俄语等等）。如果您想用其它语言在会上做分享，请与我们联系！
+龙架构双周会以普通话为工作语言；国际场默认使用英语，亦可用俄语。两场会议均欢迎所有语言背景的用户参会——许多与会者都会讲多种语言。如果您想用其它语言在会上做分享，请与我们联系！
 :::
 
 <EventAnnouncementContainer />
