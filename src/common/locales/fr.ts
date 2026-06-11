@@ -84,7 +84,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Annonce de la ${n}e réunion « LoongArch Biweekly (session chinoise) »`
+    return `Annonce de la ${formatFrOrdinal(n, "f")} réunion « LoongArch Biweekly (session chinoise) »`
   },
   zhBiweeklyArchiveHeader: ({
     named,
@@ -92,7 +92,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Archives de la ${n}e réunion « LoongArch Biweekly (session chinoise) »`
+    return `Archives de la ${formatFrOrdinal(n, "f")} réunion « LoongArch Biweekly (session chinoise) »`
   },
   enBiweeklyAnnouncementHeader: ({
     named,
@@ -100,7 +100,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Annonce de la ${n}e réunion « LoongArch Biweekly (session internationale) »`
+    return `Annonce de la ${formatFrOrdinal(n, "f")} réunion « LoongArch Biweekly (session internationale) »`
   },
   enBiweeklyArchiveHeader: ({
     named,
@@ -108,7 +108,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Archives de la ${n}e réunion « LoongArch Biweekly (session internationale) »`
+    return `Archives de la ${formatFrOrdinal(n, "f")} réunion « LoongArch Biweekly (session internationale) »`
   },
   biweeklyTime: "Horaire : {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: " (la réunion devrait durer une heure)",
