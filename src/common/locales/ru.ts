@@ -89,7 +89,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Анонс ${n}-й встречи «LoongArch Biweekly (китайская сессия)»`
+    return `Анонс ${formatRuOrdinal(n, "f", "gen")} встречи «LoongArch Biweekly (китайская сессия)»`
   },
   zhBiweeklyArchiveHeader: ({
     named,
@@ -97,7 +97,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Архив ${n}-й встречи «LoongArch Biweekly (китайская сессия)»`
+    return `Архив ${formatRuOrdinal(n, "f", "gen")} встречи «LoongArch Biweekly (китайская сессия)»`
   },
   enBiweeklyAnnouncementHeader: ({
     named,
@@ -105,7 +105,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Анонс ${n}-й встречи «LoongArch Biweekly (международная сессия)»`
+    return `Анонс ${formatRuOrdinal(n, "f", "gen")} встречи «LoongArch Biweekly (международная сессия)»`
   },
   enBiweeklyArchiveHeader: ({
     named,
@@ -113,7 +113,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Архив ${n}-й встречи «LoongArch Biweekly (международная сессия)»`
+    return `Архив ${formatRuOrdinal(n, "f", "gen")} встречи «LoongArch Biweekly (международная сессия)»`
   },
   biweeklyTime: "Время встречи: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice:
