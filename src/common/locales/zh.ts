@@ -2,6 +2,12 @@ import chips from "./zh/chips"
 import help from "./zh/help"
 import os from "./zh/os"
 
+function formatZhOrdinal(n: number): string {
+  // Chinese has no special morphology for ordinal numbers
+  return n.toString()
+}
+
+// cspell:ignore Biweekly
 export default {
   comma: "、",
   // Index.vue
@@ -149,9 +155,8 @@ export default {
   // Utilities
   ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
     const n = named("n") as number
-    // Chinese has no special morphology for ordinal numbers
     if (n === undefined || n === null) return ""
-    return n.toString()
+    return formatZhOrdinal(n)
   },
 
   chips,
