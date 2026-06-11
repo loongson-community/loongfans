@@ -1,7 +1,9 @@
 <template>
   <ul>
     <li v-for="news in data" :key="news.url">
-      <a :href="`${basePath}${news.url}`">{{ news.frontmatter.pageTitle }}</a>
+      <a :href="`${basePath}${news.url}`">
+        {{ news.frontmatter.pageTitle }} | {{ news.frontmatter.pageSubTitle }}
+      </a>
     </li>
   </ul>
 </template>
