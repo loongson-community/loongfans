@@ -69,15 +69,15 @@ export default {
   downloadTypeSdk: "Kit de développement logiciel (SDK)",
 
   // events/EventAnnouncement*.vue
-  // zhBiweekly names the Chinese rendition; enBiweekly names the English/Russian rendition.
+  // zhBiweekly names the Chinese session; enBiweekly names the international session.
   zhBiweeklyAnnouncementHeader:
-    "Annonce de la {number}e réunion « LoongArch Biweekly »",
+    "Annonce de la {number}e réunion « LoongArch Biweekly (session chinoise) »",
   zhBiweeklyArchiveHeader:
-    "Archives de la {number}e réunion « LoongArch Biweekly »",
+    "Archives de la {number}e réunion « LoongArch Biweekly (session chinoise) »",
   enBiweeklyAnnouncementHeader:
-    "Annonce de la {number}e session « LoongArch Biweekly (EN/RU) »",
+    "Annonce de la {number}e session « LoongArch Biweekly (session internationale) »",
   enBiweeklyArchiveHeader:
-    "Archives de la {number}e session « LoongArch Biweekly (EN/RU) »",
+    "Archives de la {number}e session « LoongArch Biweekly (session internationale) »",
   biweeklyTime: "Horaire : {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: " (la réunion devrait durer une heure)",
   enBiweeklyExpectedDurationNotice: " (la session devrait durer une heure)",
