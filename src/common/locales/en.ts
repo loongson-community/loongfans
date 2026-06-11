@@ -90,7 +90,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `The ${n} "LoongArch Biweekly (Chinese session)" Meeting Announcement`
+    return `The ${formatEnOrdinal(n)} "LoongArch Biweekly (Chinese session)" Meeting Announcement`
   },
   zhBiweeklyArchiveHeader: ({
     named,
@@ -98,7 +98,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `The ${n} "LoongArch Biweekly (Chinese session)" Meeting Archives`
+    return `The ${formatEnOrdinal(n)} "LoongArch Biweekly (Chinese session)" Meeting Archives`
   },
   enBiweeklyAnnouncementHeader: ({
     named,
@@ -106,7 +106,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `The ${n} "LoongArch Biweekly (Int'l session)" Meeting Announcement`
+    return `The ${formatEnOrdinal(n)} "LoongArch Biweekly (Int'l session)" Meeting Announcement`
   },
   enBiweeklyArchiveHeader: ({
     named,
@@ -114,7 +114,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `The ${n} "LoongArch Biweekly (Int'l session)" Meeting Archives`
+    return `The ${formatEnOrdinal(n)} "LoongArch Biweekly (Int'l session)" Meeting Archives`
   },
   biweeklyTime: "Meeting Time: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
