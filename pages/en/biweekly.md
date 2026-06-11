@@ -21,7 +21,7 @@ across language backgrounds. There are two regular sessions:
   (UTC) on Zoom. Shared materials are prepared with Google Slides, and
   replay resources are archived on Bilibili, YouTube, or VK when available.
 
-The agenda for both renditions focuses on upstream development, Linux
+The agenda for both sessions focuses on upstream development, Linux
 distributions and other operating system projects, community updates,
 contributor discussions, and Q&A.
 
