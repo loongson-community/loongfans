@@ -145,6 +145,7 @@ export default {
   vkVideoArchiveLink: "VK 视频回放",
   eventResourceUnavailable: "{label}（暂未提供）",
   eventResourceWip: "{label}（制作中）",
+  intlBiweeklyTimezoneSystem: "系统时区",
   intlBiweeklyTimezoneShanghai: "中国",
   intlBiweeklyTimezoneMoscow: "莫斯科",
   intlBiweeklyTimezoneUSEastern: "美国东部",

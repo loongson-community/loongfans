@@ -157,6 +157,7 @@ export default {
   vkVideoArchiveLink: "Запись VK Video",
   eventResourceUnavailable: "{label} (будет объявлено позже)",
   eventResourceWip: "{label} (в работе)",
+  intlBiweeklyTimezoneSystem: "Системная временная зона",
   intlBiweeklyTimezoneShanghai: "Китай",
   intlBiweeklyTimezoneMoscow: "Москва",
   intlBiweeklyTimezoneUSEastern: "Восточное время США",

@@ -150,6 +150,7 @@ export default {
   vkVideoArchiveLink: "Rediffusion VK Video",
   eventResourceUnavailable: "{label} (à annoncer)",
   eventResourceWip: "{label} (en cours)",
+  intlBiweeklyTimezoneSystem: "Fuseau horaire système",
   intlBiweeklyTimezoneShanghai: "Chine",
   intlBiweeklyTimezoneMoscow: "Moscou",
   intlBiweeklyTimezoneUSEastern: "Est des États-Unis",
