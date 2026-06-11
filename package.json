@@ -8,7 +8,7 @@
     "eslint": "eslint",
     "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",
-    "lintSpell": "cspell .",
+    "lintSpell": "cspell lint --no-progress .",
     "prepare": "husky",
     "prettier": "prettier -w .",
     "preview": "./scripts/pnpm-exec-wrapper.sh vitepress preview",
