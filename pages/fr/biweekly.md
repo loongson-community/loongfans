@@ -39,11 +39,11 @@ préparés avec Google Slides et les rediffusions sont archivées sur Bilibili, 
 VK.
 
 :::tip
-Le LoongArch Biweekly (session chinoise) utilise actuellement le chinois standard
-(putonghua / mandarin) comme langue par défaut, mais nous accueillons volontiers les
-utilisateurs d'autres langues – nous sommes nombreux à parler également anglais (certains
-même russe, et d'autres langues encore). Si vous souhaitez organiser une session dans
-une autre langue, n'hésitez pas à nous contacter !
+La langue de travail de la session chinoise est le chinois standard (putonghua /
+mandarin) ; pour la session internationale, l'anglais est utilisé par défaut,
+le russe étant également disponible. Tous les horizons linguistiques sont les
+bienvenus aux deux sessions -- de nombreux participants parlent plusieurs langues.
+Si vous souhaitez présenter dans une autre langue, n'hésitez pas à nous contacter !
 :::
 
 <EventAnnouncementContainer />
