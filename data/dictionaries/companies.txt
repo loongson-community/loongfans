@@ -23,3 +23,5 @@ Taobao
 Vivante
 vkvideo
 Xunlong
+Phoronix
+Sashiko

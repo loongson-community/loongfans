@@ -2,6 +2,7 @@ AREWELOONGYET
 AWLY
 lasx
 LASX
+LATX
 lbt
 LBT
 loongarch

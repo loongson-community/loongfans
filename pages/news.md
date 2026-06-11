@@ -2,8 +2,8 @@
 layout: page
 # 返回首页
 returnLink: /
-pageTitle: 新闻
-pageSubTitle: 新闻页的副标题
+pageTitle: 新闻资讯
+pageSubTitle: 龙芯与龙架构社区资讯
 ---
 
 <script setup lang="ts">
