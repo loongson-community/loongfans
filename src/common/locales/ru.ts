@@ -59,9 +59,9 @@ export default {
   deviceTabDownload: "Загрузки",
   deviceDownloadVersion: "Версия: {version}",
   deviceDownloadChangelog: "Журнал изменений",
-  deviceDownloadDebugVersion: " (Debug)",
+  deviceDownloadDebugVersion: " (отладочная версия)",
   deviceDownloadButton: "Скачать",
-  downloadTypeUefiFirmware: "UEFI Firmware",
+  downloadTypeUefiFirmware: "Прошивка UEFI",
   downloadTypeDatasheet: "Технические характеристики",
   downloadTypeReferenceManual: "Справочное руководство",
   downloadTypeUserManual: "Руководство пользователя",
@@ -113,17 +113,17 @@ export default {
   eventCalendarEvent: "{title} № {number}",
 
   // sdk/Detail.vue
-  gnuInstall: "GNU Toolchain",
-  llvmInstall: "LLVM Toolchain",
+  gnuInstall: "Набор инструментов GNU",
+  llvmInstall: "Набор инструментов LLVM",
   rustInstall: "Rust",
   nodejsInstall: "Node.js",
   golangInstall: "Go",
   pythonInstall: "Python",
   dotnetInstall: ".NET",
   javaInstall: "Java",
-  kernelInstall: "Linux Kernel",
+  kernelInstall: "Ядро Linux",
   dockerInstall: "Docker",
-  cirunnerInstall: "CI Runners",
+  cirunnerInstall: "CI-раннеры",
 
   // Utilities
   ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
