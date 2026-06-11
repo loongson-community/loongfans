@@ -2,8 +2,8 @@
 layout: page
 # 返回首页
 returnLink: /
-pageTitle: News
-pageSubTitle: Subtitle of news
+pageTitle: Community News
+pageSubTitle: News and Events Happening Around Our Community
 ---
 
 <script setup lang="ts">

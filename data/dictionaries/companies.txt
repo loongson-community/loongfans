@@ -21,3 +21,5 @@ Realtek
 Taobao
 Vivante
 Xunlong
+Phoronix
+Sashiko
