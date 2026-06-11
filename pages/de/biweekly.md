@@ -24,26 +24,26 @@ Upstream-Projekten, Linux-Distributionen (und andere Betriebssystemprojekte) sow
 Community-Angelegenheiten. Im Anschluss an die Vorträge finden in der Regel Diskussionen
 unter den Referenten sowie Frage-und-Antwort-Runden statt.
 
-Der „LoongArch Biweekly" findet jeden zweiten Sonntag um 14:00 Uhr (UTC+8) auf Tencent
-statt, wobei staatliche Feiertage auf dem chinesischen Festland mit erheblichen
-voraussichtlichen Reisen (z. B. zum Frühlingsfest und zum Nationalfeiertag) sowie
-Ausgleichstage ausgenommen sind.
+Die „LoongArch Biweekly (chinesische Sitzung)“ findet jeden zweiten Sonntag um
+14:00 Uhr (UTC+8) auf Tencent statt, wobei staatliche Feiertage auf dem chinesischen
+Festland mit erheblichen voraussichtlichen Reisen (z. B. zum Frühlingsfest und zum
+Nationalfeiertag) sowie Ausgleichstage ausgenommen sind.
 
 Die Veranstaltung wird gleichzeitig auf der Bilibili-Seite
 [@Loongson-Fan-Community](https://space.bilibili.com/70360929) live übertragen.
 Von Zeit zu Zeit finden auch persönliche Treffen statt.
 
-Es gibt auch eine internationale Sitzung für Englisch- und Russischsprachige
-(LoongArch Biweekly EN/RU), die jeden zweiten Mittwoch um 21:00 Uhr (UTC+8)
-über Zoom stattfindet. Die Materialien werden mit Google Slides vorbereitet und
-die Aufzeichnungen werden auf Bilibili, YouTube oder VK archiviert.
+Es gibt auch die „LoongArch Biweekly (internationale Sitzung)“ für Englisch- und
+Russischsprachige, die jeden zweiten Mittwoch um 21:00 Uhr (UTC+8) über Zoom
+stattfindet. Die Materialien werden mit Google Slides vorbereitet und die Aufzeichnungen
+werden auf Bilibili, YouTube oder VK archiviert.
 
 :::tip
-Der „LoongArch Biweekly" erscheint derzeit auf Hochchinesisch (Putonghua / Mandarin)
-als Standardsprache, aber wir heißen auch Nutzer anderer Sprachen herzlich willkommen –
-viele von uns sprechen auch Englisch (manche sogar Russisch und noch weitere Sprachen).
-Wenn Sie eine Sitzung in einer anderen Sprache abhalten möchten, können Sie sich gerne
-bei uns melden!
+Die „LoongArch Biweekly (chinesische Sitzung)“ verwendet derzeit Hochchinesisch
+(Putonghua / Mandarin) als Standardsprache, aber wir heißen auch Nutzer anderer Sprachen
+herzlich willkommen – viele von uns sprechen auch Englisch (manche sogar Russisch und
+noch weitere Sprachen). Wenn Sie eine Sitzung in einer anderen Sprache abhalten möchten,
+können Sie sich gerne bei uns melden!
 :::
 
 <EventAnnouncementContainer />
