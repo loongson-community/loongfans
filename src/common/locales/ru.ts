@@ -70,14 +70,38 @@ export default {
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; enBiweekly names the international session.
-  zhBiweeklyAnnouncementHeader:
-    "Анонс {number}-й встречи «LoongArch Biweekly (китайская сессия)»",
-  zhBiweeklyArchiveHeader:
-    "Архив {number}-й встречи «LoongArch Biweekly (китайская сессия)»",
-  enBiweeklyAnnouncementHeader:
-    "Анонс {number}-й встречи «LoongArch Biweekly (международная сессия)»",
-  enBiweeklyArchiveHeader:
-    "Архив {number}-й встречи «LoongArch Biweekly (международная сессия)»",
+  zhBiweeklyAnnouncementHeader: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `Анонс ${n}-й встречи «LoongArch Biweekly (китайская сессия)»`
+  },
+  zhBiweeklyArchiveHeader: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `Архив ${n}-й встречи «LoongArch Biweekly (китайская сессия)»`
+  },
+  enBiweeklyAnnouncementHeader: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `Анонс ${n}-й встречи «LoongArch Biweekly (международная сессия)»`
+  },
+  enBiweeklyArchiveHeader: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `Архив ${n}-й встречи «LoongArch Biweekly (международная сессия)»`
+  },
   biweeklyTime: "Время встречи: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice:
     " (встреча, как ожидается, продлится один час)",

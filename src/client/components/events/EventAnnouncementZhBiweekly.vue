@@ -3,7 +3,7 @@
     <h3 name="biweekly-announcement">
       {{
         t("zhBiweeklyAnnouncementHeader", {
-          number: t("ordinalNumber", { n: event.issueNumber }),
+          n: event.issueNumber,
         })
       }}
     </h3>
@@ -57,7 +57,7 @@
     <h3 name="biweekly-archive">
       {{
         t("zhBiweeklyArchiveHeader", {
-          number: t("ordinalNumber", { n: event.issueNumber }),
+          n: event.issueNumber,
         })
       }}
     </h3>

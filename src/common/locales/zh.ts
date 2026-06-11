@@ -69,10 +69,38 @@ export default {
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; enBiweekly names the international session.
-  zhBiweeklyAnnouncementHeader: "第 {number} 次“龙架构双周会”会议公告",
-  zhBiweeklyArchiveHeader: "第 {number} 次“龙架构双周会”会议回看",
-  enBiweeklyAnnouncementHeader: "第 {number} 次“国际龙架构双周会”活动公告",
-  enBiweeklyArchiveHeader: "第 {number} 次“国际龙架构双周会”活动归档",
+  zhBiweeklyAnnouncementHeader: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `第 ${n} 次“龙架构双周会”会议公告`
+  },
+  zhBiweeklyArchiveHeader: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `第 ${n} 次“龙架构双周会”会议回看`
+  },
+  enBiweeklyAnnouncementHeader: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `第 ${n} 次“国际龙架构双周会”活动公告`
+  },
+  enBiweeklyArchiveHeader: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `第 ${n} 次“国际龙架构双周会”活动归档`
+  },
   biweeklyTime: "会议时间：{time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: "（会议预计一小时内结束）",
   enBiweeklyExpectedDurationNotice: "（活动预计一小时内结束）",
