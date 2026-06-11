@@ -39,11 +39,11 @@ stattfindet. Die Materialien werden mit Google Slides vorbereitet und die Aufzei
 werden auf Bilibili, YouTube oder VK archiviert.
 
 :::tip
-Die „LoongArch Biweekly (chinesische Sitzung)“ verwendet derzeit Hochchinesisch
-(Putonghua / Mandarin) als Standardsprache, aber wir heißen auch Nutzer anderer Sprachen
-herzlich willkommen – viele von uns sprechen auch Englisch (manche sogar Russisch und
-noch weitere Sprachen). Wenn Sie eine Sitzung in einer anderen Sprache abhalten möchten,
-können Sie sich gerne bei uns melden!
+Die Arbeitssprache der chinesischen Sitzung ist Hochchinesisch (Putonghua / Mandarin);
+für die internationale Sitzung ist Englisch die Standardsprache, wobei auch Russisch
+verfügbar ist. Teilnehmer aller Sprachhintergründe sind in beiden Sitzungen
+willkommen -- viele Teilnehmer sprechen mehrere Sprachen. Wenn Sie in einer anderen
+Sprache vortragen möchten, kontaktieren Sie uns bitte!
 :::
 
 <EventAnnouncementContainer />
