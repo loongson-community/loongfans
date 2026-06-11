@@ -60,10 +60,7 @@ const allEventsForVCal = events.map((be) => {
     bar: be.isNext ? null : be.isFuture ? color : "theme-past",
     highlight: be.isNext ? color : null,
     popover: {
-      label: t("eventCalendarEvent", {
-        number: be.issueNumber,
-        title: be.title,
-      }),
+      label: be.titleKey ? t(be.titleKey, { n: be.issueNumber }) : be.rawTitle,
     },
   }
 })

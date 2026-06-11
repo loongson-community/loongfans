@@ -84,6 +84,22 @@ export default {
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; enBiweekly names the international session.
+  zhBiweeklyEventTitle: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `LoongArch Biweekly (Chinese session) #${n}`
+  },
+  enBiweeklyEventTitle: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `LoongArch Biweekly (Int'l session) #${n}`
+  },
   zhBiweeklyAnnouncementHeader: ({
     named,
   }: {
@@ -149,7 +165,6 @@ export default {
 
   // events/EventCalendar.vue
   today: "Today",
-  eventCalendarEvent: "{title} #{number}",
 
   // sdk/Detail.vue
   gnuInstall: "GNU Toolchain",

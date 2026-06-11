@@ -10,6 +10,11 @@ import type {
 
 export const eventKinds = ["zhBiweekly", "enBiweekly"] as const
 
+const l10nTitleKeys: Record<EventKind, string> = {
+  zhBiweekly: "zhBiweeklyEventTitle",
+  enBiweekly: "enBiweeklyEventTitle",
+}
+
 export type EventKind = BiweeklyEventKind
 
 type ExpandedICSEvent = {
@@ -24,7 +29,7 @@ export type EventItem = {
   isNext: boolean
   rawTitle: string
   start: Date
-  title: string
+  titleKey: string
 }
 
 export type EventsResult = {
@@ -34,7 +39,7 @@ export type EventsResult = {
 
 type TaggedEventTitle = {
   kind: EventKind
-  title: string
+  titleKey: string
 }
 
 function isEventKind(kind: string): kind is EventKind {
@@ -42,12 +47,14 @@ function isEventKind(kind: string): kind is EventKind {
 }
 
 function parseTaggedEventTitle(title: string): TaggedEventTitle | null {
-  const match = /^\[([A-Za-z][A-Za-z0-9_-]*)\]\s*(.+)$/.exec(title)
+  const match = /^\[([A-Za-z][A-Za-z0-9_-]*)\]/.exec(title)
   if (!match) return null
 
-  const [, kind, strippedTitle] = match
-  if (!kind || !strippedTitle || !isEventKind(kind)) return null
-  return { kind, title: strippedTitle }
+  const [, kind] = match
+  if (!kind || !isEventKind(kind)) return null
+  // we need to localize the title according to the kind, and drop the iCalendar
+  // event title, because the title in the .ics file is just a freeform string.
+  return { kind, titleKey: l10nTitleKeys[kind] }
 }
 
 export function expandEventsFromICS(
@@ -94,7 +101,7 @@ export function expandEventsFromICS(
       isNext,
       rawTitle: event.title,
       start: event.start,
-      title: taggedTitle.title,
+      titleKey: taggedTitle.titleKey,
     })
   }
 

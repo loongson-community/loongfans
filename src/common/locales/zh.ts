@@ -75,6 +75,22 @@ export default {
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; enBiweekly names the international session.
+  zhBiweeklyEventTitle: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `龙架构双周会（第 ${formatZhOrdinal(n)} 次）`
+  },
+  enBiweeklyEventTitle: ({
+    named,
+  }: {
+    named: (name: string) => unknown
+  }): string => {
+    const n = named("n") as number
+    return `国际龙架构双周会（第 ${formatZhOrdinal(n)} 次）`
+  },
   zhBiweeklyAnnouncementHeader: ({
     named,
   }: {
@@ -137,7 +153,6 @@ export default {
 
   // events/EventCalendar.vue
   today: "今天",
-  eventCalendarEvent: "{title}（第 {number} 次）",
 
   // sdk/Detail.vue
   gnuInstall: "GNU 工具链",
