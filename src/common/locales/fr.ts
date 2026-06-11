@@ -19,6 +19,7 @@ export default {
   devGuides: "Guide du développeur",
   supportMaterials: "Documents d'accompagnement",
   contact: "Contact",
+  news: "Actualités",
   chipsData: "Base de données des puces",
   operatingSystems: "Systèmes d'exploitation",
   productSpecs: "Base de données des produits",
