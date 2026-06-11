@@ -83,7 +83,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Ankündigung des ${n}. Treffens „LoongArch Biweekly (chinesische Sitzung)“`
+    return `Ankündigung des ${formatDeOrdinal(n, "n", "gen")} Treffens „LoongArch Biweekly (chinesische Sitzung)“`
   },
   zhBiweeklyArchiveHeader: ({
     named,
@@ -91,7 +91,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Archiv des ${n}. Treffens „LoongArch Biweekly (chinesische Sitzung)“`
+    return `Archiv des ${formatDeOrdinal(n, "n", "gen")} Treffens „LoongArch Biweekly (chinesische Sitzung)“`
   },
   enBiweeklyAnnouncementHeader: ({
     named,
@@ -99,7 +99,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Ankündigung des ${n}. Treffens „LoongArch Biweekly (internationale Sitzung)“`
+    return `Ankündigung des ${formatDeOrdinal(n, "n", "gen")} Treffens „LoongArch Biweekly (internationale Sitzung)“`
   },
   enBiweeklyArchiveHeader: ({
     named,
@@ -107,7 +107,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `Archiv des ${n}. Treffens „LoongArch Biweekly (internationale Sitzung)“`
+    return `Archiv des ${formatDeOrdinal(n, "n", "gen")} Treffens „LoongArch Biweekly (internationale Sitzung)“`
   },
   biweeklyTime: "Termin: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice:
