@@ -26,7 +26,7 @@ import {
   getBiweeklyEvents,
   type EventItem,
 } from "@src/client/components/events/dataSource"
-import EnBiweeklyAnnouncement from "@src/client/components/events/EnBiweeklyAnnouncement.vue"
+import IntlBiweeklyAnnouncement from "@src/client/components/events/IntlBiweeklyAnnouncement.vue"
 import ZhBiweeklyAnnouncement from "@src/client/components/events/ZhBiweeklyAnnouncement.vue"
 import EventCalendar from "@src/client/components/events/EventCalendar.vue"
 import type { BiweeklyEventKind } from "@src/types/data"
@@ -36,7 +36,7 @@ const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
 
 const announcementComponents: Record<BiweeklyEventKind, Component> = {
   zhBiweekly: ZhBiweeklyAnnouncement,
-  intlBiweekly: EnBiweeklyAnnouncement,
+  intlBiweekly: IntlBiweeklyAnnouncement,
 }
 
 const thisEvent: Ref<EventItem[]> = ref([])
