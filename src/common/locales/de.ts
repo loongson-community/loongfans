@@ -129,14 +129,14 @@ export default {
   zhBiweeklyExpectedDurationNotice:
     " (das Meeting dauert voraussichtlich eine Stunde)",
   intlBiweeklyExpectedDurationNotice:
-    " (die Sitzung dauert voraussichtlich eine Stunde)",
+    " (das Meeting dauert voraussichtlich eine Stunde)",
   zhBiweeklyWemeetLink: "Meeting-Link",
   wemeetNumber: "Meeting-ID: {number}",
   biweeklySlideLink: "Biweekly-Folien",
   biweeklySlideLinkTBU: "Biweekly-Folien (werden noch hochgeladen)",
   biweeklyLiveLink: "Livestream-Link",
   intlBiweeklyParticipationNotice:
-    "Nehmen Sie an der Sitzung teil oder folgen Sie den geteilten Materialien:",
+    "Nehmen Sie an dem Meeting teil oder folgen Sie den geteilten Materialien:",
   zhBiweeklyNotice:
     "Die Biweekly-Folien können {cutoff-notice} bearbeitet werden. Wer im Biweekly sprechen oder Fragen stellen möchte, sollte die Bearbeitung bis dahin abschließen (falls Sie Bearbeitungsrechte benötigen, beantragen Sie diese bitte über Kingsoft Docs).",
   zhBiweeklyCutoffNotice: "bis zum Beginn des Meetings",

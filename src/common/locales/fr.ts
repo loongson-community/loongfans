@@ -128,14 +128,14 @@ export default {
   },
   biweeklyTime: "Horaire : {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: " (la réunion devrait durer une heure)",
-  intlBiweeklyExpectedDurationNotice: " (la session devrait durer une heure)",
+  intlBiweeklyExpectedDurationNotice: " (la réunion devrait durer une heure)",
   zhBiweeklyWemeetLink: "Lien de la réunion",
   wemeetNumber: "ID de réunion : {number}",
   biweeklySlideLink: "Diapositives du Biweekly",
   biweeklySlideLinkTBU: "Diapositives du Biweekly (à téléverser)",
   biweeklyLiveLink: "Lien du direct",
   intlBiweeklyParticipationNotice:
-    "Participez à la session ou suivez-la avec les documents partagés :",
+    "Participez à la réunion ou suivez-la avec les documents partagés :",
   zhBiweeklyNotice:
     "Les diapositives du Biweekly peuvent être modifiées {cutoff-notice}. Les personnes qui souhaitent intervenir ou poser des questions pendant le Biweekly doivent terminer leurs modifications avant cette échéance (si vous avez besoin de droits de modification, veuillez les demander via Kingsoft Docs).",
   zhBiweeklyCutoffNotice: "jusqu'au début de la réunion",

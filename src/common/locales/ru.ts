@@ -135,14 +135,14 @@ export default {
   zhBiweeklyExpectedDurationNotice:
     " (встреча, как ожидается, продлится один час)",
   intlBiweeklyExpectedDurationNotice:
-    " (сессия, как ожидается, продлится один час)",
+    " (встреча, как ожидается, продлится один час)",
   zhBiweeklyWemeetLink: "Ссылка на встречу",
   wemeetNumber: "ID встречи: {number}",
   biweeklySlideLink: "Слайды Biweekly",
   biweeklySlideLinkTBU: "Слайды Biweekly (будут загружены позже)",
   biweeklyLiveLink: "Ссылка на трансляцию",
   intlBiweeklyParticipationNotice:
-    "Присоединяйтесь к сессии или следите за ней по общим материалам:",
+    "Присоединяйтесь к встрече или следите за ней по общим материалам:",
   zhBiweeklyNotice:
     "Слайды Biweekly можно редактировать {cutoff-notice}. Тем, кто хочет выступить или задать вопросы на Biweekly, следует завершить правки до этого времени (если вам нужны права на редактирование, запросите их через Kingsoft Docs).",
   zhBiweeklyCutoffNotice: "до начала встречи",

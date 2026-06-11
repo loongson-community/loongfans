@@ -134,14 +134,14 @@ export default {
   },
   biweeklyTime: "Meeting Time: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
-  intlBiweeklyExpectedDurationNotice: " (session expected to last an hour)",
+  intlBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
   zhBiweeklyWemeetLink: "Meeting Link",
   wemeetNumber: "Meeting ID: {number}",
   biweeklySlideLink: "Biweekly Slides",
   biweeklySlideLinkTBU: "Biweekly Slides (to be uploaded)",
   biweeklyLiveLink: "Livestream Link",
   intlBiweeklyParticipationNotice:
-    "Join the session or follow along with the shared materials:",
+    "Join the meeting or follow along with the shared materials:",
   zhBiweeklyNotice:
     "Biweekly slides may be edited {cutoff-notice}. Those who wish to speak or ask questions at the biweekly should finish editing before this time (if you need editing permissions, please apply via Kingsoft Docs).",
   zhBiweeklyCutoffNotice: "until the beginning of the meeting",
