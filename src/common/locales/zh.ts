@@ -81,7 +81,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `第 ${n} 次“龙架构双周会”会议公告`
+    return `第 ${formatZhOrdinal(n)} 次“龙架构双周会”会议公告`
   },
   zhBiweeklyArchiveHeader: ({
     named,
@@ -89,7 +89,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `第 ${n} 次“龙架构双周会”会议回看`
+    return `第 ${formatZhOrdinal(n)} 次“龙架构双周会”会议回看`
   },
   enBiweeklyAnnouncementHeader: ({
     named,
@@ -97,7 +97,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `第 ${n} 次“国际龙架构双周会”活动公告`
+    return `第 ${formatZhOrdinal(n)} 次“国际龙架构双周会”活动公告`
   },
   enBiweeklyArchiveHeader: ({
     named,
@@ -105,7 +105,7 @@ export default {
     named: (name: string) => unknown
   }): string => {
     const n = named("n") as number
-    return `第 ${n} 次“国际龙架构双周会”活动归档`
+    return `第 ${formatZhOrdinal(n)} 次“国际龙架构双周会”活动归档`
   },
   biweeklyTime: "会议时间：{time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: "（会议预计一小时内结束）",
