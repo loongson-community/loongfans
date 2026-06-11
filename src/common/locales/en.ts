@@ -4,6 +4,19 @@ import os from "./en/os"
 
 const pluralRules = new Intl.PluralRules("en", { type: "ordinal" })
 
+function formatEnOrdinal(n: number): string {
+  switch (pluralRules.select(n)) {
+    case "one":
+      return n + "st"
+    case "two":
+      return n + "nd"
+    case "few":
+      return n + "rd"
+    default:
+      return n + "th"
+  }
+}
+
 export default {
   comma: ", ",
   // Index.vue
@@ -155,16 +168,7 @@ export default {
   ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
     const n = named("n") as number
     if (n === undefined || n === null) return ""
-    switch (pluralRules.select(n)) {
-      case "one":
-        return n + "st"
-      case "two":
-        return n + "nd" // cspell:ignore nd
-      case "few":
-        return n + "rd"
-      default:
-        return n + "th"
-    }
+    return formatEnOrdinal(n)
   },
 
   chips,
