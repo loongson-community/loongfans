@@ -148,7 +148,6 @@ export default {
   zhBiweeklyCutoffNotice: "до начала встречи",
   biweeklyArchivalNotice:
     "Встреча завершена, но вы всё ещё можете просмотреть материалы мероприятия:",
-  intlBiweeklyArchivalNotice: "Сессия завершена. Материалы этой сессии:",
   bilibiliLiveArchiveLink: "Запись трансляции Bilibili",
   googleSlidesLink: "Google Slides",
   zoomMeetingLink: "Встреча Zoom",

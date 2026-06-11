@@ -136,7 +136,6 @@ export default {
     "双周会幻灯片将在{cutoff-notice}，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。",
   zhBiweeklyCutoffNotice: "会前停止收集",
   biweeklyArchivalNotice: "本次会议已经结束，您仍可查看本次会议的相关资源：",
-  intlBiweeklyArchivalNotice: "本场活动已经结束，您仍可查看相关资源：",
   bilibiliLiveArchiveLink: "Bilibili 直播回看",
   googleSlidesLink: "Google Slides",
   zoomMeetingLink: "Zoom 会议",

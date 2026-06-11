@@ -43,7 +43,7 @@
         })
       }}
     </p>
-    <p>{{ t("intlBiweeklyArchivalNotice") }}</p>
+    <p>{{ t("biweeklyArchivalNotice") }}</p>
     <EventResourceList :resources="archiveResources" :labels="archiveLabels" />
   </div>
 </template>

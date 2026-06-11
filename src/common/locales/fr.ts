@@ -141,8 +141,6 @@ export default {
   zhBiweeklyCutoffNotice: "jusqu'au début de la réunion",
   biweeklyArchivalNotice:
     "La réunion est terminée, mais vous pouvez toujours consulter les ressources de l'événement :",
-  intlBiweeklyArchivalNotice:
-    "La session est terminée. Ressources de cette session :",
   bilibiliLiveArchiveLink: "Rediffusion Bilibili",
   googleSlidesLink: "Google Slides",
   zoomMeetingLink: "Réunion Zoom",
