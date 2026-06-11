@@ -2,6 +2,14 @@ import chips from "./fr/chips"
 import help from "./fr/help"
 import os from "./fr/os"
 
+function formatFrOrdinal(n: number, gender?: string): string {
+  // French ordinals: 1er/1re for n=1 (m/f), otherwise n + "e"
+  if (n === 1) {
+    return gender === "m" ? "1er" : "1re"
+  }
+  return n + "e"
+}
+
 export default {
   comma: ", ",
   // Index.vue
@@ -153,9 +161,8 @@ export default {
   // Utilities
   ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
     const n = named("n") as number
-    // similar to Chinese the French language does not require a special morphology for ordinal numbers
     if (n === undefined || n === null) return ""
-    return n.toString()
+    return formatFrOrdinal(n)
   },
 
   chips,
