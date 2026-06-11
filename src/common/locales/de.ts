@@ -2,6 +2,14 @@ import chips from "./de/chips"
 import help from "./de/help"
 import os from "./de/os"
 
+function formatDeOrdinal(n: number, gender?: string, gcase?: string): string {
+  // German ordinals are formed by appending a period to the number (e.g. "3.")
+  // gender and gcase are accepted per the locale API contract but ignored for DE
+  void gender
+  void gcase
+  return n + "."
+}
+
 export default {
   comma: ", ",
   // Index.vue
@@ -154,9 +162,8 @@ export default {
   // Utilities
   ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
     const n = named("n") as number
-    // similar to Chinese the German language does not require a special morphology for ordinal numbers
     if (n === undefined || n === null) return ""
-    return n.toString()
+    return formatDeOrdinal(n)
   },
 
   chips,
