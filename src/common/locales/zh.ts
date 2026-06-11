@@ -123,7 +123,7 @@ export default {
     const n = named("n") as number
     return `第 ${formatZhOrdinal(n)} 次“国际龙架构双周会”活动归档`
   },
-  biweeklyTime: "会议时间：{time}{expectedDurationNotice}",
+  biweeklyTime: "会议时间：",
   zhBiweeklyExpectedDurationNotice: "（会议预计一小时内结束）",
   intlBiweeklyExpectedDurationNotice: "（活动预计一小时内结束）",
   zhBiweeklyWemeetLink: "会议链接",

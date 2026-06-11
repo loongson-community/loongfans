@@ -8,14 +8,7 @@
       }}
     </h3>
 
-    <p>
-      {{
-        t("biweeklyTime", {
-          time: d(event.start, "long"),
-          expectedDurationNotice: t("intlBiweeklyExpectedDurationNotice"),
-        })
-      }}
-    </p>
+    <p>{{ t("biweeklyTime") }}{{ t("intlBiweeklyExpectedDurationNotice") }}</p>
     <ul>
       <li v-for="row in timezoneRows" :key="row.timeZone">
         <strong>{{ row.label }}</strong
@@ -36,13 +29,15 @@
     </h3>
 
     <p>
-      {{
-        t("biweeklyTime", {
-          time: d(event.start, "long"),
-          expectedDurationNotice: "",
-        })
-      }}
+      {{ t("biweeklyTime") }}
     </p>
+    <ul>
+      <li v-for="row in timezoneRows" :key="row.timeZone">
+        <strong>{{ row.label }}</strong
+        >: {{ row.time }}
+      </li>
+    </ul>
+
     <p>{{ t("biweeklyArchivalNotice") }}</p>
     <EventResourceList :resources="archiveResources" :labels="archiveLabels" />
   </div>
@@ -64,7 +59,7 @@ const props = defineProps<{
   event: EventItem
 }>()
 
-const { d, locale, t } = useI18n()
+const { locale, t } = useI18n()
 
 const currentResources = getBiweeklyCurrentResources("intlBiweekly")
 const archiveResources = computed(() =>

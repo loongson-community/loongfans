@@ -125,7 +125,7 @@ export default {
     const n = named("n") as number
     return `Archiv des ${formatDeOrdinal(n, "n", "gen")} Treffens „LoongArch Biweekly (internationale Sitzung)“`
   },
-  biweeklyTime: "Termin: {time}{expectedDurationNotice}",
+  biweeklyTime: "Termin: ",
   zhBiweeklyExpectedDurationNotice:
     " (das Meeting dauert voraussichtlich eine Stunde)",
   intlBiweeklyExpectedDurationNotice:

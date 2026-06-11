@@ -131,7 +131,7 @@ export default {
     const n = named("n") as number
     return `Архив ${formatRuOrdinal(n, "f", "gen")} встречи «LoongArch Biweekly (международная сессия)»`
   },
-  biweeklyTime: "Время встречи: {time}{expectedDurationNotice}",
+  biweeklyTime: "Время встречи: ",
   zhBiweeklyExpectedDurationNotice:
     " (встреча, как ожидается, продлится один час)",
   intlBiweeklyExpectedDurationNotice:

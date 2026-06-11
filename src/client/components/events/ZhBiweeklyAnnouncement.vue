@@ -9,12 +9,8 @@
     </h3>
 
     <p>
-      {{
-        t("biweeklyTime", {
-          time: d(event.start, "long"),
-          expectedDurationNotice: t("zhBiweeklyExpectedDurationNotice"),
-        })
-      }}
+      {{ t("biweeklyTime") }}{{ d(event.start, "long")
+      }}{{ t("zhBiweeklyExpectedDurationNotice") }}
     </p>
     <p>
       <a
@@ -62,14 +58,7 @@
       }}
     </h3>
 
-    <p>
-      {{
-        t("biweeklyTime", {
-          time: d(event.start, "long"),
-          expectedDurationNotice: "",
-        })
-      }}
-    </p>
+    <p>{{ t("biweeklyTime") }} {{ d(event.start, "long") }}</p>
     <p>{{ t("biweeklyArchivalNotice") }}</p>
     <EventResourceList :resources="archiveResources" :labels="archiveLabels" />
   </div>

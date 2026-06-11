@@ -126,7 +126,7 @@ export default {
     const n = named("n") as number
     return `Archives de la ${formatFrOrdinal(n, "f")} réunion « LoongArch Biweekly (session internationale) »`
   },
-  biweeklyTime: "Horaire : {time}{expectedDurationNotice}",
+  biweeklyTime: "Horaire : ",
   zhBiweeklyExpectedDurationNotice: " (la réunion devrait durer une heure)",
   intlBiweeklyExpectedDurationNotice: " (la réunion devrait durer une heure)",
   zhBiweeklyWemeetLink: "Lien de la réunion",

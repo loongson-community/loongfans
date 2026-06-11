@@ -132,7 +132,7 @@ export default {
     const n = named("n") as number
     return `The ${formatEnOrdinal(n)} "LoongArch Biweekly (Int'l session)" Meeting Archives`
   },
-  biweeklyTime: "Meeting Time: {time}{expectedDurationNotice}",
+  biweeklyTime: "Meeting Time: ",
   zhBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
   intlBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
   zhBiweeklyWemeetLink: "Meeting Link",
