@@ -12,13 +12,13 @@ import EventAnnouncementContainer from "@src/client/components/events/EventAnnou
 LoongArch Biweekly is organized by Loongson hobbyists for community members
 across language backgrounds. There are two regular sessions:
 
-- The **LoongArch Biweekly (Chinese session)** meets every other Sunday at 2:00 PM
+- The **LoongArch Biweekly (Chinese session)** meets every other Sunday at 14:00
   (UTC+8) on Tencent Meeting, with a concurrent livestream on Bilibili
   [@Loongson Hobbyists](https://space.bilibili.com/70360929). Offline
   gatherings are sometimes arranged as well.
 
-- The **LoongArch Biweekly (Int'l session)** meets every other Wednesday at 9:00 PM
-  (UTC+8) on Zoom. Shared materials are prepared with Google Slides, and
+- The **LoongArch Biweekly (Int'l session)** meets every other Thursday at 13:00
+  (UTC) on Zoom. Shared materials are prepared with Google Slides, and
   replay resources are archived on Bilibili, YouTube, or VK when available.
 
 The agenda for both renditions focuses on upstream development, Linux
