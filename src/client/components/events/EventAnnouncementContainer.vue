@@ -46,7 +46,7 @@ const onEventSelected = (items: EventItem[]) => {
 }
 </script>
 
-<style scoped>
+<style>
 /* mimic the Tailwind "md" breakpoint */
 @media (width >= 48rem) {
   .announcement-container h3 {
