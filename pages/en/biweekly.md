@@ -12,12 +12,12 @@ import EventAnnouncementContainer from "@src/client/components/events/EventAnnou
 LoongArch Biweekly is organized by Loongson hobbyists for community members
 across language backgrounds. There are two regular sessions:
 
-- The **Mandarin Chinese rendition** meets every other Sunday at 2:00 PM
+- The **LoongArch Biweekly (Chinese session)** meets every other Sunday at 2:00 PM
   (UTC+8) on Tencent Meeting, with a concurrent livestream on Bilibili
   [@Loongson Hobbyists](https://space.bilibili.com/70360929). Offline
   gatherings are sometimes arranged as well.
 
-- The **English/Russian rendition** meets every other Wednesday at 9:00 PM
+- The **LoongArch Biweekly (Int'l session)** meets every other Wednesday at 9:00 PM
   (UTC+8) on Zoom. Shared materials are prepared with Google Slides, and
   replay resources are archived on Bilibili, YouTube, or VK when available.
 
@@ -26,10 +26,10 @@ distributions and other operating system projects, community updates,
 contributor discussions, and Q&A.
 
 :::tip
-The working language for the Mandarin rendition is Mandarin; for the EN/RU
-rendition it is English and Russian. All language backgrounds are welcome in
-both sessions — many attendees speak multiple languages. If you would like
-to present in another language, please reach out!
+The working language for the Chinese session is Mandarin; for the Int'l session
+it is English and Russian. All language backgrounds are welcome in both sessions
+— many attendees speak multiple languages. If you would like to present in
+another language, please reach out!
 :::
 
 <EventAnnouncementContainer />
