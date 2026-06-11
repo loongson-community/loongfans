@@ -2,8 +2,8 @@ events:
   zhBiweekly:
     links:
       - type: "wemeet"
-        number: "708-1775-8704"
-        link: "https://meeting.tencent.com/dm/PeZuYkLdGJ5y"
+        number: "459-1521-9606"
+        link: "https://meeting.tencent.com/dm/OBLERJGto0gL"
       - type: "bilibili"
         link: "https://live.bilibili.com/1754798211"
     archives:
@@ -120,6 +120,8 @@ events:
       38:
         - { type: "kdocs", id: "cdOek5ijwFga" }
         - { type: "bilibili", bvid: "BV1FuE46oEPQ" }
+      39:
+        - { type: "kdocs", id: "cvJpiMliXSbL" }
   enBiweekly:
     links:
       - type: "zoom"
