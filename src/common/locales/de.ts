@@ -70,46 +70,48 @@ export default {
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese rendition; enBiweekly names the English/Russian rendition.
   zhBiweeklyAnnouncementHeader:
-    'The {number} "LoongArch Biweekly" Meeting Announcement',
-  zhBiweeklyArchiveHeader: 'The {number} "LoongArch Biweekly" Meeting Archives',
+    "Ankündigung des {number}. „LoongArch Biweekly“-Meetings",
+  zhBiweeklyArchiveHeader: "Archiv des {number}. „LoongArch Biweekly“-Meetings",
   enBiweeklyAnnouncementHeader:
-    'The {number} "LoongArch Biweekly (EN/RU)" Session Announcement',
+    "Ankündigung der {number}. „LoongArch Biweekly (EN/RU)“-Sitzung",
   enBiweeklyArchiveHeader:
-    'The {number} "LoongArch Biweekly (EN/RU)" Session Archives',
-  biweeklyTime: "Meeting Time: {time}{expectedDurationNotice}",
-  zhBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
-  enBiweeklyExpectedDurationNotice: " (session expected to last an hour)",
-  zhBiweeklyWemeetLink: "Meeting Link",
-  wemeetNumber: "Meeting ID: {number}",
-  biweeklySlideLink: "Biweekly Slides",
-  biweeklySlideLinkTBU: "Biweekly Slides (to be uploaded)",
-  biweeklyLiveLink: "Livestream Link",
+    "Archiv der {number}. „LoongArch Biweekly (EN/RU)“-Sitzung",
+  biweeklyTime: "Termin: {time}{expectedDurationNotice}",
+  zhBiweeklyExpectedDurationNotice:
+    " (das Meeting dauert voraussichtlich eine Stunde)",
+  enBiweeklyExpectedDurationNotice:
+    " (die Sitzung dauert voraussichtlich eine Stunde)",
+  zhBiweeklyWemeetLink: "Meeting-Link",
+  wemeetNumber: "Meeting-ID: {number}",
+  biweeklySlideLink: "Biweekly-Folien",
+  biweeklySlideLinkTBU: "Biweekly-Folien (werden noch hochgeladen)",
+  biweeklyLiveLink: "Livestream-Link",
   enBiweeklyParticipationNotice:
-    "Join the session or follow along with the shared materials:",
+    "Nehmen Sie an der Sitzung teil oder folgen Sie den geteilten Materialien:",
   zhBiweeklyNotice:
-    "Biweekly slides may be edited {cutoff-notice}. Those who wish to speak or ask questions at the biweekly should finish editing before this time (if you need editing permissions, please apply via Kingsoft Docs).",
-  zhBiweeklyCutoffNotice: "until the beginning of the meeting",
+    "Die Biweekly-Folien können {cutoff-notice} bearbeitet werden. Wer im Biweekly sprechen oder Fragen stellen möchte, sollte die Bearbeitung bis dahin abschließen (falls Sie Bearbeitungsrechte benötigen, beantragen Sie diese bitte über Kingsoft Docs).",
+  zhBiweeklyCutoffNotice: "bis zum Beginn des Meetings",
   biweeklyArchivalNotice:
-    "The meeting has ended, but you can still view materials from the event:",
+    "Das Meeting ist beendet, aber Sie können weiterhin die Materialien der Veranstaltung ansehen:",
   enBiweeklyArchivalNotice:
-    "The session has ended. Resources from this session:",
-  bilibiliLiveArchiveLink: "Bilibili live replay",
+    "Die Sitzung ist beendet. Ressourcen zu dieser Sitzung:",
+  bilibiliLiveArchiveLink: "Bilibili-Livestream-Aufzeichnung",
   googleSlidesLink: "Google Slides",
-  zoomMeetingLink: "Zoom meeting",
-  zoomChatLink: "Zoom chat",
-  zoomChatArchiveLink: "Zoom chat archive",
-  youtubeArchiveLink: "YouTube replay",
-  vkVideoArchiveLink: "VK Video replay",
-  eventResourceUnavailable: "{label} (to be announced)",
-  eventResourceWip: "{label} (work in progress)",
+  zoomMeetingLink: "Zoom-Meeting",
+  zoomChatLink: "Zoom-Chat",
+  zoomChatArchiveLink: "Zoom-Chatarchiv",
+  youtubeArchiveLink: "YouTube-Aufzeichnung",
+  vkVideoArchiveLink: "VK-Videoaufzeichnung",
+  eventResourceUnavailable: "{label} (wird noch angekündigt)",
+  eventResourceWip: "{label} (in Arbeit)",
   enBiweeklyTimezoneShanghai: "China",
-  enBiweeklyTimezoneMoscow: "Moscow",
-  enBiweeklyTimezoneUSEastern: "US Eastern",
-  enBiweeklyTimezoneUSPacific: "US Pacific",
+  enBiweeklyTimezoneMoscow: "Moskau",
+  enBiweeklyTimezoneUSEastern: "US-Ostküste",
+  enBiweeklyTimezoneUSPacific: "US-Westküste",
 
   // events/EventCalendar.vue
   today: "Heute",
-  eventCalendarEvent: "{title} #{number}",
+  eventCalendarEvent: "{title} Nr. {number}",
 
   // sdk/Detail.vue
   gnuInstall: "GNU Toolchain",
