@@ -36,7 +36,7 @@ const biweeklyEvents = getBiweeklyEvents(eventsICS, now)
 
 const announcementComponents: Record<BiweeklyEventKind, Component> = {
   zhBiweekly: ZhBiweeklyAnnouncement,
-  enBiweekly: EnBiweeklyAnnouncement,
+  intlBiweekly: EnBiweeklyAnnouncement,
 }
 
 const thisEvent: Ref<EventItem[]> = ref([])

@@ -77,7 +77,7 @@ export default {
   downloadTypeSdk: "Kit de développement logiciel (SDK)",
 
   // events/EventAnnouncement*.vue
-  // zhBiweekly names the Chinese session; enBiweekly names the international session.
+  // zhBiweekly names the Chinese session; intlBiweekly names the international session.
   zhBiweeklyEventTitle: ({
     named,
   }: {
@@ -86,7 +86,7 @@ export default {
     const n = named("n") as number
     return `LoongArch Biweekly (session chinoise) #${n}`
   },
-  enBiweeklyEventTitle: ({
+  intlBiweeklyEventTitle: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -110,7 +110,7 @@ export default {
     const n = named("n") as number
     return `Archives de la ${formatFrOrdinal(n, "f")} réunion « LoongArch Biweekly (session chinoise) »`
   },
-  enBiweeklyAnnouncementHeader: ({
+  intlBiweeklyAnnouncementHeader: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -118,7 +118,7 @@ export default {
     const n = named("n") as number
     return `Annonce de la ${formatFrOrdinal(n, "f")} réunion « LoongArch Biweekly (session internationale) »`
   },
-  enBiweeklyArchiveHeader: ({
+  intlBiweeklyArchiveHeader: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -128,20 +128,20 @@ export default {
   },
   biweeklyTime: "Horaire : {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: " (la réunion devrait durer une heure)",
-  enBiweeklyExpectedDurationNotice: " (la session devrait durer une heure)",
+  intlBiweeklyExpectedDurationNotice: " (la session devrait durer une heure)",
   zhBiweeklyWemeetLink: "Lien de la réunion",
   wemeetNumber: "ID de réunion : {number}",
   biweeklySlideLink: "Diapositives du Biweekly",
   biweeklySlideLinkTBU: "Diapositives du Biweekly (à téléverser)",
   biweeklyLiveLink: "Lien du direct",
-  enBiweeklyParticipationNotice:
+  intlBiweeklyParticipationNotice:
     "Participez à la session ou suivez-la avec les documents partagés :",
   zhBiweeklyNotice:
     "Les diapositives du Biweekly peuvent être modifiées {cutoff-notice}. Les personnes qui souhaitent intervenir ou poser des questions pendant le Biweekly doivent terminer leurs modifications avant cette échéance (si vous avez besoin de droits de modification, veuillez les demander via Kingsoft Docs).",
   zhBiweeklyCutoffNotice: "jusqu'au début de la réunion",
   biweeklyArchivalNotice:
     "La réunion est terminée, mais vous pouvez toujours consulter les ressources de l'événement :",
-  enBiweeklyArchivalNotice:
+  intlBiweeklyArchivalNotice:
     "La session est terminée. Ressources de cette session :",
   bilibiliLiveArchiveLink: "Rediffusion Bilibili",
   googleSlidesLink: "Google Slides",
@@ -152,10 +152,10 @@ export default {
   vkVideoArchiveLink: "Rediffusion VK Video",
   eventResourceUnavailable: "{label} (à annoncer)",
   eventResourceWip: "{label} (en cours)",
-  enBiweeklyTimezoneShanghai: "Chine",
-  enBiweeklyTimezoneMoscow: "Moscou",
-  enBiweeklyTimezoneUSEastern: "Est des États-Unis",
-  enBiweeklyTimezoneUSPacific: "Pacifique des États-Unis",
+  intlBiweeklyTimezoneShanghai: "Chine",
+  intlBiweeklyTimezoneMoscow: "Moscou",
+  intlBiweeklyTimezoneUSEastern: "Est des États-Unis",
+  intlBiweeklyTimezoneUSPacific: "Pacifique des États-Unis",
 
   // events/EventCalendar.vue
   today: "Aujourd'hui",

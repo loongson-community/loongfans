@@ -122,7 +122,7 @@ events:
         - { type: "bilibili", bvid: "BV1FuE46oEPQ" }
       39:
         - { type: "kdocs", id: "cvJpiMliXSbL" }
-  enBiweekly:
+  intlBiweekly:
     links:
       - type: "zoom"
         link: "https://us05web.zoom.us/j/87414039241?pwd=SjizKNRapsn1P271C3edPjVrCB62lO.1"

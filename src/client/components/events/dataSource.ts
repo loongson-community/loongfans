@@ -8,11 +8,11 @@ import type {
   BiweeklyResourceType,
 } from "@src/types/data"
 
-export const eventKinds = ["zhBiweekly", "enBiweekly"] as const
+export const eventKinds = ["zhBiweekly", "intlBiweekly"] as const
 
 const l10nTitleKeys: Record<EventKind, string> = {
   zhBiweekly: "zhBiweeklyEventTitle",
-  enBiweekly: "enBiweeklyEventTitle",
+  intlBiweekly: "intlBiweeklyEventTitle",
 }
 
 export type EventKind = BiweeklyEventKind

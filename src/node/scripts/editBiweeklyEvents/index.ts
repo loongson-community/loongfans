@@ -8,7 +8,7 @@ import type { BiweeklyEventKind, BiweeklyResourceType } from "@src/types/data"
 const biweeklyLinkDataPath = "./data/events/biweekly.yml"
 const supportedEventKinds = new Set<BiweeklyEventKind>([
   "zhBiweekly",
-  "enBiweekly",
+  "intlBiweekly",
 ])
 
 const asyncCallGit = (args: string[]) => {

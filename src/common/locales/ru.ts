@@ -82,7 +82,7 @@ export default {
   downloadTypeSdk: "Набор средств разработки программного обеспечения (SDK)",
 
   // events/EventAnnouncement*.vue
-  // zhBiweekly names the Chinese session; enBiweekly names the international session.
+  // zhBiweekly names the Chinese session; intlBiweekly names the international session.
   zhBiweeklyEventTitle: ({
     named,
   }: {
@@ -91,7 +91,7 @@ export default {
     const n = named("n") as number
     return `LoongArch Biweekly (китайская сессия) #${n}`
   },
-  enBiweeklyEventTitle: ({
+  intlBiweeklyEventTitle: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -115,7 +115,7 @@ export default {
     const n = named("n") as number
     return `Архив ${formatRuOrdinal(n, "f", "gen")} встречи «LoongArch Biweekly (китайская сессия)»`
   },
-  enBiweeklyAnnouncementHeader: ({
+  intlBiweeklyAnnouncementHeader: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -123,7 +123,7 @@ export default {
     const n = named("n") as number
     return `Анонс ${formatRuOrdinal(n, "f", "gen")} встречи «LoongArch Biweekly (международная сессия)»`
   },
-  enBiweeklyArchiveHeader: ({
+  intlBiweeklyArchiveHeader: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -134,21 +134,21 @@ export default {
   biweeklyTime: "Время встречи: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice:
     " (встреча, как ожидается, продлится один час)",
-  enBiweeklyExpectedDurationNotice:
+  intlBiweeklyExpectedDurationNotice:
     " (сессия, как ожидается, продлится один час)",
   zhBiweeklyWemeetLink: "Ссылка на встречу",
   wemeetNumber: "ID встречи: {number}",
   biweeklySlideLink: "Слайды Biweekly",
   biweeklySlideLinkTBU: "Слайды Biweekly (будут загружены позже)",
   biweeklyLiveLink: "Ссылка на трансляцию",
-  enBiweeklyParticipationNotice:
+  intlBiweeklyParticipationNotice:
     "Присоединяйтесь к сессии или следите за ней по общим материалам:",
   zhBiweeklyNotice:
     "Слайды Biweekly можно редактировать {cutoff-notice}. Тем, кто хочет выступить или задать вопросы на Biweekly, следует завершить правки до этого времени (если вам нужны права на редактирование, запросите их через Kingsoft Docs).",
   zhBiweeklyCutoffNotice: "до начала встречи",
   biweeklyArchivalNotice:
     "Встреча завершена, но вы всё ещё можете просмотреть материалы мероприятия:",
-  enBiweeklyArchivalNotice: "Сессия завершена. Материалы этой сессии:",
+  intlBiweeklyArchivalNotice: "Сессия завершена. Материалы этой сессии:",
   bilibiliLiveArchiveLink: "Запись трансляции Bilibili",
   googleSlidesLink: "Google Slides",
   zoomMeetingLink: "Встреча Zoom",
@@ -158,10 +158,10 @@ export default {
   vkVideoArchiveLink: "Запись VK Video",
   eventResourceUnavailable: "{label} (будет объявлено позже)",
   eventResourceWip: "{label} (в работе)",
-  enBiweeklyTimezoneShanghai: "Китай",
-  enBiweeklyTimezoneMoscow: "Москва",
-  enBiweeklyTimezoneUSEastern: "Восточное время США",
-  enBiweeklyTimezoneUSPacific: "Тихоокеанское время США",
+  intlBiweeklyTimezoneShanghai: "Китай",
+  intlBiweeklyTimezoneMoscow: "Москва",
+  intlBiweeklyTimezoneUSEastern: "Восточное время США",
+  intlBiweeklyTimezoneUSPacific: "Тихоокеанское время США",
 
   // events/EventCalendar.vue
   today: "Сегодня",

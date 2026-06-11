@@ -83,7 +83,7 @@ export default {
   downloadTypeSdk: "SDK",
 
   // events/EventAnnouncement*.vue
-  // zhBiweekly names the Chinese session; enBiweekly names the international session.
+  // zhBiweekly names the Chinese session; intlBiweekly names the international session.
   zhBiweeklyEventTitle: ({
     named,
   }: {
@@ -92,7 +92,7 @@ export default {
     const n = named("n") as number
     return `LoongArch Biweekly (Chinese session) #${n}`
   },
-  enBiweeklyEventTitle: ({
+  intlBiweeklyEventTitle: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -116,7 +116,7 @@ export default {
     const n = named("n") as number
     return `The ${formatEnOrdinal(n)} "LoongArch Biweekly (Chinese session)" Meeting Archives`
   },
-  enBiweeklyAnnouncementHeader: ({
+  intlBiweeklyAnnouncementHeader: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -124,7 +124,7 @@ export default {
     const n = named("n") as number
     return `The ${formatEnOrdinal(n)} "LoongArch Biweekly (Int'l session)" Meeting Announcement`
   },
-  enBiweeklyArchiveHeader: ({
+  intlBiweeklyArchiveHeader: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -134,20 +134,20 @@ export default {
   },
   biweeklyTime: "Meeting Time: {time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: " (meeting expected to last an hour)",
-  enBiweeklyExpectedDurationNotice: " (session expected to last an hour)",
+  intlBiweeklyExpectedDurationNotice: " (session expected to last an hour)",
   zhBiweeklyWemeetLink: "Meeting Link",
   wemeetNumber: "Meeting ID: {number}",
   biweeklySlideLink: "Biweekly Slides",
   biweeklySlideLinkTBU: "Biweekly Slides (to be uploaded)",
   biweeklyLiveLink: "Livestream Link",
-  enBiweeklyParticipationNotice:
+  intlBiweeklyParticipationNotice:
     "Join the session or follow along with the shared materials:",
   zhBiweeklyNotice:
     "Biweekly slides may be edited {cutoff-notice}. Those who wish to speak or ask questions at the biweekly should finish editing before this time (if you need editing permissions, please apply via Kingsoft Docs).",
   zhBiweeklyCutoffNotice: "until the beginning of the meeting",
   biweeklyArchivalNotice:
     "The meeting has ended, but you can still view materials from the event:",
-  enBiweeklyArchivalNotice:
+  intlBiweeklyArchivalNotice:
     "The session has ended. Resources from this session:",
   bilibiliLiveArchiveLink: "Bilibili live replay",
   googleSlidesLink: "Google Slides",
@@ -158,10 +158,10 @@ export default {
   vkVideoArchiveLink: "VK Video replay",
   eventResourceUnavailable: "{label} (to be announced)",
   eventResourceWip: "{label} (work in progress)",
-  enBiweeklyTimezoneShanghai: "China",
-  enBiweeklyTimezoneMoscow: "Moscow",
-  enBiweeklyTimezoneUSEastern: "US Eastern",
-  enBiweeklyTimezoneUSPacific: "US Pacific",
+  intlBiweeklyTimezoneShanghai: "China",
+  intlBiweeklyTimezoneMoscow: "Moscow",
+  intlBiweeklyTimezoneUSEastern: "US Eastern",
+  intlBiweeklyTimezoneUSPacific: "US Pacific",
 
   // events/EventCalendar.vue
   today: "Today",

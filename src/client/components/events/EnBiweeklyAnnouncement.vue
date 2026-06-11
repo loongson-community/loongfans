@@ -2,7 +2,7 @@
   <div v-if="event.isFuture">
     <h3 name="en-biweekly-announcement">
       {{
-        t("enBiweeklyAnnouncementHeader", {
+        t("intlBiweeklyAnnouncementHeader", {
           n: event.issueNumber,
         })
       }}
@@ -12,7 +12,7 @@
       {{
         t("biweeklyTime", {
           time: d(event.start, "long"),
-          expectedDurationNotice: t("enBiweeklyExpectedDurationNotice"),
+          expectedDurationNotice: t("intlBiweeklyExpectedDurationNotice"),
         })
       }}
     </p>
@@ -22,14 +22,14 @@
         >: {{ row.time }}
       </li>
     </ul>
-    <p>{{ t("enBiweeklyParticipationNotice") }}</p>
+    <p>{{ t("intlBiweeklyParticipationNotice") }}</p>
     <EventResourceList :resources="currentResources" :labels="currentLabels" />
   </div>
 
   <div v-else>
     <h3 name="en-biweekly-archive">
       {{
-        t("enBiweeklyArchiveHeader", {
+        t("intlBiweeklyArchiveHeader", {
           n: event.issueNumber,
         })
       }}
@@ -43,7 +43,7 @@
         })
       }}
     </p>
-    <p>{{ t("enBiweeklyArchivalNotice") }}</p>
+    <p>{{ t("intlBiweeklyArchivalNotice") }}</p>
     <EventResourceList :resources="archiveResources" :labels="archiveLabels" />
   </div>
 </template>
@@ -66,9 +66,9 @@ const props = defineProps<{
 
 const { d, locale, t } = useI18n()
 
-const currentResources = getBiweeklyCurrentResources("enBiweekly")
+const currentResources = getBiweeklyCurrentResources("intlBiweekly")
 const archiveResources = computed(() =>
-  getBiweeklyArchiveResources("enBiweekly", props.event.issueNumber),
+  getBiweeklyArchiveResources("intlBiweekly", props.event.issueNumber),
 )
 
 const currentLabels = computed<Partial<Record<BiweeklyResourceType, string>>>(
@@ -90,19 +90,19 @@ const archiveLabels = computed<Partial<Record<BiweeklyResourceType, string>>>(
 
 const timeZones = computed(() => [
   {
-    label: t("enBiweeklyTimezoneShanghai"),
+    label: t("intlBiweeklyTimezoneShanghai"),
     timeZone: "Asia/Shanghai",
   },
   {
-    label: t("enBiweeklyTimezoneMoscow"),
+    label: t("intlBiweeklyTimezoneMoscow"),
     timeZone: "Europe/Moscow",
   },
   {
-    label: t("enBiweeklyTimezoneUSEastern"),
+    label: t("intlBiweeklyTimezoneUSEastern"),
     timeZone: "America/New_York",
   },
   {
-    label: t("enBiweeklyTimezoneUSPacific"),
+    label: t("intlBiweeklyTimezoneUSPacific"),
     timeZone: "America/Los_Angeles",
   },
 ])

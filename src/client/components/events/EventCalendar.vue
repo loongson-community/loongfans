@@ -49,7 +49,7 @@ const vCalAttrs: (typeof Calendar)["attributes"] = [
 
 const kindColors: Record<BiweeklyEventKind, string> = {
   zhBiweekly: "theme-red",
-  enBiweekly: "theme-blue",
+  intlBiweekly: "theme-blue",
 }
 
 const allEventsForVCal = events.map((be) => {

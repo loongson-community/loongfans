@@ -10,7 +10,7 @@ JSON 模块，以便 Vue 组件 `import`。
 `biweekly.yml` 顶层按活动标签分组：
 
 * `zhBiweekly`：龙架构双周会；
-* `enBiweekly`：国际龙架构双周会。
+* `intlBiweekly`：国际龙架构双周会。
 
 每个活动标签下包含：
 
@@ -33,12 +33,12 @@ links:
 此处存放的 iCalendar 文件 `events.ics` 是用于页面展示各种社区活动信息的数据源。目前接入的社区活动有：
 
 * `[zhBiweekly] 龙架构双周会`
-* `[enBiweekly] 国际龙架构双周会`
+* `[intlBiweekly] 国际龙架构双周会`
 
 日历事件的 `SUMMARY` 必须以前缀标签开头，格式为 `[tag] 展示标题`。页面解析日历时会使用标签决定渲染哪一种活动公告组件，并在日历界面中隐藏标签，只展示去掉标签后的标题。当前已约定的标签含义如下：
 
 * `zhBiweekly` 表示龙架构双周会；
-* `enBiweekly` 表示国际龙架构双周会。
+* `intlBiweekly` 表示国际龙架构双周会。
 
 未带标签或使用未知标签的事件目前不会显示在双周会页面中。
 

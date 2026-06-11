@@ -147,7 +147,7 @@ export interface ChipInfoDB {
 
 // Biweekly event entries
 
-export type BiweeklyEventKind = "zhBiweekly" | "enBiweekly"
+export type BiweeklyEventKind = "zhBiweekly" | "intlBiweekly"
 
 export type BiweeklyResourceType =
   | "wemeet"

@@ -74,7 +74,7 @@ export default {
   downloadTypeSdk: "SDK",
 
   // events/EventAnnouncement*.vue
-  // zhBiweekly names the Chinese session; enBiweekly names the international session.
+  // zhBiweekly names the Chinese session; intlBiweekly names the international session.
   zhBiweeklyEventTitle: ({
     named,
   }: {
@@ -83,7 +83,7 @@ export default {
     const n = named("n") as number
     return `龙架构双周会（第 ${formatZhOrdinal(n)} 次）`
   },
-  enBiweeklyEventTitle: ({
+  intlBiweeklyEventTitle: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -107,7 +107,7 @@ export default {
     const n = named("n") as number
     return `第 ${formatZhOrdinal(n)} 次“龙架构双周会”会议回看`
   },
-  enBiweeklyAnnouncementHeader: ({
+  intlBiweeklyAnnouncementHeader: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -115,7 +115,7 @@ export default {
     const n = named("n") as number
     return `第 ${formatZhOrdinal(n)} 次“国际龙架构双周会”活动公告`
   },
-  enBiweeklyArchiveHeader: ({
+  intlBiweeklyArchiveHeader: ({
     named,
   }: {
     named: (name: string) => unknown
@@ -125,18 +125,18 @@ export default {
   },
   biweeklyTime: "会议时间：{time}{expectedDurationNotice}",
   zhBiweeklyExpectedDurationNotice: "（会议预计一小时内结束）",
-  enBiweeklyExpectedDurationNotice: "（活动预计一小时内结束）",
+  intlBiweeklyExpectedDurationNotice: "（活动预计一小时内结束）",
   zhBiweeklyWemeetLink: "会议链接",
   wemeetNumber: "会议号：{number}",
   biweeklySlideLink: "双周会幻灯片",
   biweeklySlideLinkTBU: "双周会幻灯片（暂未上传）",
   biweeklyLiveLink: "直播链接",
-  enBiweeklyParticipationNotice: "您可通过以下方式参会或查看共享材料：",
+  intlBiweeklyParticipationNotice: "您可通过以下方式参会或查看共享材料：",
   zhBiweeklyNotice:
     "双周会幻灯片将在{cutoff-notice}，希望在双周会发言提问的同学请在此时间前填写编辑完成（如需编辑权限请通过金山文档申请）。",
   zhBiweeklyCutoffNotice: "会前停止收集",
   biweeklyArchivalNotice: "本次会议已经结束，您仍可查看本次会议的相关资源：",
-  enBiweeklyArchivalNotice: "本场活动已经结束，您仍可查看相关资源：",
+  intlBiweeklyArchivalNotice: "本场活动已经结束，您仍可查看相关资源：",
   bilibiliLiveArchiveLink: "Bilibili 直播回看",
   googleSlidesLink: "Google Slides",
   zoomMeetingLink: "Zoom 会议",
@@ -146,10 +146,10 @@ export default {
   vkVideoArchiveLink: "VK 视频回放",
   eventResourceUnavailable: "{label}（暂未提供）",
   eventResourceWip: "{label}（制作中）",
-  enBiweeklyTimezoneShanghai: "中国",
-  enBiweeklyTimezoneMoscow: "莫斯科",
-  enBiweeklyTimezoneUSEastern: "美国东部",
-  enBiweeklyTimezoneUSPacific: "美国太平洋",
+  intlBiweeklyTimezoneShanghai: "中国",
+  intlBiweeklyTimezoneMoscow: "莫斯科",
+  intlBiweeklyTimezoneUSEastern: "美国东部",
+  intlBiweeklyTimezoneUSPacific: "美国太平洋",
 
   // events/EventCalendar.vue
   today: "今天",
