@@ -13,6 +13,7 @@ export default {
   devGuides: "Developer's Guide",
   supportMaterials: "Support Materials",
   contact: "Contact",
+  news: "News",
   chipsData: "Chips Database",
   operatingSystems: "Operating Systems",
   productSpecs: "Product Database",

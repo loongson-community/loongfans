@@ -11,6 +11,7 @@ export default {
   devGuides: "Руководство для разработчиков",
   supportMaterials: "Вспомогательные материалы",
   contact: "Контакты",
+  news: "Новости",
   chipsData: "База данных микросхем",
   operatingSystems: "Операционные системы",
   productSpecs: "База данных продуктов",

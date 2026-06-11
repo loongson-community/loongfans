@@ -11,6 +11,7 @@ export default {
   devGuides: "Ressourcen für Entwickler",
   supportMaterials: "Unterstützende Materialien",
   contact: "Kontakt",
+  news: "Nachrichten",
   chipsData: "Chipdatenbank",
   operatingSystems: "Betriebssysteme",
   productSpecs: "Produktdatenbank",
