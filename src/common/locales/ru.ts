@@ -2,6 +2,19 @@ import chips from "./ru/chips"
 import help from "./ru/help"
 import os from "./ru/os"
 
+const ruOrdinalSuffixes: Record<string, Record<string, string>> = {
+  m: { nom: "-й", gen: "-го", dat: "-му", acc: "-й", ins: "-м", pre: "-м" },
+  f: { nom: "-я", gen: "-й", dat: "-й", acc: "-ю", ins: "-й", pre: "-й" },
+  n: { nom: "-е", gen: "-го", dat: "-му", acc: "-е", ins: "-м", pre: "-м" },
+}
+
+// Russian ordinals use a gender (m/f/n) × case (nom/gen/dat/acc/ins/pre) suffix table
+function formatRuOrdinal(n: number, gender: string, gcase: string): string {
+  const suffix = ruOrdinalSuffixes[gender]?.[gcase]
+  if (!suffix) return n.toString()
+  return n + suffix
+}
+
 export default {
   comma: ", ",
   // Index.vue
@@ -154,9 +167,8 @@ export default {
   // Utilities
   ordinalNumber: ({ named }: { named: (name: string) => unknown }): string => {
     const n = named("n") as number
-    // similar to Chinese the Russian language does not require a special morphology for ordinal numbers
     if (n === undefined || n === null) return ""
-    return n.toString()
+    return formatRuOrdinal(n, "n", "nom")
   },
   chips,
   help,
