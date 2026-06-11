@@ -34,7 +34,7 @@ Die Veranstaltung wird gleichzeitig auf der Bilibili-Seite
 Von Zeit zu Zeit finden auch persönliche Treffen statt.
 
 Es gibt auch die „LoongArch Biweekly (internationale Sitzung)“ für Englisch- und
-Russischsprachige, die jeden zweiten Mittwoch um 21:00 Uhr (UTC+8) über Zoom
+Russischsprachige, die jeden zweiten Donnerstag um 13:00 Uhr (UTC) über Zoom
 stattfindet. Die Materialien werden mit Google Slides vorbereitet und die Aufzeichnungen
 werden auf Bilibili, YouTube oder VK archiviert.
 
