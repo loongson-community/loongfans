@@ -30,13 +30,13 @@ Festland mit erheblichen voraussichtlichen Reisen (z. B. zum Frühlingsfest und 
 Nationalfeiertag) sowie Ausgleichstage ausgenommen sind.
 
 Die Veranstaltung wird gleichzeitig auf der Bilibili-Seite
-[@Loongson-Fan-Community](https://space.bilibili.com/70360929) live übertragen.
+[@龙芯爱好者社区][loongfans-bilibili] ("Loongson-Fan-Community") live übertragen.
 Von Zeit zu Zeit finden auch persönliche Treffen statt.
 
 Es gibt auch die „LoongArch Biweekly (internationale Sitzung)“ für Englisch- und
 Russischsprachige, die jeden zweiten Donnerstag um 13:00 Uhr (UTC) über Zoom
 stattfindet. Die Materialien werden mit Google Slides vorbereitet und die Aufzeichnungen
-werden auf Bilibili, YouTube oder VK archiviert.
+werden auf Bilibili, [YouTube][loongfans-youtube] und [VK][loongfans-vk] archiviert.
 
 :::tip
 Die Arbeitssprache der chinesischen Sitzung ist Hochchinesisch (Putonghua / Mandarin);
@@ -45,5 +45,9 @@ verfügbar ist. Teilnehmer aller Sprachhintergründe sind in beiden Sitzungen
 willkommen -- viele Teilnehmer sprechen mehrere Sprachen. Wenn Sie in einer anderen
 Sprache vortragen möchten, kontaktieren Sie uns bitte!
 :::
+
+[loongfans-bilibili]: https://space.bilibili.com/70360929
+[loongfans-vk]: https://vk.ru/loongsonunofficial
+[loongfans-youtube]: https://www.youtube.com/@loongfans
 
 <EventAnnouncementContainer />
