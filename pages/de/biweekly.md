@@ -5,15 +5,6 @@ pageTitle: LoongArch – Alle zwei Wochen
 pageSubTitle: Zweiwöchentliche Treffen für Community-Entwickler und Hobbyentwickler
 ---
 
-<style scoped>
-/* mimic the Tailwind "md" breakpoint */
-@media (width >= 48rem) {
-    .announcement-container h3 {
-        margin-top: 0;
-    }
-}
-</style>
-
 <script setup lang="ts">
 import EventAnnouncementContainer from "@src/client/components/events/EventAnnouncementContainer.vue"
 </script>

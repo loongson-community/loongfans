@@ -6,15 +6,6 @@ pageTitle: 龙架构双周会
 pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 ---
 
-<style scoped>
-/* mimic the Tailwind "md" breakpoint */
-@media (width >= 48rem) {
-    .announcement-container h3 {
-        margin-top: 0;
-    }
-}
-</style>
-
 <script setup lang="ts">
 import EventAnnouncementContainer from "@src/client/components/events/EventAnnouncementContainer.vue"
 </script>

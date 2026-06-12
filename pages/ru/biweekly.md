@@ -5,15 +5,6 @@ pageTitle: "LoongArch: двухнедельный бюллетень"
 pageSubTitle: Встречи раз в две недели для разработчиков сообщества и энтузиастов
 ---
 
-<style scoped>
-/* mimic the Tailwind "md" breakpoint */
-@media (width >= 48rem) {
-    .announcement-container h3 {
-        margin-top: 0;
-    }
-}
-</style>
-
 <script setup lang="ts">
 import EventAnnouncementContainer from "@src/client/components/events/EventAnnouncementContainer.vue"
 </script>
