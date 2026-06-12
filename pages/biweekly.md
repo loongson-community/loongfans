@@ -25,7 +25,7 @@ import EventAnnouncementContainer from "@src/client/components/events/EventAnnou
 
 会议进程于 Bilibili [@龙芯爱好者社区](https://space.bilibili.com/70360929) 账号同步直播，亦时有安排线下活动。
 
-此外，亦有面向英语及俄语使用者的国际龙架构双周会，一般于每两周周三 13:00（UTC）通过 Zoom 举办。协作材料以 Google Slides 准备，回放资源归档于 Bilibili、YouTube 或 VK 等平台。
+此外，亦有面向英语及俄语使用者的国际龙架构双周会，一般于 UTC 时区的每两周周四 13:00 在 Zoom 举办。协作材料以 Google Slides 准备，回放资源归档于 Bilibili、YouTube、VK 等平台。
 
 :::tip
 龙架构双周会以普通话为工作语言；国际场默认使用英语，亦可用俄语。两场会议均欢迎所有语言背景的用户参会——许多与会者都会讲多种语言。如果您想用其它语言在会上做分享，请与我们联系！
