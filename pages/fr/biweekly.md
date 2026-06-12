@@ -30,13 +30,13 @@ continentale qui entraînent des déplacements importants (par exemple, le Print
 la Fête nationale) ainsi que les jours de travail compensatoires.
 
 La réunion est diffusée en direct sur la page Bilibili
-[@Communauté des passionnés de Loongson](https://space.bilibili.com/70360929).
+[@龙芯爱好者社区][loongfans-bilibili] ("Communauté des passionnés de Loongson").
 Des réunions en présentiel sont également organisées de temps à autre.
 
 Il existe également le LoongArch Biweekly (session internationale) pour les anglophones
 et russophones, qui se tient un jeudi sur deux à 13 h (UTC) via Zoom. Les documents sont
-préparés avec Google Slides et les rediffusions sont archivées sur Bilibili, YouTube ou
-VK.
+préparés avec Google Slides et les rediffusions sont archivées sur Bilibili,
+[YouTube][loongfans-youtube] et [VK][loongfans-vk].
 
 :::tip
 La langue de travail de la session chinoise est le chinois standard (putonghua /
@@ -45,5 +45,9 @@ le russe étant également disponible. Tous les horizons linguistiques sont les
 bienvenus aux deux sessions -- de nombreux participants parlent plusieurs langues.
 Si vous souhaitez présenter dans une autre langue, n'hésitez pas à nous contacter !
 :::
+
+[loongfans-bilibili]: https://space.bilibili.com/70360929
+[loongfans-vk]: https://vk.ru/loongsonunofficial
+[loongfans-youtube]: https://www.youtube.com/@loongfans
 
 <EventAnnouncementContainer />
