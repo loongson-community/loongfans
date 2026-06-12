@@ -30,13 +30,13 @@ import EventAnnouncementContainer from "@src/client/components/events/EventAnnou
 Весны и Национальный день), а также компенсационными рабочими днями.
 
 Встреча транслируется в прямом эфире на странице Bilibili
-[@Сообщество поклонников Loongson](https://space.bilibili.com/70360929).
+[@龙芯爱好者社区][loongfans-bilibili] («Сообщество энтузиастов Loongson»).
 Время от времени также организуются очные встречи.
 
 Также существует «LoongArch Biweekly (международная сессия)» для англо- и
 русскоговорящих участников, которая проходит каждый второй четверг в 13:00 (UTC) через
 Zoom. Материалы готовятся с помощью Google Slides, а записи архивируются на Bilibili,
-YouTube или VK.
+[YouTube][loongfans-youtube] и [VK][loongfans-vk].
 
 :::tip
 Рабочий язык китайской сессии — стандартный китайский (путунхуа / мандарин);
@@ -45,5 +45,9 @@ YouTube или VK.
 многие участники говорят на нескольких языках. Если вы хотите выступить на
 другом языке, пожалуйста, свяжитесь с нами!
 :::
+
+[loongfans-bilibili]: https://space.bilibili.com/70360929
+[loongfans-vk]: https://vk.ru/loongsonunofficial
+[loongfans-youtube]: https://www.youtube.com/@loongfans
 
 <EventAnnouncementContainer />
