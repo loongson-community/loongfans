@@ -14,6 +14,9 @@ importers:
       cspell:
         specifier: ^10.0.1
         version: 10.0.1
+      temporal-polyfill:
+        specifier: ^0.3.2
+        version: 0.3.2
       vite:
         specifier: ^7.3.5
         version: 7.3.5(@types/node@25.9.3)(jiti@2.7.0)(tsx@4.22.4)(yaml@2.9.0)
@@ -2514,6 +2517,12 @@ packages:
 
   tabbable@6.4.0:
     resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
+
+  temporal-polyfill@0.3.2:
+    resolution: {integrity: sha512-TzHthD/heRK947GNiSu3Y5gSPpeUDH34+LESnfsq8bqpFhsB79HFBX8+Z834IVX68P3EUyRPZK5bL/1fh437Eg==}
+
+  temporal-spec@0.3.1:
+    resolution: {integrity: sha512-B4TUhezh9knfSIMwt7RVggApDRJZo73uZdj8AacL2mZ8RP5KtLianh2MXxL06GN9ESYiIsiuoLQhgVfwe55Yhw==}
 
   tinyexec@1.2.4:
     resolution: {integrity: sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==}
@@ -5199,6 +5208,12 @@ snapshots:
       copy-anything: 4.0.5
 
   tabbable@6.4.0: {}
+
+  temporal-polyfill@0.3.2:
+    dependencies:
+      temporal-spec: 0.3.1
+
+  temporal-spec@0.3.1: {}
 
   tinyexec@1.2.4: {}
 
