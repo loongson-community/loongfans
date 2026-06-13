@@ -46,19 +46,20 @@ export default {
   goBack: "Retour",
 
   // CardGroup.vue (about page)
-  aboutGithubName: "GitHub",
-  aboutGithubDescription: "Projets communautaires et discussions",
+  // Please keep the list sorted alphabetically by key for easier maintenance
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription:
     "Abonnez-vous pour découvrir les vidéos des événements et bien plus encore",
-  aboutWechatName: "WeChat",
-  aboutWechatDescription: "Discutez avec nous !",
-  aboutQQName: "QQ",
-  aboutQQDescription: "Discutez avec nous !",
+  aboutGithubName: "GitHub",
+  aboutGithubDescription: "Projets communautaires et discussions",
   aboutMatrixName: "Matrix",
   aboutMatrixDescription: "Discutez avec nous !",
+  aboutQQName: "QQ",
+  aboutQQDescription: "Discutez avec nous !",
   aboutTelegramName: "Telegram",
   aboutTelegramDescription: "Discutez avec nous !",
+  aboutWechatName: "WeChat",
+  aboutWechatDescription: "Discutez avec nous !",
 
   // Device/Detail.vue
   deviceTabSpec: "Caractéristiques techniques",

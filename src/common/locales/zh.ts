@@ -44,18 +44,19 @@ export default {
   goBack: "返回上级",
 
   // CardGroup.vue (about page)
-  aboutGithubName: "GitHub 主页",
-  aboutGithubDescription: "社区科技驱动的行星发电机",
+  // Please keep the list sorted alphabetically by key for easier maintenance
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription: "关注最好的龙芯爱好者社区谢谢喵",
-  aboutWechatName: "微信群",
-  aboutWechatDescription: "常聊天！",
-  aboutQQName: "QQ 群",
-  aboutQQDescription: "常联系！",
+  aboutGithubName: "GitHub 主页",
+  aboutGithubDescription: "社区科技驱动的行星发电机",
   aboutMatrixName: "Matrix 群",
   aboutMatrixDescription: "常闲聊！",
+  aboutQQName: "QQ 群",
+  aboutQQDescription: "常联系！",
   aboutTelegramName: "Telegram 群",
   aboutTelegramDescription: "常发电报！",
+  aboutWechatName: "微信群",
+  aboutWechatDescription: "常聊天！",
 
   // Device/Detail.vue
   deviceTabSpec: "主要规格",

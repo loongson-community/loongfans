@@ -35,14 +35,8 @@ interface CardDataEntry {
 
 const { t, locale } = useI18n()
 
+// Please keep the list sorted alphabetically by key for easier maintenance
 const cardData: Record<string, CardDataEntry> = {
-  github: {
-    name: t("aboutGithubName"),
-    description: t("aboutGithubDescription"),
-    href: "https://github.com/loongson-community",
-    color: "#181717",
-    icon: IconGithub,
-  },
   bilibili: {
     name: t("aboutBilibiliName"),
     description: t("aboutBilibiliDescription"),
@@ -50,19 +44,12 @@ const cardData: Record<string, CardDataEntry> = {
     color: "#66ccff",
     icon: IconBilibili,
   },
-  wechat: {
-    name: t("aboutWechatName"),
-    description: t("aboutWechatDescription"),
-    qrLink: "/images/about/qr-wechat-group.png",
-    color: "#07C160",
-    icon: IconWechat,
-  },
-  qq: {
-    name: t("aboutQQName"),
-    description: t("aboutQQDescription"),
-    qrLink: "/images/about/qr-qq-group.png",
-    color: "#1EBAFC",
-    icon: IconQq,
+  github: {
+    name: t("aboutGithubName"),
+    description: t("aboutGithubDescription"),
+    href: "https://github.com/loongson-community",
+    color: "#181717",
+    icon: IconGithub,
   },
   matrix: {
     name: t("aboutMatrixName"),
@@ -71,12 +58,26 @@ const cardData: Record<string, CardDataEntry> = {
     color: "#000000",
     icon: IconMatrix,
   },
+  qq: {
+    name: t("aboutQQName"),
+    description: t("aboutQQDescription"),
+    qrLink: "/images/about/qr-qq-group.png",
+    color: "#1EBAFC",
+    icon: IconQq,
+  },
   telegram: {
     name: t("aboutTelegramName"),
     description: t("aboutTelegramDescription"),
     href: "https://t.me/loongson_users",
     color: "#26A5E4",
     icon: IconTelegram,
+  },
+  wechat: {
+    name: t("aboutWechatName"),
+    description: t("aboutWechatDescription"),
+    qrLink: "/images/about/qr-wechat-group.png",
+    color: "#07C160",
+    icon: IconWechat,
   },
 }
 
