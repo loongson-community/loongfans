@@ -8,10 +8,12 @@
       }}
     </h3>
 
-    <p>
-      {{ t("biweeklyTime") }}{{ d(event.start, "long")
-      }}{{ t("zhBiweeklyExpectedDurationNotice") }}
-    </p>
+    <p>{{ t("biweeklyTime") }}</p>
+    <TZAwareDateTimeList
+      :time="event.start"
+      :extra-notice-key-for-local-time="'zhBiweeklyExpectedDurationNotice'"
+    />
+
     <p>
       <a
         v-if="currentWemeet !== null"
@@ -58,7 +60,9 @@
       }}
     </h3>
 
-    <p>{{ t("biweeklyTime") }} {{ d(event.start, "long") }}</p>
+    <p>{{ t("biweeklyTime") }}</p>
+    <TZAwareDateTimeList :time="event.start" />
+
     <p>{{ t("biweeklyArchivalNotice") }}</p>
     <EventResourceList :resources="archiveResources" :labels="archiveLabels" />
   </div>
@@ -76,12 +80,13 @@ import {
 } from "@src/client/components/events/dataSource"
 import EventResourceList from "@src/client/components/events/EventResourceList.vue"
 import type { BiweeklyResourceType } from "@src/types/data"
+import TZAwareDateTimeList from "./TZAwareDateTimeList.vue"
 
 const props = defineProps<{
   event: EventItem
 }>()
 
-const { d, t } = useI18n()
+const { t } = useI18n()
 
 const currentWemeet = getBiweeklyCurrentResource("zhBiweekly", "wemeet")
 const currentBilibiliLive = getBiweeklyCurrentResource("zhBiweekly", "bilibili")
