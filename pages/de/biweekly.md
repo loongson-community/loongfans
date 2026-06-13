@@ -19,15 +19,17 @@ Die „LoongArch Biweekly (chinesische Sitzung)“ findet jeden zweiten Sonntag 
 14:00 Uhr (UTC+8) auf Tencent statt, wobei staatliche Feiertage auf dem chinesischen
 Festland mit erheblichen voraussichtlichen Reisen (z. B. zum Frühlingsfest und zum
 Nationalfeiertag) sowie Ausgleichstage ausgenommen sind.
+Gemeinsame Materialien werden auf der Kingsoft Docs-Plattform vorbereitet.
 
-Die Veranstaltung wird gleichzeitig auf der Bilibili-Seite
-[@龙芯爱好者社区][loongfans-bilibili] ("Loongson-Fan-Community") live übertragen.
+Die chinesische Sitzung wird live übertragen und auf der Bilibili-Seite
+[@龙芯爱好者社区][loongfans-bilibili] ("Loongson-Fan-Community") archiviert.
 Von Zeit zu Zeit finden auch persönliche Treffen statt.
 
-Es gibt auch die „LoongArch Biweekly (internationale Sitzung)“ für Englisch- und
-Russischsprachige, die jeden zweiten Donnerstag um 13:00 Uhr (UTC) über Zoom
-stattfindet. Die Materialien werden mit Google Slides vorbereitet und die Aufzeichnungen
-werden auf Bilibili, [YouTube][loongfans-youtube] und [VK][loongfans-vk] archiviert.
+Für Entwickler auf der ganzen Welt organisiert die Community auch eine
+**internationale Sitzung**, die jeden zweiten Donnerstag um 13:00 Uhr (UTC)
+über Zoom stattfindet. Die Materialien werden mit Google Slides vorbereitet
+und die Aufzeichnungen werden auf Bilibili,
+[YouTube][loongfans-youtube] und [VK][loongfans-vk] archiviert, sofern verfügbar.
 
 :::tip
 Die Arbeitssprache der chinesischen Sitzung ist Hochchinesisch (Putonghua / Mandarin);
