@@ -17,7 +17,7 @@ The reports are generally followed by contributor discussions and Q&A sessions.
 The LoongArch Biweekly (Chinese session) is held every other Sunday at 14:00
 (UTC+8) on Tencent Meeting, generally avoiding Chinese mainland state holidays
 with significant travel expected (e.g. Spring Festival and National Day) and
-workdays in lieu.
+workdays in lieu. Shared materials are prepared on the Kingsoft Docs platform.
 
 The Chinese session is livestreamed and archived on Bilibili page
 [@龙芯爱好者社区][loongfans-bilibili] ("Loongson Hobbyists Community").
