@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "cspell": "^10.0.1",
+    "get-east-asian-width": "^1.6.0",
     "temporal-polyfill": "^0.3.2",
     "vite": "^7.3.5",
     "vitepress": "2.0.0-alpha.17"
