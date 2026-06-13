@@ -39,7 +39,7 @@ const cardData: Record<string, CardDataEntry> = {
   github: {
     name: t("aboutGithubName"),
     description: t("aboutGithubDescription"),
-    href: "https://github.com/loongson-community/1024",
+    href: "https://github.com/loongson-community",
     color: "#181717",
     icon: IconGithub,
   },
