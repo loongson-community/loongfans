@@ -1,7 +1,7 @@
 <template>
   <div class="card-group">
     <AboutSocialLink
-      v-for="item in cardDataMap[locale as keyof typeof cardDataMap]"
+      v-for="item in currentCardData"
       :key="item.name"
       :name="item.name"
       :description="item.description"
@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue"
 import { useI18n } from "vue-i18n"
 
 import IconBilibili from "~icons/simple-icons/bilibili"
@@ -85,12 +86,24 @@ const cardData: Record<string, CardDataEntry> = {
 
 const zhCardOrder = ["github", "bilibili", "wechat", "qq", "matrix"]
 
-const enCardOrder = ["github", "bilibili", "telegram", "matrix", "wechat", "qq"]
+const fallbackCardOrder = [
+  "github",
+  "bilibili",
+  "telegram",
+  "matrix",
+  "wechat",
+  "qq",
+]
 
 const cardDataMap: Record<string, CardDataEntry[]> = {
   zh: zhCardOrder.map((i) => cardData[i]!),
-  en: enCardOrder.map((i) => cardData[i]!),
+  "": fallbackCardOrder.map((i) => cardData[i]!),
 }
+
+const currentCardData = computed(
+  () =>
+    cardDataMap[locale.value as keyof typeof cardDataMap] || cardDataMap[""],
+)
 </script>
 
 <style scoped>
