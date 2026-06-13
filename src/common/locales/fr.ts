@@ -150,10 +150,12 @@ export default {
   vkVideoArchiveLink: "Rediffusion VK Video",
   eventResourceUnavailable: "{label} (à annoncer)",
   eventResourceWip: "{label} (en cours)",
-  intlBiweeklyTimezoneSystem: "Fuseau horaire système",
 
   // events/EventCalendar.vue
   today: "Aujourd'hui",
+
+  // events/TZAwareDateTimeList.vue
+  systemTimezone: "Fuseau horaire système",
 
   // sdk/Detail.vue
   gnuInstall: "Chaîne d'outils GNU",

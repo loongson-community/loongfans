@@ -9,12 +9,10 @@
     </h3>
 
     <p>{{ t("biweeklyTime") }}</p>
-    <ul>
-      <li v-for="row in timezoneRows" :key="row.timeZone">
-        <strong>{{ row.label }}</strong
-        >: {{ row.time }}{{ row.extraNotice ?? "" }}
-      </li>
-    </ul>
+    <TZAwareDateTimeList
+      :time="event.start"
+      :extra-notice-key-for-local-time="'intlBiweeklyExpectedDurationNotice'"
+    />
     <p>{{ t("intlBiweeklyParticipationNotice") }}</p>
     <EventResourceList :resources="currentResources" :labels="currentLabels" />
   </div>
@@ -31,12 +29,7 @@
     <p>
       {{ t("biweeklyTime") }}
     </p>
-    <ul>
-      <li v-for="row in timezoneRows" :key="row.timeZone">
-        <strong>{{ row.label }}</strong
-        >: {{ row.time }}{{ row.extraNotice ?? "" }}
-      </li>
-    </ul>
+    <TZAwareDateTimeList :time="event.start" />
 
     <p>{{ t("biweeklyArchivalNotice") }}</p>
     <EventResourceList :resources="archiveResources" :labels="archiveLabels" />
@@ -53,13 +46,14 @@ import {
   type EventItem,
 } from "@src/client/components/events/dataSource"
 import EventResourceList from "@src/client/components/events/EventResourceList.vue"
+import TZAwareDateTimeList from "@src/client/components/events/TZAwareDateTimeList.vue"
 import type { BiweeklyResourceType } from "@src/types/data"
 
 const props = defineProps<{
   event: EventItem
 }>()
 
-const { locale, t } = useI18n()
+const { t } = useI18n()
 
 const currentResources = getBiweeklyCurrentResources("intlBiweekly")
 const archiveResources = computed(() =>
@@ -82,39 +76,4 @@ const archiveLabels = computed<Partial<Record<BiweeklyResourceType, string>>>(
     vkvideo: t("vkVideoArchiveLink"),
   }),
 )
-
-type TimeZoneRow = {
-  label: string
-  timeZone?: string
-  extraNotice?: string
-  time?: string
-}
-
-const timeZones: TimeZoneRow[] = [
-  {
-    label: t("intlBiweeklyTimezoneSystem"),
-    timeZone: undefined,
-    extraNotice: props.event.isFuture
-      ? t("intlBiweeklyExpectedDurationNotice")
-      : undefined,
-  },
-  { label: "UTC-7", timeZone: "Etc/GMT+7" },
-  { label: "UTC-4", timeZone: "Etc/GMT+4" },
-  { label: "UTC", timeZone: "Etc/UTC" },
-  { label: "UTC+3", timeZone: "Etc/GMT-3" },
-  { label: "UTC+8", timeZone: "Etc/GMT-8" },
-]
-
-const makeTimeFormatter = (timeZone?: string) =>
-  new Intl.DateTimeFormat(locale.value, {
-    dateStyle: "medium",
-    timeStyle: "short",
-    hour12: false,
-    timeZone,
-  })
-
-const timezoneRows = timeZones.map((zone) => ({
-  ...zone,
-  time: makeTimeFormatter(zone.timeZone).format(props.event.start),
-}))
 </script>

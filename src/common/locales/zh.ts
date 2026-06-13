@@ -145,10 +145,12 @@ export default {
   vkVideoArchiveLink: "VK 视频回放",
   eventResourceUnavailable: "{label}（暂未提供）",
   eventResourceWip: "{label}（制作中）",
-  intlBiweeklyTimezoneSystem: "系统时区",
 
   // events/EventCalendar.vue
   today: "今天",
+
+  // events/TZAwareDateTimeList.vue
+  systemTimezone: "系统时区",
 
   // sdk/Detail.vue
   gnuInstall: "GNU 工具链",

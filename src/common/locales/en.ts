@@ -156,10 +156,12 @@ export default {
   vkVideoArchiveLink: "VK Video replay",
   eventResourceUnavailable: "{label} (to be announced)",
   eventResourceWip: "{label} (work in progress)",
-  intlBiweeklyTimezoneSystem: "System timezone",
 
   // events/EventCalendar.vue
   today: "Today",
+
+  // events/TZAwareDateTimeList.vue
+  systemTimezone: "System timezone",
 
   // sdk/Detail.vue
   gnuInstall: "GNU Toolchain",

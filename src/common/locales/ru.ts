@@ -157,10 +157,12 @@ export default {
   vkVideoArchiveLink: "Запись VK Video",
   eventResourceUnavailable: "{label} (будет объявлено позже)",
   eventResourceWip: "{label} (в работе)",
-  intlBiweeklyTimezoneSystem: "Системная временная зона",
 
   // events/EventCalendar.vue
   today: "Сегодня",
+
+  // events/TZAwareDateTimeList.vue
+  systemTimezone: "Системная временная зона",
 
   // sdk/Detail.vue
   gnuInstall: "Набор инструментов GNU",
