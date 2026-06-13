@@ -1,7 +1,7 @@
 ---
 layout: page
 returnLink: /fr
-pageTitle: LoongArch – Bimensuel
+pageTitle: LoongArch Biweekly  # deliberately in English for consistent branding in non-ZH locales
 pageSubTitle: Réunions bimensuelles pour les développeurs communautaires et les amateurs
 ---
 

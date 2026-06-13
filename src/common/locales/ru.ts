@@ -29,7 +29,7 @@ export default {
   productSpecs: "База данных продуктов",
   compatibilityDb: "База данных совместимости",
   communityResources: "Ресурсы сообщества",
-  biweeklyMeeting: "Заседание, проводимое раз в две недели",
+  biweeklyMeeting: "LoongArch Biweekly", // deliberately in English for consistent branding in non-ZH locales
   jobsAndBounties: "Стажировки и вознаграждения",
   devBoardProgram: "Программа для разработчиков",
   communityForum: "Community BBS",

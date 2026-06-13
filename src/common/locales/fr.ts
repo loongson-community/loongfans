@@ -24,7 +24,7 @@ export default {
   productSpecs: "Base de données des produits",
   compatibilityDb: "Base de données de compatibilité",
   communityResources: "Ressources communautaires",
-  biweeklyMeeting: "Réunion bimensuelle",
+  biweeklyMeeting: "LoongArch Biweekly", // deliberately in English for consistent branding in non-ZH locales
   jobsAndBounties: "Stages et bourses",
   devBoardProgram: "Programme pour développeurs",
   communityForum: "Community BBS",
