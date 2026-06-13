@@ -28,6 +28,14 @@ links:
 
 当前支持的资源类型包括 `wemeet`、`kdocs`、`googledocs`、`zoom`、`zoomChat`、`bilibili`、`youtube` 与 `vk`。如果资源暂不可用或仍在制作中，可以保留资源类型并设置 `status: "unavailable"` 或 `status: "wip"`。
 
+### 各语种页面中的双周会命名惯例
+
+对“龙架构双周会”的两个场次的称呼，在汉语和其他语言存在不对称，需要特别关注。
+
+对 ZH 语种，使用全称“龙架构双周会”、“国际龙架构双周会”，需要简称时用“汉语场”/“国际场”。除非明确要求，否则不使用“龙架构双周会汉语场”、“龙架构双周会国际场”的完整说法。
+
+非 ZH 语种（en/de/fr/ru）使用统一的英文-本地化混合命名体系：全称 "LoongArch Biweekly (Chinese/International session)" 或此名称在当前语言的翻译，如需缩写可将 "International" 替换为 "Int'l"，或其他当前语言允许的缩写，如当前语言无法缩写该词便无法支持缩写。简称为 "the Chinese/International session" 或此名称在当前语言的翻译。
+
 ## iCalendar 日历
 
 此处存放的 iCalendar 文件 `events.ics` 是用于页面展示各种社区活动信息的数据源。目前接入的社区活动有：
@@ -41,16 +49,6 @@ links:
 * `intlBiweekly` 表示国际龙架构双周会。
 
 未带标签或使用未知标签的事件目前不会显示在双周会页面中。
-
-## 各语种页面中的双周会命名惯例
-
-ZH 语种使用完全中文的命名体系：
-全称「龙架构双周会」/「国际龙架构双周会」，需要简称时用「汉语场」/「国际场」。
-
-非 ZH 语种（en/de/fr/ru）使用统一的英文-本地化混合命名体系：
-全称 "LoongArch Biweekly (Chinese/Int'l session)"（其中 "Int'l" 在音韵上不自然时可替换为 "international"，会话种类名使用各语种译文），简称 "the Chinese/Int'l session"（会话种类名同样使用译文）。
-
-这是设计上的非对称性，在更新双周会各语种页面时应注意保持。例如 tip 提示框中应使用各语种的简称形式以和 EN 页面保持对等。
 
 目前社区运营人员没有适合的地方部署后端服务，因此该日历无法以常规的 CalDAV 服务器形式存在，只能由
 [@xen0n][@xen0n] 在自己的 CalDAV 服务器上编辑好了导出到这里。

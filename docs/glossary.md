@@ -104,7 +104,7 @@
   - NOTE: this is for referring to the event without focusing on a language.
 - 双周会 / 龙架构双周会 / 汉语双周会 / 中文双周会 / 汉语龙架构双周会 / 中文龙架构双周会: LoongArch Biweekly (Chinese session)
   - NOTE: the canonical full name is simply "龙架构双周会".
-- 国际双周会 / 英语双周会 / 国际龙架构双周会: LoongArch Biweekly (Int'l session)
+- 国际双周会 / 英语双周会 / 国际龙架构双周会: LoongArch Biweekly (International session)
   - NOTE: naming is asymmetrical between ZH and EN regarding the two sessions; the canonical full name in Chinese is "国际龙架构双周会", not "龙架构双周会（国际场）".
 - lib龙啊龙: libLoL (LoongArch on LoongArch)
 - larch: typically part of LoongArch ELF relocation type constant names, e.g., R_LARCH_B26 is read as "R Larch B twenty-six"
