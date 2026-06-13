@@ -2,8 +2,7 @@
   <ul>
     <li v-for="row in rows" :key="row.id">
       <strong>{{ row.label }}</strong
-      >:
-      <span :class="{ 'different-day': row.differentDay }">{{
+      ><span :class="{ 'different-day': row.differentDay }">{{
         row.formatted
       }}</span
       >{{ row.extraNotice }}
@@ -12,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+import { eastAsianWidth } from "get-east-asian-width"
 import { useI18n } from "vue-i18n"
 
 export type TimeZoneSpec = {
@@ -75,6 +75,11 @@ const sameDayAsLocalTime = (tz: string) => {
   )
 }
 
+const appendColonToLabel = (label: string) => {
+  const widthOfLastChar = eastAsianWidth(label.slice(-1).codePointAt(0)!)
+  return label + (widthOfLastChar == 2 ? "：" : ": ")
+}
+
 const rows: TimeZoneRow[] = (props.timeZones ?? defaultTimeZoneSpec).map(
   (spec, idx) => {
     const label =
@@ -82,7 +87,7 @@ const rows: TimeZoneRow[] = (props.timeZones ?? defaultTimeZoneSpec).map(
     const extraNotice = spec.extraNoticeKey ? t(spec.extraNoticeKey) : ""
     return {
       id: idx,
-      label,
+      label: appendColonToLabel(label),
       extraNotice,
       formatted: makeTimeFormatter(spec.timeZone).format(timeInstant),
       differentDay: !sameDayAsLocalTime(spec.timeZone),
