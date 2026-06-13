@@ -16,13 +16,15 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n"
-import AboutSocialLink from "./AboutSocialLink.vue"
-import IconGithub from "~icons/simple-icons/github"
+
 import IconBilibili from "~icons/simple-icons/bilibili"
-import IconWechat from "~icons/simple-icons/wechat"
-import IconQq from "~icons/simple-icons/qq"
+import IconGithub from "~icons/simple-icons/github"
 import IconMatrix from "~icons/simple-icons/matrix"
+import IconQq from "~icons/simple-icons/qq"
 import IconTelegram from "~icons/simple-icons/telegram"
+import IconWechat from "~icons/simple-icons/wechat"
+
+import AboutSocialLink from "./AboutSocialLink.vue"
 
 interface CardDataEntry {
   name: string
