@@ -40,7 +40,7 @@ Si vous souhaitez présenter dans une autre langue, n'hésitez pas à nous conta
 :::
 
 [loongfans-bilibili]: https://space.bilibili.com/70360929
-[loongfans-vk]: https://vk.ru/loongsonunofficial
+[loongfans-vk]: https://vk.com/loongsonunofficial
 [loongfans-youtube]: https://www.youtube.com/@loongfans
 
 <EventAnnouncementContainer />
