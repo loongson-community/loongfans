@@ -1,8 +1,12 @@
 <template>
   <ul>
-    <li v-for="row in timezoneRows" :key="row.id">
+    <li v-for="row in rows" :key="row.id">
       <strong>{{ row.label }}</strong
-      >: {{ row.formatted }}{{ row.extraNotice }}
+      >:
+      <span :class="{ 'different-day': row.differentDay }">{{
+        row.formatted
+      }}</span
+      >{{ row.extraNotice }}
     </li>
   </ul>
 </template>
@@ -13,7 +17,7 @@ import { useI18n } from "vue-i18n"
 export type TimeZoneSpec = {
   label?: string
   labelKey?: string
-  timeZone?: string
+  timeZone: string
   extraNoticeKey?: string
 }
 
@@ -22,20 +26,28 @@ type TimeZoneRow = {
   label: string
   formatted: string
   extraNotice: string
+  differentDay: boolean
 }
 
 const props = defineProps<{
-  time: Date
+  time: Date | Temporal.Instant
   timeZones?: TimeZoneSpec[]
   extraNoticeKeyForLocalTime?: string
 }>()
 
 const { locale, t } = useI18n()
 
+const timeInstant =
+  props.time instanceof Date
+    ? Temporal.Instant.fromEpochMilliseconds(props.time.getTime())
+    : props.time
+
+const localTZ = Temporal.Now.timeZoneId()
+
 const defaultTimeZoneSpec: TimeZoneSpec[] = [
   {
     labelKey: "systemTimezone",
-    timeZone: undefined,
+    timeZone: localTZ,
     extraNoticeKey: props.extraNoticeKeyForLocalTime,
   },
   { label: "UTC-7", timeZone: "Etc/GMT+7" },
@@ -53,16 +65,34 @@ const makeTimeFormatter = (timeZone?: string) =>
     timeZone,
   })
 
-const timezoneRows: TimeZoneRow[] = (
-  props.timeZones ?? defaultTimeZoneSpec
-).map((spec, idx) => {
-  const label = spec.label ?? (spec.labelKey ? t(spec.labelKey) : "")
-  const extraNotice = spec.extraNoticeKey ? t(spec.extraNoticeKey) : ""
-  return {
-    id: idx,
-    label,
-    extraNotice,
-    formatted: makeTimeFormatter(spec.timeZone).format(props.time),
-  }
-})
+const dateInLocalTime = timeInstant.toZonedDateTimeISO(localTZ)
+const sameDayAsLocalTime = (tz: string) => {
+  const dateInOtherTZ = timeInstant.toZonedDateTimeISO(tz)
+  return (
+    dateInOtherTZ.year === dateInLocalTime.year &&
+    dateInOtherTZ.month === dateInLocalTime.month &&
+    dateInOtherTZ.day === dateInLocalTime.day
+  )
+}
+
+const rows: TimeZoneRow[] = (props.timeZones ?? defaultTimeZoneSpec).map(
+  (spec, idx) => {
+    const label =
+      spec.label ?? (spec.labelKey ? t(spec.labelKey) : spec.timeZone)
+    const extraNotice = spec.extraNoticeKey ? t(spec.extraNoticeKey) : ""
+    return {
+      id: idx,
+      label,
+      extraNotice,
+      formatted: makeTimeFormatter(spec.timeZone).format(timeInstant),
+      differentDay: !sameDayAsLocalTime(spec.timeZone),
+    }
+  },
+)
 </script>
+
+<style scoped>
+.different-day {
+  color: #e60013;
+}
+</style>
