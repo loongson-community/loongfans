@@ -155,7 +155,7 @@ export default {
   today: "Aujourd'hui",
 
   // events/TZAwareDateTimeList.vue
-  systemTimezone: "Fuseau horaire système",
+  yourTimezone: "Votre fuseau horaire",
 
   // sdk/Detail.vue
   gnuInstall: "Chaîne d'outils GNU",

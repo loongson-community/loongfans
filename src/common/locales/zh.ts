@@ -150,7 +150,7 @@ export default {
   today: "今天",
 
   // events/TZAwareDateTimeList.vue
-  systemTimezone: "系统时区",
+  yourTimezone: "您的时区",
 
   // sdk/Detail.vue
   gnuInstall: "GNU 工具链",

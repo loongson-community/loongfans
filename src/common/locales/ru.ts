@@ -162,7 +162,7 @@ export default {
   today: "Сегодня",
 
   // events/TZAwareDateTimeList.vue
-  systemTimezone: "Системная временная зона",
+  yourTimezone: "Ваша временная зона",
 
   // sdk/Detail.vue
   gnuInstall: "Набор инструментов GNU",

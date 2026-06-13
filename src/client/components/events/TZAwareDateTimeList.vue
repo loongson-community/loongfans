@@ -46,7 +46,7 @@ const localTZ = Temporal.Now.timeZoneId()
 
 const defaultTimeZoneSpec: TimeZoneSpec[] = [
   {
-    labelKey: "systemTimezone",
+    labelKey: "yourTimezone",
     timeZone: localTZ,
     extraNoticeKey: props.extraNoticeKeyForLocalTime,
   },
