@@ -47,6 +47,8 @@ export default {
   // Please keep the list sorted alphabetically by key for easier maintenance
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription: "关注最好的龙芯爱好者社区谢谢喵",
+  aboutDiscordName: "Discord 服务器",
+  aboutDiscordDescription: "挂机吹水！",
   aboutGithubName: "GitHub 主页",
   aboutGithubDescription: "社区科技驱动的行星发电机",
   aboutMatrixName: "Matrix 群",
@@ -55,8 +57,12 @@ export default {
   aboutQQDescription: "常联系！",
   aboutTelegramName: "Telegram 群",
   aboutTelegramDescription: "常发电报！",
+  aboutVKName: "VK 主页",
+  aboutVKDescription: "常联系！",
   aboutWechatName: "微信群",
   aboutWechatDescription: "常聊天！",
+  aboutYoutubeName: "YouTube 频道",
+  aboutYoutubeDescription: "Bilibili 资源的国际镜像？",
 
   // Device/Detail.vue
   deviceTabSpec: "主要规格",
