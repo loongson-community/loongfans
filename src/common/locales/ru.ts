@@ -51,19 +51,20 @@ export default {
   goBack: "Вернуться",
 
   // CardGroup.vue (about page)
-  aboutGithubName: "GitHub",
-  aboutGithubDescription: "Общественные проекты и дискуссии",
+  // Please keep the list sorted alphabetically by key for easier maintenance
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription:
     "Подписывайтесь, чтобы смотреть видео с мероприятий и многое другое",
-  aboutWechatName: "WeChat",
-  aboutWechatDescription: "Напишите нам!",
-  aboutQQName: "QQ",
-  aboutQQDescription: "Оставайтесь на связи!",
+  aboutGithubName: "GitHub",
+  aboutGithubDescription: "Общественные проекты и дискуссии",
   aboutMatrixName: "Matrix",
   aboutMatrixDescription: "Напишите нам!",
+  aboutQQName: "QQ",
+  aboutQQDescription: "Оставайтесь на связи!",
   aboutTelegramName: "Telegram",
   aboutTelegramDescription: "Напишите нам!",
+  aboutWechatName: "WeChat",
+  aboutWechatDescription: "Напишите нам!",
 
   // Device/Detail.vue
   deviceTabSpec: "Технические характеристики",
