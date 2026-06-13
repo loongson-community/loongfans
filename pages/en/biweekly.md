@@ -2,29 +2,31 @@
 layout: page
 returnLink: /en
 pageTitle: LoongArch Biweekly
-pageSubTitle: Regular sessions for Loongson Community Developers and Hobbyists
+pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 ---
 
 <script setup lang="ts">
 import EventAnnouncementContainer from "@src/client/components/events/EventAnnouncementContainer.vue"
 </script>
 
-LoongArch Biweekly is organized by Loongson hobbyists for community members
-across language backgrounds. There are two regular sessions:
+The LoongArch Biweekly is a regular community meeting organized by Loongson
+hobbyists. The meeting agenda comprises updates on upstream projects, Linux
+distro (and other OS projects), and community affairs.
+The reports are generally followed by contributor discussions and Q&A sessions.
 
-- The **LoongArch Biweekly (Chinese session)** meets every other Sunday at 14:00
-  (UTC+8) on Tencent Meeting, with a concurrent livestream on Bilibili
-  [@龙芯爱好者社区][loongfans-bilibili] ("Loongson Hobbyists Community"). Offline
-  gatherings are sometimes arranged as well.
+The LoongArch Biweekly (Chinese session) is held every other Sunday at 14:00
+(UTC+8) on Tencent Meeting, generally avoiding Chinese mainland state holidays
+with significant travel expected (e.g. Spring Festival and National Day) and
+workdays in lieu.
 
-- The **LoongArch Biweekly (Int'l session)** meets every other Thursday at 13:00
-  (UTC) on Zoom. Shared materials are prepared with Google Slides, and
-  replay resources are archived on Bilibili, [YouTube][loongfans-youtube], and
-  [VK][loongfans-vk] when available.
+The Chinese session is livestreamed and archived on Bilibili page
+[@龙芯爱好者社区][loongfans-bilibili] ("Loongson Hobbyists Community").
+Offline meetings are also arranged from time to time.
 
-The agenda for both sessions focuses on upstream development, Linux
-distributions and other operating system projects, community updates,
-contributor discussions, and Q&A.
+For developers around the globe, the community also arranges an **international session**,
+held every other Thursday at 13:00 (UTC) on Zoom.
+Shared materials are prepared with Google Slides, and replays are archived on
+Bilibili, [YouTube][loongfans-youtube], and [VK][loongfans-vk] when available.
 
 :::tip
 The working language for the Chinese session is Standard Chinese (Putonghua / Mandarin);
