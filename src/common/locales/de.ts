@@ -49,6 +49,8 @@ export default {
   // Please keep the list sorted alphabetically by key for easier maintenance
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription: "Event videos & mehr auf Bilibili",
+  aboutDiscordName: "Discord Server",
+  aboutDiscordDescription: "Chatte mit uns via Discord!",
   aboutGithubName: "GitHub",
   aboutGithubDescription: "Community-Projekte & Diskussion",
   aboutMatrixName: "Matrix",
@@ -57,8 +59,12 @@ export default {
   aboutQQDescription: "Bleib in Kontakt via QQ!",
   aboutTelegramName: "Telegram",
   aboutTelegramDescription: "Chatte mit uns via Telegram!",
+  aboutVKName: "VK",
+  aboutVKDescription: "Folge uns auf VK für Updates und Diskussionen!",
   aboutWechatName: "WeChat",
   aboutWechatDescription: "Chatte mit uns via WeChat!",
+  aboutYoutubeName: "YouTube",
+  aboutYoutubeDescription: "YouTube-Kanal mit Event-Videos und mehr",
 
   // Device/Detail.vue
   deviceTabSpec: "Spezifikationen",

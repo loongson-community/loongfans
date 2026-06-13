@@ -19,11 +19,14 @@ import { computed } from "vue"
 import { useI18n } from "vue-i18n"
 
 import IconBilibili from "~icons/simple-icons/bilibili"
+import IconDiscord from "~icons/simple-icons/discord"
 import IconGithub from "~icons/simple-icons/github"
 import IconMatrix from "~icons/simple-icons/matrix"
 import IconQq from "~icons/simple-icons/qq"
 import IconTelegram from "~icons/simple-icons/telegram"
+import IconVK from "~icons/simple-icons/vk"
 import IconWechat from "~icons/simple-icons/wechat"
+import IconYoutube from "~icons/simple-icons/youtube"
 
 import AboutSocialLink from "./AboutSocialLink.vue"
 
@@ -46,6 +49,13 @@ const cardData: Record<string, CardDataEntry> = {
     href: "https://space.bilibili.com/70360929",
     color: "#66ccff",
     icon: IconBilibili,
+  },
+  discord: {
+    name: t("aboutDiscordName"),
+    description: t("aboutDiscordDescription"),
+    href: "https://discord.gg/aSmKKutF7h",
+    color: "#5865F2",
+    icon: IconDiscord,
   },
   github: {
     name: t("aboutGithubName"),
@@ -75,6 +85,13 @@ const cardData: Record<string, CardDataEntry> = {
     color: "#26A5E4",
     icon: IconTelegram,
   },
+  vk: {
+    name: t("aboutVKName"),
+    description: t("aboutVKDescription"),
+    href: "https://vk.com/loongsonunofficial",
+    color: "#0077FF",
+    icon: IconVK,
+  },
   wechat: {
     name: t("aboutWechatName"),
     description: t("aboutWechatDescription"),
@@ -82,17 +99,27 @@ const cardData: Record<string, CardDataEntry> = {
     color: "#07C160",
     icon: IconWechat,
   },
+  youtube: {
+    name: t("aboutYoutubeName"),
+    description: t("aboutYoutubeDescription"),
+    href: "https://www.youtube.com/@loongfans",
+    color: "#FF0000",
+    icon: IconYoutube,
+  },
 }
 
 const zhCardOrder = ["github", "bilibili", "wechat", "qq", "matrix"]
 
 const fallbackCardOrder = [
   "github",
+  "youtube",
   "bilibili",
   "telegram",
   "matrix",
+  "discord",
   "wechat",
   "qq",
+  "vk",
 ]
 
 const cardDataMap: Record<string, CardDataEntry[]> = {

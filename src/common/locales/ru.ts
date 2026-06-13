@@ -55,6 +55,9 @@ export default {
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription:
     "Подписывайтесь, чтобы смотреть видео с мероприятий и многое другое",
+  aboutDiscordName: "Discord-сервер",
+  aboutDiscordDescription:
+    "Присоединяйтесь к нашему серверу Discord, чтобы общаться с другими энтузиастами Loongson!",
   aboutGithubName: "GitHub",
   aboutGithubDescription: "Общественные проекты и дискуссии",
   aboutMatrixName: "Matrix",
@@ -63,8 +66,12 @@ export default {
   aboutQQDescription: "Оставайтесь на связи!",
   aboutTelegramName: "Telegram",
   aboutTelegramDescription: "Напишите нам!",
+  aboutVKName: "VK",
+  aboutVKDescription: "Следите за нами в VK для обновлений и обсуждений!",
   aboutWechatName: "WeChat",
   aboutWechatDescription: "Напишите нам!",
+  aboutYoutubeName: "YouTube",
+  aboutYoutubeDescription: "Международный ретранслятор наших видео Bilibili ?",
 
   // Device/Detail.vue
   deviceTabSpec: "Технические характеристики",
