@@ -83,11 +83,13 @@ const cardData: Record<string, CardDataEntry> = {
   },
 }
 
+const zhCardOrder = ["github", "bilibili", "wechat", "qq", "matrix"]
+
+const enCardOrder = ["github", "bilibili", "telegram", "matrix", "wechat", "qq"]
+
 const cardDataMap: Record<string, CardDataEntry[]> = {
-  zh: ["github", "bilibili", "wechat", "qq", "matrix"].map((i) => cardData[i]!),
-  en: ["github", "bilibili", "telegram", "matrix", "wechat", "qq"].map(
-    (i) => cardData[i]!,
-  ),
+  zh: zhCardOrder.map((i) => cardData[i]!),
+  en: enCardOrder.map((i) => cardData[i]!),
 }
 </script>
 
