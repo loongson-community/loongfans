@@ -149,3 +149,4 @@ events:
         - type: "googledocs"
           kind: "presentation"
           id: "1aMpDOqZynHhR9He77Vvhu96CSq61azd105pbcr9aWIo"
+        - { type: "bilibili", bvid: "BV19LE16eE8S" }
