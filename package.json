@@ -15,9 +15,6 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "cspell": "^10.0.1",
-    "get-east-asian-width": "^1.6.0",
-    "temporal-polyfill": "^0.3.2",
     "vite": "^7.3.5",
     "vitepress": "2.0.0-alpha.17"
   },
@@ -34,10 +31,12 @@
     "@vue/tsconfig": "^0.8.1",
     "ajv": "^8.20.0",
     "commander": "^14.0.3",
+    "cspell": "^10.0.1",
     "devalue": "^5.8.1",
     "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-vue": "^10.9.2",
+    "get-east-asian-width": "^1.6.0",
     "glob": "^13.0.6",
     "globals": "^17.7.0",
     "husky": "^9.1.7",
@@ -48,6 +47,7 @@
     "pinia": "^3.0.4",
     "prettier": "^3.8.4",
     "primevue": "^4.5.5",
+    "temporal-polyfill": "^0.3.2",
     "ts-json-schema-generator": "^2.9.0",
     "tsx": "^4.22.4",
     "typescript-eslint": "^8.62.0",

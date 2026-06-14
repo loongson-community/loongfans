@@ -11,15 +11,6 @@ importers:
       '@oxc-parser/binding-wasm32-wasi':
         specifier: ^0.131.0
         version: 0.131.0
-      cspell:
-        specifier: ^10.0.1
-        version: 10.0.1
-      get-east-asian-width:
-        specifier: ^1.6.0
-        version: 1.6.0
-      temporal-polyfill:
-        specifier: ^0.3.2
-        version: 0.3.2
       vite:
         specifier: ^7.3.5
         version: 7.3.5(@types/node@26.0.0)(jiti@2.7.0)(tsx@4.22.4)(yaml@2.9.0)
@@ -63,6 +54,9 @@ importers:
       commander:
         specifier: ^14.0.3
         version: 14.0.3
+      cspell:
+        specifier: ^10.0.1
+        version: 10.0.1
       devalue:
         specifier: ^5.8.1
         version: 5.8.1
@@ -75,6 +69,9 @@ importers:
       eslint-plugin-vue:
         specifier: ^10.9.2
         version: 10.9.2(@typescript-eslint/parser@8.62.0(eslint@10.5.0(jiti@2.7.0))(typescript@5.9.3))(eslint@10.5.0(jiti@2.7.0))(vue-eslint-parser@10.4.0(eslint@10.5.0(jiti@2.7.0)))
+      get-east-asian-width:
+        specifier: ^1.6.0
+        version: 1.6.0
       glob:
         specifier: ^13.0.6
         version: 13.0.6
@@ -105,6 +102,9 @@ importers:
       primevue:
         specifier: ^4.5.5
         version: 4.5.5(vue@3.5.38(typescript@5.9.3))
+      temporal-polyfill:
+        specifier: ^0.3.2
+        version: 0.3.2
       ts-json-schema-generator:
         specifier: ^2.9.0
         version: 2.9.0
