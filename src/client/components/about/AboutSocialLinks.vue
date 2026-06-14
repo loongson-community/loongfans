@@ -18,119 +18,40 @@
 import { computed } from "vue"
 import { useI18n } from "vue-i18n"
 
-import IconBilibili from "~icons/simple-icons/bilibili"
-import IconDiscord from "~icons/simple-icons/discord"
-import IconGithub from "~icons/simple-icons/github"
-import IconMatrix from "~icons/simple-icons/matrix"
-import IconQq from "~icons/simple-icons/qq"
-import IconTelegram from "~icons/simple-icons/telegram"
-import IconVK from "~icons/simple-icons/vk"
-import IconWechat from "~icons/simple-icons/wechat"
-import IconYoutube from "~icons/simple-icons/youtube"
-
 import AboutSocialLink from "./AboutSocialLink.vue"
-
-interface CardDataEntry {
-  name: string
-  description: string
-  href?: string
-  qrLink?: string
-  color: string
-  icon: typeof IconGithub
-}
+import {
+  getSocialLinksForLocale,
+  type SocialLinkDisplayConfig,
+} from "@src/client/utils/socialLinks"
 
 const { t, locale } = useI18n()
 
-// Please keep the list sorted alphabetically by key for easier maintenance
-const cardData: Record<string, CardDataEntry> = {
-  bilibili: {
-    name: t("aboutBilibiliName"),
-    description: t("aboutBilibiliDescription"),
-    href: "https://space.bilibili.com/70360929",
-    color: "#66ccff",
-    icon: IconBilibili,
-  },
-  discord: {
-    name: t("aboutDiscordName"),
-    description: t("aboutDiscordDescription"),
-    href: "https://discord.gg/aSmKKutF7h",
-    color: "#5865F2",
-    icon: IconDiscord,
-  },
-  github: {
-    name: t("aboutGithubName"),
-    description: t("aboutGithubDescription"),
-    href: "https://github.com/loongson-community",
-    color: "#181717",
-    icon: IconGithub,
-  },
-  matrix: {
-    name: t("aboutMatrixName"),
-    description: t("aboutMatrixDescription"),
-    href: "https://matrix.to/#/#loongson-users:matrix.org",
-    color: "#000000",
-    icon: IconMatrix,
-  },
-  qq: {
-    name: t("aboutQQName"),
-    description: t("aboutQQDescription"),
-    qrLink: "/images/about/qr-qq-group.png",
-    color: "#1EBAFC",
-    icon: IconQq,
-  },
-  telegram: {
-    name: t("aboutTelegramName"),
-    description: t("aboutTelegramDescription"),
-    href: "https://t.me/loongson_users",
-    color: "#26A5E4",
-    icon: IconTelegram,
-  },
-  vk: {
-    name: t("aboutVKName"),
-    description: t("aboutVKDescription"),
-    href: "https://vk.com/loongsonunofficial",
-    color: "#0077FF",
-    icon: IconVK,
-  },
-  wechat: {
-    name: t("aboutWechatName"),
-    description: t("aboutWechatDescription"),
-    qrLink: "/images/about/qr-wechat-group.png",
-    color: "#07C160",
-    icon: IconWechat,
-  },
-  youtube: {
-    name: t("aboutYoutubeName"),
-    description: t("aboutYoutubeDescription"),
-    href: "https://www.youtube.com/@loongfans",
-    color: "#FF0000",
-    icon: IconYoutube,
-  },
+const displayConfig: SocialLinkDisplayConfig = {
+  zh: ["github", "bilibili", "wechat", "qq", "matrix"],
+  "": [
+    "github",
+    "youtube",
+    "bilibili",
+    "telegram",
+    "matrix",
+    "discord",
+    "wechat",
+    "qq",
+    "vk",
+  ],
 }
 
-const zhCardOrder = ["github", "bilibili", "wechat", "qq", "matrix"]
-
-const fallbackCardOrder = [
-  "github",
-  "youtube",
-  "bilibili",
-  "telegram",
-  "matrix",
-  "discord",
-  "wechat",
-  "qq",
-  "vk",
-]
-
-const cardDataMap: Record<string, CardDataEntry[]> = {
-  zh: zhCardOrder.map((i) => cardData[i]!),
-  "": fallbackCardOrder.map((i) => cardData[i]!),
-}
-
-const currentCardData = computed(
-  () =>
-    cardDataMap[locale.value as keyof typeof cardDataMap] || cardDataMap[""],
-)
+const currentCardData = computed(() => {
+  const links = getSocialLinksForLocale(locale.value, displayConfig)
+  return links.map((link) => ({
+    name: t(link.nameKey),
+    description: link.descKey ? t(link.descKey) : "",
+    href: link.url,
+    qrLink: link.qrcodeURL,
+    color: link.color,
+    icon: link.icon,
+  }))
+})
 </script>
 
 <style scoped>
