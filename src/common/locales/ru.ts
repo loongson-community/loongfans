@@ -56,22 +56,22 @@ export default {
   aboutBilibiliDescription:
     "Подписывайтесь, чтобы смотреть видео с мероприятий и многое другое",
   aboutDiscordName: "Discord-сервер",
-  aboutDiscordDescription:
-    "Присоединяйтесь к нашему серверу Discord, чтобы общаться с другими энтузиастами Loongson!",
+  aboutDiscordDescription: "Обсуждайте GGWP LoongArch!",
   aboutGithubName: "GitHub",
   aboutGithubDescription: "Общественные проекты и дискуссии",
   aboutMatrixName: "Matrix",
-  aboutMatrixDescription: "Напишите нам!",
+  aboutMatrixDescription: "Приходите пообщаться!",
   aboutQQName: "QQ",
   aboutQQDescription: "Оставайтесь на связи!",
   aboutTelegramName: "Telegram",
-  aboutTelegramDescription: "Напишите нам!",
+  aboutTelegramDescription: "-.. .- -.... ....-", // "LA64" in Morse code
   aboutVKName: "VK",
-  aboutVKDescription: "Следите за нами в VK для обновлений и обсуждений!",
+  aboutVKDescription: "На связи!", // deliberately in Russian for all locales
   aboutWechatName: "WeChat",
   aboutWechatDescription: "Напишите нам!",
   aboutYoutubeName: "YouTube",
-  aboutYoutubeDescription: "Международный ретранслятор наших видео Bilibili ?",
+  aboutYoutubeDescription:
+    "Международный ретранслятор наших видео на Bilibili?",
 
   // Device/Detail.vue
   deviceTabSpec: "Технические характеристики",

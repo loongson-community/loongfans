@@ -5,3 +5,4 @@ Kconfig
 Putonghua
 smcv1
 smcv2
+связи

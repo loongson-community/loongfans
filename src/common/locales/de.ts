@@ -50,21 +50,22 @@ export default {
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription: "Event videos & mehr auf Bilibili",
   aboutDiscordName: "Discord Server",
-  aboutDiscordDescription: "Chatte mit uns via Discord!",
+  aboutDiscordDescription: "Chatte über LoongArch's GGWP!",
   aboutGithubName: "GitHub",
   aboutGithubDescription: "Community-Projekte & Diskussion",
   aboutMatrixName: "Matrix",
-  aboutMatrixDescription: "Chatte mit uns via Matrix!",
+  aboutMatrixDescription: "Komm zum Chatten!",
   aboutQQName: "QQ",
   aboutQQDescription: "Bleib in Kontakt via QQ!",
   aboutTelegramName: "Telegram",
-  aboutTelegramDescription: "Chatte mit uns via Telegram!",
+  aboutTelegramDescription: "-.. .- -.... ....-", // "LA64" in Morse code
   aboutVKName: "VK",
-  aboutVKDescription: "Folge uns auf VK für Updates und Diskussionen!",
+  aboutVKDescription: "На связи!", // deliberately in Russian for all locales
   aboutWechatName: "WeChat",
   aboutWechatDescription: "Chatte mit uns via WeChat!",
   aboutYoutubeName: "YouTube",
-  aboutYoutubeDescription: "YouTube-Kanal mit Event-Videos und mehr",
+  aboutYoutubeDescription:
+    "Internationale Spiegelung unserer Bilibili-Inhalte?",
 
   // Device/Detail.vue
   deviceTabSpec: "Spezifikationen",
