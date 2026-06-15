@@ -49,26 +49,23 @@ export default {
   // Please keep the list sorted alphabetically by key for easier maintenance
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription:
-    "Abonnez-vous pour découvrir les vidéos des événements et bien plus encore",
+    "Abonnez-vous pour des vidéos d'événements et plus encore",
   aboutDiscordName: "Serveur Discord",
-  aboutDiscordDescription:
-    "Rejoignez notre serveur Discord pour discuter avec d'autres passionnés de Loongson !",
+  aboutDiscordDescription: "Discutez de la GGWP de LoongArch !",
   aboutGithubName: "GitHub",
   aboutGithubDescription: "Projets communautaires et discussions",
   aboutMatrixName: "Matrix",
-  aboutMatrixDescription: "Discutez avec nous !",
+  aboutMatrixDescription: "Venez discuter avec nous !",
   aboutQQName: "QQ",
   aboutQQDescription: "Discutez avec nous !",
   aboutTelegramName: "Telegram",
-  aboutTelegramDescription: "Discutez avec nous !",
+  aboutTelegramDescription: "-.. .- -.... ....-", // "LA64" in Morse code
   aboutVKName: "VK",
-  aboutVKDescription:
-    "Suivez-nous sur VK pour les mises à jour et les discussions !",
+  aboutVKDescription: "На связи!", // deliberately in Russian for all locales
   aboutWechatName: "WeChat",
   aboutWechatDescription: "Discutez avec nous !",
   aboutYoutubeName: "YouTube",
-  aboutYoutubeDescription:
-    "Une rediffusion internationale de nos vidéos Bilibili ?",
+  aboutYoutubeDescription: "Miroir international de notre contenu Bilibili ?",
 
   // Device/Detail.vue
   deviceTabSpec: "Caractéristiques techniques",

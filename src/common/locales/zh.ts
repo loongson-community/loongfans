@@ -48,21 +48,21 @@ export default {
   aboutBilibiliName: "Bilibili",
   aboutBilibiliDescription: "关注最好的龙芯爱好者社区谢谢喵",
   aboutDiscordName: "Discord 服务器",
-  aboutDiscordDescription: "挂机吹水！",
+  aboutDiscordDescription: "聊聊龙架构的 GGWP！",
   aboutGithubName: "GitHub 主页",
   aboutGithubDescription: "社区科技驱动的行星发电机",
   aboutMatrixName: "Matrix 群",
-  aboutMatrixDescription: "常闲聊！",
+  aboutMatrixDescription: "来聊天！",
   aboutQQName: "QQ 群",
   aboutQQDescription: "常联系！",
   aboutTelegramName: "Telegram 群",
-  aboutTelegramDescription: "常发电报！",
+  aboutTelegramDescription: "-.. .- -.... ....-", // "LA64" in Morse code
   aboutVKName: "VK 主页",
-  aboutVKDescription: "常联系！",
+  aboutVKDescription: "На связи!", // deliberately in Russian for all locales
   aboutWechatName: "微信群",
   aboutWechatDescription: "常聊天！",
   aboutYoutubeName: "YouTube 频道",
-  aboutYoutubeDescription: "Bilibili 资源的国际镜像？",
+  aboutYoutubeDescription: "我们 Bilibili 内容的国际镜像？",
 
   // Device/Detail.vue
   deviceTabSpec: "主要规格",
