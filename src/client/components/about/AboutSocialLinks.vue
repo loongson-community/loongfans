@@ -27,7 +27,10 @@ import {
 const { t, locale } = useI18n()
 
 const displayConfig: SocialLinkDisplayConfig = {
-  zh: ["github", "bilibili", "wechat", "qq", "matrix"],
+  // We can configure different links to be shown for different locales.
+  // For example, we can choose to show Telegram etc. only for non-Chinese locales,
+  // should that become a concern in the future.
+  // For now, we will show the same set of links for all locales.
   "": [
     "github",
     "youtube",
