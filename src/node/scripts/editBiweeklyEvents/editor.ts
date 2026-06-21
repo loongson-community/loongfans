@@ -375,6 +375,9 @@ const ensureResourceMap = (
 
   const resourceMap = new YAMLMap()
   resourceMap.items.push(new Pair(new Scalar("type"), createQuotedScalar(type)))
+  if (type !== "googledocs") {
+    resourceMap.flow = true
+  }
   resourcesNode.items.push(resourceMap)
   sortResources(resourcesNode)
   return resourceMap
