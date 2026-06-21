@@ -178,7 +178,7 @@ export class BiweeklyLinkEditor {
       debugPrintResources("Current resources", this.linksNode)
       debugPrintArchives(this.archivesNode)
     }
-    const output = this.doc.toString()
+    const output = this.doc.toString({ lineWidth: 0 })
     if (this.debug) {
       console.log("Generated YAML:")
       console.log(output)
