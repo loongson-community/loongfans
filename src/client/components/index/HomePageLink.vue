@@ -5,7 +5,7 @@
     :target="target"
     class="link"
   >
-    <div class="flex-grow flex">
+    <div class="flex-grow flex items-center">
       <div v-if="$slots.default" class="icon">
         <slot />
       </div>
