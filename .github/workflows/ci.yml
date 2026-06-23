@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the source code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Detect if any Caddyfile was changed
         id: caddyfile-changed
         uses: tj-actions/changed-files@e0021407031f5be11a464abee9a0776171c79891 # v47.0.1
@@ -69,7 +69,7 @@ jobs:
       name: preview
     steps:
       - name: Check out the source code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # Needed by wrangler-action for acquiring wrangler itself
       - name: Enable Corepack for PNPM
