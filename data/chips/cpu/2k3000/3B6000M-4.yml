@@ -23,8 +23,8 @@ cpu:
   tdp: "N/A"
 
 gpu:
-  available: true
-  name: "LG200"
+  available: false
+  name: "N/A"
 
 memory:
   max: "32 GiB (DDR4) / 16 GiB (LPDDR4)"
