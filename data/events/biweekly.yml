@@ -122,6 +122,7 @@ events:
         - { type: "bilibili", bvid: "BV1FuE46oEPQ" }
       39:
         - { type: "kdocs", id: "cvJpiMliXSbL" }
+        - { type: "bilibili", bvid: "BV16qjb6tEi5" }
   intlBiweekly:
     links:
       - type: "zoom"
