@@ -10,9 +10,9 @@ on:
         type: choice
         options:
           - zhBiweekly
-          - enBiweekly
+          - intlBiweekly
       issue_number:
-        description: "Biweekly issue/session number to edit"
+        description: "Biweekly issue number to edit"
         required: false
         type: number
       bvid:
