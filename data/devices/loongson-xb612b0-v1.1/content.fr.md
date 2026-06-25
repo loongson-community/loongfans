@@ -39,3 +39,11 @@ Par rapport au [AC612A0_V1.1](/en/devices/loongson-ac612a0-v1.1.md) Basée sur l
 Source : Xi Ruoyao
 
 </template>
+
+<template #download-notes>
+
+:::info
+Les micrologiciels portant la référence V1.1-8 sont destinés aux modèles à 8 cœurs, tandis que ceux portant la référence V1.1-12 sont destinés aux modèles à 12 cœurs.
+:::
+
+</template>

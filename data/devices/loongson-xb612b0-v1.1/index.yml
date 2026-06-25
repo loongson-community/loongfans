@@ -11,3 +11,8 @@ spec: "3B6000 @ 2.1-2.3GHz, mATX"
 tags:
   - 7a2000
   - desktop-mb
+downloads:
+  - uefi-fw-loongson-xb612b0-v1.1-12-v5.0.0529_stable202605_rel
+  - uefi-fw-loongson-xb612b0-v1.1-12-v5.0.0529_stable202605_dbg
+  - uefi-fw-loongson-xb612b0-v1.1-8-v5.0.0529_stable202605_rel
+  - uefi-fw-loongson-xb612b0-v1.1-8-v5.0.0529_stable202605_dbg

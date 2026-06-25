@@ -39,3 +39,11 @@ Compared to the [AC612A0_V1.1](/en/devices/loongson-ac612a0-v1.1.md) based on Lo
 Source: Xi Ruoyao
 
 </template>
+
+<template #download-notes>
+
+:::info
+Firmware marked as V1.1-8 are for 8-core models, and those marked with V1.1-12 are for 12-core models.
+:::
+
+</template>

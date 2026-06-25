@@ -37,3 +37,11 @@
 来源：Xi Ruoyao
 
 </template>
+
+<template #download-notes>
+
+:::info
+标记为 V1.1-8 的固件适用于 8 核设备，标记为 V1.1-12 的固件适用于 12 核设备。
+:::
+
+</template>

@@ -39,3 +39,11 @@ Im Vergleich zu dem [AC612A0_V1.1](/en/devices/loongson-ac612a0-v1.1.md) Das auf
 Quelle: Xi Ruoyao
 
 </template>
+
+<template #download-notes>
+
+:::info
+Firmware mit der Bezeichnung V1.1-8 ist für 8-Kern-Modelle bestimmt, während die mit der Bezeichnung V1.1-12 für 12-Kern-Modelle vorgesehen ist.
+:::
+
+</template>
