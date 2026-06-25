@@ -12,6 +12,7 @@ gitee
 Gitee
 Gooxi
 HRDT
+Huarui
 Hynix
 IPASON
 orangepi
