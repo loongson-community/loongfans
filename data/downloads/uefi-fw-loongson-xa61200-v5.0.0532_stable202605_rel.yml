@@ -1,0 +1,19 @@
+type: uefi-firmware
+version: "V1.0_V5.0.0532_stable202605_rel"
+size: 8388608
+date: "2026-06-25"
+sha256: "49527cf030406c419b9ec4f30a2272384dc3b25260689322650a93642e2b6e4f"
+url: "https://fw.loongfans.cn/xa61200/EDK2602_XA61200-V1.0_General_V5.0.0532-Stable202605_rel_20260623174016_51a17aab.fd"
+description:
+  zh: |
+    本版更新主要包含 DDR.MRC、PCIe.PHY、SMC、IPMI、EDK II (edk2) 基础代码及平台适配的相关更新，并优化了平台稳定性、外设兼容性、启动流程及固件更新等功能
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2605.md -->
+  en: |
+    This release primarily includes updates to the DDR.MRC, PCIe.PHY, SMC, IPMI, and EDK II (edk2) base code, as well as platform-specific adaptations. It also optimizes platform stability, peripheral compatibility, the boot process, and firmware update functionality:
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2605.en.md -->
