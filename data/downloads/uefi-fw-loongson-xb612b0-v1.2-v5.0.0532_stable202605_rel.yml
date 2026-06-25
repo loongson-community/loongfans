@@ -1,0 +1,19 @@
+type: uefi-firmware
+version: "V1.2_V5.0.0532_stable202605_rel"
+size: 6291456
+date: "2026-06-25"
+sha256: "e9140edfd5d1bdbe037dc1e01cca879b33dd031a0ce17742fd3b618c787aa637"
+url: "https://fw.loongfans.cn/xb612b0-v1.2/EDK2602_XB612B0-V1.2_General_V5.0.0532-Stable202605_rel_20260623174016_51a17aab.fd"
+description:
+  zh: |
+    本版更新主要包含 DDR.MRC、PCIe.PHY、SMC、IPMI、EDK II (edk2) 基础代码及平台适配的相关更新，并优化了平台稳定性、外设兼容性、启动流程及固件更新等功能
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2605.md -->
+  en: |
+    This release primarily includes updates to the DDR.MRC, PCIe.PHY, SMC, IPMI, and EDK II (edk2) base code, as well as platform-specific adaptations. It also optimizes platform stability, peripheral compatibility, the boot process, and firmware update functionality:
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2605.en.md -->
