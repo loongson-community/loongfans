@@ -29,8 +29,15 @@ const displayConfig: SocialLinkDisplayConfig = {
   // We can configure different links to be shown for different locales.
   // For example, we can choose to show Telegram only for non-Chinese locales,
   // should that become a concern in the future.
-  // For now, we will show the same set of links for all locales.
-  "": ["bilibili", "wechat", "qq", "matrix", "telegram"],
+  //
+  // For now:
+  //
+  // - vk exclusively for ru
+  // - bilibili exclusively for zh; for others it's youtube
+  // - wechat & qq exclusively for zh; for others it's discord
+  "": ["youtube", "discord", "matrix", "telegram"],
+  ru: ["vk", "youtube", "discord", "matrix", "telegram"],
+  zh: ["bilibili", "wechat", "qq", "matrix", "telegram"],
 }
 
 const linksData = computed(() => {
