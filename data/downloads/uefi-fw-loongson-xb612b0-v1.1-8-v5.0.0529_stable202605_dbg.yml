@@ -1,0 +1,20 @@
+type: uefi-firmware
+version: "V1.1-8_V5.0.0529-stable202605_dbg"
+size: 6291456
+date: "2026-05-29"
+sha256: "05afa9e0dd0a65f15f39574967700066da669d66c33ab362ffecdec0ad09fc62"
+url: "https://fw.loongfans.cn/xb612b0-v1.1/EDK2505_XB612B0-v1.1-8_V5.0.0529-stable202605_dbg.fd"
+debug: true
+description:
+  zh: |
+    针对 XB612B0_V1.1 (8 核型号) 的固件更新，包含平台稳定性和外设兼容性改进。
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2605.md -->
+  en: |
+    Firmware update for XB612B0_V1.1 (8-core model) including stability and peripheral compatibility fixes.
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2605.en.md -->
