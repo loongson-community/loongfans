@@ -11,5 +11,7 @@ spec: "2K3000 series"
 tags:
   - desktop-mb
 downloads:
+  - uefi-fw-loongson-x2k30b0-v1.0-v5.0.0532_stable202605_rel
+  - uefi-fw-loongson-x2k30b0-v1.0-v5.0.0532_stable202605_dbg
   - uefi-fw-loongson-x2k30b0-v1.0-v5.0.0431_stable202602_rel
   - uefi-fw-loongson-x2k30b0-v1.0-v5.0.0431_stable202602_dbg
