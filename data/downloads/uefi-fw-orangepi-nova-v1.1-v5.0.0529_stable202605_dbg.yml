@@ -1,0 +1,20 @@
+type: uefi-firmware
+version: "V1.1_V5.0.0529-stable202605_dbg"
+size: 8388608
+date: "2026-05-29"
+sha256: "ac6f8362c98365afddf3c8533cc8caa0fa60f9482f4b4e7ebec4ae53cada1391"
+url: "https://fw.loongfans.cn/opi-nova-v1.1/EDK2505_OrangePi-Nova-V1.1_V5.0.0529-stable202605_dbg.fd"
+debug: true
+description:
+  zh: |
+    本版更新主要包含 DDR.MRC、PCIe.PHY、SMC、IPMI、EDK II (edk2) 基础代码及平台适配的相关更新，并优化了平台稳定性、外设兼容性、启动流程及固件更新等功能
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2605.md -->
+  en: |
+    This release primarily includes updates to the DDR.MRC, PCIe.PHY, SMC, IPMI, and EDK II (edk2) base code, as well as platform-specific adaptations. It also optimizes platform stability, peripheral compatibility, the boot process, and firmware update functionality.
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2605.en.md -->
