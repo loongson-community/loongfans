@@ -8,5 +8,7 @@ spec: "2K3000 @ 2.2GHz, nanoITX"
 tags:
   - dev-board
 downloads:
+  - uefi-fw-orangepi-nova-v1.1-v5.0.0529_stable202605_rel
+  - uefi-fw-orangepi-nova-v1.1-v5.0.0529_stable202605_dbg
   - uefi-fw-orangepi-nova-v1.1-v5.0.0431_stable202602_rel
   - uefi-fw-orangepi-nova-v1.1-v5.0.0431_stable202602_dbg
