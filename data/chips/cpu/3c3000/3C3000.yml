@@ -1,0 +1,66 @@
+basic:
+  name: "3C3000"
+  series: "3C3000"
+  market: 3
+
+notesPath: "chips/3c3000.md"
+
+ext_info:
+  pic: "/images/chips/cpu/3C3000.webp"
+  manual: ""
+
+cpu:
+  cores: 16
+  threads: 16
+  arch: "LA364E"
+  freq: "1.8 GHz"
+  l1_inst_cache: "64 KiB"
+  l1_data_cache: "64 KiB"
+  l2_cache: "16 MiB"
+  l3_cache: "N/A"
+  voltage: "N/A"
+  tpc: "40 W"
+  tdp: "N/A"
+
+gpu:
+  available: false
+  name: "N/A"
+
+memory:
+  max: "N/A"
+  types: "DDR4-2400"
+  channels: "2 (72-Bit)"
+  ecc: true
+
+exp:
+  io_name: "PCI Express"
+  io_rev: "3.0"
+  lanes: 32 (2*16)
+  usb_5gbps: 0
+  usb2: 0
+  sata: 0
+  eth: 0
+  spi: 1
+  uart: 1
+  i2c: 3
+  avs: 1
+  gpio: 16
+  d2d: true
+  d2d_name: lcl
+  other: ""
+
+package:
+  socket: "FCBGA1371"
+  temperature: "0 - 70℃"
+  t_case: "70℃"
+  t_junction: "85℃"
+  size: "N/A"
+
+power:
+  clock_gating: true
+  frequency_scaling: true
+  voltage_scaling: false
+
+technologies:
+  isa: "64-Bit"
+  isa_extensions: ["LBT", "LSX"]
