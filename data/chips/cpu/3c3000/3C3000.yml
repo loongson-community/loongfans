@@ -19,7 +19,7 @@ cpu:
   l2_cache: "16 MiB"
   l3_cache: "N/A"
   voltage: "N/A"
-  tpc: "40 W"
+  tpc: "40 W (1.5 GHz)"
   tdp: "N/A"
 
 gpu:
@@ -29,7 +29,7 @@ gpu:
 memory:
   max: "N/A"
   types: "DDR4-2400"
-  channels: "2 (72-Bit)"
+  channels: "4 (72-Bit)"
   ecc: true
 
 exp:
@@ -51,10 +51,10 @@ exp:
 
 package:
   socket: "FCBGA1371"
-  temperature: "0 - 70℃"
-  t_case: "70℃"
-  t_junction: "85℃"
-  size: "N/A"
+  temperature: "N/A"
+  t_case: "N/A"
+  t_junction: "N/A"
+  size: "37.5 mm × 37.5 mm"
 
 power:
   clock_gating: true
