@@ -29,7 +29,7 @@ gpu:
 memory:
   max: "N/A"
   types: "DDR4-2400"
-  channels: "4 (72-Bit)"
+  channels: "2 (72-Bit)"
   ecc: true
 
 exp:
