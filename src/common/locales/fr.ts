@@ -1,5 +1,6 @@
 import chips from "./fr/chips"
 import help from "./fr/help"
+import news from "./fr/news"
 import os from "./fr/os"
 
 function formatFrOrdinal(n: number, gender?: string): string {
@@ -19,7 +20,6 @@ export default {
   devGuides: "Guide du développeur",
   supportMaterials: "Documents d'accompagnement",
   contact: "Contact",
-  news: "Actualités",
   chipsData: "Base de données des puces",
   operatingSystems: "Systèmes d'exploitation",
   productSpecs: "Base de données des produits",
@@ -187,5 +187,6 @@ export default {
 
   chips,
   help,
+  news,
   os,
 }

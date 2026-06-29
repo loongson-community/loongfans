@@ -1,5 +1,6 @@
 import chips from "./de/chips"
 import help from "./de/help"
+import news from "./de/news"
 import os from "./de/os"
 
 function formatDeOrdinal(n: number, gender?: string, gcase?: string): string {
@@ -19,7 +20,6 @@ export default {
   devGuides: "Ressourcen für Entwickler",
   supportMaterials: "Unterstützende Materialien",
   contact: "Kontakt",
-  news: "Nachrichten",
   chipsData: "Chipdatenbank",
   operatingSystems: "Betriebssysteme",
   productSpecs: "Produktdatenbank",
@@ -189,5 +189,6 @@ export default {
 
   chips,
   help,
+  news,
   os,
 }

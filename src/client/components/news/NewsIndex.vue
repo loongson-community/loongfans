@@ -1,19 +1,24 @@
 <template>
-  <ul>
-    <li v-for="news in data" :key="news.url">
-      <a :href="`${basePath}${news.url}`">
-        {{ news.frontmatter.pageTitle }} | {{ news.frontmatter.pageSubTitle }}
-      </a>
-    </li>
-  </ul>
+  <div class="grid grid-cols-2 gap-16">
+    <div
+      v-for="[category, categoryName] in Object.entries($tm('news.categories'))"
+      :key="category"
+    >
+      <div class="flex justify-between items-baseline">
+        <h2 class="shrink">{{ categoryName }}</h2>
+        <a :href="`${basePath}/news/${category}`">{{ $t("news.viewMore") }}</a>
+      </div>
+      <NewsList :category="category" />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue"
 import { useData } from "vitepress"
-// @ts-expect-error 'data' export is handled by VitePress
-import { data } from "@src/node/data-loaders/news.data"
 import { getLocalePrefix } from "@src/client/utils/language"
+import NewsList from "./NewsList.vue"
+
 const { localeIndex } = useData()
 const basePath = computed(() => getLocalePrefix(localeIndex.value))
 </script>

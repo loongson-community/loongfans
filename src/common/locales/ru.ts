@@ -1,5 +1,6 @@
 import chips from "./ru/chips"
 import help from "./ru/help"
+import news from "./ru/news"
 import os from "./ru/os"
 
 const ruOrdinalSuffixes: Record<string, Record<string, string>> = {
@@ -24,7 +25,6 @@ export default {
   devGuides: "Руководство для разработчиков",
   supportMaterials: "Вспомогательные материалы",
   contact: "Контакты",
-  news: "Новости",
   chipsData: "База данных микросхем",
   operatingSystems: "Операционные системы",
   productSpecs: "База данных продуктов",
@@ -194,5 +194,6 @@ export default {
   },
   chips,
   help,
+  news,
   os,
 }
