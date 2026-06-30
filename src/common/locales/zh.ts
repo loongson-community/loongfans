@@ -1,5 +1,6 @@
 import chips from "./zh/chips"
 import help from "./zh/help"
+import news from "./zh/news"
 import os from "./zh/os"
 
 function formatZhOrdinal(n: number): string {
@@ -181,5 +182,6 @@ export default {
 
   chips,
   help,
+  news,
   os,
 }

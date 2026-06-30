@@ -1,5 +1,6 @@
 import chips from "./en/chips"
 import help from "./en/help"
+import news from "./en/news"
 import os from "./en/os"
 
 const pluralRules = new Intl.PluralRules("en", { type: "ordinal" })
@@ -192,5 +193,6 @@ export default {
 
   chips,
   help,
+  news,
   os,
 }

@@ -1,5 +1,6 @@
 import chips from "./fr/chips"
 import help from "./fr/help"
+import news from "./fr/news"
 import os from "./fr/os"
 
 function formatFrOrdinal(n: number, gender?: string): string {
@@ -186,5 +187,6 @@ export default {
 
   chips,
   help,
+  news,
   os,
 }

@@ -20,6 +20,7 @@
         </LinkGroup>
 
         <LinkGroup :title="$t('supportMaterials')">
+          <HomePageLink :href="`${basePath}/news`" :name="$t('news.title')" />
           <HomePageLink :href="`${basePath}/chips`" :name="t('chipsData')" />
           <HomePageLink
             :href="`${basePath}/devices`"
