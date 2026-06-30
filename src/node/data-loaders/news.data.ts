@@ -1,4 +1,11 @@
-import { createContentLoader } from "vitepress"
+import { createContentLoader, type ContentData } from "vitepress"
+
+export type NewsData = ContentData & {
+  category: string
+  localeIndex: string
+  baseUrl: string
+}
+
 export default createContentLoader("**/news/**/*.md", {
   includeSrc: false,
   render: false,
@@ -10,5 +17,8 @@ export default createContentLoader("**/news/**/*.md", {
       localeIndex: item.url.startsWith("/news")
         ? "root"
         : item.url.split("/")[1],
+      baseUrl: item.url.startsWith("/news")
+        ? item.url
+        : "/" + item.url.split("/").slice(2).join("/"),
     })),
 })
