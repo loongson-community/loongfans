@@ -9,7 +9,10 @@
       <div v-if="$slots.default" class="icon">
         <slot />
       </div>
-      <span class="name">{{ name }}</span>
+      <div class="flex items-center">
+        <span class="name">{{ name }}</span>
+        <Badge v-if="hint" :value="hint" class="ml-2" />
+      </div>
     </div>
     <div class="flex">
       <IconOpenInNew v-if="href && target" class="extra-icon" />
@@ -22,12 +25,14 @@
 </template>
 
 <script setup lang="ts">
+import { Badge } from "primevue"
 import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import IconQrCode2 from "~icons/material-symbols/qr-code-2"
 
 const props = defineProps<{
   href?: string
   name: string
+  hint?: string
   qrLink?: string
 }>()
 const target = props.href?.startsWith("http") ? "_blank" : undefined

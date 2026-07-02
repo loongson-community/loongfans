@@ -19,6 +19,7 @@ export default {
   contact: "联系我们",
   chipsData: "芯片规格数据库",
   productSpecs: "产品规格数据库",
+  prodectSpecsHint: "固件",
   operatingSystems: "操作系统",
   compatibilityDb: "软硬件兼容性数据库",
   communityResources: "社区资源",

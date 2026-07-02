@@ -24,6 +24,7 @@
           <HomePageLink
             :href="`${basePath}/devices`"
             :name="t('productSpecs')"
+            :hint="t('prodectSpecsHint')"
           />
           <HomePageLink
             href="https://loong123.cn/"

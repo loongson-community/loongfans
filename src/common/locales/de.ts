@@ -22,6 +22,7 @@ export default {
   chipsData: "Chipdatenbank",
   operatingSystems: "Betriebssysteme",
   productSpecs: "Produktdatenbank",
+  prodectSpecsHint: "Firmware",
   compatibilityDb: "Kompatibilitätsdatenbank",
   communityResources: "Community-Resourcen",
   biweeklyMeeting: "LoongArch Biweekly", // deliberately in English for consistent branding in non-ZH locales
