@@ -22,6 +22,7 @@ export default {
   chipsData: "Base de données des puces",
   operatingSystems: "Systèmes d'exploitation",
   productSpecs: "Base de données des produits",
+  prodectSpecsHint: "Micrologiciel",
   compatibilityDb: "Base de données de compatibilité",
   communityResources: "Ressources communautaires",
   biweeklyMeeting: "LoongArch Biweekly", // deliberately in English for consistent branding in non-ZH locales

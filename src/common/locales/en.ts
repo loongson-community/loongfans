@@ -29,6 +29,7 @@ export default {
   chipsData: "Chips Database",
   operatingSystems: "Operating Systems",
   productSpecs: "Product Database",
+  prodectSpecsHint: "Firmware",
   compatibilityDb: "Loong 1-2-3",
   communityResources: "Community Resources",
   biweeklyMeeting: "LoongArch Biweekly",

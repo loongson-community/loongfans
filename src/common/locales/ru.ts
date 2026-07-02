@@ -27,6 +27,7 @@ export default {
   chipsData: "База данных микросхем",
   operatingSystems: "Операционные системы",
   productSpecs: "База данных продуктов",
+  prodectSpecsHint: "Прошивка",
   compatibilityDb: "База данных совместимости",
   communityResources: "Ресурсы сообщества",
   biweeklyMeeting: "LoongArch Biweekly", // deliberately in English for consistent branding in non-ZH locales
