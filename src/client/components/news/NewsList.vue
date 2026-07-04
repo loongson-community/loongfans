@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="item in filteredData" :key="item.url">
+    <li v-for="item in newsList" :key="item.url">
       <a :href="`${item.url}`">
         {{ item.frontmatter.pageTitle }} |
         {{ item.frontmatter.pageSubTitle }}
@@ -22,8 +22,8 @@ const props = withDefaults(
 
 const { localeIndex } = useData()
 
-const filteredData = computed(() => {
-  if (!props.category) return data.slice(0, props.limit)
+const filteredData = computed<NewsData[]>(() => {
+  if (!props.category) return data
 
   const map = new Map<string, NewsData>()
   for (const item of data as NewsData[]) {
@@ -34,6 +34,14 @@ const filteredData = computed(() => {
     )
       map.set(item.baseUrl, item)
   }
-  return Array.from(map.values()).slice(0, props.limit)
+  return Array.from(map.values())
 })
+
+const newsList = filteredData.value
+  .slice(0, props.limit)
+  .toSorted((newsA, newsB) =>
+    newsB.frontmatter.pageSubTitle.localeCompare(
+      newsA.frontmatter.pageSubTitle,
+    ),
+  )
 </script>
