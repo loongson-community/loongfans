@@ -25,12 +25,15 @@ const { localeIndex } = useData()
 const filteredData = computed<NewsData[]>(() => {
   if (!props.category) return data
 
+  const getPriority = (loc: string | undefined) =>
+    loc === localeIndex.value ? 3 : loc === "en" ? 2 : loc === "root" ? 1 : 0
+
   const map = new Map<string, NewsData>()
   for (const item of data as NewsData[]) {
     if (item.category !== props.category) continue
     if (
-      item.localeIndex === localeIndex.value ||
-      (item.localeIndex === "root" && !map.has(item.baseUrl))
+      getPriority(item.localeIndex) >
+      getPriority(map.get(item.baseUrl)?.localeIndex)
     )
       map.set(item.baseUrl, item)
   }
