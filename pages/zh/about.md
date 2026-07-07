@@ -1,7 +1,7 @@
 ---
 layout: page
 # 返回首页
-returnLink: /
+returnLink: /zh
 pageTitle: 关于社区
 pageSubTitle: 东方神秘第三方社区
 ---
