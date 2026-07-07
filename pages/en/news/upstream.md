@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /news
+returnLink: /en/news
 pageTitle: All LoongArch Upstream Updates
 pageSubTitle: 
 ---

@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /news
+returnLink: /ru/news
 pageTitle: Все журналы изменений прошивок
 pageSubTitle: 
 ---
