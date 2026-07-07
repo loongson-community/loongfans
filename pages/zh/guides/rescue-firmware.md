@@ -130,17 +130,17 @@ echo "7B435CA09F34088D6922BD82C9A46945E57A93BC4E3C24016BCE8FC19826E0AF XC-LS3A6M
 
 之后请事先确认 CH341A 编程器外观，并在软件界面的`切换编程器`菜单中选择，考虑到销售情况，多数情况下为`CH341 双电压黑色版`：
 
-![](/images/guides/rescue-firmware/select-programmer.png)
+![](/zh/images/guides/rescue-firmware/select-programmer.png)
 
 根据图示的序号按顺序操作：
 
-![](/images/guides/rescue-firmware/neoprogrammer.webp)
+![](/zh/images/guides/rescue-firmware/neoprogrammer.webp)
 
 1. 点击`打开文件`，选择主板对应的固件文件（**注意：扩展名需重命名为`.bin`**）
 ![](/images/guides/rescue-firmware/select-firmware-windows.png)
 
 2. 点击`检测`，可以探测连接的 Flash 芯片型号，若数据库中无完全对应的型号，也可使用近似型号，例如 `W25Q128JW` 可选择 `W25Q128FW`，这些型号在大多数情况下是新旧版本区别，参数基本相同。
-![](/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
+![](/zh/images/guides/rescue-firmware/detect-flashid-neoprogrammer.png)
 
 3. 点击`擦除`，将已经损坏的固件彻底清空，擦除成功后也可选择右侧的`查空`功能检查 Flash 芯片是否已经没有内容，若均返回`成功`即可进行下一步操作。
 
@@ -191,7 +191,7 @@ sudo ./build_all.sh # 对于 macOS 请去掉 sudo
 
 启动后根据图示的序号按顺序操作：
 
-![](/images/guides/rescue-firmware/imsprog.webp)
+![](/zh/images/guides/rescue-firmware/imsprog.webp)
 
 1. 点击`打开文件`，选择主板对应的固件文件（**注意：与 NeoProgrammer 相同，扩展名需重命名为`.bin`**）
 
