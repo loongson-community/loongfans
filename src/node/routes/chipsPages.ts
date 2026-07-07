@@ -11,7 +11,7 @@ import type { RouteModule } from "vitepress"
 // See also https://github.com/vuejs/vitepress/issues/2826 for a similar use
 // case.
 import type { ChipsetInfoItem, CPUInfoItem } from "../../types/data"
-import { defaultLocale, i18nForLocale } from "../../common/i18n"
+import { i18nForLocale } from "../../common/i18n"
 
 // Because a data import is impossible for clean builds for reasons explained
 // above, we have to duplicate work by generating data directly in the module.
@@ -44,7 +44,7 @@ class RouteCompiler {
   }
 
   get localePart() {
-    return this.locale === defaultLocale ? "" : `${this.locale}/`
+    return `${this.locale}/`
   }
 
   get t() {

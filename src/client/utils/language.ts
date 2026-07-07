@@ -20,15 +20,14 @@ export const LANGUAGE_PREFIXES: Record<SupportedLanguage, string> = {
   [SupportedLanguage.EN]: "/en",
   [SupportedLanguage.FR]: "/fr",
   [SupportedLanguage.RU]: "/ru",
-  [SupportedLanguage.ZH]: "",
+  [SupportedLanguage.ZH]: "/zh",
 }
 
 /**
  * VitePress localeIndex 到语言路径前缀的映射
- * localeIndex 为 'root' 表示根语言（中文），为 'en' 表示英文
  */
 const LOCALE_INDEX_TO_PREFIX: Record<string, string> = {
-  root: LANGUAGE_PREFIXES[SupportedLanguage.ZH],
+  zh: LANGUAGE_PREFIXES[SupportedLanguage.ZH],
   de: LANGUAGE_PREFIXES[SupportedLanguage.DE],
   en: LANGUAGE_PREFIXES[SupportedLanguage.EN],
   fr: LANGUAGE_PREFIXES[SupportedLanguage.FR],
