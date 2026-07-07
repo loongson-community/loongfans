@@ -1,7 +1,6 @@
 ---
 layout: page
-# 返回首页
-returnLink: /
+returnLink: /en
 pageTitle: Community News
 pageSubTitle: News and Events Happening Around Our Community
 ---

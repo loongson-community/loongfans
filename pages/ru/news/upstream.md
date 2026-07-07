@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /news
+returnLink: /ru/news
 pageTitle: Все обновления upstream LoongArch
 pageSubTitle: 
 ---

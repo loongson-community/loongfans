@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /news
+returnLink: /fr/news
 pageTitle: Tous les journaux des firmwares
 pageSubTitle: 
 ---

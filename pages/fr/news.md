@@ -1,7 +1,6 @@
 ---
 layout: page
-# 返回首页
-returnLink: /
+returnLink: /fr
 pageTitle: Actualités
 pageSubTitle: Actualités et événements dans notre communauté
 ---

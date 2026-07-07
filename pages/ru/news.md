@@ -1,7 +1,6 @@
 ---
 layout: page
-# 返回首页
-returnLink: /
+returnLink: /ru
 pageTitle: Community News
 pageSubTitle: Новости и события, происходящие в нашем сообществе
 ---

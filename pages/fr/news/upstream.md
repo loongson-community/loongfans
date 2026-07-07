@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /news
+returnLink: /fr/news
 pageTitle: Toutes les mises à jour amont LoongArch
 pageSubTitle: 
 ---

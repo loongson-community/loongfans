@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /news
+returnLink: /en/news
 pageTitle: All Firmware Changelogs
 pageSubTitle: 
 ---
