@@ -1,7 +1,7 @@
 ---
 layout: page
 # 返回首页
-returnLink: /
+returnLink: /zh
 pageTitle: 玩机及踩坑指南
 pageSubTitle: 大家都说，龙芯有点创——
 ---

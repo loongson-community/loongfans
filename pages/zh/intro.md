@@ -1,7 +1,7 @@
 ---
 layout: page
 # 返回首页
-returnLink: /
+returnLink: /zh
 pageTitle: 走向新世界！
 pageSubTitle: 欢迎来到 x86 和 ARM 远山之外的龙芯世界
 ---

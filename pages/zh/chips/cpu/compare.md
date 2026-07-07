@@ -1,6 +1,6 @@
 ---
 layout: page
-returnLink: /chips
+returnLink: /zh/chips
 pageTitle: CPU 芯片对比
 pageSubTitle:
 ---
