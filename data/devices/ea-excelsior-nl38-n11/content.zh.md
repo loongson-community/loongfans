@@ -30,13 +30,13 @@
 
 <template #known-issues>
 
-<!--@include: @parts/known-issues/touchpad-err-in-abi2.md -->
+<!--@include: @parts/zh/known-issues/touchpad-err-in-abi2.md -->
 
-<!--@include: @parts/known-issues/loonggpu-err-in-abi2.md -->
+<!--@include: @parts/zh/known-issues/loonggpu-err-in-abi2.md -->
 
-<!--@include: @parts/known-issues/smcv1-issue-in-abi2.md -->
+<!--@include: @parts/zh/known-issues/smcv1-issue-in-abi2.md -->
 
-<!--@include: @parts/known-issues/laptop-high-power-consumption.md -->
+<!--@include: @parts/zh/known-issues/laptop-high-power-consumption.md -->
 
 </template>
 

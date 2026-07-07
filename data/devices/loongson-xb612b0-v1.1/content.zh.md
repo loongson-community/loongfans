@@ -27,7 +27,7 @@
 
 <template #known-issues>
 
-<!--@include: @parts/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
+<!--@include: @parts/zh/known-issues/3b6000-3c6000-early-stepping-pcie-link-speed-err.md -->
 
 </template>
 

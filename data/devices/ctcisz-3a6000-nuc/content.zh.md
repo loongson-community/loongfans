@@ -23,7 +23,7 @@
 
 <template #known-issues>
 
-<!--@include: @parts/known-issues/usb-device-lost.md -->
+<!--@include: @parts/zh/known-issues/usb-device-lost.md -->
 
 </template>
 

@@ -28,7 +28,7 @@
 
 <template #known-issues>
 
-<!--@include: @parts/known-issues/7a-errata.md -->
+<!--@include: @parts/zh/known-issues/7a-errata.md -->
 
 </template>
 
