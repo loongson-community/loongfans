@@ -27,9 +27,9 @@
 
 <template #known-issues>
 
-<!--@include: @parts/known-issues/7a-errata.md -->
+<!--@include: @parts/zh/known-issues/7a-errata.md -->
 
-<!--@include: @parts/known-issues/usb-device-lost.md -->
+<!--@include: @parts/zh/known-issues/usb-device-lost.md -->
 
 ### 固件更新问题
 
