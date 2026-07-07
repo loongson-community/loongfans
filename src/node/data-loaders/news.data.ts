@@ -14,11 +14,7 @@ export default createContentLoader("**/news/**/*.md", {
     data.map((item) => ({
       ...item,
       category: item.url.split("/").at(-2) || "others",
-      localeIndex: item.url.startsWith("/news")
-        ? "root"
-        : item.url.split("/")[1],
-      baseUrl: item.url.startsWith("/news")
-        ? item.url
-        : "/" + item.url.split("/").slice(2).join("/"),
+      localeIndex: item.url.split("/")[1],
+      baseUrl: "/" + item.url.split("/").slice(2).join("/"),
     })),
 })

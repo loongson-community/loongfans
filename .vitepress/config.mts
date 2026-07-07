@@ -12,9 +12,10 @@ const srcDir = "pages"
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   locales: {
-    root: {
+    zh: {
       label: "简体中文",
       lang: "zh",
+      link: "/zh",
       title: "龙芯爱好者社区",
       description: "龙芯爱好者社区导航站",
     },

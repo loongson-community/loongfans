@@ -19,7 +19,7 @@ This repository powers [the Loongson Hobbyists' Community portal](loongfans.cn).
 High level project layout:
 
 - `data/`: YAML data sources (chips, devices, downloads, OS, events).
-- `pages/`: Chinese Markdown content.
+- `pages/zh/`: Chinese Markdown content.
 - `pages/en/`: English Markdown translations.
 - `pages/public/`: static assets (images, localized public files).
 - `src/client/`: Vue components, stores, and client utilities.
