@@ -22,15 +22,25 @@ import DynamicDialog from "primevue/dynamicdialog"
 import Toast from "primevue/toast"
 import ChildHeader from "@src/client/components/ChildHeader.vue"
 import ChildFooter from "@src/client/components/ChildFooter.vue"
-import { handleFirstVisitRedirect } from "@src/client/utils/language"
+import {
+  handleRedirect,
+  LANGUAGE_PREFIXES,
+  removeStoredLanguage,
+} from "@src/client/utils/language"
 
 const { frontmatter, lang } = useData()
 const { locale } = useI18n()
 const router = useRouter()
 
-// 首次访问时自动检测并重定向
 onMounted(() => {
-  handleFirstVisitRedirect(router)
+  removeStoredLanguage()
+
+  const [, firstSegment] = router.route.path.split("/")
+  if (
+    firstSegment === undefined ||
+    !Object.values(LANGUAGE_PREFIXES).includes(`/${firstSegment}`)
+  )
+    handleRedirect(router)
 })
 
 // 同步 VitePress 语言和 vue-i18n locale
