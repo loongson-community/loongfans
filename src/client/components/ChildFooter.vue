@@ -56,13 +56,12 @@ import IconTranslate from "~icons/material-symbols/translate"
 import {
   getLocalePrefix,
   getLocaleUrl,
-  setStoredLanguage,
   LANGUAGE_DISPLAY_NAMES,
 } from "@src/client/utils/language"
 import type { SupportedLanguage } from "@src/types/language"
 
 const { t } = useI18n()
-const { localeIndex, lang } = useData()
+const { localeIndex } = useData()
 const router = useRouter()
 const basePath = computed(() => getLocalePrefix(localeIndex.value))
 const op = ref()
@@ -72,7 +71,6 @@ const copyrightYear = ref(year)
 
 function handleLanguageChange(language: SupportedLanguage) {
   op.value.hide()
-  if (language !== lang.value) setStoredLanguage(language)
   router.go(getLocaleUrl(language, router.route.path))
 }
 </script>

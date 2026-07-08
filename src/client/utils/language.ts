@@ -13,7 +13,6 @@ export const LANGUAGE_DISPLAY_NAMES: Record<SupportedLanguage, string> = {
 
 /**
  * 语言路径前缀映射
- * 注意：root locale（中文）的前缀为空字符串
  */
 export const LANGUAGE_PREFIXES: Record<SupportedLanguage, string> = {
   [SupportedLanguage.DE]: "/de",
@@ -67,6 +66,10 @@ export function setStoredLanguage(lang: string) {
   localStorage.setItem(STORAGE_KEY_LANGUAGE, lang)
 }
 
+export function removeStoredLanguage() {
+  return localStorage.removeItem(STORAGE_KEY_LANGUAGE)
+}
+
 /**
  * 根据 VitePress 的 localeIndex 获取语言路径前缀
  * @param localeIndex VitePress useData() 返回的 localeIndex
@@ -77,19 +80,12 @@ export function getLocalePrefix(localeIndex: string): string {
 }
 
 /**
- * 根据语言偏好进行首次访问的重定向，只在首次访问时调用
+ * 根据语言偏好重定向，只在访问不带前缀的路径时调用
  */
-export function handleFirstVisitRedirect(router: Router) {
-  let storedLang = getStoredLanguage()
-
-  if (!storedLang) {
-    const lang = navigator.language
-    const defaultLang = detectBrowserLanguage(lang)
-    setStoredLanguage(defaultLang)
-    storedLang = defaultLang
-  }
-
-  router.go(getLocaleUrl(storedLang as SupportedLanguage, router.route.path))
+export function handleRedirect(router: Router) {
+  router.go(
+    getLocaleUrl(detectBrowserLanguage(navigator.language), router.route.path),
+  )
 }
 
 /**
