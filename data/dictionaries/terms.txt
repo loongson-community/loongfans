@@ -1,5 +1,6 @@
 amand
 amswap
+configurator
 debounce
 debouncer
 Dyna

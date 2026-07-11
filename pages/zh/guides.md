@@ -11,6 +11,7 @@ pageSubTitle: 大家都说，龙芯有点创——
 ## 从购买到使用
 
 - [在亮机前：从购买入坑，如何获得良好体验？](/zh/guides/out-of-the-box)
+- [Box64 入门指南](/zh/guides/box64)
 
 ## 常见问题集
 

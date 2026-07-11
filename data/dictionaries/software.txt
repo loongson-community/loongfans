@@ -4,6 +4,7 @@ AOSC
 CLFS
 deepin
 DRVSETUP
+DXVK
 eweos
 eweOS
 Forgejo
