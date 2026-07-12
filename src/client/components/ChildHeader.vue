@@ -12,11 +12,7 @@
   </div>
 
   <div class="back_row">
-    <ChildHeaderButton
-      :href="frontmatter.returnLink"
-      :text="t('goBack')"
-      class="btn_back"
-    >
+    <ChildHeaderButton :href="returnLink" :text="t('goBack')" class="btn_back">
       <IconArrowCircleLeftOutline />
     </ChildHeaderButton>
     <ChildHeaderButton
@@ -47,6 +43,13 @@ const comparisonStore = useCPUComparisonStore()
 
 const compareButtonText = computed(() => {
   return t("chips.buttons.title") + " (" + comparisonStore.listLength + ")"
+})
+
+const returnLink = computed(() => {
+  if (frontmatter.value.returnLink) return frontmatter.value.returnLink
+  if (page.value.filePath.split("/")[2] === "chips")
+    return getLocaleUrl(locale.value, "/chips")
+  return "/" + page.value.filePath.replace(/\/[^/]*\.md$/, "")
 })
 </script>
 
