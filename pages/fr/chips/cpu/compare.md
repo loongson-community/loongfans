@@ -1,5 +1,6 @@
 ---
 layout: page
+returnLink: /chips
 pageTitle: Comparaison des processeurs
 pageSubTitle:
 ---

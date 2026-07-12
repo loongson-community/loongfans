@@ -1,5 +1,6 @@
 ---
 layout: page
+returnLink: /chips
 pageTitle: Сравнение процессоров
 pageSubTitle:
 ---

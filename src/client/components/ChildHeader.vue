@@ -46,9 +46,8 @@ const compareButtonText = computed(() => {
 })
 
 const returnLink = computed(() => {
-  if (frontmatter.value.returnLink) return frontmatter.value.returnLink
-  if (page.value.filePath.split("/")[2] === "chips")
-    return getLocaleUrl(locale.value, "/chips")
+  if (frontmatter.value.returnLink)
+    return getLocaleUrl(locale.value, frontmatter.value.returnLink)
   return "/" + page.value.filePath.replace(/\/[^/]*\.md$/, "")
 })
 </script>
