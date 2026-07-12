@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en
 pageTitle: Towards the New World!
 pageSubTitle: Welcome to Loongson's World Beyond x86 and ARM
 ---

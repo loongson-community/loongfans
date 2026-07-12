@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en/chips
 # these values are dynamic, so these have to be initialized by transformPageData()
 # pageTitle: {{ params.title }}
 # pageSubTitle: {{ params.subTitle }}

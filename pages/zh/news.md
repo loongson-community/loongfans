@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /zh
 pageTitle: 新闻资讯
 pageSubTitle: 龙芯与龙架构社区资讯
 ---

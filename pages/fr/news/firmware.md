@@ -1,8 +1,7 @@
 ---
 layout: page
-returnLink: /fr/news
 pageTitle: Tous les journaux des firmwares
-pageSubTitle: 
+pageSubTitle:
 ---
 
 <script setup lang="ts">

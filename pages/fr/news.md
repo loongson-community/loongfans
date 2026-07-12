@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /fr
 pageTitle: Actualités
 pageSubTitle: Actualités et événements dans notre communauté
 ---

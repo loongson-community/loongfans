@@ -1,8 +1,7 @@
 ---
 layout: page
-returnLink: /fr/news
 pageTitle: Toutes les mises à jour amont LoongArch
-pageSubTitle: 
+pageSubTitle:
 ---
 
 <script setup lang="ts">

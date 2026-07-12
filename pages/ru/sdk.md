@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /ru
 pageTitle: Руководство для разработчиков
 pageSubTitle: Руководства и рекомендации по разработке для LoongArch
 ---

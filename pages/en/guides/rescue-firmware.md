@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en/guides
 pageTitle: Rescuing Firmware
 pageSubTitle: Rescuing hardware that fails to boot after firmware flashing
 ---

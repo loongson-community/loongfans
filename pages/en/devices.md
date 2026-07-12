@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en
 pageTitle: Product Specifications
 pageSubTitle: Overview of specifications, features, and known issues
 ---

@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /ru
 pageTitle:  # Главный заголовок
 pageSubTitle: # Субтитры
 ---

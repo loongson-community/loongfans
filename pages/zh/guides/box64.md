@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /zh/guides
 pageTitle: Box64 入门指南
 pageSubTitle: 使用 Box64 运行 x86 程序的指南
 ---

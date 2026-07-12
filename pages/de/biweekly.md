@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /de
 pageTitle: LoongArch Biweekly  # deliberately in English for consistent branding in non-ZH locales
 pageSubTitle: Zweiwöchentliche Treffen für Community-Entwickler und Hobbyentwickler
 ---

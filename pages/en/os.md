@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /en
 pageTitle: Operating System
 pageSubTitle: Operating Systems for LoongArch
 ---

@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en
 pageTitle: LoongArch Biweekly
 pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 ---

@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /zh/guides
 pageTitle: 常见问题集
 pageSubTitle: 各类桌面及服务器平台已知问题
 ---

@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /de
 pageTitle: Produktdatenbank
 pageSubTitle: Übersicht über technische Daten, besondere Ausstattungsmerkmale und bekannte Probleme
 ---

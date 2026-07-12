@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /fr
 pageTitle: Caractéristiques techniques du produit
 pageSubTitle: Aperçu des spécifications, des fonctionnalités et des problèmes connus
 ---

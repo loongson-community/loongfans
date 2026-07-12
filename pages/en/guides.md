@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en
 pageTitle: User Guide and Troubleshooting
 pageSubTitle: Taming the Quirky Loongson...
 ---

@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /ru
 pageTitle: О нашем сообществе
 pageSubTitle: Таинственное сообщество для таинственных процессоров
 ---

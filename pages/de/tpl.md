@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /de
 pageTitle:  # Haupttitel
 pageSubTitle: # Untertitel
 ---

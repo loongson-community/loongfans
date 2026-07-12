@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /zh/news
 pageTitle: 固件更新日志
 pageSubTitle: stable2511
 ---

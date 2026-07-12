@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /fr
 pageTitle: À propos de notre communauté
 pageSubTitle: Cette mystérieuse communauté dédiée aux processeurs mystérieux
 ---

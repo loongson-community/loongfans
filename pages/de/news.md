@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /de
 pageTitle: Новости
 pageSubTitle: Neuigkeiten und Veranstaltungen in unserer Gemeinde
 ---

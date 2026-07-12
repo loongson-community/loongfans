@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en
 pageTitle:  # Main title
 pageSubTitle: # Subtitle
 ---

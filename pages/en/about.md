@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en
 pageTitle: About Our Community
 pageSubTitle: That Mysterious Community for Mysterious Processors
 ---

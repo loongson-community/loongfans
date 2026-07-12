@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /fr
 pageTitle: Guide de l'utilisateur et dépannage
 pageSubTitle: Apprivoiser l'excentrique Loongson...
 ---

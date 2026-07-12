@@ -1,6 +1,5 @@
 ---
 layout: doc
-returnLink: /de
 pageTitle: Chip-Datenbank
 pageSubTitle: Erfahren Sie mehr über die Funktionen und die Leistung von Loongson-Prozessoren und -Chips und vergleichen Sie diese
 ---

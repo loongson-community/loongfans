@@ -1,8 +1,7 @@
 ---
 layout: page
-returnLink: /zh/news
 pageTitle: 所有固件更新日志
-pageSubTitle: 
+pageSubTitle:
 ---
 
 <script setup lang="ts">

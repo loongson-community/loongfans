@@ -1,8 +1,7 @@
 ---
 layout: page
-returnLink: /en/news
 pageTitle: All Firmware Changelogs
-pageSubTitle: 
+pageSubTitle:
 ---
 
 <script setup lang="ts">

@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /fr
 pageTitle: Système d'exploitation
 pageSubTitle: Systèmes d'exploitation pour LoongArch
 ---

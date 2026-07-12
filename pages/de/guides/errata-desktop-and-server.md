@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /de/guides
 pageTitle: Häufige Probleme
 pageSubTitle: Häufige Probleme auf Desktop- und Serverplattformen
 ---

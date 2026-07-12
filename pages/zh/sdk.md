@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /zh
 pageTitle: 开发者指南
 pageSubTitle: 龙架构开发入门及注意事项
 ---

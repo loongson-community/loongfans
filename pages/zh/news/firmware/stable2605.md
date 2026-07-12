@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /zh/news/firmware
 pageTitle: 固件更新日志
 pageSubTitle: stable2605
 ---

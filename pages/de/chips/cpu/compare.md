@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /de/chips
 pageTitle: CPU-Vergleich
 pageSubTitle:
 ---

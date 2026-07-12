@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en/guides
 pageTitle: Getting Started
 pageSubTitle: Your Guide from Unboxing to a Happy User
 ---

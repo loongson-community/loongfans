@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /ru
 pageTitle: Руководство пользователя и устранение неисправностей
 pageSubTitle: Как приручить причудливый Loongson...
 ---

@@ -1,8 +1,7 @@
 ---
 layout: page
-returnLink: /en/news
 pageTitle: All LoongArch Upstream Updates
-pageSubTitle: 
+pageSubTitle:
 ---
 
 <script setup lang="ts">

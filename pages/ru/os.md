@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /ru
 pageTitle: Операционная система
 pageSubTitle: Операционные системы для LoongArch
 ---

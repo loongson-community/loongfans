@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /de
 pageTitle: Benutzerhandbuch und Fehlerbehebung
 pageSubTitle: Den eigenwilligen Loongson zähmen...
 ---

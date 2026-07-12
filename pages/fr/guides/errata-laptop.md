@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /fr/guides
 pageTitle: Problèmes courants
 pageSubTitle: Problèmes courants rencontrés sur différentes plateformes d'ordinateurs portables
 ---

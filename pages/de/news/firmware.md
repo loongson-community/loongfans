@@ -1,8 +1,7 @@
 ---
 layout: page
-returnLink: /de/news
 pageTitle: Alle Firmware-Änderungsprotokolle
-pageSubTitle: 
+pageSubTitle:
 ---
 
 <script setup lang="ts">

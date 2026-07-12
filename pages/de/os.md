@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /de
 pageTitle: Betriebssystem
 pageSubTitle: Betriebssysteme für LoongArch
 ---

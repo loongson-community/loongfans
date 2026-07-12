@@ -1,8 +1,7 @@
 ---
 layout: page
-returnLink: /ru/news
 pageTitle: Все журналы изменений прошивок
-pageSubTitle: 
+pageSubTitle:
 ---
 
 <script setup lang="ts">

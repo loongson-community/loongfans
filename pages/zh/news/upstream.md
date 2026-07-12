@@ -1,8 +1,7 @@
 ---
 layout: page
-returnLink: /zh/news
 pageTitle: 所有龙架构上游动向
-pageSubTitle: 
+pageSubTitle:
 ---
 
 <script setup lang="ts">

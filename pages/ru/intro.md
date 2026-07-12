@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /ru
 pageTitle: Вперед, в Новый Свет!
 pageSubTitle: Добро пожаловать в мир Loongson за пределами архитектур x86 и ARM
 ---

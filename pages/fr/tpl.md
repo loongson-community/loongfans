@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /fr
 pageTitle:  # Titre principal
 pageSubTitle: # Sous-titres
 ---

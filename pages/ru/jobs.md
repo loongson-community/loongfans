@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /ru
 pageTitle: Стажировки и вознаграждения
 pageSubTitle: Любовь или материальные блага? ( ͡° ͜ʖ ͡°)
 ---

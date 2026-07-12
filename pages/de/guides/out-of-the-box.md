@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /de/guides
 pageTitle: Erste Schritte
 pageSubTitle: Ihr Leitfaden vom Auspacken bis zur Zufriedenheit
 ---

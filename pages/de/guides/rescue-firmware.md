@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /de/guides
 pageTitle: Firmware retten
 pageSubTitle: Wiederherstellung von Hardware, die nach einem Firmware-Update nicht mehr bootet
 ---

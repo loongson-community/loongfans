@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /en
 pageTitle: Community News
 pageSubTitle: News and Events Happening Around Our Community
 ---

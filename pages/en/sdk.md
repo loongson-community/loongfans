@@ -1,7 +1,5 @@
 ---
 layout: page
-# 返回首页
-returnLink: /en
 pageTitle: Developer's Guide
 pageSubTitle: Guides and Notes on Developing for LoongArch
 ---

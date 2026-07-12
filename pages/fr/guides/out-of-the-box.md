@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /fr/guides
 pageTitle: Pour commencer
 pageSubTitle: Votre guide, du déballage jusqu'à votre satisfaction
 ---

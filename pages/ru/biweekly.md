@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /ru
 pageTitle: LoongArch Biweekly  # deliberately in English for consistent branding in non-ZH locales
 pageSubTitle: Встречи раз в две недели для разработчиков сообщества и энтузиастов
 ---

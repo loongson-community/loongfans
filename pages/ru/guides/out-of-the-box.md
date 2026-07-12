@@ -1,6 +1,5 @@
 ---
 layout: page
-returnLink: /ru/guides
 pageTitle: Начало работы
 pageSubTitle: Ваш путеводитель от распаковки до удовлетворенного пользователя
 ---

@@ -1,6 +1,5 @@
 ---
 layout: doc
-returnLink: /ru
 pageTitle: База данных микросхем
 pageSubTitle: Узнайте о характеристиках и производительности процессоров и чипов Loongson и сравните их
 ---
