@@ -231,8 +231,7 @@ export interface BiweeklyPendingResource extends BiweeklyResourceMetadata {
 }
 
 export type BiweeklyResource =
-  | BiweeklyAvailableResource
-  | BiweeklyPendingResource
+  BiweeklyAvailableResource | BiweeklyPendingResource
 
 export interface BiweeklyEventData {
   links: BiweeklyResource[]

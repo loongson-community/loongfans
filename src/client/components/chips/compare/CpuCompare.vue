@@ -640,12 +640,7 @@ import type { CPUInfoItem } from "@src/types/data"
 type CPUInfoItemSection = NonNullable<
   {
     [K in keyof CPUInfoItem]: CPUInfoItem[K] extends
-      | string
-      | number
-      | boolean
-      | string[]
-      | undefined
-      | null
+      string | number | boolean | string[] | undefined | null
       ? never
       : K
   }[keyof CPUInfoItem]
