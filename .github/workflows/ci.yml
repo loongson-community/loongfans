@@ -55,6 +55,31 @@ jobs:
           path: "./.vitepress/dist/"
           name: "pages-${{ github.sha }}"
 
+  build-loong64:
+    name: Check loong64 build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the source code
+        uses: actions/checkout@v7
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+      - name: Run build
+        uses: addnab/docker-run-action@v3
+        with:
+          registry: registry.alpinelinux.org
+          image: "registry.alpinelinux.org/img/alpine:3.23"
+          options: |
+            --platform linux/loong64
+            -v ${{ github.workspace }}:${{ github.workspace }}
+            --workdir ${{ github.workspace }}
+            -e CI=true
+            -e GITHUB_ACTIONS=true
+          run: |
+            apk update
+            apk add bash git nodejs pnpm
+            pnpm install
+            pnpm run build
+
   deploy-cf-pages:
     name: Deploy to Cloudflare Pages
     # only run for PRs
