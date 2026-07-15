@@ -26,7 +26,7 @@ const filteredData = computed<NewsData[]>(() => {
   if (!props.category) return data
 
   const getPriority = (loc: string | undefined) =>
-    loc === localeIndex.value ? 3 : loc === "en" ? 2 : loc === "root" ? 1 : 0
+    loc === localeIndex.value ? 3 : loc === "en" ? 2 : loc === "zh" ? 1 : 0
 
   const map = new Map<string, NewsData>()
   for (const item of data as NewsData[]) {
