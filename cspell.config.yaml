@@ -54,6 +54,7 @@ ignorePaths:
   - "example.Caddyfile"
   - node_modules
   - pages/public
+  - pages/**/news # There are too many new terms that appear infrequently, temporarily exclude news directories to reduce the workload.
   - pages/de
   - pages/fr
   - pages/ru
