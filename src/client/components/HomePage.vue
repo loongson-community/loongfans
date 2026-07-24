@@ -159,7 +159,7 @@ body {
 /*站点导航清单-结束*/
 
 /*响应式处理-开始*/
-@media (max-width: var(--content-max-width)) {
+@media (max-width: /* var(--content-max-width) */ 1024px) {
   .home_body {
     padding: 0px 20px;
     padding-top: 50px;

@@ -152,7 +152,7 @@ function handleLanguageChange(language: SupportedLanguage) {
 }
 
 /*响应式处理-开始*/
-@media (max-width: var(--content-max-width)) {
+@media (max-width: /* var(--content-max-width) */ 1024px) {
   .child_footer_info {
     width: 100%;
     max-width: 100%;
