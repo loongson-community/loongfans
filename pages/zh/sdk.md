@@ -233,6 +233,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 
 | Linux 版本 | 关键平台支持更新 |
 | ---------- | ---------------- |
+| 7.1.4 | 3B6000/3C6000 PCIe 速率修复 |
 | 6.18 | 2K2000/2K3000/3B6000M GPIO 修复 |
 | 6.17 | 2K3000/3B6000M 片上网卡 DWMAC 支持；PWM 调频修复 |
 | 6.16 | 2K2000/2K3000/3B6000M SDIO 支持 |
@@ -254,7 +255,6 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | 多通道 DMA 支持 | 新功能 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
 | 2K3000/3B6000M 平台 CAN-FD 支持 | 新功能 | `CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/905bf46bcebfb) | 须搭配多通道 DMA 支持补丁使用 |
 | BPI1000/1001（“旧世界”）固件平台支持 | 新功能 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/06e031656e659), [2](https://github.com/AOSC-Tracking/linux/commit/6a2eb415543d7), [3](https://github.com/AOSC-Tracking/linux/commit/56209fafa1832), [4](https://github.com/AOSC-Tracking/linux/commit/85a8b0edaf388), [5](https://github.com/AOSC-Tracking/linux/commit/16f5059f8b43d), [6](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/ecd26b294d80e), [8](https://github.com/AOSC-Tracking/linux/commit/1c92272af179f) | 在联想开天 M540z、国光 3C5000L 四路服务器及部分使用 2020 - 2022 年份昆仑固件的平台上须打上，否则无法启动 |
-| 修复部分 3B6000 及 3C6000 家族处理器 PCIe 总线速率错误标记为 PCIe 1.0 的问题 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/ae2697f19a371) | 步进、批次影响范围不明，详见[此处说明](@/guides/errata-desktop-and-server.html#早期-3b6000-3c6000-处理器步进-pcie-速率协商问题) |
 | 规避 DSDT 表中 GPIO 使用了不符合《龙芯 CPU 统一系统架构规范》规定的 `gsi_idx_map` 中断定义，导致无法使用 GPIO 作为中断源、部分笔记本触摸板不可用的问题 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/71068c266d426) | 原则上不影响 2K3000/3B6000M 及后续产品 |
 | 规避 AMD GCN 1.0 - 4.0 显卡在龙架构平台上时有驱动崩溃、复位和锁死的问题 | 规避 | 无 | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | 机理不明（属于实证型补丁）；deepin 等商用 6.6 内核中包含更为激进（但同样机理不明）的补丁集，参见[该 deepin 拉取请求](https://github.com/deepin-community/kernel/pull/1215) |
 | 规避 AMD "radeon" 显卡驱动（用于 TeraScale 2 及更早的显卡）在 7A 转出的 PCIe 总线上可能出现数据错误的问题 | 规避 | 无 | [1](https://github.com/chenhuacai/linux/commit/6266d0082b020ad68a3b3c6f314ba299b9d06d3d), [2](https://lore.kernel.org/all/20240220074958.3288170-1-chenhuacai@loongson.cn/), [3](https://github.com/AOSC-Tracking/linux/commit/3b730340dee61) | 机理不明，但的确有效；补丁 3 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
