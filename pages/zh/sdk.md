@@ -262,6 +262,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | 在 ACPI 初始化代码中注册 7A2000 桥片中的 3 号 PWM 控制器 `LOON0006:03` 为 `gsgpu_backlight`，以支持 LoongGPU 驱动的背光调节 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/54af59a094a6) | 该补丁是 LoongGPU 背光支持的前序补丁，LoongGPU 驱动相关补丁请见 [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/) |
 | 启用 USB root hub 的“远程唤醒”（如 USB 键盘、鼠标等输入设备）支持 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/a50c62f43a4c), [2](https://github.com/AOSC-Tracking/linux/commit/5e7477d28344) | 加入该补丁后可使用键盘唤醒处于 ACPI S3 状态的龙架构设备，但已知会造成部分 x86 笔记本无法睡眠；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
 | 在 loongson-laptop 驱动的 S3 睡眠/唤醒流程中复位背光使能状态 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/1a659eeb6eec) | 规避部分 3B6000M 笔记本 EC 固件导致从 S3 唤醒后屏幕背光被关闭的问题 |
+| 在 sc.q 行为不正确时将其禁用 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/1835688d13f3) | 部分 2K3000/3B6000M 平台的固件错误配置了 LA364E 核，此时该补丁对于引导内核是必要的；规避不完整，如用户空间程序在未检查 `AT_HWCAP` 的情况下使用了 `sc.q` 指令则其仍可能得到错误结果；建议更新固件以解决该问题 |
 
 </template>
 
