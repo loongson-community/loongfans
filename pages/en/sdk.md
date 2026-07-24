@@ -243,7 +243,7 @@ As noted above, newer Linux kernels are generally preferable due to their better
 
 Generally, engineers at Loongson Technology and community developers pushes hardware enablement, optimizations, and fixes to the upstream (mainline) kernel. However, due to technical and non-technical reasons, some patches remain unmerged.
 
-The following table lists all known and essential patches maintained by various downstream parties (developers, distribution communities, etc.), for your reference (the patch list below are based on `v6.19-rc1` and do not include patches already submitted to the upstream [loongarch](https://lore.kernel.org/loongarch) mailing list):
+The following table lists all known and essential patches maintained by various downstream parties (developers, distribution communities, etc.), for your reference (the patch list below are based on `v6.19-rc1` and do not include patches already committed into the [upstream](https://git.kernel.org/torvalds/l/v6.19-rc1)):
 
 | Description | Type | Kconfig Entry | Link | Notes |
 | ----------- | ---- | ------------- | ---- | ----- |
