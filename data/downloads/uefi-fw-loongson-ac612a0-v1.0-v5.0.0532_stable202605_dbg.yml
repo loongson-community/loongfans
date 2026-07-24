@@ -5,6 +5,7 @@ date: "2026-06-25"
 sha256: "d59df3230f35eac9c245f8235bbfd2199d6f5cea829d9fb759a5c058487c17d4"
 url: "https://fw.loongfans.cn/ac612a0-v1.0/EDK2602_AC612A0-V1.0_General_V5.0.0532-Stable202605_dbg_20260623174016_51a17aab.fd"
 debug: true
+preview: true
 description:
   zh: |
     本版更新主要包含 DDR.MRC、PCIe.PHY、SMC、IPMI、EDK II (edk2) 基础代码及平台适配的相关更新，并优化了平台稳定性、外设兼容性、启动流程及固件更新等功能
