@@ -83,6 +83,7 @@ export default {
   deviceDownloadVersion: "Version: {version}",
   deviceDownloadChangelog: "Changelog",
   deviceDownloadDebugVersion: " (Debug)",
+  deviceDownloadPreview: "Preview",
   deviceDownloadButton: "Download",
   downloadTypeUefiFirmware: "UEFI Firmware",
   downloadTypeDatasheet: "Datasheet",
