@@ -1,4 +1,5 @@
 import { resolve } from "path"
+import { arch } from "process"
 import UnoCSS from "unocss/vite"
 import Icons from "unplugin-icons/vite"
 import Inspect from "vite-plugin-inspect"
@@ -65,6 +66,12 @@ export default defineConfig({
   appearance: false,
   head: [["link", { rel: "icon", href: "/favicon.svg" }]],
   vite: {
+    build: {
+      cssMinify: arch === "loong64" ? "esbuild" : "lightningcss",
+    },
+    css: {
+      transformer: arch === "loong64" ? "postcss" : "lightningcss",
+    },
     plugins: [Inspect(), UnoCSS(), Icons({ scale: 1 }), loongfansData()],
     ssr: {
       noExternal: ["vue-i18n"],
