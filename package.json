@@ -15,6 +15,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "esbuild": "^0.28.1",
     "vite": "^8.1.4",
     "vitepress": "2.0.0-alpha.18"
   },
