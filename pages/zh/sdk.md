@@ -260,6 +260,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | 规避 AMD "radeon" 显卡驱动（用于 TeraScale 2 及更早的显卡）在 7A 转出的 PCIe 总线上可能出现数据错误的问题 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/608cc0997567), [2](https://github.com/AOSC-Tracking/linux/commit/ad49de48bb10), [3](https://github.com/AOSC-Tracking/linux/commit/3381349cf67f) | 机理不明（提交消息在技术上未必正确），但的确有效；补丁 3 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
 | 在 ACPI 初始化代码中注册 7A2000 桥片中的 3 号 PWM 控制器 `LOON0006:03` 为 `gsgpu_backlight`，以支持 LoongGPU 驱动的背光调节 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/54af59a094a6) | 该补丁是 LoongGPU 背光支持的前序补丁，LoongGPU 驱动相关补丁请见 [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/) |
 | 启用 USB root hub 的“远程唤醒”（如 USB 键盘、鼠标等输入设备）支持 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/a50c62f43a4c), [2](https://github.com/AOSC-Tracking/linux/commit/5e7477d28344) | 加入该补丁后可使用键盘唤醒处于 ACPI S3 状态的龙架构设备，但已知会造成部分 x86 笔记本无法睡眠；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
+| 在 loongson-laptop 驱动的 S3 睡眠/唤醒流程中复位背光使能状态 | 规避 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/1a659eeb6eec) | 规避部分 3B6000M 笔记本 EC 固件导致从 S3 唤醒后屏幕背光被关闭的问题 |
 
 </template>
 
