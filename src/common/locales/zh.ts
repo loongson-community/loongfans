@@ -74,6 +74,7 @@ export default {
   deviceDownloadVersion: "版本号：{version}",
   deviceDownloadChangelog: "更改日志",
   deviceDownloadDebugVersion: "（调试版）",
+  deviceDownloadPreview: "预览版",
   deviceDownloadButton: "下载",
   downloadTypeUefiFirmware: "UEFI 固件",
   downloadTypeDatasheet: "数据手册",

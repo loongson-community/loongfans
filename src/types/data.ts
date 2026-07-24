@@ -269,6 +269,7 @@ export interface DownloadItem {
   sha256: string
   url: string
   debug?: boolean
+  preview?: boolean
   description?: LocalizedString
 }
 
@@ -285,6 +286,7 @@ export interface RenderedDownloadItem {
   sha256: string
   url: string
   debug?: boolean
+  preview?: boolean
   briefHtml?: LocalizedString
   detailHtml?: LocalizedString
 }

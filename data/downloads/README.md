@@ -27,6 +27,7 @@
 - `sha256`: 校验和
 - `url`: 下载 URL
 - `debug`: 可选，调试版标记
+- `preview`: 可选，预览版标记
 - `description`: 可选，按语言的 Markdown 描述
 
 ## 描述与更改日志

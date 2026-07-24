@@ -5,6 +5,9 @@
         <div class="title">
           <span>{{ title }}</span>
           <span v-if="debug">{{ t("deviceDownloadDebugVersion") }}</span>
+          <span v-if="preview" class="preview-tag">
+            {{ t("deviceDownloadPreview") }}
+          </span>
         </div>
         <div class="metadata">
           <span>{{ t("deviceDownloadVersion", { version }) }}</span>
@@ -60,6 +63,9 @@
           <div>
             <span>{{ title }}</span>
             <span v-if="debug">{{ t("deviceDownloadDebugVersion") }}</span>
+            <span v-if="preview" class="preview-tag">
+              {{ t("deviceDownloadPreview") }}
+            </span>
           </div>
           <span class="panel-header-version">
             {{ version }}
@@ -112,6 +118,7 @@ const props = defineProps<{
   url: string
   latest: boolean
   debug?: boolean
+  preview?: boolean
 }>()
 
 const { t } = useI18n()
@@ -159,6 +166,21 @@ const formattedSize = computed(() => {
   font-size: larger;
   font-weight: bold;
   overflow-wrap: anywhere;
+  display: flex;
+  align-items: center;
+}
+
+.preview-tag {
+  display: inline-block;
+  padding: 0 0.5em;
+  border: 1px solid var(--vp-c-warning-1);
+  border-radius: 2em;
+  margin-left: 0.5em;
+
+  color: var(--vp-c-warning-1);
+  font-size: 0.7em;
+  font-weight: normal;
+  white-space: nowrap;
 }
 
 .debug-tooltip {

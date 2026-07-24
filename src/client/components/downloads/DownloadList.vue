@@ -11,6 +11,7 @@
       :url="item.url"
       :latest="item.latest"
       :debug="item.debug"
+      :preview="item.preview"
     >
       <!-- eslint-disable vue/no-v-html -->
       <div v-if="item.briefHtml" class="vp-doc" v-html="item.briefHtml" />

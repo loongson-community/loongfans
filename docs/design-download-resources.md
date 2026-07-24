@@ -76,6 +76,7 @@ date: "2026-01-07"                     # YYYY-MM-DD
 sha256: "021a22173dcea9f001de5fa876b3e32897d119743dcdaea8d776822fc27678d5"
 url: "https://fw.loongfans.cn/..."
 debug: false
+preview: false
 description:
   zh: |
     本次主要基于 RefCode Stable2511 基线更新
@@ -134,6 +135,7 @@ export interface DownloadItem {
   sha256: string
   url: string
   debug?: boolean
+  preview?: boolean
   description?: LocalizedString
 }
 
@@ -146,6 +148,7 @@ export interface RenderedDownloadItem {
   sha256: string
   url: string
   debug?: boolean
+  preview?: boolean
   briefHtml?: LocalizedString
   detailHtml?: LocalizedString
 }

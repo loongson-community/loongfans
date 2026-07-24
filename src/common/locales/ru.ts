@@ -83,6 +83,7 @@ export default {
   deviceDownloadVersion: "Версия: {version}",
   deviceDownloadChangelog: "Журнал изменений",
   deviceDownloadDebugVersion: " (отладочная версия)",
+  deviceDownloadPreview: "Предварительная версия",
   deviceDownloadButton: "Скачать",
   downloadTypeUefiFirmware: "Прошивка UEFI",
   downloadTypeDatasheet: "Технические характеристики",

@@ -77,6 +77,7 @@ export default {
   deviceDownloadVersion: "Version: {version}",
   deviceDownloadChangelog: "Änderungsprotokoll",
   deviceDownloadDebugVersion: " (Debug-Version)",
+  deviceDownloadPreview: "Vorschau",
   deviceDownloadButton: "Download",
   downloadTypeUefiFirmware: "UEFI-Firmware",
   downloadTypeDatasheet: "Datenblatt",

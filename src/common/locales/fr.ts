@@ -77,6 +77,7 @@ export default {
   deviceDownloadVersion: "Version: {version}",
   deviceDownloadChangelog: "Journal des modifications",
   deviceDownloadDebugVersion: " (débogage)",
+  deviceDownloadPreview: "Aperçu",
   deviceDownloadButton: "Télécharger",
   downloadTypeUefiFirmware: "Micrologiciel UEFI",
   downloadTypeDatasheet: "Fiche technique",
