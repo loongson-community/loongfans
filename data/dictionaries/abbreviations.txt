@@ -21,6 +21,7 @@ FPDT
 GGWP
 GMAC
 GPGPU
+HWCAP
 hwmon
 hwrng
 HWMon
