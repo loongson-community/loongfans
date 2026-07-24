@@ -234,6 +234,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | Linux 版本 | 关键平台支持更新 |
 | ---------- | ---------------- |
 | 7.1.4 | 3B6000/3C6000 PCIe 速率修复 |
+| 7.1 | 2K0300/2K3000/3B6000M 多通道 DMA 支持 |
 | 6.18 | 2K2000/2K3000/3B6000M GPIO 修复 |
 | 6.17 | 2K3000/3B6000M 片上网卡 DWMAC 支持；PWM 调频修复 |
 | 6.16 | 2K2000/2K3000/3B6000M SDIO 支持 |
@@ -252,8 +253,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | ---- | ---- | ---------- | ---- | ---- |
 | PixArt PS/2 总线设备支持 | 新功能 | `MOUSE_PS2_PIXART` (bool: y/n) | [1](https://lore.kernel.org/loongarch/20251127080203.3218018-1-zhoubinbin@loongson.cn/) | 用于清华同方超锐 L860-T2、卓怡恒通 L71 等基于 3A5000 及 3A6000 的笔记本，可解决这些设备上触摸板被错误识别为 PS/2 鼠标，导致手势功能及手掌探测失效 |
 | HWMon（如温控等硬件监控功能）支持，可为龙芯 3 号家族提供处理器温控支持 | 新功能 | `CPU_HWMON` (bool: y/n) | [1](https://github.com/chenhuacai/linux/commit/2a6c1c74d93a21613a523aebc6494d654f35cf1a) | 不包括 7A 桥片监控支持；该补丁可能在 2K3000/3B6000M 等 SoC 平台上导致 `sensors(1)` 读出错误的温度传感器及数据 |
-| 多通道 DMA 支持 | 新功能 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
-| 2K3000/3B6000M 平台 CAN-FD 支持 | 新功能 | `CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/905bf46bcebfb) | 须搭配多通道 DMA 支持补丁使用 |
+| 2K3000/3B6000M 平台 CAN-FD 支持 | 新功能 | `CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/905bf46bcebfb) | 依赖 7.1 以上内核版本提供的多通道 DMA 支持 |
 | BPI1000/1001（“旧世界”）固件平台支持 | 新功能 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/06e031656e659), [2](https://github.com/AOSC-Tracking/linux/commit/6a2eb415543d7), [3](https://github.com/AOSC-Tracking/linux/commit/56209fafa1832), [4](https://github.com/AOSC-Tracking/linux/commit/85a8b0edaf388), [5](https://github.com/AOSC-Tracking/linux/commit/16f5059f8b43d), [6](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/ecd26b294d80e), [8](https://github.com/AOSC-Tracking/linux/commit/1c92272af179f) | 在联想开天 M540z、国光 3C5000L 四路服务器及部分使用 2020 - 2022 年份昆仑固件的平台上须打上，否则无法启动 |
 | 规避 DSDT 表中 GPIO 使用了旧版《龙芯 CPU 统一系统架构规范》规定的 `gsi_idx_map` 中断定义，导致无法使用 GPIO 作为中断源、部分笔记本触摸板不可用的问题 | 规避 | 无 | [1](https://lore.kernel.org/all/20260630-loongson-gpio-v1-1-576908831fa0@gmail.com/) | 原则上不影响 2K3000/3B6000M 及后续产品 |
 | 规避 AMD GCN 1.0 - 4.0 显卡在龙架构平台上时有驱动崩溃、复位和锁死的问题 | 规避 | 无 | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | 机理不明（属于实证型补丁）；deepin 等商用 6.6 内核中包含更为激进（但同样机理不明）的补丁集，参见[该 deepin 拉取请求](https://github.com/deepin-community/kernel/pull/1215) |
