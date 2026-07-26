@@ -1,0 +1,12 @@
+name:
+  en: EA EXCELSIOR NL60R-N17
+  zh: 卓怡恒通 NL60R-N17
+  de: EA EXCELSIOR NL60R-N17
+  fr: EA EXCELSIOR NL60R-N17
+  ru: EA EXCELSIOR NL60R-N17
+family: 2k3000
+category: laptop
+image: /images/devices/ea-excelsior-nl60r-n17.thumbnail.webp
+spec: "3B6000M @ 2.4GHz"
+tags:
+  - laptop
