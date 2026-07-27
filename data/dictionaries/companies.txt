@@ -15,6 +15,7 @@ HRDT
 Huarui
 Hynix
 IPASON
+Inspur
 orangepi
 OrangePi
 Radxa
@@ -25,3 +26,4 @@ vkvideo
 Xunlong
 Phoronix
 Sashiko
+YingZheng
