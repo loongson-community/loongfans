@@ -249,20 +249,20 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 
 下表中列出了目前已知的、正在各下游（开发者、发行版社区等）维护的必要支持补丁，供各位参考（补丁列表及代码基于 `v7.1.4` 技术状态，不包含已经合并到[上游](https://git.kernel.org/stable/l/v7.1.4)的补丁）：
 
-| 描述 | 对应配置项 | 链接 | 备注 |
-| ---- | ---------- | ---- | ---- |
-| PixArt PS/2 总线设备支持 | `MOUSE_PS2_PIXART` (bool: y/n) | [1](https://github.com/AOSC-Tracking/linux/commit/f2bb6ff4f797) | 用于清华同方超锐 L860-T2、卓怡恒通 L71 等基于 3A5000 及 3A6000 的笔记本，可解决这些设备上触摸板被错误识别为 PS/2 鼠标，导致手势功能及手掌探测失效 |
-| HWMon（如温控等硬件监控功能）支持，可为龙芯 3 号家族提供处理器温控支持 | `CPU_HWMON` (bool: y/n) | [1](https://github.com/AOSC-Tracking/linux/commit/ab7b90e7808a) | 不包括 7A 桥片监控支持；如固件通过 ACPI Thermal Zone 表示该传感器（3C6000 及更新平台上的 202511 及更新版本固件已经支持），就不再需要该补丁 |
-| 2K3000/3B6000M 平台 CAN-FD 支持 | `CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/0dc2107b57a2) | 依赖 7.1 以上内核版本提供的多通道 DMA 支持 |
+| 描述 | 新增或影响的配置项 | 链接 | 备注 |
+| ---- | ------------------ | ---- | ---- |
+| PixArt PS/2 总线设备支持 | 新增：`MOUSE_PS2_PIXART` (bool: y/n) | [1](https://github.com/AOSC-Tracking/linux/commit/f2bb6ff4f797) | 用于清华同方超锐 L860-T2、卓怡恒通 L71 等基于 3A5000 及 3A6000 的笔记本，可解决这些设备上触摸板被错误识别为 PS/2 鼠标，导致手势功能及手掌探测失效 |
+| HWMon（如温控等硬件监控功能）支持，可为龙芯 3 号家族提供处理器温控支持 | 新增：`CPU_HWMON` (bool: y/n) | [1](https://github.com/AOSC-Tracking/linux/commit/ab7b90e7808a) | 不包括 7A 桥片监控支持；如固件通过 ACPI Thermal Zone 表示该传感器（3C6000 及更新平台上的 202511 及更新版本固件已经支持），就不再需要该补丁 |
+| 2K3000/3B6000M 平台 CAN-FD 支持 | 新增：`CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/0dc2107b57a2) | 依赖 7.1 以上内核版本提供的多通道 DMA 支持 |
 | BPI1000/1001（“旧世界”）固件平台支持 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/12790a1e5d40), [2](https://github.com/AOSC-Tracking/linux/commit/42046c2ed32d), [3](https://github.com/AOSC-Tracking/linux/commit/12e17687f2f7), [4](https://github.com/AOSC-Tracking/linux/commit/8dd6b7a65a68), [5](https://github.com/AOSC-Tracking/linux/commit/08d7416a7b74), [6](https://github.com/AOSC-Tracking/linux/commit/d83315017a3a), [7](https://github.com/AOSC-Tracking/linux/commit/bb5ee2c6ffd9), [8](https://github.com/AOSC-Tracking/linux/commit/2c89d5c8e77e) | 在联想开天 M540z、国光 3C5000L 四路服务器及部分使用 2020 - 2022 年份昆仑固件的平台上须打上，否则无法启动 |
-| 龙芯 I2C 控制器时钟属性解析和总线速率控制支持 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/42d158cdba34) | 缺失此功能会导致一些 3B6000M 笔记本的触摸板出现卡顿 |
-| SMCv2 固件协议更新 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/e838f8194a49) | 缺失此更新可能导致系统在 202605 版本固件打开 DVFS 开关时引导失败；另请注意 202605 版本固件为实验性质 |
-| 规避 DSDT 表中 GPIO 使用了旧版《龙芯 CPU 统一系统架构规范》规定的 `gsi_idx_map` 中断定义，导致无法使用 GPIO 作为中断源、部分笔记本触摸板不可用的问题 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/911ae66f00b3) | 原则上不影响 2K3000/3B6000M 及后续产品 |
-| 规避 AMD GCN 1.0 - 4.0 显卡在龙架构平台上时有驱动崩溃、复位和锁死的问题 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/0d9e47e4c3ad) | 机理不明（属于实证型补丁）；该规避不能完全避免问题，只能降低问题发生概率；deepin 等商用 6.6 内核中包含更为激进（但同样机理不明）的补丁集，参见[该 deepin 拉取请求](https://github.com/deepin-community/kernel/pull/1215) |
-| 规避 AMD "radeon" 显卡驱动（用于 TeraScale 2 及更早的显卡）在 7A 转出的 PCIe 总线上可能出现数据错误的问题 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/608cc0997567), [2](https://github.com/AOSC-Tracking/linux/commit/ad49de48bb10), [3](https://github.com/AOSC-Tracking/linux/commit/3381349cf67f) | 机理不明（提交消息在技术上未必正确），但的确有效；补丁 3 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
-| 在 ACPI 初始化代码中注册 7A2000 桥片中的 3 号 PWM 控制器 `LOON0006:03` 为 `gsgpu_backlight`，以支持 LoongGPU 驱动的背光调节 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/54af59a094a6) | 该补丁是 LoongGPU 背光支持的前序补丁，LoongGPU 驱动相关补丁请见 [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/) |
-| 启用 USB root hub 的“远程唤醒”（如 USB 键盘、鼠标等输入设备）支持 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/a50c62f43a4c), [2](https://github.com/AOSC-Tracking/linux/commit/5e7477d28344) | 加入该补丁后可使用键盘唤醒处于 ACPI S3 状态的龙架构设备，但已知会造成部分 x86 笔记本无法睡眠；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
-| 在 loongson-laptop 驱动的 S3 睡眠/唤醒流程中复位背光使能状态 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/1a659eeb6eec) | 规避部分 3B6000M 笔记本 EC 固件导致从 S3 唤醒后屏幕背光被关闭的问题 |
+| 龙芯 I2C 控制器时钟属性解析和总线速率控制支持 | `CONFIG_LS2X_I2C` | [1](https://github.com/AOSC-Tracking/linux/commit/42d158cdba34) | 缺失此功能会导致一些 3B6000M 笔记本的触摸板出现卡顿 |
+| SMCv2 固件协议更新 | `CONFIG_LOONGSON3_CPUFREQ` | [1](https://github.com/AOSC-Tracking/linux/commit/e838f8194a49) | 缺失此更新可能导致系统在 202605 版本固件打开 DVFS 开关时引导失败；可以关闭这一配置项规避；另请注意 202605 版本固件为实验性质 |
+| 规避 DSDT 表中 GPIO 使用了旧版《龙芯 CPU 统一系统架构规范》规定的 `gsi_idx_map` 中断定义，导致无法使用 GPIO 作为中断源、部分笔记本触摸板不可用的问题 | `CONFIG_GPIO_LOONGSON_64BIT` | [1](https://github.com/AOSC-Tracking/linux/commit/911ae66f00b3) | 原则上不影响 2K3000/3B6000M 及后续产品 |
+| 规避 AMD GCN 1.0 - 4.0 显卡在龙架构平台上时有驱动崩溃、复位和锁死的问题 | `CONFIG_DRM_AMDGPU` | [1](https://github.com/AOSC-Tracking/linux/commit/0d9e47e4c3ad) | 机理不明（属于实证型补丁）；该规避不能完全避免问题，只能降低问题发生概率；deepin 等商用 6.6 内核中包含更为激进（但同样机理不明）的补丁集，参见[该 deepin 拉取请求](https://github.com/deepin-community/kernel/pull/1215) |
+| 规避 AMD "radeon" 显卡驱动（用于 TeraScale 2 及更早的显卡）在 7A 转出的 PCIe 总线上可能出现数据错误的问题 | `CONFIG_DRM_RADEON` | [1](https://github.com/AOSC-Tracking/linux/commit/608cc0997567), [2](https://github.com/AOSC-Tracking/linux/commit/ad49de48bb10), [3](https://github.com/AOSC-Tracking/linux/commit/3381349cf67f) | 机理不明（提交消息在技术上未必正确），但的确有效；补丁 3 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
+| 在 ACPI 初始化代码中注册 7A2000 桥片中的 3 号 PWM 控制器 `LOON0006:03` 为 `gsgpu_backlight`，以支持 LoongGPU 驱动的背光调节 | `CONFIG_PWM_LOONGSON` | [1](https://github.com/AOSC-Tracking/linux/commit/54af59a094a6) | 该补丁是 LoongGPU 背光支持的前序补丁，LoongGPU 驱动相关补丁请见 [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/) |
+| 启用 USB root hub 的“远程唤醒”（如 USB 键盘、鼠标等输入设备）支持 | `CONFIG_USB` | [1](https://github.com/AOSC-Tracking/linux/commit/a50c62f43a4c), [2](https://github.com/AOSC-Tracking/linux/commit/5e7477d28344) | 加入该补丁后可使用键盘唤醒处于 ACPI S3 状态的龙架构设备，但已知会造成部分 x86 笔记本无法睡眠；补丁 2 将该修改限定给 MIPS 及龙架构 64 位平台 (`MACH_LOONGSON64`) |
+| 在 loongson-laptop 驱动的 S3 睡眠/唤醒流程中复位背光使能状态 | `CONFIG_LOONGSON_LAPTOP` | [1](https://github.com/AOSC-Tracking/linux/commit/1a659eeb6eec) | 规避部分 3B6000M 笔记本 EC 固件导致从 S3 唤醒后屏幕背光被关闭的问题 |
 | 在 sc.q 行为不正确时将其禁用 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/1835688d13f3) | 部分 2K3000/3B6000M 平台的固件错误配置了 LA364E 核导致 sc.q 指令写入错误数据，此时需规避该问题才能引导内核；此规避不完整，如用户空间程序在未检查 `AT_HWCAP` 的情况下使用了 `sc.q` 指令则其仍可能得到错误结果；建议更新固件以解决该问题 |
 
 </template>
