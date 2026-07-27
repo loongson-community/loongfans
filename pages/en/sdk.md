@@ -232,6 +232,7 @@ As noted above, newer Linux kernels are generally preferable due to their better
 | Linux Version | Key Feature Introduced |
 | ------------- | ---------------------------- |
 | 7.1.4 | 3B6000/3C6000 PCIe speed fix |
+| 7.1.1 | ACPI SystemIO region support |
 | 7.1 | 2K0300/2K3000/3B6000M multi-channel DMA support |
 | 6.18 | 2K2000/2K3000/3B6000M GPIO fixes |
 | 6.17 | 2K3000/3B6000M On-Chip NIC DWMAC Support; PWM Frequency Modulation Fix |
