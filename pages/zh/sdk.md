@@ -266,6 +266,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | 在 loongson-laptop 驱动的 S3 睡眠/唤醒流程中复位背光使能状态 | `CONFIG_LOONGSON_LAPTOP` | [1](https://github.com/AOSC-Tracking/linux/commit/1a659eeb6eec) | 规避部分 3B6000M 笔记本 EC 固件导致从 S3 唤醒后屏幕背光被关闭的问题 |
 | 在 sc.q 行为不正确时将其禁用 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/1835688d13f3) | 部分 2K3000/3B6000M 平台的固件错误配置了 LA364E 核导致 sc.q 指令写入错误数据，此时需规避该问题才能引导内核；此规避不完整，如用户空间程序在未检查 `AT_HWCAP` 的情况下使用了 `sc.q` 指令则其仍可能得到错误结果；建议更新固件以解决该问题 |
 | 支持使用带 `_DSM` 方法的 ACPI `PRP0001` 节点描述的 I2C HID 设备 | `CONFIG_I2C_HID_ACPI` | [1](https://github.com/AOSC-Tracking/linux/commit/7f17caafc784) | 联想开天 N60d-G1d、浪潮英政 CP300L3 等笔记本的触摸板采用此种描述，此时需要该补丁才能使用触摸板 |
+| Intel Xe 驱动 16 KiB 页面支持 | `CONFIG_DRM_XE` | [1](https://github.com/AOSC-Tracking/linux/commit/5ea0f72ba810) [2](https://github.com/AOSC-Tracking/linux/commit/83d9435d7ea5) [3](https://github.com/AOSC-Tracking/linux/commit/699686db06a3) [4](https://github.com/AOSC-Tracking/linux/commit/c10c60ebb46b) [5](https://github.com/AOSC-Tracking/linux/commit/562971810d99) [6](https://github.com/AOSC-Tracking/linux/commit/8b6d67ff4abd) | 在龙架构主流的 16 KiB 内核使用 Intel 显卡需要这些补丁；因固件阶段无法使用 Intel 显卡显示，仍不建议出于在龙架构设备使用的目的购买 |
 
 </template>
 
