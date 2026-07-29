@@ -16,7 +16,7 @@ Grâce aux efforts des contributeurs de la communauté et des ingénieurs de Loo
 
 > Qu'est-ce que cela signifie ?
 
-Cela signifie que la procédure d'installation des différentes chaînes d'outils de programmation est désormais similaire, voire identique, à celle de la plateforme x86 : il suffit donc de les installer à partir des dépôts de la distribution, en copiant-collant une simple ligne de commande !
+Cela signifie que la procédure d'installation des différentes chaînes d'outils de programmation est désormais similaire, voire identique, à celle de la plateforme x86 : leur installation est donc aussi simple que celle à partir des dépôts de la distribution, et ne nécessite qu'une seule ligne de commande à copier-coller !
 
 :::tip
 Étant donné qu'ABI 2.0 (« New World ») est utilisé par la plupart des utilisateurs et développeurs de la communauté, ce guide se concentre exclusivement sur la présentation des procédures d'installation et de configuration des systèmes ABI 2.0. ABI 1.0 (« Old World ») n'est pas abordé ici. Si vous vous trouvez dans une situation où vous devez développer pour ABI 1.0, nous vous recommandons de reconsidérer ce choix et de vous assurer qu'il est bien justifié. Si cela s'avère nécessaire, veuillez vous reporter à la documentation disponible sur [Communauté open source Loongson (loongnix.cn)](https://www.loongnix.cn/).
@@ -30,9 +30,9 @@ Cela signifie que la procédure d'installation des différentes chaînes d'outil
 GCC et Binutils prennent officiellement en charge LoongArch. Ils sont disponibles directement depuis le dépôt de votre distribution, sous forme de binaires, ou peuvent être compilés par compilation croisée.
 
 :::tip
-Remarque : les versions récentes de GCC et de Binutils offrent une prise en charge améliorée de LoongArch. Notamment, GCC 14 prend désormais en charge les extensions vectorielles de LoongArch, tandis que Binutils 2.41 a introduit la prise en charge de la relaxation de l'éditeur de liens et, plus tard avec GCC 16, du modèle de code moyen (ce qui améliore considérablement la compatibilité avec les projets de code source de grande envergure). Toutes ces améliorations constituent des avancées fonctionnelles essentielles. Nous vous recommandons donc de les mettre à jour au moins vers les versions mentionnées ci-dessus.
+Remarque : les versions ultérieures de GCC et de Binutils offrent une prise en charge améliorée de LoongArch. Notamment, GCC 14 a introduit la prise en charge des extensions vectorielles de LoongArch, tandis que Binutils 2.41 a introduit la prise en charge de la relaxation de l'éditeur de liens et, plus tard avec GCC 16, du modèle de code moyen (améliorant considérablement la compatibilité avec les projets source de grande envergure). Toutes ces évolutions constituent des améliorations fonctionnelles essentielles. Par conséquent, veuillez les mettre à jour au moins vers les versions susmentionnées.
 
-Si vous avez l'intention de publier des binaires universels pour des projets ou de gérer une distribution Linux, veuillez lire attentivement les spécifications et les contraintes pertinentes décrites dans le [*Conventions de développement et de compilation pour les architectures LoongArch*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
+Si vous avez l'intention de publier des binaires universels pour des projets ou de gérer une distribution Linux, veuillez lire attentivement les spécifications et contraintes applicables décrites dans le [*Conventions de développement et de compilation pour les architectures LoongArch*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
 :::
 
 Pour installer la chaîne d'outils GNU sur les distributions Linux et les systèmes d'exploitation courants :
@@ -41,7 +41,7 @@ Pour installer la chaîne d'outils GNU sur les distributions Linux et les systè
 | -------- | -------- |
 | AOSC OS | `oma install binutils gcc` |
 | Arch Linux | `sudo pacman -S binutils gcc` |
-| Debian et ses dérivés tels que Deepin, openKylin et Loongnix 25 | `sudo apt install build-essential` |
+| Debian et ses dérivés tels que deepin, openKylin et Loongnix 25 | `sudo apt install build-essential` |
 | Distributions dérivées de Red Hat telles que Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install binutils gcc` |
 
 Si vous ne disposez pas d'un appareil LoongArch ou si vous souhaitez effectuer une compilation croisée :
@@ -61,7 +61,7 @@ LLVM prend officiellement en charge LoongArch. Il est disponible directement dep
 :::tip
 Remarque : les versions récentes de LLVM offrent une prise en charge améliorée de LoongArch. LLVM 18 a introduit la prise en charge des extensions vectorielles LoongArch. Si cette version est disponible, veuillez effectuer la mise à jour vers cette version ou une version ultérieure.
 
-Si vous avez l'intention de publier des binaires universels pour des projets ou de gérer une distribution Linux, veuillez lire attentivement les spécifications et les contraintes applicables décrites dans le [*Conventions de développement et de compilation pour les architectures LoongArch*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
+Si vous avez l'intention de publier des binaires universels pour des projets ou de gérer une distribution Linux, veuillez lire attentivement les spécifications et contraintes applicables décrites dans le [*Conventions de développement et de compilation pour les architectures LoongArch*](https://github.com/loongson/la-softdev-convention/blob/master/la-softdev-convention.adoc).
 :::
 
 Pour installer LLVM (y compris Clang) sur les distributions Linux et les systèmes d'exploitation courants :
@@ -70,10 +70,10 @@ Pour installer LLVM (y compris Clang) sur les distributions Linux et les systèm
 | -------- | -------- |
 | AOSC OS | `oma install llvm` |
 | Arch Linux | `sudo pacman -S clang llvm` |
-| Debian et ses dérivés tels que Deepin, openKylin et Loongnix 25 | `sudo apt install clang llvm` |
+| Debian et ses dérivés tels que deepin, openKylin et Loongnix 25 | `sudo apt install clang llvm` |
 | Distributions dérivées de Red Hat telles que Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install clang llvm` |
 
-La chaîne d'outils LLVM (en particulier le compilateur Clang) prend en charge nativement la compilation croisée. Pour compiler cette chaîne d'outils pour LoongArch, utilisez la version 17 ou une version ultérieure de LLVM et consultez [cet article](https://clang.llvm.org/docs/CrossCompilation.html) et spécifiez la cible LoongArch (par exemple, `loongarch64-unknown-linux-gnu`).
+La chaîne d'outils LLVM (en particulier le compilateur Clang) prend en charge nativement la compilation croisée. Pour compiler cette chaîne d'outils de manière croisée pour LoongArch, utilisez la version 17 ou une version ultérieure de LLVM et consultez [cet article](https://clang.llvm.org/docs/CrossCompilation.html) et spécifiez la cible LoongArch (par exemple, `loongarch64-unknown-linux-gnu`).
 
 </template>
 
@@ -81,7 +81,7 @@ La chaîne d'outils LLVM (en particulier le compilateur Clang) prend en charge n
 
 Rust prend officiellement en charge LoongArch. Il est disponible directement depuis le dépôt de votre distribution, sous forme de binaires, ou peut être compilé par compilation croisée.
 
-Rust recommande d'utiliser [rouiller](https://rustup.rs/) Pour installer la chaîne d'outils Rust :
+Rust recommande d'utiliser [se rouiller](https://rustup.rs/) Pour installer la chaîne d'outils Rust :
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -93,14 +93,14 @@ Pour installer Rust (rustc) et le gestionnaire de paquets Cargo sur les distribu
 | -------- | -------- |
 | AOSC OS | `oma install rustc` |
 | Arch Linux | `sudo pacman -S rustc` |
-| Debian et ses dérivés tels que Deepin, openKylin et Loongnix 25 | `sudo apt install rust-all` |
+| Debian et ses dérivés tels que deepin, openKylin et Loongnix 25 | `sudo apt install rust-all` |
 | Distributions dérivées de Red Hat telles que Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install rust cargo` |
 
 </template>
 
 <template #nodejs>
 
-Node.js prend officiellement en charge LoongArch. Il est disponible directement depuis le dépôt de votre distribution, sous forme de binaires, ou peut être compilé par compilation croisée. Node.js fournit des binaires LoongArch via le [Versions non officielles](https://unofficial-builds.nodejs.org/) projet (étiqueté comme le `loong64` (architecture)).
+Node.js prend officiellement en charge LoongArch. Il est disponible directement depuis le dépôt de votre distribution, sous forme de binaires, ou peut être compilé par compilation croisée. Node.js fournit des binaires LoongArch via le [Versions non officielles](https://unofficial-builds.nodejs.org/) projet (classé sous le tag `loong64` architecture).
 
 Pour installer Node.js sur les distributions Linux et les systèmes d'exploitation courants :
 
@@ -108,7 +108,7 @@ Pour installer Node.js sur les distributions Linux et les systèmes d'exploitati
 | -------- | -------- |
 | AOSC OS | `oma install nodejs` |
 | Arch Linux | `sudo pacman -S nodejs` |
-| Debian et ses dérivés tels que Deepin, openKylin et Loongnix 25 | `sudo apt install nodejs` |
+| Debian et ses dérivés tels que deepin, openKylin et Loongnix 25 | `sudo apt install nodejs` |
 | Distributions dérivées de Red Hat telles que Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install nodejs` |
 
 :::tip
@@ -127,16 +127,16 @@ Pour installer Go sur les distributions Linux et les systèmes d'exploitation co
 | -------- | -------- |
 | AOSC OS | `oma install go` |
 | Arch Linux | `sudo pacman -S go` |
-| Debian et ses dérivés tels que Deepin, openKylin et Loongnix 25 | `sudo apt install golang` |
+| Debian et ses dérivés tels que deepin, openKylin et Loongnix 25 | `sudo apt install golang` |
 | Distributions dérivées de Red Hat telles que Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install golang` |
 
-Go prend en charge nativement la compilation croisée. À partir de Go 1.21, suivez les instructions décrites dans [cet article](https://go.dev/doc/install/source) et spécifier la cible LoongArch (c'est-à-dire, `GOARCH=loong64`) pour effectuer une compilation croisée pour LoongArch.
+Go prend en charge nativement la compilation croisée. À partir de la version 1.21 de Go, suivez les instructions décrites dans [cet article](https://go.dev/doc/install/source) et spécifier la cible LoongArch (c'est-à-dire, `GOARCH=loong64`) pour effectuer une compilation croisée pour LoongArch.
 
 </template>
 
 <template #python>
 
-Python prend officiellement en charge LoongArch. Il est disponible directement depuis le dépôt de votre distribution, sous forme de binaires, ou peut être compilé par compilation croisée.
+Python prend officiellement en charge LoongArch. Il est disponible directement depuis le dépôt de votre distribution, sous forme de binaires, ou peut être compilé via une compilation croisée.
 
 Pour installer Python sur les distributions Linux et les systèmes d'exploitation courants :
 
@@ -144,13 +144,13 @@ Pour installer Python sur les distributions Linux et les systèmes d'exploitatio
 | -------- | -------- |
 | AOSC OS | `oma install python-3` |
 | Arch Linux | `sudo pacman -S python` |
-| Debian et ses dérivés tels que Deepin, openKylin et Loongnix 25 | `sudo apt install python3` |
+| Debian et ses dérivés tels que deepin, openKylin et Loongnix 25 | `sudo apt install python3` |
 | Distributions dérivées de Red Hat telles que Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install python3` |
 
 :::tip
-Étant donné que LoongArch ne dispose pas encore d'une définition pour une version de référence « manylinux », le dépôt officiel PyPI n'héberge pas de binaires pour LoongArch. Cela signifie que lors de l'installation de modules PyPI à l'aide de `pip`, les modules correspondants seront compilés à partir du code source et vous devrez peut-être installer les chaînes d'outils C/C++/Rust si nécessaire.
+Étant donné que LoongArch ne dispose pas encore d'une définition pour une base de référence « manylinux », le dépôt officiel PyPI n'héberge pas de binaires pour LoongArch. Cela signifie que lors de l'installation de modules PyPI à l'aide de `pip`, les modules correspondants seront compilés à partir du code source et vous devrez peut-être installer les chaînes d'outils C/C++/Rust si nécessaire.
 
-Loongson Technology héberge un dépôt binaire PyPI pour les systèmes ABI 2.0 à l'adresse [lpypi.loongnix.cn](http://lpypi.loongnix.cn/). Vous pouvez modifier `/etc/pip.conf` vers et définir celui-ci comme référentiel par défaut. Sinon, le [64 bits](https://github.com/loong64) Cette organisation sur GitHub gère un dépôt binaire PyPI indépendant. Pour connaître les procédures de configuration, veuillez consulter [le fichier README de l'organisation](https://github.com/loong64#pypi-repository).
+Loongson Technology héberge un dépôt binaire PyPI pour les systèmes ABI 2.0 à l'adresse [lpypi.loongnix.cn](http://lpypi.loongnix.cn/). Vous pouvez modifier `/etc/pip.conf` vers et définir celui-ci comme référentiel par défaut. Sinon, le [long64](https://github.com/loong64) Une organisation sur GitHub gère un dépôt binaire PyPI indépendant. Pour connaître les procédures de configuration, veuillez vous reporter à [le fichier README de l'organisation](https://github.com/loong64#pypi-repository).
 :::
 
 </template>
@@ -159,22 +159,22 @@ Loongson Technology héberge un dépôt binaire PyPI pour les systèmes ABI 2.0 
 
 .NET prend officiellement en charge LoongArch. Cependant, LoongArch étant classée comme une « architecture prise en charge par la communauté » au sein de .NET, Microsoft ne fournit pas de chaînes d'outils binaires pour LoongArch.
 
-Cependant, les fichiers binaires de la chaîne d'outils .NET peuvent être obtenus par les moyens suivants :
+Toutefois, les fichiers binaires de la chaîne d'outils .NET peuvent être obtenus par les moyens suivants :
 
 - [.NET 10 (de Loongson Technology)](https://github.com/loongson/dotnet/releases)
-- [.NET 9 (par l'organisation loongson-community)](http://github.com/loongson-community/dotnet-unofficial-build/releases)
+- [.NET 9 (développé par l'organisation loongson-community)](http://github.com/loongson-community/dotnet-unofficial-build/releases)
 
-Pour les distributions Linux courantes, il suffit de télécharger le package SDK avec le RID (identifiant du runtime .NET) `linux-loongarch64` pour obtenir la chaîne d'outils complète (c'est-à-dire, `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`). Pour savoir comment installer le SDK .NET à l'aide de paquets tar, consultez le [documentation officielle de .NET](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install).
+Pour les distributions Linux courantes, il suffit de télécharger le package SDK associé au RID (identifiant du runtime .NET). `linux-loongarch64` pour obtenir la chaîne d'outils complète (c'est-à-dire, `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`). Pour savoir comment installer le SDK .NET à l'aide de paquets tar, consultez le [documentation officielle de .NET](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install).
 
 ### Compilation croisée d'applications .NET pour LoongArch
 
-.NET prend en charge nativement la compilation croisée et la publication multiplateforme. À partir de .NET 9, consultez [cet article](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) et spécifiez le RID cible pour publier des applications .NET destinées à LoongArch. Cependant, LoongArch étant classée comme une « architecture prise en charge par la communauté » pour .NET, NuGet.org n'héberge pas de paquets d'exécution .NET destinés à LoongArch, ce qui peut entraîner des échecs de compilation.
+.NET prend en charge nativement la compilation croisée et la publication multiplateforme. À partir de .NET 9, consultez [cet article](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) et de préciser le RID cible pour publier des applications .NET destinées à LoongArch. Cependant, LoongArch étant classée comme une « architecture prise en charge par la communauté » pour .NET, NuGet.org n'héberge pas de paquets d'exécution .NET ciblant LoongArch, ce qui peut entraîner des échecs de compilation.
 
-Pour contourner ce problème, vous pouvez télécharger et installer localement tous les paquets NuGet nécessaires. Pour ce faire, il vous suffit de télécharger les fichiers suivants à partir des pages de publication de la chaîne d'outils mentionnées ci-dessus (* indique les numéros de version spécifiques) :
+Pour contourner ce problème, vous pouvez télécharger et installer localement tous les packages NuGet nécessaires. Pour ce faire, il vous suffit de télécharger les fichiers suivants à partir des pages de publication de la chaîne d'outils mentionnées ci-dessus (le signe * indique des numéros de version spécifiques) :
 
 - Microsoft.AspNetCore.App.Runtime.linux-loongarch64.*.nupkg
 - Microsoft.NETCore.App.Crossgen2.linux-loongarch64.*.nupkg
-- Microsoft.NETCore.App.Host.linux-loongarch64.*.nupkg
+Microsoft.NETCore.App.Host.linux-loongarch64.*.nupkg
 - Microsoft.NETCore.App.Runtime.linux-loongarch64.*.nupkg
 - runtime.linux-loongarch64.Microsoft.DotNet.ILCompiler.*.nupkg
 
@@ -190,11 +190,11 @@ Placez les fichiers ci-dessus dans un répertoire de votre choix (par exemple, `
 </packageSources>
 ```
 
-Vous devriez désormais pouvoir compiler des applications .NET pour LoongArch.
+Vous devriez désormais pouvoir compiler de manière croisée des applications .NET pour LoongArch.
 
 ### Compilation de la chaîne d'outils .NET
 
-La compilation de la chaîne d'outils .NET est en soi un processus relativement complexe. Pour faciliter votre prise en main, veuillez consulter le [Scripts de compilation CI utilisés par Loongson Technology](https://github.com/loongson/dotnet/blob/build/.github/workflows/build-sdk10.yml). Cette méthode utilise le package de distribution des sources VMR officiellement recommandé par .NET pour la compilation.
+La compilation de la chaîne d'outils .NET est en soi un processus relativement complexe. Pour faciliter votre prise en main, veuillez vous reporter au [Scripts de compilation CI utilisés par Loongson Technology](https://github.com/loongson/dotnet/blob/build/.github/workflows/build-sdk10.yml). Cette méthode utilise le package de distribution des sources VMR officiellement recommandé par .NET pour la compilation.
 
 </template>
 
@@ -208,7 +208,7 @@ Pour installer Java sur les distributions Linux et les systèmes d'exploitation 
 | -------- | -------- |
 | AOSC OS | `oma install openjdk` |
 | Arch Linux | `sudo pacman -S java-openjdk` |
-| Debian et ses dérivés tels que Deepin, openKylin et Loongnix 25 | `sudo apt install default-jdk` |
+| Debian et ses dérivés tels que deepin, openKylin et Loongnix 25 | `sudo apt install default-jdk` |
 | Distributions dérivées de Red Hat telles que Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install java-latest-openjdk` |
 
 :::tip
@@ -227,10 +227,13 @@ Le noyau Linux prend en charge LoongArch depuis la version 5.19. Toutefois, pour
 
 ### Guide de maintenance du noyau
 
-Comme indiqué plus haut, les versions récentes du noyau Linux sont généralement préférables, car elles offrent une meilleure prise en charge des appareils LoongArch. Cependant, comme les distributions peuvent avoir leurs propres règles en matière de mises à jour du noyau, nous avons élaboré le guide ci-dessous à titre de référence.
+Comme indiqué ci-dessus, les noyaux Linux plus récents sont généralement préférables en raison de leur meilleure prise en charge des périphériques LoongArch. Cependant, comme les distributions peuvent avoir leurs propres règles en matière de mises à jour du noyau, nous avons élaboré le guide ci-dessous à titre de référence.
 
 | Version Linux | Nouveauté principale |
 | ------------- | ---------------------------- |
+| 7.1.4 | Correction de la vitesse PCIe pour les modèles 3B6000/3C6000 |
+| 7.1.1 | Prise en charge de la région SystemIO ACPI |
+| 7.1 | Prise en charge du DMA multicanal pour les modèles 2K0300/2K3000/3B6000M |
 | 6.18 | Corrections GPIO pour les modèles 2K2000/2K3000/3B6000M |
 | 6.17 | Prise en charge DWMAC pour la carte réseau intégrée 2K3000/3B6000M ; correction de la modulation de fréquence PWM |
 | 6.16 | Prise en charge SDIO pour les modèles 2K2000/2K3000/3B6000M |
@@ -239,25 +242,29 @@ Comme indiqué plus haut, les versions récentes du noyau Linux sont généralem
 | 6.7 | Prise en charge de la virtualisation |
 | 6.4 | Prise en charge du multithreading simultané (SMT) |
 
-### Correctifs non fusionnés
+### Correctifs non intégrés
 
-En règle générale, les ingénieurs de Loongson Technology et les développeurs de la communauté soumettent au noyau en amont (branche principale) des correctifs visant à assurer la prise en charge matérielle, des optimisations et des corrections. Cependant, pour des raisons techniques ou non techniques, certains correctifs ne sont pas intégrés.
+En règle générale, les ingénieurs de Loongson Technology et les développeurs de la communauté transmettent au noyau en amont (branche principale) les mises en œuvre matérielles, les optimisations et les corrections. Cependant, pour des raisons techniques et non techniques, certains correctifs ne sont pas intégrés.
 
-Le tableau suivant répertorie tous les correctifs connus et indispensables gérés par divers acteurs en aval (développeurs, communautés de distribution, etc.), à titre de référence (la liste de correctifs ci-dessous est basée sur `v6.19-rc1` et n'incluez pas les correctifs déjà soumis à l'amont [longue voûte](https://lore.kernel.org/loongarch) (liste de diffusion)):
+Le tableau ci-dessous répertorie tous les correctifs connus et indispensables gérés par divers acteurs en aval (développeurs, communautés de distribution, etc.), à titre de référence (la liste de correctifs ci-dessous est basée sur `v7.1.4` et n'incluez pas les correctifs déjà intégrés dans le [en amont](https://git.kernel.org/stable/l/v7.1.4)):
 
-| Description | Type | Entrée Kconfig | Lien | Remarques |
-| ----------- | ---- | ------------- | ---- | ----- |
-| Périphériques PixArt PS/2 | Fonctionnalités | `MOUSE_PS2_PIXART` (booléen : oui/non) | [1](https://lore.kernel.org/loongarch/20251127080203.3218018-1-zhoubinbin@loongson.cn/) | Pour les ordinateurs portables tels que le Tongfang Chaorui L860-T2 et l'EA EXCELSIOR L71 équipés des puces 3A5000 et 3A6000, ce correctif résout un problème qui entraînait l'identification erronée des pavés tactiles comme des souris PS/2, ce qui empêchait la prise en charge des gestes et de la détection de la paume. |
-| Prise en charge HWMon (surveillance thermique et autres formes de surveillance matérielle), permettant le contrôle thermique du processeur pour la gamme Loongson 3 | Fonctionnalité | `CPU_HWMON` (booléen : oui/non) | [1](https://github.com/chenhuacai/linux/commit/2a6c1c74d93a21613a523aebc6494d654f35cf1a) | Ne prend pas en charge la surveillance thermique de la puce du pont 7A ; ce correctif peut entraîner `sensors(1)` pour lire les données et les capteurs de température défectueux sur des plateformes SoC telles que les 2K3000/3B6000M. |
-| Contrôleur DMA multicanal | Caractéristique | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/87e13f54db61f) | |
-| SoC 2K3000/3B6000M avec bus CAN-FD | Fonctionnalité | `CAN_LSCANFD` (booléen : oui/non), `CAN_LSCANFD_PLATFORM` (tristate : y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/905bf46bcebfb) | Doit être utilisé avec le correctif pour le contrôleur DMA multicanal |
-| Prise en charge du micrologiciel BPI1000/1001 (« Old World ») | Fonctionnalité | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/06e031656e659), [2](https://github.com/AOSC-Tracking/linux/commit/6a2eb415543d7), [3](https://github.com/AOSC-Tracking/linux/commit/56209fafa1832), [4](https://github.com/AOSC-Tracking/linux/commit/85a8b0edaf388), [5](https://github.com/AOSC-Tracking/linux/commit/16f5059f8b43d), [6](https://github.com/AOSC-Tracking/linux/commit/7d80610d12846), [7](https://github.com/AOSC-Tracking/linux/commit/ecd26b294d80e), [8](https://github.com/AOSC-Tracking/linux/commit/1c92272af179f) | Indispensable pour démarrer les systèmes ABI 2.0 sur les serveurs à quatre sockets Lenovo Kaitian M540z et Gooxi 3C5000L, ainsi que sur certaines plateformes équipées du micrologiciel Kunlun commercialisées entre 2020 et 2022. |
-| Problème de détection de la vitesse du bus PCIe sur certains processeurs des familles 3B6000 et 3C6000, où les vitesses PCIe étaient incorrectement limitées à PCIe 1.0 | Solution de contournement | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/ae2697f19a371) | L'étendue de l'impact des versions/lots du processeur n'est pas claire. Pour plus de détails, voir [l'explication ici](@/guides/errata-desktop-and-server.html#pcie-speed-negotiation-issue-with-early-3b6000-3c6000-steppings) |
-| Solution de contournement pour les GPIO inopérants en raison de descriptions de périphériques non conformes à la *Spécification d'architecture système unifiée du processeur Loongson*, dans laquelle les périphériques GPIO étaient décrits au sein de `gsi_idx_map` | Solution de contournement | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/71068c266d426) | Ne devrait pas affecter les modèles 2K3000/3B6000M et les versions ultérieures |
-| Solution de contournement pour les plantages, réinitialisations et blocages intermittents du pilote avec les GPU AMD GCN 1.0–4.0 sur les plateformes LoongArch | Solution de contournement | N/A | [1](https://lore.kernel.org/all/20240617105846.1516006-1-uwu@icenowy.me/) | Le mécanisme à l'origine de ce correctif n'est pas clair (correctif empirique) ; les noyaux 6.6 commerciaux, comme celui de Deepin, intègrent un ensemble de correctifs plus agressif (mais tout aussi inexpliqué). Voir [cette demande de modification Deepin](https://github.com/deepin-community/kernel/pull/1215). |
-| Solution de contournement pour les erreurs de données sur les plateformes 7A lors de l'utilisation des pilotes graphiques AMD « Radeon » (pour les cartes graphiques TeraScale 2 et antérieures) | Solution de contournement | N/A | [1](https://github.com/chenhuacai/linux/commit/6266d0082b020ad68a3b3c6f314ba299b9d06d3d), [2](https://lore.kernel.org/all/20240220074958.3288170-1-chenhuacai@loongson.cn/), [3](https://github.com/AOSC-Tracking/linux/commit/3b730340dee61) | Mécanisme inconnu mais efficace ; le correctif 3 limite cette solution de contournement aux plateformes MIPS et LoongArch64 (`MACH_LOONGSON64`) |
-| Enregistrer le troisième contrôleur PWM `LOON0006:03` sur le pont 7A2000 en tant que `gsgpu_backlight` dans le code d'initialisation ACPI au niveau de la carte pour prendre en charge le contrôle du rétroéclairage par LoongGPU | Solution de contournement | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/6a22acfd684e4) | Correctif préalable pour la prise en charge du rétroéclairage par LoongGPU. Pour les correctifs liés au pilote LoongGPU, veuillez consulter [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/). |
-| Activer la prise en charge du « réveil à distance » pour les concentrateurs USB de niveau supérieur (tels que les claviers, souris et autres périphériques d'entrée USB) | Solution de contournement | N/A | [1](https://lore.kernel.org/all/20250131100630.342995-1-chenhuacai@loongson.cn/), [2](https://github.com/AOSC-Tracking/linux/commit/a683c47758586) | L'application de ce correctif active la sortie de veille via le clavier pour les appareils LoongArch en mode ACPI S3 (mise en veille en RAM), mais il est connu pour empêcher certains ordinateurs portables x86 de passer en mode veille. Le correctif 2 limite cette solution de contournement aux plateformes MIPS et LoongArch64 (`MACH_LOONGSON64`). |
+| Description | Entrée Kconfig (ajoutée/modifiée) | Lien | Remarques |
+| ----------- | -------------------------------- | ---- | ----- |
+| Périphériques PixArt PS/2 | Ajouté le : `MOUSE_PS2_PIXART` (booléen : oui/non) | [1](https://github.com/AOSC-Tracking/linux/commit/f2bb6ff4f797) | Pour les ordinateurs portables tels que le Tongfang Chaorui L860-T2 et l'EA EXCELSIOR L71 équipés des puces 3A5000 et 3A6000, ce correctif résout un problème qui entraînait l'identification erronée des pavés tactiles comme des souris PS/2, ce qui empêchait la prise en charge des gestes et de la détection de la paume. |
+| Prise en charge de HWMon (surveillance thermique et autres formes de surveillance matérielle), permettant le contrôle thermique du processeur pour la gamme Loongson 3 | Ajouté : `CPU_HWMON` (booléen : oui/non) | [1](https://github.com/AOSC-Tracking/linux/commit/ab7b90e7808a) | N'inclut pas la prise en charge de la surveillance thermique de la puce « 7A bridge » ; sur les plateformes 3C6000 et plus récentes, le micrologiciel version 202511 ou ultérieure représente déjà ce capteur comme une zone thermique ACPI, ce qui rend ce correctif inutile |
+| Bus CAN-FD du SoC 2K3000/3B6000M | Ajouté : `CAN_LSCANFD` (booléen : oui/non), `CAN_LSCANFD_PLATFORM` (tristate : y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/0dc2107b57a2) | Doit être utilisé avec le noyau Linux 7.1 ou une version plus récente prenant en charge le DMA multicanal |
+| Prise en charge du micrologiciel BPI1000/1001 (« Old World ») | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/12790a1e5d40), [2](https://github.com/AOSC-Tracking/linux/commit/42046c2ed32d), [3](https://github.com/AOSC-Tracking/linux/commit/12e17687f2f7), [4](https://github.com/AOSC-Tracking/linux/commit/8dd6b7a65a68), [5](https://github.com/AOSC-Tracking/linux/commit/08d7416a7b74), [6](https://github.com/AOSC-Tracking/linux/commit/d83315017a3a), [7](https://github.com/AOSC-Tracking/linux/commit/bb5ee2c6ffd9), [8](https://github.com/AOSC-Tracking/linux/commit/2c89d5c8e77e) | Indispensable pour démarrer les systèmes ABI 2.0 sur les serveurs à quatre sockets Lenovo Kaitian M540z et Gooxi 3C5000L, ainsi que sur certaines plateformes équipées du micrologiciel Kunlun commercialisées entre 2020 et 2022. |
+| Prise en charge de l'analyse des propriétés d'horloge et du réglage de la vitesse du bus du contrôleur I2C Loongson | `CONFIG_LS2X_I2C` | [1](https://github.com/AOSC-Tracking/linux/commit/42d158cdba34) | L'absence de cette fonctionnalité entraîne un décalage au niveau du pavé tactile de certains ordinateurs portables 3B6000M. |
+| Mise à jour du protocole du micrologiciel SMCv2 | `CONFIG_LOONGSON3_CPUFREQ` | [1](https://github.com/AOSC-Tracking/linux/commit/e838f8194a49) | L'absence de cette mise à jour peut entraîner un échec du démarrage avec la version 202605 du micrologiciel si la fonction DVFS est activée ; veuillez également noter que la version 202605 est expérimentale |
+| Solution de contournement pour les GPIO inopérants en raison de descriptions de périphériques qui ne sont conformes qu'à une ancienne version de la *Spécification d'architecture système unifiée des processeurs Loongson*, dans laquelle les périphériques GPIO étaient décrits au sein de `gsi_idx_map` | `CONFIG_GPIO_LOONGSON_64BIT` | [1](https://github.com/AOSC-Tracking/linux/commit/911ae66f00b3) | Ne devrait pas affecter les modèles 2K3000/3B6000M et les versions ultérieures |
+| Solution de contournement pour les plantages, réinitialisations et blocages intermittents du pilote avec les cartes graphiques AMD GCN 1.0–4.0 sur les plateformes LoongArch | `CONFIG_DRM_AMDGPU` | [1](https://github.com/AOSC-Tracking/linux/commit/0d9e47e4c3ad) | Le mécanisme à l'origine de cette solution de contournement n'est pas clair (correctif empirique) ; celle-ci ne permet pas d'éviter complètement ces problèmes, mais se contente d'en réduire la probabilité ; les noyaux 6.6 commerciaux, tels que ceux de Deepin, intègrent un ensemble de correctifs plus agressif (mais tout aussi inexpliqué). Voir [cette demande de modification Deepin](https://github.com/deepin-community/kernel/pull/1215). |
+| Solution de contournement pour les erreurs de données survenant sur les plateformes 7A lors de l'utilisation des pilotes graphiques AMD « Radeon » (pour les cartes graphiques TeraScale 2 et antérieures) | `CONFIG_DRM_RADEON` | [1](https://github.com/AOSC-Tracking/linux/commit/608cc0997567), [2](https://github.com/AOSC-Tracking/linux/commit/ad49de48bb10), [3](https://github.com/AOSC-Tracking/linux/commit/3381349cf67f) | Mécanisme inconnu (le message de commit n'est pas techniquement correct) mais efficace ; le patch 3 limite cette solution de contournement aux plateformes MIPS et LoongArch64 (`MACH_LOONGSON64`) |
+| Enregistrer le troisième contrôleur PWM `LOON0006:03` sur le pont 7A2000 en tant que `gsgpu_backlight` dans le code d'initialisation ACPI au niveau de la carte mère pour prendre en charge le contrôle du rétroéclairage par LoongGPU | `CONFIG_PWM_LOONGSON` | [1](https://github.com/AOSC-Tracking/linux/commit/54af59a094a6) | Correctif préalable pour la prise en charge du rétroéclairage par LoongGPU. Pour les correctifs liés au pilote LoongGPU, veuillez vous reporter à [AOSC-Tracking/loonggpu-kernel-dkms @ aosc/v1.0.1-alpha-lnd25.5](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/commits/aosc/v1.0.1-alpha-lnd25.5/). |
+| Activer la prise en charge du « réveil à distance » pour les concentrateurs USB de niveau supérieur (tels que les claviers USB, les souris et autres périphériques d'entrée) | `CONFIG_USB` | [1](https://github.com/AOSC-Tracking/linux/commit/a50c62f43a4c), [2](https://github.com/AOSC-Tracking/linux/commit/5e7477d28344) | L'application de ce correctif active la fonction de réveil par le clavier pour les appareils LoongArch en mode ACPI S3 (mise en veille en mémoire vive), mais il est connu pour empêcher certains ordinateurs portables x86 de passer en mode veille. Le correctif 2 limite cette solution de contournement aux plateformes MIPS et LoongArch64 (`MACH_LOONGSON64`). |
+| Réinitialisation de l'état d'activation du rétroéclairage dans la routine de mise en veille/reprise S3 du pilote loongson-laptop | `CONFIG_LOONGSON_LAPTOP` | [1](https://github.com/AOSC-Tracking/linux/commit/1a659eeb6eec) | Solution de contournement du problème lié au micrologiciel de certains ordinateurs portables 3B6000M, qui entraîne la désactivation du rétroéclairage après la sortie du mode S3 |
+| Détecter et désactiver sc.q en cas de comportement erratique | N/A | [1](https://github.com/AOSC-Tracking/linux/commit/1835688d13f3) | Cette solution de contournement est nécessaire pour démarrer le noyau sur certaines implémentations de micrologiciel de la plateforme 2K3000/3B6000M présentant des bogues, qui configurent incorrectement le cœur LA364E et entraînent l'écriture de données erronées par l'instruction sc.q ; cette solution de contournement est incomplète, car les programmes de l'espace utilisateur peuvent toujours obtenir des résultats erronés s'ils n'ont pas protégé l'utilisation de sc.q via `AT_HWCAP` Vérifiez ; il est recommandé de mettre à jour le micrologiciel pour résoudre le problème |
+| Prise en charge des périphériques I2C HID décrits en tant qu'ACPI `PRP0001` nœud avec `_DSM` méthode | `CONFIG_I2C_HID_ACPI` | [1](https://github.com/AOSC-Tracking/linux/commit/7f17caafc784) | Certains ordinateurs portables, comme le Lenovo Kaitian N60d-G1d et l'Inspur Yingzheng, décrivent le pavé tactile selon cette méthode et nécessitent donc ce correctif pour que celui-ci fonctionne |
+| Prise en charge des pages de 16 KiB pour Intel Xe | `CONFIG_DRM_XE` | [1](https://github.com/AOSC-Tracking/linux/commit/5ea0f72ba810) [2](https://github.com/AOSC-Tracking/linux/commit/83d9435d7ea5) [3](https://github.com/AOSC-Tracking/linux/commit/699686db06a3) [4](https://github.com/AOSC-Tracking/linux/commit/c10c60ebb46b) [5](https://github.com/AOSC-Tracking/linux/commit/562971810d99) [6](https://github.com/AOSC-Tracking/linux/commit/8b6d67ff4abd) | Nécessaire pour utiliser une carte graphique Intel avec le noyau à pages de 16 KiB privilégié par la plupart des distributions LoongArch ; il n'est toutefois pas recommandé d'acheter une carte Intel pour la plateforme LoongArch, car le micrologiciel ne peut pas l'utiliser comme périphérique de sortie |
 
 </template>
 
@@ -271,7 +278,7 @@ Pour installer Docker sur les distributions Linux et les systèmes d'exploitatio
 | -------- | -------- |
 | AOSC OS | `oma install docker` |
 | Arch Linux | `sudo pacman -S docker` |
-| Debian et ses dérivés tels que Deepin, openKylin et Loongnix 25 | `sudo apt install docker.io` |
+| Debian et ses dérivés tels que deepin, openKylin et Loongnix 25 | `sudo apt install docker.io` |
 | Distributions dérivées de Red Hat telles que Fedora LoongArch Remix, openEuler, Anolis OS, OpenCloudOS | `sudo dnf install docker` |
 
 :::tip
@@ -282,15 +289,15 @@ Il n'y a que très peu de conteneurs LoongArch disponibles dans le registre offi
 
 <template #cirunner>
 
-De nombreuses plateformes d'hébergement de code prennent en charge les exécuteurs d'intégration continue, et certaines prennent déjà en charge LoongArch de manière native
+De nombreuses plateformes d'hébergement de code prennent en charge les environnements d'exécution d'intégration continue (CI), et certaines prennent déjà en charge LoongArch de manière native.
 
 ### GitHub Actions
 
-Le runner GitHub Actions n'a pas pu générer de versions binaires en raison de [NuGet ne prend pas en charge LoongArch](https://github.com/dotnet/sdk/issues/42248). Si vous souhaitez compiler et déployer cet agent CI vous-même, veuillez consulter ce [demande de modification](https://github.com/actions/runner/pull/3928).
+Le runner GitHub Actions n'a pas pu générer de versions binaires en raison de [NuGet ne prend pas en charge LoongArch](https://github.com/dotnet/sdk/issues/42248). Si vous souhaitez compiler et déployer vous-même cet agent CI, veuillez consulter ce [demande de modification](https://github.com/actions/runner/pull/3928).
 
 ### GitLab Runner
 
-GitLab Runner prend officiellement en charge LoongArch. Pour effectuer le déploiement, il suffit de télécharger et d'installer les paquets ou les archives compressées portant la balise `loong64` à partir de son [page de lancement](https://gitlab.com/gitlab-org/gitlab-runner/-/releases).
+GitLab Runner prend officiellement en charge LoongArch. Pour effectuer le déploiement, il suffit de télécharger et d'installer les paquets ou les archives compressées portant la balise `loong64` à partir de son [page de publication](https://gitlab.com/gitlab-org/gitlab-runner/-/releases).
 
 ### Gitea act\_runner
 
@@ -298,15 +305,15 @@ Gitea act_runner prend officiellement en charge LoongArch, bien que les binaires
 
 ### Forgejo Runner
 
-Forgejo Runner n'a pas encore intégré la prise en charge de LoongArch. Si vous souhaitez compiler et déployer ce runner vous-même, veuillez vous reporter à ce document [demande de modification](https://code.forgejo.org/forgejo/runner/pulls/1144).
+Forgejo Runner n'a pas encore intégré la prise en charge de LoongArch. Si vous souhaitez compiler et déployer ce runner vous-même, veuillez consulter cette page [demande de modification](https://code.forgejo.org/forgejo/runner/pulls/1144).
 
 ### Sourcehut
 
-Sourcehut's CI proxy [builds.sr.ht](https://git.sr.ht/~sircmpwn/builds.sr.ht/) prend officiellement en charge LoongArch. Étant donné que ce moteur de CI ne distribue pas de binaires, vous devrez le compiler et le déployer à partir du code source.
+Sourcehut's CI proxy [builds.sr.ht](https://git.sr.ht/~sircmpwn/builds.sr.ht/) prend officiellement en charge LoongArch. Étant donné que ce runner CI ne distribue pas de binaires, vous devrez compiler et déployer ce runner à partir du code source.
 
 GitHub
 
-Gitee n'a pas encore intégré la prise en charge de LoongArch. Si vous souhaitez compiler et déployer ce runner vous-même, veuillez vous reporter aux pull requests suivantes :
+Gitee n'a pas encore intégré la prise en charge de LoongArch. Si vous souhaitez compiler et déployer vous-même ce runner, veuillez vous reporter aux pull requests suivantes :
 
 - [gitee-go/utils#1](https://gitee.com/gitee-go/utils/pulls/1)
 - [gitee-go/core#1](https://gitee.com/gitee-go/core/pulls/1)
