@@ -6,7 +6,7 @@ import Inspect from "vite-plugin-inspect"
 import { defineConfig } from "vitepress"
 
 // resolve alias is not available for use yet
-import loongfansData from "../src/node/plugins/loongfans-data"
+import loongfansData from "../src/node/plugins/loongfans-data/index.ts"
 
 const srcDir = "pages"
 
@@ -80,9 +80,9 @@ export default defineConfig({
       alias: {
         // `@` is an alias of `srcDir` in vitepress
         // e.g. when using markdown file inclusion
-        "@": resolve(__dirname, `../${srcDir}`),
-        "@data": resolve(__dirname, "../data"),
-        "@src": resolve(__dirname, "../src"),
+        "@": resolve(import.meta.dirname, `../${srcDir}`),
+        "@data": resolve(import.meta.dirname, "../data"),
+        "@src": resolve(import.meta.dirname, "../src"),
       },
     },
   },

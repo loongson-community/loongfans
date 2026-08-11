@@ -1,7 +1,7 @@
 import { basename, extname, relative } from "node:path"
 
 import type { FSWatcher, Logger, Plugin, ViteDevServer } from "vite"
-import { DatabaseGenerator } from "./generateDatabase"
+import { DatabaseGenerator } from "./generateDatabase.ts"
 
 enum DataKind {
   Biweekly = "biweekly",
