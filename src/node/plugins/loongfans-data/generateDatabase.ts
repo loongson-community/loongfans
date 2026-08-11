@@ -6,7 +6,7 @@ import { Ajv, type ValidateFunction } from "ajv"
 import { glob } from "glob"
 import { parse as yamlParse } from "yaml"
 import { createGenerator, type Config } from "ts-json-schema-generator"
-import { createMarkdownRenderer } from "vitepress"
+import { createMarkdownRenderer, disposeMdItInstance } from "vitepress"
 
 import type {
   BiweeklyDB,
@@ -349,6 +349,12 @@ export class DatabaseGenerator {
         }
       }),
     )
+
+    // Do not let our barely configured temporary instance leak outside the
+    // generateDatabase build phase, as VitePress memoizes the instance (!!)
+    //
+    // See: https://github.com/vuejs/vitepress/blob/v2.0.0-alpha.19/src/node/markdown/markdown.ts#L368
+    disposeMdItInstance()
 
     entries.sort((a, b) => compareNamesAlphabetically(a.key, b.key))
 
