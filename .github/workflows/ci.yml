@@ -67,7 +67,10 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           registry: registry.alpinelinux.org
-          image: "registry.alpinelinux.org/img/alpine:3.23"
+          # As of Aug 2026, only edge has Node.js >= 26.7.0 that can survive
+          # the whole build on loong64
+          # See: https://github.com/nodejs/node/pull/63731
+          image: "registry.alpinelinux.org/img/alpine:edge"
           options: |
             --platform linux/loong64
             -v ${{ github.workspace }}:${{ github.workspace }}
@@ -76,7 +79,7 @@ jobs:
             -e GITHUB_ACTIONS=true
           run: |
             apk update
-            apk add bash git nodejs pnpm
+            apk add bash git nodejs-current pnpm
             pnpm install
             pnpm run build
 
