@@ -49,8 +49,8 @@ exp:
 package:
   socket: "FCBGA883"
   temperature: "-40 - 85℃"
-  t_case: "N/A"
-  t_junction: "N/A"
+  t_case: "85℃"
+  t_junction: "100℃"
   size: "27 mm × 27 mm"
 
 power:

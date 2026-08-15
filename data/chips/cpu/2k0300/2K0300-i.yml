@@ -49,7 +49,7 @@ exp:
 package:
   socket: "FCBGA286"
   temperature: "-40 - 105℃"
-  t_case: "N/A"
+  t_case: "95°C"
   t_junction: "105℃"
   size: "12 mm × 12 mm"
 

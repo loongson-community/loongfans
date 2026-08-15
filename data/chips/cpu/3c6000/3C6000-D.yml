@@ -16,9 +16,9 @@ cpu:
   l1_data_cache: "64 KiB"
   l2_cache: "8 MiB (256 KiB × 16 × 2)"
   l3_cache: "64 MiB (32 MiB × 2)"
-  voltage: "N/A"
+  voltage: "1.1 V"
   tpc: "200 W"
-  tdp: "N/A"
+  tdp: "230 W"
 
 gpu:
   available: false
@@ -33,7 +33,7 @@ memory:
 exp:
   io_name: "PCI Express"
   io_rev: "4.0/3.0"
-  lanes: 128
+  lanes: 128 (8 × 16)
   usb_5gbps: 0
   usb2: 0
   sata: 0
@@ -48,10 +48,10 @@ exp:
 
 package:
   socket: "FCLGA4129"
-  temperature: "N/A"
-  t_case: "N/A"
-  t_junction: "N/A"
-  size: "N/A"
+  temperature: "0 - 70℃"
+  t_case: "70℃"
+  t_junction: "85℃"
+  size: "75.4 mm * 58.5 mm"
 
 power:
   clock_gating: true

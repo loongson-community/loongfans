@@ -16,9 +16,9 @@ cpu:
   l1_data_cache: "64 KiB"
   l2_cache: "4 MiB (256 KiB × 16)"
   l3_cache: "32 MiB"
-  voltage: "N/A"
+  voltage: "1.1 V"
   tpc: "120 W"
-  tdp: "N/A"
+  tdp: "150 W"
 
 gpu:
   available: false
@@ -48,10 +48,10 @@ exp:
 
 package:
   socket: "FCBGA2422"
-  temperature: "N/A"
-  t_case: "N/A"
-  t_junction: "N/A"
-  size: "N/A"
+  temperature: "0 - 70℃"
+  t_case: "70℃"
+  t_junction: "85℃"
+  size: "50 mm * 50 mm"
 
 power:
   clock_gating: true

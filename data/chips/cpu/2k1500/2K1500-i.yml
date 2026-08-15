@@ -18,7 +18,7 @@ cpu:
   l3_cache: "N/A"
   voltage: "1.2 V"
   tpc: "4 W"
-  tdp: "N/A"
+  tdp: "5.5 W"
 
 gpu:
   available: false
@@ -49,8 +49,8 @@ exp:
 package:
   socket: "FCBGA608"
   temperature: "-40 - 85℃"
-  t_case: "N/A"
-  t_junction: "N/A"
+  t_case: "85℃"
+  t_junction: "100℃"
   size: "27 mm × 27 mm"
 
 power:
