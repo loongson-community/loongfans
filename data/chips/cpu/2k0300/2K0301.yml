@@ -1,0 +1,58 @@
+basic:
+  name: 2K0301
+  series: 2K0300
+  market: 4
+
+ext_info:
+  pic: "/images/chips/cpu/2K0301.webp"
+  manual: ""
+
+cpu:
+  cores: 1
+  threads: 1
+  arch: "LA264"
+  freq: "1.0 GHz"
+  l1_inst_cache: "32 KiB"
+  l1_data_cache: "32 KiB"
+  l2_cache: "512 KiB"
+  l3_cache: "N/A"
+  voltage: "1.1 V"
+  tpc: "1.5 W"
+  tdp: "3 W"
+
+gpu:
+  available: false
+  name: "N/A"
+
+memory:
+exp:
+  io_name: "N/A"
+  io_rev: "N/A"
+  lanes: "N/A"
+  usb_5gbps: 0
+  usb2: 1
+  sata: 0
+  eth: "2 (1Gbps)"
+  spi: 4
+  uart: 10
+  i2c: 4
+  gpio: 106
+  avs: 0
+  d2d: false
+  other: "eMMC, SDIO, CAN, LIO, RTC, AD"
+
+package:
+  socket: "FCBGA264"
+  temperature: "-40 - 105℃"
+  t_case: "95°C"
+  t_junction: "105℃"
+  size: "13.6 mm × 12 mm"
+
+power:
+  clock_gating: false
+  frequency_scaling: true
+  voltage_scaling: true
+
+technologies:
+  isa: "64-Bit"
+  isa_extensions: []
