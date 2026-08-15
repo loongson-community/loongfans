@@ -25,6 +25,11 @@ gpu:
   name: "N/A"
 
 memory:
+  max: "1 GiB"
+  types: "DDR4-1600"
+  channels: "1 (16-Bit)"
+  ecc: true
+
 exp:
   io_name: "N/A"
   io_rev: "N/A"
