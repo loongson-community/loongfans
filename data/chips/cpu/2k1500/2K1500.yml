@@ -18,7 +18,7 @@ cpu:
   l3_cache: "N/A"
   voltage: "1.2 V"
   tpc: "4 W"
-  tdp: "N/A"
+  tdp: "5.5 W"
 
 gpu:
   available: false

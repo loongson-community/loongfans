@@ -51,7 +51,7 @@ exp:
 package:
   socket: "FCBGA531"
   temperature: "0 - 70℃"
-  t_case: "N/A"
+  t_case: "85°C"
   t_junction: "125℃"
   size: "21 mm × 21 mm"
 

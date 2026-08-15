@@ -16,9 +16,9 @@ cpu:
   l1_data_cache: "64 KiB"
   l2_cache: "3 MiB (256 KiB × 12)"
   l3_cache: "32 MiB"
-  voltage: "N/A"
-  tpc: "N/A"
-  tdp: "N/A"
+  voltage: "1.15 V"
+  tpc: "70 W (2.0 GHz)"
+  tdp: "120 W"
 
 gpu:
   available: false
@@ -50,7 +50,7 @@ package:
   temperature: "0 - 70℃"
   t_case: "70℃"
   t_junction: "85℃"
-  size: "N/A"
+  size: "37.5 mm * 37.5 mm"
 
 power:
   clock_gating: true
