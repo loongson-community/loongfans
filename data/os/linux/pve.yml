@@ -1,6 +1,6 @@
 name:
   en: "Proxmox VE"
-href: "https://www.lierfang.com//#/open/third"
+href: "https://github.com/pve-loong64-port"
 # https://www.proxmox.com/en/about/company-details/media-kit
 image: "/images/os/proxmox.svg"
 description:
