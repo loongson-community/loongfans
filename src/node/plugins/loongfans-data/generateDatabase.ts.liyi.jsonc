@@ -1,0 +1,355 @@
+// liyi v0.1 spec file
+{
+  "version": "0.1",
+  "source": "src/node/plugins/loongfans-data/generateDatabase.ts",
+  "specs": [
+    {
+      "item": "InputFileValidator",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        70,
+        70
+      ],
+      "tree_path": "type.InputFileValidator",
+      "source_hash": "sha256:93567b2ced5d3837e24eaf0b157d09194b5e83579f7f6880d06a09fbf9ca8aaf",
+      "source_anchor": "type InputFileValidator<T> = (data: object, fileName: string) => T"
+    },
+    {
+      "item": "TransformedInput",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        71,
+        74
+      ],
+      "tree_path": "type.TransformedInput",
+      "source_hash": "sha256:0b0f74347320ee4074a5cac931d098646eca01de299dbb8f3dcf53243c97ae4c",
+      "source_anchor": "type TransformedInput<T> = {"
+    },
+    {
+      "item": "validate",
+      "reviewed": false,
+      "intent": "Generic validation helper that throws on schema validation failure, logging detailed errors with context. Must never return invalid data.",
+      "source_span": [
+        76,
+        91
+      ],
+      "tree_path": "fn.validate",
+      "source_hash": "sha256:00f37dc5b9c7424bc07bfa056a6d1c96697669863f6669d301d08a58aec77062",
+      "source_anchor": "function validate<T>("
+    },
+    {
+      "item": "DatabaseGenerator",
+      "reviewed": false,
+      "intent": "Orchestrates the generation of typed, validated databases from YAML data sources. Must ensure all data passes JSON schema validation before being exposed to the application.",
+      "source_span": [
+        93,
+        450
+      ],
+      "tree_path": "class.DatabaseGenerator",
+      "source_hash": "sha256:22d5a520022e2a056034184303d24b689a356a87ebfbff09fc7125dcf37ac013",
+      "source_anchor": "export class DatabaseGenerator {"
+    },
+    {
+      "item": "DatabaseGenerator::constructor",
+      "reviewed": false,
+      "intent": "Initializes the generator with project root detection, sets up AJV validators for all data types using TypeScript-to-JSON-schema generation.",
+      "source_span": [
+        107,
+        149
+      ],
+      "tree_path": "class.DatabaseGenerator::method.constructor",
+      "source_hash": "sha256:4d84b73471f80d2f39531fe5066cbfbdc45046f1b71ce84bd18b14b8c8dd99d0",
+      "source_anchor": "  constructor(projectRoot: string = \"\") {"
+    },
+    {
+      "item": "DatabaseGenerator::validateBiweeklyDBData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        151,
+        158
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateBiweeklyDBData",
+      "source_hash": "sha256:775119b6014e46a7c5435da1f3caa541a05519ed507481090c4e32875c1affb8",
+      "source_anchor": "  validateBiweeklyDBData(data: object, fileName: string) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateCPUData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        160,
+        167
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateCPUData",
+      "source_hash": "sha256:2be221b3d897447b6745d066e9077ce19626cbeb16a3c72266d35d2cc6a47424",
+      "source_anchor": "  validateCPUData(data: object, fileName: string) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateChipsetData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        169,
+        176
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateChipsetData",
+      "source_hash": "sha256:7069ddaed98f47908a94387aaaf448545baed8742ec909ab727594edfb7c2809",
+      "source_anchor": "  validateChipsetData(data: object, fileName: string) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateOSData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        178,
+        185
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateOSData",
+      "source_hash": "sha256:948d55e4b8ce29141004b5cdd792ae7584c3935807ca0da3ffc30ad21894cdec",
+      "source_anchor": "  validateOSData(data: object, fileName: string) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateChipsOutputData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        187,
+        193
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateChipsOutputData",
+      "source_hash": "sha256:555e1e0fc2b7aacd51b8314bc77c6ee2b2b75a00b70db84b1de57d9b4cf9216b",
+      "source_anchor": "  validateChipsOutputData(data: object) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateOSOutputData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        195,
+        201
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateOSOutputData",
+      "source_hash": "sha256:e8024bf695ae0be4b3b0d3ae3d18ec1a3a75fdeb3f69734764700580a4c59093",
+      "source_anchor": "  validateOSOutputData(data: object) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateDeviceData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        203,
+        210
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateDeviceData",
+      "source_hash": "sha256:93d579f853ddc2a42edc52e4964577bb44c89e46990fbf4becaf0cde5522c19c",
+      "source_anchor": "  validateDeviceData(data: object, fileName: string) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateDeviceFamiliesConfigData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        212,
+        219
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateDeviceFamiliesConfigData",
+      "source_hash": "sha256:81f784a905efc9986ec0fc9fbd961c81ca5e17f3c30ce34a84a32c28773fbed7",
+      "source_anchor": "  validateDeviceFamiliesConfigData(data: object, fileName: string) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateDeviceOutputData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        221,
+        227
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateDeviceOutputData",
+      "source_hash": "sha256:2d8bd3986d6014eea429a0fee1845dd578380c02676e04faa0cc4cb28df267e0",
+      "source_anchor": "  validateDeviceOutputData(data: object) {"
+    },
+    {
+      "item": "DatabaseGenerator::validateDownloadItemData",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        229,
+        236
+      ],
+      "tree_path": "class.DatabaseGenerator::method.validateDownloadItemData",
+      "source_hash": "sha256:3b7160a1e1712d5a0bfc77e43e3d576e7be5c8eaea9c7a100a825102b26f1a2f",
+      "source_anchor": "  validateDownloadItemData(data: object, fileName: string) {"
+    },
+    {
+      "item": "DatabaseGenerator::processFiles",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        238,
+        260
+      ],
+      "tree_path": "class.DatabaseGenerator::method.processFiles",
+      "source_hash": "sha256:baa7c1c1c095ea7c63be617f19672faf67e496e22e3abeac7c966528ad056abc",
+      "source_anchor": "  async processFiles<T>("
+    },
+    {
+      "item": "DatabaseGenerator::readAndTransformIntoArray",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        262,
+        275
+      ],
+      "tree_path": "class.DatabaseGenerator::method.readAndTransformIntoArray",
+      "source_hash": "sha256:501a8b3bb458e77a5065c6fc6af51cb418e762ee46a76395b3fa27ed00068a51",
+      "source_anchor": "  async readAndTransformIntoArray<T>("
+    },
+    {
+      "item": "DatabaseGenerator::readAndTransformIntoMap",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        277,
+        294
+      ],
+      "tree_path": "class.DatabaseGenerator::method.readAndTransformIntoMap",
+      "source_hash": "sha256:8f3d734a45ff8a9a19014568c79da8b2f11366f6548c3de7189be6adac9b2f8f",
+      "source_anchor": "  async readAndTransformIntoMap<T>("
+    },
+    {
+      "item": "DatabaseGenerator::generateBiweeklyDatabase",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        296,
+        300
+      ],
+      "tree_path": "class.DatabaseGenerator::method.generateBiweeklyDatabase",
+      "source_hash": "sha256:b072bf0d8e5b566ea8242da694e616e1445532b18a9e91d3daedc28fbb50b088",
+      "source_anchor": "  async generateBiweeklyDatabase() {"
+    },
+    {
+      "item": "DatabaseGenerator::generateChipsDatabase",
+      "reviewed": false,
+      "intent": "Generates chip database by loading and validating CPU and chipset YAML files, sorting by Loongson model naming conventions (newest first).",
+      "source_span": [
+        302,
+        323
+      ],
+      "tree_path": "class.DatabaseGenerator::method.generateChipsDatabase",
+      "source_hash": "sha256:71f211e94fd8c79076ea8251bf84ab3392a31a3e34decf21240421dfd492dea5",
+      "source_anchor": "  async generateChipsDatabase() {"
+    },
+    {
+      "item": "DatabaseGenerator::generateOSDatabase",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        325,
+        331
+      ],
+      "tree_path": "class.DatabaseGenerator::method.generateOSDatabase",
+      "source_hash": "sha256:f2c2790a2ae24af27bd981904ebf57bda54c5f478eb9c6bd59f4e0536a268e6b",
+      "source_anchor": "  async generateOSDatabase() {"
+    },
+    {
+      "item": "DatabaseGenerator::generateDownloadsDatabase",
+      "reviewed": false,
+      "intent": "Generates downloads database with Markdown rendering support for descriptions, including brief/detail split on truncate markers.",
+      "source_span": [
+        333,
+        360
+      ],
+      "tree_path": "class.DatabaseGenerator::method.generateDownloadsDatabase",
+      "source_hash": "sha256:0085970c39c6dbb67b7e9a3f12f2c4037a084f4151a2cd506dc7fb81d2aaa60c",
+      "source_anchor": "  async generateDownloadsDatabase(): Promise<DownloadsDB> {"
+    },
+    {
+      "item": "DatabaseGenerator::generateDeviceDatabase",
+      "reviewed": false,
+      "intent": "Generates device database from device directories, validates family config, and enforces referential integrity between devices and their download references.",
+      "source_span": [
+        362,
+        415
+      ],
+      "tree_path": "class.DatabaseGenerator::method.generateDeviceDatabase",
+      "source_hash": "sha256:aa67fd3cb93164ab15656690bb696a4376bf282c8daaaa84f8611f2e51ebf832",
+      "source_anchor": "  async generateDeviceDatabase(): Promise<DeviceInfoDB> {"
+    },
+    {
+      "item": "DatabaseGenerator::renderDownloadItem",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        417,
+        449
+      ],
+      "tree_path": "class.DatabaseGenerator::method.renderDownloadItem",
+      "source_hash": "sha256:df48e803165ac6f23d23cbbdf29fd5567527f7973a03e45b5727b3cb87fbe59e",
+      "source_anchor": "  async renderDownloadItem("
+    },
+    {
+      "item": "loadUntypedYAML",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        452,
+        454
+      ],
+      "tree_path": "fn.loadUntypedYAML",
+      "source_hash": "sha256:2cc051ff2ad7610a5d019f3f96f0b1bbd7975c94f9fba9b0aebaf29b23765733",
+      "source_anchor": "async function loadUntypedYAML(fileName: string) {"
+    },
+    {
+      "item": "splitOnTruncate",
+      "reviewed": false,
+      "intent": "Splits Markdown content on <!-- truncate --> marker into brief and detail sections for collapsible display.",
+      "source_span": [
+        458,
+        467
+      ],
+      "tree_path": "fn.splitOnTruncate",
+      "source_hash": "sha256:2dcd485ea6c21954ad2a230b28cf6f2d5642d00e1b3276b6f9d1540d8d777ae0",
+      "source_anchor": "function splitOnTruncate(content: string) {"
+    },
+    {
+      "item": "expandIncludes",
+      "reviewed": false,
+      "intent": "Processes Markdown content to inline @include directives, resolving paths relative to the base directory.",
+      "source_span": [
+        469,
+        490
+      ],
+      "tree_path": "fn.expandIncludes",
+      "source_hash": "sha256:675e8c45f2e2fc0122568cdabdf342470cfb7c0dcfd499c8e914eb1b1ade291e",
+      "source_anchor": "async function expandIncludes(content: string, baseDir: string) {"
+    },
+    {
+      "item": "compareLoongsonChipModelsNewestFirst",
+      "reviewed": false,
+      "intent": "Sorts Loongson chip models by implied generation (3rd char desc), series letter (asc), and sub-generation (4th char desc). Note: Some exceptions exist (3C3000 vs 3C6000) that are not handled.",
+      "source_span": [
+        495,
+        521
+      ],
+      "tree_path": "fn.compareLoongsonChipModelsNewestFirst",
+      "source_hash": "sha256:b684b1e63015bad174270d3ed7c438b228f2464b1bd224b778732f682b367529",
+      "source_anchor": "function compareLoongsonChipModelsNewestFirst(a: string, b: string) {"
+    },
+    {
+      "item": "compareNamesAlphabetically",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        523,
+        525
+      ],
+      "tree_path": "fn.compareNamesAlphabetically",
+      "source_hash": "sha256:742b020d1dd2ab3e0c0a3b597dbff76b712b44bb1ee7ce3be0d1bb139f11fdb8",
+      "source_anchor": "function compareNamesAlphabetically(a: string, b: string) {"
+    }
+  ]
+}
