@@ -41,7 +41,7 @@
       <span>{{ t("copyright") }} &copy; 2024-{{ copyrightYear }}</span>
       <span>{{ t("communityName") }}</span>
       <a href="https://beian.miit.gov.cn" target="_blank">
-        鄂ICP备2022017735号-12
+        鄂ICP备2026029618号-2
       </a>
     </div>
   </div>
