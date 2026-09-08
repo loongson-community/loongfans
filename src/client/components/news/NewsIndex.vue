@@ -8,7 +8,7 @@
         <h2 class="shrink">{{ categoryName }}</h2>
         <a :href="`${basePath}/news/${category}`">{{ $t("news.viewMore") }}</a>
       </div>
-      <NewsList :category="category" />
+      <NewsList :category="category" :limit="10" />
     </div>
   </div>
 </template>

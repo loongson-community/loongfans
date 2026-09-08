@@ -17,7 +17,7 @@ import { data, type NewsData } from "@src/node/data-loaders/news.data"
 
 const props = withDefaults(
   defineProps<{ category: string; limit?: number }>(),
-  { limit: 10 },
+  { limit: 0 },
 )
 
 const { localeIndex } = useData()
@@ -40,11 +40,11 @@ const filteredData = computed<NewsData[]>(() => {
   return Array.from(map.values())
 })
 
-const newsList = filteredData.value
-  .slice(0, props.limit)
-  .toSorted((newsA, newsB) =>
-    newsB.frontmatter.pageSubTitle.localeCompare(
-      newsA.frontmatter.pageSubTitle,
-    ),
-  )
+let newsList = filteredData.value.toSorted((newsA, newsB) =>
+  newsB.frontmatter.pageSubTitle.localeCompare(newsA.frontmatter.pageSubTitle),
+)
+
+if (props.limit > 0) {
+  newsList = newsList.slice(0, props.limit)
+}
 </script>
