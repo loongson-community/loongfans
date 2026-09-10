@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle:  # Titre principal
+title:  # Titre principal
 pageSubTitle: # Sous-titres
 ---
 

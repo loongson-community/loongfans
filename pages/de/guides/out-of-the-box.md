@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Erste Schritte
+title: Erste Schritte
 pageSubTitle: Ihr Leitfaden vom Auspacken bis zur Zufriedenheit
 ---
 

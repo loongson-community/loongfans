@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Новости
+title: Новости
 pageSubTitle: Neuigkeiten und Veranstaltungen in unserer Gemeinde
 ---
 

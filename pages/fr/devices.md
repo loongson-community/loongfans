@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Caractéristiques techniques du produit
+title: Caractéristiques techniques du produit
 pageSubTitle: Aperçu des spécifications, des fonctionnalités et des problèmes connus
 ---
 

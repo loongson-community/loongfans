@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Все журналы изменений прошивок
+title: Все журналы изменений прошивок
 pageSubTitle:
 ---
 

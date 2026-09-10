@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Developer's Guide
+title: Developer's Guide
 pageSubTitle: Guides and Notes on Developing for LoongArch
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Benutzerhandbuch und Fehlerbehebung
+title: Benutzerhandbuch und Fehlerbehebung
 pageSubTitle: Den eigenwilligen Loongson zähmen...
 ---
 

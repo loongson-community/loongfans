@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 修复固件
+title: 修复固件
 pageSubTitle: 抢救刷入固件后无法开机的硬件
 ---
 

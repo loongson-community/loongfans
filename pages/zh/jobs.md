@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 悬赏与实习机会
+title: 悬赏与实习机会
 pageSubTitle: 用爱发电，也许发财 ( ͡° ͜ʖ ͡°)
 ---
 

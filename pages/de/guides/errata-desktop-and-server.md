@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Häufige Probleme
+title: Häufige Probleme
 pageSubTitle: Häufige Probleme auf Desktop- und Serverplattformen
 ---
 

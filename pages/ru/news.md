@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Community News
+title: Community News
 pageSubTitle: Новости и события, происходящие в нашем сообществе
 ---
 

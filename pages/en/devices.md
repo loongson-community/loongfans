@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Product Specifications
+title: Product Specifications
 pageSubTitle: Overview of specifications, features, and known issues
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: doc
-pageTitle: Base de données des puces
+title: Base de données des puces
 pageSubTitle: Découvrez et comparez les caractéristiques et les performances des processeurs et puces Loongson
 ---
 

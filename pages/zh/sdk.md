@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 开发者指南
+title: 开发者指南
 pageSubTitle: 龙架构开发入门及注意事项
 ---
 

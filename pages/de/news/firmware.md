@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Alle Firmware-Änderungsprotokolle
+title: Alle Firmware-Änderungsprotokolle
 pageSubTitle:
 ---
 

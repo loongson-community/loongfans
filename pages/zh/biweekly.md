@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 龙架构双周会
+title: 龙架构双周会
 pageSubTitle: 属于龙芯社区开发者和爱好者的线上 + 线下聚会
 ---
 

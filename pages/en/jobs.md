@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Internships and Bounties
+title: Internships and Bounties
 pageSubTitle: Love Driven, or Maybe Material Driven? ( ͡° ͜ʖ ͡°)
 ---
 

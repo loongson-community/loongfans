@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 所有龙架构上游动向
+title: 所有龙架构上游动向
 pageSubTitle:
 ---
 

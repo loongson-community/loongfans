@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 所有固件更新日志
+title: 所有固件更新日志
 pageSubTitle:
 ---
 

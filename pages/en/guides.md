@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: User Guide and Troubleshooting
+title: User Guide and Troubleshooting
 pageSubTitle: Taming the Quirky Loongson...
 ---
 

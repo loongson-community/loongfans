@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Firmware Changelogs
+title: Firmware Changelogs
 pageSubTitle: stable2602
 ---
 

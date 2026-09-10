@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: About Our Community
+title: About Our Community
 pageSubTitle: That Mysterious Community for Mysterious Processors
 ---
 

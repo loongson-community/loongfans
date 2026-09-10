@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle:  # Main title
+title:  # Main title
 pageSubTitle: # Subtitle
 ---
 

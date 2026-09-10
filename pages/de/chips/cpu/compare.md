@@ -1,7 +1,7 @@
 ---
 layout: page
 returnLink: /chips
-pageTitle: CPU-Vergleich
+title: CPU-Vergleich
 pageSubTitle:
 ---
 

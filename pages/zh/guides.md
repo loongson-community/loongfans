@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 玩机及踩坑指南
+title: 玩机及踩坑指南
 pageSubTitle: 大家都说，龙芯有点创——
 ---
 

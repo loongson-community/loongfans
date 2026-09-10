@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Toutes les mises à jour amont LoongArch
+title: Toutes les mises à jour amont LoongArch
 pageSubTitle:
 ---
 

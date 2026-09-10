@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: En route vers le Nouveau Monde !
+title: En route vers le Nouveau Monde !
 pageSubTitle: Bienvenue dans l'univers Loongson, au-delà des architectures x86 et ARM
 ---
 
