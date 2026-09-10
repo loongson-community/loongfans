@@ -5,6 +5,9 @@ MD004: false
 # enforce any line length limit globally
 MD013: false
 
+# Frontmatter titles are page metadata and may differ from article H1 headings
+MD025: false
+
 # Vitepress cannot use the "*.mdx" extension, yet we heavily utilize
 # inline components in Markdown files
 #

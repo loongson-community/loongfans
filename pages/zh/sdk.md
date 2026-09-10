@@ -166,6 +166,8 @@ Python 已正式支持龙架构，您可以通过发行版仓库直接安装、�
 
 对于常见的 Linux 发行版，选择 RID（.NET 运行时标识符）为 `linux-loongarch64` 的 SDK 包即可获取完整工具链。如 `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`；关于如何使用 tar 包安装 .NET SDK，参阅 [.NET 官方文档](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install)
 
+<!-- SdkIndex renders the enclosing SDK section as an h2. -->
+<!-- markdownlint-disable-next-line MD001 -->
 ### 为龙架构交叉编译 .NET 程序
 
 .NET 原生支持交叉编译和跨平台发布，使用 .NET 9 以上版本并参考[本文](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog)指定目标 RID 后即可为龙架构发布 .NET 程序，但由于龙架构属于 .NET 的“社区支持架构”，NuGet.org 不提供目标为龙架构的 .NET 运行时包，在构建过程中会因此失败。
