@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Système d'exploitation
+title: Système d'exploitation
 pageSubTitle: Systèmes d'exploitation pour LoongArch
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 龙架构上游动向
+title: 龙架构上游动向
 pageSubTitle: Linux 软件容器 (LXC) 模板源正式支持龙架构
 ---
 

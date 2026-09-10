@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Operating System
+title: Operating System
 pageSubTitle: Operating Systems for LoongArch
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Über die Community
+title: Über die Community
 pageSubTitle: Die geheimnisvolle Community des geheimnisvollen Prozessors
 ---
 

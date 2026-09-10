@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Pour commencer
+title: Pour commencer
 pageSubTitle: Votre guide, du déballage jusqu'à votre satisfaction
 ---
 

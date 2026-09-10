@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: All Firmware Changelogs
+title: All Firmware Changelogs
 pageSubTitle:
 ---
 

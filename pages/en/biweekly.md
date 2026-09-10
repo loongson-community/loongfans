@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: LoongArch Biweekly
+title: LoongArch Biweekly
 pageSubTitle: Biweekly Meetings for Community Developers and Hobbyists
 ---
 

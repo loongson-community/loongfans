@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Stages et bourses
+title: Stages et bourses
 pageSubTitle: Par amour, ou plutôt par appât du gain ? ( ͡° ͜ʖ ͡°)
 ---
 

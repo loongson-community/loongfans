@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Towards the New World!
+title: Towards the New World!
 pageSubTitle: Welcome to Loongson's World Beyond x86 and ARM
 ---
 

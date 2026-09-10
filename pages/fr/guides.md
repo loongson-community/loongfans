@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Guide de l'utilisateur et dépannage
+title: Guide de l'utilisateur et dépannage
 pageSubTitle: Apprivoiser l'excentrique Loongson...
 ---
 

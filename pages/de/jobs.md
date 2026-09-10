@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Praktika und Prämien
+title: Praktika und Prämien
 pageSubTitle: Von der Liebe getrieben oder vielleicht doch vom Geld? ( ͡° ͜ʖ ͡°)
 ---
 

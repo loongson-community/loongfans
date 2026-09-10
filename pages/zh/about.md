@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 关于社区
+title: 关于社区
 pageSubTitle: 东方神秘第三方社区
 ---
 

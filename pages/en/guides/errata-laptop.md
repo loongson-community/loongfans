@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Common Issues
+title: Common Issues
 pageSubTitle: Common Issues Found on Various Laptop Platforms
 ---
 

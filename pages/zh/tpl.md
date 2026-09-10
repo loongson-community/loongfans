@@ -2,7 +2,7 @@
 layout: page
 # 返回首页，想返回哪张页面，就在下面填写相对链接
 returnLink: /
-pageTitle:  # 大标题
+title:  # 大标题
 pageSubTitle: # 小标题
 ---
 

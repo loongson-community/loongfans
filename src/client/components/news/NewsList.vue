@@ -2,7 +2,7 @@
   <ul>
     <li v-for="item in newsList" :key="item.url">
       <a :href="`${item.url}`">
-        {{ item.frontmatter.pageTitle }} |
+        {{ item.frontmatter.title }} |
         {{ item.frontmatter.pageSubTitle }}
       </a>
     </li>

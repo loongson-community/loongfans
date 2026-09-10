@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Community News
+title: Community News
 pageSubTitle: News and Events Happening Around Our Community
 ---
 

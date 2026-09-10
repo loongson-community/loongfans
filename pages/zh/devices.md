@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 产品规格数据库
+title: 产品规格数据库
 pageSubTitle: 规格参数、特色配置及已知问题一览
 ---
 

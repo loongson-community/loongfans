@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Product Database
+title: Product Database
 # these values are dynamic, so these have to be initialized by transformPageData()
 # pageSubTitle: {{ params.deviceName }}
 ---

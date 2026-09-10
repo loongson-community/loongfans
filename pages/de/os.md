@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Betriebssystem
+title: Betriebssystem
 pageSubTitle: Betriebssysteme für LoongArch
 ---
 

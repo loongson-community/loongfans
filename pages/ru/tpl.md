@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle:  # Главный заголовок
+title:  # Главный заголовок
 pageSubTitle: # Субтитры
 ---
 

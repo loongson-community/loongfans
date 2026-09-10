@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Problèmes courants
+title: Problèmes courants
 pageSubTitle: Problèmes courants rencontrés sur les plateformes de bureau et de serveur
 ---
 

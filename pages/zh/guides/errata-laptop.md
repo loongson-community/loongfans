@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 常见问题集
+title: 常见问题集
 pageSubTitle: 各类笔记本平台已知问题
 ---
 

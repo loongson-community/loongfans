@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Actualités
+title: Actualités
 pageSubTitle: Actualités et événements dans notre communauté
 ---
 

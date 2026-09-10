@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 产品规格数据库
+title: 产品规格数据库
 # these values are dynamic, so these have to be initialized by transformPageData()
 # pageSubTitle: {{ params.deviceName }}
 ---

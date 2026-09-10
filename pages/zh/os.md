@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 操作系统
+title: 操作系统
 pageSubTitle: 支持龙架构的操作系统
 ---
 

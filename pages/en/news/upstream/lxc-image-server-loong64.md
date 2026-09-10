@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: LoongArch Upstream Activities
+title: LoongArch Upstream Activities
 pageSubTitle: LXC Image Server Now Shipping LoongArch Templates
 ---
 

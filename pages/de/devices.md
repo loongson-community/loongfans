@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Produktdatenbank
+title: Produktdatenbank
 pageSubTitle: Übersicht über technische Daten, besondere Ausstattungsmerkmale und bekannte Probleme
 ---
 

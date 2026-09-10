@@ -2,7 +2,7 @@
   <div class="header_box">
     <div class="page_body">
       <div class="main_title">
-        <h1>{{ frontmatter.pageTitle }}</h1>
+        <h1>{{ frontmatter.title }}</h1>
         <h4>{{ frontmatter.pageSubTitle }}</h4>
       </div>
       <div class="brand_mark">

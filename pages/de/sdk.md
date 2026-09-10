@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Entwicklerhandbuch
+title: Entwicklerhandbuch
 pageSubTitle: Anleitungen und Hinweise zur Entwicklung für LoongArch
 ---
 

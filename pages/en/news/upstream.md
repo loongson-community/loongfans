@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: All LoongArch Upstream Updates
+title: All LoongArch Upstream Updates
 pageSubTitle:
 ---
 

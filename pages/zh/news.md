@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 新闻资讯
+title: 新闻资讯
 pageSubTitle: 龙芯与龙架构社区资讯
 ---
 

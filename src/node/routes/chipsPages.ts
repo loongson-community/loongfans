@@ -149,7 +149,7 @@ export const makeRouteModule = (locale: string): RouteModule => {
     transformPageData(pageData) {
       const params = pageData.params as ChipPageRouteParams
       pageData.title = params.title
-      pageData.frontmatter["pageTitle"] = params.title
+      pageData.frontmatter["title"] = params.title
       pageData.frontmatter["pageSubTitle"] = params.subTitle
       return pageData
     },

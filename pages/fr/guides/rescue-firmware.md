@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Récupération du micrologiciel
+title: Récupération du micrologiciel
 pageSubTitle: Récupération d'un matériel qui ne démarre plus après une mise à jour du micrologiciel
 ---
 

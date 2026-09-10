@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Tous les journaux des firmwares
+title: Tous les journaux des firmwares
 pageSubTitle:
 ---
 

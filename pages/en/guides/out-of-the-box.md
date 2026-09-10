@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: Getting Started
+title: Getting Started
 pageSubTitle: Your Guide from Unboxing to a Happy User
 ---
 

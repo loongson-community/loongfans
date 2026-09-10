@@ -1,6 +1,6 @@
 ---
 layout: page
-pageTitle: 在亮机前
+title: 在亮机前
 pageSubTitle: 从购买入坑，如何获得良好体验？
 ---
 
