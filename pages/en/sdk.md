@@ -166,6 +166,8 @@ However, .NET toolchain binaries may be obtained through the following channels:
 
 For common Linux distributions, simply download the SDK package with the RID (.NET Runtime Identifier) `linux-loongarch64` to obtain the full toolchain (i.e., `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`). For instructions on installing the .NET SDK using tar packages, refer to the [official .NET documentation](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install).
 
+<!-- SdkIndex renders the enclosing SDK section as an h2. -->
+<!-- markdownlint-disable-next-line MD001 -->
 ### Cross-Compiling .NET Applications for LoongArch
 
 .NET natively supports cross-compilation and cross-platform publishing. With .NET 9 or later, refer to [this article](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) and specify the target RID to publish .NET applications for LoongArch. However, since LoongArch is classified as a “community-supported architecture” for .NET, NuGet.org does not host .NET runtime packages targeting LoongArch, which may cause build failures.

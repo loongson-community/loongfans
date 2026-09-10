@@ -166,6 +166,8 @@ Python официально поддерживает LoongArch. Его можн�
 
 Для распространенных дистрибутивов Linux достаточно просто загрузить пакет SDK с RID (идентификатор среды выполнения .NET) `linux-loongarch64` чтобы получить полный набор инструментов (т. е., `dotnet-runtime-10.0.1-linux-loongarch64.tar.gz`). Инструкции по установке .NET SDK с помощью пакетов tar см. в [официальная документация по .NET](https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-scripted-manual#manual-install).
 
+<!-- SdkIndex renders the enclosing SDK section as an h2. -->
+<!-- markdownlint-disable-next-line MD001 -->
 ### Кросс-компиляция приложений .NET для LoongArch
 
 .NET изначально поддерживает кросс-компиляцию и кроссплатформенную публикацию. В .NET 9 и более поздних версиях см. [эта статья](https://learn.microsoft.com/zh-cn/dotnet/core/rid-catalog) и указать целевой RID для публикации приложений .NET для LoongArch. Однако, поскольку LoongArch классифицируется как «архитектура, поддерживаемая сообществом» для .NET, на NuGet.org не размещаются пакеты среды выполнения .NET, предназначенные для LoongArch, что может привести к сбоям при сборке.
