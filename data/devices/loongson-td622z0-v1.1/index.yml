@@ -4,7 +4,7 @@ name:
   de: Loongson TD622Z0 V1.1
   fr: Loongson TD622Z0 V1.1
   ru: Loongson TD622Z0 V1.1
-family: other
+family: 3c6000
 category: board
 image: "" # TODO
 spec: ""
