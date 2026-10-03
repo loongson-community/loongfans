@@ -1,0 +1,14 @@
+name:
+  en: Loongson TD642F0 V1.0
+  zh: 龙芯 TD642F0 V1.0
+  de: Loongson TD642F0 V1.0
+  fr: Loongson TD642F0 V1.0
+  ru: Loongson TD642F0 V1.0
+family: other
+category: board
+image: "" # TODO
+spec: ""
+tags: []
+downloads:
+  - uefi-fw-loongson-td642f0-v1.0-v5.0.0639_stable202608_rel_mainline-dvfs
+  - uefi-fw-loongson-td642f0-v1.0-v5.0.0639_stable202608_dbg_mainline-dvfs

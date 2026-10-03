@@ -1,0 +1,16 @@
+name:
+  en: Loongson QA612N0 V1.2
+  zh: 龙芯 QA612N0 V1.2
+  de: Loongson QA612N0 V1.2
+  fr: Loongson QA612N0 V1.2
+  ru: Loongson QA612N0 V1.2
+family: other
+category: prebuilt
+image: "" # TODO
+spec: ""
+tags:
+  - nuc
+  - prebuilt
+downloads:
+  - uefi-fw-loongson-qa612n0-v1.2-v5.0.0639_stable202608_rel_mainline-dvfs
+  - uefi-fw-loongson-qa612n0-v1.2-v5.0.0639_stable202608_dbg_mainline-dvfs
