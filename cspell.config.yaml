@@ -62,6 +62,7 @@ ignorePaths:
   - pages/parts/fr
   - pages/parts/ru
   - data/dictionaries
+  - data/devices/families.yml
   - data/events/*.yml
   - data/events/*.ics
   - data/**/*.de.md
