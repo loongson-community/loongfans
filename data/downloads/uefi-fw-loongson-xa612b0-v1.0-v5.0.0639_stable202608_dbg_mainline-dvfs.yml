@@ -1,0 +1,21 @@
+type: uefi-firmware
+version: "V1.0_V5.0.0639_stable202608_dbg_mainline-dvfs"
+size: 8388608
+date: "2026-09-29"
+sha256: "43ffa1337f03aced1dbbd7d4dce1161706b06d8035ad27d478e868c507be3904"
+url: "https://fw.loongfans.cn/xa612b0-v1.0/EDK2602_XA612B0-V1.0_General_v5.0.0639-Stable202608_dbg_20260928113604_21bc6307_mainline-dvfs.fd"
+debug: true
+preview: true
+description:
+  zh: |
+    本版更新主要包含 PHY、MRC、SMC、PCIe、IPMI 等软硬件代码模块持续迭代升级、及 SPI/Variable、ACPI/SMBIOS、启动管理、显示与平台适配等更新，并进一步优化多节点平台稳定性、设备识别、启动性能及外设兼容性。
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2608.md -->
+  en: |
+    This version contains primarily updates to key hardware support components, such as PHY, MRC, SMC, PCIe, and IPMI, etc. Also updated are SPI/Variable, ACPI/SMBIOS, Boot Manager, User Interface, and Platform support components.
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2608.en.md -->
