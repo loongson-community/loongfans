@@ -1,0 +1,19 @@
+type: uefi-firmware
+version: "V1.1_V5.0.0639_stable202608_package"
+size: 9311885
+date: "2026-09-29"
+sha256: "0508d6bd720af40c90b2acb070346afd52d86d05b695c253619f322c38df1ad2"
+url: "https://fw.loongfans.cn/td622z0-v1.1/EDK2602_TD622Z0-V1.1_General_V5.0.0639-stable202608.zip"
+description:
+  zh: |
+    本版更新主要包含 PHY、MRC、SMC、PCIe、IPMI 等软硬件代码模块持续迭代升级、及 SPI/Variable、ACPI/SMBIOS、启动管理、显示与平台适配等更新，并进一步优化多节点平台稳定性、设备识别、启动性能及外设兼容性
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2608.md -->
+  en: |
+    This version contains primarily updates to key hardware support components, such as PHY, MRC, SMC, PCIe, and IPMI, etc. Also updated are SPI/Variable, ACPI/SMBIOS, Boot Manager, User Interface, and Platform support components.
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2608.en.md -->

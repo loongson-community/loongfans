@@ -1,0 +1,13 @@
+name:
+  en: Loongson TD622Z0 V1.1
+  zh: 龙芯 TD622Z0 V1.1
+  de: Loongson TD622Z0 V1.1
+  fr: Loongson TD622Z0 V1.1
+  ru: Loongson TD622Z0 V1.1
+family: other
+category: board
+image: "" # TODO
+spec: ""
+tags: []
+downloads:
+  - uefi-fw-loongson-td622z0-v1.1-v5.0.0639_stable202608_package
