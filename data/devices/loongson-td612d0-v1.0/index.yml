@@ -1,0 +1,13 @@
+name:
+  en: Loongson TD612D0 V1.0
+  zh: 龙芯 TD612D0 V1.0
+  de: Loongson TD612D0 V1.0
+  fr: Loongson TD612D0 V1.0
+  ru: Loongson TD612D0 V1.0
+family: 3c6000
+category: board
+image: "" # TODO
+spec: "3C6000/D series"
+tags: []
+downloads:
+  - uefi-fw-loongson-td612d0-v1.0-v5.0.0639_stable202608_package

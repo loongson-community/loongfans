@@ -36,6 +36,14 @@ families:
       fr: 2K0300
       ru: 2K0300
 
+  other:
+    title:
+      en: Other devices
+      zh: 其他设备
+      de: Weitere Geräte
+      fr: Autres appareils
+      ru: Другие устройства
+
 categories:
   board:
     title:

@@ -11,3 +11,6 @@ spec: "3A6000-HV @ 2.5GHz"
 tags:
   - nuc
   - prebuilt
+downloads:
+  - uefi-fw-loongson-qa612n0-v1.2-v5.0.0639_stable202608_rel_mainline-dvfs
+  - uefi-fw-loongson-qa612n0-v1.2-v5.0.0639_stable202608_dbg_mainline-dvfs
