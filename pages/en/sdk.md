@@ -234,6 +234,7 @@ As noted above, newer Linux kernels are generally preferable due to their better
 | Linux Version | Key Feature Introduced |
 | ------------- | ---------------------------- |
 | 7.1.6 | Backlight fix for suspend/resume on some 3B6000M laptops |
+| 7.1.5 | Dirty page tracking fix for the hardware page table walker |
 | 7.1.4 | 3B6000/3C6000 PCIe speed fix |
 | 7.1.1 | ACPI SystemIO region support |
 | 7.1 | 2K0300/2K3000/3B6000M multi-channel DMA support |
