@@ -257,7 +257,7 @@ Linux 内核从 5.19 包含对龙架构支持，但如希望发挥龙架构硬�
 | 描述 | 新增或影响的配置项 | 链接 | 备注 |
 | ---- | ------------------ | ---- | ---- |
 | PixArt PS/2 总线设备支持 | 新增：`MOUSE_PS2_PIXART` (bool: y/n) | [1](https://github.com/AOSC-Tracking/linux/commit/9b0c0884a104) | 用于清华同方超锐 L860-T2、卓怡恒通 L71 等基于 3A5000 及 3A6000 的笔记本，可解决这些设备上触摸板被错误识别为 PS/2 鼠标，导致手势功能及手掌探测失效 |
-| HWMon（如温控等硬件监控功能）支持，可为龙芯 3 号家族提供处理器温控支持 | 新增：`CPU_HWMON` (bool: y/n) | [1](https://github.com/AOSC-Tracking/linux/commit/ac8097bf67a4) | 不包括 7A 桥片监控支持；如固件通过 ACPI Thermal Zone 表示该传感器（3C6000 及更新平台上的 202511 及更新版本固件已经支持），就不再需要该补丁 |
+| HWMon（如温控等硬件监控功能）支持，可为龙芯 3 号家族提供处理器温控支持 | 新增：`CPU_HWMON` (bool: y/n) | [1](https://github.com/AOSC-Tracking/linux/commit/ac8097bf67a4) | 不包括 7A 桥片监控支持；如固件通过 ACPI Thermal Zone 表示该传感器（202608 版本固件已为全部龙芯桌面级处理器提供此项支持），就不再需要该补丁 |
 | 2K3000/3B6000M 平台 CAN-FD 支持 | 新增：`CAN_LSCANFD` (bool: y/n), `CAN_LSCANFD_PLATFORM` (tristate: y/m/n) | [1](https://github.com/AOSC-Tracking/linux/commit/b921f3792733) | 依赖 7.1 以上内核版本提供的多通道 DMA 支持 |
 | BPI1000/1001（“旧世界”）固件平台支持 | 无 | [1](https://github.com/AOSC-Tracking/linux/commit/b32424c93c8a), [2](https://github.com/AOSC-Tracking/linux/commit/8eba28da410c), [3](https://github.com/AOSC-Tracking/linux/commit/f3284d3edc4f), [4](https://github.com/AOSC-Tracking/linux/commit/ab09bc3e5426), [5](https://github.com/AOSC-Tracking/linux/commit/9d61f1885139), [6](https://github.com/AOSC-Tracking/linux/commit/26b384c82674), [7](https://github.com/AOSC-Tracking/linux/commit/fca2ab59d497), [8](https://github.com/AOSC-Tracking/linux/commit/b53a14ff3fa6) | 在联想开天 M540z、国光 3C5000L 四路服务器及部分使用 2020 - 2022 年份昆仑固件的平台上须打上，否则无法启动 |
 | 龙芯 I2C 控制器时钟属性解析和总线速率控制支持 | `CONFIG_LS2X_I2C` | [1](https://github.com/AOSC-Tracking/linux/commit/cdbba99af08b) | 缺失此功能会导致一些 3B6000M 笔记本的触摸板出现卡顿 |
