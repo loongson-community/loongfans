@@ -1,0 +1,139 @@
+// liyi v0.1 spec file
+{
+  "version": "0.1",
+  "source": "src/node/routes/chipsPages.ts",
+  "specs": [
+    {
+      "item": "MyUserRouteConfig",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        22,
+        25
+      ],
+      "tree_path": "interface.MyUserRouteConfig",
+      "source_hash": "sha256:5f597e2423f5173c64f9d620a2e85d6837810ee36bb6eb197f329e3800a3230e",
+      "source_anchor": "interface MyUserRouteConfig {"
+    },
+    {
+      "item": "ChipPageRouteParams",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        27,
+        35
+      ],
+      "tree_path": "type.ChipPageRouteParams",
+      "source_hash": "sha256:80afd9dd1a8c70096b71b2192211d732427a5436735b81486d18793e79744244",
+      "source_anchor": "type ChipPageRouteParams = {"
+    },
+    {
+      "item": "RouteCompiler",
+      "reviewed": false,
+      "intent": "Compiles VitePress route configurations for chip pages (CPU and chipset), handling i18n, subtitle generation, and optional notes content.",
+      "source_span": [
+        37,
+        132
+      ],
+      "tree_path": "class.RouteCompiler",
+      "source_hash": "sha256:7eae4d6e960b17f10234a1ff6bcf7eea074cead7a7b64ca9fe71705624cb23c4",
+      "source_anchor": "class RouteCompiler {"
+    },
+    {
+      "item": "RouteCompiler::constructor",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        41,
+        44
+      ],
+      "tree_path": "class.RouteCompiler::method.constructor",
+      "source_hash": "sha256:b06b8e48fba15242bdac715d2ee81eb9b760769091599b0ba44a01180c1d2fe4",
+      "source_anchor": "  constructor(locale: string) {"
+    },
+    {
+      "item": "RouteCompiler::localePart",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        46,
+        48
+      ],
+      "tree_path": "class.RouteCompiler::method.localePart",
+      "source_hash": "sha256:ebec932e68313f2d819c6985152ea04c0c178d4194192f8609dc751381193ff4",
+      "source_anchor": "  get localePart() {"
+    },
+    {
+      "item": "RouteCompiler::t",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        50,
+        52
+      ],
+      "tree_path": "class.RouteCompiler::method.t",
+      "source_hash": "sha256:7a088c482e229869ffe0a3dea99d8086b3d43614b663cd17f76fc9a39ecd268d",
+      "source_anchor": "  get t() {"
+    },
+    {
+      "item": "RouteCompiler::subTitleForCPU",
+      "reviewed": false,
+      "intent": "Generates localized CPU subtitle string containing core count, thread count, and frequency using i18n pluralization.",
+      "source_span": [
+        54,
+        70
+      ],
+      "tree_path": "class.RouteCompiler::method.subTitleForCPU",
+      "source_hash": "sha256:e8b028cf7dfd324d1402039a14c3a48781d77baca31c95f60567116601db7d17",
+      "source_anchor": "  subTitleForCPU(info: CPUInfoItem): string {"
+    },
+    {
+      "item": "RouteCompiler::compileOneRoute",
+      "reviewed": false,
+      "intent": "Generates a single chip page route with category/family/model path structure, localized titles, and optional notes content loaded from filesystem.",
+      "source_span": [
+        72,
+        112
+      ],
+      "tree_path": "class.RouteCompiler::method.compileOneRoute",
+      "source_hash": "sha256:1d6a2f2a4b765e0cbe0710b7ef7b5bf8a31eed01317973ccd1e17a3e7f32a1a7",
+      "source_anchor": "  async compileOneRoute({"
+    },
+    {
+      "item": "RouteCompiler::compileRoutes",
+      "reviewed": false,
+      "intent": "Batch compiles routes for all chips in a category (cpu or chipset), mapping chip data to route configurations in parallel.",
+      "source_span": [
+        114,
+        131
+      ],
+      "tree_path": "class.RouteCompiler::method.compileRoutes",
+      "source_hash": "sha256:0559f8ff6339fdc30b78218186f6509296aa5d246423297e19f75cc1045b4d36",
+      "source_anchor": "  async compileRoutes({"
+    },
+    {
+      "item": "paths",
+      "reviewed": false,
+      "intent": "VitePress route paths generator. Creates data on-the-fly to avoid circular dependencies during clean builds, combines CPU and chipset routes.",
+      "source_span": [
+        136,
+        147
+      ],
+      "tree_path": "method.paths",
+      "source_hash": "sha256:6b699a73b867930abb7dafcb0a9d55a03bae0c6f18294a64ef25d07df60a1cfa",
+      "source_anchor": "    async paths() {"
+    },
+    {
+      "item": "transformPageData",
+      "reviewed": false,
+      "intent": "Transforms page metadata for SEO, setting title and subtitles from route parameters.",
+      "source_span": [
+        149,
+        155
+      ],
+      "tree_path": "method.transformPageData",
+      "source_hash": "sha256:5ad40b0fcd5a5467b8b142b4ee0298170fc94031696934de3ea4ca543bcc06f6",
+      "source_anchor": "    transformPageData(pageData) {"
+    }
+  ]
+}

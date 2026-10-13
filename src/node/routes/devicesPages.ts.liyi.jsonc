@@ -1,0 +1,127 @@
+// liyi v0.1 spec file
+{
+  "version": "0.1",
+  "source": "src/node/routes/devicesPages.ts",
+  "specs": [
+    {
+      "item": "DevicePageRouteConfig",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        21,
+        24
+      ],
+      "tree_path": "interface.DevicePageRouteConfig",
+      "source_hash": "sha256:1393c5af71300d46e32bce12c23ab992a635857320d1dfdecad2c92ec032189c",
+      "source_anchor": "interface DevicePageRouteConfig {"
+    },
+    {
+      "item": "DevicePageRouteParams",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        26,
+        29
+      ],
+      "tree_path": "type.DevicePageRouteParams",
+      "source_hash": "sha256:6c99dd83773951f93922c0e71c736a4b86b206a4f425161a6a0eb4630225b1a8",
+      "source_anchor": "type DevicePageRouteParams = {"
+    },
+    {
+      "item": "RouteCompiler",
+      "reviewed": false,
+      "intent": "Compiles VitePress route configurations for device pages, handling locale-specific content loading and parameter generation.",
+      "source_span": [
+        31,
+        73
+      ],
+      "tree_path": "class.RouteCompiler",
+      "source_hash": "sha256:ffd93a72134ed13b81995bf5180019a29a0e85e5b184d4703aa3e7b6ce84f73e",
+      "source_anchor": "class RouteCompiler {"
+    },
+    {
+      "item": "RouteCompiler::constructor",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        34,
+        36
+      ],
+      "tree_path": "class.RouteCompiler::method.constructor",
+      "source_hash": "sha256:1c95f1b6f14b3de19532ada1caafd242a43531b383c6c68177b80bd2a9846d39",
+      "source_anchor": "  constructor(locale: string) {"
+    },
+    {
+      "item": "RouteCompiler::contentSuffix",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        38,
+        40
+      ],
+      "tree_path": "class.RouteCompiler::method.contentSuffix",
+      "source_hash": "sha256:355f29254a8d2131e383a53ecf51169900d97ac76d256794f0b4e16ec01fb7be",
+      "source_anchor": "  get contentSuffix() {"
+    },
+    {
+      "item": "RouteCompiler::localizedName",
+      "reviewed": false,
+      "intent": "=trivial",
+      "source_span": [
+        42,
+        44
+      ],
+      "tree_path": "class.RouteCompiler::method.localizedName",
+      "source_hash": "sha256:4ef67b9b13b772e05649a326458248e715021e9b59f0d09b26d6f7343dfcce78",
+      "source_anchor": "  localizedName(item: DeviceInfoItem): string {"
+    },
+    {
+      "item": "RouteCompiler::compileOneRoute",
+      "reviewed": false,
+      "intent": "Generates a single device page route with localized device name and markdown content from the device's content file.",
+      "source_span": [
+        46,
+        61
+      ],
+      "tree_path": "class.RouteCompiler::method.compileOneRoute",
+      "source_hash": "sha256:8a63a52cf0693030d939371d50bab4ac7d6f17f98f999a14e173ad18b6cf1ec3",
+      "source_anchor": "  async compileOneRoute("
+    },
+    {
+      "item": "RouteCompiler::compileRoutes",
+      "reviewed": false,
+      "intent": "Batch compiles routes for all devices, mapping device data to route configurations in parallel.",
+      "source_span": [
+        63,
+        72
+      ],
+      "tree_path": "class.RouteCompiler::method.compileRoutes",
+      "source_hash": "sha256:06ee13dba38fb7e6d17f4a7e6613b40fc9cc89714fb97fa157772252d69896a0",
+      "source_anchor": "  async compileRoutes("
+    },
+    {
+      "item": "paths",
+      "reviewed": false,
+      "intent": "VitePress route paths generator. Creates data on-the-fly to avoid circular dependencies during clean builds.",
+      "source_span": [
+        77,
+        87
+      ],
+      "tree_path": "method.paths",
+      "source_hash": "sha256:5a418eea55b12ef0e1bc75a14d735936a7337fec992689004e1ed2d9409d5608",
+      "source_anchor": "    async paths() {"
+    },
+    {
+      "item": "transformPageData",
+      "reviewed": false,
+      "intent": "Transforms page metadata for SEO, setting title and subtitles from route parameters.",
+      "source_span": [
+        89,
+        94
+      ],
+      "tree_path": "method.transformPageData",
+      "source_hash": "sha256:d02b99e890e29ea808478eba68ea2a83f7757e8951c0044575663679e83b4da8",
+      "source_anchor": "    transformPageData(pageData) {"
+    }
+  ]
+}

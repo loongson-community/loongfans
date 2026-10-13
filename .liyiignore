@@ -1,0 +1,28 @@
+# Liyi ignore patterns
+# Generated files and dependencies
+node_modules/
+dist/
+.vitepress/dist/
+.vitepress/cache/
+
+# Build artifacts
+*.log
+*.tgz
+
+# Generated data files
+data/**/*.json
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
