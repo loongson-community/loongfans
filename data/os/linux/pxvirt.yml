@@ -1,0 +1,14 @@
+# cspell:ignore PXVIRT
+name:
+  en: "PXVIRT"
+href: "https://www.lierfang.com/zh/pxvirt"
+# https://www.proxmox.com/en/about/company-details/media-kit
+image: "/images/os/proxmox.svg"
+description:
+  zh: "基于 Proxmox VE 定制的企业虚拟化服务器管理平台，由梨儿方开发并维护"
+  en: "Enterprise virtualization platform based on Proxmox VE, developed and maintained by Lierfang."
+tags:
+  - commercial_support
+  - virt
+  - linux
+  - abi2
