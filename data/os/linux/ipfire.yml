@@ -1,0 +1,13 @@
+name:
+  en: "IPFire"
+href: "https://www.ipfire.org/"
+image: "/images/os/debian.svg" # From private exchange.
+description:
+  zh: "防火墙操作系统"
+  en: "Operating system for firewalls."
+tags:
+  - community
+  - server
+  - firewall
+  - linux
+  - abi2
