@@ -1,7 +1,8 @@
+# cspell:ignore ipfire
 name:
   en: "IPFire"
 href: "https://www.ipfire.org/"
-image: "/images/os/debian.svg" # From private exchange.
+image: "/images/os/ipfire.svg"
 description:
   zh: "防火墙操作系统"
   en: "Operating system for firewalls."
