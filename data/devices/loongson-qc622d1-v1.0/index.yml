@@ -1,0 +1,16 @@
+name:
+  en: Loongson QC622D1 V1.0
+  zh: 龙芯 QC622D1 V1.0
+  de: Loongson QC622D1 V1.0
+  fr: Loongson QC622D1 V1.0
+  ru: Loongson QC622D1 V1.0
+family: 3c6000
+category: board
+image: "" # TODO
+spec: "3C6000/S series"
+tags: []
+downloads:
+  - uefi-fw-loongson-qc622d1-v1.0-v5.0.0639_stable202608_rel
+  - uefi-fw-loongson-qc622d1-v1.0-v5.0.0639_stable202608_rel_mainline-dvfs
+  - uefi-fw-loongson-qc622d1-v1.0-v5.0.0639_stable202608_dbg
+  - uefi-fw-loongson-qc622d1-v1.0-v5.0.0639_stable202608_dbg_mainline-dvfs

@@ -1,0 +1,13 @@
+name:
+  en: Loongson TE622Z0 V1.1
+  zh: 龙芯 TE622Z0 V1.1
+  de: Loongson TE622Z0 V1.1
+  fr: Loongson TE622Z0 V1.1
+  ru: Loongson TE622Z0 V1.1
+family: 3c6000
+category: board
+image: "" # TODO
+spec: "3C6000/Q series"
+tags: []
+downloads:
+  - uefi-fw-loongson-te622z0-v1.1-v5.0.0639_stable202608_package
