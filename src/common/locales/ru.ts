@@ -66,7 +66,7 @@ export default {
   aboutQQName: "QQ",
   aboutQQDescription: "Оставайтесь на связи!",
   aboutTelegramName: "Telegram",
-  aboutTelegramDescription: "-.. .- -.... ....-", // "LA64" in Morse code
+  aboutTelegramDescription: ".-.. .- -.... ....-", // "LA64" in Morse code
   aboutVKName: "VK",
   aboutVKDescription: "На связи!", // deliberately in Russian for all locales
   aboutWechatName: "WeChat",

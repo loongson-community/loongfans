@@ -58,7 +58,7 @@ export default {
   aboutQQName: "QQ 群",
   aboutQQDescription: "常联系！",
   aboutTelegramName: "Telegram 群",
-  aboutTelegramDescription: "-.. .- -.... ....-", // "LA64" in Morse code
+  aboutTelegramDescription: ".-.. .- -.... ....-", // "LA64" in Morse code
   aboutVKName: "VK 主页",
   aboutVKDescription: "На связи!", // deliberately in Russian for all locales
   aboutWechatName: "微信群",
