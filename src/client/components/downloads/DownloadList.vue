@@ -30,8 +30,9 @@ import { useI18n } from "vue-i18n"
 import downloadsDB from "virtual:loongfans-data/downloads"
 import type { RenderedDownloadItem } from "@src/types/data"
 import { DownloadType } from "@src/types/data"
-import type { LocalizedString, SupportedLanguage } from "@src/types/language"
+import { resolveLocalizedString } from "@src/common/i18n.ts"
 import DownloadCard from "./DownloadCard.vue"
+import type { SupportedLanguage } from "@src/types/language.ts"
 
 const props = defineProps<{ keys: string[] }>()
 
@@ -54,12 +55,6 @@ const downloadTypeTitles = computed(() => ({
   [DownloadType.SDK]: t("downloadTypeSdk"),
 }))
 
-function resolveLocalizedHtml(localized?: LocalizedString) {
-  if (!localized) return undefined
-  const language = locale.value as SupportedLanguage
-  return localized[language] ?? localized.en ?? localized.zh
-}
-
 const items = computed<DownloadListItem[]>(() => {
   const entries = props.keys.reduce<DownloadListItem[]>((acc, key) => {
     const item = downloadsDB[key]
@@ -69,8 +64,14 @@ const items = computed<DownloadListItem[]>(() => {
       key,
       latest: false,
       title: downloadTypeTitles.value[item.type],
-      briefHtml: resolveLocalizedHtml(item.briefHtml),
-      detailHtml: resolveLocalizedHtml(item.detailHtml),
+      briefHtml: resolveLocalizedString(
+        item.briefHtml,
+        locale.value as SupportedLanguage,
+      ),
+      detailHtml: resolveLocalizedString(
+        item.detailHtml,
+        locale.value as SupportedLanguage,
+      ),
     })
     return acc
   }, [])

@@ -1,6 +1,6 @@
 import { createI18n, type DefineDateTimeFormat } from "vue-i18n"
 
-import type { SupportedLanguage } from "@src/types/language"
+import type { SupportedLanguage, LocalizedString } from "@src/types/language"
 
 import de from "./locales/de"
 import en from "./locales/en"
@@ -137,6 +137,13 @@ export const i18nForLocale = (
       zh: zh,
     },
   })
+
+export function resolveLocalizedString(
+  value: LocalizedString | undefined,
+  language: SupportedLanguage,
+): string | undefined {
+  return value?.[language] ?? value?.en ?? value?.zh
+}
 
 export const defaultLocale = "zh"
 
