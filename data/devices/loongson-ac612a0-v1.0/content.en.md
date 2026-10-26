@@ -21,7 +21,7 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0, 1 × SFF-8654-4i interface |
 | Interfaces (Network) | 2 × GbE |
 | Interfaces (Video) | 1 × VGA |
-| Interfaces (Other) | 1 × BMC module interface†‡, 1 × BMC network interface, 1 × m.2 Key E interface (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 set of 3.5mm (input, output) interfaces, 1 × RS-232 serial port (DB-9) |
+| Interfaces (Other) | 1 × BMC module interface†‡, 1 × BMC network interface, 1 set of 3.5mm (input, output) interfaces, 1 × RS-232 serial port (DB-9) |
 
 - †: Supports BMC modules based on AST2500 or Loongson 2K0500.
 - ‡: There is also a version of this motherboard known as "domestic[-only] (Chinese) component", which does not come with a slot for BMC modules.

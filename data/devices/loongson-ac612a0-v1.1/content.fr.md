@@ -21,7 +21,7 @@ Cette carte mère est un modèle d'entrée de gamme Loongson 3C6000/S, doté d'u
 | Interfaces (stockage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0, 1 × interface SFF-8654-4i |
 | Interfaces (réseau) | 2 ports Gigabit Ethernet |
 | Interfaces (vidéo) | Une sortie VGA |
-| Interfaces (Autres) | 1 × interface de module BMC†‡, 1 × interface réseau BMC, 1 × interface M.2 Key E (PCIe + USB), 1 × mPCIe (PCIe + USB), 1 jeu d'interfaces 3,5 mm (entrée, sortie), 1 × port série RS-232 (DB-9) |
+| Interfaces (Autres) | 1 × interface de module BMC†‡, 1 × interface réseau BMC, 1 jeu d'interfaces 3,5 mm (entrée, sortie), 1 × port série RS-232 (DB-9) |
 
 - † : Prend en charge les modules BMC basés sur l'AST2500 ou le Loongson 2K0500.
 - ‡ : Il existe également une version de cette carte mère appelée « composants [réservés] au marché intérieur (chinois) », qui ne dispose pas d'emplacement pour les modules BMC.
