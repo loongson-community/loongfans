@@ -1,0 +1,9 @@
+type: reference-manual
+title:
+  en: "LoongArch Toolchain Conventions"
+  zh: "龙架构工具链约定（英文版）"
+version: "V1.2"
+size: 148688
+date: "2025-12-31"
+sha256: "da5c5f49072e240717a77f14b6c91cdb0780f766435184536d76a29f5262a740"
+url: "https://github.com/loongson/la-toolchain-conventions/releases/download/releases%2Fv1.2/la-tc-v1.2.pdf"
