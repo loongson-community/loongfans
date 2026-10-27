@@ -76,6 +76,10 @@ export const documentSections = [
         ],
       },
       {
+        id: "loongarch-softdev-convention",
+        downloads: ["reference-manual-loongarch-softdev-convention-v0.2-en"],
+      },
+      {
         id: "loongarch-processor-smbios",
         downloads: ["reference-manual-loongarch-processor-smbios-v1.00-en"],
       },
