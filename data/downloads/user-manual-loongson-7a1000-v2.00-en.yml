@@ -1,0 +1,9 @@
+type: user-manual
+title:
+  en: "Loongson 7A1000 Bridge User Manual"
+  zh: "龙芯 7A1000 桥片用户手册（英文版）"
+version: "V2.00"
+size: 6719726
+date: "2023-04-20"
+sha256: "a1b1f1028e2faf56d4d9670d1e9ca5c79d696a2b7855c3b3f5a84323d411e330"
+url: "https://github.com/loongson/LoongArch-Documentation/releases/download/2023.04.20/Loongson-7A1000-usermanual-v2.00-EN.pdf"

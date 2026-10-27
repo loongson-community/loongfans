@@ -88,6 +88,8 @@ export default {
   documentsUnofficialReferenceManual: "非官方龙架构参考手册",
   documentsSystemArchitecture: "龙芯 CPU 统一系统架构规范",
   documentsReferenceManual: "龙架构参考手册",
+  documentsSoftwareSpecifications: "龙架构软件规范",
+  documentsChipUserManuals: "龙芯芯片用户手册",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.

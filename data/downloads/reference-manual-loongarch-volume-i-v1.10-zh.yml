@@ -1,0 +1,9 @@
+type: reference-manual
+title:
+  en: "LoongArch Reference Manual Volume I: Basic Architecture (Chinese)"
+  zh: "龙架构参考手册卷一：基础架构"
+version: "V1.10"
+size: 3721983
+date: "2024-04-11"
+sha256: "2fc53b1c1af18dc107d9ec9f639f47267b72272cbbf229e9ef20edbeec2c6a5b"
+url: "https://github.com/loongson/LoongArch-Documentation/releases/download/2023.04.20/LoongArch-Vol1-v1.10-CN.pdf"

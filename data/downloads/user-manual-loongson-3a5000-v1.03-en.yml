@@ -1,0 +1,9 @@
+type: user-manual
+title:
+  en: "Loongson 3A5000/3B5000 Processor Reference Manual (English)"
+  zh: "龙芯 3A5000/3B5000 处理器寄存器使用手册"
+version: "V1.03"
+size: 8626190
+date: "2023-04-20"
+sha256: "476ee11b8c87460d08f48229b236c8f205c8fdaade5a5fbb63123a3c5b81f6cd"
+url: "https://github.com/loongson/LoongArch-Documentation/releases/download/2023.04.20/Loongson-3A5000-usermanual-v1.03-EN.pdf"
