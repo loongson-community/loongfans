@@ -275,6 +275,7 @@ const formattedSize = computed(() => {
   display: flex;
   flex-wrap: wrap;
   column-gap: 0.5em;
+  align-items: center;
 }
 
 .panel-header-version {
