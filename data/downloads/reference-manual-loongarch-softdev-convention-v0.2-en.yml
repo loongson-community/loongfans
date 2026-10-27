@@ -1,0 +1,9 @@
+type: reference-manual
+title:
+  en: "Software Development and Build Convention for LoongArch Architectures"
+  zh: "龙架构软件开发与构建约定（英文版）"
+version: "V0.2"
+size: 120291
+date: "2024-12-12"
+sha256: "a21f27ba09ada89458e4479b19b3e67d1f6e1519df7d66929e2c024a0b373ef9"
+url: "https://github.com/loongson/la-softdev-convention/releases/download/v0.2/la-softdev-convention-v0.2.pdf"
