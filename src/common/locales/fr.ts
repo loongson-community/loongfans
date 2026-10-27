@@ -21,6 +21,7 @@ export default {
   supportMaterials: "Documents d'accompagnement",
   contact: "Contact",
   chipsData: "Base de données des puces",
+  documents: "Documents",
   operatingSystems: "Systèmes d'exploitation",
   productSpecs: "Base de données des produits",
   prodectSpecsHint: "Micrologiciel",

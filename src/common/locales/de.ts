@@ -21,6 +21,7 @@ export default {
   supportMaterials: "Unterstützende Materialien",
   contact: "Kontakt",
   chipsData: "Chipdatenbank",
+  documents: "Dokumente",
   operatingSystems: "Betriebssysteme",
   productSpecs: "Produktdatenbank",
   prodectSpecsHint: "Firmware",

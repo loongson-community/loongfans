@@ -28,6 +28,10 @@
             :hint="t('prodectSpecsHint')"
           />
           <HomePageLink
+            :href="`${basePath}/documents`"
+            :name="t('documents')"
+          />
+          <HomePageLink
             href="https://loong123.cn/"
             :name="t('compatibilityDb')"
           />
