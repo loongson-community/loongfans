@@ -57,6 +57,10 @@ export const documentSections = [
     titleKey: "documentsSoftwareSpecifications",
     families: [
       {
+        id: "loongarch-abi",
+        downloads: ["reference-manual-loongarch-abi-v2.50-en"],
+      },
+      {
         id: "loongarch-elf-abi",
         downloads: [
           "reference-manual-loongarch-elf-abi-v2.01-zh",
