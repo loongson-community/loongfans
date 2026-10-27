@@ -1,0 +1,10 @@
+type: reference-manual
+title:
+  en: "Unofficial LoongArch Reference Manual Volume II-a: Vector Instruction Extensions"
+  zh: "非官方龙架构参考手册卷 II-a：向量指令扩展（英文版）"
+version: "V1.11"
+size: 2004404
+date: "2026-10-21"
+sha256: "1f8f0461e137b068bc7bf75dd8ccf754da13b1ba92cd488554e10aae1f3bd370"
+url: "https://file.loongfans.cn/loonginfo/LoongArchReferenceManual-VolumeII%28VectorInstructionExtensions%29V1.11.pdf"
+debug: false
