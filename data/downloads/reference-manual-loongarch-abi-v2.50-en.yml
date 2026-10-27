@@ -1,0 +1,9 @@
+type: reference-manual
+title:
+  en: "Application Binary Interface for the LoongArch Architecture"
+  zh: "龙架构应用程序二进制接口规范（英文版）"
+version: "V2.50"
+size: 247552
+date: "2025-12-17"
+sha256: "7e945e3fc95142cd2faa586f0c7c1bbbcb409574beb6c37d06a197fecf28059f"
+url: "https://github.com/loongson/la-abi-specs/releases/download/v2.50/la-abi-v2.50.pdf"
