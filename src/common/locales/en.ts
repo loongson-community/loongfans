@@ -92,6 +92,12 @@ export default {
   downloadTypeSchematicDiagram: "Schematic Diagram",
   downloadTypeSdk: "SDK",
 
+  // documents/DocumentsIndex.vue
+  documentsUnofficialReferenceManual: "Unofficial LoongArch Reference Manual",
+  documentsSystemArchitecture:
+    "Loongson CPU Unified System Architecture Specification",
+  documentsReferenceManual: "LoongArch Reference Manual",
+
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.
   zhBiweeklyEventTitle: ({

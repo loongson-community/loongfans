@@ -14,7 +14,9 @@
       :preview="item.preview"
     >
       <!-- eslint-disable vue/no-v-html -->
-      <div v-if="item.briefHtml" class="vp-doc" v-html="item.briefHtml" />
+      <template v-if="item.briefHtml" #default>
+        <div class="vp-doc" v-html="item.briefHtml" />
+      </template>
       <template v-if="item.detailHtml" #detail>
         <div class="vp-doc" v-html="item.detailHtml" />
       </template>
@@ -34,11 +36,14 @@ import { resolveLocalizedString } from "@src/common/i18n.ts"
 import DownloadCard from "./DownloadCard.vue"
 import type { SupportedLanguage } from "@src/types/language.ts"
 
-const props = defineProps<{ keys: string[] }>()
+const props = defineProps<{ keys: readonly string[] }>()
 
 const { locale, t } = useI18n()
 
-type DownloadListItem = RenderedDownloadItem & {
+type DownloadListItem = Omit<
+  RenderedDownloadItem,
+  "title" | "briefHtml" | "detailHtml"
+> & {
   key: string
   latest: boolean
   title: string
@@ -58,12 +63,16 @@ const downloadTypeTitles = computed(() => ({
 const items = computed<DownloadListItem[]>(() => {
   const entries = props.keys.reduce<DownloadListItem[]>((acc, key) => {
     const item = downloadsDB[key]
-    if (!item) return acc
+    if (!item) {
+      throw new Error(`Download '${key}' does not exist`)
+    }
     acc.push({
       ...item,
       key,
       latest: false,
-      title: downloadTypeTitles.value[item.type],
+      title:
+        resolveLocalizedString(item.title, locale.value as SupportedLanguage) ??
+        downloadTypeTitles.value[item.type],
       briefHtml: resolveLocalizedString(
         item.briefHtml,
         locale.value as SupportedLanguage,

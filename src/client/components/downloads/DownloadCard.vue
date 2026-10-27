@@ -28,7 +28,7 @@
         </template>
       </Button>
     </div>
-    <template v-if="$slots.default">
+    <template v-if="$slots.default || $slots.detail">
       <Divider />
       <div class="changelog-title-bar">
         <Button
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="changelog">
-        <div class="changelog-main">
+        <div v-if="$slots.default" class="changelog-main">
           <slot />
         </div>
         <div v-if="$slots.detail" v-show="expand" class="changelog-detail">
@@ -87,13 +87,14 @@
           <IconDownload />
         </template>
       </Button>
-      <div v-if="$slots.default" class="changelog">
+      <div v-if="$slots.default || $slots.detail" class="changelog">
         <Divider />
         <div class="changelog-title-text">
           {{ t("deviceDownloadChangelog") }}
         </div>
         <div class="changelog-detail">
           <slot />
+          <slot name="detail" />
         </div>
       </div>
     </Panel>
