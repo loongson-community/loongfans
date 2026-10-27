@@ -83,6 +83,11 @@ export default {
   downloadTypeSchematicDiagram: "原理图",
   downloadTypeSdk: "SDK",
 
+  // documents/DocumentsIndex.vue
+  documentsUnofficialReferenceManual: "非官方龙架构参考手册",
+  documentsSystemArchitecture: "龙芯 CPU 统一系统架构规范",
+  documentsReferenceManual: "龙架构参考手册",
+
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.
   zhBiweeklyEventTitle: ({

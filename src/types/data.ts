@@ -263,6 +263,7 @@ export enum DownloadType {
 
 export interface DownloadItem {
   type: DownloadType
+  title?: LocalizedString
   version: string
   size: number
   date: string
@@ -280,6 +281,7 @@ export interface DownloadItem {
  */
 export interface RenderedDownloadItem {
   type: DownloadType
+  title?: LocalizedString
   version: string
   size: number
   date: string

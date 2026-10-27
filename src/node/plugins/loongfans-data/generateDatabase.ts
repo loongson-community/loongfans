@@ -22,6 +22,7 @@ import type {
   RenderedDownloadItem,
 } from "@src/types/data"
 import type { LocalizedString, SupportedLanguage } from "@src/types/language"
+import { documentSections } from "../../../common/documents.ts"
 
 // Artificial JSON schemas for verification
 const jsonSchemaNamespace = "https://loongfans.cn/schema.json"
@@ -235,6 +236,22 @@ export class DatabaseGenerator {
     )
   }
 
+  validateDocumentDownloads(downloads: DownloadsDB) {
+    const downloadKeys = new Set(Object.keys(downloads))
+    for (const section of documentSections) {
+      for (const family of section.families) {
+        const missing = family.downloads.filter((key) => !downloadKeys.has(key))
+        if (missing.length) {
+          throw new Error(
+            `Document '${family.id}' references missing downloads: ${missing.join(
+              ", ",
+            )}`,
+          )
+        }
+      }
+    }
+  }
+
   async processFiles<T>(
     pattern: string,
     validator: InputFileValidator<T>,
@@ -362,6 +379,7 @@ export class DatabaseGenerator {
     for (const { key, data } of entries) {
       downloads[key] = data
     }
+    this.validateDocumentDownloads(downloads)
     return downloads
   }
 

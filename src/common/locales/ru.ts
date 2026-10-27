@@ -92,6 +92,13 @@ export default {
   downloadTypeSchematicDiagram: "Схематическое изображение",
   downloadTypeSdk: "Набор средств разработки программного обеспечения (SDK)",
 
+  // documents/DocumentsIndex.vue
+  documentsUnofficialReferenceManual:
+    "Неофициальное справочное руководство LoongArch",
+  documentsSystemArchitecture:
+    "Спецификация унифицированной системной архитектуры процессоров Loongson",
+  documentsReferenceManual: "Справочное руководство LoongArch",
+
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.
   zhBiweeklyEventTitle: ({
