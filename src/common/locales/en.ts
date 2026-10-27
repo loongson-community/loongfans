@@ -28,6 +28,7 @@ export default {
   supportMaterials: "Support Materials",
   contact: "Contact",
   chipsData: "Chips Database",
+  documents: "Documents",
   operatingSystems: "Operating Systems",
   productSpecs: "Product Database",
   prodectSpecsHint: "Firmware",

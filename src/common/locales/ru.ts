@@ -26,6 +26,7 @@ export default {
   supportMaterials: "Вспомогательные материалы",
   contact: "Контакты",
   chipsData: "База данных микросхем",
+  documents: "Документация",
   operatingSystems: "Операционные системы",
   productSpecs: "База данных продуктов",
   prodectSpecsHint: "Прошивка",
