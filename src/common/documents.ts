@@ -37,11 +37,62 @@ export const documentSections = [
     families: [
       {
         id: "loongarch-reference-manual-volume-i",
-        downloads: ["reference-manual-loongarch-volume-i-v1.11"],
+        downloads: [
+          "reference-manual-loongarch-volume-i-v1.11",
+          "reference-manual-loongarch-volume-i-v1.10-zh",
+        ],
+      },
+      {
+        id: "loongarch-reference-manual-volume-i-en",
+        downloads: ["reference-manual-loongarch-volume-i-v1.10-en"],
       },
       {
         id: "loongarch-reference-manual-la32-reduced",
         downloads: ["reference-manual-loongarch-la32-reduced-v1.04"],
+      },
+    ],
+  },
+  {
+    id: "loongarch-software-specifications",
+    titleKey: "documentsSoftwareSpecifications",
+    families: [
+      {
+        id: "loongarch-elf-abi",
+        downloads: [
+          "reference-manual-loongarch-elf-abi-v2.01-zh",
+          "reference-manual-loongarch-elf-abi-v2.01-en",
+        ],
+      },
+      {
+        id: "loongarch-toolchain-conventions",
+        downloads: [
+          "reference-manual-loongarch-toolchain-conventions-v1.00-zh",
+          "reference-manual-loongarch-toolchain-conventions-v1.00-en",
+        ],
+      },
+      {
+        id: "loongarch-processor-smbios",
+        downloads: ["reference-manual-loongarch-processor-smbios-v1.00-en"],
+      },
+    ],
+  },
+  {
+    id: "loongson-chip-user-manuals",
+    titleKey: "documentsChipUserManuals",
+    families: [
+      {
+        id: "loongson-3a5000-user-manual",
+        downloads: [
+          "user-manual-loongson-3a5000-v1.03-zh",
+          "user-manual-loongson-3a5000-v1.03-en",
+        ],
+      },
+      {
+        id: "loongson-7a1000-user-manual",
+        downloads: [
+          "user-manual-loongson-7a1000-v2.00-zh",
+          "user-manual-loongson-7a1000-v2.00-en",
+        ],
       },
     ],
   },

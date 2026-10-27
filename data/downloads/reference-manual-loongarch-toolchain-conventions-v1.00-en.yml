@@ -1,0 +1,9 @@
+type: reference-manual
+title:
+  en: "LoongArch Toolchain Conventions"
+  zh: "龙架构工具链约定（英文版）"
+version: "V1.00"
+size: 299744
+date: "2023-04-20"
+sha256: "e424ef33c3ff4138670eb3ab96ffbf94e371e0bb82ef438c0dab6a203b2626f0"
+url: "https://github.com/loongson/LoongArch-Documentation/releases/download/2023.04.20/LoongArch-toolchain-conventions-v1.00-EN.pdf"

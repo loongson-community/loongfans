@@ -99,6 +99,9 @@ export default {
   documentsSystemArchitecture:
     "Спецификация унифицированной системной архитектуры процессоров Loongson",
   documentsReferenceManual: "Справочное руководство LoongArch",
+  documentsSoftwareSpecifications:
+    "Спецификации программного обеспечения LoongArch",
+  documentsChipUserManuals: "Руководства пользователя микросхем Loongson",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.

@@ -1,0 +1,9 @@
+type: reference-manual
+title:
+  en: "LoongArch ELF ABI Specification (Chinese)"
+  zh: "龙架构 ELF psABI 规范"
+version: "V2.01"
+size: 807086
+date: "2023-04-20"
+sha256: "540955d5b8d59970f9c772cf65040505525581f8561def1909bfaf202ceac12d"
+url: "https://github.com/loongson/LoongArch-Documentation/releases/download/2023.04.20/LoongArch-ELF-ABI-v2.01-CN.pdf"
