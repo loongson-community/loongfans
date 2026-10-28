@@ -70,8 +70,13 @@ export const documentSections = [
       {
         id: "loongarch-toolchain-conventions",
         downloads: [
-          "reference-manual-loongarch-toolchain-conventions-v1.2-en",
           "reference-manual-loongarch-toolchain-conventions-v1.00-zh",
+        ],
+      },
+      {
+        id: "loongarch-toolchain-conventions-en",
+        downloads: [
+          "reference-manual-loongarch-toolchain-conventions-v1.2-en",
           "reference-manual-loongarch-toolchain-conventions-v1.00-en",
         ],
       },
