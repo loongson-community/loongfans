@@ -19,7 +19,7 @@ export default {
   supportMaterials: "支持材料",
   contact: "联系我们",
   chipsData: "芯片规格数据库",
-  documents: "文档",
+  documents: "文档与参考手册",
   productSpecs: "产品规格数据库",
   prodectSpecsHint: "固件",
   operatingSystems: "操作系统",
