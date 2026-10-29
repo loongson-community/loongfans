@@ -19,7 +19,7 @@ export default {
   supportMaterials: "支持材料",
   contact: "联系我们",
   chipsData: "芯片规格数据库",
-  documents: "文档与参考手册",
+  documentation: "文档与参考手册",
   productSpecs: "产品规格数据库",
   prodectSpecsHint: "固件",
   operatingSystems: "操作系统",
@@ -85,11 +85,11 @@ export default {
   downloadTypeSdk: "SDK",
 
   // documents/DocumentsIndex.vue
-  documentsUnofficialReferenceManual: "非官方龙架构参考手册",
-  documentsSystemArchitecture: "龙芯 CPU 统一系统架构规范",
-  documentsReferenceManual: "龙架构参考手册",
-  documentsSoftwareSpecifications: "龙架构软件规范",
-  documentsChipUserManuals: "龙芯芯片用户手册",
+  documentationUnofficialReferenceManual: "非官方龙架构参考手册",
+  documentationSystemArchitecture: "龙芯 CPU 统一系统架构规范",
+  documentationReferenceManual: "龙架构参考手册",
+  documentationSoftwareSpecifications: "龙架构软件规范",
+  documentationChipUserManuals: "龙芯芯片用户手册",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.

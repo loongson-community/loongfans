@@ -26,7 +26,7 @@ export default {
   supportMaterials: "Вспомогательные материалы",
   contact: "Контакты",
   chipsData: "База данных микросхем",
-  documents: "Документация",
+  documentation: "Документация",
   operatingSystems: "Операционные системы",
   productSpecs: "База данных продуктов",
   prodectSpecsHint: "Прошивка",
@@ -94,14 +94,14 @@ export default {
   downloadTypeSdk: "Набор средств разработки программного обеспечения (SDK)",
 
   // documents/DocumentsIndex.vue
-  documentsUnofficialReferenceManual:
+  documentationUnofficialReferenceManual:
     "Неофициальное справочное руководство LoongArch",
-  documentsSystemArchitecture:
+  documentationSystemArchitecture:
     "Спецификация унифицированной системной архитектуры процессоров Loongson",
-  documentsReferenceManual: "Справочное руководство LoongArch",
-  documentsSoftwareSpecifications:
+  documentationReferenceManual: "Справочное руководство LoongArch",
+  documentationSoftwareSpecifications:
     "Спецификации программного обеспечения LoongArch",
-  documentsChipUserManuals: "Руководства пользователя микросхем Loongson",
+  documentationChipUserManuals: "Руководства пользователя микросхем Loongson",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.

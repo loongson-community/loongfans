@@ -28,7 +28,7 @@ export default {
   supportMaterials: "Support Materials",
   contact: "Contact",
   chipsData: "Chips Database",
-  documents: "Documents",
+  documentation: "Documentation",
   operatingSystems: "Operating Systems",
   productSpecs: "Product Database",
   prodectSpecsHint: "Firmware",
@@ -94,12 +94,13 @@ export default {
   downloadTypeSdk: "SDK",
 
   // documents/DocumentsIndex.vue
-  documentsUnofficialReferenceManual: "Unofficial LoongArch Reference Manual",
-  documentsSystemArchitecture:
+  documentationUnofficialReferenceManual:
+    "Unofficial LoongArch Reference Manual",
+  documentationSystemArchitecture:
     "Loongson CPU Unified System Architecture Specification",
-  documentsReferenceManual: "LoongArch Reference Manual",
-  documentsSoftwareSpecifications: "LoongArch Software Specifications",
-  documentsChipUserManuals: "Loongson Chip User Manuals",
+  documentationReferenceManual: "LoongArch Reference Manual",
+  documentationSoftwareSpecifications: "LoongArch Software Specifications",
+  documentationChipUserManuals: "Loongson Chip User Manuals",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.
