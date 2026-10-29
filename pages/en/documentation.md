@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Documents
+title: Documentation
 pageSubTitle: Architecture specifications and reference manuals
 ---
 
