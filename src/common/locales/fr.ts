@@ -21,7 +21,7 @@ export default {
   supportMaterials: "Documents d'accompagnement",
   contact: "Contact",
   chipsData: "Base de données des puces",
-  documents: "Documents",
+  documentation: "Documents",
   operatingSystems: "Systèmes d'exploitation",
   productSpecs: "Base de données des produits",
   prodectSpecsHint: "Micrologiciel",
@@ -88,13 +88,14 @@ export default {
   downloadTypeSdk: "Kit de développement logiciel (SDK)",
 
   // documents/DocumentsIndex.vue
-  documentsUnofficialReferenceManual:
+  documentationUnofficialReferenceManual:
     "Manuel de référence non officiel de LoongArch",
-  documentsSystemArchitecture:
+  documentationSystemArchitecture:
     "Spécification de l’architecture système unifiée des processeurs Loongson",
-  documentsReferenceManual: "Manuel de référence de LoongArch",
-  documentsSoftwareSpecifications: "Spécifications logicielles de LoongArch",
-  documentsChipUserManuals: "Manuels d’utilisation des puces Loongson",
+  documentationReferenceManual: "Manuel de référence de LoongArch",
+  documentationSoftwareSpecifications:
+    "Spécifications logicielles de LoongArch",
+  documentationChipUserManuals: "Manuels d’utilisation des puces Loongson",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.

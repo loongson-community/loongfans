@@ -21,7 +21,7 @@ export default {
   supportMaterials: "Unterstützende Materialien",
   contact: "Kontakt",
   chipsData: "Chipdatenbank",
-  documents: "Dokumente",
+  documentation: "Dokumente",
   operatingSystems: "Betriebssysteme",
   productSpecs: "Produktdatenbank",
   prodectSpecsHint: "Firmware",
@@ -88,13 +88,13 @@ export default {
   downloadTypeSdk: "SDK",
 
   // documents/DocumentsIndex.vue
-  documentsUnofficialReferenceManual:
+  documentationUnofficialReferenceManual:
     "Inoffizielles LoongArch-Referenzhandbuch",
-  documentsSystemArchitecture:
+  documentationSystemArchitecture:
     "Spezifikation der einheitlichen Systemarchitektur für Loongson-CPUs",
-  documentsReferenceManual: "LoongArch-Referenzhandbuch",
-  documentsSoftwareSpecifications: "LoongArch-Softwarespezifikationen",
-  documentsChipUserManuals: "Benutzerhandbücher für Loongson-Chips",
+  documentationReferenceManual: "LoongArch-Referenzhandbuch",
+  documentationSoftwareSpecifications: "LoongArch-Softwarespezifikationen",
+  documentationChipUserManuals: "Benutzerhandbücher für Loongson-Chips",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.

@@ -3,7 +3,7 @@
 export const documentSections = [
   {
     id: "unofficial-loongarch-reference-manual",
-    titleKey: "documentsUnofficialReferenceManual",
+    titleKey: "documentationUnofficialReferenceManual",
     families: [
       {
         id: "unofficial-loongarch-reference-manual-volume-ii-a",
@@ -15,7 +15,7 @@ export const documentSections = [
   },
   {
     id: "loongson-cpu-system-architecture",
-    titleKey: "documentsSystemArchitecture",
+    titleKey: "documentationSystemArchitecture",
     families: [
       {
         id: "loongson-cpu-system-architecture-pc-server",
@@ -33,7 +33,7 @@ export const documentSections = [
   },
   {
     id: "loongarch-reference-manual",
-    titleKey: "documentsReferenceManual",
+    titleKey: "documentationReferenceManual",
     families: [
       {
         id: "loongarch-reference-manual-volume-i",
@@ -54,7 +54,7 @@ export const documentSections = [
   },
   {
     id: "loongarch-software-specifications",
-    titleKey: "documentsSoftwareSpecifications",
+    titleKey: "documentationSoftwareSpecifications",
     families: [
       {
         id: "loongarch-abi",
@@ -92,7 +92,7 @@ export const documentSections = [
   },
   {
     id: "loongson-chip-user-manuals",
-    titleKey: "documentsChipUserManuals",
+    titleKey: "documentationChipUserManuals",
     families: [
       {
         id: "loongson-3a5000-user-manual",
