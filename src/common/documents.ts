@@ -11,6 +11,10 @@ export const documentSections = [
           "reference-manual-unofficial-loongarch-reference-manual-v1.11",
         ],
       },
+      {
+        id: "manual-unofficial-loongarch-intrinsics-guide",
+        downloads: ["reference-manual-unofficial-loongarch-intrinsics-guide"],
+      },
     ],
   },
   {
