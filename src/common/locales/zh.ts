@@ -88,10 +88,12 @@ export default {
 
   // documents/DocumentsIndex.vue
   documentationUnofficialReferenceManual: "非官方龙架构参考手册",
+  documentationUnofficialMipsReferenceManual: "非官方 MIPS 参考手册",
   documentationSystemArchitecture: "龙芯 CPU 统一系统架构规范",
   documentationReferenceManual: "龙架构参考手册",
   documentationSoftwareSpecifications: "龙架构软件规范",
   documentationChipUserManuals: "龙芯芯片用户手册",
+  documentationChipDatasheets: "龙芯芯片数据手册",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.

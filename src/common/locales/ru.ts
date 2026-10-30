@@ -98,12 +98,15 @@ export default {
   // documents/DocumentsIndex.vue
   documentationUnofficialReferenceManual:
     "Неофициальное справочное руководство LoongArch",
+  documentationUnofficialMipsReferenceManual:
+    "Неофициальное справочное руководство MIPS",
   documentationSystemArchitecture:
     "Спецификация унифицированной системной архитектуры процессоров Loongson",
   documentationReferenceManual: "Справочное руководство LoongArch",
   documentationSoftwareSpecifications:
     "Спецификации программного обеспечения LoongArch",
   documentationChipUserManuals: "Руководства пользователя микросхем Loongson",
+  documentationChipDatasheets: "Технические описания микросхем Loongson",
 
   // events/EventAnnouncement*.vue
   // zhBiweekly names the Chinese session; intlBiweekly names the international session.
