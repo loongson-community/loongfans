@@ -1,0 +1,6 @@
+kind: website
+type: reference-manual
+title:
+  en: "Unofficial MIPS Intrinsics Guide"
+  zh: "Unofficial MIPS Intrinsics Guide（英文版）"
+url: "https://nihui.github.io/unofficial-mips-loongson-intrinsics-guide/"
