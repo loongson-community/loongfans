@@ -1,0 +1,9 @@
+type: user-manual
+title:
+  en: "Loongson 3C5000L Processor (Register) Reference Manual (Chinese)"
+  zh: "龙芯 3C5000L 处理器寄存器使用手册"
+version: "V1.2"
+size: 1913435
+date: "2024-07-16"
+sha256: "8092978c037d10fac6762b1c97c8ebddc6b2d785c48a2e0ac1715979a9e14d70"
+url: "https://file.loongfans.cn/loonginfo/user-manual-loongson-3c5000l-v1.2-zh.pdf"

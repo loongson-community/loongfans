@@ -1,0 +1,9 @@
+type: user-manual
+title:
+  en: "Loongson 3B6000 Processor Registers Reference and User Manual (Chinese)"
+  zh: "龙芯 3B6000 寄存器及使用手册"
+version: "V1.0"
+size: 1382505
+date: "2026-07-01"
+sha256: "1b3a7340033b5a25965bfee5d80206b09ea1e375d7348f90d7f72fc81fb2c6bc"
+url: "https://file.loongfans.cn/loonginfo/user-manual-loongson-3b6000-v1.0-zh.pdf"
