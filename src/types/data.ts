@@ -261,16 +261,24 @@ export enum DownloadType {
   SDK = "sdk",
 }
 
-export interface DownloadItem {
+export type DownloadResource = {
   type: DownloadType
-  title?: LocalizedString
-  version: string
-  size: number
-  date: string
-  sha256: string
   url: string
-  debug?: boolean
-  preview?: boolean
+} & (
+  | { kind: "website" }
+  | {
+      kind?: "file"
+      version: string
+      size: number
+      date: string
+      sha256: string
+      debug?: boolean
+      preview?: boolean
+    }
+)
+
+export type DownloadItem = DownloadResource & {
+  title?: LocalizedString
   description?: LocalizedString
 }
 
@@ -279,16 +287,8 @@ export interface DownloadItem {
  * time. The `description` field is replaced by per-language `briefHtml` and
  * `detailHtml` fragments, split on the `<!-- truncate -->` marker.
  */
-export interface RenderedDownloadItem {
-  type: DownloadType
+export type RenderedDownloadItem = DownloadResource & {
   title?: LocalizedString
-  version: string
-  size: number
-  date: string
-  sha256: string
-  url: string
-  debug?: boolean
-  preview?: boolean
   briefHtml?: LocalizedString
   detailHtml?: LocalizedString
 }

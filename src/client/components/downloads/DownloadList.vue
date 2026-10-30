@@ -4,14 +4,21 @@
       v-for="item in items"
       :key="item.key"
       :title="item.title"
-      :version="item.version"
-      :size="item.size"
-      :date="item.date"
-      :sha256="item.sha256"
+      :kind="item.kind"
       :url="item.url"
       :latest="item.latest"
-      :debug="item.debug"
-      :preview="item.preview"
+      v-bind="
+        item.kind === 'website'
+          ? {}
+          : {
+              version: item.version,
+              size: item.size,
+              date: item.date,
+              sha256: item.sha256,
+              debug: item.debug,
+              preview: item.preview,
+            }
+      "
     >
       <!-- eslint-disable vue/no-v-html -->
       <template v-if="item.briefHtml" #default>
@@ -30,7 +37,7 @@ import { computed } from "vue"
 import { useI18n } from "vue-i18n"
 
 import downloadsDB from "virtual:loongfans-data/downloads"
-import type { RenderedDownloadItem } from "@src/types/data"
+import type { DownloadResource } from "@src/types/data"
 import { DownloadType } from "@src/types/data"
 import { resolveLocalizedString } from "@src/common/i18n.ts"
 import DownloadCard from "./DownloadCard.vue"
@@ -40,10 +47,7 @@ const props = defineProps<{ keys: readonly string[] }>()
 
 const { locale, t } = useI18n()
 
-type DownloadListItem = Omit<
-  RenderedDownloadItem,
-  "title" | "briefHtml" | "detailHtml"
-> & {
+type DownloadListItem = DownloadResource & {
   key: string
   latest: boolean
   title: string
@@ -87,6 +91,7 @@ const items = computed<DownloadListItem[]>(() => {
 
   const latestByGroup = new Map<string, number>()
   entries.forEach((item) => {
+    if (item.kind === "website") return
     const groupKey = `${item.type}:${item.debug ? "debug" : "release"}`
     const time = new Date(item.date).getTime()
     const current = latestByGroup.get(groupKey)
@@ -96,6 +101,7 @@ const items = computed<DownloadListItem[]>(() => {
   })
 
   entries.forEach((item) => {
+    if (item.kind === "website") return
     const groupKey = `${item.type}:${item.debug ? "debug" : "release"}`
     item.latest = new Date(item.date).getTime() === latestByGroup.get(groupKey)
   })
