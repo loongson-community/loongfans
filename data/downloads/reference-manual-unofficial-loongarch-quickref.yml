@@ -1,0 +1,6 @@
+kind: website
+type: reference-manual
+title:
+  en: "LoongArch Instruction Quick Reference (Chinese)"
+  zh: "龙芯架构指令速查表"
+url: "https://github.com/yetist/loongarch-quickref"

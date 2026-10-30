@@ -1,5 +1,8 @@
 // Each family contains releases of one independently versioned document.
+// Datasheets, user/register manuals, and industrial variants are separate families.
 // Keep section and family IDs stable when adding new releases.
+// Follow chips-page order, placing unlisted 2P CPUs after 2K CPUs,
+// then other unlisted CPUs and chipsets.
 export const documentSections = [
   {
     id: "unofficial-loongarch-reference-manual",
@@ -14,6 +17,20 @@ export const documentSections = [
       {
         id: "manual-unofficial-loongarch-intrinsics-guide",
         downloads: ["reference-manual-unofficial-loongarch-intrinsics-guide"],
+      },
+      {
+        id: "unofficial-loongarch-quickref",
+        downloads: ["reference-manual-unofficial-loongarch-quickref"],
+      },
+    ],
+  },
+  {
+    id: "unofficial-mips-reference-manual",
+    titleKey: "documentationUnofficialMipsReferenceManual",
+    families: [
+      {
+        id: "unofficial-mips-intrinsics-guide",
+        downloads: ["reference-manual-unofficial-mips-intrinsics-guide"],
       },
     ],
   },
@@ -99,6 +116,22 @@ export const documentSections = [
     titleKey: "documentationChipUserManuals",
     families: [
       {
+        id: "loongson-3a6000-user-manual",
+        downloads: ["user-manual-loongson-3a6000-v1.2-zh"],
+      },
+      {
+        id: "loongson-3b6000-user-manual",
+        downloads: ["user-manual-loongson-3b6000-v1.0-zh"],
+      },
+      {
+        id: "loongson-2k3000-3b6000m-user-manual",
+        downloads: ["user-manual-loongson-2k3000-3b6000m-v1.0-zh"],
+      },
+      {
+        id: "loongson-3c6000-user-manual",
+        downloads: ["user-manual-loongson-3c6000-v1.0-zh"],
+      },
+      {
         id: "loongson-3a5000-user-manual",
         downloads: [
           "user-manual-loongson-3a5000-v1.03-zh",
@@ -106,11 +139,165 @@ export const documentSections = [
         ],
       },
       {
+        id: "loongson-3c5000-user-manual",
+        downloads: ["user-manual-loongson-3c5000-v1.1-zh"],
+      },
+      {
+        id: "loongson-3c5000l-user-manual",
+        downloads: ["user-manual-loongson-3c5000l-v1.2-zh"],
+      },
+      {
+        id: "loongson-3d5000-user-manual",
+        downloads: ["user-manual-loongson-3d5000-v1.1-zh"],
+      },
+      {
+        id: "loongson-2k2000-user-manual",
+        downloads: ["user-manual-loongson-2k2000-v1.04-zh"],
+      },
+      {
+        id: "loongson-2k1500-user-manual",
+        downloads: ["user-manual-loongson-2k1500-v1.1-zh"],
+      },
+      {
+        id: "loongson-2k1000la-user-manual",
+        downloads: ["user-manual-loongson-2k1000la-v1.0-zh"],
+      },
+      {
+        id: "loongson-2k0500-user-manual",
+        downloads: ["user-manual-loongson-2k0500-v1.0-zh"],
+      },
+      {
+        id: "loongson-2k0300-user-manual",
+        downloads: ["user-manual-loongson-2k0300-v1.1-zh"],
+      },
+      {
+        id: "loongson-2k0301-user-manual",
+        downloads: ["user-manual-loongson-2k0301-v1.0-zh"],
+      },
+      {
+        id: "loongson-2p0500-user-manual",
+        downloads: ["user-manual-loongson-2p0500-v1.02-zh"],
+      },
+      {
+        id: "loongson-2p0300-user-manual",
+        downloads: ["user-manual-loongson-2p0300-v1.0-zh"],
+      },
+      {
+        id: "loongson-1c203-user-manual",
+        downloads: ["user-manual-loongson-1c203-v1.0-zh"],
+      },
+      {
+        id: "loongson-1c102-user-manual",
+        downloads: ["user-manual-loongson-1c102-v1.0-zh"],
+      },
+      {
+        id: "loongson-1c103-user-manual",
+        downloads: ["user-manual-loongson-1c103-v1.2-zh"],
+      },
+      {
+        id: "loongson-1d100-user-manual",
+        downloads: ["user-manual-loongson-1d100-v1.0-zh"],
+      },
+      {
         id: "loongson-7a1000-user-manual",
         downloads: [
           "user-manual-loongson-7a1000-v2.00-zh",
           "user-manual-loongson-7a1000-v2.00-en",
         ],
+      },
+    ],
+  },
+  {
+    id: "loongson-chip-datasheets",
+    titleKey: "documentationChipDatasheets",
+    families: [
+      {
+        id: "loongson-3a6000-datasheet",
+        downloads: ["user-manual-loongson-3a6000-datasheet-v1.5-zh"],
+      },
+      {
+        id: "loongson-3a6000-i-datasheet",
+        downloads: ["user-manual-loongson-3a6000-i-datasheet-v1.3-zh"],
+      },
+      {
+        id: "loongson-3b6000-datasheet",
+        downloads: ["user-manual-loongson-3b6000-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-2k3000-datasheet",
+        downloads: ["user-manual-loongson-2k3000-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-3c6000-datasheet",
+        downloads: ["user-manual-loongson-3c6000-datasheet-v1.1-zh"],
+      },
+      {
+        id: "loongson-3a5000-datasheet",
+        downloads: ["user-manual-loongson-3a5000-datasheet-v1.7-zh"],
+      },
+      {
+        id: "loongson-3c5000-datasheet",
+        downloads: ["user-manual-loongson-3c5000-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-3c5000l-datasheet",
+        downloads: ["user-manual-loongson-3c5000l-datasheet-v1.2-zh"],
+      },
+      {
+        id: "loongson-3d5000-datasheet",
+        downloads: ["user-manual-loongson-3d5000-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-2k2000-datasheet",
+        downloads: ["user-manual-loongson-2k2000-datasheet-v1.05-zh"],
+      },
+      {
+        id: "loongson-2k2000-i-datasheet",
+        downloads: ["user-manual-loongson-2k2000-i-datasheet-v1.05-zh"],
+      },
+      {
+        id: "loongson-2k1500-datasheet",
+        downloads: ["user-manual-loongson-2k1500-datasheet-v1.21-zh"],
+      },
+      {
+        id: "loongson-2k1000la-datasheet",
+        downloads: ["user-manual-loongson-2k1000la-datasheet-v1.1-zh"],
+      },
+      {
+        id: "loongson-2k0500-datasheet",
+        downloads: ["user-manual-loongson-2k0500-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-2k0300-datasheet",
+        downloads: ["user-manual-loongson-2k0300-datasheet-v1.1-zh"],
+      },
+      {
+        id: "loongson-2k0301-datasheet",
+        downloads: ["user-manual-loongson-2k0301-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-2p0500-datasheet",
+        downloads: ["user-manual-loongson-2p0500-datasheet-v1.02-zh"],
+      },
+      {
+        id: "loongson-2p0300-datasheet",
+        downloads: ["user-manual-loongson-2p0300-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-1c203-datasheet",
+        downloads: ["user-manual-loongson-1c203-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-1c102-datasheet",
+        downloads: ["user-manual-loongson-1c102-datasheet-v1.1-zh"],
+      },
+      {
+        id: "loongson-1c103-datasheet",
+        downloads: ["user-manual-loongson-1c103-datasheet-v1.2-zh"],
+      },
+      {
+        id: "loongson-1d100-datasheet",
+        downloads: ["user-manual-loongson-1d100-datasheet-v1.0-zh"],
       },
     ],
   },
