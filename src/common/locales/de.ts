@@ -80,6 +80,8 @@ export default {
   deviceDownloadDebugVersion: " (Debug-Version)",
   deviceDownloadPreview: "Vorschau",
   deviceDownloadButton: "Download",
+  resourceVisitWebsite: "Besuchen",
+  resourceDescription: "Beschreibung",
   downloadTypeUefiFirmware: "UEFI-Firmware",
   downloadTypeDatasheet: "Datenblatt",
   downloadTypeReferenceManual: "Referenzhandbuch",

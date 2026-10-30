@@ -1,5 +1,5 @@
 <template>
-  <div v-if="latest" class="download-card">
+  <div v-if="kind === 'website' || latest" class="download-card">
     <div class="main-content">
       <div class="text">
         <div class="title">
@@ -9,22 +9,32 @@
             {{ t("deviceDownloadPreview") }}
           </span>
         </div>
-        <div class="metadata">
+        <div v-if="kind !== 'website'" class="metadata">
           <span>{{ t("deviceDownloadVersion", { version }) }}</span>
           <span>{{ formattedSize }}</span>
           <span>{{ formattedDate }}</span>
-          <CopyInline :text="sha256" type="SHA-256" />
+          <CopyInline :text="sha256 ?? ''" type="SHA-256" />
+        </div>
+        <div v-else class="metadata">
+          <span>{{ url }}</span>
         </div>
       </div>
       <Button
         as="a"
         :href="url"
-        :label="$t('deviceDownloadButton')"
+        :label="
+          t(
+            kind === 'website'
+              ? 'resourceVisitWebsite'
+              : 'deviceDownloadButton',
+          )
+        "
         target="_blank"
         class="download-button"
       >
         <template #icon>
-          <IconDownload />
+          <IconOpenInNew v-if="kind === 'website'" />
+          <IconDownload v-else />
         </template>
       </Button>
     </div>
@@ -43,7 +53,13 @@
           </template>
         </Button>
         <div class="changelog-title-text">
-          {{ t("deviceDownloadChangelog") }}
+          {{
+            t(
+              kind === "website"
+                ? "resourceDescription"
+                : "deviceDownloadChangelog",
+            )
+          }}
         </div>
       </div>
       <div class="changelog">
@@ -75,7 +91,7 @@
       <div class="metadata">
         <span>{{ formattedSize }}</span>
         <span>{{ formattedDate }}</span>
-        <CopyInline :text="sha256" type="SHA-256" />
+        <CopyInline v-if="sha256" :text="sha256" type="SHA-256" />
       </div>
       <Button
         as="a"
@@ -106,16 +122,18 @@ import { ref, computed } from "vue"
 import { useI18n } from "vue-i18n"
 import { Button, Panel, Divider } from "primevue"
 import IconDownload from "~icons/material-symbols/download"
+import IconOpenInNew from "~icons/material-symbols/open-in-new"
 import IconExpandMore from "~icons/material-symbols/expand-more"
 
 import CopyInline from "@src/client/components/CopyInline.vue"
 
 const props = defineProps<{
   title: string
-  version: string
-  size: number
-  date: string // Unix 时间戳或者 Date() 认识的格式
-  sha256: string
+  kind?: "file" | "website"
+  version?: string
+  size?: number
+  date?: string
+  sha256?: string
   url: string
   latest: boolean
   debug?: boolean
@@ -126,11 +144,12 @@ const { t } = useI18n()
 
 const expand = ref(false)
 
-const formattedDate = computed(() =>
-  new Date(
+const formattedDate = computed(() => {
+  if (!props.date) return ""
+  return new Date(
     /^\d+$/.test(props.date) ? Number(props.date) * 1000 : props.date,
-  ).toLocaleDateString("en-CA"),
-)
+  ).toLocaleDateString("en-CA")
+})
 
 const formattedSize = computed(() => {
   if (!props.size) return ""

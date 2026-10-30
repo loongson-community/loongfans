@@ -77,6 +77,8 @@ export default {
   deviceDownloadDebugVersion: "（调试版）",
   deviceDownloadPreview: "预览版",
   deviceDownloadButton: "下载",
+  resourceVisitWebsite: "访问",
+  resourceDescription: "简介",
   downloadTypeUefiFirmware: "UEFI 固件",
   downloadTypeDatasheet: "数据手册",
   downloadTypeReferenceManual: "参考手册",

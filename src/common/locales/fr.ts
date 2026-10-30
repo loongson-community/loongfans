@@ -80,6 +80,8 @@ export default {
   deviceDownloadDebugVersion: " (débogage)",
   deviceDownloadPreview: "Aperçu",
   deviceDownloadButton: "Télécharger",
+  resourceVisitWebsite: "Visiter",
+  resourceDescription: "Description",
   downloadTypeUefiFirmware: "Micrologiciel UEFI",
   downloadTypeDatasheet: "Fiche technique",
   downloadTypeReferenceManual: "Manuel de référence",
