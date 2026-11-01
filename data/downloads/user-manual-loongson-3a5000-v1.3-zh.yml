@@ -1,0 +1,6 @@
+kind: website
+type: user-manual
+title:
+  en: "Loongson 3A5000/3B5000 Processor (Register) Reference Manual (Chinese)"
+  zh: "龙芯 3A5000/3B5000 处理器寄存器使用手册"
+url: "https://www.loongeco.cn/product/219#cpzl"

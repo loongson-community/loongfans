@@ -133,10 +133,7 @@ export const documentSections = [
       },
       {
         id: "loongson-3a5000-user-manual",
-        downloads: [
-          "user-manual-loongson-3a5000-v1.03-zh",
-          "user-manual-loongson-3a5000-v1.03-en",
-        ],
+        downloads: ["user-manual-loongson-3a5000-v1.3-zh"],
       },
       {
         id: "loongson-3c5000-user-manual",
@@ -199,11 +196,12 @@ export const documentSections = [
         downloads: ["user-manual-loongson-1d100-v1.0-zh"],
       },
       {
+        id: "loongson-7a2000-user-manual",
+        downloads: ["user-manual-loongson-7a2000-v1.3-zh"],
+      },
+      {
         id: "loongson-7a1000-user-manual",
-        downloads: [
-          "user-manual-loongson-7a1000-v2.00-zh",
-          "user-manual-loongson-7a1000-v2.00-en",
-        ],
+        downloads: ["user-manual-loongson-7a1000-v2.2-zh"],
       },
     ],
   },
@@ -298,6 +296,14 @@ export const documentSections = [
       {
         id: "loongson-1d100-datasheet",
         downloads: ["user-manual-loongson-1d100-datasheet-v1.0-zh"],
+      },
+      {
+        id: "loongson-7a2000-datasheet",
+        downloads: ["user-manual-loongson-7a2000-datasheet-v1.3-zh"],
+      },
+      {
+        id: "loongson-7a1000-datasheet",
+        downloads: ["user-manual-loongson-7a1000-datasheet-v2.5-zh"],
       },
     ],
   },
