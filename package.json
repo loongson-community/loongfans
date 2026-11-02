@@ -6,14 +6,14 @@
     "dev": "./scripts/pnpm-exec-wrapper.sh vitepress dev",
     "editBiweeklyEvents": "tsx ./src/node/scripts/editBiweeklyEvents/index.ts",
     "eslint": "eslint",
-    "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules' '#.vitepress/dist/assets/loongarch-opcodes/' '#loongarch-opcodes/' '#pages/public/assets/loongarch-opcodes/'",
     "lintPrettier": "prettier -c .",
     "lintSpell": "cspell lint --no-progress .",
     "prepare": "husky",
     "prettier": "prettier -w .",
     "preview": "./scripts/pnpm-exec-wrapper.sh vitepress preview",
     "serve": "./scripts/pnpm-exec-wrapper.sh vitepress serve",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit "
   },
   "dependencies": {
     "esbuild": "^0.28.2",
@@ -60,7 +60,8 @@
     "vue": "^3.5.42",
     "vue-i18n": "^11.4.10",
     "vue-tsc": "^3.3.11",
-    "yaml": "^2.9.0"
+    "yaml": "^2.9.0",
+    "vue-eslint-parser":"^10.4.1"
   },
   "peerDependencies": {
     "@oxc-parser/binding-wasm32-wasi": "^0.131.0",
