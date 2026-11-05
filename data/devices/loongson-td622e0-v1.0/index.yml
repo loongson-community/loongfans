@@ -1,0 +1,13 @@
+name:
+  en: Loongson TD622E0_V1.0
+  zh: 龙芯 TD622E0_V1.0
+  de: Loongson TD622E0_V1.0
+  fr: Loongson TD622E0_V1.0
+  ru: Loongson TD622E0_V1.0
+family: 3c6000
+category: board
+image: "/images/devices/tbd.webp"
+spec: "3C6000/D series"
+tags: []
+downloads:
+  - uefi-fw-loongson-td622e0-v1.0-v5.0.0639_stable202608_dbg_mainline-dvfs
