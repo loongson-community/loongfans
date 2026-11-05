@@ -4,5 +4,6 @@ export default {
   categories: {
     upstream: "События upstream",
     firmware: "Журнал обновлений прошивки",
+    interview: "Интервью",
   },
 }
