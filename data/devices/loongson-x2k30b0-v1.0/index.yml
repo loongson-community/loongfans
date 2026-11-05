@@ -1,12 +1,12 @@
 name:
-  en: Loongson X2K30B0 V1.0
-  zh: 龙芯 X2K30B0 V1.0
-  de: Loongson X2K30B0 V1.0
-  fr: Loongson X2K30B0 V1.0
-  ru: Loongson X2K30B0 V1.0
+  en: Loongson X2K30B0_V1.0
+  zh: 龙芯 X2K30B0_V1.0
+  de: Loongson X2K30B0_V1.0
+  fr: Loongson X2K30B0_V1.0
+  ru: Loongson X2K30B0_V1.0
 family: 2k3000
 category: board
-image: /images/devices/loongson-2k3000-ai-evb.webp # TODO
+image: "/images/devices/tbd.webp"
 spec: "2K3000 series"
 tags:
   - desktop-mb

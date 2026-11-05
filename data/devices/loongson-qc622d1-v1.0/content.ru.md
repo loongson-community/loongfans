@@ -22,6 +22,7 @@
 
 <template #image>
 
-(Будет обновлено)
+[![](/images/devices/loongson-qc622d1-v1.0.thumbnail.webp)](/images/devices/loongson-qc622d1-v1.0.webp)
+Источник: Loongson Technology
 
 </template>
