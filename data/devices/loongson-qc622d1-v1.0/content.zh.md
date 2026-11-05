@@ -1,6 +1,7 @@
 <template #introduction>
 
 :::info
+待更新
 :::
 
 </template>
@@ -22,6 +23,7 @@
 
 <template #image>
 
-（待更新）
+[![](/images/devices/loongson-qc622d1-v1.0.thumbnail.webp)](/images/devices/loongson-qc622d1-v1.0.webp)
+来源：龙芯中科
 
 </template>

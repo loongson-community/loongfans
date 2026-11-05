@@ -1,12 +1,12 @@
 name:
-  en: Loongson TD642F0 V1.0
-  zh: 龙芯 TD642F0 V1.0
-  de: Loongson TD642F0 V1.0
-  fr: Loongson TD642F0 V1.0
-  ru: Loongson TD642F0 V1.0
+  en: Loongson TD642F0_V1.0
+  zh: 龙芯 TD642F0_V1.0
+  de: Loongson TD642F0_V1.0
+  fr: Loongson TD642F0_V1.0
+  ru: Loongson TD642F0_V1.0
 family: 3c6000
 category: board
-image: "" # TODO
+image: "/images/devices/tbd.webp"
 spec: ""
 tags: []
 downloads:
