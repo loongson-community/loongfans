@@ -4,5 +4,6 @@ export default {
   categories: {
     upstream: "Upstream-Entwicklungen",
     firmware: "Firmware-Änderungsprotokolle",
+    interview: "Interviews",
   },
 }

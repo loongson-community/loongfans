@@ -4,5 +4,6 @@ export default {
   categories: {
     upstream: "龙架构上游动向",
     firmware: "固件更新日志",
+    interview: "访谈",
   },
 }

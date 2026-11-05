@@ -4,5 +4,6 @@ export default {
   categories: {
     upstream: "LoongArch Upstream Updates",
     firmware: "Firmware Changelogs",
+    interview: "Interviews",
   },
 }
