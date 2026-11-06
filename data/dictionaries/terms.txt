@@ -22,3 +22,4 @@ vfmax
 vzero
 xvld
 xvst
+waivable
