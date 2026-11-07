@@ -4,7 +4,7 @@
 
 This version contains primarily updates to key hardware support components, such as PHY, MRC, SMC, PCIe, and IPMI, etc. Also updated are SPI/Variable, ACPI/SMBIOS, Boot Manager, User Interface, and Platform support components.
 
-Speaking from a high-level perspective, the 202608 release improves stability for multi-node/multi-processor systems, device identificaiton and initialization, boot performance, and peripheral compatibility:
+Speaking from a high-level perspective, the 202608 release improves stability for multi-node/multi-processor systems, device identification and initialization, boot performance, and peripheral compatibility:
 
 - **Core component updates:** Updated key components, improving support for Loongson 2K3000/3B6000M, 3A5000, 3A6000, 3B6000, 3C6000/S/D/Q, and 7A2000-based platforms.
 - **Platform support improvements:** Added support for TD612D0 (single-processor Loongson 3C6000/D workstation motherboard).
@@ -37,7 +37,7 @@ Please note that detailed changes and versions for some key components are not l
 - Fixed incorrect I²C bus frequency calculation.
 - Fixed voltage regulation logic on reboots, eliminating unexpected voltage regulation.
 
-### 3.2 3A6000-baed Platforms
+### 3.2 3A6000-based Platforms
 
 - Refactored I²C voltage regulation, improving maintainability and log output.
 - Optimized SMC data access policy in several scenarios, ensuring both stability and efficient execution.
@@ -72,7 +72,7 @@ Please note that detailed changes and versions for some key components are not l
 - Improved filesystem driver for Ext2, fixing path access issue on controller removal.
 - Optimized network interface initialization, PXE toggle, and network protocol exit routines.
 - Optimized device detection, disabling, and enabling for some PCIe devices, NVMe controller, and complex PCIe topologies..
-- Fixed non-stopping beep during boot-up on the QC622D1 (dual 3C6000/S) motheboard.
+- Fixed non-stopping beep during boot-up on the QC622D1 (dual 3C6000/S) motherboard.
 
 ## 4. General Enhancements and Optimizations
 
@@ -89,7 +89,7 @@ Please note that detailed changes and versions for some key components are not l
 - Added optional platform-specific policy to continue searching for PCI Function 1-7 when Function 0 does not exist.
 - Added BaseRngLib implementation based on the Loongson Secure Engine - when the Secure Engine is not available, a CPU-based fallback is available.
 - Added available Proximity Domain and NUMA topology description to the ACPI IOVT table, enhancing SR-IOV scheduling performance.
-- Enabled Reset Notificaiton Protocol support in the ResetRuntimeDxe module, allowing NVMe and other controllers to perform necessary shutdown procedures during system reboot/reset.
+- Enabled Reset Notification Protocol support in the ResetRuntimeDxe module, allowing NVMe and other controllers to perform necessary shutdown procedures during system reboot/reset.
 - Added support for Serial Flash Discoverable Parameters (SFDP) parsing and page-based write optimization, improving UEFI firmware update speeds (a fallback path is reserved for devices that do not support SFDP).
 
 ### 4.2 Improvements and Adjustments
@@ -121,7 +121,7 @@ Please note that detailed changes and versions for some key components are not l
 - Fixed incorrect memory device count in SMBIOS information, as well as issues with missing NVMe device information and registration sequences.
 - Fixed an issue where the BMC user password length limit was inconsistent with that specified in the help information.
 - Fixed various issues with SMC parameter table length checks, frequency calibration, power consumption limits, temperature displays, and BMC function toggles.
-- Fixed IPMI BMC display configruation access could cause assertion errors during boot-up, resulting in boot failures.
+- Fixed IPMI BMC display configuration access could cause assertion errors during boot-up, resulting in boot failures.
 - Fixed an issue where invalid configuration dependencies in the Secure Engine's "empty" implementation could cause assertion errors during boot-up, resulting in boot failures.
 - Fixed SPI flash parameter parsing errors, causing potential heap memory and UEFI variable storage corruption.
 - Fixed incorrect usage of `Exclusive`/`Shared` ACPI interrupt resources properties.
@@ -134,7 +134,7 @@ Please note that detailed changes and versions for some key components are not l
 
 ### 5.3 Update Statistics
 
-| Area | № of Issues Fixed | № of New Features and Funtionalities | № of Optimizations and Adjustments | Subtotals |
+| Area | № of Issues Fixed | № of New Features and Functionalities | № of Optimizations and Adjustments | Subtotals |
 | --- | --- | --- | --- | --- |
 | 2K3000 / 3B6000M | 4 | 3 | 3 | 10 |
 | 3A6000 | 2 | 0 | 4 | 6 |
