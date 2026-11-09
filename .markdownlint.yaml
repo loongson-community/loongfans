@@ -8,6 +8,11 @@ MD013: false
 # Frontmatter titles are page metadata and may differ from article H1 headings
 MD025: false
 
+# Allow headings that end with an exclamation point
+MD026:
+  # these punctuation marks are blocked
+  punctuation: ".,;:。，；："
+
 # Vitepress cannot use the "*.mdx" extension, yet we heavily utilize
 # inline components in Markdown files
 #
