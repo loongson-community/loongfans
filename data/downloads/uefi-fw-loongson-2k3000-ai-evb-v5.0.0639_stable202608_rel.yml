@@ -1,0 +1,19 @@
+type: uefi-firmware
+version: "V5.0.0639_stable202608_rel"
+size: 8388608
+date: "2026-11-09"
+sha256: "9c8ee847eefcbb6d006017888c921c28ef5a2ed680227dba5ea0fa889a32e8e7"
+url: "https://fw.loongfans.cn/2k3000-ai-evb/261109/LS2K3000_rel.fd"
+description:
+  zh: |
+    本版更新主要包含 PHY、MRC、SMC、PCIe、IPMI 等软硬件代码模块持续迭代升级、及 SPI/Variable、ACPI/SMBIOS、启动管理、显示与平台适配等更新，并进一步优化多节点平台稳定性、设备识别、启动性能及外设兼容性。
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2608.md -->
+  en: |
+    This version contains primarily updates to key hardware support components, such as PHY, MRC, SMC, PCIe, and IPMI, etc. Also updated are SPI/Variable, ACPI/SMBIOS, Boot Manager, User Interface, and Platform support components.
+
+    <!-- truncate -->
+
+    <!--@include: ./changelogs/stable2608.en.md -->
