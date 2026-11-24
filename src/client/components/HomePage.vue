@@ -17,6 +17,9 @@
             :name="t('operatingSystems')"
           />
           <HomePageLink :href="`${basePath}/sdk`" :name="t('devGuides')" />
+          <HomePageLink :href="`${basePath}/opview`" :name="t('loongarchOpcodesView')" />
+          <!--Dev-->
+          <HomePageLink v-if="false" :href="`${basePath}/opdecode`" :name="t('loongarchOpcodesDecode')" />
         </LinkGroup>
 
         <LinkGroup :title="$t('supportMaterials')">

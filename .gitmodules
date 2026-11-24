@@ -1,0 +1,3 @@
+[submodule "loongarch-opcodes"]
+	path = loongarch-opcodes
+	url = https://github.com/loongson-community/loongarch-opcodes/

@@ -7,6 +7,7 @@ import { defineConfig } from "vitepress"
 
 // resolve alias is not available for use yet
 import loongfansData from "../src/node/plugins/loongfans-data/index.ts"
+import loongarchOpcodes from "../src/node/plugins/loongarch-opcodes/index.ts"
 
 const srcDir = "pages"
 
@@ -72,7 +73,7 @@ export default defineConfig({
     css: {
       transformer: arch === "loong64" ? "postcss" : "lightningcss",
     },
-    plugins: [Inspect(), UnoCSS(), Icons({ scale: 1 }), loongfansData()],
+    plugins: [Inspect(), UnoCSS(), Icons({ scale: 1 }), loongfansData(), loongarchOpcodes()],
     ssr: {
       noExternal: ["vue-i18n"],
     },
