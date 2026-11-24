@@ -97,6 +97,8 @@ Outside of China, though, things get a bit more complex. Outside of using a shop
 - WeChat: mingcongbai
 - E-Mail: baimingcong@loongfans.cn
 
+LoongArch boards can be purchased in the US from [Valor Computing Systems](https://valorcomputingsystems.com).
+
 If you are a student or community developer and are interested in porting, optimizing, and improving various software or applications to or for LoongArch, or need more computational power for your current project, you can also contact the [Roaming Loongson Project](https://github.com/loongson-community/1024) to borrow Loongson hardware (or have us donate it for your project).
 
 ## References
