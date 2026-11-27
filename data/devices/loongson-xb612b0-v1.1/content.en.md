@@ -17,13 +17,13 @@ Compared to the [AC612A0_V1.1](/en/devices/loongson-ac612a0-v1.1.md) based on Lo
 | Manufacturer | Loongson Technology |
 | Form Factor | mATX (244×244mm) |
 | Processor | 3B6000 (8/12/16 cores) @ 2.3/2.2/2.1GHz |
-| Memory | DDR4 @ 3200MT/s (2 × DIMM), supports RECC |
-| Interfaces (PCIe) | 2 × PCIe 3.0 x16, 1 × PCIe 3.0 x8 |
-| Interfaces (USB) | USB 3.0 (2 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
-| Interfaces (Storage) | 2 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0 |
+| Memory | DDR4 @ 3200MT/s (2 × DIMM), supports Registered ECC |
+| Interfaces (PCIe) | 1 × PCIe 3.0 x16 (x16 lanes)<br />1 × PCIe 3.0 x16 (x8 lanes)<br />1 × PCIe 3.0 x4 (x4 lanes) |
+| Interfaces (USB) | USB 3.0 (2 × onboard, 2 × front panel)<br />USB 2.0 (2 × onboard, 4 × front panel) |
+| Interfaces (Storage) | 2 × NVMe (PCIe 3.0 x4)<br />4 × SATA 3.0 |
 | Interfaces (Network) | 2 × GbE |
-| Interfaces (Video) | 1 × HDMI, 1 × VGA |
-| Interfaces (Other) | 1 × m.2 Key E interface (PCIe + USB), 1 set of 3.5mm (input, output, Line-In) interfaces, 1 × RS-232 serial port (DB-9) |
+| Interfaces (Video) | 1 × HDMI<br />1 × VGA |
+| Interfaces (Other) | 1 × m.2 Key E interface (PCIe x1 lane + USB)<br />1 set of 3.5mm (input, output, Line-In) interfaces<br />1 × RS-232 serial port (DB-9) |
 
 </template>
 

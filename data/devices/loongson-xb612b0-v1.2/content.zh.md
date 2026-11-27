@@ -15,13 +15,13 @@
 | 厂商 | 龙芯中科 |
 | 板型 | mATX (244×244mm) |
 | 处理器 | 3B6000（8/12/16 核）@ 2.3/2.2/2.1GHz |
-| 内存 | DDR4 @ 3200MT/s (2 × DIMM)，支持 RECC |
-| 接口 (PCIe) | 2 × PCIe 3.0 x16、1 × PCIe 3.0 x8 |
-| 接口 (USB) | USB 3.0（2 × 板载、2 × 前面板）、USB 2.0（2 × 板载、4 × 前面板） |
-| 接口（存储） | 2 × NVMe (PCIe 3.0 x4)、4 × SATA 3.0 |
+| 内存 | DDR4 @ 3200MT/s (2 × DIMM)，支持 Registered ECC |
+| 接口 (PCIe) | 1 × PCIe 4.0/3.0 x16 (x16 信号)<br />1 × PCIe 4.0/3.0 x16 (x8 信号)<br />1 × PCIe 3.0 x4 (x4 信号) |
+| 接口 (USB) | USB 3.0（2 × 板载、2 × 前面板）<br />USB 2.0（2 × 板载、4 × 前面板） |
+| 接口（存储） | 2 × NVMe (PCIe 3.0 x4)<br />4 × SATA 3.0 |
 | 接口（网络） | 2 × GbE |
 | 接口（视频） | 1 × HDMI、1 × VGA |
-| 接口（其他） | 1 × M.2 Key E 接口 (PCIe + USB)、1 组 3.5mm（输入、输出、Line-In）接口、1 × RS-232 串口 (DB-9) |
+| 接口（其他） | 1 × M.2 Key E 接口 (PCIe x1 信号 + USB)<br />1 组 3.5mm（输入、输出、Line-In）接口<br />1 × RS-232 串口 (DB-9) |
 
 </template>
 
