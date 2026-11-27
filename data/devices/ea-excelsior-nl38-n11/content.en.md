@@ -11,18 +11,18 @@ Other manufacturers have also launched derivative models based on this design.
 <template #spec>
 
 | Category | Specification |
-| ---- | ---- |
+| --- | --- |
 | Manufacturer | EA EXCELSIOR |
 | Also Known As | IPASON LL300, GEIT UT6500-LA6 |
 | Processor | 3A6000 @ 2.0GHz |
 | Screen | 14 inches, 2240×1400 (2.2K) or 1920x1200 (WUXGA) |
 | Weight | 1.4kg |
 | Memory | DDR4 @ 3200MT/s (1 × SODIMM), no onboard memory |
-| Interfaces (USB) | 2 × USB 3.0, 2 × USB-C† |
+| Interfaces (USB) | 2 × USB 3.0<br />2 × USB-C† |
 | Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4) |
 | Interfaces (Network) | 1 × GbE |
 | Interfaces (Video) | 1 × HDMI |
-| Interfaces (Other) | 1 × 3.5mm headphone/microphone jack, 1 × 720p camera |
+| Interfaces (Other) | 1 × 3.5mm headphone/microphone jack<br />1 × 720p camera |
 
 †: Only one of the two USB-C interfaces may be used for charging.
 

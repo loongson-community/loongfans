@@ -8,7 +8,7 @@
 <template #spec>
 
 | Catégorie | Spécifications |
-| ---- | ---- |
+| --- | --- |
 | Fabricant | Loongson Technology |
 | Plateforme processeur | Série 3C6000/D |
 

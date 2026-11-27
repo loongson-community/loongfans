@@ -9,16 +9,16 @@ Der OrangePi Nova v1.0 ist ein Nano-ITX-Motherboard (120 × 120 mm) auf Basis de
 <template #spec>
 
 | Kategorie | Technische Daten |
-| ---- | ---- |
+| --- | --- |
 | Hersteller | Xunlong Software (OrangePi) |
 | Formfaktor | Nano-ITX (120 × 120 mm) |
 | Prozessor | 2K3000 mit 2,2 GHz |
 | Speicher | DDR4 mit 3200 MT/s (integriert) |
-| Schnittstellen (USB) | 2 × USB 3.0, 2 × USB 2.0, 2 × USB-C† |
-| Schnittstellen (Speicher) | 1 × NVMe (PCIe 3.0 x4), 1 × microSD-Kartensteckplatz, 32 GB eMMC (integriert) |
-| Schnittstellen (Netzwerk) | 1 × 2,5-GbE (Realtek RTL8125), 1 × GbE |
-| Schnittstellen (Video) | 1 × HDMI, 1 × MIPI (30-polig), 1 × eDP |
-| Schnittstellen (Sonstiges) | 1 × M.2-Key-E-Schnittstelle (PCIe + USB), 1 × 3,5-mm-Kopfhörer-/Mikrofonbuchse, 1 × CPU-UART, 1 × SE-UART, 40-poliger GPIO |
+| Schnittstellen (USB) | 2 × USB 3.0<br />2 × USB 2.0<br />2 × USB-C† |
+| Schnittstellen (Speicher) | 1 × NVMe (PCIe 3.0 x4)<br />1 × microSD-Kartensteckplatz<br />32 GB eMMC (integriert) |
+| Schnittstellen (Netzwerk) | 1 × 2,5-GbE (Realtek RTL8125)<br />1 × GbE |
+| Schnittstellen (Video) | 1 × HDMI<br />1 × MIPI (30-polig)<br />1 × eDP |
+| Schnittstellen (Sonstiges) | 1 × M.2-Key-E-Schnittstelle (PCIe 1 lane + USB)<br />1 × 3,5-mm-Kopfhörer-/Mikrofonbuchse<br />1 × CPU-UART<br />1 × SE-UART<br />40-poliger GPIO |
 
 †: Ein USB-C-Anschluss dient ausschließlich der Stromversorgung und unterstützt keine Datenübertragung.
 

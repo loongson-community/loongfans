@@ -11,7 +11,7 @@ Public documentation in the community is still limited, and this page will be re
 <template #spec>
 
 | Category | Specification |
-| ---- | ---- |
+| --- | --- |
 | Manufacturer | Loongson Technology |
 | Form Factor | To be updated |
 | Processor Platform | 2K3000 series |

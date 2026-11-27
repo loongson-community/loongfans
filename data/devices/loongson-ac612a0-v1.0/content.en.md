@@ -11,17 +11,17 @@ This motherboard is an entry-level Loongson 3C6000/S motherboard, with a relativ
 <template #spec>
 
 | Category | Specification |
-| ---- | ---- |
+| --- | --- |
 | Manufacturer | Loongson Technology |
 | Form Factor | ATX (244×305mm) |
 | Processor | 3C6000/S @ 2.0/2.2GHz |
 | Memory | DDR4 @ 3200MT/s (4 × DIMM), supports RECC |
-| Interfaces (PCIe) | 2 × PCIe 3.0 x16, 2 × PCIe 3.0 x8 |
-| Interfaces (USB) | USB 3.0 (2 × onboard, 2 × front panel), USB 2.0 (2 × onboard, 4 × front panel) |
-| Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0, 1 × SFF-8654-4i interface |
+| Interfaces (PCIe) | 2 × PCIe 3.0 x16<br />2 × PCIe 3.0 x8 |
+| Interfaces (USB) | USB 3.0 (2 × onboard, 2 × front panel)<br />USB 2.0 (2 × onboard, 4 × front panel) |
+| Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4)<br />4 × SATA 3.0<br />1 × SFF-8654-4i interface |
 | Interfaces (Network) | 2 × GbE |
 | Interfaces (Video) | 1 × VGA |
-| Interfaces (Other) | 1 × BMC module interface†‡, 1 × BMC network interface, 1 set of 3.5mm (input, output) interfaces, 1 × RS-232 serial port (DB-9) |
+| Interfaces (Other) | 1 × BMC module interface†‡<br />1 × BMC network interface<br />1 set of 3.5mm (input, output) interfaces<br />1 × RS-232 serial port (DB-9) |
 
 - †: Supports BMC modules based on AST2500 or Loongson 2K0500.
 - ‡: There is also a version of this motherboard known as "domestic[-only] (Chinese) component", which does not come with a slot for BMC modules.

@@ -11,7 +11,7 @@ La documentation publique disponible au sein de la communauté reste encore limi
 <template #spec>
 
 | Catégorie | Spécifications |
-| ---- | ---- |
+| --- | --- |
 | Fabricant | Loongson Technology |
 | Format | À venir |
 | Plateforme processeur | Série 2K3000 |

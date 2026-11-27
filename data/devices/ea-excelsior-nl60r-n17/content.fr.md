@@ -10,17 +10,17 @@ L'EA EXCELSIOR NL60R-N17 est un ordinateur portable de 14 pouces équipé d'un p
 <template #spec>
 
 | Catégorie | Spécifications |
-| ---- | ---- |
+| --- | --- |
 | Fabricant | Vers le haut |
 | Processeur | 3B6000M à 2,4 GHz |
 | Écran | 14 pouces, 2240 × 1400 (2,2K) ou 1920 × 1200 (WUXGA) |
 | Poids | 1,35 kg |
 | Mémoire | DDR4 à 3200 MT/s (1 × SODIMM), pas de mémoire intégrée |
-| Interfaces (USB) | 2 × USB 3.0, 3 × USB-C† |
-| Interfaces (stockage) | 1 × NVMe (PCIe 3.0 x4), 1 × NVMe (PCIe 3.0 x1) |
+| Interfaces (USB) | 2 × USB 3.0<br />3 × USB-C† |
+| Interfaces (stockage) | 1 × NVMe (PCIe 3.0 x4)<br />1 × NVMe (PCIe 3.0 x1) |
 | Interfaces (réseau) | Un port Gigabit Ethernet |
 | Interfaces (vidéo) | une sortie HDMI |
-| Interfaces (Autres) | 1 prise jack 3,5 mm pour casque/micro, 1 caméra 1080p |
+| Interfaces (Autres) | 1 prise jack 3,5 mm pour casque/micro<br />1 caméra 1080p |
 
 † : Seule l'une des deux interfaces USB-C peut être utilisée pour la recharge.
 

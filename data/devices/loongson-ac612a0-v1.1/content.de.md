@@ -11,17 +11,17 @@ Dieses Motherboard ist ein Einstiegsmodell mit Loongson 3C6000/S-Prozessor, das 
 <template #spec>
 
 | Kategorie | Technische Daten |
-| ---- | ---- |
+| --- | --- |
 | Hersteller | Loongson Technology |
 | Formfaktor | ATX (244 × 305 mm) |
 | Prozessor | 3C6000/S mit 2,0/2,2 GHz |
 | Speicher | DDR4 mit 3200 MT/s (4 × DIMM), unterstützt ECC |
-| Schnittstellen (PCIe) | 2 × PCIe 3.0 x16, 2 × PCIe 3.0 x8 |
-| Schnittstellen (USB) | USB 3.0 (2 × auf der Hauptplatine, 2 × an der Vorderseite), USB 2.0 (2 × auf der Hauptplatine, 4 × an der Vorderseite) |
-| Schnittstellen (Speicher) | 1 × NVMe (PCIe 3.0 x4), 4 × SATA 3.0, 1 × SFF-8654-4i-Schnittstelle |
+| Schnittstellen (PCIe) | 2 × PCIe 3.0 x16<br />2 × PCIe 3.0 x8 |
+| Schnittstellen (USB) | USB 3.0 (2 × auf der Hauptplatine, 2 × an der Vorderseite)<br />USB 2.0 (2 × auf der Hauptplatine, 4 × an der Vorderseite) |
+| Schnittstellen (Speicher) | 1 × NVMe (PCIe 3.0 x4)<br />4 × SATA 3.0<br />1 × SFF-8654-4i-Schnittstelle |
 | Schnittstellen (Netzwerk) | 2 × Gigabit-Ethernet |
 | Schnittstellen (Video) | Ein VGA-Anschluss |
-| Schnittstellen (Sonstiges) | 1 × BMC-Modulschnittstelle†‡, 1 × BMC-Netzwerkschnittstelle, 1 Satz 3,5-mm-Schnittstellen (Eingang, Ausgang), 1 × serielle RS-232-Schnittstelle (DB-9) |
+| Schnittstellen (Sonstiges) | 1 × BMC-Modulschnittstelle†‡<br />1 × BMC-Netzwerkschnittstelle<br />1 Satz 3,5-mm-Schnittstellen (Eingang, Ausgang)<br />1 × serielle RS-232-Schnittstelle (DB-9) |
 
 - †: Unterstützt BMC-Module auf Basis von AST2500 oder Loongson 2K0500.
 - ‡: Es gibt auch eine Version dieses Motherboards, die als „nur für den heimischen Markt (chinesische Komponenten)“ bezeichnet wird und über keinen Steckplatz für BMC-Module verfügt.

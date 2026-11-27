@@ -13,7 +13,7 @@ Par rapport au [AC612A0_V1.1](/en/devices/loongson-ac612a0-v1.1.md) Basée sur l
 <template #spec>
 
 | Catégorie | Spécifications |
-| ---- | ---- |
+| --- | --- |
 | Fabricant | Loongson Technology |
 | Format | mATX (244 × 244 mm) |
 | Processeur | 3B6000 (8/12/16 cores) à 2,3/2,2/2,1 GHz |

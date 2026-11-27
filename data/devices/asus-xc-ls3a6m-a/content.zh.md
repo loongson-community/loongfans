@@ -11,17 +11,17 @@
 <template #spec>
 
 | 类别 | 规格 |
-| ---- | ---- |
+| --- | --- |
 | 厂商 | 华硕 |
 | 板型 | DTX (203×244mm) |
 | 处理器 | 3A6000-HV @ 2.5GHz |
 | 内存 | DDR4 @ 3200MT/s (2 × DIMM) |
-| 接口 (PCIe) | PCIe 3.0 x1（x1 信号）、PCIe 3.0 x16（x8 信号）、PCIe 3.0 x8（x8 信号）、PCIe 3.0 x8（x4 信号） |
-| 接口 (USB) | USB 3.0（2 × 板载、3 × 前面板）、USB 2.0（4 × 板载、1 × 前面板） |
-| 接口（存储） | 1 × NVMe (PCIe 3.0 x4)、4 × SATA 3.0 |
+| 接口 (PCIe) | PCIe 3.0 x1（x1 信号）<br />PCIe 3.0 x16（x8 信号）<br />PCIe 3.0 x8（x8 信号）<br />PCIe 3.0 x8（x4 信号） |
+| 接口 (USB) | USB 3.0（2 × 板载、3 × 前面板）<br />USB 2.0（4 × 板载、1 × 前面板） |
+| 接口（存储） | 1 × NVMe (PCIe 3.0 x4)<br />4 × SATA 3.0 |
 | 接口（网络） | 1 × GbE |
-| 接口（视频） | 1 × HDMI、1 × VGA |
-| 接口（其他） | 1 × M.2 Key E 接口 (PCIe + USB)、1 × mPCIe (PCIe + USB)、1 组 3.5mm（输入、输出、Line-In）接口 |
+| 接口（视频） | 1 × HDMI<br />1 × VGA |
+| 接口（其他） | 1 × M.2 Key E 接口 (PCIe x1 信号 + USB)<br />1 × mPCIe (PCIe x1 信号 + USB)<br />1 组 3.5mm（输入、输出、Line-In）接口 |
 
 </template>
 
