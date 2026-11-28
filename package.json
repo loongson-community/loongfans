@@ -6,6 +6,7 @@
     "dev": "./scripts/pnpm-exec-wrapper.sh vitepress dev",
     "editBiweeklyEvents": "tsx ./src/node/scripts/editBiweeklyEvents/index.ts",
     "eslint": "eslint",
+    "fixMD060": "tsx ./src/node/scripts/fixMD060/index.ts",
     "lintMarkdown": "markdownlint-cli2 '**/*.md' '#node_modules'",
     "lintPrettier": "prettier -c .",
     "lintSpell": "cspell lint --no-progress .",
