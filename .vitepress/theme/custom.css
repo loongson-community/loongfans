@@ -24,3 +24,8 @@
 .vp-doc img {
   margin: 0 !important;
 }
+
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
