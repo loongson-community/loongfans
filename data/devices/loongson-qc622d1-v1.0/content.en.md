@@ -8,7 +8,7 @@
 <template #spec>
 
 | Category | Specification |
-| ---- | ---- |
+| --- | --- |
 | Manufacturer | Loongson Technology |
 | Processor Platform | 3C6000/S series |
 

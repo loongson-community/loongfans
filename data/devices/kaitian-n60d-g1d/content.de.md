@@ -9,17 +9,17 @@ Das Lenovo Kaitian N60d-G1d ist ein 14-Zoll-Laptop, der auf dem Loongson 3A6000 
 <template #spec>
 
 | Kategorie | Technische Daten |
-| ---- | ---- |
+| --- | --- |
 | Hersteller | Lenovo Kaitian |
 | Prozessor | 3A6000 mit 2,0 GHz |
 | Speicher | DDR4 mit 3200 MT/s (1 × SODIMM), kein integrierter Speicher |
 | Bildschirm | 14 Zoll, 2240 × 1400 (2,2K) oder 1920 × 1200 (WUXGA) |
 | Gewicht | 1,5 kg |
-| Schnittstellen (USB) | 2 × USB 3.0, 2 × USB-C† |
+| Schnittstellen (USB) | 2 × USB 3.0<br />2 × USB-C† |
 | Schnittstellen (Speicher) | 1 × NVMe (PCIe 3.0 x4) |
 | Schnittstellen (Netzwerk) | Ein Gigabit-Ethernet |
 | Schnittstellen (Video) | ein HDMI-Anschluss |
-| Schnittstellen (Sonstiges) | 1 × 3,5-mm-Kopfhörer-/Mikrofonbuchse, 1 × Kamera |
+| Schnittstellen (Sonstiges) | 1 × 3,5-mm-Kopfhörer-/Mikrofonbuchse<br />1 × Kamera |
 
 †: Eine der USB-C-Schnittstellen kann zum Aufladen verwendet werden.
 

@@ -13,7 +13,7 @@ ForeverPi ist in den Versionen „TF-Karte“ und „WLAN“ erhältlich – da 
 ### WLAN-Version
 
 | Kategorie | Technische Daten |
-| ---- | ---- |
+| --- | --- |
 | Hersteller | CTCISZ |
 | Formfaktor | 88 × 56 mm |
 | Prozessor | 2K0300 mit 1,0 GHz |
@@ -22,12 +22,12 @@ ForeverPi ist in den Versionen „TF-Karte“ und „WLAN“ erhältlich – da 
 | Schnittstellen (Speicher) | 4 GB eMMC (integriert), 8 Mbit NOR-Flash |
 | Schnittstellen (Netzwerk) | 1 × GbE, integriertes WLAN- und Bluetooth-Modul (mit einer Antenne) |
 | Schnittstellen (Video) | 1 × LCD-Ausgang |
-| Schnittstellen (Sonstiges) | 8 × 12-Bit-ADC, 1 × JTAG, 40-poliger GPIO |
+| Schnittstellen (Sonstiges) | 8 × 12-Bit-ADC<br />1 × JTAG, 40-poliger GPIO |
 
 ### TF-Karten-Version
 
 | Kategorie | Technische Daten |
-| ---- | ---- |
+| --- | --- |
 | Hersteller | CTCISZ |
 | Formfaktor | 88 × 56 mm |
 | Prozessor | 2K0300 mit 1,0 GHz |
@@ -36,7 +36,7 @@ ForeverPi ist in den Versionen „TF-Karte“ und „WLAN“ erhältlich – da 
 | Schnittstellen (Speicher) | 256 Mbit NOR-Flash |
 | Schnittstellen (Netzwerk) | Ein Gigabit-Ethernet |
 | Schnittstellen (Video) | Keine |
-| Schnittstellen (Sonstiges) | 8 × 12-Bit-ADC, 1 × JTAG, 40-poliger GPIO |
+| Schnittstellen (Sonstiges) | 8 × 12-Bit-ADC<br />1 × JTAG, 40-poliger GPIO |
 
 </template>
 

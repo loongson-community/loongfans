@@ -7,7 +7,7 @@ TD622E0_V1.2 est une carte mère de serveur à deux sockets pour les processeurs
 <template #spec>
 
 | Catégorie | Spécifications |
-| ---- | ---- |
+| --- | --- |
 | Fabricant | Loongson Technology |
 | Plateforme processeur | Série 3C6000/D (deux sockets) |
 

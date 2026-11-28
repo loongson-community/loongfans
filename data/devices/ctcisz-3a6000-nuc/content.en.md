@@ -9,15 +9,15 @@ The CTCISZ 3A6000 NUC is an Intel NUC-style mini PC powered by Loongson 3A6000-H
 <template #spec>
 
 | Category | Specification |
-| ---- | ---- |
+| --- | --- |
 | Manufacturer | CTCISZ |
 | Processor | 3A6000-HV @ 2.5GHz |
 | Memory | DDR4 @ 3200MT/s (2 × SODIMM) |
-| Interfaces (USB) | 4 × USB 3.0, 2 × USB 2.0, 1 × USB-C |
-| Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 1 × SATA 3.0 |
+| Interfaces (USB) | 4 × USB 3.0<br />2 × USB 2.0<br />1 × USB-C |
+| Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4)<br />1 × SATA 3.0 |
 | Interfaces (Network) | 2 × GbE |
 | Interfaces (Video) | 2 × HDMI |
-| Interfaces (Other) | 1 × M.2 Key E interface (PCIe + USB), 1 × 3.5mm headphone/microphone jack |
+| Interfaces (Other) | 1 × M.2 Key E interface (PCIe x1 lane + USB)<br />1 × 3.5mm headphone/microphone jack |
 
 </template>
 

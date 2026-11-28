@@ -13,7 +13,7 @@ La ForeverPi est disponible en versions « TF Card » et « Wi-Fi » : comme le 
 ### Version Wi-Fi
 
 | Catégorie | Spécifications |
-| ---- | ---- |
+| --- | --- |
 | Fabricant | CTCISZ |
 | Format | 88 × 56 mm |
 | Processeur | 2K0300 à 1,0 GHz |
@@ -22,12 +22,12 @@ La ForeverPi est disponible en versions « TF Card » et « Wi-Fi » : comme le 
 | Interfaces (stockage) | 4 Go eMMC (intégrée), 8 Mbits de mémoire Flash NOR |
 | Interfaces (réseau) | 1 port GbE, module Wi-Fi + Bluetooth intégré (antenne unique) |
 | Interfaces (vidéo) | 1 sortie LCD |
-| Interfaces (Autres) | 8 convertisseurs analogiques-numériques (ADC) 12 bits, 1 port JTAG, 40 broches GPIO |
+| Interfaces (Autres) | 8 convertisseurs analogiques-numériques (ADC) 12 bits<br />1 port JTAG, 40 broches GPIO |
 
 ### Version carte TF
 
 | Catégorie | Spécifications |
-| ---- | ---- |
+| --- | --- |
 | Fabricant | CTCISZ |
 | Format | 88 × 56 mm |
 | Processeur | 2K0300 à 1,0 GHz |
@@ -36,7 +36,7 @@ La ForeverPi est disponible en versions « TF Card » et « Wi-Fi » : comme le 
 | Interfaces (stockage) | Mémoire Flash NOR de 256 Mbits |
 | Interfaces (réseau) | Un port Gigabit Ethernet |
 | Interfaces (vidéo) | Aucun |
-| Interfaces (Autres) | 8 convertisseurs analogiques-numériques (ADC) 12 bits, 1 port JTAG, 40 broches GPIO |
+| Interfaces (Autres) | 8 convertisseurs analogiques-numériques (ADC) 12 bits<br />1 port JTAG, 40 broches GPIO |
 
 </template>
 

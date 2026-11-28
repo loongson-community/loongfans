@@ -11,7 +11,7 @@ Die öffentlich zugängliche Dokumentation in der Community ist noch begrenzt; d
 <template #spec>
 
 | Kategorie | Technische Daten |
-| ---- | ---- |
+| --- | --- |
 | Hersteller | Loongson Technology |
 | Formfaktor | Wird noch aktualisiert |
 | Prozessorplattform | Serie 2K3000/3B6000M |

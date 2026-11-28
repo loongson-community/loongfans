@@ -8,7 +8,7 @@
 <template #spec>
 
 | Catégorie | Spécifications |
-| ---- | ---- |
+| --- | --- |
 | Fabricant | Loongson Technology |
 
 </template>

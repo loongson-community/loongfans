@@ -10,17 +10,17 @@ The EA EXCELSIOR NL60R-N17 is a 14-inch laptop based on Loongson 3B6000M. Weighi
 <template #spec>
 
 | Category | Specification |
-| ---- | ---- |
+| --- | --- |
 | Manufacturer | EA EXCELSIOR |
 | Processor | 3B6000M @ 2.4GHz |
 | Screen | 14 inches, 2880×1800 (2.8K) or 1920x1200 (WUXGA) |
 | Weight | 1.35kg |
 | Memory | DDR4 @ 3200MT/s (1 × SODIMM), no onboard memory, 64 GB maximum |
-| Interfaces (USB) | 2 × USB 3.0, 3 × USB-C† |
-| Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4), 1 × NVMe (PCIe 3.0 x1) |
+| Interfaces (USB) | 2 × USB 3.0<br />3 × USB-C† |
+| Interfaces (Storage) | 1 × NVMe (PCIe 3.0 x4)<br />1 × NVMe (PCIe 3.0 x1) |
 | Interfaces (Network) | 1 × GbE |
 | Interfaces (Video) | 1 × HDMI |
-| Interfaces (Other) | 1 × 3.5mm headphone/microphone jack, 1 × 1080p camera |
+| Interfaces (Other) | 1 × 3.5mm headphone/microphone jack<br />1 × 1080p camera |
 
 †: Only one of the two USB-C interfaces may be used for charging.
 
